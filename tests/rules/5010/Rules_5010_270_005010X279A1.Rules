@@ -1,0 +1,271 @@
+FILE DATA
+Version=005010X279A1
+Description=270 Eligibility, Coverage or Benefit Inquiry
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+66=ID,1,2,Identification Code Qualifier
+67=AN,2,80,Identification Code
+93=AN,1,60,Name
+96=NO,1,10,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,3,Entity Identifier Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Authorization Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=DT,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+110=ID,1,1
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+124=AN,2,15,Application Receiver Code
+127=AN,1,50,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+234=AN,1,48,Product/Service ID
+235=ID,2,2,Product/Service ID Qualifier
+309=ID,1,2,Location Qualifier
+310=AN,1,30,Location Identifier
+329=AN,4,9,Transaction Set Control Number
+337=TM,4,8,Time
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+364=AN,1,80,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=DT,8,8,Date
+374=ID,3,3,Date/Time Qualifier
+380=R,1,15,Quantity
+455=ID,1,2,Responsible Agency Code
+478=ID,1,1,Credit/Debit Flag Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+481=ID,1,2,Trace Type Code
+509=AN,10,10,Originating Company Identifier
+522=ID,1,3,Amount Qualifier Code
+584=ID,2,2,Employment Status Code
+615=ID,1,2,Time Period Qualifier
+628=AN,1,12,Hierarchical ID Number
+640=ID,2,2,Transaction Type Code
+659=ID,1,2,Basis of Verification Code
+673=ID,2,2,Quantity Qualifier
+734=AN,1,12,Hierarchical Parent ID Number
+735=ID,1,12,Hierarchical Level Code
+736=ID,1,1,Hierarchical Child Code
+782=R,1,18,Monetary Amount
+799=AN,1,30,Version Identifier
+875=ID,3,3,Maintenance Type Code
+933=AN,1,264,Free-form Message Text
+934=ID,2,2,Printer Carriage Control Code
+954=R,1,10,Percent
+1005=ID,4,4,Hierarchical Structure Code
+1035=AN,1,60,Name Last or Organization Name
+1036=AN,1,25,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1065=ID,1,1,Entity Type Qualifier
+1066=ID,1,2,Citizenship Status Code
+1067=ID,1,1,Marital Status Code
+1068=ID,1,1,Gender Code
+1069=ID,2,2,Individual Relationship Code
+1073=ID,1,1,Yes/No Condition or Response Code
+1109=ID,1,1
+1136=ID,2,2,Code Category
+1165=ID,1,1,Confidentiality Code
+1203=ID,2,3,Maintenance Reason Code
+1204=AN,1,50,Plan Coverage Description
+1207=ID,3,3,Coverage Level Code
+1216=ID,1,1,Benefit Status Code
+1218=ID,1,1
+1219=AN,1,2,COBRA
+1220=ID,1,1,Student Status Code
+1221=AN,1,3,Provider Code
+1250=ID,2,3,DateTime Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,2,3,Code List Qual Code
+1271=AN,1,30,Industry Code
+1328=NO,1,2,Diagnosis Code Pointer
+1336=ID,1,3,Insurance Type Code
+1339=AN,2,2,Procedure Modifier
+1365=ID,1,2,Service Type Code
+1470=NO,1,9,Number
+1705=AN,1,35,Implementation Convention Reference
+1715=ID,1,3,Country Subdivision Code
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C003=[235,O][234,O][1339,O][1339,O][1339,O][1339,O][352,O],@@....#
+C004=[1328,O][1328,O][1328,O][1328,O],@...
+C022=[1270,O][1271,O][1250,O][1251,O][782,O][380,O][799,O][1271,O][1073,O],@@#######
+SEGMENT DEFINITIONS
+AMT=[522][782][478],@@#
+BHT=[1005,M][353,M][127][373,M][337,M][640]
+DMG=[1250][1251][1068][1067][1109][1066][26][659][380]+P0102,...######
+DTP=[374,M][1250,M][1251,M]
+EQ=[1365][C003][1207][1336][C004]+R0102,..*1.#.*1,..*1##.*1
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+HI=[C022][C022][C022][C022][C022][C022][C022][C022][C022][C022][C022][C022],@*1.*1.*1.*1.*1.*1.*1.*1#*1#*1#*1#*1
+HL=[628][734][735][736],@#@@,@@@@
+IEA=[11111116,M][11111112,M]
+III=[1270,M][1271,M]
+INS=[1073][1069][875][1203][1216][1218][1219][584][1220][1073][1250][1251][1165][19][156][26][1470],@@##############@,@@##############.
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+MSG=[933][934][1470],@##
+N3=[166,M][166]
+N4=[19][156][116][26][309][310][1715],@...##.,....##.,@...##.
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67]+P0809,@@...#.@@,@@...#...,@@...#.##,@@@..#.@@
+PER=[366][93][365][364][365][364][365][364]+P0304P0506P0708,@.......
+PRV=[1221][128][127],@..
+REF=[128,M][127,M][352],@@#
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+TRN=[481,M][127,M][509,M][127]
+SEGMENT SELF RULES
+NM1~2~[EQ]1~4~0
+NM1~2~[EQ]2~2~4,5
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+FORMATS
+Date CCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][BHT,M]{2000A:>1[HL*1,M]{2100A:1[NM1*4,M]}{2000B:>1[HL*2,M]{2100B:1[NM1*4,M][REF,O,9][N3][N4*1][PRV*1]}{2000C:>1[HL*2,M][TRN,O,2]{2100C:1[NM1*2,M][REF*1,O,9][N3][N4*1][PRV*1][DMG*1][INS*1][HI*1][DTP,O,2]{2110C:99[EQ*1][AMT*1][AMT*1][III][REF*1][DTP]}{2000D:>1[HL*2,X][TRN,O,2]{2100D:1[NM1*3,M][REF*1,O,9][N3][N4*3][PRV*1][DMG*1][INS*2][HI*1][DTP,O,2]{2110D:99[EQ*2,M][III][REF*1][DTP]}}}}}}}{END ST HEADER LOOP:1[SE,M]}}{END GS LOOP:1[GE,M]}}{END ISA LOOP:1[IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00501
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,HS
+455=2:7,X
+480=2:8,005010X279A1
+143=3:1,270
+1705=3:3,005010X279A1
+1005=4:1,0022
+353=4:2,01,13
+640=4:6,RT
+735=5:3,20*7:3,21*13:3,22*30:3,23
+736=5:4,1*7:4,1*13:4,0,1*30:4,0
+98=6:1,2B,36,GP,P5,PR*8:1,1P,2B,36,80,FA,GP,P5,PR*15:1,IL*32:1,03
+1065=6:2,1,2*8:2,1,2*15:2,1,2*32:2,1
+66=6:8,24,46,FI,NI,PI,XV,XX*8:8,24,34,FI,PI,PP,SV,XV,XX*15:8,II,MI
+128=9:1,0B,1C,1D,1J,4A,CT,EL,EO,HPI,JD,N5,N7,Q4,SY,TJ*12:2,PXC*16:1,18,1L,1W,3H,6P,CT,EA,EJ,F6,GH,HJ,IG,N6,NQ,SY,Y4*19:2,9K,D3,EI,HPI,PXC,SY,TJ*28:1,9F,G1*33:1,18,1L,1W,6P,CT,EA,EJ,F6,GH,HJ,IF,IG,MRC,N6,SY,Y4*36:2,9K,D3,EI,HPI,PXC,SY,TJ*43:1,9F,G1
+1221=12:1,AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SB,SK,SU*19:1,AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SK,SU*36:1,AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SK,SU
+481=14:1,1*31:1,1
+1250=20:1,D8*23:2,D8,RD8*29:2,D8,RD8*37:1,D8*40:2,D8,RD8*44:2,D8,RD8
+1068=20:3,F,M*37:3,F,M
+1073=21:1,Y*38:1,N
+1069=21:2,18*38:2,01,19,34
+1270=22:1:1,ABK,BK*22:2:1,ABF,BF*22:3:1,ABF,BF*22:4:1,ABF,BF*22:5:1,ABF,BF*22:6:1,ABF,BF*22:7:1,ABF,BF*22:8:1,ABF,BF*27:1,ZZ*39:1:1,ABK,BK*39:2:1,ABF,BF*39:3:1,ABF,BF*39:4:1,ABF,BF*39:5:1,ABF,BF*39:6:1,ABF,BF*39:7:1,ABF,BF*39:8:1,ABF,BF*42:1,BF,BK,ZZ
+374=23:1,102,291*29:1,291*40:1,102,291*44:1,291
+1365=24:1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,B1,B2,B3,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C1,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,DG,DM,DS,GF,GN,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,UC*41:1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS
+235=24:2:1,AD,CJ,HC,ID,IV,N4,ZZ*41:2:1,AD,CJ,HC,ID,IV,N4,ZZ
+1207=24:3,FAM*41:3,CHD,DEP,ECH,EMP,ESP,FAM,IND,SPC,SPO
+522=25:1,R*26:1,PB
+1336=41:4,AP,C1,CO,HM,IP,OT,PR,PS,SP,WC
+ELEMENT FORMATS
+1251=20:2,0,,Date CCYYMMDD
+SUMMARY
+ELEMENT EQUALITY
+1:13=47:2
+3:2=45:2
+RULES
+24=13:4'EQ'0!USAGE!2!1
+30=13:4'EQ'1!USAGE!2!1
+ELEMENT COUNTERS
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=START OF INTERCHANGE HEADER
+FUNCTIONAL GROUP=START OF FUNCTIONAL GROUP
+ST HEADER=START OF ST HEADER
+2000A=INFORMATION SOURCE LEVEL
+2100A=INFORMATION SOURCE NAME
+2000B=INFORMATION RECEIVER LEVEL
+2100B=INFORMATION RECEIVER NAME
+2000C=SUBSCRIBER LEVEL
+2100C=SUBSCRIBER NAME
+2110C=SUBSCRIBER ELIGIBILITY OR BENEFIT INQUIRY
+2000D=DEPENDENT LEVEL
+2100D=DEPENDENT NAME
+2110D=DEPENDENT ELIGIBILITY OR BENEFIT INQUIRY
+END ST HEADER LOOP=END ST HEADER LOOP
+END GS LOOP=END OF FUNCTIONAL HEADER
+END ISA LOOP=END OF INTERCHANGE HEADER
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Header
+GS=2,Functional Group
+ST=3,Transaction Set Header
+BHT=4,Beginning of Hierarchical Transaction
+HL=5,Information Source Level
+NM1=6,Information Source Name
+HL=7,Information Receiver Level
+NM1=8,Information Receiver Name
+REF=9,Information Receiver Additional Identification
+N3=10,Information Receiver Address
+N4=11,Information Receiver City
+PRV=12,Information Receiver Provider Information
+HL=13,Subscriber Level
+TRN=14,Subscriber Trace Number
+NM1=15,Subscriber Name
+REF=16,Subscriber Additional Identification
+N3=17,Subscriber Address
+N4=18,Subscriber City
+PRV=19,Provider Information
+DMG=20,Subscriber Demographic Information
+INS=21,Multiple Birth Sequence Number
+HI=22,Subscriber Health Care Diagnosis Code
+DTP=23,Subscriber Date
+EQ=24,Subscriber Eligibility or Benefit Inquiry
+AMT=25,Subscriber Spend Down Amount
+AMT=26,Subscriber Spend Down Total Billed Amount
+III=27,Subscriber Eligibility or Benefit Additional Inquiry Information
+REF=28,Subscriber Additional Information
+DTP=29,Subscriber Eligibility/Benefit Date
+HL=30,Dependent Level
+TRN=31,Dependent Trace Number
+NM1=32,Dependent Name
+REF=33,Dependent Additional Identification
+N3=34,Dependent Address
+N4=35,Dependent City
+PRV=36,Provider Information
+DMG=37,Dependent Demographic Information
+INS=38,Dependent Relationship
+HI=39,Dependent Health Care Diagnosis Code
+DTP=40,Dependent Date
+EQ=41,Dependent Eligibility or Benefit Inquiry
+III=42,Dependent Eligibility or Benefit Additional Inquiry Information
+REF=43,Dependent Additional Information
+DTP=44,Dependent Eligibility/Benefit Date
+SAMPLE DATA
+ISA*00*..........*01*SECRET....*ZZ*SUBMITTERS.ID..*ZZ*RECEIVERS.ID...*030101*1253*^*00501*000000905*1*T*:~
+GS*HS*SENDER CODE*RECEIVERCODE*19991231*0802*1*X*005010X279A1~
+ST*270*1234*005010X279A1~
+BHT*0022*13*10001234*20060501*1319~
+HL*1**20*1~
+NM1*PR*2*ABC COMPANY*****PI*842610001~
+HL*2*1*21*1~
+NM1*1P*2*BONE AND JOINT CLINIC*****SV*2000035~
+HL*3*2*22*0~
+TRN*1*93175-012547*9877281234~
+NM1*IL*1*SMITH*ROBERT****MI*11122333301~
+DMG*D8*19430519~
+DTP*291*D8*20060501~
+EQ*30~
+SE*13*1234~
+GE*1*1~
+IEA*1*000000905~

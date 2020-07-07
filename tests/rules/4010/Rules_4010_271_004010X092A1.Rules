@@ -1,0 +1,772 @@
+FILE DATA
+Version=004010X092A1
+Description=271 Eligibility, Coverage or Benefit Information
+ELEMENT DEFINITIONS
+19=AN,2,30
+26=ID,2,3
+28=NO,1,9
+66=ID,1,2
+67=AN,2,80
+93=AN,1,60
+96=NO,1,10
+97=NO,1,6
+98=ID,2,3
+101=ID,2,2
+102=AN,10,10
+103=ID,2,2
+104=AN,10,10
+105=ID,2,2
+106=AN,15,15
+107=AN,15,15
+108=DT,6,6
+109=TM,4,4
+110=ID,1,1
+111=ID,5,5
+112=NO,9,9
+113=ID,1,1
+114=ID,1,1
+115=ID,1,1
+116=ID,3,15
+11111116=NO,1,5
+11111112=NO,1,9
+124=AN,2,15
+127=AN,1,30
+128=ID,2,3
+142=AN,2,15
+143=ID,3,3
+156=ID,2,2
+166=AN,1,55
+234=AN,1,48
+235=ID,2,2
+309=ID,1,2
+310=AN,1,30
+329=AN,4,9
+337=TM,4,8
+352=AN,1,80
+353=ID,2,2
+355=ID,2,2
+364=AN,1,80
+365=ID,2,2
+366=ID,2,2
+373=DT,8,8
+374=ID,3,3
+380=R,1,15
+447=AN,1,6
+455=ID,1,2
+478=ID,1,1
+479=ID,2,2
+480=AN,1,12
+481=ID,1,2
+509=AN,10,10
+522=ID,1,3
+559=ID,2,2
+584=ID,2,2
+615=ID,1,2
+616=NO,1,3
+628=AN,1,12
+640=ID,2,2
+659=ID,1,2
+673=ID,2,2
+678=ID,1,2
+679=ID,1,1
+734=AN,1,12
+735=ID,1,12
+736=ID,1,1
+782=R,1,18
+875=ID,3,3
+889=ID,1,1
+901=ID,2,2
+933=AN,1,264
+934=ID,2,2
+954=R,1,10
+1005=ID,4,4
+1035=AN,1,35
+1036=AN,1,25
+1037=AN,1,25
+1038=AN,1,10
+1039=AN,1,10
+1065=ID,1,1
+1066=ID,1,2
+1067=ID,1,1
+1068=ID,1,1
+1069=ID,2,2
+1073=ID,1,1
+1109=ID,1,1
+1136=ID,2,2
+1165=ID,1,1
+1167=R,1,6
+1203=ID,2,3
+1204=AN,1,50
+1207=ID,3,3
+1216=ID,1,1
+1218=ID,1,1
+1219=AN,1,2
+1220=ID,1,1
+1221=AN,1,3
+1250=ID,2,3
+1251=AN,1,35
+1270=ID,2,3
+1271=AN,1,30
+1336=ID,1,3
+1339=AN,2,2
+1365=ID,1,2
+1370=ID,1,2
+1390=ID,1,2
+1470=NO,1,9
+COMPOSITE ELEMENT DEFINITIONS
+C003=[235,O][234,O][1339,O][1339,O][1339,O][1339,O][352,O],@@....#
+SEGMENT DEFINITIONS
+AAA=[1073][559][901][889],@#@@
+BHT=[1005,M][353,M][127][373,M][337,M][640],@@.@@#
+DMG=[1250][1251][1068][1067][1109][1066][26][659][380]+P0102,...######
+DTP=[374,M][1250,M][1251,M]
+EB=[1390][1207][1365][1336][1204][615][782][954][673][380][1073][1073][C003]+P0910,@............*1
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+HL=[628][734][735][736],@#@@,@@@@
+HSD=[673][380][355][1167][615][616][678][679]+P0102C0605
+LS=[447,M]
+LE=[447,M]
+IEA=[11111116,M][11111112,M]
+III=[1270,M][1271,M]
+INS=[1073][1069][875][1203][1216][1218][1219][584][1220][1073][1250][1251][1165][19][156][26][1470],@@..####..######.
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][110,M][111,M][112,M][113,M][114,M][115,M]
+MSG=[933][934][1470],@##
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67]+P0809,@@...#.@@,@@.......,@@...#.##,@@...#...
+N3=[166,M][166]
+N4=[19][156][116][26][309][310],......,....##
+PER=[366][93][365][364][365][364][365][364]+P0304P0506P0708,@.......
+PRV=[1221][128][127],@@@
+REF=[128,M][127,M][352]+R0203,@@#,@@.
+ST=[143,M][329,M]
+SE=[96,M][329,M]
+TRN=[481,M][127,M][509,M][127]
+SEGMENT SELF RULES
+NM1~2~2~2~4,5
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+States=[States.txt*,]
+FORMATS
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][BHT*1,M]{2000A:>1[HL*1,M][AAA*1,O,9]{2100A:1[NM1*1,M][REF,O,9][PER*1,O,3][AAA*1,O,9]}{2000B:>1[HL*2]{2100B:1[NM1*1,M][REF,O,9][AAA*1,O,9]}{2000C:>1[HL*2][TRN,O,3]{2100C:1[NM1*2,M][REF*2,O,9][N3][N4*1][PER*1,O,3][AAA*1,O,9][DMG*1][INS*1][DTP,O,9]{2110C:>1[EB*1,X][HSD,O,9][REF,O,9][DTP,O,20][AAA*1,O,9][MSG*1,O,10]{2115C:10[III]}{LoopLS:1[LS]{2120C:1[NM1*4][N3][N4*1][PER*1,O,3][PRV*1]}{LoopLE:1[LE]}}}{2000D:>1[HL*2,X][TRN,O,3]{2100D:1[NM1*4,M][REF,O,9][N3][N4*2][PER*1,O,3][AAA*1,O,9][DMG*1][INS*1][DTP,O,9]{2110D:>1[EB*1][HSD,O,9][REF,O,9][DTP,O,20][AAA*1,O,9][MSG*1,O,10]{2115D:10[III]}{LoopLS:1[LS]{2120D:1[NM1*4,X][N3][N4*1][PER*1,O,3][PRV*1]}{LoopLE:1[+LE,X]}}}}}}}}}{END ST HEADER LOOP:1[+SE,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+110=1:11,U
+111=1:12,00401
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,HB
+455=2:7,X
+480=2:8,004010X092A1
+143=3:1,271
+1005=4:1,0022
+353=4:2,11
+735=5:3,20*11:3,21*15:3,22*40:3,23
+736=5:4,0,1*11:4,0,1*15:4,0,1*40:4,0
+1073=6:1,N,Y*10:1,N,Y*14:1,N,Y*22:1,N,Y*24:1,Y*24:10,N,Y*26:11,N,U,Y*26:12,N,U,Y*30:1,N,Y*47:1,N,Y*49:1,N*49:10,N,Y*51:11,N,U,Y*51:12,N,U,Y*55:1,N,Y
+901=6:3,04,41,42,79*10:3,04,41,42,79,80,T4*14:3,15,41,43,44,45,46,47,48,50,51,79,97,T4*22:3,15,42,43,45,47,48,49,51,52,56,57,58,60,61,62,63,64,65,66,67,68,71,72,73,74,75,76,77,78*30:3,15,52,53,54,55,56,57,60,61,62,63,69,70*47:3,15,42,43,45,47,48,49,51,52,56,57,58,60,61,62,63,64,65,66,67,68,71*55:3,15,52,53,54,55,56,57,60,61,62,63,69,70
+889=6:4,C,N,P,R,S,Y*10:4,C,N,P,R,S,W,X,Y*14:4,C,N,R,S,W,X,Y*22:4,C,N,R,S,W,X,Y*30:4,C,N,R,W,X,Y*47:4,C,N,R,S,W,X,Y*55:4,C,N,R,W,X,Y
+98=7:1,2B,36,GP,P5,PR*12:1,1P,2B,36,80,FA,GP,P5,PR*17:1,IL*34:1,13,1P,2B,36,73,FA,GP,IL,LR,P3,P4,P5,PR,PRP,SEP,TTP,VN,X3*42:1,03*59:1,13,1P,2B,36,73,FA,GP,IL,LR,P3,P4,P5,PR,PRP,SEP,TTP,VN,X3
+1065=7:2,1,2*12:2,1,2*17:2,1*34:2,1,2*42:2,1*59:2,1,2
+66=7:8,24,46,FI,NI,PI,XV,XX*12:8,24,34,FI,PI,PP,SV,XV,XX*17:8,MI,ZZ*34:8,24,34,46,FA,FI,MI,NI,PI,PP,SV,XV,XX,ZZ*42:8,MI,ZZ*59:8,24,34,46,FA,FI,MI,NI,PI,PP,SV,XV,XX,ZZ
+128=8:1,18,55*13:1,0B,1C,1D,1J,4A,CT,EL,EO,HPI,JD,N5,N7,Q4,SY,TJ*18:1,18,1L,1W,3H,49,6P,A6,CT,EA,EJ,F6,GH,HJ,IF,IG,ML,N6,NQ,Q4,SY*28:1,18,1L,1W,49,6P,9F,A6,F6,G1,IG,N6,NQ*38:2,9K,D3,EI,HPI,SY,TJ,ZZ*43:1,18,1L,1W,49,6P,A6,CT,EA,EJ,F6,GH,HJ,IF,IG,M7,N6,NQ,Q4,SY*53:1,18,1L,1W,49,6P,9F,A6,F6,G1,IG,N6,NQ*63:2,9K,D3,EI,HPI,SY,TJ,ZZ
+366=9:1,IC*21:1,IC*37:1,IC*46:1,IC*62:1,IC
+365=9:3,ED,EM,FX,TE*9:5,ED,EM,EX,FX,TE*9:7,ED,EM,EX,FX,TE*21:3,HP,TE,WP*21:5,EX,HP,TE,WP*21:7,EX,HP,TE,WP*37:3,ED,EM,FX,TE,WP*37:5,ED,EM,EX,FX,TE,WP*37:7,ED,EM,EX,FX,TE,WP*46:3,HP,TE,WP*46:5,EX,HP,TE,WP*46:7,EX,HP,TE,WP*62:3,ED,EM,FX,TE,WP*62:5,ED,EM,EX,FX,TE,WP*62:7,ED,EM,EX,FX,TE,WP
+481=16:1,1,2*41:1,1,2
+156=20:2,[States]
+309=20:5,CY,FI*36:5,RJ*61:5,RJ
+1250=23:1,D8*25:2,D8,RD8*29:2,D8,RD8*48:1,D8*50:2,D8,RD8*54:2,D8,RD8
+1068=23:3,F,M,U*48:3,F,M,U
+1069=24:2,18*49:2,01,19,21,34
+875=24:3,001*49:3,001
+1203=24:4,25*49:4,25
+1220=24:9,F,N,P*49:9,F,N,P
+374=25:1,102,152,291,307,318,340,341,342,343,346,347,356,357,382,435,442,458,472,539,540,636,771*29:1,193,194,198,290,292,295,304,307,318,348,349,356,357,435,472,636*50:1,102,152,291,307,318,340,341,342,343,346,347,382,435,442,458,472,539,540,636*54:1,193,194,198,290,292,295,304,307,318,348,349,356,357,435,472,636,771
+1390=26:1,1,2,3,4,5,6,7,8,A,B,C,CB,D,E,F,G,H,I,J,K,L,M,MC,N,O,P,Q,R,S,T,U,V,W,X,Y*51:1,1,2,3,4,5,6,7,8,A,B,C,CB,D,E,F,G,H,I,J,K,L,M,MC,N,O,P,Q,R,S,T,U,V,W,X,Y
+1207=26:2,CHD,DEP,ECH,EMP,ESP,FAM,IND,SPC,SPO*51:2,CHD,DEP,ECH,ESP,FAM,IND,SPC,SPO
+1365=26:3,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS*51:3,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS
+1336=26:4,12,13,14,15,16,41,42,43,47,AP,C1,CO,CP,D,DB,EP,FF,GP,HM,HN,HS,IN,IP,LC,LD,LI,LT,MA,MB,MC,MH,MI,MP,OT,PE,PL,PP,PR,PS,QM,RP,SP,TF,WC,WU*51:4,12,13,14,15,16,41,42,43,47,AP,C1,CO,CP,D,DB,EP,FF,GP,HM,HN,HS,IN,IP,LC,LD,LI,LT,MA,MB,MC,MH,MI,MP,OT,PE,PL,PP,PR,PS,QM,RP,SP,TF,WC,WU
+615=26:6,6,7,13,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36*27:5,6,7,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35*51:6,6,7,13,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36*52:5,6,7,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35
+673=26:9,99,CA,CE,DB,DY,HS,LA,LE,MN,P6,QA,S7,S8,VS,YY*27:1,DY,FL,HS,MN,VS*51:9,99,CA,CE,DB,DY,HS,LA,LE,MN,P6,QA,S7,S8,VS,YY*52:1,DY,FL,HS,MN,VS
+235=26:13:1,AD,CJ,HC,ID,IV,N4,ZZ*51:13:1,AD,CJ,HC,ID,IV,N4,ZZ
+355=27:3,DA,MO,VS,WK,YR*52:3,DA,MO,VS,WK,YR
+678=27:7,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SG,SL,SP,SX,SY,SZ,T,U,V,W,X,Y*52:7,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SG,SL,SP,SX,SY,SZ,T,U,V,W,X,Y
+679=27:8,A,B,C,D,E,F,G,Y*52:8,A,B,C,D,E,F,G,Y
+1270=32:1,BF,BK,ZZ*57:1,BF,BK,ZZ
+447=33:1,2120*39:1,2120*58:1,2120*64:1,2120
+1221=38:1,AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SB,SK,SU*63:1,AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SB,SK,SU
+ELEMENT FORMATS
+SUMMARY
+ELEMENT EQUALITY
+1:13=69:2
+3:2=65:2
+RULES
+28:1=26:1'EQ'R!LOCALCODE!1L,1W,18,49,6P,A6,F6,IG,N6,NQ!18,1L,1W,49,6P,9F,A6,G1,IG,N6,NQ
+26=15:4'EQ'0!USAGE!2!1
+34=33'EXISTS'!USAGE!2!1
+39=33'EXISTS'!USAGE!2!1
+40=15:4'EQ'1!USAGE!2!1
+53:1=51:1'EQ'R!LOCALCODE!1L,1W,18,49,6P,A6,F6,IG,N6,NQ!18,1L,1W,49,6P,9F,A6,G1,IG,N6,NQ
+59=58'EXISTS'!USAGE!2!1
+64=58'EXISTS'!USAGE!2!1
+ELEMENT CODE DESCRIPTION
+66~24~Employer’s Identification Number
+66~46~Electronic Transmitter Identification Number (ETIN)
+66~FI~Federal Taxpayer’s Identification Number
+66~NI~National Association of Insurance Commissioners (NAIC) Identification
+66~PI~Payor Identification
+66~PP~Pharmacy Processor Number
+66~SV~Service Provider Number
+66~XV~Health Care Financing Administration National PlanID
+66~XX~Health Care Financing Administration National Provider Identifier
+98~1P~Provider
+98~2B~Third-Party Administrator
+98~36~Employer
+98~80~Hospital
+98~FA~Facility
+98~GP~Gateway Provider
+98~P5~Plan Sponsor
+98~PR~Payer
+101~00~No Authorization Information Present (No Meaningful Information in I02)
+101~03~Additional Data Identification
+103~00~No Security Information Present (No MeaningfulInformation in I04)
+103~01~Password
+105~01~Duns (Dun & Bradstreet)
+105~14~Duns Plus Suffix
+105~20~Health Industry Number (HIN)
+105~27~Carrier Identification Number as assigned by Health Care Financing Administration (HCFA)
+105~28~Fiscal Intermediary Identification Number as assigned by Health Care Financing Administration (HCFA)
+105~29~Medicare Provider and Supplier Identification Number as assigned by Health Care Financing Administration (HCFA)
+105~30~U.S. Federal Tax Identification Number
+105~33~National Association of Insurance Commissioners Company Code (NAIC)
+105~ZZ~Mutually Defined
+110~U~U.S. EDI Community of ASC X12, TDCC, and UCS
+111~00401~Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1997
+113~0~No Acknowledgment Requested
+113~1~Interchange Acknowledgment Requested
+114~P~Production Data
+114~T~Test Data
+128~18~Plan Number
+128~1L~Group or Policy Number
+128~55~Sequence Number
+128~OB~State License Number
+128~1D~Medicaid Provider Number
+128~1W~Member Identification Number
+128~3H~Case Number
+128~49~Family Unit Number
+128~4A~Personal Identification Number (PIN)
+128~9F~Referral Number
+128~6P~Group Number
+128~A6~Employee Identification Number
+128~CT~Contract Number
+128~EA~Medical Record Identification Number
+128~EJ~Patient Account Number
+128~EL~Electronic device pin number
+128~EO~Submitter Identification Number
+128~F6~Health Insurance Claim (HIC) Number
+128~G1~Prior Authorization Number
+128~GH~Identification Card Serial Number
+128~HJ~Identity Card Number
+128~HPI~Health Care Financing Administration National Provider Identifier
+128~IC~Medicare Provider Number
+128~IF~Issue Number
+128~IG~Insurance Policy Number
+128~IJ~Facility ID Number
+128~JD~User Identification
+128~ML~Military Rank/Civilian Pay Grade Number
+128~M7~Medical Assistance Category
+128~N5~Provider Plan Network Identification Number
+128~N6~Plan Network Identification Number
+128~N7~Facility Network Identification Number
+128~NQ~Medicaid Recipient Identification Number
+128~Q4~Prior Identifier Number
+128~SY~Social Security Number
+128~TJ~Federal Taxpayer’s Identification Number
+143~271~Eligibility, Coverage or Benefit Information
+235~AD~American Dental Association Codes
+235~CJ~Current Procedural Terminology (CPT) Codes
+235~HC~Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes
+235~ID~International Classification of Diseases Clinical Modification (ICD-9-CM) - Procedure
+235~IV~Home Infusion EDI Coalition (HIEC) Product/Service Code
+235~N4~National Drug Code in 5-4-2 Format
+235~ZZ~Mutually Defined NOT ADVISED
+309~CY~County/Parish
+309~FI~Federal Information Processing Standards (FIPS) 55 (Named Populated Places)
+355~DA~Days
+355~MO~Months
+355~VS~Visit
+355~WK~Week
+355~YR~Years
+365~ED~Electronic Data Interchange Access Number
+365~EM~Electronic Mail
+365~EX~Telephone Extension
+365~FX~Facsimile
+365~HP~Home Phone Number
+365~TE~Telephone
+365~WP~Work Phone Number
+366~IC~Information Contact
+373~11~Response
+374~102~Issue
+374~152~Effective Date of Change
+374~193~Period Start
+374~194~Period End
+374~198~Completion
+374~290~Coordination of Benefits
+374~291~Plan
+374~307~Eligibility
+374~318~Added
+374~340~Consolidated Omnibus Budget Reconciliation Act (COBRA) Begin
+374~341~Consolidated Omnibus Budget Reconciliation Act (COBRA) End
+374~342~Premium Paid to Date Begin
+374~343~Premium Paid to Date End
+374~346~Plan Begin
+374~347~Plan End
+374~356~Eligibility Begin
+374~357~Eligibility End
+374~382~Enrollment
+374~435~Admission
+374~442~Date of Death
+374~458~Certification
+374~472~Service
+374~539~Policy Effective
+374~540~Policy Expiration
+374~636~Date of Last Update
+374~771~Status
+479~HB~Eligibility, Coverage or Benefit Information (271)
+455~X~Accredited Standards Committee X12
+480~004010X092A1~Version / Release / Industry Identifier Code
+481~1~Current Transaction Trace Numbers
+481~2~Referenced Transaction Trace Numbers
+615~6~Hour
+615~7~Day
+615~13~24 Hours
+615~21~Years
+615~22~Service Year
+615~23~Calendar Year
+615~24~Year to Date
+615~25~Contract
+615~26~Episode
+615~27~Visit
+615~28~Outlier
+615~29~Remaining
+615~30~Exceeded
+615~31~Not Exceeded
+615~32~Lifetime
+615~33~Lifetime Remaining
+615~34~Month
+615~35~Week
+615~36~Admisson
+673~99~Quantity Used
+673~CA~Covered - Actual
+673~CE~Covered - Estimated
+673~DB~Deductible Blood Units
+673~DY~Days
+673~FL~Units
+673~HS~Hours
+673~LA~Life-time Reserve - Actual
+673~LE~Life-time Reserve - Estimated
+673~MN~Month
+673~P6~Number of Services or Procedures
+673~QA~Quantity Approved
+673~S7~Age, High Value Use this code when a benefit is based on amaximum age for the patient.
+673~S8~Age, Low Value Use this code when a benefit is based on a minimum age for the patient.
+673~VS~Visits
+673~YY~Years
+678~1~1st Week of the Month
+678~2~2nd Week of the Month
+678~3~3rd Week of the Month
+678~4~4th Week of the Month
+678~5~5th Week of the Month
+678~6~1st & 3rd Weeks of the Month
+678~7~2nd & 4th Weeks of the Month
+678~8~1st Working Day of Period
+678~9~Last Working Day of Period
+678~A~Monday through Friday
+678~B~Monday through Saturday
+678~C~Monday through Sunday
+678~D~Monday
+678~E~Tuesday
+678~F~Wednesday
+678~G~Thursday
+678~H~Friday
+678~J~Saturday
+678~K~Sunday
+678~L~Monday through Thursday
+678~M~Immediately
+678~N~As Directed
+678~O~Daily Mon. through Fri.
+678~P~1/2 Mon. & 1/2 Thurs.
+678~Q~1/2 Tues. & 1/2 Thurs.
+678~R~1/2 Wed. & 1/2 Fri.
+678~S~Once Anytime Mon. through Fri.
+678~SG~Tuesday through Friday
+678~SL~Monday, Tuesday and Thursday
+678~SP~Monday, Tuesday and Friday
+678~SX~Wednesday and Thursday
+678~SY~Monday, Wednesday and Thursday
+678~SZ~Tuesday, Thursday and Friday
+678~T~1/2 Tue. & 1/2 Fri.
+678~U~1/2 Mon. & 1/2 Wed.
+678~V~1/3 Mon., 1/3 Wed., 1/3 Fri.
+678~W~Whenever Necessary
+678~X~1/2 By Wed., Bal. By Fri.
+678~Y~None (Also Used to Cancel or Override a Previous Pattern)
+679~A~1st Shift (Normal Working Hours)
+679~B~2nd Shift
+679~C~3rd Shift
+679~D~A.M.
+679~E~P.M.
+679~F~As Directed
+679~G~Any Shift
+679~Y~None (Also Used to Cancel or Override a Previous Pattern)
+735~20~Information Source
+735~21~Information Receiver
+735~22~Subscriber
+735~23~Dependant
+736~0~No Subordinate HL Segment in This Hierarchical Structure.
+736~1~Additional Subordinate HL Data Segment in This Hierarchical Structure.
+875~001~Change
+889~C~Please Correct and Resubmit
+889~N~Resubmission Not Allowed
+889~P~Please Resubmit Original Transaction
+889~R~Resubmission Allowed
+889~S~Do Not Resubmit; Inquiry Initiated to a Third Party
+889~W~Please Wait 30 Days and Resubmit
+889~X~Please Wait 10 Days and Resubmit
+889~Y~Do Not Resubmit; We Will Hold Your Request and Respond Again Shortly
+901~04~Authorized Quantity Exceeded
+901~15~Required application data missing
+901~41~Authorization/Access Restrictions
+901~42~Unable to Respond at Current Time
+901~43~Invalid/Missing Provider Identification
+901~45~Invalid/Missing Provider Specialty
+901~47~Invalid/Missing Provider State
+901~48~Invalid/Missing Referring Provider Identification Number
+901~49~Provider is Not Primary Care Physician
+901~50~Provider Ineligible for Inquiries
+901~51~Provider Not on File
+901~52~Service Dates Not Within Provider Plan Enrollment
+901~53~Inquired Benefit Inconsistent with Provider Type
+901~54~Inappropriate Product/Service ID Qualifier
+901~55~Inappropriate Product/Service ID
+901~56~Inappropriate Date
+901~57~Invalid/Missing Date(s) of Service
+901~58~Invalid/Missing Date-of-Birth
+901~60~Date of Birth Follows Date(s) of 
+901~61~Date of Death Precedes Date(s) of Service
+901~62~Date of Service Not Within Allowable Inquiry Period
+901~63~Date of Service in Future
+901~64~Invalid/Missing Patient ID
+901~65~Invalid/Missing Patient Name
+901~66~Invalid/Missing Patient Gender Code
+901~67~Patient Not Found
+901~68~Duplicate Patient ID Number
+901~69~Inconsistent with Patient’s Age
+901~70~Inconsistent with Patient’s Gender
+901~71~Patient Birth Date Does Not Match That for the Patient on the Database
+901~72~Invalid/Missing Subscriber/Insured ID
+901~73~Invalid/Missing Subscriber/Insured Name
+901~74~Invalid/Missing Subscriber/Insured Gender Code
+901~75~Subscriber/Insured Not Found
+901~76~Duplicate Subscriber/Insured ID Number
+901~77~Subscriber Found, Patient Not Found
+901~78~Subscriber/Insured Not in Group/Plan Identified
+901~79~Invalid Participant Identification
+901~80~No Response received - Transaction Terminated
+901~T4~Payer Name or Identifier Missing
+1005~0022~Information Source, Information Receiver,Subscriber, Dependent
+1065~1~Person
+1065~2~Non-Person Entity
+1068~M~Male
+1068~F~Female
+1068~U~Unknown
+1069~18~Self
+1073~N~No
+1073~Y~Yes
+1073~U~Unknown
+1203~25~Change in Indentifying Data Elements
+1207~CHD~Children Only
+1207~DEP~Dependents Only
+1207~ECH~Employee and Children
+1207~EMP~Employee Only
+1207~ESP~Employee and Spouse
+1207~FAM~Family
+1207~IND~Individual
+1207~SPC~Spouse and Children
+1207~SPO~Spouse Only
+1220~F~Full-Time Student
+1220~N~Not a Student
+1220~P~Part-Time
+1221~AD~Admitting
+1221~AT~Attending
+1221~BI~Billing
+1221~CO~Consulting
+1221~CV~Covering
+1221~H~Hospital
+1221~HH~Home Health Care
+1221~LA~Laboratory
+1221~OT~Other Physician
+1221~P1~Pharmacist
+1221~P2~Pharmacy
+1221~PC~Primary Care Physician
+1221~PE~Performing
+1221~R~Rural Health Clinic
+1221~RF~Referring
+1221~SB~Submitting
+1221~SK~Skilled Nursing Facility
+1221~SU~Supervising
+1250~D8~Date Expressed in Format CCYYMMDD
+1250~RD8~Range of Dates Expressed in Format CCYYMMDDCCYYMMDD
+1271~11~Office
+1271~12~Home
+1271~21~Inpatient Hospital
+1271~22~Outpatient Hospital
+1271~23~Emergency Room - Hospital
+1271~24~Ambulatory Surgical Center
+1271~25~Birthing Center
+1271~26~Military Treatment Facility
+1271~31~Skilled Nursing Facility
+1271~32~Nursing Facility
+1271~33~Custodial Care Facility
+1271~34~Hospice
+1271~41~Ambulance - Land
+1271~42~Ambulance - Air or Water
+1271~50~Federally Qualified Health Center
+1271~51~Inpatient Psychiatric Facility
+1271~52~Psychiatric Facility Partial Hospitalization
+1271~53~Community Mental Health Center
+1271~54~Intermediate Care Facility/Mentally Retarded
+1271~55~Residential Substance Abuse Treatment Facility
+1271~56~Psychiatric Residential Treatment Center
+1271~60~Mass Immunization Center
+1271~61~Comprehensive Inpatient Rehabilitation Facility
+1271~62~Comprehensive Outpatient Rehabilitation Facility
+1271~65~End-Stage Renal Disease Treatment Facility
+1271~71~State or Local Public Health Clinic
+1271~72~Rural Health Clinic
+1271~81~Independent Laboratory
+1271~99~Other Unlisted Facility
+1336~12~Medicare Secondary Working Aged Beneficiary or Spouse with Employer Group Health Plan
+1336~13~Medicare Secondary End-Stage Renal Disease Beneficiary in the 12 month coordination period with an employer’s group health plan
+1336~14~Medicare Secondary, No-fault Insurance including Auto is Primary
+1336~15~Medicare Secondary Worker’s Compensation
+1336~16~Medicare Secondary Public Health Service (PHS)or Other Federal Agency
+1336~41~Medicare Secondary Black Lung
+1336~42~Medicare Secondary Veteran’s Administration
+1336~43~Medicare Secondary Disabled Beneficiary Under Age 65 with Large Group Health Plan (LGHP)
+1336~47~Medicare Secondary, Other Liability Insurance is Primary
+1336~AP~Auto Insurance Policy
+1336~C1~Commercial
+1336~CO~Consolidated Omnibus Budget Reconciliation Act (COBRA)
+1336~CP~Medicare Conditionally Primary
+1336~D~Disability
+1336~DB~Disability Benefits
+1336~EP~Exclusive Provider Organization
+1336~FF~Family or Friends
+1336~GP~Group Policy
+1336~HM~Health Maintenance Organization (HMO)
+1336~HN~Health Maintenance Organization (HMO) - Medicare Risk
+1336~HS~Special Low Income Medicare Beneficiary
+1336~IN~Indemnity
+1336~IP~Individual Policy
+1336~LC~Long Term Care
+1336~LD~Long Term Policy
+1336~LI~Life Insurance
+1336~LT~Litigation
+1336~MA~Medicare Part A
+1336~MB~Medicare Part B
+1336~MC~Medicaid
+1336~MH~Medigap Part A
+1336~MI~Medigap Part B
+1336~MP~Medicare Primary
+1336~OT~Other
+1336~PE~Property Insurance - Personal
+1336~PL~Personal
+1336~PP~Personal Payment (Cash - No Insurance)
+1336~PR~Preferred Provider Organization (PPO)
+1336~PS~Point of Service (POS)
+1336~QM~Qualified Medicare Beneficiary
+1336~RP~Property Insurance - Real
+1336~SP~Supplemental Policy
+1336~TF~Tax Equity Fiscal Responsibility Act (TEFRA)
+1336~WC~Workers Compensation
+1336~WU~Wrap Up Policy
+1365~1~Medical Care
+1365~2~Surgical
+1365~3~Consultation
+1365~4~Diagnostic X-Ray
+1365~5~Diagnostic Lab
+1365~6~Radiation Therapy
+1365~7~Anesthesia
+1365~8~Surgical Assistance
+1365~9~Other Medical
+1365~10~Blood Charges
+1365~11~Used Durable Medical Equipment
+1365~12~Durable Medical Equipment Purchase
+1365~13~Ambulatory Service Center Facility
+1365~14~Renal Supplies in the Home
+1365~15~Alternate Method Dialysis
+1365~16~Chronic Renal Disease (CRD) Equipment
+1365~17~Pre-Admission Testing
+1365~18~Durable Medical Equipment Rental
+1365~19~Pneumonia Vaccine
+1365~20~Second Surgical Opinion
+1365~21~Third Surgical Opinion
+1365~22~Social Work
+1365~23~Diagnostic Dental
+1365~24~Periodontics
+1365~25~Restorative
+1365~26~Endodontics
+1365~27~Maxillofacial Prosthetics
+1365~28~Adjunctive Dental Services
+1365~30~Health Benefit Plan Coverage
+1365~32~Plan Waiting Period
+1365~33~Chiropractic
+1365~34~Chiropractic Office Visits
+1365~35~Dental Care
+1365~36~Dental Crowns
+1365~37~Dental Accident
+1365~38~Orthodontics
+1365~39~Prosthodontics
+1365~40~Oral Surgery
+1365~41~Routine (Preventive) Dental
+1365~42~Home Health Care
+1365~43~Home Health Prescriptions
+1365~44~Home Health Visits
+1365~45~Hospice
+1365~46~Respite Care
+1365~47~Hospital
+1365~48~Hospital - Inpatient
+1365~49~Hospital - Room and Board
+1365~50~Hospital - Outpatient
+1365~51~Hospital - Emergency Accident
+1365~52~Hospital - Emergency Medical
+1365~53~Hospital - Ambulatory Surgical
+1365~54~Long Term Care
+1365~55~Major Medical
+1365~56~Medically Related Transportation
+1365~57~Air Transportation
+1365~58~Cabulance
+1365~59~Licensed Ambulance
+1365~60~General Benefits
+1365~61~In-vitro Fertilization
+1365~62~MRI/CAT Scan
+1365~63~Donor Procedures
+1365~64~Acupuncture
+1365~65~Newborn Care
+1365~66~Pathology
+1365~67~Smoking Cessation
+1365~68~Well Baby Care
+1365~69~Maternity
+1365~70~Transplants
+1365~71~Audiology Exam
+1365~72~Inhalation Therapy
+1365~73~Diagnostic Medical
+1365~74~Private Duty Nursing
+1365~75~Prosthetic Device
+1365~76~Dialysis
+1365~77~Otological Exam
+1365~78~Chemotherapy
+1365~79~Allergy Testing
+1365~80~Immunizations
+1365~81~Routine Physical
+1365~82~Family Planning
+1365~83~Infertility
+1365~84~Abortion
+1365~85~AIDS
+1365~86~Emergency Services
+1365~87~Cancer
+1365~88~Pharmacy
+1365~89~Free Standing Prescription Drug
+1365~90~Mail Order Prescription Drug
+1365~91~Brand Name Prescription Drug
+1365~92~Generic Prescription Drug
+1365~93~Podiatry
+1365~94~Podiatry - Office Visits
+1365~95~Podiatry - Nursing Home Visits
+1365~96~Professional (Physician)
+1365~97~Anesthesiologist
+1365~98~Professional (Physician) Visit - Office
+1365~99~Professional (Physician) Visit - Inpatient
+1365~A0~Professional (Physician) Visit - Outpatient
+1365~A1~Professional (Physician) Visit - Nursing Home
+1365~A2~Professional (Physician) Visit - Skilled Nursing Facility
+1365~A3~Professional (Physician) Visit - Home
+1365~A4~Psychiatric
+1365~A5~Psychiatric - Room and Board
+1365~A6~Psychotherapy
+1365~A7~Psychiatric - Inpatient
+1365~A8~Psychiatric - Outpatient
+1365~A9~Rehabilitation
+1365~AA~Rehabilitation - Room and Board
+1365~AB~Rehabilitation - Inpatient
+1365~AC~Rehabilitation - Outpatient
+1365~AD~Occupational Therapy
+1365~AE~Physical Medicine
+1365~AF~Speech Therapy
+1365~AG~Skilled Nursing Care
+1365~AH~Skilled Nursing Care - Room and Board
+1365~AI~Substance Abuse
+1365~AJ~Alcoholism
+1365~AK~Drug Addiction
+1365~AL~Vision (Optometry)
+1365~AM~Frames
+1365~AN~Routine Exam
+1365~AO~Lenses
+1365~AQ~Nonmedically Necessary Physical
+1365~AR~Experimental Drug Therapy
+1365~BA~Independent Medical Evaluation
+1365~BB~Partial Hospitalization (Psychiatric)
+1365~BC~Day Care (Psychiatric)
+1365~BD~Cognitive Therapy
+1365~BE~Massage Therapy
+1365~BF~Pulmonary Rehabilitation
+1365~BG~Cardiac Rehabilitation
+1365~BH~Pediatric
+1365~BI~Nursery
+1365~BJ~Skin
+1365~BK~Orthopedic
+1365~BL~Cardiac
+1365~BM~Lymphatic
+1365~BN~Gastrointestinal
+1365~BP~Endocrine
+1365~BQ~Neurology
+1365~BR~Eye
+1365~BS~Invasive Procedures
+1390~1~Active Coverage
+1390~2~Active - Full Risk Capitation
+1390~3~Active - Services Capitated 
+1390~4~Active - Services Capitated to Primary Care Physician
+1390~5~Active - Pending Investigation
+1390~6~Inactive
+1390~7~Inactive - Pending Eligibility Update
+1390~8~Inactive - Pending Investigation
+1390~A~Co-Insurance
+1390~B~Co-Payment
+1390~C~Deductible
+1390~CB~Coverage Basis
+1390~D~Benefit Description
+1390~E~Exclusions
+1390~F~Limitations
+1390~G~Out of Pocket (Stop Loss)
+1390~H~Unlimited
+1390~I~Non-Covered
+1390~J~Cost Containment
+1390~K~Reserve
+1390~L~Primary Care Provider
+1390~M~Pre-existing Condition
+1390~MC~Managed Care Coordinator
+1390~N~Services Restricted to Following Provider
+1390~O~Not Deemed a Medical Necessity
+1390~P~Benefit Disclaimer Not recommended. See section 1.3.10 Disclaimers Within the Transaction.
+1390~Q~Second Surgical Opinion Required
+1390~R~Other or Additional Payor
+1390~S~Prior Year(s) History
+1390~T~Card(s) Reported Lost/Stolen
+1390~U~Contact Following Entity for Eligibility or Benefit Information
+1390~V~Cannot Process
+1390~W~Other Source of Data
+1390~X~Health Care Facility
+1390~Y~Spend Down

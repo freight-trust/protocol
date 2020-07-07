@@ -1,0 +1,24 @@
+{
+  "SYNTAXIDENTIFIER_1": {
+    "SyntaxIdentifier_1": "UNOB",
+    "SyntaxVersionNumber_2": "1"
+  },
+  "INTERCHANGESENDER_2": {
+    "InterchangeSenderIdentification_1": "102096559TEST",
+    "IdentificationCodeQualifier_2": "16",
+    "InterchangeSenderInternalIdentification_3": "ZZUK"
+  },
+  "INTERCHANGERECIPIENT_3": {
+    "InterchangeRecipientIdentification_1": "PARTNERID",
+    "IdentificationCodeQualifier_2": "01",
+    "InterchangeRecipientInternalIdentification_3": "ZZUK"
+  },
+  "DATEANDTIMEOFPREPARATION_4": {
+    "Date_1": "071101",
+    "Time_2": "1701"
+  },
+  "InterchangeControlReference_5": "131",
+  "ApplicationReference_7": "INVOIC",
+  "AcknowledgementRequest_9": "1",
+  "TestIndicator_11": "1"
+}

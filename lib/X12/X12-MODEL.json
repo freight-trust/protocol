@@ -1,0 +1,35 @@
+{
+	"Model": "EdiNation.X12.HIPAA.005010",
+	"ST": {
+		"TransactionSetIdentifierCode_01": "837",
+		"TransactionSetControlNumber_02": "0021",
+		"ImplementationConventionPreference_03": "005010X222A1"
+	},
+	"BHT_BeginningOfHierarchicalTransaction": {
+		"HierarchicalStructureCode_01": "0019",
+		"TransactionSetPurposeCode_02": "00",
+		"SubmitterTransactionIdentifier_03": "244579",
+		"TransactionSetCreationDate_04": "20061015",
+		"TransactionSetCreationTime_05": "1023",
+		"TransactionTypeCode_06": "CH"
+	},
+	"AllNM1": {
+		"Loop1000A": {
+			"NM1_SubmitterName": {
+				"EntityIdentifierCode_01": "41",
+				"EntityTypeQualifier_02": "2",
+				"ResponseContactLastorOrganizationName_03": "PREMIER BILLING SERVICE",
+				"IdentificationCodeQualifier_08": "46",
+				"ResponseContactIdentifier_09": "TGJ23"
+			},
+			"PER_SubmitterEDIContactInformation": [{
+				"ContactFunctionCode_01": "IC",
+				"ResponseContactName_02": "JERRY",
+				"CommunicationNumberQualifier_03": "TE",
+				"ResponseContactCommunicationNumber_04": "3055552222",
+				"CommunicationNumberQualifier_05": "EX",
+				"ResponseContactCommunicationNumber_06": "231"
+			}]
+	},
+	"_comment": "... rest of the contents ...",
+}

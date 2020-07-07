@@ -1,0 +1,162 @@
+FILE DATA
+Version=004010X098
+Description=Functional Acknowledgement
+ELEMENT DEFINITIONS
+2=NO,1,6
+28=NO,1,9
+96=NO,1,10
+97=NO,1,6
+101=ID,2,2
+102=AN,10,10
+103=ID,2,2
+104=AN,10,10
+105=ID,2,2
+106=AN,15,15
+107=AN,15,15
+108=DT,6,6
+109=TM,4,4
+110=ID,1,1
+111=ID,5,5
+112=NO,9,9
+113=ID,1,1
+114=ID,1,1
+115=ID,1,1
+116=ID,3,15
+118=NO,1,9
+11111116=NO,1,5
+11111112=NO,1,9
+123=ID,1,3
+124=AN,2,15
+142=AN,2,15
+143=ID,3,3
+329=AN,4,9
+373=DT,8,8
+337=TM,4,8
+447=AN,1,6
+455=ID,1,2
+479=ID,2,2
+480=AN,1,12
+721=ID,2,3
+715=ID,1,1
+716=ID,1,3
+717=ID,1,1
+718=ID,1,3
+719=NO,1,6
+720=ID,1,3
+722=NO,1,2
+723=ID,1,3
+724=AN,1,99
+725=NO,1,4
+1528=NO,1,2
+COMPOSITE ELEMENT DEFINITIONS
+C030=[722,M][1528]
+SEGMENT DEFINITIONS
+AK1=[479,M][28,M]
+AK2=[143,M][329,M]
+AK3=[721,M][719,M][447][720]
+AK4=[C030,M][725][723,M][724]
+AK5=[717,M][718][718][718][718][718]
+AK9=[715,M][97,M][123,M][2,M][716][716][716][716][716]
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+IEA=[11111116,M][11111112,M]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][110,M][111,M][112,M][113,M][114,M][115,M]
+ST=[143,M][329,M]
+SE=[96,M][329,M]
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][AK1,M]{LOOP AK2:999999[AK2,O]{LOOP AK2/AK3:999999[AK3,O][AK4,O,99]}{END OF AK2:1[+AK5,M]}}{END OF AK1:1[+AK9,M]}{END ST HEADER LOOP:1[+SE,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+102=5:5,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+110=1:11,U
+111=1:12,00401
+113=1:14,0,1
+114=1:15,P,T
+143=3:1,997*5:1,837
+455=2:7,X
+479=2:1,FA*4:1,HC
+480=2:8,004010X098A1
+715=9:1,A,E,M,P,R,W,X
+716=9:5,1,2,3,4,5,6,10,11,12,13,14,15,16,17,18,23,24,25,26
+717=8:1,A,E,M,R,W,X
+718=8:2,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,23,24,25,26,27*8:3,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,23,24,25,26,27*8:4,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,23,24,25,26,27*8:5,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,23,24,25,26,27*8:6,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,23,24,25,26,27
+720=6:4,1,2,3,4,5,6,7,8
+723=7:3,1,2,3,4,5,6,7,8,9,10
+724=7:3,1,2,3,4,5,6,7,8,9,10
+ELEMENT CODE DESCRIPTION
+143~837~Health Care Claim
+479~HC~Health Care Claim (837)
+715~A~Accepted
+715~E~Accepted BUT ERRORS WERE NOTED
+715~M~Rejected, Message Authentication Code (MAC) Failed
+715~P~Partially Accepted, At Least One Transaction Set Was Rejected ADVISED
+715~R~Rejected ADVISED
+715~W~Rejected, Assurance Failed Validity Tests
+715~X~Rejected, Content After Decryption Could Not Be Analyzed
+716~1~Functional Group Not Supported
+716~2~Functional Group Version Not Supported
+716~3~Functional Group Trailer Missing
+716~4~Group Control Number in the Functional Group Header and Trailer Do Not Agree
+716~5~Number of Included Transaction Sets Does Not Match Actual Count
+716~6~Group Control Number Violates Syntax
+716~10~Authentication Key Name Unknown
+716~11~Encryption Key Name Unknown
+716~12~Requested Service (Authentication or Encryption) Not Available
+716~13~Unknown Security Recipient
+716~14~Unknown Security Originator
+716~15~Syntax Error in Decrypted Text
+716~16~Security Not Supported
+716~17~Incorrect Message Length (Encryption Only)
+716~18~Message Authentication Code Failed
+716~23~S3E Security End Segment Missing for S3S Security Start Segment
+716~24~S3S Security Start Segment Missing for S3E End Segment
+716~25~S4E Security End Segment Missing for S4S Security Start Segment
+716~26~S4S Security Start Segment Missing for S4E Security End Segment
+717~A~Accepted ADVISED
+717~E~Accepted But Errors Were Noted
+717~M~Rejected, Message Authentication Code (MAC) Failed
+717~R~Rejected ADVISED
+717~W~Rejected, Assurance Failed Validity Tests
+717~X~Rejected, Content After Decryption Could Not Be Analyzed
+718~1~Transaction Set Not Supported
+718~2~Transaction Set Trailer Missing
+718~3~Transaction Set Control Number in Header and Trailer Do Not Match
+718~4~Number of Included Segments Does Not Match Actual Count
+718~5~One or More Segments in Error
+718~6~Missing or Invalid Transaction Set Identifier
+718~7~Missing or Invalid Transaction Set Control Number
+718~8~Authentication Key Name Unknown
+718~9~Encryption Key Name Unknown
+718~10~Requested Service (Authentication or Encrypted) Not Available
+718~11~Unknown Security Recipient
+718~12~Incorrect Message Length (Encryption Only)
+718~13~Message Authentication Code Failed
+718~15~Unknown Security Originator
+718~16~Syntax Error in Decrypted Text
+718~17~Security Not Supported
+718~23~Transaction Set Control Number Not Unique within the Functional Group
+718~24~S3E Security End Segment Missing for S3S Security Start Segment
+718~25~S3S Security Start Segment Missing for S3E Security End Segment
+718~26~S4E Security End Segment Missing for S4S Security Start Segment
+718~27~S4S Security Start Segment Missing for S4E Security End Segment
+720~1~Unrecognized segment ID
+720~2~Unexpected segment
+720~3~Mandatory segment missing
+720~4~Loop Occurs Over Maximum Times
+720~5~Segment Exceeds Maximum Use
+720~6~Segment Not in Defined Transaction Set
+720~7~Segment Not in Proper Sequence
+720~8~Segment Has Data Element Errors
+723~1~Mandatory data element missing
+723~2~Conditional required data element missing
+723~3~Too many data elements
+723~4~Data element too short
+723~5~Data element too long
+723~6~Invalid character in data element
+723~7~Invalid code value
+723~8~Invalid Date
+723~9~Invalid Time
+723~10~Exclusion Condition Violated
+

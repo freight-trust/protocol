@@ -1,0 +1,306 @@
+﻿FILE DATA
+Version=005010X218
+Description=820 Health Insurance Payments
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+66=ID,1,2,Height
+67=AN,2,80,Identification Code
+81=R,1,10,Weight
+93=AN,1,60,Name
+96=NO,1,10,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,3,Entity Identifier Code
+100=ID,3,3,Currency Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Author Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=DT,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+124=AN,2,15,Application Receiver Code
+127=AN,1,50,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+234=AN,1,48,Product/Service ID
+235=ID,2,2,Product/Service ID Qualifier
+248=ID,1,1,Allowance or Charge Indicator
+305=AN,1,1,Transaction Handling Code
+309=ID,1,2,Location Qualifier
+310=AN,1,30,Location Identifier
+329=AN,4,9,Transaction Set Control Number
+332=R,1,6,Percent/Decimal Format
+337=TM,4,8,Time
+350=AN,1,20,Assigned Identification
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+355=ID,2,2,Unit or Basis for Measurement Code
+364=AN,1,80,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=DT,8,8,Date
+374=ID,3,3,Date/Time Qualifier
+380=R,1,15,Quantity
+426=ID,2,2,Adjustment Reason Code
+455=ID,1,2,Responsible Agency Code
+478=ID,1,1,Credit/Debit Flag Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+481=ID,1,2,Trace Type Code
+482=ID,2,2,Payment Action Code
+506=ID,2,2,(DFI) ID Number Qualifier
+507=AN,3,12,(DFI) Identification Number
+508=AN,1,35,Account Number
+509=AN,10,10,Originating Company Identifier
+510=AN,9,9,Originating Company Supplemental Code
+522=ID,1,3,Amount Qualifier Code
+554=NO,1,6,Assigned Number
+559=ID,2,2,Agency Qualifier Code
+569=ID,1,3,Account Number Qualifier
+584=ID,2,2,Employment Status Code
+591=ID,3,3,Payment Method Code
+594=ID,1,1,Frequency Code
+610=NO,1,15,Amount
+623=ID,2,2,Time Code
+640=ID,2,2,Transaction Type Code
+659=ID,1,2,Basis of Verification Code
+662=ID,1,1,Relationship Code
+673=ID,2,2,Quantity Qualifier
+706=ID,2,2,Entity Relationship Code
+756=ID,1,2,Report Transmission Code
+782=R,1,18,Monetary Amount
+812=ID,1,10,Payment Format Code
+954=R,1,10,Percent
+1032=ID,1,2,Claim Filing Indicator Code
+1033=ID,1,2,Claim Adj Group Code
+1034=ID,1,5,Claim Adj Reason Code
+1035=AN,1,35,Name Last or Organization Name
+1036=AN,1,25,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1048=ID,1,3,Originating Company Supplemental Code
+1065=ID,1,1,Entity Type Qualifier
+1066=ID,1,2,Citizenship Status Code
+1067=ID,1,1,Marital Status Code
+1068=ID,1,1,Gender Code
+1069=ID,2,2,Individual Relationship Code
+1073=ID,1,1,Yes/No Condition or Response Code
+1109=ID,1,1,Race or Ethnicity Code
+1138=ID,1,1,Payer Responsibility Sequence Number Code
+1143=ID,1,1,Coordination of Benefits Code
+1220=ID,1,1,Student Status Code
+1250=ID,2,3,DateTime Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,1,3,Code List Qual Code
+1271=AN,1,30,Industry Code
+1300=ID,4,4,Service/Promotion/Allowance or Charge Code
+1301=ID,1,10,Agency Service/Promotion/Allowance or Charge Code
+1325=ID,1,1,Claim Frequency Type Code
+1331=AN,1,2,Facility Code Value
+1339=AN,2,2,Procedure Modifier
+1365=ID,1,2,Service Type Code
+1470=NO,1,9,Number
+1705=AN,1,35,Implementation Convention Reference
+1715=ID,1,3,Country Subdivision Code
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C001=[355,O],@
+C003=[235,O][234,O][1339,O][1339,O][1339,O][1339,O][352,O],@@....#,@@#####,@@.....
+SEGMENT DEFINITIONS
+ADX=[782][426][128][127],@@..,@@##
+AMT=[522][782][478],@@#
+BPR=[305,M][782,M][478,M][591,M][812][506][507][569][508][509][510][506][507][569][508][373][1048,N][506,N][507,N][569,N][508,N]
+CUR=[98,M][100,M]
+DTM=[374][373][337][623][1250][1251],@.##..,@@####,@###@@
+ENT,1=[554,M][98,M][66,M][67,M]
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+IEA=[11111116,M][11111112,M]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+IT1=[350,M]
+N1=[98,M][93][66][67][706][98],@...##
+N2=[93,M][93,N]
+N3=[166,M][166]
+N4=[19,M][156][116][26][309][310][1715],@..##..,@...##.
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67]+P0809,@@@..##@@,@@@####@@,@@@..#.@@,@@@..#...,@@@..#.##,@@@..##..,@@.####..,@@@@.#...,@@#####..,@@#####@@,@@#######,@@.....@@
+PER=[366][93][365][364][365][364][365][364]+P0304P0506P0708,@@@@....
+RDM=[756,M][93][364]
+REF=[128,M][127,M][352,N]
+RMR=[128,M][127,M][482][782][782][782][426][782],@@.@.###,@@#@.###
+SAC=[248][1300][559][1301][610],@@##@
+SE=[96,M][329,M]
+SLN=[350][350][662][380][C001],@#@@@*1
+ST=[143,M][329,M][1705,M]
+TRN=[481,M][127,M][509][127]
+SEGMENT SELF RULES
+NM1~2~[EQ]1~4~0
+NM1~2~[EQ]2~2~4,5
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+FORMATS
+EIN=^\d{9}$
+EIN2=^\d{2}-\d{7}$
+SOCIALSECURITY1=^\d{9}$
+SOCIALSECURITY2=^\d{3}-\d{2}-\d{4}$
+MilitaryTimeFormat=^([0-1][0-9]|[2][0-3])([0-5][0-9])$
+DateYYMMDD=^((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229)$
+DateCCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST-005,M][BPR,M][TRN,M][CUR][REF-015,O,>1][DTM*2][DTM*2][DTM*3][DTM*2]{1000A:1[N1*1,M][N2][N3][N4*2][RDM]}{1000B:1[N1*1,M][N2][N3][N4*2][PER*1,O,>1]}{1000C:14[N1*1][N2][N3][N4*1][PER*1,O,>1]}{2000A:1[ENT]{2200A:>1[ADX*2]}{2300A:>1[RMR*1,M][REF,O,>1][DTM*1]{2310A:1[IT1]{2312A:4[SAC*1]}{2315A:3[SLN*1]}}{2320A:>1[ADX*2]}}}{2000B:>1[ENT]{2100B:>1[NM1]}{2200B:>1[ADX*2]}{2300B:>1[RMR*2,M][REF,O,>1][DTM*1]{2320B :>1[ADX*2]}}}{END ST HEADER LOOP:1[+SE-555,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00501
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,RA
+455=2:7,X
+480=2:8,005010X218
+143=3:1,820
+305=4:1,C,D,I,P,U,X
+478=4:3,C
+591=4:4,ACH,BOP,CHK,FWT,NON,SWT
+812=4:5,CCP,CTX
+506=4:6,01,02,04*4:12,01,02,04
+569=4:8,ALC,DA*4:14,DA,SG
+481=5:1,1,3
+98=6:1,2B,PR*12:1,PE*17:1,PR*22:1,04,0B,8W,AK,BE,BK,C1,C2,IAT,MJ,RB,Z6,ZB,ZL*27:2,2L,AG,NH,RGA,UN*36:2,2J*37:1,DO,EY,IL,QE
+128=7:1,14,17,18,2F,38,72,LB*29:1,11,IL,CT,IK*30:1,14,17,18,2F,38,E9,LB,LU,ZZ*39:1,11,9J,AZ,B7,CT,ID,IG,IK,KW*40:1,14,18,2F,38,E9,LU,ZZ
+374=8:1,009*9:1,035*10:1,582*11:1,097*31:1,582,AAG*41:1,582,AAG
+1250=10:5,RD8*31:5,RD8*41:5,RD8
+66=12:3,1,9,EQ,FI,XV*17:3,1,9,24,75,EQ,FI,PI*22:3,31,57,94,A3,A4,A6,CF,G,PA*27:3,1,9,24,FI*36:3,34,EI,II*37:8,34,EI,N
+756=16:1,BM,EM,FT,FX,IA,OL
+366=21:1,IC*26:1,IC
+365=21:3,EM,FX,TE*21:5,EM,EX,FX,TE*21:7,EM,EX,FX,TE*26:3,EM,FX,TE*26:5,EM,EX,FX,TE*26:7,EM,EX,FX,TE
+426=28:2,52,53,80,81,86,BJ,H1,H6,RU,WO,WW*35:2,20,52,53,AA,AX,H1,H6,IA,J3*38:2,52,53,80,81,86,BJ,H1,H6,RU,WO*42:2,20,52,53,AA,AX,H1,H6,IA,J3
+482=29:3,PA,PI,PO,PP
+248=33:1,C
+1300=33:2,A172,B680,D940,G740
+355=34:5:1,10,IE,PR
+1065=37:2,1
+ELEMENT FORMATS
+108=1:9,0,0,DateYYMMDD
+373=2:4,0,0,DateCCYYMMDD
+SUMMARY
+40:2=139:2
+220:2=319:2
+ELEMENT EQUALITY
+RULES
++SegPos[43:2]=if ( SegPos[43:2] !=  SegPos[3:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"]  end
++SegPos[44:2]=if ( SegPos[44:2] !=  SegPos[2:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"]  end
++SegPos[45:2]=if ( SegPos[45:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA13 must be equal to IEA02"]  end
+ELEMENT COUNTERS
+554=138:1
+554=318:1
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=Beginning of the EDI Interchange
+FUNCTIONAL GROUP=Beginning of Functional Group
+ST HEADER=Header Loop
+1000A=PREMIUM RECEIVER’S NAME
+1000B=PREMIUM PAYER’S NAME
+1000C=INTERMEDIARY BANK INFORMATION
+2000A=ORGANIZATION SUMMARY REMITTANCE
+2200A=ORGANIZATION SUMMARY REMITTANCE LEVEL ADJUSTMENT FOR PREVIOUS
+2300A=ORGANIZATION SUMMARY REMITTANCE DETAIL
+2310A=SUMMARY LINE ITEM
+2312A=SERVICE PROMOTION ALLOWANCE OR CHARGE INFORMATION
+2315A=MEMBER COUNT
+2320A=ORGANIZATION SUMMARY REMITTANCE LEVEL ADJUSTMENT FOR CURRENT PAYMENT
+2000B=INDIVIDUAL REMITTANCE
+2100B=INDIVIDUAL NAME
+2200B=INDIVIDUAL PREMIUM ADJUSTMENT FOR PREVIOUS PAYMENT
+2300B=INDIVIDUAL PREMIUM REMITTANCE DETAIL
+2320B =INDIVIDUAL PREMIUM ADJUSTMENT FOR CURRENT PAYMENT
+END ST HEADER LOOP=END OF THE ST HEADER
+END GS LOOP=END OF FUNCTIONAL GROUP
+END ISA LOOP=END OF TRANSACTION
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Control Header
+GS=2,Functional Group Header
+ST=3,Transaction Set Header
+BPR=4,Financial Information
+TRN=5,Reassociation Trace Number
+CUR=6,Foreign Currency Information
+REF=7,Premium Receivers Identification Key
+DTM=8,Process Date
+DTM=9,Delivery Date
+DTM=10,Coverage Period
+DTM=11,Creation Date
+N1=12,Premium Receiver’s Name
+N2=13,Premium Receiver Additional Name
+N3=14,Premium Receiver’s Address
+N4=15,Premium Receiver’s City
+RDM=16,Premium Receiver’s Remittance Delivery Method
+N1=17,Premium Payer’s Name
+N2=18,Premium Payer Additional Name
+N3=19,Premium Payer’s Address
+N4=20,Premium Payer’s City
+PER=21,Premium Payer’s Administrative Contact
+N1=22,Intermediary Bank Information
+N2=23,Intermediary Bank Additional Name
+N3=24,Intermediary Bank’s Address
+N4=25,Intermediary Bank’s City
+PER=26,Intermediary Bank’s Administrative Contact
+ENT=27,Organization Summary Remittance
+ADX=28,Organization Summary Remittance Level Adjustment
+RMR=29,Organization Summary Remittance Detail
+REF=30,Reference Information
+DTM=31,Organizational Coverage Period
+IT1=32,Summary Line Item
+SAC=33,Service
+SLN=34,Member Count
+ADX=35,Organization Summary Remittance Level Adjustment for Current Payment
+ENT=36,Individual Remittance
+NM1=37,Individual Name
+ADX=38,Individual Premium Adjustment for Previous Payment
+RMR=39,Individual Premium Remittance Detail
+REF=40,Reference Information
+DTM=41,Individual Coverage Period
+ADX=42,Individual Premium Adjustment for Current Payment
+SE=43,Transaction Set Trailer
+GE=44,Functional Group Trailer
+IEA=45,Interchange Control Trailer
+SAMPLE DATA
+ISA*00*..........*01*SECRET....*ZZ*SUBMITTERS.ID..*ZZ*RECEIVERS.ID...*030101*1253*^*00501*000000905*1*T*:~
+GS*RA*SENDER CODE*RECEIVER CODE*19991231*0802*1*X*005010X218~
+ST*820*0001*005010X218~
+BPR*C*255*C*ACH*CTX*01*999999992*DA*12345678*1345678901**01*199999999*DA*98765*20071103~
+TRN*1*78905*1345678901~
+REF*14*0011001~
+N1*PE*BATA INSURANCE CO.*FI*012222222~
+N1*PR*ALFA MEDAL CO*FI*123456789~
+ENT*1*2J*34*030440099~
+NM1*EY*1*DOE*JOHN****EI*777222~
+RMR*IG*555666**30~
+RMR*IG*555667**35~
+ENT*2*2J*34*029500563~
+NM1*EY*1*FIRSTONE*EMILY****EI*777333~
+RMR*IG*555777**45~
+ENT*3*2J*34*029480664~
+NM1*EY*1*MIDDLEONE*JULIE****EI*777444~
+RMR*IG*544477**50~
+ENT*4*2J*34*030498099~
+NM1*EY*1*NEWONE*KELLY****EI*777111~
+RMR*IG*551166**45~
+RMR*IG*558766**50~
+SE*21*0001~
+GE*1*1~
+IEA*1*000000905~

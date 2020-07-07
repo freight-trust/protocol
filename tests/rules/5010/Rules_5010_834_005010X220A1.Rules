@@ -1,0 +1,401 @@
+FILE DATA
+Version=005010X220A1
+Description=834 Benefit Enrollment and Maintenance
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+65=R,1,8, Height
+66=ID,1,2,Identification Code Qualifier
+67=AN,2,80,Identification Code
+81=R,1,10,Weight
+93=AN,1,60,Name
+96=NO,1,9,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,4,Entity Identifier Code
+100=ID,3,3,Currency Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Author Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=AN,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+124=AN,2,15,Application Receiver Code
+127=AN,1,50,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+234=AN,1,48,Product/Service ID
+235=ID,2,2,Product/Service ID Qualifier
+306=ID,1,2,Action Code
+309=ID,1,2,Location Qualifier
+310=AN,1,30,Location Identifier
+329=AN,4,9,Transaction Set Control Number
+337=TM,4,8,Time
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+364=AN,1,80,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=AN,8,8,Date
+374=ID,3,3,Date/Time Qualifier
+380=R,1,15,Quantity
+443=AN,1,20,Contact Inquiry Reference
+447=AN,1,4,Loop Identifier Code
+455=ID,1,2,Responsible Agency Code
+478=ID,1,1,Credit/Debit Flag Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+508=AN,1,35,Account Number
+522=ID,1,3,Amount Qualifier Code
+554=NO,1,6,Assigned Number
+569=ID,1,3,Account Number Qualifier
+584=ID,2,2,Employment Status Code
+594=ID,1,1,Frequency Code
+609=NO,1,9,Count
+623=ID,2,2,Time Code
+640=ID,2,2,Transaction Type Code
+659=ID,1,2,Basis of Verification Code
+673=ID,2,2,Quantity Qualifier
+706=ID,2,2,Entity Relationship Code
+782=R,1,18,Monetary Amount
+786=ID,2,2,Security Level Code
+875=ID,3,3,Maintenance Type Code
+954=NO,1,10,Percent
+1032=ID,1,2,Claim Filing Indicator Code
+1033=ID,1,2,Claim Adj Group Code
+1034=ID,1,5,Claim Adj Reason Code
+1035=AN,1,35,Name Last or Organization Name
+1036=AN,1,25,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1065=ID,1,1,Entity Type Qualifier
+1066=ID,1,2,Citizenship Status Code
+1067=ID,1,1,Marital Status Code
+1068=ID,1,1,Gender Code
+1069=ID,2,2,Individual Relationship Code
+1073=ID,1,1,Yes/No Condition or Response Code
+1109=ID,1,1,Race or Ethnicity Code
+1137=AN,1,15,Medical Code Value
+1138=ID,1,1,Payer Responsibility Sequence Number Code
+1143=ID,1,1,Coordination of Benefits Code
+1146=ID,1,1,Disability Type Code
+1149=ID,4,6,Occupation Code
+1154=ID,1,1,Work Intensity Code
+1161=ID,1,2,Product Option Code
+1165=ID,1,1,Confidentiality Code
+1176=ID,2,3,Employment Class Code
+1201=ID,1,1,Information Status Code
+1203=ID,2,3,Maintenance Reason Code
+1204=AN,1,50,Plan Coverage Description
+1205=ID,2,3,Insurance Line Code
+1207=ID,3,3,Coverage Level Code
+1209=ID,1,1,Underwriting Decision Code
+1211=ID,2,3,Drug House Code
+1212=ID,1,1,Health Related Code
+1213=ID,1,1,Current Health Condition Code
+1214=AN,1,5,Salary Grade
+1215=ID,1,1,Identification Card Type Code
+1216=ID,1,1,Benefit Status Code
+1218=ID,1,1,Medicare Plan Code
+1219=ID,1,2,COBRA
+1220=ID,1,1,Student Status Code
+1250=ID,2,3,DateTime Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,1,3,Code List Qual Code
+1271=AN,1,30,Industry Code
+1303=ID,1,2,Use of Language Indicator
+1325=ID,1,1,Claim Frequency Type Code
+1331=AN,1,2,Facility Code Value
+1339=AN,2,2,Procedure Modifier
+1365=ID,1,2,Service Type Code
+1470=NO,1,9,Number
+1476=ID,1,1,Language Proficiency Indicator
+1701=ID,1,1,Eligibility Reason Code
+1705=AN,1,35,Implementation Convention Reference
+1715=ID,1,3,Country Subdivision Code
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C003=[235,M][234,M][1339,O][1339,O][1339,O][1339,O][352,O]
+C052=[1218,O][1701,O][1701,O][1701,O],@.##
+C056=[1109,O][1270,O][1271,O],...
+SEGMENT DEFINITIONS
+ACT=[508,M][93,N][66,N][67,N][569,N][508][352,N][107,N][1216,N]+P0304C0506C0705
+AMT=[522,M][782,M][478,N]
+BGN=[353,M][127,M][373,M][337,M][623][127][640,N][306,M][786,N]+C0504
+COB=[1138,M][127][1143,M][1365]
+DMG=[1250][1251][1068][1067][C056][1066][26][659][380][1270][1271]+P0102P1011C1105,@@@..*1.###..,.....*1.###..
+DSB=[1146,M][380,N][1149,N][1154,N][1161,N][782,N][235][1137]
+DTM=[374,M][373,M][337][623][1250][1251]+P0506C0403R020305,@@####
+DTP=[374,M][1250,M][1251,M]
+EC=[1176,M][1176][1176][954,N][1201,N][1149,N]
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+HD=[875,M][1203,N][1205,M][1204][1207][609,N][609,N][1209,N][1073][1211,N][1073,N]
+HLH=[1212,M][65][81][81,N][352,N][1213,N][352,N]
+ICM=[594,M][782,M][380][310][1214][100,N]
+IDC=[1204,M][1215,M][380][306]
+IEA=[11111116,M][11111112,M]
+INS=[1073,M][1069,M][875,M][1203][1216,M][C052][1219][584][1220][1073][1250][1251][1165][19,N][156,N][26,N][1470]+P1112,@@@.@.*1.......###.
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+LE=[447,M]
+LQ=[1270,M][1271,M]
+LS=[447,M]
+LUI=[66][67][352][1303][1476,N]+P0102L040203
+LX=[554,M]
+MIA=[380,M][380][380][782][127][782][782][782][782][782][782][782][782][782][380][782][782][782][782][127][127][127][127][782]
+MOA=[954][782][127][127][127][127][127][782][782]
+N1=[98,M][93][66][67][706][98]+P0304R0203,@...##,@.@@##,@@@@##,@@####
+N3=[166,M][166]
+N4=[19,M][156][116][26][309][310][1715]+C0605C0704E0207,@......,@...##.
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67][706][98]+P0809,@@@@.#...##,@@...#.@@##,@@...#...##,@@@####@@##,@@@@.....##,@@#########,@@@########,@@.......@#,@@@......##,@@.......##,@@.....####,@@.####..##
+PER=[366,M][93][365][364][365][364][365][364][443,N]+P0304P0506P0708,@#@@....#,@.@@....#,@#@@#####
+PLA=[306,M][98,M][373,M][337,N][1203,M]
+QTY=[673,M][380,M]+R0204E0204
+REF=[128,M][127,M][352,N]+R0203,@@#
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+SVC=[C003,M][782,M][782,M][234][380][C003][380]
+TS2=[782][782][782][782][782][782][380][782][782][380][380][380][380][380][782][380][782][782][782]
+TS3=[127,M][1331,M][373,M][380,M][782,M][782][782][782][782][782][782][782][782][782][782][782][782][782][782][782][782][782][380][782]
+SEGMENT SELF RULES
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+States=[States.txt*,]
+ZipCodes=[ZipCodes.txt*,]
+FORMATS
+EIN=^\d{9}$
+EIN2=^\d{2}-\d{7}$
+SOCIALSECURITY1=^\d{9}$
+SOCIALSECURITY2=^\d{3}-\d{2}-\d{4}$
+ZipCode=^\d{5}([\-]\d{4})?$
+MilitaryTimeFormat=^([0-1][0-9]|[2][0-3])([0-5][0-9])$
+DateYYMMDD=^((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229)$
+DateCCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][BGN,M][REF][DTP,O,>1][QTY,O,3]{1000A:1[N1*2,M]}{1000B:1[N1*2,M]}{1000C:2[N1*3,O,2]{1100C:1[ACT]}}{2000:>1[INS*1,M][REF,M][REF][REF,O,13][DTP,O,24]{2100A:1[NM1*9,M][PER*1][N3][N4*1][DMG*1][EC,O,>1][ICM][AMT,O,7][HLH][LUI,O,>1]}{2100B:1[NM1*9][DMG*2]}{2100C:1[NM1*6][N3,M][N4*2,M]}{2100D:3[NM1*10][PER*2][N3][N4*2]}{2100E:3[NM1*7][PER*2][N3][N4*2]}{2100F:1[NM1*5][PER*1][N3][N4*2]}{2100G:13[NM1*9][PER*1][N3][N4*2]}{2100H:1[NM1*11][N3][N4*2]}{2200:>1[DSB][DTP,O,2]}{2300:99[HD][DTP,M,6][AMT,O,9][REF,O,14][REF][IDC,O,3]{2310:30[LX][NM1*8,M][N3,O,2][N4*2][PER*1,O,2][PLA]}{2320:5[COB][REF,O,4][DTP,O,2]{2330:3[NM1*12][N3][N4*2][PER*3]}}}{LOOPLS:1[LS]{2700:>1[LX]{2750:1[N1*4][REF][DTP]}}{LOOPLE:1[LE]}}}{END ST HEADER:1[+SE,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00501
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,BE
+455=2:7,X
+480=2:8,005010X220A1
+143=3:1,834
+1705=3:3,005010X220A1
+353=4:1,00,15,22
+623=4:5,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,AD,AS,AT,CD,CS,CT,ED,ES,ET,GM,HD,HS,HT,LT,MD,MS,MT,ND,NS,NT,PD,PS,PT,TD,TS,TT,UT
+306=4:8,2,4,RX*58:4,1,2,RX*64:1,2
+128=5:1,38*13:1,0F*14:1,1L*15:1,17,23,3H,4A,6O,ABB,D3,DX,F6,P5,Q4,QQ,ZZ*56:1,17,1L,9V,CE,E8,M7,PID,RB,X9,XM,XX1,XX2,ZX,ZZ*57:1,QQ*66:1,60,6P,SY,ZZ*75:1,00,17,18,19,26,3L,6M,9V,9X,GE,LU,PID,XX1,XX2,YY,ZZ
+374=6:1,007,090,091,303,382,388*16:1,050,286,296,297,300,301,303,336,337,338,339,340,341,350,351,356,357,383,385,386,393,394,473,474*52:1,360,361*54:1,300,303,343,348,349,543,695*67:1,344,345*76:1,007
+1250=6:2,D8*12:11,D8*16:2,D8*21:1,D8*28:1,D8*52:2,D8*54:2,D8,RD8*67:2,D8*76:2,D8,RD8
+673=7:1,DT,ET,TO
+98=8:1,P5*9:1,IN*10:1,BO,TV*17:1,74,IL*27:1,70*29:1,31*32:1,36*36:1,M8*40:1,S3*44:1,6Y,9K,E1,EI,EXS,GB,GD,J6,LR,QD,S1,TZ,X4*48:1,45*60:1,1X,3D,80,FA,OD,P3,QA,QN,Y2*64:2,1P*68:1,36,GW,IN*74:1,75
+66=8:3,24,94,FI*9:3,94,FI,XV*10:3,94,FI,XV*17:8,34,ZZ*26:1,LD,LE*27:8,34,ZZ*32:8,24,34*40:8,34,ZZ*44:8,34,ZZ*60:8,34,FI,SV,XX*68:8,FI,NI,XV
+1073=12:1,N,Y*12:10,N,Y
+1069=12:2,01,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,23,24,25,26,31,38,53,60,D2,G8,G9
+875=12:3,001,021,024,025,030*53:1,001,002,021,024,025,026,030,032
+1203=12:4,01,02,03,04,05,06,07,08,09,10,11,14,15,16,17,18,20,21,22,25,26,27,28,29,31,32,33,37,38,39,40,41,43,59,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,EC,XN,XT*64:5,14,22,46,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ
+1216=12:5,A,C,S,T
+1218=12:6:1,A,B,C,D,E
+1701=12:6:2,0,1,2
+1219=12:7,1,2,3,4,5,6,7,8,9,10,ZZ
+584=12:8,AC,AO,AU,FT,L1,PT,RT,TE
+1220=12:9,F,N,P
+1165=12:13,R,U
+1065=17:2,1*27:2,1*29:2,1*32:2,1,2*36:2,2*40:2,1*44:2,1*48:2,1*60:2,1,2*68:2,2
+366=18:1,IP*33:1,EP*37:1,SK*41:1,PQ*45:1,RP*63:1,IC*71:1,CN
+365=18:3,AP,BN,CP,EM,EX,FX,HP,TE,WP*18:5,AP,BN,CP,EM,EX,FX,HP,TE,WP*18:7,AP,BN,CP,EM,EX,FX,HP,TE,WP*33:3,AP,BN,CP,EM,EX,FX,TE*33:5,AP,BN,CP,EM,EX,FX,TE*33:7,AP,BN,CP,EM,EX,FX,TE*37:3,EM,EX,FX,TE*37:5,EM,EX,FX,TE*37:7,EM,EX,FX,TE*41:3,AP,BN,CP,EM,EX,FX,HP,TE,WP*41:5,AP,BN,CP,EM,EX,FX,HP,TE,WP*41:7,AP,BN,CP,EM,EX,FX,HP,TE,WP*45:3,AP,BN,CP,EM,EX,FX,HP,TE,WP*45:5,AP,BN,CP,EM,EX,FX,HP,TE,WP*45:7,AP,BN,CP,EM,EX,FX,HP,TE,WP*63:3,AP,BN,CP,EM,EX,FX,HP,TE,WP*63:5,AP,BN,CP,EM,EX,FX,HP,TE,WP*63:7,AP,BN,CP,EM,EX,FX,HP,TE,WP*71:3,TE
+309=20:5,60,CY*62:5,60,CY,RJ
+1068=21:3,F,M,U*28:3,F,M,U
+1067=21:4,B,D,I,M,R,S,U,W,X
+1109=21:5:1,7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Z
+1270=21:5:2,RET*21:10,REC
+1066=21:6,1,2,3,4,5,6,7
+1176=22:1,01,02,03,04,05,06,07,08,09,10,11,12,17,18,19,20,21,22,23*22:2,01,02,03,04,05,06,07,08,09,10,11,12,17,18,19,20,21,22,23*22:3,01,02,03,04,05,06,07,08,09,10,11,12,17,18,19,20,21,22,23
+594=23:1,1,2,3,4,6,7,8,9,B,C,H,Q,S,U
+522=24:1,B9,C1,D2,EBA,FK,P3,R*55:1,B9,C1,D2,EBA,FK,P3,R
+1212=25:1,N,S,T,U,X
+1303=26:4,5,6,7,8
+1146=51:1,1,2,3,4
+235=51:7,DX,ZZ
+1205=53:3,AG,AH,AJ,AK,DCP,DEN,EPO,FAC,HE,HLT,HMO,LTC,LTD,MM,MOD,PDG,POS,PPO,PRA,STD,UR,VIS
+1207=53:5,CHD,DEP,E1D,E2D,E3D,E5D,E6D,E7D,E8D,E9D,ECH,EMP,ESP,FAM,IND,SPC,SPO,TWO
+1215=58:2,D,H,P
+706=60:10,25,26,72
+1138=65:1,P,S,T,U
+1143=65:3,1,5,6
+1365=65:4,1,35,48,50,54,89,90,A4,AG,AL,BB
+447=72:1,2700*77:1,2700
+ELEMENT FORMATS
+SUMMARY
+ELEMENT EQUALITY
+RULES
++SegPos[78:2]=if ( SegPos[78:2] !=  SegPos[3:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"]  end
++SegPos[80:2]=if ( SegPos[80:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA14 must be equal to IEA02"]  end
++SegPos[79:2]=if ( SegPos[79:2] !=  SegPos[2:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"]  end
++SegPos[21:4]=if ( SegPos[12:1] ==  "Y" ) then Usage[Optional] else Usage[NotUsed] end
+ELEMENT COUNTERS
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=Beginning of the EDI Interchange
+FUNCTIONAL GROUP=Beginning of the Functional Group Interchange
+ST HEADER=Header Loop
+1000A=Sponser
+1000B=Payer
+1000C=TPA/BROKER NAME
+1100C=TPA/BROKER ACCOUNT INFORMATION
+2000=Member Level Detail
+2100A=MEMBER NAME
+2100B=INCORRECT MEMBER NAME
+2100C=MEMBER MAILING ADDRESS
+2100D=MEMBER EMPLOYER
+2100E=MEMBER SCHOOL
+2100F=CUSTODIAL PARENT
+2100G=RESPONSIBLE PERSON
+2100H=DROP OFF LOCATION
+2200=2200 DISABILITY INFORMATION
+2300=HEALTH COVERAGE
+2310=PROVIDER INFORMATION
+2320=COORDINATION OF BENEFITS
+2330=COORDINATION OF BENEFITS RELATED ENTITY
+LOOPLS=Additional Reporting Categories
+2700=2700 MEMBER REPORTING CATEGORIES
+2750= REPORTING CATEGORY
+LOOPLE=Member Level Detail Loop Termination
+END ST HEADER=
+END GS LOOP=
+END ISA LOOP=
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Control Header
+GS=2,Functional Group Header
+ST=3,Transaction Set Header
+BGN=4,Beginning Segment
+REF=5,Transaction Set Policy Number
+DTP=6,File Effective Date
+QTY=7,TRANSACTION SET CONTROL TOTALS
+N1=8,Sponsor Name
+N1=9,Payer
+N1=10,TPA/Broker Name
+ACT=11,TPA/Broker Account Information
+INS=12,Member Level Detail
+REF=13,Subscriber Number
+REF=14,Member Policy Number
+REF=15,Member Supplemental Identifier
+DTP=16,Member Level Dates
+NM1=17,Member Name
+PER=18,Member Communications Numbers
+N3=19,Member Residence Street Address
+N4=20,Member Residence City
+DMG=21,Member Demographics
+EC=22,Employment Class
+ICM=23,Member Income
+AMT=24,Member Policy Amounts
+HLH=25,Member Health Information
+LUI=26,Member Health Information
+NM1=27,Incorrect Member Name
+DMG=28,Incorrect Member Demographics
+NM1=29,Member Mailing Address
+N3=30,Member Mail Street Address
+N4=31,Member Mail City
+NM1=32,Member Employer
+PER=33,Member School Commmunications Numbers
+N3=34,Member School Street Address
+N4=35,Member School City
+NM1=36,Member School
+PER=37,Member School Commmunications Numbers
+N3=38,Member School Street Address
+N4=39,Member School City
+NM1=40,Custodial Parent
+PER=41,Custodial Parent Commmunications Numbers
+N3=42,Custodial Parent Street Address
+N4=43,Custodial Parent City
+NM1=44,Responsible Person
+PER=45,Responsible Person Commmunications Numbers
+N3=46,Responsible Person Street Address
+N4=47,Responsible Person School City
+NM1=48,DROP OFF LOCATION
+N3=49,Drop Off Location Street Address
+N4=50,Drop Off Location City
+DSB=51,Disability Information
+DTP=52,Disability Eligibility Dates
+HD=53,Health Coverage
+DTP=54,Health Coverage Dates
+AMT=55,Health Coverage Policy
+REF=56,Health Coverage Policy Number
+REF=57,Prior Coverage Months
+IDC=58,Identification Card
+LX=59,Provider Information
+NM1=60,Provider Name
+N3=61,Provider Address
+N4=62,Provider City
+PER=63,Provider Communications Numbers
+PLA=64,PCP Change Reason
+COB=65,Coordination of Benefits
+REF=66,Additional Coordination of Benefits Identifiers
+DTP=67,Coordination of Benefits Eligibility Dates
+NM1=68,Coordination of Benefits Related Entity
+N3=69,Coordination of Benefits Related Entity Address
+N4=70,Coordination of Benefits Other Insurance Company City
+PER=71,Administrative Communications Contact
+LS=72,Member Level Detail
+LX=73,Member Reporting Categories
+N1=74,Reporting Category
+REF=75,Reporting Category Reference
+DTP=76,Reporting Category Date
+LE=77,Member Level Detail Loop Termination
+SE=78,Transaction Set Trailer
+SAMPLE DATA
+ISA*00*          *00*          *ZZ*330954754      *ZZ*076011108LCSP  *170622*0306*^*00501*000000001*0*P*:~
+GS*BE*990032630*SAMPLE*20170622*030617*1*X*005010X220A1~
+ST*834*0001*005010X220A1~
+BGN*00*0001*20170622*03061722****4~
+DTP*007*D8*20170622~
+QTY*TO*258~
+N1*P5*SAMPLE CLIENT*FI*990032630~
+N1*IN*SAMPLE CARRIER*FI*941340523~
+N1*TV*SECOVA*FI*330954754~
+INS*Y*18*030*XN*A*E**FT~
+REF*0F*111111111~
+REF*1L*000008400~
+REF*DX*0000~
+REF*ZZ*NCR~
+DTP*336*D8*20160906~
+NM1*IL*1*SAMPLE*SAM*P***34*111111111~
+PER*IP**TE*5104996902~
+N3*PARK AVE*APT 4~
+N4*EMERYVILLE*CA*94608~
+DMG*D8*19780407*M~
+HD*030**HMO**FAM~
+DTP*348*D8*20170101~
+INS*N*01*030*XN*A*E~
+REF*0F*111111111~
+REF*1L*000008400~
+REF*DX*0000~
+REF*ZZ*NCR~
+NM1*IL*1*SAM*SAMPLE****34*999999999~
+N3*PARK AVE*APT 4~
+N4*EMERYVILLE*CA*94608~
+DMG*D8*19820328*F*M~
+HD*030**HMO~
+DTP*348*D8*20170101~
+SE*32*0001~
+GE*1*1~
+IEA*1*000000001~

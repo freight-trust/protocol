@@ -1,0 +1,265 @@
+FILE DATA
+Version=005010X306
+Description=820 Health Insurance Payments
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+66=ID,1,2,Height
+67=AN,2,80,Identification Code
+81=R,1,10,Weight
+93=AN,1,60,Name
+96=NO,1,10,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,3,Entity Identifier Code
+100=ID,3,3,Currency Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Author Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=DT,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+124=AN,2,15,Application Receiver Code
+127=AN,1,50,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+234=AN,1,48,Product/Service ID
+235=ID,2,2,Product/Service ID Qualifier
+305=AN,1,1,Transaction Handling Code
+329=AN,4,9,Transaction Set Control Number
+332=R,1,6,Percent/Decimal Format
+337=TM,4,8,Time
+350=AN,1,20,Assigned Identification
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+355=ID,2,2,Unit or Basis for Measurement Cod
+364=AN,1,80,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=DT,8,8,Date
+374=ID,3,3,Date/Time Qualifier
+380=R,1,15,Quantity
+426=ID,2,2,Adjustment Reason Code
+455=ID,1,2,Responsible Agency Code
+478=ID,1,1,Credit/Debit Flag Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+481=ID,1,2,Trace Type Code
+482=ID,2,2,Payment Action Code
+506=ID,2,2,(DFI) ID Number Qualifier
+507=AN,3,12,(DFI) Identification Number
+508=AN,1,35,Account Number
+509=AN,10,10,Originating Company Identifier
+510=AN,9,9,Originating Company Supplemental code
+522=ID,1,3,Amount Qualifier Code
+554=NO,1,6,Assigned Number
+569=ID,1,3,Account Number Qualifier
+584=ID,2,2,Employment Status Code
+591=ID,3,3,Payment Method Code
+594=ID,1,1,Frequency Code
+623=ID,2,2,Time Code
+640=ID,2,2,Transaction Type Code
+659=ID,1,2,Basis of Verification Code
+673=ID,2,2,Quantity Qualifier
+706=ID,2,2,Entity Relationship Code
+756=ID,1,2,Report Transmission Code
+782=R,1,18,Monetary Amount
+812=ID,1,10,Payment Format Code
+954=R,1,10,Percent
+1032=ID,1,2,Claim Filing Indicator Code
+1033=ID,1,2,Claim Adj Group Code
+1034=ID,1,5,Claim Adj Reason Code
+1035=AN,1,35,Name Last or Organization Name
+1036=AN,1,25,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1048=ID,1,3,Business Function code
+1065=ID,1,1,Entity Type Qualifier
+1066=ID,1,2,Citizenship Status Code
+1067=ID,1,1,Marital Status Code
+1068=ID,1,1,Gender Code
+1069=ID,2,2,Individual Relationship Code
+1073=ID,1,1,Yes/No Condition or Response Code
+1109=ID,1,1,Race or Ethnicity Code
+1138=ID,1,1,Payer Responsibility Sequence Number Code
+1143=ID,1,1,Coordination of Benefits Code
+1220=ID,1,1,Student Status Code
+1250=ID,2,3,DateTime Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,1,3,Code List Qual Code
+1271=AN,1,30,Industry Code
+1325=ID,1,1,Claim Frequency Type Code
+1331=AN,1,2,Facility Code Value
+1339=AN,2,2,Procedure Modifier
+1365=ID,1,2,Service Type Code
+1705=AN,1,35,Implementation Convention Reference
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C001=[355,O],@
+C003=[235,O][234,O][1339,O][1339,O][1339,O][1339,O][352,O],@@....#,@@#####,@@.....
+SEGMENT DEFINITIONS
+AMT=[522][782][478],@@#
+BPR=[305,M][782,M][478,M][591,M][812][506,N][507,N][569,N][508,N][509,N][510,N][506][507][569][508][373,M][1048,N][506,N][507,N][569,N][508,N]
+DTM=[374,M][373,N][337,N][623,N][1250,M][1251,M]
+ENT=[554,M]
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+IEA=[11111116,M][11111112,M]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+N1=[98,M][93,M][66,M][67,M][706,N][98,N]
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67]+P0809,@@@..##@@,@@@####@@,@@@..#.@@,@@@..#...,@@@..#.##,@@@..##..,@@.####..,@@@@.#...,@@#####..,@@#####@@,@@#######,@@.....@@
+PER=[366][93][365][364][365][364][365][364]+P0304P0506P0708,@@@@....
+REF=[128,M][127,M][352,N]
+RMR=[128,M][127,M][482,N][782,M][782,N][782,N][426,N][782,N]
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+TRN=[481,M][127,M][509,N][127,N]
+SEGMENT SELF RULES
+NM1~2~[EQ]1~4~0
+NM1~2~[EQ]2~2~4,5
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+FORMATS
+EIN=^\d{9}$
+EIN2=^\d{2}-\d{7}$
+SOCIALSECURITY1=^\d{9}$
+SOCIALSECURITY2=^\d{3}-\d{2}-\d{4}$
+MilitaryTimeFormat=^([0-1][0-9]|[2][0-3])([0-5][0-9])$
+DateYYMMDD=^((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229)$
+DateCCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST-005,M][BPR,M][TRN,M][REF-015][REF][REF][REF]{1000A:1[N1,M][REF]}{1000B:1[N1,M][PER,O,>1]}{2000:>1[ENT,M]{2100:1[NM1*12][REF][REF][REF][REF][REF,M][REF][REF][REF][REF][REF][REF]}{2300:>1[RMR,M][REF,O,10][DTM,M]}}{END ST HEADER LOOP:1[+SE-555,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00501
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,RA
+455=2:7,X
+480=2:8,005010X306
+143=3:1,820
+305=4:1,I
+478=4:3,C
+591=4:4,ACH,CHK,FWT,NON
+812=4:5,CCP
+506=4:12,01,02,04
+569=4:14,DA,SG
+481=5:1,3
+128=6:1,38*7:1,TV*8:1,18*9:1,1L*11:1,ABY*16:1,38*17:1,TV*18:1,18*19:1,1L*20:1,POL*21:1,AZ*22:1,4A*23:1,23*24:1,6O*25:1,1W*26:1,0F*27:1,ZZ*28:1,0N
+98=10:1,PE*12:1,RM*15:1,IL
+66=10:3,FI*12:3,58*15:8,C1
+366=13:1,IC
+365=13:3,EM,FX,TE*13:5,EM,EX,FX,TE*13:7,EM,EX,FX,TE
+1065=15:2,1
+374=29:1,582
+1250=29:5,RD8
+ELEMENT FORMATS
+108=1:9,0,0,DateYYMMDD
+373=2:4,0,0,DateCCYYMMDD
+SUMMARY
+40:2=139:2
+220:2=319:2
+ELEMENT EQUALITY
+RULES
++SegPos[30:2]=if ( SegPos[30:2] !=  SegPos[3:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"]  end
++SegPos[31:2]=if ( SegPos[31:2] !=  SegPos[2:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"]  end
++SegPos[32:2]=if ( SegPos[32:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA13 must be equal to IEA02"]  end
+ELEMENT COUNTERS
+554=14:1
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=Beginning of the EDI Interchange
+FUNCTIONAL GROUP=Beginning of Functional Group
+ST HEADER=Header Loop
+1000A=PAYEE NAME
+1000B=PAYER'S NAME
+2000=REMITTANCE INFORMATION
+2100=INDIVIDUAL NAME
+2300=REMITTANCE DETAIL
+END ST HEADER LOOP=END OF THE ST HEADER
+END GS LOOP=END OF FUNCTIONAL GROUP
+END ISA LOOP=END OF TRANSACTION
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Control Header
+GS=2,Functional Group Header
+ST=3,Transaction Set Header
+BPR=4,Financial Information
+TRN=5,Reassociation Trace Number
+REF=6,Exchange Assigned Qualified Health plan Identifier
+REF=7,Issuer Assigned Qualified Health plan Identifier
+REF=8,Exchange Assigned Employer Group Identifier
+REF=9,IssuerAssigned Employer Group Identifier
+N1=10,PAYEE NAME
+REF=11,Unique Health Plan Identifier
+N1=12,Payer's Name
+PER=13,Payer's Administrative Contact Information
+ENT=14,Remittance Information
+NM1=15,Individual Name
+REF=16,EXCHANGE ASSIGNED QUALIFIED HEALTH PLAN IDENTIFIER
+REF=17,ISSUER ASSIGNED QUALIFIED HEALTH PLAN IDENTIFIER
+REF=18,EXCHANGE ASSIGNED EMPLOYER GROUP IDENTIFIER
+REF=19,ISSUER ASSIGNED EMPLOYER GROUP IDENTIFIER
+REF=20,EXCHANGE ASSIGNED POLICY IDENTIFIER
+REF=21,ISSUER ASSIGNED POLICY IDENTIFIER
+REF=22,EXCHANGE ASSIGNED APTC CONTRIBUTOR/TAX PAYER IDENTIFIER
+REF=23,ISSUER ASSIGNED APTC CONTRIBUTOR/TAX PAYER IDENTIFIER
+REF=24,EXCHANGE ASSIGNED DEPENDENT IDENTIFIER
+REF=25,ISSUER ASSIGNED DEPENDENT IDENTIFIER
+REF=26,ISSUER ASSIGNED SUBSCRIBER IDENTIFIER
+RMR=27,REMITTANCE DETAIL
+REF=28,ECHANGE REPORT DOCUMENT CONTROL NUMBER
+DTM=29,INDIVIDUAL COVERAGE PERIOD
+SE=30,Transaction Set Trailer
+GE=31,Functional Group Trailer
+IEA=32,Interchange Control Trailer
+SAMPLE DATA
+ISA*00*          *00*          *27*161616         *ZZ*362612058      *130610*0740*^*00501*500000025*1*T*:~
+GS*RA*161616*362612058*20130610*0740*500000025*X*005010X306~
+ST*820*500000029*005010X306~
+BPR*I*5*C*CHK************20130610~
+TRN*3*151~
+N1*PE*ABC Comp Inc.*FI*362612058~
+N1*RM*RER16*58*052120100~
+PER*IC*Test Contact*TE*6307244048*EM*Test@abc.com~
+ENT*2~
+NM1*IL*1*JONES*SUB****C1*RERCARIND16-1~
+REF*38*RERMEDPLAN16~
+REF*18*RERCARIND16~
+REF*1L*RERCARIND16-CAR~
+REF*POL*RERCARIND16~
+REF*23*RERCARIND16-1CARI~
+REF*6O*REREXND16-1EX~
+REF*0F*RERCARIND16-1~
+RMR*ZZ*STEVE**5~
+DTM*582****RD8*20120201-20120229~
+ENT*3~
+NM1*IL*1*JONES*SUB****C1*RERCARIND16-1~
+REF*38*RERMEDPLAN16~
+REF*18*RERCARIND16~
+REF*1L*RERCARIND16-CAR~
+REF*POL*RERCARIND16~
+REF*23*RERCARIND16-1CARI~
+REF*6O*REREXND16-1EX~
+REF*0F*RERCARIND16-1~
+RMR*ZZ*STEVE**5~
+DTM*582****RD8*20120201-20120229~
+SE*29*500000029~
+GE*1*500000025~
+IEA*1*500000025~

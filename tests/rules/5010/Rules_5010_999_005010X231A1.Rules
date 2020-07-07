@@ -1,0 +1,150 @@
+FILE DATA
+Version=005010X231A1
+Description=999 Functional Acknowledgment
+ELEMENT DEFINITIONS
+2=NO,1,6,Number of Accepted Transactions
+28=NO,1,9,Group Control Number
+96=NO,1,10,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Author Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=DT,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+117=ID,1,1,Interchange Acknowlegment Code
+118=NO,1,9,Interchange Note Code
+123=ID,1,6,Number of Received Transactions
+124=AN,2,15,Application Receiver Code
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+329=AN,4,9,Transaction Set Control Number
+337=TM,4,8,Time
+373=DT,8,8,Date
+447=AN,1,4,Loop Identifier Code
+455=ID,1,2,Responsible Agency Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+618=ID,1,3,Implementation Transaction Set Syntax Error Code
+620=ID,1,3,Implementation Segment Syntax Error Code
+621=ID,1,3,Implementation Data Element Syntax Error Code
+715=ID,1,1,Functional Group Acknowledge Code
+716=ID,1,3,Functional Group Syntax Error Code
+717=ID,1,1,Transaction Set Acknowlegment Code
+719=NO,1,10,Segent Position in Transaction Set
+721=ID,2,3,Segment ID Code
+722=NO,1,2,Element Position in Segment
+724=AN,1,99,Copy Of Bad Element Data
+725=NO,1,4,Data Element Reference Number
+1528=NO,1,2,Component Data Element Position in Composite
+1686=NO,1,4,Repeating Data Element Position
+1705=AN,1,35,Implementation Convention Reference
+9998=AN,1,35,Context Reference
+9999=AN,1,35,Context Name
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C030=[722,M][1528,O][1686,O],@..
+C998=[9999,O][9998,O],@#,@@
+C999=[725,O][725,O],@#
+SEGMENT DEFINITIONS
+AK1=[479,M][28,M][480,M]
+AK2=[143,M][329,M][1705]
+AK9=[715,M][97,M][123,M][2,M][716][716][716][716][716]
+CTX=[C998][721][719][447][C030][C999],@*1@@..*1.*1,@*2####*1#*1,@*1@@..*1.*1
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+IEA=[11111116,M][11111112,M]
+IK3=[721,M][719,M][447][620,M]
+IK4=[C030][725][621][724],@*1.@.
+IK5=[717,M][618][618][618][618][618]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+TA1=[112,M][108,M][109,M][117,M][118,M]
+SEGMENT SELF RULES
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+FORMATS
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{TA1 LOOP:1[TA1]}{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][AK1,M]{2000:>1[AK2]{2100:>1[IK3][CTX*1,O,9][CTX*2]{2110:>1[IK4][CTX*3,O,10]}}{TRANSACTION SET RESPONSE TRAILER:1[+IK5,M]}}{FUNCTIONAL GROUP RESPONSE TRAILER:1[+AK9,M]}{END ST HEADER LOOP:1[+SE,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,01,02,03,04,05,06
+103=1:3,00,01
+105=1:5,01,02,03,04,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,AM,NR,SA,SN,ZZ*1:7,01,02,03,04,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,AM,NR,SA,SN,ZZ
+111=1:12,00501
+114=1:15,I,P,T
+117=2:4,A,E,R
+118=2:5,000,001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,020,021,022,023,024,025,026,027,028,029,030,031
+479=3:1,FA
+455=3:7,X
+480=3:8,005010X231A1
+143=4:1,999
+1705=4:3,005010X231A1
+620=7:4,1,2,3,4,5,6,7,8,I4,I6,I7,I8,I9
+9999=8:1:1,SITUATIONAL TRIGGER*11:1:1,SITUATIONAL TRIGGER
+621=10:3,1,2,3,4,5,6,7,8,9,10,12,13,I10,I11,I12,I13,I6,I9
+717=12:1,A,E,M,R,W,X
+618=12:2,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,23,24,25,26,27,I5,I6
+715=13:1,A,E,M,P,R,W,X
+716=13:5,1,2,3,4,5,6,10,11,12,13,14,15,16,17,18,23,24,25,26
+ELEMENT FORMATS
+SUMMARY
+ELEMENT EQUALITY
+RULES
++SegPos[14:2]=if ( SegPos[14:2] !=  SegPos[4:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"] end
++SegPos[15:2]=if ( SegPos[15:2] !=  SegPos[3:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"] end
++SegPos[16:2]=if ( SegPos[16:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA13 must be equal to IEA02"] end
+ELEMENT COUNTERS
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=
+TA1 LOOP=Interchange Acknowledgement
+FUNCTIONAL GROUP=
+ST HEADER=
+2000=Transaction Set Reponse Header
+2100=AK2/IK3 Error Identification
+2110=AK2/IK3/IK4 Implementation Date Note Element
+TRANSACTION SET RESPONSE TRAILER=Transaction Set Response Trailer
+FUNCTIONAL GROUP RESPONSE TRAILER=
+END ST HEADER LOOP=
+END GS LOOP=
+END ISA LOOP=
+SEGMENT DESCRIPTIONS
+TA1=2,Interchange Acknowlegdement
+ST=4,Transaction Set Header
+AK1=5,Functional Group Response Header
+AK2=6,Transaction Set Reponse Header
+IK3=7,Error Identification
+CTX=8,Segment Context
+CTX=9,Business Unit Identifier
+IK4=10,Implementation Data Element Note
+CTX=11,Element Context
+IK5=12,Transaction Set Response Trailer
+AK9=13,Functional Group Reponse Trailer
+SAMPLE DATA
+ISA*00*          *00*          *ZZ*311279999      *ZZ*133052274      *180906*2226*^*00501*        1*0*P*:~
+GS*FA*311279999*133052274*20180906*2226*1*X*005010X231A1~
+ST*999*   1*005010X231A1~
+AK1*HC*2120*005010X222A1~
+AK2*837*000000533*005010X222A1~
+IK3*NM1*5**8~
+IK4*8**7*4~
+IK4*9**1~
+IK3*NM1*7**8~
+IK4*8**1~
+IK5*R*5~
+AK9*R*1*1*0~
+SE*11*   1~
+GE*1*1~
+IEA*1*        1~

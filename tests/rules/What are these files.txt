@@ -1,0 +1,3 @@
+The EDI Validator Component in RDPCrystal EDI Library uses these files to validate EDI data
+
+http://www.rdpcrystal.com/products/edi-library/edi-validator/

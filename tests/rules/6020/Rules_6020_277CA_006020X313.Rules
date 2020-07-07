@@ -1,0 +1,256 @@
+FILE DATA
+Version=006020X313
+Description=277 Request for Additional Information
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+66=ID,1,2,Identification Code Qualifier
+67=AN,2,80,Identification Code
+93=AN,1,60,Name
+96=NO,1,9,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,3,Entity Identifier Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Authorization Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=AN,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+124=AN,2,15,Application Receiver Code
+127=AN,1,80,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+234=AN,1,80,Product Service ID
+235=ID,2,2,Product Service ID Qualifier
+306=ID,1,2,Action Code
+309=ID,1,2,Location Qualifier
+310=AN,1,30,Location Qualifier
+329=AN,4,9,Transaction Set Control Number
+337=TM,4,8,Time
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+364=AN,1,256,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=DT,8,8,Date
+374=ID,3,3,Date Time Qualifier
+380=R,1,15,Quantity
+429=AN,1,16,Check Number
+443=AN,1,20,Contact Inquiry Reference
+455=ID,1,2,Responsible Agency Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version Release Industry Identifier Code
+481=ID,1,2,Trace Type Code
+509=AN,10,10,Originating Company Identifier
+591=ID,3,3,Payment Method Code
+628=AN,1,12,Hierarchical ID Number
+640=ID,2,2,Transaction Type Code
+706=ID,2,2,Entity Relationship Code
+734=AN,1,12,Hierarchical Parent ID Number
+735=ID,1,2,Hierarchical Level Code
+736=ID,1,1,Hierarchical Child Code
+755=ID,2,2,Report Type Code
+782=R,1,18,Monetary Amount
+933=AN,1,264,Free form Message Text
+1005=ID,4,4,Hierarchical Structure Code
+1035=AN,1,60,Name Last or Organization Name
+1036=AN,1,35,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1065=ID,1,1,Entity Type Qualifier
+1250=ID,2,3,Date Time Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,1,3,Code List Qualifier Code
+1271=AN,1,30,Industry Code
+1339=AN,2,2,Procedure Modifier
+1369=AN,1,2,Tooth Surface Code
+1705=AN,1,35,Implementation Convention Reference
+1715=ID,1,3,Country Subdivision Code
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C003=[235,M][234,M][1339,O][1339,O][1339,O][1339,O][352,O][234,O][1339,O][1339,O][1339,O][1339,O],@@....##....
+C005=[1369,O][1369,O][1369,O][1369,O][1369,O],@....
+C043=[1271,M][1271,M][98,O][1270,O],@@@#,@@@@,@@@@,@@@#,@@@@,@@@#,@@#@
+SEGMENT DEFINITIONS
+BHT=[1005,M][353,M][127,M][373,M][337,M][640,M],@@@@#@
+DTP=[374,M][1250,M][1251,M]
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+HL=[628][734][735][736],@#@@,@@@@,@@@#
+IEA=[11111116,M][11111112,M]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+N1=[98,M][93][66][67][706][98]+P0304R0203,@...##,@.@@##
+N3=[166,M][166]
+N4=[19,M][156][116][26][309][310][1715],@...##.
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67][706][98]+P0809,@@@@.#...##,@@...#.@@##,@@...#...##,@@@####@@##,@@.....@@..,@@@....@@##,@@...##@@##,@@@..#.####,@@@..#.@@##,@@@..##@@##
+PER=[366,M][93][365][364][365][364][365][364][443,N]+P0304P0506P0708,@.@@....#
+PWK=[755,M]
+REF=[128,M][127,M][352,N],@@#
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+STC=[C043,M][373,M][306][782][782][373][591][373][429][C043][C043][933],@*1@#@@####.*1.*1#,@*1@#######.*1.*1#,@*5@#...#...*5.*5#,@*3@#######.*3.*3#,@*4@#######.*4.*4#,@*5@#######.*5.*5#,@*7@@@#####.*7.*7#,@*7@@@#####.*7.*7#,@*7@#######.*7.*7#
+SVC=[C003,M][782,M][782,M][234][380][C003][380],@*1@#.##*1#
+TOO=[1270][1271][C005],@@.*1
+TRN=[481,M][127,M][509,M][127],@@##
+SEGMENT SELF RULES
+COMPOSITE ELEMENT SELF RULES
+CODELISTS
+States=[States.txt*,]
+ZipCodes=[ZipCodes.txt*,]
+FORMATS
+EIN=^\d{9}$
+EIN2=^\d{2}-\d{7}$
+SOCIALSECURITY1=^\d{9}$
+SOCIALSECURITY2=^\d{3}-\d{2}-\d{4}$
+ZipCode=^\d{5}([\-]\d{4})?$
+MilitaryTimeFormat=^([0-1][0-9]|[2][0-3])([0-5][0-9])$
+DateYYMMDD=^((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229)$
+DateCCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:1[GS,M]{ST HEADER:>1[ST,M][BHT,M]{2000A:1[HL*1,M]{2100A:1[NM1*4,M][PER]}{2000B:1[HL*2,M]{2100B:1[NM1*10,M]}{2000C:>1[HL*2,M]{2100C:1[NM1*9,M]}{2000D:>1[HL*3,M]{2100D:1[NM1*9,M]}{2200D:>1[TRN*1,M][STC*9,O,>1][REF][REF][REF][REF][REF][REF][REF][REF][DTP][DTP,M]{2210D:1[PWK][PER,M][N3][N4*1]}{2220D:>1[SVC*1][STC*9,M,>1][REF*1][DTP][TOO*1,O,32]}}}}}}{END ST HEADER:1[SE,M]}}{END GS LOOP:1[GE,M]}}{END ISA LOOP:1[IEA,M]}}
+ELEMENT DESCRIPTIONS
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00602
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,HN
+455=2:7,X
+480=2:8,006020X313
+143=3:1,277
+1705=3:3,006020X313
+1005=4:1,0085
+353=4:2,48
+640=4:6,RQ
+735=5:3,20*8:3,21*10:3,19*12:3,PT
+736=5:4,1*8:4,1*10:4,1
+98=6:1,PR*9:1,41*11:1,1P*13:1,QC
+1065=6:2,2*9:2,1,2*11:2,1,2*13:2,1
+66=6:8,PI,XV*9:8,46*11:8,FI,SV,XX*13:8,II,MI
+366=7:1,IC*27:1,RE
+365=7:3,EM,FX,TE,UR*7:5,EM,EX,FX,TE,UR*7:7,EM,EX,FX,TE,UR*27:3,ED,EM,FX,TE*27:5,ED,EM,EX,FX,TE*27:7,ED,EM,EX,FX,TE
+481=14:1,1
+1270=15:1:4,LOI*15:10:4,LOI*15:11:4,LOI*31:1:4,LOI*31:10:4,LOI*31:11:4,LOI*34:1,JO,JP
+306=15:3,U,WQ
+128=16:1,X1*17:1,BLT*18:1,EA*19:1,D9*20:1,Y4*21:1,3H*22:1,X9*23:1,Q4*32:1,6R
+374=24:1,472*25:1,106*33:1,472
+1250=24:2,D8,RD8*25:2,D8*33:2,D8,RD8
+755=26:1,OZ
+235=30:1:1,AD,ER,HC,HP,N4,NU,WK
+1369=34:3:1,B,D,F,I,L,M,O*34:3:2,B,D,F,I,L,M,O*34:3:3,B,D,F,I,L,M,O*34:3:4,B,D,F,I,L,M,O*34:3:5,B,D,F,I,L,M,O
+ELEMENT FORMATS
+ELEMENT UNIQUE VALUES
+SUMMARY
+ELEMENT EQUALITY
+RULES
++SegPos[35:2]=if ( SegPos[35:2] !=  SegPos[3:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"] end
++SegPos[36:2]=if ( SegPos[36:2] !=  SegPos[2:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"] end
++SegPos[37:2]=if ( SegPos[37:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA13 must be equal to IEA02"] end
+ELEMENT COUNTERS
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=Beginning of the EDI Interchange
+FUNCTIONAL GROUP=Beginning of the Functional Group Interchange
+ST HEADER=Header Loop
+2000A=INFORMATION SOURCE LEVEL
+2100A=PAYER NAME
+2000B=INFORMATION RECEIVER DETAIL
+2100B=INFORMATION RECEIVER NAME
+2000C=SERVICE PROVIDER LEVEL
+2100C=SERVICE PROVIDER NAME
+2000D=PATIENT LEVEL
+2100D=PATIENT NAME
+2200D=PAYER CLAIM CONTROL NUMBER
+2210D=CLAIM SUPPLEMENTAL INFORMATION
+2220D=SERVICE LINE INFORMATION
+END ST HEADER=
+END GS LOOP=
+END ISA LOOP=
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Control Header
+GS=2,Functional Group Header
+ST=3,Transaction Set Header
+BHT=4,Beginning of Hierarchical Transaction
+HL=5,Information Source Level
+NM1=6,Payer Name
+PER=7,Payer Contact Information
+HL=8,Information Receiver Level
+NM1=9,Information Receiver Name
+HL=10,Service Provider Level
+NM1=11,Service Provider Name
+HL=12,Patient Level
+NM1=13,Patient Name
+TRN=14,Payer Claim Control Number
+STC=15,Claim Level Status Information
+REF=16,Provider Assigned Claim Identifier
+REF=17,Institutional Bill Type Indentification
+REF=18,Medical Record Identification Number
+REF=19,Claim Identifier For Transmission Intermediaries
+REF=20,Property And Casualty Claim Number
+REF=21,Case Reference Identifier
+REF=22,Attachment Request Tracking Identifier
+REF=23,Prior Attachment Request Tracking Identifier
+DTP=24,Service Date
+DTP=25,Response Due Date
+PWK=26,Claim Supplemental Information
+PER=27,Payer Response Contact Information
+N3=28,Payer Response Contact Address
+N4=29,Payer Response City State Zipcode
+SVC=30,Service Line Information
+STC=31,Service Line Status Information
+REF=32,Service Line Item Identification
+DTP=33,Service Date
+TOO=34,Tooth Information
+SE=35,Transaction Set Trailer
+SAMPLE DATA
+ISA*00*..........*01*SECRET....*ZZ*SUBMITTERS.ID..*ZZ*RECEIVERS.ID...*030101*1253*^*00602*000000905*1*T*:~
+GS*HN*SENDER CODE*RECEIVER CODE*19991231*0802*1*X*006020X313~
+ST*277*1001*006020X313~
+BHT*0085*48*277RFI000001*20110824*1211*RQ~
+HL*1**20*1~
+NM1*PR*2*ABC INSURANCE COMPANY*****XV*12345~
+HL*2*1*21*1~
+NM1*41*2*XYZ SERVICES*****46*A222222221~
+HL*3*2*19*1~
+NM1*1P*2*ST HOLY HILLS HOSPITAL*****XX*1666666666~
+HL*4*3*PT~
+NM1*QC*1*JACKSON*JACK*J***MI*987654320~
+TRN*1*1822634840~
+STC*R4:18594-2::LOI*20110824~
+REF*BLT*111~
+REF*X1*JACKSON123~
+REF*EA*STHHL12345~
+DTP*472*D8*20110812~
+DTP*106*D8*20110923~
+HL*5*3*PT~
+NM1*QC*1*JONES*PETER*M***MI*123456789A~
+TRN*1*1822634845~
+REF*BLT*111~
+REF*X1*JONES123~
+REF*EA*STHHL12378~
+DTP*106*D8*20110923~
+SVC*NU:0360*2021.75~
+STC*R4:18594-2::LOI*20110824~
+REF*6R*0011~
+DTP*472*RD8*20110807-20110812~
+SE*29*1001~
+GE*1*1~
+IEA*1*000000905~

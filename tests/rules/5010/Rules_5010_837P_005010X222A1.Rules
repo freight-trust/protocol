@@ -1,0 +1,975 @@
+FILE DATA
+Version=005010X222A1
+Description=837 Health Care Claims
+ELEMENT DEFINITIONS
+19=AN,2,30,City Name
+26=ID,2,3,Country Code
+28=NO,1,9,Group Control Number
+66=ID,1,2,Identification Code Qualifier
+67=AN,2,80,Identification Code
+81=R,1,10,Weight
+93=AN,1,60,Name
+96=NO,1,10,Number of Included Segments
+97=NO,1,6,Number of Transaction Sets Included
+98=ID,2,3,Entity Identifier Code
+100=ID,3,3,Currency Code
+101=ID,2,2,Authorization Information Qualifier
+102=AN,10,10,Author Information
+103=ID,2,2,Security Information Qualifier
+104=AN,10,10,Security Information
+105=ID,2,2,Interchange ID Qualifier
+106=AN,15,15,Interchange Sender ID
+107=AN,15,15,Interchange Receiver ID
+108=DT,6,6,Interchange Date
+109=TM,4,4,Interchange Time
+111=ID,5,5,Interchange Control Version Number
+112=NO,9,9,Interchange Control Number
+113=ID,1,1,Acknowledgment Requested
+114=ID,1,1,Interchange Usage Indicator
+115=ID,1,1,Component Element Separator
+116=ID,3,15,Postal Code
+118=NO,1,9,Rate
+124=AN,2,15,Application Receiver Code
+127=AN,1,50,Reference Identification
+128=ID,2,3,Reference Identification Qualifier
+142=AN,2,15,Application Sender Code
+143=ID,3,3,Transaction Set Identifier Code
+156=ID,2,2,State or Province Code
+165=ID,1,1,Repetition Separator
+166=AN,1,55,Address Information
+212=R,1,17,Unit Price
+234=AN,1,48,Product/Service ID
+235=ID,2,2,Product/Service ID Qualifier
+236=ID,3,3,Price Identifier Code
+309=ID,1,2,Location Qualifier
+310=AN,1,30,Location Identifier
+329=AN,4,9,Transaction Set Control Number
+332=R,1,6,Percent Decimal Format
+337=TM,4,8,Time
+338=R,1,6,Terms Discount Percent
+350=AN,1,20,Assigned Identification
+352=AN,1,80,Description
+353=ID,2,2,Transaction Set Purpose Code
+355=ID,2,2,Unit or Basis for Measurement Code
+363=ID,3,3,Note Reference Code
+364=AN,1,256,Communication Number
+365=ID,2,2,Communication Number Qualifier
+366=ID,2,2,Contact Function Code
+373=DT,8,8,Date
+374=ID,3,3,Date/Time Qualifier
+380=R,1,15,Quantity
+449=AN,1,80,Fixed Format Information
+455=ID,1,2,Responsible Agency Code
+478=ID,1,1,Credit/Debit Flag Code
+479=ID,2,2,Functional Identifier Code
+480=AN,1,12,Version / Release / Industry Identifier Code
+522=ID,1,3,Amount Qualifier Code
+554=NO,1,6,Assigned Number
+584=ID,2,2,Employment Status Code
+594=ID,1,1,Frequency Code
+609=NO,1,9,Count
+628=AN,1,12,Hierarchical ID Number
+640=ID,2,2,Transaction Type Code
+659=ID,1,2,Basis of Verification Code
+673=ID,2,2,Quantity Qualifier
+687=ID,2,2,Class of Trade Code
+706=ID,2,2,Entity Relationship Code
+734=AN,1,12,Hierarchical Parent ID Number
+735=ID,1,2,Hierarchical Level Code
+736=ID,1,1,Hierarchical Child Code
+737=ID,2,2,Measurement Reference ID Code
+738=ID,1,3,Measurement Qualifier
+739=R,1,20,Measurement Value
+755=ID,2,2,Report Type Code
+756=ID,1,2,Report Transmission Code
+757=NO,1,2,Report Copies Needed
+782=R,1,18,Monetary Amount
+799=AN,1,30,Version Identifier
+901=ID,2,2,Reject Reason Code
+923=ID,1,1,Prognosis Code
+954=R,1,10,Percent
+1005=ID,4,4,Hierarchical Structure Code
+1028=AN,1,38,Claim Submitter Identifier
+1029=ID,1,2,Claim Status Code
+1032=ID,1,2,Claim Filing Indicator Code
+1033=ID,1,2,Claim Adj Group Code
+1034=ID,1,5,Claim Adj Reason Code
+1035=AN,1,60,Name Last or Organization Name
+1036=AN,1,35,Name First
+1037=AN,1,25,Name Middle
+1038=AN,1,10,Name Prefix
+1039=AN,1,10,Name Suffix
+1065=ID,1,1,Entity Type Qualifier
+1066=ID,1,2,Citizenship Status Code
+1067=ID,1,1,Marital Status Code
+1068=ID,1,1,Gender Code
+1069=ID,2,2,Individual Relationship Code
+1073=ID,1,1,Yes/No Condition or Response Code
+1109=ID,1,1
+1136=ID,2,2,Code Category
+1138=ID,1,1,Payer Responsibility Sequence Number Code
+1143=ID,1,1,Coordination of Benefits Code
+1166=ID,2,2,Contract Type Code
+1220=ID,1,1,Student Status Code
+1221=AN,1,3,Provider Code
+1250=ID,2,3,DateTime Period Format Qualifier
+1251=AN,1,35,Date Time Period
+1270=ID,1,3,Code List Qual Code
+1271=AN,1,30,Industry Code
+1316=ID,1,1,Ambulance Trans Code
+1317=ID,1,1,Ambulance Reason Code
+1321=ID,2,2,CertificateCond Code
+1325=ID,1,1,Claim Frequency Type Code
+1327=ID,1,1,Copay Status Code
+1328=NO,1,2,Diagnosis Code Pointer
+1331=AN,1,2,Facility Code Value
+1332=ID,1,2,Facility Code Qualifier
+1334=ID,1,1,Health Care Professional Shortage Area Code
+1335=ID,1,1,Insulin Dependent Code
+1336=ID,1,3,Insurance Type Code
+1337=ID,1,1,Level of Care Code
+1338=ID,1,3,Level of Service Code
+1339=AN,2,2,Procedure Modifier
+1340=ID,1,2,Multiple Procedure Code
+1341=AN,1,2,National or Local Assigned Review Value
+1342=ID,1,1,Nature of Cond Code
+1343=ID,1,2,Non-Institutional Claim Type Code
+1351=ID,1,1,Patient Signature Source Code
+1359=ID,1,1,Provider Accept Assignment Code
+1360=ID,1,1,Provider Agreement Code
+1362=ID,2,3,Related Causes Code
+1363=ID,1,1,Release of Information Code
+1364=ID,1,2,Review Code
+1365=ID,1,2,Service Type Code
+1366=ID,2,3,Special Program Code
+1367=ID,2,3,Subluxation Level Code
+1383=ID,2,2,Claim Submission Reason Code
+1384=ID,1,1,Patient Location Code
+1473=ID,2,2,Pricing Methodology
+1514=ID,1,2,Delay Reason Code
+1525=ID,1,2,Request Category Code
+1526=ID,1,2,Policy Compliance Code
+1527=ID,1,2,Exception Code
+1705=AN,1,35,Implementation Convention Reference
+1715=ID,1,3,Country Subdivision Code
+11111112=NO,1,9,Interchange Control Number
+11111116=NO,1,5,Number of Included Functional Groups
+COMPOSITE ELEMENT DEFINITIONS
+C001=[355,O],@
+C003=[235,O][234,O][1339,O][1339,O][1339,O][1339,O][352,O],@@.....,@@#####,@@.....
+C004=[1328,O][1328,O][1328,O][1328,O],@...
+C022=[1270,O][1271,O][1250,O][1251,O][782,O][380,O][799,O],@@#####,#######
+C023=[1331,O][1332,O][1325,O],@#@,@@@
+C024=[1362,O][1362,O][1362,O][156,O][26,O],@....,@.#..
+C056=[1109,O][1270,O][1271,O],...
+SEGMENT DEFINITIONS
+AMT=[522][782][478],@@#
+BHT=[1005,M][353,M][127,M][373,M][337,M][640,M]
+CAS=[1033][1034][782][380][1034][782][380][1034][782][380][1034][782][380][1034][782][380][1034][782][380]+C0605C0705C0908C1008C1211C1311C1514C1614C1817C1917L050607L080910L111213L141516L171819,@@@................
+CLM=[1028][782][1032][1343][C023][1073][1359][1073][1363][1351][C024][1366][1073][1338][1073][1360][1029][1073][1383][1514],@@##@*2@@@@..*2.#######.
+CN1=[1166,M][782][332][127][338][799],@.....
+CR1=[355][81][1316][1317][355][380][166][166][352][352]+P0102P0506,..@@@@##..,..#@@@##..
+CR2=[609][380][1367][1367][355][380][380][1342][1073][352][352][1073]+P0102P0506C0403,#######@#..#
+CR3=[1332][355][380][1335][352],@@@##
+CRC=[1136][1073][1321][1321][1321][1321][1321],@@@....,@@@####,@@@..##,@@@.###
+CTP=[687][236][212][380][C001],###@@*1
+CUR=[98,M][100,M]
+DMG=[1250][1251][1068][1067][C056][1066][26][659][380][1270][1271]+P0102P1011C1105,@@@..*1.###..,.....*1.###..,@@@##*1######
+DTP=[374,M][1250,M][1251,M]
+FRM=[350][1073][127][373][332]+R02030405,@....
+GE=[97,M][28,M]
+GS=[479,M][142,M][124,M][373,M][337,M][28,M][455,M][480,M]
+HCP=[1473][782][782][127][118][127][782][234][235][234][355][380][901][1526][1527]+P0910P1112R0113,@@.....#####...,@@.....#.......
+HI=[C022][C022][C022][C022][C022][C022][C022][C022][C022][C022][C022][C022],@*1.*1.*1.*1.*1.*1.*1.*1.*1.*1.*1.*1,@*1.*1#*1#*1#*1#*1#*1#*1#*1#*1#*1#*1
+HL=[628][734][735][736],@#@@,@@@@
+IEA=[11111116,M][11111112,M]
+ISA=[101,M][102,M][103,M][104,M][105,M][106,M][105,M][107,M][108,M][109,M][165,M][111,M][112,M][113,M][114,M][115,M]
+K3=[449,M]
+LIN,1=[350][235][234],#@@
+LQ=[1270][1271]+C0102,@@
+LX=[554],@
+MEA=[737,M][738,M][739,M]
+MOA=[954][782][127][127][127][127][127][782][782]
+N3=[166,M][166]
+N4=[19,M][156][116][26][309][310][1715]+C0605C0704E0207,@......,@...##.
+NM1=[98,M][1065,M][1035][1036][1037][1038][1039][66][67]+P0809,@@@..##@@,@@@####@@,@@@..#.@@,@@@..#...,@@@..#.##,@@@..##..,@@.####..,@@@@.#...,@@#####..,@@#####@@,@@#######,@@@####..,@@.######
+NTE=[363][352],@@
+OI=[1032][1383][1073][1351][1360][1363],##@.#@
+PAT=[1069][1384][584][1220][1250][1251][355][81][1073]+P0506P0708,####.....,@###.....
+PER=[366][93][365][364][365][364][365][364]+P0304P0506P0708,@@@@....,@.@@....,@.@@..##
+PRV=[1221][128][127],@@@
+PS1=[127][782][156],@@#
+PWK=[755,M][756][757][98][66][67]+P0506,@@##..,@@####
+QTY=[673,M][380,M]
+REF=[128,M][127,M]
+SBR=[1138,M][1069][127][93][1336][1143][1073][584][1032],@....###.,@@..@###.,@@@...###,@@...###.
+SE=[96,M][329,M]
+ST=[143,M][329,M][1705,M]
+SV1=[C003][782][355][380][1331][1365][C004][782][1073][1340][1073][1073][1364][1341][1327][1334][127][116][782][1337][1360]+P0304,@*1@@@.#@*1#.#..##.######
+SV5=[C003][355][380][782][782][594][923],@*2@@@@@#
+SVD=[67][782][C003][234][380][554],@@@*3#@.
+SEGMENT SELF RULES
+NM1~2~[EQ]1~4~0
+NM1~2~[EQ]2~2~4,5
+PWK~2~[EQ]BM,EL,EM,FX,FT~5,6~0
+COMPOSITE ELEMENT SELF RULES
+C024~1~[EQ]AA~4~0
+C024~2~[EQ]AA~4~0
+CODELISTS
+States=[States.txt*,]
+POSCodes=[POSCodes.txt*,]
+ZipCodes=[ZipCodes.txt*,]
+ClaimAdjustmentReasonCode=[ClaimAdjustmentReasonCode.txt*~]
+FORMATS
+EIN=^\d{9}$
+EIN2=^\d{2}-\d{7}$
+SOCIALSECURITY1=^\d{9}$
+SOCIALSECURITY2=^\d{3}-\d{2}-\d{4}$
+ZipCode=^\d{5}([\-]\d{4})?$
+MilitaryTimeFormat=^([0-1][0-9]|[2][0-3])([0-5][0-9])$
+DateYYMMDD=^((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229)$
+DateCCYYMMDD=^(((\d{4}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|((\d{2}[02468][048]|\d{2}[13579][26]))0229)){0,8}$
+EDI FILE STRUCTURE
+{INTERCHANGE HEADER:1[ISA,M]{FUNCTIONAL GROUP:>1[GS,M]{ST HEADER:>1[ST,M][BHT,M]{1000A:1[NM1*1,M][PER*2,M,2]}{1000B:1[NM1*2,M]}{2000A:>1[HL*1,M][PRV*1][CUR]{2010AA:1[NM1*4,M][N3,M][N4*2,M][REF,M][REF,O,2][PER*2,O,2]}{2010AB:1[NM1*11][N3,M][N4*2,M]}{2010AC:1[NM1*2][N3,M][N4*2,M][REF][REF]}{2000B:>1[HL*2,M][SBR*1,M][PAT*1,X]{2010BA:1[NM1*4,M][N3][N4*2][DMG*3][REF][REF][PER*3]}{2010BB:1[NM1*2,M][N3][N4*2][REF,O,3][REF,O,2]}{2300:100[CLM*1,X][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP,O,2][DTP][DTP][PWK*1,O,10][CN1][AMT*1][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][K3,O,10][NTE*1][CR1*2][CR2*1][CRC*1,O,3][CRC*1,O,3][CRC*2][CRC*3][HI*1,M][HI*2][HI*1,O,2][HCP*1]{2310A:2[NM1*4][REF,O,3]}{2310B:1[NM1*4][PRV*1][REF,O,4]}{2310C:1[NM1*12][N3,M][N4*2,M][REF,O,3][PER*3]}{2310D:1[NM1*4][REF,O,4]}{2310E:1[NM1*11][N3,M][N4*2,M]}{2310F:1[NM1*13][N3,M][N4*2,M]}{2320:10[SBR*4][CAS*1,O,5][AMT*1][AMT*1][AMT*1][OI*1,M][MOA]{2330A:1[NM1*3,M][N3][N4*2][REF]}{2330B:1[NM1*2,M][N3][N4*2][DTP][REF,O,2][REF][REF][REF][REF]}{2330C:2[NM1*11][REF,M,3]}{2330D:1[NM1*11][REF,M,3]}{2330E:1[NM1*11][REF,M,3]}{2330F:1[NM1*11][REF,M,3]}{2330G:1[NM1*11][REF,M,2]}}{2400:50[LX*1,M][SV1*1,M][SV5*1][PWK*1,O,10][PWK*2][CR1*2][CR3*1][CRC*1,O,3][CRC*2][CRC*4][DTP,M][DTP][DTP][DTP][DTP][DTP][DTP,O,2][DTP][DTP][DTP][QTY][QTY][MEA,O,5][CN1*1][REF][REF][REF,O,5][REF][REF][REF][REF][REF][REF,O,5][AMT*1][AMT*1][K3,O,10][NTE*1][NTE][PS1*1][HCP*2]{2410:1[LIN*1][CTP*1][REF]}{2420A:1[NM1*4][PRV*1][REF,O,20]}{2420B:1[NM1*9][REF,O,20]}{2420C:1[NM1*12][N3,M][N4*2,M][REF,O,3]}{2420D:1[NM1*4][REF,O,20]}{2420E:1[NM1*4][N3][N4*2][REF,O,20][PER*2]}{2420F:2[NM1*4][REF,O,20]}{2420G:1[NM1*11][N3,M][N4*2,M]}{2420H:1[NM1*13][N3,M][N4*2,M]}{2430:15[SVD*1][CAS*1,O,5][DTP,M][AMT]}{2440:>1[LQ*1][FRM*1,O,99]}}}{2000C:>1[HL*2,X][PAT*2,M]{2010CA:1[NM1*5,M][N3,M][N4*2,M][DMG*3,M][REF][REF][PER*3]}{2300:100[CLM*1,X][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP][DTP,O,2][DTP][DTP][PWK*1,O,10][CN1][AMT*1][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][REF][K3,O,10][NTE*1][CR1*2][CR2*1][CRC*1,O,3][CRC*1,O,3][CRC*2][CRC*3][HI*1,M][HI*2][HI*1,O,2][HCP*1]{2310A:2[NM1*4][REF,O,3]}{2310B:1[NM1*4][PRV*1][REF,O,4]}{2310C:1[NM1*12][N3,M][N4*2,M][REF,O,3][PER*3]}{2310D:1[NM1*4][REF,O,4]}{2310E:1[NM1*11][N3,M][N4*2,M]}{2310F:1[NM1*13][N3,M][N4*2,M]}{2320:10[SBR*4][CAS*1,O,5][AMT*1][AMT*1][AMT*1][OI*1,M][MOA]{2330A:1[NM1*3,M][N3][N4*2][REF]}{2330B:1[NM1*2,M][N3][N4*2][DTP][REF,O,2][REF][REF][REF][REF]}{2330C:2[NM1*11][REF,M,3]}{2330D:1[NM1*11][REF,M,3]}{2330E:1[NM1*11][REF,M,3]}{2330F:1[NM1*11][REF,M,3]}{2330G:1[NM1*11][REF,M,2]}}{2400:50[LX*1,M][SV1*1,M][SV5*1][PWK,O,10][PWK*2][CR1*2][CR3*1][CRC*1,O,3][CRC*2][CRC*4,O,2][DTP,M][DTP][DTP][DTP][DTP][DTP][DTP,O,2][DTP][DTP][DTP][QTY][QTY][MEA,O,5][CN1*1][REF][REF][REF,O,5][REF][REF][REF][REF][REF][REF,O,5][AMT*1][AMT*1][K3,O,10][NTE*1][NTE][PS1*1][HCP*2]{2410:1[LIN*1][CTP*1][REF]}{2420A:1[NM1*4][PRV*1][REF,O,20]}{2420B:1[NM1*9][REF,O,20]}{2420C:1[NM1*12][N3,M][N4*2,M][REF,O,3]}{2420D:1[NM1*4][REF,O,20]}{2420E:1[NM1*4][N3][N4*2][REF,O,20][PER*2]}{2420F:2[NM1*4][REF,O,20]}{2420G:1[NM1*11][N3,M][N4*2,M]}{2420H:1[NM1*13][N3,M][N4*2,M]}{2430:15[SVD*1][CAS*1,O,5][DTP,M][AMT]}{2440:>1[LQ*1][FRM*1,O,99]}}}}}}{END ST HEADER LOOP:1[+SE,M]}}{END GS LOOP:1[+GE,M]}}{END ISA LOOP:1[+IEA,M]}}
+ELEMENT CODES
+101=1:1,00,03
+103=1:3,00,01
+105=1:5,01,14,20,27,28,29,30,33,ZZ*1:7,01,14,20,27,28,29,30,33,ZZ
+111=1:12,00501
+113=1:14,0,1
+114=1:15,P,T
+479=2:1,HC
+455=2:7,X
+480=2:8,005010X222A1
+143=3:1,837
+1705=3:3,005010X222A1
+1005=4:1,0019
+353=4:2,00,18
+640=4:6,31,CH,RP
+98=5:1,41*7:1,40*10:1,85*11:1,85*17:1,87*20:1,PE*28:1,IL*35:1,PR*86:1,DN,P3*88:1,82*91:1,77*96:1,DQ*98:1,PW*101:1,45*111:1,IL*115:1,PR*124:1,DN,P3*126:1,82*128:1,77*130:1,DQ*132:1,85*177:1,82*180:1,QB*182:1,77*186:1,DQ*188:1,DK*193:1,DN,P3*195:1,PW*198:1,45*209:1,QC*262:1,DN,P3*264:1,82*267:1,77*272:1,DQ*274:1,PW*277:1,45*287:1,IL*291:1,PR*300:1,DN,P3*302:1,82*304:1,77*306:1,DQ*308:1,85*353:1,82*356:1,QB*358:1,77*362:1,DQ*364:1,DK*369:1,DN,P3*371:1,PW*374:1,45
+1065=5:2,1,2*7:2,2*11:2,1,2*17:2,1,2*20:2,2*28:2,1,2*35:2,2*86:2,1*88:2,1,2*91:2,2*96:2,1*98:2,2*101:2,2*111:2,1,2*115:2,2*124:2,1*126:2,1,2*128:2,2*130:2,1*132:2,1,2*177:2,1,2*180:2,1,2*182:2,2*186:2,1*188:2,1*193:2,1*195:2,2*198:2,2*209:2,1*262:2,1*264:2,1,2*267:2,2*272:2,1*274:2,2*277:2,2*287:2,1,2*291:2,2*300:2,1*302:2,1,2*304:2,2*306:2,1*308:2,1,2*353:2,1,2*356:2,1,2*358:2,2*362:2,1*364:2,1*369:2,1*371:2,2*374:2,2
+66=5:8,46*7:8,46*11:8,XX*20:8,PI,XV*28:8,II,MI*35:8,PI,XV*86:8,XX*88:8,XX*91:8,XX*96:8,XX*111:8,II,MI*115:8,PI,XV*177:8,XX*180:8,XX*182:8,XX*186:8,XX*188:8,XX*193:8,XX*233:5,AC*262:8,XX*264:8,XX*267:8,XX*272:8,XX*287:8,II,MI*291:8,PI,XV*353:8,XX*356:8,XX*358:8,XX*362:8,XX*364:8,XX*369:8,XX
+366=6:1,IC*16:1,IC*34:1,IC*95:1,IC*192:1,IC*215:1,IC*271:1,IC*368:1,IC
+365=6:3,EM,FX,TE*6:5,EM,EX,FX,TE*6:7,EM,EX,FX,TE*16:3,EM,FX,TE*16:5,EM,EX,FX,TE*16:7,EM,EX,FX,TE*34:3,TE*34:5,EX*95:3,TE*95:5,EX*192:3,EM,FX,TE*192:5,EM,EX,FX,TE*192:7,EM,EX,FX,TE*215:3,TE*215:5,EX*271:3,TE*271:5,EX*368:3,EM,FX,TE*368:5,EM,EX,FX,TE*368:7,EM,EX,FX,TE
+735=8:3,20*25:3,22*207:3,23
+736=8:4,1*25:4,0,1*207:4,0
+1221=9:1,BI*89:1,PE*178:1,PE*265:1,PE*354:1,PE
+128=9:2,PXC*14:1,EI,SY*15:1,0B,1G*23:1,2U,FY,NF*24:1,EI*32:1,SY*33:1,Y4*38:1,2U,EI,FY,NF*39:1,G2,LU*60:1,4N*61:1,F5*62:1,EW*63:1,9F*64:1,G1*65:1,F8*66:1,X4*67:1,9A*68:1,9C*69:1,LX*70:1,D9*71:1,EA*72:1,P4*73:1,1J*87:1,0B,1G,G2*89:2,PXC*90:1,0B,1G,G2,LU*94:1,0B,G2,LU*97:1,0B,1G,G2,LU*114:1,SY*119:1,2U,EI,FY,NF*120:1,G1*121:1,9F*122:1,T4*123:1,F8*125:1,0B,1G,G2*127:1,0B,IG,G2,LU*129:1,0B,G2,LU*131:1,0B,1G,G2,LU*133:1,G2,LU*158:1,9B*159:1,9D*160:1,G1*161:1,6R*162:1,EW*163:1,X4*164:1,F4*165:1,BT*166:1,9F*176:1,VY,XZ*178:2,PXC*179:1,0B,1G,G2,LU*181:1,0B,1G,G2*185:1,G2,LU*187:1,0B,1G,G2,LU*191:1,0B,1G,G2*194:1,0B,1G,G2*213:1,Y4*214:1,1W,SY*236:1,4N*237:1,F5*238:1,EW*239:1,9F*240:1,G1*241:1,F8*242:1,X4*243:1,9A*244:1,9C*245:1,LX*246:1,D9*247:1,EA*248:1,P4*249:1,1J*263:1,0B,1G,G2*265:2,PXC*266:1,0B,1G*270:1,0B,1A,1B,1C,1D,1G,1H,G2,LU,N5,TJ,X4,X5*273:1,0B,1G,G2,LU*290:1,SY*295:1,2U,EI,FY,NF*296:1,G1*297:1,9F*298:1,T4*299:1,F8*301:1,0B,1G,G2*303:1,0B,IG,G2,LU*305:1,0B,G2,LU*307:1,0B,1G,G2,LU*309:1,G2,LU*334:1,9B*335:1,9D*336:1,G1*337:1,6R*338:1,EW*339:1,X4*340:1,F4*341:1,BT*342:1,9F*352:1,VY,XZ*354:2,PXC*355:1,0B,1G,G2,LU*357:1,0B,1G,G2*361:1,G2,LU*363:1,0B,1G,G2,LU*367:1,0B,1G,G2*370:1,0B,1G,G2
+156=13:2,[States]*19:2,[States]*30:2,[States]*37:2,[States]*40:11:4,[States]*93:2,[States]*113:2,[States]*184:2,[States]*190:2,[States]*211:2,[States]*216:11:4,[States]*269:2,[States]*289:2,[States]*360:2,[States]*366:2,[States]
+1138=26:1,A,B,C,D,E,F,G,H,P,S,T,U*104:1,A,B,C,D,E,F,G,H,P,S,T,U*280:1,A,B,C,D,E,F,G,H,P,S,T,U
+1069=26:2,18*104:2,01,18,19,20,21,39,40,53,G8*208:1,01,19,20,21,39,40,53,G8*280:2,01,18,19,20,21,39,40,53,G8
+1336=26:5,12,13,14,15,16,41,42,43,47*104:5,12,13,14,15,16,41,42,43,47*280:5,12,13,14,15,16,41,42,43,47
+1032=26:9,11,12,13,14,15,16,17,AM,BL,CH,CI,DS,FI,HM,LM,MA,MB,MC,OF,TV,VA,WC,ZZ*104:9,11,12,13,14,15,16,17,AM,BL,CH,CI,DS,FI,HM,LM,MA,MB,MC,OF,TV,VA,WC,ZZ*280:9,11,12,13,14,15,16,17,AM,BL,CH,CI,DS,FI,HM,LM,MA,MB,MC,OF,TV,VA,WC,ZZ
+1250=27:5,D8*31:1,D8*41:2,D8*42:2,D8*43:2,D8*44:2,D8*45:2,D8*46:2,D8*47:2,D8*48:2,D8*49:2,D8,RD8*50:2,D8*51:2,D8*52:2,D8*53:2,D8*54:2,D8*55:2,D8*56:2,D8*118:2,D8*144:2,D8,RD8*145:2,D8*146:2,D8*147:2,D8*148:2,D8*149:2,D8*150:2,D8*151:2,D8*152:2,D8*153:2,D8*203:2,D8*208:5,D8*212:1,D8*217:2,D8*218:2,D8*219:2,D8*220:2,D8*221:2,D8*222:2,D8*223:2,D8*224:2,D8*225:2,D8,RD8*226:2,D8*227:2,D8*228:2,D8*229:2,D8*230:2,D8*231:2,D8*232:2,D8*294:2,D8*320:2,D8,RD8*321:2,D8*322:2,D8*323:2,D8*324:2,D8*325:2,D8*326:2,D8*327:2,D8*328:2,D8*329:2,D8*379:2,D8
+355=27:7,01*76:1,LB*76:5,DH*135:3,MJ,UN*136:2,DA*139:1,LB*139:5,DH*140:2,MO*173:11,MJ,UN*175:5:1,F2,GR,ME,ML,UN*208:7,01*252:1,LB*252:5,DH*311:3,MJ,UN*312:2,DA*315:1,LB*315:5,DH*316:2,MO*349:11,MJ,UN*351:5:1,F2,GR,ME,ML,UN
+1073=27:9,Y*40:6,N,Y*40:8,N,W,Y*77:12,N,Y*78:2,N,Y*79:2,N,Y*80:2,Y*81:2,N,Y*109:3,N,W,Y*135:9,Y*135:11,Y*135:12,Y*141:2,N,Y*142:2,N,Y*143:2,N,Y*206:2,N,W,Y*208:9,Y*216:6,N,Y*216:8,N,W,Y*253:12,N,Y*254:2,N,Y*255:2,N,Y*256:2,Y*257:2,N,Y*285:3,N,W,Y*311:9,Y*311:11,Y*311:12,Y*317:2,N,Y*318:2,N,Y*319:2,N,Y*382:2,N,W,Y
+1068=31:3,F,M,U*212:3,F,M,U
+1331=40:5:1,[POSCodes]*135:5,[POSCodes]*216:5:1,[POSCodes]*311:5,[POSCodes]
+1332=40:5:2,B*140:1,I,R,S*216:5:2,B*316:1,I,R,S
+1359=40:7,A,B,C*216:7,A,B,C
+1363=40:9,I,Y*109:6,I,Y*216:9,I,Y*285:6,I,Y
+1351=40:10,P*109:4,P*216:10,P*285:4,P
+1362=40:11:1,AA,EM,OA*40:11:2,AA,EM,OA*216:11:1,AA,EM,OA*216:11:2,AA,EM,OA
+1366=40:12,02,03,05,09*216:12,02,03,05,09
+1514=40:20,1,2,3,4,5,6,7,8,9,10,11,15*216:20,1,2,3,4,5,6,7,8,9,10,11,15
+374=41:1,431*42:1,454*43:1,304*44:1,453*45:1,439*46:1,484*47:1,455*48:1,471*49:1,314,360,361*50:1,297*51:1,296*52:1,435*53:1,096*54:1,090,091*55:1,444*56:1,050*118:1,573*144:1,472*145:1,471*146:1,607*147:1,463*148:1,461*149:1,304*150:1,738,739*151:1,011*152:1,455*153:1,454*203:1,573*217:1,431*218:1,454*219:1,304*220:1,453*221:1,439*222:1,484*223:1,455*224:1,471*225:1,314,360,361*226:1,297*227:1,296*228:1,435*229:1,096*230:1,090,091*231:1,444*232:1,050*294:1,573*320:1,472*321:1,471*322:1,607*323:1,463*324:1,461*325:1,304*326:1,738,739*327:1,011*328:1,455*329:1,454*379:1,573
+755=57:1,03,04,05,06,07,08,09,10,11,13,15,21,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2,DA,DB,DG,DJ,DS,EB,HC,HR,I5,R,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,PY,PZ,RB,RR,RT,RX,SG,V5,XP*137:1,03,04,05,06,07,08,09,10,11,13,15,21,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2,DA,DB,DG,DJ,DS,EB,HC,HR,I5,IR,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,PY,PZ,RB,RR,RT,RX,SG,V5,XP*138:1,CT*233:1,03,04,05,06,07,08,09,10,11,13,15,21,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2,DA,DB,DG,DJ,DS,EB,HC,HR,I5,R,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,PY,PZ,RB,RR,RT,RX,SG,V5,XP*313:1,03,04,05,06,07,08,09,10,11,13,15,21,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2,DA,DB,DG,DJ,DS,EB,HC,HR,I5,IR,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,PY,PZ,RB,RR,RT,RX,SG,V5,XP*314:1,CT
+756=57:2,AA,BM,EL,EM,FT,FX*137:2,AA,BM,EL,FT*138:2,AB,AD,AF,AG,NS*233:2,AA,BM,EL,EM,FT,FX*314:2,AB,AD,AF,AG,NS
+1166=58:1,01,02,03,04,05,06,09*157:1,01,02,03,04,05,06,09*234:1,01,02,03,04,05,06,09*333:1,01,02,03,04,05,06,09
+522=59:1,F5*106:1,D*107:1,A8*108:1,EAF*167:1,T*168:1,F4*204:1,EAF*235:1,F5*282:1,D*283:1,A8*284:1,EAF*343:1,T*344:1,F4*380:1,EAF
+127=60:2,1,2,3,4,5,6,7*61:2,Y,N*122:2,Y*236:2,1,2,3,4,5,6,7*237:2,Y,N*298:2,Y
+363=75:1,ADD,CER,DCP,DGN,TPO*170:1,ADD,DCP*171:1,TPO*251:1,ADD,CER,DCP,DGN,TPO*346:1,ADD,DCP*347:1,TPO
+1317=76:4,A,B,C,D,E*139:4,A,B,C,D,E*252:4,A,B,C,D,E*315:4,A,B,C,D,E
+1342=77:8,A,C,D,E,F,G,M*253:8,A,C,D,E,F,G,M
+1136=78:1,07*79:1,E1,E2,E3*80:1,75*81:1,ZZ*141:1,07*142:1,70*143:1,09*254:1,07*255:1,E1,E2,E3*256:1,75*257:1,ZZ*317:1,07*318:1,70*319:1,09
+1321=78:3,01,04,05,06,07,08,09,12*78:4,01,04,05,06,07,08,09,12*78:5,01,04,05,06,07,08,09,12*78:6,01,04,05,06,07,08,09,12*78:7,01,04,05,06,07,08,09,12*79:3,L1,L2,L3,L4,L5*79:4,L1,L2,L3,L4,L5*79:5,L1,L2,L3,L4,L5*79:6,L1,L2,L3,L4,L5*79:7,L1,L2,L3,L4,L5*80:3,IH*81:3,AV,NU,S2,ST*81:4,AV,NU,S2,ST*81:5,AV,NU,S2,ST*141:3,01,04,05,06,07,08,09,12*141:4,01,04,05,06,07,08,09,12*141:5,01,04,05,06,07,08,09,12*141:6,01,04,05,06,07,08,09,12*141:7,01,04,05,06,07,08,09,12*142:3,65*143:3,38,ZV*143:4,38,ZV*254:3,01,04,05,06,07,08,09,12*254:4,01,04,05,06,07,08,09,12*254:5,01,04,05,06,07,08,09,12*254:6,01,04,05,06,07,08,09,12*254:7,01,04,05,06,07,08,09,12*255:3,L1,L2,L3,L4,L5*255:4,L1,L2,L3,L4,L5*255:5,L1,L2,L3,L4,L5*255:6,L1,L2,L3,L4,L5*255:7,L1,L2,L3,L4,L5*256:3,IH*257:3,AV,NU,S2,ST*257:4,AV,NU,S2,ST*257:5,AV,NU,S2,ST*317:3,01,04,05,06,07,08,09,60*317:4,01,04,05,06,07,08,09,60*317:5,01,04,05,06,07,08,09,60*317:6,01,04,05,06,07,08,09,60*317:7,01,04,05,06,07,08,09,60*318:3,65*319:3,ZV*319:4,ZV
+1270=82:1:1,ABK,BK*82:2:1,ABF,BF*82:3:1,ABF,BF*82:4:1,ABF,BF*82:5:1,ABF,BF*82:6:1,ABF,BF*82:7:1,ABF,BF*82:8:1,ABF,BF*82:9:1,ABF,BF*82:10:1,ABF,BF*82:11:1,ABF,BF*82:12:1,ABF,BF*83:1:1,BP*83:2:1,BO*84:1:1,BG*84:2:1,BG*84:3:1,BG*84:4:1,BG*84:5:1,BG*84:6:1,BG*84:7:1,BG*84:8:1,BG*84:9:1,BG*84:10:1,BG*84:11:1,BG*84:12:1,BG*205:1,AS,UT*258:1:1,ABK,BK*258:2:1,ABF,BF*258:3:1,ABF,BF*258:4:1,ABF,BF*258:5:1,ABF,BF*258:6:1,ABF,BF*258:7:1,ABF,BF*258:8:1,ABF,BF*258:9:1,ABF,BF*258:10:1,ABF,BF*258:11:1,ABF,BF*258:12:1,ABF,BF*259:1:1,BP*259:2:1,BO*260:1:1,BG*260:2:1,BG*260:3:1,BG*260:4:1,BG*260:5:1,BG*260:6:1,BG*260:7:1,BG*260:8:1,BG*260:9:1,BG*260:10:1,BG*260:11:1,BG*260:12:1,BG*381:1,AS,UT
+1473=85:1,00,01,02,03,04,05,07,08,09,10,11,12,13,14*173:1,00,01,02,03,04,05,06,07,08,09,10,11,12,13,14*261:1,00,01,02,03,04,05,07,08,09,10,11,12,13,14*349:1,00,01,02,03,04,05,06,07,08,09,10,11,12,13,14
+901=85:13,T1,T2,T3,T4,T5,T6*173:13,T1,T2,T3,T4,T5,T6*261:13,T1,T2,T3,T4,T5,T6*349:13,T1,T2,T3,T4,T5,T6
+1526=85:14,1,2,3,4,5*173:14,1,2,3,4,5*261:14,1,2,3,4,5*349:14,1,2,3,4,5
+1527=85:15,1,2,3,4,5,6*173:15,1,2,3,4,5,6*261:15,1,2,3,4,5,6*349:15,1,2,3,4,5,6
+1033=105:1,CO,CR,OA,PI,PR*202:1,CO,CR,OA,PI,PR*281:1,CO,CR,OA,PI,PR*378:1,CO,CR,OA,PI,PR
+235=135:1:1,ER,HC,IV,WK*136:1:1,HC*173:9,ER,HC,IV,WK*174:2,N4,EN,EO,HI,ON,UK,UP*201:3:1,ER,HC,IV,WK*311:1:1,ER,HC,IV,WK*312:1:1,HC*349:9,ER,HC,IV,WK*350:2,N4,EN,EO,HI,ON,UK,UP*377:3:1,ER,HC,IV,WK
+1327=135:15,0*311:15,0
+594=136:6,1,4,6*312:6,1,4,6
+673=154:1,PT*155:1,FL*330:1,PT*331:1,FL
+737=156:1,OG,TR*332:1,OG,TR
+738=156:2,HT,R1,R2,R3,R4*332:2,HT,R1,R2,R3,R4
+ELEMENT FORMATS
+108=1:9,0,0,DateYYMMDD
+373=2:4,0,0,DateCCYYMMDD
+1251=31:2,0,,DateCCYYMMDD*41:3,0,,DateCCYYMMDD*42:3,0,,DateCCYYMMDD*43:3,0,,DateCCYYMMDD*44:3,0,,DateCCYYMMDD*45:3,0,,DateCCYYMMDD*46:3,0,,DateCCYYMMDD*47:3,0,,DateCCYYMMDD*48:3,0,,DateCCYYMMDD*49:3,0,,DateCCYYMMDD*50:3,0,,DateCCYYMMDD*51:3,0,,DateCCYYMMDD*52:3,0,,DateCCYYMMDD*53:3,0,,DateCCYYMMDD*54:3,0,,DateCCYYMMDD*55:3,0,,DateCCYYMMDD*56:3,0,,DateCCYYMMDD*217:3,0,,DateCCYYMMDD*218:3,0,,DateCCYYMMDD*219:3,0,,DateCCYYMMDD*220:3,0,,DateCCYYMMDD*221:3,0,,DateCCYYMMDD*222:3,0,,DateCCYYMMDD*223:3,0,,DateCCYYMMDD*224:3,0,,DateCCYYMMDD*225:3,0,,DateCCYYMMDD*226:3,0,,DateCCYYMMDD*227:3,0,,DateCCYYMMDD*228:3,0,,DateCCYYMMDD*229:3,0,,DateCCYYMMDD*230:3,0,,DateCCYYMMDD*231:3,0,,DateCCYYMMDD*232:3,0,,DateCCYYMMDD
+SUMMARY
+40:2=135:2
+220:2=319:2
+ELEMENT EQUALITY
+115:9=201:1
+RULES
+27=26:2'EQ'18!USAGE!0!1
+31=26:2'EQ'18!USAGE!2!0
+40=26:2'EQ'18!USAGE!2!1
+146=140:1'EQ'R,S!USAGE!2!0
+207=26:2'NE'18!USAGE!2!1
+321=315:1'EQ'R,S!USAGE!2!0
++SegPos[383:2]=if ( SegPos[383:2] !=  SegPos[3:2] ) then Error[ElementHasWrongValue,"ST02 must be equal to SE02"]  end
++SegPos[384:2]=if ( SegPos[384:2] !=  SegPos[2:6] ) then Error[ElementHasWrongValue,"GS06 must be equal to GE02"]  end
++SegPos[385:2]=if ( SegPos[385:2] !=  SegPos[1:13] ) then Error[ElementHasWrongValue,"ISA13 must be equal to IEA02"]  end
++SegPos[46]=if ( SegPos[26:2] !=  "18" ) then Usage[Required] else Usage[Optional] end
+ELEMENT COUNTERS
+554=134:1
+554=309:1
+ELEMENT CODE DESCRIPTION
+LOOP DESCRIPTIONS
+INTERCHANGE HEADER=Beginning of the EDI Interchange
+FUNCTIONAL GROUP=Beginning of Functional Group
+ST HEADER=Header Loop
+1000A=SUBMITTER NAME
+1000B=RECEIVER NAME
+2000A=BILLING/PAY-TO PROVIDER HIERARCHICAL LEVEL
+2010AA=BILLING PROVIDER NAME
+2010AB=PAY-TO ADDRESS NAME
+2010AC=PAY-TO PLAN NAME
+2000B=SUBSCRIBER HIERARCHICAL LEVEL
+2010BA=SUBSCRIBER NAME
+2010BB=PAYER NAME
+2300=CLAIM INFORMATION
+2310A=REFERRING PROVIDER NAME
+2310B=RENDERING PROVIDER NAME
+2310C=SERVICE FACILITY LOCATION
+2310D=SUPERVISING PROVIDER NAME
+2310E=AMBULANCE PICK-UP LOCATION
+2310F=AMBULANCE DROP-OFF LOCATION
+2320=OTHER SUBSCRIBER INFORMATION
+2330A=OTHER SUBSCRIBER NAME
+2330B=OTHER PAYER NAME
+2330C=OTHER PAYER REFERRING PROVIDER
+2330D=OTHER PAYER RENDERING PROVIDER
+2330E=OTHER PAYER SERVICE FACILITY LOCATION
+2330F=OTHER PAYER SUPERVISING PROVIDER
+2330G=OTHER PAYER BILLING PROVIDER
+2400=SERVICE LINE
+2410=DRUG IDENTIFICATION
+2420A=RENDERING PROVIDER NAME
+2420B=PURCHASED SERVICE PROVIDER NAME
+2420C=SERVICE FACILITY LOCATION
+2420D=SUPERVISING PROVIDER NAME
+2420E=ORDERING PROVIDER NAME
+2420F=REFERRING PROVIDER NAME
+2420G=AMBULANCE PICK-UP LOCATION
+2420H=AMBULANCE DROP-OFF LOCATION
+2430=LINE ADJUDICATION INFORMATION
+2440=FORM IDENTIFICATION CODE
+2000C=PATIENT HIERARCHICAL LEVEL
+2010CA=PATIENT NAME
+2300=CLAIM INFORMATION
+2310A=REFERRING PROVIDER NAME
+2310B=RENDERING PROVIDER NAME
+2310C=SERVICE FACILITY LOCATION
+2310D=SUPERVISING PROVIDER NAME
+2310E=AMBULANCE PICK-UP LOCATION
+2310F=AMBULANCE DROP-OFF LOCATION
+2320=OTHER SUBSCRIBER INFORMATION
+2330A=OTHER SUBSCRIBER NAME
+2330B=OTHER PAYER NAME
+2330C=OTHER PAYER REFERRING PROVIDER
+2330D=OTHER PAYER RENDERING PROVIDER
+2330E=OTHER PAYER SERVICE FACILITY LOCATION
+2330F=OTHER PAYER SUPERVISING PROVIDER
+2330G=OTHER PAYER BILLING PROVIDER
+2400=SERVICE LINE
+2410=DRUG IDENTIFICATION
+2420A=RENDERING PROVIDER NAME
+2420B=PURCHASED SERVICE PROVIDER NAME
+2420C=SERVICE FACILITY LOCATION
+2420D=SUPERVISING PROVIDER NAME
+2420E=ORDERING PROVIDER NAME
+2420F=REFERRING PROVIDER NAME
+2420G=AMBULANCE PICK-UP LOCATION
+2420H=AMBULANCE DROP-OFF LOCATION
+2430=LINE ADJUDICATION INFORMATION
+2440=FORM IDENTIFICATION CODE
+END ST HEADER LOOP=END OF THE ST HEADER
+END GS LOOP=END OF FUNCTIONAL GROUP
+END ISA LOOP=END OF TRANSACTION
+SEGMENT DESCRIPTIONS
+ISA=1,Interchange Control Header
+GS=2,Functional Group Header
+ST=3,Transaction Set Header
+BHT=4,Beginning of Hierarchical Transaction
+NM1=5,Submitter Name
+PER=6,Submitter EDI Contact Information
+NM1=7,Receiver Name
+HL=8,Billing/Pay-to Provider Hierarchical Level
+PRV=9,Billing/Pay-to Provider Specialty Information
+CUR=10,Foreign Currency Information
+NM1=11,Billing Provider Name
+N3=12,Billing Provider Address
+N4=13,Billing Provider City/State/ZIP Code
+REF=14,Billing Provider Tax Identification
+REF=15,Billing Provider UPIN/License Information
+PER=16,Billing Provider Contact Information
+NM1=17,Pay-to Provider Name
+N3=18,Pay-to Provider Address
+N4=19,Pay-to Provider City/State/ZIP Code
+NM1=20,Pay-To Plan Name
+N3=21,Pay-to Plan Address
+N4=22,Pay-To Plan City
+REF=23,Pay-to Plan Secondary Identification
+REF=24,Pay-To Plan Tax Identification Number
+HL=25,Subscriber Hierarchical Level
+SBR=26,Subscriber Information
+PAT=27,Patient Information
+NM1=28,Subscriber Name
+N3=29,Subscriber Address
+N4=30,Subscriber City/State/ZIP Code
+DMG=31,Subscriber Demographic Information
+REF=32,Subscriber Secondary Identification
+REF=33,Property and Casualty Claim Number
+PER=34,Property and Casualty Subscriber Contact Information
+NM1=35,Payer Name
+N3=36,Payer Address
+N4=37,Payer City/State/ZIP Code
+REF=38,Payer Secondary Identification
+REF=39,Billing Provider Secondary Identification
+CLM=40,Claim Information
+DTP=41,Onset of Current Illness or Symptom
+DTP=42,Initial Treatment
+DTP=43,Date Last Seen
+DTP=44,Acute Manifestation
+DTP=45,Accident Date
+DTP=46,Last Menstrual Period
+DTP=47,Last X-ray
+DTP=48,Hearing and Vision Prescription Date
+DTP=49,Disability Dates
+DTP=50,Last Worked
+DTP=51,Authorized Return to Work
+DTP=52,Admission
+DTP=53,Discharge
+DTP=54,Assumed and Relinquished Care Dates
+DTP=55,Property and Casualty Date of First Contact
+DTP=56,Repricer Received Date
+PWK=57,Claim Supplemental Information
+CN1=58,Contract Information
+AMT=59,Patient Amount Paid
+REF=60,Service Authorization Exception Code
+REF=61,Mandatory Medicare (Section 4081) Crossover Indicator
+REF=62,Mammography Certification Number
+REF=63, Referral Number
+REF=64,Prior Authorization
+REF=65,Payer Claim Control Number
+REF=66,Clinical Laboratory Improvement Amendment (CLIA) Number
+REF=67,Repriced Claim Number
+REF=68,Adjusted Repriced Claim Number
+REF=69,Investigational Device Exemption Number
+REF=70,Claim Identification Number for Clearing Houses and Other Transmission Intermediaries
+REF=71,Medical Record Number
+REF=72,Demonstration Project Identifier
+REF=73,Care Plan Oversight
+K3=74,File Information
+NTE=75,Claim Note
+CR1=76,Ambulance Transport Information
+CR2=77,Spinal Manipulation Service Information
+CRC=78,Ambulance Certification
+CRC=79,Patient Condition Information: Vision
+CRC=80,Homebound Indicator
+CRC=81,EPSDT Referral
+HI=82,Health Care Diagnosis Code
+HI=83,Anesthesia Related Procedure
+HI=84,Condition Information
+HCP=85,Claim Pricing/Repricing Information
+NM1=86,Referring Provider Name
+REF=87,Referring Provider Secondary Identification
+NM1=88,Rendering Provider Name
+PRV=89,Rendering Provider Specialty Information
+REF=90,Rendering Provider Secondary Identification
+NM1=91,Service Facility Location Name
+N3=92,Service Facility Location Address
+N4=93,Service Facility Location City/State/ZIP
+REF=94,Service Facility Location Secondary Identification
+PER=95,Service Facility Contact Information
+NM1=96,Supervising Provider Name
+REF=97,Supervising Provider Secondary Identification
+NM1=98,AMBULANCE PICK-UP LOCATION
+N3=99,Ambulance Pick-up Location Address
+N4=100,Ambulance Pick-up Location City
+NM1=101,AMBULANCE DROP-OFF LOCATION
+N3=102,Ambulance Drop-off Location Address
+N4=103,Ambulance Drop-off Location City
+SBR=104,Other Subscriber Information
+CAS=105,Claim Level Adjustments
+AMT=106,Coordination of Benefits (COB) Payer Paid Amount
+AMT=107,Coordination of Benefits (COB) Total Non-Covered
+AMT=108,Remaining Patient Liability
+OI=109,Other Insurance Coverage Information
+MOA=110,Medicare Outpatient Adjudication Information
+NM1=111,Other Subscriber Name
+N3=112,Other Subscriber Address
+N4=113,Other Subscriber City/State/ZIP Code
+REF=114,Other Subscriber Secondary Identification
+NM1=115,Other Payer Name
+N3=116,Other Payer Address
+N4=117,Other Payer City
+DTP=118,Claim Check or Remittance Date
+REF=119,Other Payer Secondary Identifier
+REF=120,Other Payer Prior Authorization
+REF=121,Other Payer Referral Number
+REF=122,Other Payer Claim Adjustment Indicator
+REF=123,Other Payer Claim Control Number
+NM1=124,Other Payer Referring Provider
+REF=125,Other Payer Referring Provider Identification
+NM1=126,Other Payer Rendering Provider
+REF=127,Other Payer Rendering Provider Secondary Identification
+NM1=128,Other Payer Service Facility Location
+REF=129,Other Payer Service Facility Location Identification
+NM1=130,Other Payer Supervising Provider
+REF=131,Other Payer Supervising Provider Identification
+NM1=132,Other Payer Billing Provider
+REF=133,Other Payer Billing Provider Secondary Identification
+LX=134,Service Line
+SV1=135,Professional Service
+SV5=136,Durable Medical Equipment Service
+PWK=137,Line Supplemental Information
+PWK=138,DMERC CMN Indicator
+CR1=139,Ambulance Transport Information
+CR3=140,Durable Medical Equipment Certification
+CRC=141,Ambulance Certification
+CRC=142,Hospice Employee Indicator
+CRC=143,Condition Indicator/Durable Medical Equipment
+DTP=144,Date - Service Date
+DTP=145,Prescription Date
+DTP=146,Certification Revision/Recertification Date
+DTP=147,Date - Begin Therapy Date
+DTP=148,Date - Last Certification Date
+DTP=149,Date - Date Last Seen
+DTP=150,Date - Test
+DTP=151,Date - Shipped
+DTP=152,Date - Last X-ray
+DTP=153,Date - Initial Treatment
+QTY=154,Ambulance Patient Count
+QTY=155,Obstetric Anesthesia Additional Units
+MEA=156,Test Result
+CN1=157,Contract Information
+REF=158,Repriced Line Item Reference Number
+REF=159,Adjusted Repriced Line Item Reference Number
+REF=160,Prior Authorization
+REF=161,Line Item Control Number
+REF=162,Mammography Certification Number
+REF=163,Clinical Laboratory Improvement Amendment (CLIA) Identification
+REF=164,Referring Clinical Laboratory Improvement Amendment (CLIA) Facility Identification
+REF=165,Immunization Batch Number
+REF=166,Referral Number
+AMT=167,Sales Tax Amount
+AMT=168,Postage Claimed Amount
+K3=169,File Information
+NTE=170,Line Note
+NTE=171,Third Party Organization Notes
+PS1=172,Purchased Service Information
+HCP=173,Line Pricing/Repricing Information
+LIN=174,Drug Identification
+CTP=175,Drug Pricing
+REF=176,Prescription Number
+NM1=177,Rendering Provider Name
+PRV=178,Rendering Provider Specialty Information
+REF=179,Rendering Provider Secondary Identification
+NM1=180,Purchased Service Provider Name
+REF=181,Purchased Service Provider Secondary Identification
+NM1=182,Service Facility Location
+N3=183,Service Facility Location Address
+N4=184,Service Facility Location City/State/ZIP
+REF=185,Service Facility Location Secondary Identification
+NM1=186,Supervising Provider Name
+REF=187,Supervising Provider Secondary Identification
+NM1=188,Ordering Provider Name
+N3=189,Ordering Provider Address
+N4=190,Ordering Provider City/State/ZIP Code
+REF=191,Ordering Provider Secondary Identification
+PER=192,Ordering Provider Contact Information
+NM1=193,Referring Provider Name
+REF=194,Other Payer Prior Authorization or Referral Number
+NM1=195,Ambulance Pick-up Location
+N3=196,Ambulance Pick-up Location Address
+N4=197,Ambulance Pick-up Location City
+NM1=198,Ambulance Pick-up Location
+N3=199,Ambulance Pick-up Location Address
+N4=200,Ambulance Pick-up Location City
+SVD=201,Line Adjudication Information
+CAS=202,Line Adjustment
+DTP=203,Line Check or Remittance Date
+AMT=204,Remaining Patient Liability
+LQ=205,Form Identification Code
+FRM=206,Supporting Documentation
+HL=207,Patient Hierarchical Level
+PAT=208,Patient Information
+NM1=209,Patient Name
+N3=210,Patient Address
+N4=211,Patient City/State/ZIP Code
+DMG=212,Patient Demographic Information
+REF=213,Property and Casualty Claim Number
+REF=214,Property and Casualty Patient Identifier
+PER=215,Property and Casualty Patient Contact Information
+CLM=216,Claim Information
+DTP=217,Onset of Current Illness or Symptom
+DTP=218,Initial Treatment
+DTP=219,Date Last Seen
+DTP=220,Acute Manifestation
+DTP=221,Accident Date
+DTP=222,Last Menstrual Period
+DTP=223,Last X-ray
+DTP=224,Hearing and Vision Prescription Date
+DTP=225,Disability Dates
+DTP=226,Last Worked
+DTP=227,Authorized Return to Work
+DTP=228,Admission
+DTP=229,Discharge
+DTP=230,Assumed and Relinquished Care Dates
+DTP=231,Property and Casualty Date of First Contact
+DTP=232,Repricer Received Date
+PWK=233,Claim Supplemental Information
+CN1=234,Contract Information
+AMT=235,Patient Amount Paid
+REF=236,Service Authorization Exception Code
+REF=237,Mandatory Medicare (Section 4081) Crossover Indicator
+REF=238,Mammography Certification Number
+REF=239, Referral Number
+REF=240,Prior Authorization
+REF=241,Payer Claim Control Number
+REF=242,Clinical Laboratory Improvement Amendment (CLIA) Number
+REF=243,Repriced Claim Number
+REF=244,Adjusted Repriced Claim Number
+REF=245,Investigational Device Exemption Number
+REF=246,Claim Identification Number for Clearing Houses and Other Transmission Intermediaries
+REF=247,Medical Record Number
+REF=248,Demonstration Project Identifier
+REF=249,Care Plan Oversight
+K3=250,File Information
+NTE=251,Claim Note
+CR1=252,Ambulance Transport Information
+CR2=253,Spinal Manipulation Service Information
+CRC=254,Ambulance Certification
+CRC=255,Patient Condition Information: Vision
+CRC=256,Homebound Indicator
+CRC=257,EPSDT Referral
+HI=258,Health Care Diagnosis Code
+HI=259,Anesthesia Related Procedure
+HI=260,Condition Information
+HCP=261,Claim Pricing/Repricing Information
+NM1=262,Referring Provider Name
+REF=263,Referring Provider Secondary Identification
+NM1=264,Rendering Provider Name
+PRV=265,Rendering Provider Specialty Information
+REF=266,Rendering Provider Secondary Identification
+NM1=267,Service Facility Location Name
+N3=268,Service Facility Location Address
+N4=269,Service Facility Location City/State/ZIP
+REF=270,Service Facility Location Secondary Identification
+PER=271,Service Facility Contact Information
+NM1=272,Supervising Provider Name
+REF=273,Supervising Provider Secondary Identification
+NM1=274,AMBULANCE PICK-UP LOCATION
+N3=275,Ambulance Pick-up Location Address
+N4=276,Ambulance Pick-up Location City
+NM1=277,AMBULANCE DROP-OFF LOCATION
+N3=278,Ambulance Drop-off Location Address
+N4=279,Ambulance Drop-off Location City
+SBR=280,Other Subscriber Information
+CAS=281,Claim Level Adjustments
+AMT=282,Coordination of Benefits (COB) Payer Paid Amount
+AMT=283,Coordination of Benefits (COB) Total Non-Covered
+AMT=284,Remaining Patient Liability
+OI=285,Other Insurance Coverage Information
+MOA=286,Medicare Outpatient Adjudication Information
+NM1=287,Other Subscriber Name
+N3=288,Other Subscriber Address
+N4=289,Other Subscriber City/State/ZIP Code
+REF=290,Other Subscriber Secondary Identification
+NM1=291,Other Payer Name
+N3=292,Other Payer Address
+N4=293,Other Payer City
+DTP=294,Claim Check or Remittance Date
+REF=295,Other Payer Secondary Identifier
+REF=296,Other Payer Prior Authorization
+REF=297,Other Payer Referral Number
+REF=298,Other Payer Claim Adjustment Indicator
+REF=299,Other Payer Claim Control Number
+NM1=300,Other Payer Referring Provider
+REF=301,Other Payer Referring Provider Identification
+NM1=302,Other Payer Rendering Provider
+REF=303,Other Payer Rendering Provider Secondary Identification
+NM1=304,Other Payer Service Facility Location
+REF=305,Other Payer Service Facility Location Identification
+NM1=306,Other Payer Supervising Provider
+REF=307,Other Payer Supervising Provider Identification
+NM1=308,Other Payer Billing Provider
+REF=309,Other Payer Billing Provider Secondary Identification
+LX=310,Service Line
+SV1=311,Professional Service
+SV5=312,Durable Medical Equipment Service
+PWK=313,Line Supplemental Information
+PWK=314,DMERC CMN Indicator
+CR1=315,Ambulance Transport Information
+CR3=316,Durable Medical Equipment Certification
+CRC=317,Ambulance Certification
+CRC=318,Hospice Employee Indicator
+CRC=319,Condition Indicator/Durable Medical Equipment
+DTP=320,Date - Service Date
+DTP=321,Prescription Date
+DTP=322,Certification Revision/Recertification Date
+DTP=323,Date - Begin Therapy Date
+DTP=324,Date - Last Certification Date
+DTP=325,Date - Date Last Seen
+DTP=326,Date - Test
+DTP=327,Date - Shipped
+DTP=328,Date - Last X-ray
+DTP=329,Date - Initial Treatment
+QTY=330,Ambulance Patient Count
+QTY=331,Obstetric Anesthesia Additional Units
+MEA=332,Test Result
+CN1=333,Contract Information
+REF=334,Repriced Line Item Reference Number
+REF=335,Adjusted Repriced Line Item Reference Number
+REF=336,Prior Authorization
+REF=337,Line Item Control Number
+REF=338,Mammography Certification Number
+REF=339,Clinical Laboratory Improvement Amendment (CLIA) Identification
+REF=340,Referring Clinical Laboratory Improvement Amendment (CLIA) Facility Identification
+REF=341,Immunization Batch Number
+REF=342,Referral Number
+AMT=343,Sales Tax Amount
+AMT=344,Postage Claimed Amount
+K3=345,File Information
+NTE=346,Line Note
+NTE=347,Third Party Organization Notes
+PS1=348,Purchased Service Information
+HCP=349,Line Pricing/Repricing Information
+LIN=350,Drug Identification
+CTP=351,Drug Pricing
+REF=352,Prescription Number
+NM1=353,Rendering Provider Name
+PRV=354,Rendering Provider Specialty Information
+REF=355,Rendering Provider Secondary Identification
+NM1=356,Purchased Service Provider Name
+REF=357,Purchased Service Provider Secondary Identification
+NM1=358,Service Facility Location
+N3=359,Service Facility Location Address
+N4=360,Service Facility Location City/State/ZIP
+REF=361,Service Facility Location Secondary Identification
+NM1=362,Supervising Provider Name
+REF=363,Supervising Provider Secondary Identification
+NM1=364,Ordering Provider Name
+N3=365,Ordering Provider Address
+N4=366,Ordering Provider City/State/ZIP Code
+REF=367,Ordering Provider Secondary Identification
+PER=368,Ordering Provider Contact Information
+NM1=369,Referring Provider Name
+REF=370,Other Payer Prior Authorization or Referral Number
+NM1=371,Ambulance Pick-up Location
+N3=372,Ambulance Pick-up Location Address
+N4=373,Ambulance Pick-up Location City
+NM1=374,Ambulance Pick-up Location
+N3=375,Ambulance Pick-up Location Address
+N4=376,Ambulance Pick-up Location City
+SVD=377,Line Adjudication Information
+CAS=378,Line Adjustment
+DTP=379,Line Check or Remittance Date
+AMT=380,Remaining Patient Liability
+LQ=381,Form Identification Code
+FRM=382,Supporting Documentation
+SE=383,Transaction Set Trailer
+GE=384,Functional Group Trailer
+IEA=385,Interchange Control Trailer
+SAMPLE DATA
+ISA*00*          *00*          *ZZ*133052274      *ZZ*311279999      *120419*2125*^*00501*000002120*0*P*<~
+GS*HC*133052274*311279999*20120419*212549*2120*X*005010X222A1~
+ST*837*000000533*005010X222A1~
+BHT*0019*00*000017120*20120419*212550*CH~
+NM1*41*2*CS*****46*133052274~
+PER*IC*CUSTOMER SOLUTIONS*TE*8008456592~
+NM1*40*2*RECEIVER*****46*311279999~
+HL*1**20*1~
+NM1*85*2*BILLING PROVIDER*****XX*1215954003~
+N3*1540 SUNDAY DRIVE~
+N4*RALEIGH*NC*276076000~
+REF*EI*569999999~
+NM1*87*2~
+N3*P O BOX 63146~
+N4*CHARLOTTE*NC*282633146~
+HL*2*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*SMITH*JOHN****MI*505XXXX~
+N3*2345 NORTH RD~
+N4*SPRINGFIELD*NY*11111~
+DMG*D8*19950101*F~
+NM1*PR*2*BLUE CROSS*****PI*XX123A~
+N3*PO BOX 78765~
+N4*SOUTH BEACH*FL*23466~
+CLM*1029353-03*553.96***11<B<1*Y*A*Y*Y~
+HI*BK<6268*BF<78930~
+NM1*DN*1*SMITH*BOBBY****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00228498B~
+NM1*77*2*SMITH LANEY*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*SOMEWHERE*NY*11119~
+LX*1~
+SV1*HC<87086*31.96*UN*1***1~
+DTP*472*D8*20070118~
+LX*2~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+LX*3~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+LX*4~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*3*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*SMITH*SARAH****MI*543XXXX~
+N3*1111 NORTH LEG RD~
+N4*ABC PLACE*NY*11223~
+DMG*D8*19950101*F~
+NM1*PR*2*AMERIGROUP/MDGA MANAGED CARE*****PI*12CCCA~
+N3*PO BOX 44344~
+N4*BRIGHTON*NY*23466~
+CLM*1029353-03*174***11<B<1*Y*A*Y*Y~
+HI*BK<5990~
+NM1*DN*1*SMITH*WILLIAM****XX*7876666666~
+REF*1G*T12345~
+NM1*82*2*SMITH*****XX*111212222~
+REF*G2*00228498B~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*4*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*SMITH*TEST****MI*505XXXX~
+N3*1111 A ROAD~
+N4*PLACE CITY*NY*11234~
+DMG*D8*19950101*F~
+NM1*PR*2*ETNA*****PI*9876~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1-1180*174***11<B<1*Y*A*Y*Y*P~
+HI*BK<3829~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T12345~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1527 NORTH LEG~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*5*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*LAB*TEST****MI*111XXXX~
+N3*1111 A ROAD~
+N4*PLACE CITY*NY*11234~
+DMG*D8*19880101*M~
+NM1*PR*2*PRONTO INSURANCE 101*****PI*12345~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1-1181*174***11<B<1*Y*A*Y*Y*P~
+HI*BK<05671~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*6*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*LAB*TEST****MI*111XXXX~
+N3*1111 A ROAD~
+N4*PLACE CITY*NY*11234~
+DMG*D8*19880101*M~
+NM1*PR*2*FAST SERVICE INSURANCE*****PI*12345~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1-1182*174***11<B<1*Y*A*Y*Y*P~
+HI*BK<05671~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*7*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*BORAT*LAB****MI*222XXXX~
+N3*1402 WALTON WAY~
+N4*AUGUSTA*GA*30901~
+DMG*D8*19750101*M~
+NM1*PR*2*AMERIGROUP/MDGA MANAGED CARE*****PI*12345~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1-1183*174***11<B<1*Y*A*Y*Y*P~
+HI*BK<20891~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*8*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*BORAT*LAB****MI*222XXXX~
+N3*1402 WALTON WAY~
+N4*AUGUSTA*GA*30901~
+DMG*D8*19750101*M~
+NM1*PR*2*AMERIGROUP/MDGA MANAGED CARE*****PI*12345~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1029353-03*174***11<B<1*Y*A*Y*Y~
+HI*BK<20891~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+HL*9*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*BORAT*LAB****MI*222XXXX~
+N3*1402 WALTON WAY~
+N4*AUGUSTA*GA*30901~
+DMG*D8*19750101*M~
+NM1*PR*2*AMERIGROUP/MDGA MANAGED CARE*****PI*12345~
+N3*PO BOX 61010~
+N4*VIRGINIA BEACH*VA*23466~
+CLM*1029353-03*174***11<B<1*Y*A*Y*Y~
+HI*BK<20891~
+NM1*DN*1*SMITH*WILLIAM****XX*123456789~
+REF*1G*T32418~
+NM1*82*2*SMITH*****XX*123456789~
+REF*G2*00227448X~
+NM1*77*2*SMITH LAB*****XX*123456789~
+N3*1111 DRICE PLACE~
+N4*PLACE CITY*NY*11234~
+LX*1~
+SV1*HC<97530*174*UN*3***1<2~
+DTP*472*D8*20070118~
+SE*191*000000533~
+GE*1*2120~
+IEA*1*000002120~

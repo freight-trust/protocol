@@ -1,0 +1,11 @@
+{
+  "name": "freight-protocol",
+  "version": "1.0.0-rc1",
+  "description": "protocol for EDIFACT and X12 EDI Messages via as2 enhanced",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "freight trust and clearing corporation",
+  "license": "MPL-2.0"
+}

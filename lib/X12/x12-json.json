@@ -1,0 +1,59 @@
+{
+    "SegmentDelimiter": "~",
+    "DataElementDelimiter": "*",
+    "ISA": {
+        "AuthorizationInformationQualifier_1": "00",
+        "AuthorizationInformation_2": "          ",
+        "SecurityInformationQualifier_3": "00",
+        "SecurityInformation_4": "          ",
+        "SenderIDQualifier_5": "16",
+        "InterchangeSenderID_6": "SENDER1        ",
+        "ReceiverIDQualifier_7": "14",
+        "InterchangeReceiverID_8": "RECEIVER1      ",
+        "InterchangeDate_9": "071216",
+        "InterchangeTime_10": "1406",
+        "InterchangeControlStandardsIdentifier_11": "U",
+        "InterchangeControlVersionNumber_12": "00204",
+        "InterchangeControlNumber_13": "000000263",
+        "AcknowledgementRequested_14": "1",
+        "UsageIndicator_15": "T",
+        "ComponentElementSeparator_16": ">"
+    },
+    "Groups": [{
+        "GS": {
+            "CodeIdentifyingInformationType_1": "IN",
+            "SenderIDCode_2": "SENDER1",
+            "ReceiverIDCode_3": "RECEIVER1",
+            "Date_4": "20071216",
+            "Time_5": "1406",
+            "GroupControlNumber_6": "000000001",
+            "TransactionTypeCode_7": "X",
+            "VersionAndRelease_8": "004010"
+        },
+        "Transactions": [{
+            "ST": {
+                "TransactionSetIdentifierCode_01": "850",
+                "TransactionSetControlNumber_02": "0001"
+            },
+            "_comment": "... model specific content goes here ...",
+            "SE": {
+                "NumberofIncludedSegments_01": "15",
+                "TransactionSetControlNumber_02": "0001"
+            },
+            "Model": "X12.ASC.004010"
+        }],
+        "GETrailers": [{
+            "NumberOfIncludedSets_1": "1",
+            "GroupControlNumber_2": "000000001"
+        }]
+    }],
+    "IEATrailers": [{
+        "NumberOfIncludedGroups_1": "1",
+        "InterchangeControlNumber_2": "000000263"
+    }],
+    "Result": {
+        "LastIndex": 19,
+        "Details": [],
+        "Status": "success"
+    }
+}

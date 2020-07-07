@@ -1,0 +1,18 @@
+{
+  "AuthorizationInformationQualifier_1": "00",
+  "AuthorizationInformation_2": "          ",
+  "SecurityInformationQualifier_3": "00",
+  "SecurityInformation_4": "          ",
+  "SenderIDQualifier_5": "16",
+  "InterchangeSenderID_6": "SENDER1        ",
+  "ReceiverIDQualifier_7": "14",
+  "InterchangeReceiverID_8": "RECEIVER1      ",
+  "InterchangeDate_9": "071216",
+  "InterchangeTime_10": "1406",
+  "InterchangeControlStandardsIdentifier_11": "U",
+  "InterchangeControlVersionNumber_12": "00204",
+  "InterchangeControlNumber_13": "000000263",
+  "AcknowledgementRequested_14": "1",
+  "UsageIndicator_15": "T",
+  "ComponentElementSeparator_16": ">"
+}
