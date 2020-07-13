@@ -1,0 +1,118 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/api/v1/countryCodes" {
+}
+
+class "GET /api/v1/countryCodes" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/countryCodes" ..> "GET /api/v1/countryCodes"
+
+
+
+interface "/api/v1/eventTypes" {
+}
+
+class "GET /api/v1/eventTypes" {
+.. header ..
+{field} string Accept-Language
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/eventTypes" ..> "GET /api/v1/eventTypes"
+
+
+
+interface "/api/v1/referenceTypes" {
+}
+
+class "GET /api/v1/referenceTypes" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/referenceTypes" ..> "GET /api/v1/referenceTypes"
+
+
+
+interface "/api/v1/unlocodes" {
+}
+
+class "GET /api/v1/unlocodes" {
+.. query ..
+{field} string locationName
+.. responses ..
+200: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} NotFoundResponse 
+429: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/unlocodes" ..> NotFoundResponse
+
+"/api/v1/unlocodes" ..> "GET /api/v1/unlocodes"
+
+
+
+interface "/api/v1/roles" {
+}
+
+class "GET /api/v1/roles" {
+.. query ..
+{field} string tradeObject
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/roles" ..> "GET /api/v1/roles"
+
+
+
+interface "/api/v1/documentTypes" {
+}
+
+class "GET /api/v1/documentTypes" {
+.. query ..
+{field} string tradeObject
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/documentTypes" ..> "GET /api/v1/documentTypes"
+
+
+
+interface "/api/v1/documentActions" {
+}
+
+class "GET /api/v1/documentActions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/documentActions" ..> "GET /api/v1/documentActions"
+
+
+
+@enduml

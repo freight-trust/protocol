@@ -1,0 +1,7 @@
+class DocumentContentMetadataResponse {
+    {field} PrintableContentMetadataResponse printableContentMetadata
+    {field} string fileName
+    {field} string fileContentType
+    {field} SchemaReference schemaReference
+    {field} integer (int32) documentVersion
+}

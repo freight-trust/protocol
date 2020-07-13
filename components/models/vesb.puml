@@ -1,0 +1,1035 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/certificates" {
+}
+
+class "GET /certificates" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /certificates" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/certificates" ..> "GET /certificates"
+"/certificates" ..> "POST /certificates"
+
+
+
+interface "/certificates/$count" {
+}
+
+class "GET /certificates/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/certificates/$count" ..> "GET /certificates/$count"
+
+
+
+interface "/certificates('{Name}')" {
+}
+
+class "GET /certificates('{Name}')" {
+.. path ..
+{field} string <b>Name</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /certificates('{Name}')" {
+.. path ..
+{field} string <b>Name</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/certificates('{Name}')" ..> "DELETE /certificates('{Name}')"
+"/certificates('{Name}')" ..> "GET /certificates('{Name}')"
+
+
+
+interface "/certificates('{Name}')/{propertyName}/$value" {
+}
+
+class "GET /certificates('{Name}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>Name</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/certificates('{Name}')/{propertyName}/$value" ..> "GET /certificates('{Name}')/{propertyName}/$value"
+
+
+
+interface "/connectors" {
+}
+
+class "GET /connectors" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /connectors" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/connectors" ..> "GET /connectors"
+"/connectors" ..> "POST /connectors"
+
+
+
+interface "/connectors/$count" {
+}
+
+class "GET /connectors/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/connectors/$count" ..> "GET /connectors/$count"
+
+
+
+interface "/connectors('{ConnectorId}')" {
+}
+
+class "GET /connectors('{ConnectorId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /connectors('{ConnectorId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /connectors('{ConnectorId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/connectors('{ConnectorId}')" ..> "DELETE /connectors('{ConnectorId}')"
+"/connectors('{ConnectorId}')" ..> "GET /connectors('{ConnectorId}')"
+"/connectors('{ConnectorId}')" ..> "PUT /connectors('{ConnectorId}')"
+
+
+
+interface "/connectors('{ConnectorId}')/{propertyName}/$value" {
+}
+
+class "GET /connectors('{ConnectorId}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>ConnectorId</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/connectors('{ConnectorId}')/{propertyName}/$value" ..> "GET /connectors('{ConnectorId}')/{propertyName}/$value"
+
+
+
+interface "/files" {
+}
+
+class "GET /files" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /files" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/files" ..> "GET /files"
+"/files" ..> "POST /files"
+
+
+
+interface "/files/$count" {
+}
+
+class "GET /files/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/files/$count" ..> "GET /files/$count"
+
+
+
+interface "/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" {
+}
+
+class "GET /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+{field} string <b>Folder</b>
+{field} string <b>Filename</b>
+{field} string <b>MessageId</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+{field} string <b>Folder</b>
+{field} string <b>Filename</b>
+{field} string <b>MessageId</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" {
+.. path ..
+{field} string <b>ConnectorId</b>
+{field} string <b>Folder</b>
+{field} string <b>Filename</b>
+{field} string <b>MessageId</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" ..> "DELETE /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')"
+"/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" ..> "GET /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')"
+"/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')" ..> "PUT /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')"
+
+
+
+interface "/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')/{propertyName}/$value" {
+}
+
+class "GET /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>ConnectorId</b>
+{field} string <b>Folder</b>
+{field} string <b>Filename</b>
+{field} string <b>MessageId</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')/{propertyName}/$value" ..> "GET /files(ConnectorId='{ConnectorId}',Folder='{Folder}',Filename='{Filename}',MessageId='{MessageId}')/{propertyName}/$value"
+
+
+
+interface "/logs" {
+}
+
+class "GET /logs" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/logs" ..> "GET /logs"
+
+
+
+interface "/logs/$count" {
+}
+
+class "GET /logs/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/logs/$count" ..> "GET /logs/$count"
+
+
+
+interface "/logs('{Id}')" {
+}
+
+class "GET /logs('{Id}')" {
+.. path ..
+{field} string <b>Id</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/logs('{Id}')" ..> "GET /logs('{Id}')"
+
+
+
+interface "/logs('{Id}')/{propertyName}/$value" {
+}
+
+class "GET /logs('{Id}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>Id</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/logs('{Id}')/{propertyName}/$value" ..> "GET /logs('{Id}')/{propertyName}/$value"
+
+
+
+interface "/ports" {
+}
+
+class "GET /ports" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /ports" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/ports" ..> "GET /ports"
+"/ports" ..> "POST /ports"
+
+
+
+interface "/ports/$count" {
+}
+
+class "GET /ports/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/ports/$count" ..> "GET /ports/$count"
+
+
+
+interface "/ports('{PortId}')" {
+}
+
+class "GET /ports('{PortId}')" {
+.. path ..
+{field} string <b>PortId</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /ports('{PortId}')" {
+.. path ..
+{field} string <b>PortId</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /ports('{PortId}')" {
+.. path ..
+{field} string <b>PortId</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/ports('{PortId}')" ..> "DELETE /ports('{PortId}')"
+"/ports('{PortId}')" ..> "GET /ports('{PortId}')"
+"/ports('{PortId}')" ..> "PUT /ports('{PortId}')"
+
+
+
+interface "/ports('{PortId}')/{propertyName}/$value" {
+}
+
+class "GET /ports('{PortId}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>PortId</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/ports('{PortId}')/{propertyName}/$value" ..> "GET /ports('{PortId}')/{propertyName}/$value"
+
+
+
+interface "/profile" {
+}
+
+class "GET /profile" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /profile" {
+
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/profile" ..> "GET /profile"
+"/profile" ..> "PUT /profile"
+
+
+
+interface "/profile/$count" {
+}
+
+class "GET /profile/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/profile/$count" ..> "GET /profile/$count"
+
+
+
+interface "/requests" {
+}
+
+class "GET /requests" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/requests" ..> "GET /requests"
+
+
+
+interface "/requests/$count" {
+}
+
+class "GET /requests/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/requests/$count" ..> "GET /requests/$count"
+
+
+
+interface "/requests('{Id}')" {
+}
+
+class "GET /requests('{Id}')" {
+.. path ..
+{field} string <b>Id</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/requests('{Id}')" ..> "GET /requests('{Id}')"
+
+
+
+interface "/requests('{Id}')/{propertyName}/$value" {
+}
+
+class "GET /requests('{Id}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>Id</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/requests('{Id}')/{propertyName}/$value" ..> "GET /requests('{Id}')/{propertyName}/$value"
+
+
+
+interface "/transactions" {
+}
+
+class "GET /transactions" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transactions" ..> "GET /transactions"
+
+
+
+interface "/transactions/$count" {
+}
+
+class "GET /transactions/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transactions/$count" ..> "GET /transactions/$count"
+
+
+
+interface "/transactions('{Id}')" {
+}
+
+class "GET /transactions('{Id}')" {
+.. path ..
+{field} string <b>Id</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /transactions('{Id}')" {
+.. path ..
+{field} string <b>Id</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transactions('{Id}')" ..> "DELETE /transactions('{Id}')"
+"/transactions('{Id}')" ..> "GET /transactions('{Id}')"
+
+
+
+interface "/transactions('{Id}')/{propertyName}/$value" {
+}
+
+class "GET /transactions('{Id}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>Id</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transactions('{Id}')/{propertyName}/$value" ..> "GET /transactions('{Id}')/{propertyName}/$value"
+
+
+
+interface "/workspaces" {
+}
+
+class "GET /workspaces" {
+.. query ..
+{field} string $select
+{field} string $orderby
+{field} integer $top
+{field} integer $skip
+{field} boolean $count
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /workspaces" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/workspaces" ..> "GET /workspaces"
+"/workspaces" ..> "POST /workspaces"
+
+
+
+interface "/workspaces/$count" {
+}
+
+class "GET /workspaces/$count" {
+.. query ..
+{field} string $filter
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/workspaces/$count" ..> "GET /workspaces/$count"
+
+
+
+interface "/workspaces('{Workspaceid}')" {
+}
+
+class "GET /workspaces('{Workspaceid}')" {
+.. path ..
+{field} string <b>Workspaceid</b>
+.. query ..
+{field} string $select
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /workspaces('{Workspaceid}')" {
+.. path ..
+{field} string <b>Workspaceid</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/workspaces('{Workspaceid}')" ..> "DELETE /workspaces('{Workspaceid}')"
+"/workspaces('{Workspaceid}')" ..> "GET /workspaces('{Workspaceid}')"
+
+
+
+interface "/workspaces('{Workspaceid}')/{propertyName}/$value" {
+}
+
+class "GET /workspaces('{Workspaceid}')/{propertyName}/$value" {
+.. path ..
+{field} string <b>Workspaceid</b>
+{field} string <b>propertyName</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/workspaces('{Workspaceid}')/{propertyName}/$value" ..> "GET /workspaces('{Workspaceid}')/{propertyName}/$value"
+
+
+
+interface "/archiveLogs" {
+}
+
+class "POST /archiveLogs" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/archiveLogs" ..> "POST /archiveLogs"
+
+
+
+interface "/copyConnector" {
+}
+
+class "POST /copyConnector" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/copyConnector" ..> "POST /copyConnector"
+
+
+
+interface "/copyPort" {
+}
+
+class "POST /copyPort" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/copyPort" ..> "POST /copyPort"
+
+
+
+interface "/createCert" {
+}
+
+class "POST /createCert" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/createCert" ..> "POST /createCert"
+
+
+
+interface "/deleteLogs" {
+}
+
+class "POST /deleteLogs" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/deleteLogs" ..> "POST /deleteLogs"
+
+
+
+interface "/deleteTransactions" {
+}
+
+class "POST /deleteTransactions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/deleteTransactions" ..> "POST /deleteTransactions"
+
+
+
+interface "/downloadFile" {
+}
+
+class "POST /downloadFile" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/downloadFile" ..> "POST /downloadFile"
+
+
+
+interface "/exchangeCert" {
+}
+
+class "POST /exchangeCert" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/exchangeCert" ..> "POST /exchangeCert"
+
+
+
+interface "/getTransactionLogs" {
+}
+
+class "POST /getTransactionLogs" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/getTransactionLogs" ..> "POST /getTransactionLogs"
+
+
+
+interface "/importProfiles" {
+}
+
+class "POST /importProfiles" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/importProfiles" ..> "POST /importProfiles"
+
+
+
+interface "/refreshTransactions" {
+}
+
+class "POST /refreshTransactions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/refreshTransactions" ..> "POST /refreshTransactions"
+
+
+
+interface "/restartFile" {
+}
+
+class "POST /restartFile" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/restartFile" ..> "POST /restartFile"
+
+
+
+interface "/sendFile" {
+}
+
+class "POST /sendFile" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/sendFile" ..> "POST /sendFile"
+
+
+
+@enduml

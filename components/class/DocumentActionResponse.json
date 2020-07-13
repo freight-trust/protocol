@@ -1,0 +1,6 @@
+class DocumentActionResponse {
+    {field} string actionTime
+    {field} string actionType
+    {field} Actor actor
+    {field} integer (int32) documentVersion
+}

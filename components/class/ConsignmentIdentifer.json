@@ -1,0 +1,5 @@
+class ConsignmentIdentifer {
+    {field} string billOfLadingNumber
+    {field} string carrierBookingNumber
+    {field} string consignmentId
+}

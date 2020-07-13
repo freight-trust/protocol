@@ -1,0 +1,674 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/api/v1/documentSchema" {
+}
+
+class "POST /api/v1/documentSchema" {
+.. body ..
+{field} DocumentSchemaRequest <b>documentSchemaRequest</b>
+.. responses ..
+200: {field} DocumentSchemaCreatedUpdatedResponse 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"POST /api/v1/documentSchema" ..> AppExceptionResponse
+"POST /api/v1/documentSchema" ..> DocumentSchemaRequest
+"POST /api/v1/documentSchema" ..> DocumentSchemaCreatedUpdatedResponse
+
+"/api/v1/documentSchema" ..> "POST /api/v1/documentSchema"
+
+
+
+interface "/api/v1/documentSchema/{documentSchemaId}" {
+}
+
+class "GET /api/v1/documentSchema/{documentSchemaId}" {
+.. path ..
+{field} string <b>documentSchemaId</b>
+.. query ..
+{field} boolean includeInactive = false
+{field} integer (int32) version
+.. responses ..
+200: {field} DocumentSchemaResponse 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+404: {field} AppExceptionResponse 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/documentSchema/{documentSchemaId}" ..> AppExceptionResponse
+"GET /api/v1/documentSchema/{documentSchemaId}" ..> DocumentSchemaResponse
+
+class "PUT /api/v1/documentSchema/{documentSchemaId}" {
+.. path ..
+{field} string <b>documentSchemaId</b>
+.. body ..
+{field} DocumentSchemaUpdateRequest <b>documentSchemaUpdateRequest</b>
+.. responses ..
+200: {field} DocumentSchemaCreatedUpdatedResponse 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"PUT /api/v1/documentSchema/{documentSchemaId}" ..> DocumentSchemaUpdateRequest
+"PUT /api/v1/documentSchema/{documentSchemaId}" ..> DocumentSchemaCreatedUpdatedResponse
+"PUT /api/v1/documentSchema/{documentSchemaId}" ..> AppExceptionResponse
+
+class "PATCH /api/v1/documentSchema/{documentSchemaId}" {
+.. path ..
+{field} string <b>documentSchemaId</b>
+.. body ..
+{field} DocumentSchemaMetadataStatusRequest <b>documentSchemaMetadataStatusRequest</b>
+.. responses ..
+200: {field} DocumentSchemaMetadataResponse 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"PATCH /api/v1/documentSchema/{documentSchemaId}" ..> DocumentSchemaMetadataStatusRequest
+"PATCH /api/v1/documentSchema/{documentSchemaId}" ..> AppExceptionResponse
+"PATCH /api/v1/documentSchema/{documentSchemaId}" ..> DocumentSchemaMetadataResponse
+
+"/api/v1/documentSchema/{documentSchemaId}" ..> "GET /api/v1/documentSchema/{documentSchemaId}"
+"/api/v1/documentSchema/{documentSchemaId}" ..> "PATCH /api/v1/documentSchema/{documentSchemaId}"
+"/api/v1/documentSchema/{documentSchemaId}" ..> "PUT /api/v1/documentSchema/{documentSchemaId}"
+
+
+
+interface "/api/v1/documents/{documentId}" {
+}
+
+class "DELETE /api/v1/documents/{documentId}" {
+.. path ..
+{field} string <b>documentId</b>
+.. query ..
+{field} boolean deleteMetadata = false
+.. responses ..
+200: {field} DeleteResponse 
+202: {field} DeleteResponse 
+204: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+404: {field} AppExceptionResponse 
+500: {field} AppExceptionResponse 
+}
+
+"DELETE /api/v1/documents/{documentId}" ..> AppExceptionResponse
+"DELETE /api/v1/documents/{documentId}" ..> DeleteResponse
+
+"/api/v1/documents/{documentId}" ..> "DELETE /api/v1/documents/{documentId}"
+
+
+
+interface "/api/v1/documents/{documentId}/content" {
+}
+
+class "GET /api/v1/documents/{documentId}/content" {
+.. path ..
+{field} string <b>documentId</b>
+.. query ..
+{field} boolean consistencyVerification = true
+{field} integer (int32) docVersion
+.. responses ..
+200: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/documents/{documentId}/content" ..> AppExceptionResponse
+
+"/api/v1/documents/{documentId}/content" ..> "GET /api/v1/documents/{documentId}/content"
+
+
+
+interface "/api/v1/documents/{documentId}/printableContent" {
+}
+
+class "GET /api/v1/documents/{documentId}/printableContent" {
+.. path ..
+{field} string <b>documentId</b>
+.. query ..
+{field} boolean consistencyVerification = true
+{field} integer (int32) docVersion
+.. responses ..
+200: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/documents/{documentId}/printableContent" ..> AppExceptionResponse
+
+"/api/v1/documents/{documentId}/printableContent" ..> "GET /api/v1/documents/{documentId}/printableContent"
+
+
+
+interface "/api/v1/partitionRules" {
+}
+
+class "GET /api/v1/partitionRules" {
+
+.. responses ..
+200: {field} PartitionRuleResponse[] 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/partitionRules" ..> AppExceptionResponse
+"GET /api/v1/partitionRules" ..> PartitionRuleResponse
+
+"/api/v1/partitionRules" ..> "GET /api/v1/partitionRules"
+
+
+
+interface "/api/v1/partitionRules/{partitionRuleId}" {
+}
+
+class "GET /api/v1/partitionRules/{partitionRuleId}" {
+.. path ..
+{field} string <b>partitionRuleId</b>
+.. query ..
+{field} string tradeObjectType
+.. responses ..
+200: {field} PartitionRuleResponse 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/partitionRules/{partitionRuleId}" ..> AppExceptionResponse
+"GET /api/v1/partitionRules/{partitionRuleId}" ..> PartitionRuleResponse
+
+"/api/v1/partitionRules/{partitionRuleId}" ..> "GET /api/v1/partitionRules/{partitionRuleId}"
+
+
+
+interface "/api/v1/transactions/{transactionId}" {
+}
+
+class "GET /api/v1/transactions/{transactionId}" {
+.. path ..
+{field} string <b>transactionId</b>
+.. responses ..
+200: {field} TransactionResponse 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v1/transactions/{transactionId}" ..> TransactionResponse
+"GET /api/v1/transactions/{transactionId}" ..> AppExceptionResponse
+
+"/api/v1/transactions/{transactionId}" ..> "GET /api/v1/transactions/{transactionId}"
+
+
+
+interface "/api/v2/documentSchema" {
+}
+
+class "GET /api/v2/documentSchema" {
+.. query ..
+{field} boolean includeInactive = false
+{field} string name
+{field} string organizationId
+{field} string type
+.. responses ..
+200: {field} array[] 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v2/documentSchema" ..> AppExceptionResponse
+
+"/api/v2/documentSchema" ..> "GET /api/v2/documentSchema"
+
+
+
+interface "/api/v2/documents" {
+}
+
+class "PUT /api/v2/documents" {
+.. formData ..
+{field} string contentUrl
+{field} file file
+{field} string <b>metadata</b>
+{field} string schemaReference
+.. responses ..
+200: {field} DocumentUpsertResponseV2 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"PUT /api/v2/documents" ..> DocumentUpsertResponseV2
+"PUT /api/v2/documents" ..> AppExceptionResponse
+
+"/api/v2/documents" ..> "PUT /api/v2/documents"
+
+
+
+interface "/api/v2/documents/bulk/documents" {
+}
+
+class "POST /api/v2/documents/bulk/documents" {
+.. body ..
+{field} DownloadZipRequest <b>downloadZipRequest</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"POST /api/v2/documents/bulk/documents" ..> DownloadZipRequest
+"POST /api/v2/documents/bulk/documents" ..> AppExceptionResponse
+
+"/api/v2/documents/bulk/documents" ..> "POST /api/v2/documents/bulk/documents"
+
+
+
+interface "/api/v2/documents/search" {
+}
+
+class "POST /api/v2/documents/search" {
+.. body ..
+{field} GetDocumentsRequest <b>getAllDocumentsRequest</b>
+.. responses ..
+200: {field} DocumentPaginationListResponse 
+202: {field} <i>not specified</i> 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"POST /api/v2/documents/search" ..> GetDocumentsRequest
+"POST /api/v2/documents/search" ..> AppExceptionResponse
+"POST /api/v2/documents/search" ..> DocumentPaginationListResponse
+
+"/api/v2/documents/search" ..> "POST /api/v2/documents/search"
+
+
+
+interface "/api/v2/documents/{documentId}/metadata" {
+}
+
+class "GET /api/v2/documents/{documentId}/metadata" {
+.. path ..
+{field} string <b>documentId</b>
+.. query ..
+{field} boolean embed = false
+{field} boolean includeDeleted = false
+.. responses ..
+200: {field} DocumentResponseV2 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v2/documents/{documentId}/metadata" ..> AppExceptionResponse
+"GET /api/v2/documents/{documentId}/metadata" ..> DocumentResponseV2
+
+"/api/v2/documents/{documentId}/metadata" ..> "GET /api/v2/documents/{documentId}/metadata"
+
+
+
+interface "/api/v2/transactions" {
+}
+
+class "GET /api/v2/transactions" {
+.. query ..
+{field} string from
+{field} string objectId
+{field} integer (int32) size
+.. responses ..
+200: {field} TransactionV2Response 
+400: {field} AppExceptionResponse 
+401: {field} <i>not specified</i> 
+500: {field} AppExceptionResponse 
+}
+
+"GET /api/v2/transactions" ..> TransactionV2Response
+"GET /api/v2/transactions" ..> AppExceptionResponse
+
+"/api/v2/transactions" ..> "GET /api/v2/transactions"
+
+
+class Actor {
+    {field} string <b>orgId</b>
+    {field} string <b>userId</b>
+    {field} string originatorId
+    {field} string originatorName
+}
+
+
+
+class AppExceptionResponse {
+    {field} string <b>code</b>
+    {field} string <b>message</b>
+    {field} string <b>timestamp</b>
+}
+
+
+
+class ConsignmentIdentifer {
+    {field} string billOfLadingNumber
+    {field} string carrierBookingNumber
+    {field} string consignmentId
+}
+
+
+
+class DeleteResponse {
+    {field} string <b>transactionId</b>
+}
+
+
+
+class DocumentActionResponse {
+    {field} string actionTime
+    {field} string actionType
+    {field} Actor actor
+    {field} integer (int32) documentVersion
+}
+
+DocumentActionResponse ..> Actor
+
+
+class DocumentContentMetadataResponse {
+    {field} PrintableContentMetadataResponse printableContentMetadata
+    {field} string fileName
+    {field} string fileContentType
+    {field} SchemaReference schemaReference
+    {field} integer (int32) documentVersion
+}
+
+DocumentContentMetadataResponse ..> PrintableContentMetadataResponse
+DocumentContentMetadataResponse ..> SchemaReference
+
+
+class DocumentDataResponseV2 {
+    {field} string <b>documentId</b>
+    {field} integer (int32) <b>documentVersion</b>
+    {field} string <b>name</b>
+    {field} string <b>docType</b>
+    {field} TradeObjectIdentifiers <b>identifiers</b>
+    {field} string fileType
+    {field} string docTypeNamespace {"platform", "custom"}
+    {field} DocumentActionResponse[] documentActions
+    {field} DocumentContentMetadataResponse[] documentContentList
+    {field} object docReferences
+}
+
+DocumentDataResponseV2 ..> DocumentActionResponse
+DocumentDataResponseV2 ..> DocumentContentMetadataResponse
+DocumentDataResponseV2 ..> TradeObjectIdentifiers
+
+
+class DocumentPaginationListResponse {
+    {field} object[] <b>documents</b>
+    {field} boolean hasMore
+    {field} string newFrom
+}
+
+
+
+class DocumentResponseV2 {
+    {field} DocumentDataResponseV2 document
+}
+
+DocumentResponseV2 ..> DocumentDataResponseV2
+
+
+class DocumentSchemaCreatedUpdatedResponse {
+    {field} string <b>description</b>
+    {field} string <b>docType</b>
+    {field} string <b>id</b>
+    {field} string <b>name</b>
+    {field} string <b>organizationId</b>
+    {field} string <b>transactionId</b>
+}
+
+
+
+class DocumentSchemaMetadataResponse {
+    {field} string <b>docType</b>
+    {field} string <b>id</b>
+    {field} string <b>organizationId</b>
+    {field} string <b>transactionId</b>
+    {field} string name
+}
+
+
+
+class DocumentSchemaMetadataStatusRequest {
+    {field} string <b>status</b> {"ACTIVE", "DEPRECATED", "INACTIVE"}
+    {field} integer (int32) <b>version</b>
+}
+
+
+
+class DocumentSchemaRequest {
+    {field} string <b>docType</b>
+    {field} boolean <b>jsonSupport</b>
+    {field} string <b>organizationId</b>
+    {field} string[] <b>supportedContentTypes</b>
+    {field} string description
+    {field} string name
+    {field} object sampleModel
+    {field} Schema schema
+    {field} object uiLayout
+}
+
+DocumentSchemaRequest ..> Schema
+
+
+class DocumentSchemaResponse {
+    {field} string <b>docType</b>
+    {field} string <b>id</b>
+    {field} boolean <b>jsonSupport</b>
+    {field} string <b>organizationId</b>
+    {field} string <b>status</b>
+    {field} string[] <b>supportedContentTypes</b>
+    {field} integer (int32) <b>version</b>
+    {field} string description
+    {field} string name
+    {field} object sampleModel
+    {field} Schema schema
+    {field} object uiLayout
+}
+
+DocumentSchemaResponse ..> Schema
+
+
+class DocumentSchemaUpdateRequest {
+    {field} boolean <b>jsonSupport</b>
+    {field} string <b>organizationId</b>
+    {field} string[] <b>supportedContentTypes</b>
+    {field} string description
+    {field} string docType
+    {field} string name
+    {field} object sampleModel
+    {field} Schema schema
+    {field} object uiLayout
+}
+
+DocumentSchemaUpdateRequest ..> Schema
+
+
+class DocumentUpsertResponseV2 {
+    {field} string <b>docType</b>
+    {field} string <b>documentId</b>
+    {field} string <b>fileType</b>
+    {field} TradeObjectIdentifiers <b>identifiers</b>
+    {field} string <b>name</b>
+    {field} string <b>transactionId</b>
+    {field} string contentUrl
+    {field} object docReferences
+    {field} string docTypeNamespace {"platform", "custom"}
+    {field} string originatorId
+    {field} string originatorName
+    {field} SchemaReference schemaReference
+}
+
+DocumentUpsertResponseV2 ..> SchemaReference
+DocumentUpsertResponseV2 ..> TradeObjectIdentifiers
+
+
+class DownloadZipRequest {
+    {field} TradeObjectIdentifiers <b>identifiers</b>
+    {field} string docType
+    {field} string fileType
+    {field} object docReferences
+    {field} boolean consistencyVerification
+    {field} string from
+    {field} integer (int32) size
+}
+
+DownloadZipRequest ..> TradeObjectIdentifiers
+
+
+class GetDocumentsRequest {
+    {field} TradeObjectIdentifiers <b>identifiers</b>
+    {field} string docType
+    {field} string fileType
+    {field} object docReferences
+    {field} string from
+    {field} integer (int32) size
+}
+
+GetDocumentsRequest ..> TradeObjectIdentifiers
+
+
+class PartitionRuleCreatedUpdatedResponse {
+    {field} string <b>channel</b>
+    {field} string <b>channelMemberId</b>
+    {field} string <b>id</b>
+    {field} string <b>originator</b>
+    {field} string <b>status</b>
+    {field} string <b>transactionId</b>
+    {field} string <b>type</b>
+    {field} string tradeObjectType
+}
+
+
+
+class PartitionRuleRequest {
+    {field} string <b>channel</b>
+    {field} string <b>channelMemberId</b>
+    {field} string tradeObjectType
+}
+
+
+
+class PartitionRuleResponse {
+    {field} string <b>channel</b>
+    {field} string <b>channelMemberId</b>
+    {field} string <b>id</b>
+    {field} string <b>type</b>
+    {field} string tradeObjectType
+}
+
+
+
+class PartitionRuleUpdateRequest {
+    {field} string <b>channel</b>
+}
+
+
+
+class PrintableContentMetadataResponse {
+    {field} string fileContentType
+    {field} string fileType
+}
+
+
+
+class References {
+    {field} string reference
+    {field} string type
+}
+
+
+
+class Schema {
+    {field} object <b>definitions</b>
+    {field} string <b>model</b>
+    {field} object <b>properties</b>
+    {field} string <b>type</b>
+}
+
+
+
+class SchemaReference {
+    {field} string <b>documentSchemaId</b>
+    {field} integer (int32) version
+}
+
+
+
+class ShipmentIdentifier {
+    {field} References[] references
+    {field} string shipmentId
+}
+
+ShipmentIdentifier ..> References
+
+
+class TradeObjectIdentifiers {
+    {field} ConsignmentIdentifer consignment
+    {field} ShipmentIdentifier shipment
+    {field} TransportEquipmentIdentifier transportEquipment
+}
+
+TradeObjectIdentifiers ..> ConsignmentIdentifer
+TradeObjectIdentifiers ..> ShipmentIdentifier
+TradeObjectIdentifiers ..> TransportEquipmentIdentifier
+
+
+class TransactionResponse {
+    {field} string <b>actionType</b>
+    {field} string <b>lastModifiedDate</b>
+    {field} string <b>objectId</b>
+    {field} string <b>objectType</b>
+    {field} string <b>originator</b>
+    {field} string <b>status</b> {"Complete", "Failed", "InProgress"}
+    {field} string <b>transactionId</b>
+    {field} string errorMessage
+    {field} string sipEventTransactionId
+}
+
+
+
+class TransactionV2Response {
+    {field} TransactionResponse[] <b>transactionList</b>
+    {field} boolean hasMore
+    {field} string newFrom
+}
+
+TransactionV2Response ..> TransactionResponse
+
+
+class TransportEquipmentIdentifier {
+    {field} string billOfLadingNumber
+    {field} string carrierBookingNumber
+    {field} string equipmentNumber
+    {field} string transportEquipmentId
+}
+
+
+@enduml

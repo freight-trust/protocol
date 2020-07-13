@@ -1,0 +1,118 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/events" {
+}
+
+class "GET /events" {
+.. query ..
+{field} eventTypeList eventType
+{field} bookingReference bookingReference
+{field} transportDocumentID transportDocumentID
+{field} equipmentReference equipmentReference
+{field} scheduleID scheduleID
+{field} transportCallID transportCallID
+{field} limitParam limit
+{field} cursorParam cursor
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"GET /events" ..> transportCallID
+"GET /events" ..> scheduleID
+"GET /events" ..> cursorParam
+"GET /events" ..> bookingReference
+"GET /events" ..> limitParam
+"GET /events" ..> eventTypeList
+"GET /events" ..> equipmentReference
+"GET /events" ..> transportDocumentID
+
+"/events" ..> "GET /events"
+
+
+
+interface "/events/{eventID}" {
+}
+
+class "GET /events/{eventID}" {
+.. path ..
+{field} string <b>eventID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/events/{eventID}" ..> "GET /events/{eventID}"
+
+
+
+interface "/event-subscriptions" {
+}
+
+class "GET /event-subscriptions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /event-subscriptions" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/event-subscriptions" ..> "GET /event-subscriptions"
+"/event-subscriptions" ..> "POST /event-subscriptions"
+
+
+
+interface "/event-subscriptions/{subscriptionID}" {
+}
+
+class "GET /event-subscriptions/{subscriptionID}" {
+.. path ..
+{field} subscriptionIDPathParam <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"GET /event-subscriptions/{subscriptionID}" ..> subscriptionIDPathParam
+
+class "DELETE /event-subscriptions/{subscriptionID}" {
+.. path ..
+{field} subscriptionIDPathParam <b>subscriptionID</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"DELETE /event-subscriptions/{subscriptionID}" ..> subscriptionIDPathParam
+
+class "PUT /event-subscriptions/{subscriptionID}" {
+.. path ..
+{field} subscriptionIDPathParam <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"PUT /event-subscriptions/{subscriptionID}" ..> subscriptionIDPathParam
+
+"/event-subscriptions/{subscriptionID}" ..> "DELETE /event-subscriptions/{subscriptionID}"
+"/event-subscriptions/{subscriptionID}" ..> "GET /event-subscriptions/{subscriptionID}"
+"/event-subscriptions/{subscriptionID}" ..> "PUT /event-subscriptions/{subscriptionID}"
+
+
+
+@enduml

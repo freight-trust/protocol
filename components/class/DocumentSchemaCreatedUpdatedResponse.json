@@ -1,0 +1,8 @@
+class DocumentSchemaCreatedUpdatedResponse {
+    {field} string <b>description</b>
+    {field} string <b>docType</b>
+    {field} string <b>id</b>
+    {field} string <b>name</b>
+    {field} string <b>organizationId</b>
+    {field} string <b>transactionId</b>
+}

@@ -1,0 +1,12 @@
+class DocumentDataResponse {
+    {field} string <b>documentId</b>
+    {field} integer (int32) <b>documentVersion</b>
+    {field} string <b>name</b>
+    {field} string <b>docType</b>
+    {field} TradeObjectIdentifiers <b>identifiers</b>
+    {field} string fileType
+    {field} string docTypeNamespace {"platform", "custom"}
+    {field} DocumentActionResponse[] documentActions
+    {field} DocumentContentMetadataResponse[] documentContentList
+    {field} object docReferences
+}

@@ -1,0 +1,1002 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/api/v1/AvailableLoads/{loadId}" {
+}
+
+class "GET /api/v1/AvailableLoads/{loadId}" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad 
+201: {field} <i>not specified</i> 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/AvailableLoads/{loadId}" ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad
+
+"/api/v1/AvailableLoads/{loadId}" ..> "GET /api/v1/AvailableLoads/{loadId}"
+
+
+
+interface "/api/v1/AvailableLoads/search" {
+}
+
+class "POST /api/v1/AvailableLoads/search" {
+.. query ..
+{field} integer (int32) page
+{field} integer (int32) pageSize
+.. body ..
+{field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoadsRequest loadRequest
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.PagedAvailableLoads 
+201: {field} <i>not specified</i> 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+"POST /api/v1/AvailableLoads/search" ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoadsRequest
+"POST /api/v1/AvailableLoads/search" ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.PagedAvailableLoads
+
+"/api/v1/AvailableLoads/search" ..> "POST /api/v1/AvailableLoads/search"
+
+
+
+interface "/api/v1/Documents/{loadId}/{documentType}" {
+}
+
+class "GET /api/v1/Documents/{loadId}/{documentType}" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+{field} string <b>documentType</b> {"Undefined", "VendorInvoice", "BillOfLading", "ProofOfDelivery", "LumperTicket", "ScaleTicket", "InGateTicket", "OutGateTicket", "Miscellaneous", "AccessorialAgreement", "RateConfirmation", "LoadTender", "Invoice", "CustomsDocuments", "InvoiceWithPaperwork", "DetentionLoading", "DetentionUnloading", "PalletReceipt", "SpotApproval", "EquipmentOrderedNotUsed", "CMR", "DemurrageLoading", "DemurrageUnloading", "ExitPass", "BalanceDue", "BalanceDueWithPaperwork", "PackingList"}
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Documents.DocumentRequest 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/Documents/{loadId}/{documentType}" ..> Coyote.Systems.ExternalApi.Contracts.Models.Documents.DocumentRequest
+
+"/api/v1/Documents/{loadId}/{documentType}" ..> "GET /api/v1/Documents/{loadId}/{documentType}"
+
+
+
+interface "/api/v1/Documents" {
+}
+
+class "POST /api/v1/Documents" {
+.. body ..
+{field} Coyote.Systems.ExternalApi.Contracts.Models.Documents.DocumentRequest documentRequest
+.. responses ..
+200: {field} boolean 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+}
+
+"POST /api/v1/Documents" ..> Coyote.Systems.ExternalApi.Contracts.Models.Documents.DocumentRequest
+
+"/api/v1/Documents" ..> "POST /api/v1/Documents"
+
+
+
+interface "/api/v1/Loads" {
+}
+
+class "POST /api/v1/Loads" {
+.. body ..
+{field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Load loadRequest
+.. responses ..
+200: {field} <i>not specified</i> 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+"POST /api/v1/Loads" ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Load
+
+"/api/v1/Loads" ..> "POST /api/v1/Loads"
+
+
+
+interface "/api/v1/Loads/{loadId}" {
+}
+
+class "DELETE /api/v1/Loads/{loadId}" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+
+
+"/api/v1/Loads/{loadId}" ..> "DELETE /api/v1/Loads/{loadId}"
+
+
+
+interface "/api/v1/Loads/{loadRequestId}/buildstatus" {
+}
+
+class "GET /api/v1/Loads/{loadRequestId}/buildstatus" {
+.. path ..
+{field} string <b>loadRequestId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequestStatus 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/Loads/{loadRequestId}/buildstatus" ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequestStatus
+
+"/api/v1/Loads/{loadRequestId}/buildstatus" ..> "GET /api/v1/Loads/{loadRequestId}/buildstatus"
+
+
+
+interface "/api/v1/LocationStatuses/{loadId}" {
+}
+
+class "GET /api/v1/LocationStatuses/{loadId}" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus[] 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/LocationStatuses/{loadId}" ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus
+
+"/api/v1/LocationStatuses/{loadId}" ..> "GET /api/v1/LocationStatuses/{loadId}"
+
+
+
+interface "/api/v1/LocationStatuses/{loadId}/latest" {
+}
+
+class "GET /api/v1/LocationStatuses/{loadId}/latest" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/LocationStatuses/{loadId}/latest" ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus
+
+"/api/v1/LocationStatuses/{loadId}/latest" ..> "GET /api/v1/LocationStatuses/{loadId}/latest"
+
+
+
+interface "/api/v1/SpotQuotes" {
+}
+
+class "POST /api/v1/SpotQuotes" {
+.. body ..
+{field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuoteRequest request
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuote 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+}
+
+"POST /api/v1/SpotQuotes" ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuoteRequest
+"POST /api/v1/SpotQuotes" ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuote
+
+"/api/v1/SpotQuotes" ..> "POST /api/v1/SpotQuotes"
+
+
+
+interface "/api/v1/LTLSpotQuotes" {
+}
+
+class "POST /api/v1/LTLSpotQuotes" {
+.. body ..
+{field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest request
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuote 
+204: {field} <i>not specified</i> 
+400: {field} <i>not specified</i> 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+500: {field} <i>not specified</i> 
+}
+
+"POST /api/v1/LTLSpotQuotes" ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest
+"POST /api/v1/LTLSpotQuotes" ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuote
+
+"/api/v1/LTLSpotQuotes" ..> "POST /api/v1/LTLSpotQuotes"
+
+
+
+interface "/api/v1/Trackings/{loadId}/stopdetails" {
+}
+
+class "GET /api/v1/Trackings/{loadId}/stopdetails" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.StopDetail 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+503: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/Trackings/{loadId}/stopdetails" ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.StopDetail
+
+"/api/v1/Trackings/{loadId}/stopdetails" ..> "GET /api/v1/Trackings/{loadId}/stopdetails"
+
+
+
+interface "/api/v1/Trackings/{loadId}/summaries" {
+}
+
+class "GET /api/v1/Trackings/{loadId}/summaries" {
+.. path ..
+{field} integer (int32) <b>loadId</b>
+.. responses ..
+200: {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary 
+401: {field} <i>not specified</i> 
+403: {field} <i>not specified</i> 
+404: {field} <i>not specified</i> 
+503: {field} <i>not specified</i> 
+}
+
+"GET /api/v1/Trackings/{loadId}/summaries" ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary
+
+"/api/v1/Trackings/{loadId}/summaries" ..> "GET /api/v1/Trackings/{loadId}/summaries"
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad {
+    {field} integer (int32) <b>loadId</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails <b>loadDetails</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop[] <b>stops</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Rate <b>rate</b>
+    {field} string <b>mode</b> {"TL", "LTL", "IMDL"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.EquipmentDetails <b>equipment</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Distance <b>loadDistance</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Weight <b>weight</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TemperatureSettings <b>temperatureSettings</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadAttributes <b>loadAttributes</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Distance
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.EquipmentDetails
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadAttributes
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Rate
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TemperatureSettings
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Weight
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop {
+    {field} integer (int32) <b>sequence</b>
+    {field} string <b>stopType</b> {"None", "Pickup", "Delivery", "ContainerDepotOrigin", "ContainerDepotTermination", "OriginRamp", "DestinationRamp", "OriginPort", "DestinationPort", "OriginAirport", "DestinationAirport", "CrossDock"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Facility <b>facility</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Appointment <b>appointment</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.StopDetails <b>stopDetails</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Appointment
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Facility
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.StopDetails
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Rate {
+    {field} number (double) <b>value</b>
+    {field} string <b>currencyType</b> {"Undefined", "USD", "CAD", "MXN", "ARS", "BRL", "CLP", "COP", "VEF", "EUR", "GBP", "HUF", "PLN"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.EquipmentDetails {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Dimension <b>equipmentHeight</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Dimension <b>equipmentLength</b>
+    {field} string <b>equipmentType</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Dimension <b>equipmentWidth</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.EquipmentDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Dimension
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Distance {
+    {field} number (double) <b>value</b>
+    {field} string <b>unit</b> {"Miles", "Kilometers"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Weight {
+    {field} number (double) <b>value</b>
+    {field} string <b>unit</b> {"Undefined", "Pounds", "Kilograms", "Tons", "MetricTons"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TemperatureSettings {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Temperature preCoolTemperature
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Temperature maximumTemperature
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Temperature minimumTemperature
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TemperatureSettings ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Temperature
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadAttributes {
+    {field} boolean <b>airRide</b>
+    {field} boolean <b>blind</b>
+    {field} boolean <b>bondedCarrier</b>
+    {field} boolean <b>borderCrossingByCoyote</b>
+    {field} boolean <b>borderCrossingByCustomer</b>
+    {field} boolean <b>coyoteGo</b>
+    {field} boolean <b>crossBorderMexico</b>
+    {field} boolean <b>ctpat</b>
+    {field} boolean <b>disasterRelief</b>
+    {field} boolean <b>doubleBlind</b>
+    {field} boolean <b>doubleTrailer</b>
+    {field} boolean <b>drayage</b>
+    {field} boolean <b>duraplate</b>
+    {field} boolean <b>englishSpeaking</b>
+    {field} boolean <b>exitPass</b>
+    {field} boolean <b>fast</b>
+    {field} boolean <b>fdaClearanceRequired</b>
+    {field} boolean <b>floodRelief</b>
+    {field} boolean <b>govt</b>
+    {field} boolean <b>guaranteed</b>
+    {field} boolean <b>haccp</b>
+    {field} boolean <b>hazmatEndorsement</b>
+    {field} boolean <b>hvhr</b>
+    {field} boolean <b>hvhrPlus</b>
+    {field} boolean <b>intraMexico</b>
+    {field} boolean <b>liquor</b>
+    {field} boolean <b>neec</b>
+    {field} boolean <b>noCameraPhonePhotosOfPaperwork</b>
+    {field} boolean <b>overDimension</b>
+    {field} boolean <b>palletJack</b>
+    {field} boolean <b>partialLoad</b>
+    {field} boolean <b>pipOrPep</b>
+    {field} boolean <b>powerOnly</b>
+    {field} boolean <b>ppe</b>
+    {field} boolean <b>protectFromFreeze</b>
+    {field} boolean <b>repairReceiptRequiredForBreakdowns</b>
+    {field} boolean <b>seal</b>
+    {field} boolean <b>secondaryBorderInspection</b>
+    {field} boolean <b>tankerEndorsement</b>
+    {field} boolean <b>tcr</b>
+    {field} boolean <b>team</b>
+    {field} boolean <b>techTrackingRequired</b>
+    {field} boolean <b>tradeShow</b>
+    {field} boolean <b>trailerControl</b>
+    {field} boolean <b>transloadByCoyote</b>
+    {field} boolean <b>transloadByCustomer</b>
+    {field} boolean <b>tripleTrailer</b>
+    {field} boolean <b>twic</b>
+    {field} boolean <b>uiia</b>
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Facility {
+    {field} string <b>name</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TrackingAddress <b>address</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoCoordinates <b>geoCoordinates</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Facility ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoCoordinates
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Facility ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TrackingAddress
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Appointment {
+    {field} string (date-time) facilityOpenDateTimeUtc
+    {field} string (date-time) facilityCloseDateTimeUtc
+    {field} string (date-time) appointmentStartDateTimeUtc
+    {field} string (date-time) appointmentEndDateTimeUtc
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.StopDetails {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadCommodity[] <b>commodities</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopAttributes stopAttributes
+    {field} string stopNotes
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.StopDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadCommodity
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.StopDetails ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopAttributes
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Dimension {
+    {field} number (double) <b>value</b>
+    {field} string <b>unit</b> {"Undefined", "Inches", "Meters", "Centimeters", "Millimeters", "Feet"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Temperature {
+    {field} number (double) <b>value</b>
+    {field} string <b>unit</b> {"Fahrenheit", "Celsius"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.TrackingAddress {
+    {field} string <b>line1</b>
+    {field} string <b>postalCode</b>
+    {field} string <b>cityName</b>
+    {field} string <b>stateProvinceCode</b>
+    {field} string <b>countryCode</b>
+    {field} string line2
+    {field} string line3
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoCoordinates {
+    {field} number (double) <b>latitude</b>
+    {field} number (double) <b>longitude</b>
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadCommodity {
+    {field} string <b>description</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Weight <b>weight</b>
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadCommodity ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Weight
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopAttributes {
+    {field} boolean blind
+    {field} boolean closedToeShoes
+    {field} boolean detentionAuthFormRequired
+    {field} boolean driverAssist
+    {field} boolean dropAndHook
+    {field} integer (int32) dropTrailerAllowXHoursToUnload
+    {field} boolean dropTrailerRequired
+    {field} boolean earPlugs
+    {field} boolean englishSpeaking
+    {field} boolean escortOrTwicRequired
+    {field} boolean exitPass
+    {field} boolean government
+    {field} boolean hardHat
+    {field} boolean inOutTimesWSignature
+    {field} boolean insideDelivery
+    {field} boolean insidePickup
+    {field} boolean legalScaleOnSite
+    {field} boolean liftgateDelivery
+    {field} boolean liftgatePickup
+    {field} boolean limitedAccessDeliveryAirport
+    {field} boolean limitedAccessDeliveryChurch
+    {field} boolean limitedAccessDeliveryConstructionSite
+    {field} boolean limitedAccessDeliveryFarm
+    {field} boolean limitedAccessDeliveryMilitaryBase
+    {field} boolean limitedAccessDeliveryMineSite
+    {field} boolean limitedAccessDeliveryMiniStorage
+    {field} boolean limitedAccessDeliveryOther
+    {field} boolean limitedAccessDeliveryPrison
+    {field} boolean limitedAccessDeliveryRemoteGovt
+    {field} boolean limitedAccessDeliverySchool
+    {field} boolean limitedAccessPickupAirport
+    {field} boolean limitedAccessPickupChurch
+    {field} boolean limitedAccessPickupConstructionSite
+    {field} boolean limitedAccessPickupFarm
+    {field} boolean limitedAccessPickupMilitaryBase
+    {field} boolean limitedAccessPickupMineSite
+    {field} boolean limitedAccessPickupMiniStorage
+    {field} boolean limitedAccessPickupOther
+    {field} boolean limitedAccessPickupPrison
+    {field} boolean limitedAccessPickupRemoteGovt
+    {field} boolean limitedAccessPickupSchool
+    {field} boolean liquorPermit
+    {field} boolean loadedToLegalWeight
+    {field} boolean longPants
+    {field} boolean longSleeves
+    {field} boolean lumperReceiptRequired
+    {field} boolean mustCheckInAsCoyote
+    {field} boolean mustProvideAndApplySeal
+    {field} boolean mustSecureLoad
+    {field} boolean needCoyoteApprovalToUseLumperService
+    {field} boolean noAnimals
+    {field} boolean noDetention
+    {field} boolean noEarlyDeliveries
+    {field} boolean noLoadLocksOrStraps
+    {field} boolean noSameDayReschedules
+    {field} boolean notAllowedOnDock
+    {field} boolean noTankTops
+    {field} boolean noTrailerDetentionOrLayover
+    {field} boolean noWorkIns
+    {field} boolean onSiteParkingAvailable
+    {field} boolean overnightParkingAvailable
+    {field} boolean payLumperWCashTCheck
+    {field} integer (int32) preLoadDropTrailerXHoursInAdvance
+    {field} boolean prePaidLumperService
+    {field} boolean residentialDelivery
+    {field} boolean residentialPickup
+    {field} boolean safetyGlasses
+    {field} boolean safetyVest
+    {field} boolean scaleEmpty
+    {field} boolean scaleHeavy
+    {field} boolean secureYard
+    {field} boolean sortAndSegregateDelivery
+    {field} boolean sortAndSegregatePickup
+    {field} boolean spanishSpeaking
+    {field} boolean steelToeShoes
+    {field} boolean strictAppt
+    {field} boolean tradeshowDelivery
+    {field} boolean tradeshowPickup
+    {field} boolean trailerInspectionFormRequired
+    {field} boolean twic
+    {field} boolean twicRequiredNoEscorts
+    {field} boolean uiia
+    {field} boolean unpackDetrash
+    {field} boolean usCitizen
+    {field} boolean validUSCommercialDriversLicenseHardcopy
+    {field} integer (int32) xTankOfFuelAtShipper
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoadsRequest {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo <b>origin</b>
+    {field} string <b>equipmentType</b> {"V", "R", "F", "VR", "C", "SD", "DF", "DD", "SS", "FT", "E", "T", "B", "Z", "M", "Q", "P", "CNRU", "CPPU", "CSXU", "EMHU", "EMPU", "EMWU", "EPTY", "PACU", "W", "G", "K", "DR", "H", "FWS", "BT", "ZS", "XM", "MV", "MF", "FM", "DV", "LALL", "SDL", "A", "BL", "RC", "HS", "GM", "GS", "FS", "SDS", "RTC", "RTB", "WFB", "PO", "DDT", "DDB", "DDF", "SFB", "SFC", "RBC", "FB", "FBT", "FBX", "SKC", "LL", "LLS", "LLX", "TKC", "TKF", "IM", "IMF"}
+    {field} string <b>mode</b> {"TL_LTL", "TL", "LTL"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo destination
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoadsRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoLocation location
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Radius deadheadRadius
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AppointmentDate appointment
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AppointmentDate
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoLocation
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.LoadStopLocationInfo ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Radius
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.GeoLocation {
+    {field} number (double) latitude
+    {field} number (double) longitude
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Radius {
+    {field} number (double) value
+    {field} string unit {"Miles", "Kilometers"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AppointmentDate {
+    {field} string (date-time) appointmentEndDateTime
+    {field} string (date-time) appointmentStartDateTime
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.PagedAvailableLoads {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad[] loads
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Pagination pagination
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.PagedAvailableLoads ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.AvailableLoad
+Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.PagedAvailableLoads ..> Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Pagination
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.AvailableLoads.Pagination {
+    {field} integer (int32) limit
+    {field} integer (int32) offset
+    {field} integer (int32) totalCount
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Documents.DocumentRequest {
+    {field} integer (int32) <b>loadId</b>
+    {field} string (byte) <b>document</b>
+    {field} string <b>documentType</b> {"Undefined", "VendorInvoice", "BillOfLading", "ProofOfDelivery", "LumperTicket", "ScaleTicket", "InGateTicket", "OutGateTicket", "Miscellaneous", "AccessorialAgreement", "RateConfirmation", "LoadTender", "Invoice", "CustomsDocuments", "InvoiceWithPaperwork", "DetentionLoading", "DetentionUnloading", "PalletReceipt", "SpotApproval", "EquipmentOrderedNotUsed", "CMR", "DemurrageLoading", "DemurrageUnloading", "ExitPass", "BalanceDue", "BalanceDueWithPaperwork", "PackingList"}
+    {field} string <b>extensionType</b> {"Undefined", "Pdf", "Txt", "Tif", "Tiff", "Bmp", "Dib", "Gif", "Jpeg", "Jpg", "Jpe", "Jfif", "Png", "Doc", "Docx", "Rtf", "Mht", "Htm", "Html", "Xml", "Zip"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Load {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail <b>loadDetail</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Customer customer
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Load ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Customer
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Load ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Customer {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.ReferenceNumber[] referenceNumbers
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.Customer ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.ReferenceNumber
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail {
+    {field} string <b>mode</b> {"TL", "LTL", "IMDL"}
+    {field} string <b>equipmentType</b> {"V", "R", "F", "VR", "C", "SD", "DF", "DD", "SS", "FT", "E", "T", "B", "Z", "M", "Q", "P", "CNRU", "CPPU", "CSXU", "EMHU", "EMPU", "EMWU", "EPTY", "PACU", "W", "G", "K", "DR", "H", "FWS", "BT", "ZS", "XM", "MV", "MF", "FM", "DV", "LALL", "SDL", "A", "BL", "RC", "HS", "GM", "GS", "FS", "SDS", "RTC", "RTB", "WFB", "PO", "DDT", "DDB", "DDF", "SFB", "SFC", "RBC", "FB", "FBT", "FBX", "SKC", "LL", "LLS", "LLX", "TKC", "TKF", "IM", "IMF"}
+    {field} integer (int32) <b>equipmentLength</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStop[] <b>stops</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadCommodity[] <b>commodities</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequirement[] requirements
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadEquipmentRequirement[] equipmentRequirements
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadCommodity
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadEquipmentRequirement
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequirement
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadDetail ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStop
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.ReferenceNumber {
+    {field} string referenceNumberType {"Reference", "OrderNumber", "BillOfLading", "CommercialInvoice", "MasterBOLNumber", "PoNumber", "ShipmentNumber"}
+    {field} string referenceNumberValue
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequirement {
+    {field} string requirementType {"Guaranteed", "Team", "HazmatEndorsement", "TankerEndorsement", "Hvhr", "HvhrPlus", "ProtectFromFreeze", "PartialLoad", "DoubleBlind", "DisasterRelief", "TechTrackingRequired", "PipOrPep", "Neec", "OverDimension", "CrossBorderMexico", "BorderCrossingByCoyote", "TransloadByCustomer", "SecondaryBorderInspection", "Haccp", "NoCameraPhonePhotosOfPaperwork"}
+    {field} string requirementValue
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadEquipmentRequirement {
+    {field} string requirementType {"FoodGrade", "PaperGrade", "LiftGate", "PalletJack", "AirRide", "TrailerXYearsOrNewer", "XLoadLocks", "XLoadBars", "XLoadStraps", "ETrack", "Chains", "NoRollDoor", "NoReefer", "NoLiftGate", "DoubleTrailer", "TripleTrailer", "LoadOutTrailer", "TowAway", "LightweightEquipment", "ScaleUpToXAmount", "TandemSlide", "DownloadableReefer", "SpaceSaverReefer", "TranslucentTop", "Duraplate", "VentedVan", "FunctionalAirChute"}
+    {field} string requirementValue
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStop {
+    {field} integer (int32) <b>sequence</b>
+    {field} string <b>stopType</b> {"None", "Pickup", "Delivery", "ContainerDepotOrigin", "ContainerDepotTermination", "OriginRamp", "DestinationRamp", "OriginPort", "DestinationPort", "OriginAirport", "DestinationAirport", "CrossDock"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility <b>facility</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStopRequirement[] stopRequirements
+    {field} string (date-time) openDateTimeUtc
+    {field} string (date-time) closeDateTimeUtc
+    {field} string (date-time) appointmentStartDateTimeUtc
+    {field} string (date-time) appointmentEndDateTimeUtc
+    {field} string[] referenceNumbers
+    {field} string stopNotes
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStopRequirement
+Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadCommodity {
+    {field} string <b>description</b>
+    {field} string <b>packagingType</b> {"NotApplicable", "Case", "Roll", "Box", "Sack", "Bale", "Carton", "Coil", "Drum", "ToteBin", "Bag", "Bundle", "Bulk", "DryBulk", "LiquidBulk", "Barge", "Barrel", "BasketOrHamper", "Beam", "Bin", "Bobbin", "Bottle", "BoxWithInnerContainer", "Bucket", "BulkBag", "Cabinet", "Cage", "Can", "CanCase", "CarloadRail", "Carboy", "Cask", "Chest", "Container", "ContainersOfBulkCargo", "Core", "Cradle", "Crate", "Cube", "Cylinder", "DoubleLengthRack", "DoubleLengthSkid", "DoubleLengthToteBin", "DuffleBag", "EngineContainer", "Envelope", "Firkin", "Flask", "FloBin", "ForwardReel", "Frame", "GarmentsOnHangers", "HalfStandardRack", "HalfStandardToteBin", "Hamper", "Jar", "Jug", "Keg", "Kit", "KnockdownRack", "KnockdownToteBin", "Lifts", "LinerBagDry", "LinerBagLiquid", "Loose", "Lug", "MilitaryVan", "MixedTypePack", "MultirollPack", "MultiwallContainerSecuredToPallet", "Noil", "OnHangerOrRackInboxes", "Overwrap", "Package", "Pail", "Pallet", "Pieces", "Pims", "PipeRack", "Platform", "PrivateVehicle", "Rack", "Reel", "Skid", "Sleeve", "SlipSheet", "Spool", "Tank", "ToteCan", "Tray", "TriwallBox", "Truck", "Tub", "Tube", "Unit", "VanPack", "IntermediateBulkContainers"}
+    {field} integer (int32) <b>quantity</b>
+    {field} number (double) <b>weight</b>
+    {field} number (double) <b>cargoValue</b>
+    {field} string poNumber
+    {field} integer (int32) palletCount
+    {field} string weightUnit {"Pounds"}
+    {field} string lengthUnit {"Inches", "Meters", "Centimeters", "Millimeters", "Feet"}
+    {field} number (double) length
+    {field} number (double) height
+    {field} number (double) width
+    {field} string freightClass {"Undefined", "N50", "N55", "N60", "N65", "N70", "N77PT5", "N85", "N92PT5", "N100", "N110", "N125", "N150", "N175", "N200", "N250", "N300", "N400", "N500"}
+    {field} integer (int32) nmfcNumber
+    {field} integer (int32) nmfcSubNumber
+    {field} boolean stackable
+    {field} string temperatureUnit {"Fahrenheit", "Celsius"}
+    {field} string temperatureSetting {"Continuous", "Cycle"}
+    {field} integer (int32) preCoolTemperature
+    {field} integer (int32) minimumTemperature
+    {field} integer (int32) maximumTemperature
+    {field} integer (int32) pickUpStopNumber
+    {field} integer (int32) deliveryStopNumber
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility {
+    {field} string name
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.TrackingAddress address
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates geoCoordinates
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.TrackingAddress
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadStopRequirement {
+    {field} string requirementType {"DropTrailerRequired", "DropAndHook", "DropTrailerAllowXHoursToUnload", "PreloadDropTrailerXHoursInAdvance", "DriverAssist", "Blind", "Government", "TWICRequiredNoEscorts", "TWIC", "EscortOrTWICRequired", "UIIA", "LiquorPermit", "StrictAppt", "NoWorkIns", "NoEarlyDeliveries", "NoSameDayReschedules", "XRescheduleFee", "XLateFee", "ScaleEmpty", "ScaleHeavy", "XTankOfFuelAtShipper", "LoadedToLegalWeight", "NotAllowedOnDock", "MustCheckinAsCoyote", "NoLoadLocksOrStraps", "MustSecureLoad", "MustProvideAndApplySeal", "ExitPass", "EnglishSpeaking", "SpanishSpeaking", "USCitizen", "ValidUSCommercialDriversLicenseHardcopy", "OnsiteParkingAvailable", "OvernightParkingAvailable", "LegalScaleOnSite", "SecureYard", "PetsAllowed", "HardHat", "SafetyGlasses", "EarPlugs", "LongPants", "LongSleeves", "ClosedToeShoes", "SteelToeShoes", "SafetyVest", "NoTankTops", "NoAnimalsAllowed", "PayLumperWCashTCheck", "LumperReceiptRequired", "NeedCoyoteApprovalToUseLumperService", "PrepaidLumperService", "LumperReceiptRequiredWithinXHours", "DetentionAfterXHours", "NotifyXMinPriorToEnteringDetention", "PaperworkSubmittedWithInXTime", "TrailerDetentionAfterXDays", "NoDetention", "InOutTimesWSignature", "NoTrailerDetentionOrLayover", "DetentionAuthFormRequired", "TrailerInspectionFormRequired", "Liftgate", "Residential", "LimitedAccess", "SortAndSegregate", "Inside", "Tradeshow"}
+    {field} string requirementValue
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.TrackingAddress {
+    {field} string line1
+    {field} string line2
+    {field} string line3
+    {field} string postalCode
+    {field} string cityName
+    {field} string stateProvinceCode
+    {field} string countryCode
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates {
+    {field} number (double) latitude
+    {field} number (double) longitude
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.LoadBuilding.LoadRequestStatus {
+    {field} integer (int32) loadId
+    {field} string status {"InProgress", "Completed", "Failed"}
+    {field} string message
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus {
+    {field} integer (int32) loadId
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Address address
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates geoCoordinates
+    {field} string (date-time) timestamp
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Address
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LocationStatus ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Address {
+    {field} string line1
+    {field} string line2
+    {field} string city
+    {field} string postalCode
+    {field} string state
+    {field} string countryCode
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuoteRequest {
+    {field} string <b>equipmentTypeId</b> {"V", "R", "F", "VR", "C", "SD", "DF", "DD", "SS", "FT", "E", "T", "B", "Z", "M", "Q", "P", "CNRU", "CPPU", "CSXU", "EMHU", "EMPU", "EMWU", "EPTY", "PACU", "W", "G", "K", "DR", "H", "FWS", "BT", "ZS", "XM", "MV", "MF", "FM", "DV", "LALL", "SDL", "A", "BL", "RC", "HS", "GM", "GS", "FS", "SDS", "RTC", "RTB", "WFB", "PO", "DDT", "DDB", "DDF", "SFB", "SFC", "RBC", "FB", "FBT", "FBX", "SKC", "LL", "LLS", "LLX", "TKC", "TKF", "IM", "IMF"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData <b>origin</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData <b>destination</b>
+    {field} string (date-time) <b>pickUpDateUTC</b>
+    {field} string <b>customerShipmentId</b>
+    {field} number (double) minTemperature
+    {field} number (double) maxTemperature
+    {field} number (double) weight
+    {field} string commodity
+    {field} number (double) equipmentLength
+    {field} boolean isHazmat
+    {field} boolean isDropTrailer
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuoteRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData {
+    {field} string cityName
+    {field} string stateCode
+    {field} string countryCode
+    {field} string postalCode
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuote {
+    {field} integer (int32) spotQuoteId
+    {field} string customerShipmentId
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData origin
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData destination
+    {field} string equipmentTypeId {"V", "R", "F", "VR", "C", "SD", "DF", "DD", "SS", "FT", "E", "T", "B", "Z", "M", "Q", "P", "CNRU", "CPPU", "CSXU", "EMHU", "EMPU", "EMWU", "EPTY", "PACU", "W", "G", "K", "DR", "H", "FWS", "BT", "ZS", "XM", "MV", "MF", "FM", "DV", "LALL", "SDL", "A", "BL", "RC", "HS", "GM", "GS", "FS", "SDS", "RTC", "RTB", "WFB", "PO", "DDT", "DDB", "DDF", "SFB", "SFC", "RBC", "FB", "FBT", "FBX", "SKC", "LL", "LLS", "LLX", "TKC", "TKF", "IM", "IMF"}
+    {field} string (date-time) pickUpDateUTC
+    {field} string (date-time) validUntilUtc
+    {field} number (double) totalRate
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.RateItem[] rateLineItems
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuote ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.SpotQuote ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.RateItem
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.RateItem {
+    {field} string rateCode {"FR", "405", "PM"}
+    {field} string description
+    {field} number (double) unitRate
+    {field} number (double) units
+    {field} number (double) totalRate
+    {field} string currency {"USD", "CAD"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData <b>origin</b>
+    {field} string (date-time) <b>pickupDate</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData <b>destination</b>
+    {field} string <b>equipmentType</b> {"V", "R", "F", "VR", "C", "SD", "DF", "DD", "SS", "FT", "E", "T", "B", "Z", "M", "Q", "P", "CNRU", "CPPU", "CSXU", "EMHU", "EMPU", "EMWU", "EPTY", "PACU", "W", "G", "K", "DR", "H", "FWS", "BT", "ZS", "XM", "MV", "MF", "FM", "DV", "LALL", "SDL", "A", "BL", "RC", "HS", "GM", "GS", "FS", "SDS", "RTC", "RTB", "WFB", "PO", "DDT", "DDB", "DDF", "SFB", "SFC", "RBC", "FB", "FBT", "FBX", "SKC", "LL", "LLS", "LLX", "TKC", "TKF", "IM", "IMF"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.Commodity[] <b>commodities</b>
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.OriginRequirements originRequirements
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.DestinationRequirements destinationRequirements
+    {field} boolean guaranteedShipment
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.Commodity
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.DestinationRequirements
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.LocationData
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuoteRequest ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.OriginRequirements
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.OriginRequirements {
+    {field} boolean insideStop
+    {field} boolean residentialStop
+    {field} boolean tradeshowStop
+    {field} boolean liftGateStop
+    {field} boolean sortSegregate
+    {field} string limitedAccessType {"Undefined", "Church", "ConstructionSite", "MilitaryBase", "MineSite", "MiniStorage", "RemoteGovtDelivery", "School", "Other"}
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.DestinationRequirements {
+    {field} boolean insideStop
+    {field} boolean residentialStop
+    {field} boolean tradeshowStop
+    {field} boolean liftGateStop
+    {field} boolean sortSegregate
+    {field} string limitedAccessType {"Undefined", "Church", "ConstructionSite", "MilitaryBase", "MineSite", "MiniStorage", "RemoteGovtDelivery", "School", "Other"}
+    {field} boolean appointmentRequired
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.Commodity {
+    {field} integer (int32) <b>palletCount</b>
+    {field} string <b>freightClass</b> {"Undefined", "N50", "N55", "N60", "N65", "N70", "N77PT5", "N85", "N92PT5", "N100", "N110", "N125", "N150", "N175", "N200", "N250", "N300", "N400", "N500"}
+    {field} number (double) <b>weight</b>
+    {field} number (double) <b>length</b>
+    {field} number (double) <b>height</b>
+    {field} number (double) <b>width</b>
+    {field} string description
+    {field} boolean isHazmat
+    {field} integer (int32) nmfcNumber
+    {field} integer (int32) nmfcSubNumber
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuote {
+    {field} string ltlSpotQuoteId
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Spot.CarrierQuote[] carrierQuotes
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Spot.LTLSpotQuote ..> Coyote.Systems.ExternalApi.Contracts.Models.Spot.CarrierQuote
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Spot.CarrierQuote {
+    {field} string quoteID
+    {field} string carrierName
+    {field} number (double) totalRate
+    {field} string currencyType {"Undefined", "USD", "CAD", "MXN", "ARS", "BRL", "CLP", "COP", "VEF", "EUR", "GBP", "HUF", "PLN"}
+    {field} integer (int32) transitTime
+    {field} string interline
+    {field} string (date-time) deliveryDate
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.StopDetail {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress[] loadStops
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.StopDetail ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress {
+    {field} integer (int32) sequence
+    {field} string stopType {"None", "Pickup", "Delivery", "ContainerDepotOrigin", "ContainerDepotTermination", "OriginRamp", "DestinationRamp", "OriginPort", "DestinationPort", "OriginAirport", "DestinationAirport", "CrossDock"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility facility
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Appointment appointment
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Milestone milestone
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Appointment
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStopProgress ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Milestone
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Appointment {
+    {field} string (date-time) facilityOpenDateTimeUtc
+    {field} string (date-time) facilityCloseDateTimeUtc
+    {field} string (date-time) appointmentStartDateTimeUtc
+    {field} string (date-time) appointmentEndDateTimeUtc
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Milestone {
+    {field} string (date-time) driverArrivalDateTimeUtc
+    {field} string (date-time) trailerArriveDateTimeUtc
+    {field} string (date-time) trailerLoadedDateTimeUtc
+    {field} string (date-time) trailerEmptyDateTimeUtc
+    {field} string (date-time) driverDepartureDateTimeUtc
+}
+
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Location latestLocationStatus
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStop nextStop
+    {field} string (date-time) estimatedArrivalDateTimeUtc
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Distance nextStopDistance
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Distance
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStop
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Summary ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Location
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Location {
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.TrackingAddress address
+    {field} string (date-time) timestampUtc
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates geoCoordinates
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Location ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.GeoCoordinates
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Location ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.TrackingAddress
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStop {
+    {field} integer (int32) sequence
+    {field} string stopType {"None", "Pickup", "Delivery", "ContainerDepotOrigin", "ContainerDepotTermination", "OriginRamp", "DestinationRamp", "OriginPort", "DestinationPort", "OriginAirport", "DestinationAirport", "CrossDock"}
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility facility
+    {field} Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Appointment appointment
+}
+
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Appointment
+Coyote.Systems.ExternalApi.Contracts.Models.Tracking.LoadStop ..> Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Facility
+
+
+class Coyote.Systems.ExternalApi.Contracts.Models.Tracking.Distance {
+    {field} number (double) value
+    {field} string unit {"Miles", "Kilometers"}
+}
+
+
+@enduml

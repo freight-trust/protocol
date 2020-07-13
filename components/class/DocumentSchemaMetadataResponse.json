@@ -1,0 +1,7 @@
+class DocumentSchemaMetadataResponse {
+    {field} string <b>docType</b>
+    {field} string <b>id</b>
+    {field} string <b>organizationId</b>
+    {field} string <b>transactionId</b>
+    {field} string name
+}

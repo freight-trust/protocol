@@ -1,0 +1,6 @@
+class Actor {
+    {field} string <b>orgId</b>
+    {field} string <b>userId</b>
+    {field} string originatorId
+    {field} string originatorName
+}

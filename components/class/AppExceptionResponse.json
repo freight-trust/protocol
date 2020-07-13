@@ -1,0 +1,5 @@
+class AppExceptionResponse {
+    {field} string <b>code</b>
+    {field} string <b>message</b>
+    {field} string <b>timestamp</b>
+}

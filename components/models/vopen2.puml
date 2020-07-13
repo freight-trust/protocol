@@ -1,0 +1,247 @@
+@startuml
+left to right direction
+hide empty members
+set namespaceSeparator none
+
+interface "/schedules" {
+}
+
+class "GET /schedules" {
+.. query ..
+{field} startDate startDate
+{field} dateRange dateRange
+{field} limitParam limit
+{field} cursorParam cursor
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"GET /schedules" ..> limitParam
+"GET /schedules" ..> startDate
+"GET /schedules" ..> cursorParam
+"GET /schedules" ..> dateRange
+
+"/schedules" ..> "GET /schedules"
+
+
+
+interface "/schedules/{scheduleID}" {
+}
+
+class "GET /schedules/{scheduleID}" {
+.. path ..
+{field} string <b>scheduleID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/schedules/{scheduleID}" ..> "GET /schedules/{scheduleID}"
+
+
+
+interface "/schedules/{scheduleID}/transport-calls" {
+}
+
+class "GET /schedules/{scheduleID}/transport-calls" {
+.. path ..
+{field} string <b>scheduleID</b>
+.. query ..
+{field} carrierServiceCode carrierServiceCode
+{field} vesselIMONumber vesselIMONumber
+{field} carrierVoyageNumber carrierVoyageNumber
+{field} UNLocationCode UNLocationCode
+{field} limitParam limit
+{field} cursorParam cursor
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"GET /schedules/{scheduleID}/transport-calls" ..> carrierServiceCode
+"GET /schedules/{scheduleID}/transport-calls" ..> vesselIMONumber
+"GET /schedules/{scheduleID}/transport-calls" ..> carrierVoyageNumber
+"GET /schedules/{scheduleID}/transport-calls" ..> limitParam
+"GET /schedules/{scheduleID}/transport-calls" ..> cursorParam
+"GET /schedules/{scheduleID}/transport-calls" ..> UNLocationCode
+
+"/schedules/{scheduleID}/transport-calls" ..> "GET /schedules/{scheduleID}/transport-calls"
+
+
+
+interface "/transport-calls" {
+}
+
+class "GET /transport-calls" {
+.. query ..
+{field} carrierServiceCode carrierServiceCode
+{field} vesselIMONumber vesselIMONumber
+{field} carrierVoyageNumber carrierVoyageNumber
+{field} UNLocationCode UNLocationCode
+{field} limitParam limit
+{field} cursorParam cursor
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+"GET /transport-calls" ..> carrierVoyageNumber
+"GET /transport-calls" ..> vesselIMONumber
+"GET /transport-calls" ..> cursorParam
+"GET /transport-calls" ..> carrierServiceCode
+"GET /transport-calls" ..> UNLocationCode
+"GET /transport-calls" ..> limitParam
+
+"/transport-calls" ..> "GET /transport-calls"
+
+
+
+interface "/transport-calls/{transportCallID}" {
+}
+
+class "GET /transport-calls/{transportCallID}" {
+.. path ..
+{field} string <b>transportCallID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transport-calls/{transportCallID}" ..> "GET /transport-calls/{transportCallID}"
+
+
+
+interface "/schedule-subscriptions" {
+}
+
+class "GET /schedule-subscriptions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /schedule-subscriptions" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/schedule-subscriptions" ..> "GET /schedule-subscriptions"
+"/schedule-subscriptions" ..> "POST /schedule-subscriptions"
+
+
+
+interface "/schedule-subscriptions/{subscriptionID}" {
+}
+
+class "GET /schedule-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /schedule-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /schedule-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/schedule-subscriptions/{subscriptionID}" ..> "DELETE /schedule-subscriptions/{subscriptionID}"
+"/schedule-subscriptions/{subscriptionID}" ..> "GET /schedule-subscriptions/{subscriptionID}"
+"/schedule-subscriptions/{subscriptionID}" ..> "PUT /schedule-subscriptions/{subscriptionID}"
+
+
+
+interface "/transport-call-subscriptions" {
+}
+
+class "GET /transport-call-subscriptions" {
+
+.. responses ..
+200: {field} <i>not specified</i> 
+}
+
+
+
+class "POST /transport-call-subscriptions" {
+
+.. responses ..
+201: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/transport-call-subscriptions" ..> "GET /transport-call-subscriptions"
+"/transport-call-subscriptions" ..> "POST /transport-call-subscriptions"
+
+
+
+interface "/tranport-call-subscriptions/{subscriptionID}" {
+}
+
+class "GET /tranport-call-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "DELETE /tranport-call-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+204: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+class "PUT /tranport-call-subscriptions/{subscriptionID}" {
+.. path ..
+{field} string <b>subscriptionID</b>
+.. responses ..
+200: {field} <i>not specified</i> 
+default: {field} <i>not specified</i> 
+}
+
+
+
+"/tranport-call-subscriptions/{subscriptionID}" ..> "DELETE /tranport-call-subscriptions/{subscriptionID}"
+"/tranport-call-subscriptions/{subscriptionID}" ..> "GET /tranport-call-subscriptions/{subscriptionID}"
+"/tranport-call-subscriptions/{subscriptionID}" ..> "PUT /tranport-call-subscriptions/{subscriptionID}"
+
+
+
+@enduml
