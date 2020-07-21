@@ -1,0 +1,11 @@
+*.sol linguist-language=Solidity
+/* linguist-vendored
+*.js -linguist-vendored
+
+# see https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L64
+*.abnf linguist-detectable
+
+# see https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L93
+*.g4 linguist-detectable
+
+
