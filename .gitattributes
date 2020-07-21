@@ -1,5 +1,5 @@
 *.sol linguist-language=Solidity
-/* linguist-vendored
+tests/* linguist-vendored
 *.js -linguist-vendored
 
 # see https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L64
