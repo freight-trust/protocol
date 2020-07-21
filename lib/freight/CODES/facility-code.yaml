@@ -1,0 +1,4 @@
+    facilityCode:
+      type: string
+      example: AEAUHADT
+      description: The code used for identifying the specific facility.

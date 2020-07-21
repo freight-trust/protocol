@@ -1,0 +1,2160 @@
+#<!-- This Source Code Form is subject to the terms of the Mozilla Public
+#   - License, v. 2.0. If a copy of the MPL was not distributed with this
+#  - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+openapi: 3.0.0
+info:
+  title: ShipperEDI/CarrierEDI - Freight Trust & Clearing
+  version: 2.0.0
+  contact:
+    name: Customer Success
+    email: support@freight.zendesk.com
+    url: 'https://freighttrust.com/contact'
+  license:
+    name: 'Mozilla Public License, v. 2.0'
+    url: 'https://www.mozilla.org/en-US/MPL/2.0/'
+  termsOfService: 'https://github.com/freight-trust/legal/blob/master/src/terms-of-service.md'
+  description: >-
+    EDI X12 & EDI EDIFACT API for B2B Trading Channels on the Freight Trust
+    Network
+servers:
+  - url: 'https://gateway.freighttrust.com'
+    description: API Gateway
+    variables:
+      apiGateway:
+        description: API Version Access
+        default: apiGateway
+        enum:
+          - 'https://gateway.freighttrust.com'
+          - 'https://api.shipperedi.com'
+          - 'https://api.carrieredi.com'
+          - 'https://api.edi.zone/v1'
+          - 'https://api.edi.zone/v2'
+          - 'https://api.edi.zone//v2/{org}/{user}/{channel}/{function}'
+security:
+  - ApiKey: []
+tags:
+  - name: Edifact
+    description: 'Translate, validate or acknowledge EDIFACT files'
+  - name: EdiModel
+    description: Manage EDI transaction models
+  - name: X12
+    description: 'Translate, validate or acknowledge X12 files'
+paths:
+  /x12/read:
+    post:
+      tags:
+        - X12
+      summary: >-
+        Reads an X12 file and returns its contents translated to an array of
+        X12Interchange objects.
+      operationId: x12ReadPOST
+      parameters:
+        - name: ignoreNullValues
+          in: query
+          description: >-
+            Whether to ignore all null values in the response. The default is
+            false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to ignore all null values in the response. The default is
+              false.
+            default: false
+        - name: continueOnError
+          in: query
+          description: >-
+            Whether to continue reading if a corrupt interchange is encountered.
+            The default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to continue reading if a corrupt interchange is
+              encountered. The default is false.
+            default: false
+        - name: charSet
+          in: query
+          description: >-
+            The encoding of the file contents. The default is utf-8. The
+            available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+            iso-8859-1, utf-7, utf-8, utf-16.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The encoding of the file contents. The default is utf-8. The
+              available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+              iso-8859-1, utf-7, utf-8, utf-16.
+            nullable: true
+            default: utf-8
+        - name: model
+          in: query
+          description: >-
+            The model to use. By default, the API will infer the model based on
+            the transaction and version identifiers.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The model to use. By default, the API will infer the model based
+              on the transaction and version identifiers.
+            nullable: true
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/body'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/X12Interchange'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: X12
+  /x12/write:
+    post:
+      tags:
+        - X12
+      summary: >-
+        Translates an X12Interchange object to a raw X12 interchange and returns
+        it as a stream.
+      operationId: x12WritePOST
+      parameters:
+        - name: preserveWhitespace
+          in: query
+          description: >-
+            Whether to preserve blank data elements so the output contains
+            multiple delimiters instead of omitting any excess delimiters. The
+            default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to preserve blank data elements so the output contains
+              multiple delimiters instead of omitting any excess delimiters. The
+              default is false.
+            default: false
+        - name: charSet
+          in: query
+          description: >-
+            The encoding of the file contents. The default is utf-8. The
+            available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+            iso-8859-1, utf-7, utf-8, utf-16.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The encoding of the file contents. The default is utf-8. The
+              available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+              iso-8859-1, utf-7, utf-8, utf-16.
+            nullable: true
+            default: utf-8
+        - name: postfix
+          in: query
+          description: >-
+            The postfix to be applied at the end of each segment, just after the
+            segment separator. This is usually a carriage return (CR), line feed
+            (LF) or both. By default, there is no postfix.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The postfix to be applied at the end of each segment, just after
+              the segment separator. This is usually a carriage return (CR),
+              line feed (LF) or both. By default, there is no postfix.
+            nullable: true
+            default: ''
+      requestBody:
+        description: The X12Interchange object to translate to raw X12.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/X12Interchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: X12
+  /x12/validate:
+    post:
+      tags:
+        - X12
+      summary: >-
+        Validates an X12Interchange object according to the X12 standard rules
+        for each version and transaction.
+      operationId: x12ValidatePOST
+      parameters:
+        - name: basicSyntax
+          in: query
+          description: >-
+            All data elements with alpha (A) or alphanumeric (AN) data types are
+            validated against a syntax set of allowed characters. The default
+            syntax set is the Extended, hence the default for this parameter is
+            false. By setting this to true, validation will use the Basic syntax
+            set.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              All data elements with alpha (A) or alphanumeric (AN) data types
+              are validated against a syntax set of allowed characters. The
+              default syntax set is the Extended, hence the default for this
+              parameter is false. By setting this to true, validation will use
+              the Basic syntax set.
+            default: false
+        - name: syntaxSet
+          in: query
+          description: >-
+            In case you need to validate against a syntax set, different than
+            Basic and Extended, populate this filed with all of the allowed
+            symbols, url-escaped.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              In case you need to validate against a syntax set, different than
+              Basic and Extended, populate this filed with all of the allowed
+              symbols, url-escaped.
+            nullable: true
+        - name: skipTrailer
+          in: query
+          description: >-
+            You are allowed to validate an X12Interchange with missing
+            interchange, functional group or transaction trailers (IEA, GE, SE).
+            This is because these will be automatically applied during the Write
+            oprtaion so you don't have to worry about counting the items. By
+            default it is expected that all trailers are present when you
+            validate the X12Interchange and by default, this is set to false. To
+            skip all trailer validation, set this to true.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              You are allowed to validate an X12Interchange with missing
+              interchange, functional group or transaction trailers (IEA, GE,
+              SE). This is because these will be automatically applied during
+              the Write oprtaion so you don't have to worry about counting the
+              items. By default it is expected that all trailers are present
+              when you validate the X12Interchange and by default, this is set
+              to false. To skip all trailer validation, set this to true.
+            default: false
+        - name: structureOnly
+          in: query
+          description: >-
+            This is equivalent to HIPAA Snip level 1, where only the structure
+            and control segments are validated. By default, this is set to
+            false, however if you want to not validate things such as data
+            types, number of repeteitions or dates, set this to true.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              This is equivalent to HIPAA Snip level 1, where only the structure
+              and control segments are validated. By default, this is set to
+              false, however if you want to not validate things such as data
+              types, number of repeteitions or dates, set this to true.
+            default: false
+      requestBody:
+        description: The X12Interchange object to validate.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/X12Interchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationResult'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: X12
+  /x12/ack:
+    post:
+      tags:
+        - X12
+      summary: >-
+        Generates functional/implementation and/or technical acknowledment(s)
+        for the requested X12Interchange.
+      operationId: x12AckPOST
+      parameters:
+        - name: basicSyntax
+          in: query
+          description: >-
+            All data elements with alpha (A) or alphanumeric (AN) data types are
+            validated against a syntax set of allowed characters. The default
+            syntax set is the Extended, hence the default for this parameter is
+            false. By setting this to true, validation will use the Basic syntax
+            set.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              All data elements with alpha (A) or alphanumeric (AN) data types
+              are validated against a syntax set of allowed characters. The
+              default syntax set is the Extended, hence the default for this
+              parameter is false. By setting this to true, validation will use
+              the Basic syntax set.
+            default: false
+        - name: syntaxSet
+          in: query
+          description: >-
+            In case you need to validate against a syntax set, different than
+            Basic and Extended, populate this filed with all of the allowed
+            symbols, url-escaped.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              In case you need to validate against a syntax set, different than
+              Basic and Extended, populate this filed with all of the allowed
+              symbols, url-escaped.
+            nullable: true
+        - name: detectDuplicates
+          in: query
+          description: >-
+            If you need to detect duplicates as in functional groups or
+            transactions with the same reference number, set this flag to true.
+            The default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              If you need to detect duplicates as in functional groups or
+              transactions with the same reference number, set this flag to
+              true. The default is false.
+            default: false
+        - name: tranRefNumber
+          in: query
+          description: >-
+            The default is 1. Set this to whatever the 997 or 999
+            X12Interchange.ST.TransactionSetControlNumber_02 needs to be. In
+            case there are multiple acknowledgments (for multiple functional
+            groups), this will be starting reference number and every subsequent
+            acknowledgment will have the previous reference number incremented
+            with 1.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            description: >-
+              The default is 1. Set this to whatever the 997 or 999
+              X12Interchange.ST.TransactionSetControlNumber_02 needs to be. In
+              case there are multiple acknowledgments (for multiple functional
+              groups), this will be starting reference number and every
+              subsequent acknowledgment will have the previous reference number
+              incremented with 1.
+            format: int32
+            default: 1
+        - name: interchangeRefNumber
+          in: query
+          description: >-
+            The default is 1. Set this to whatever the 997 or 999
+            X12Interchange.ISA.InterchangeControlNumber_13 needs to be.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            description: >-
+              The default is 1. Set this to whatever the 997 or 999
+              X12Interchange.ISA.InterchangeControlNumber_13 needs to be.
+            format: int32
+            default: 1
+        - name: ackForValidTrans
+          in: query
+          description: >-
+            The default is false. Set this to true if you need AK2 loops
+            included for all valid transaction as well. By default AK2 loops are
+            generated only for invalid transactions.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default is false. Set this to true if you need AK2 loops
+              included for all valid transaction as well. By default AK2 loops
+              are generated only for invalid transactions.
+            default: false
+        - name: batchAcks
+          in: query
+          description: >-
+            The default is true. Set this to false if you need to generate
+            separate X12Interchange for each acknowledgment. By default all
+            acknowledgments are batched in the same X12Interchange.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default is true. Set this to false if you need to generate
+              separate X12Interchange for each acknowledgment. By default all
+              acknowledgments are batched in the same X12Interchange.
+            default: true
+        - name: technicalAck
+          in: query
+          description: "The default technical acknowledgment TA1 is generated according to X12Interchange.ISA.AcknowledgementRequested_14. You can either enforce it to always generate TA1s or supress it to never generate any TA1s. This will override the flag in X12Interchange.ISA.AcknowledgementRequested_14.\r\n            The available values are: default, enforce, suppress."
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: "The default technical acknowledgment TA1 is generated according to X12Interchange.ISA.AcknowledgementRequested_14. You can either enforce it to always generate TA1s or supress it to never generate any TA1s. This will override the flag in X12Interchange.ISA.AcknowledgementRequested_14.\r\n            The available values are: default, enforce, suppress."
+            nullable: true
+        - name: ack
+          in: query
+          description: >-
+            The default value is 997. The type of acknowledgment being
+            generated. Set this to 999 if you need to generate an implementation
+            instead of functional acknowledgment. The available values are: 997,
+            999.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The default value is 997. The type of acknowledgment being
+              generated. Set this to 999 if you need to generate an
+              implementation instead of functional acknowledgment. The available
+              values are: 997, 999.
+            nullable: true
+            default: '997'
+        - name: ak901isP
+          in: query
+          description: >-
+            The value of the AK9's first element. By default it is "E". Set this
+            to true if you want this value to be "P" instead.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The value of the AK9's first element. By default it is "E". Set
+              this to true if you want this value to be "P" instead.
+            default: false
+      requestBody:
+        description: The X12Interchange object to acknowledge.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/X12Interchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/X12Interchange'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: X12
+  /edifact/read:
+    post:
+      tags:
+        - Edifact
+      summary: >-
+        Reads an EDIFACT file and returns its contents translated to an array of
+        EdifactInterchange objects.
+      operationId: edifactReadPOST
+      parameters:
+        - name: ignoreNullValues
+          in: query
+          description: >-
+            Whether to ignore all null values in the response. The default is
+            false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to ignore all null values in the response. The default is
+              false.
+            default: false
+        - name: continueOnError
+          in: query
+          description: >-
+            Whether to continue reading if a corrupt interchange is encountered.
+            The default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to continue reading if a corrupt interchange is
+              encountered. The default is false.
+            default: false
+        - name: charSet
+          in: query
+          description: >-
+            The encoding of the file contents. The default is utf-8. The
+            available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+            iso-8859-1, utf-7, utf-8, utf-16.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The encoding of the file contents. The default is utf-8. The
+              available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+              iso-8859-1, utf-7, utf-8, utf-16.
+            nullable: true
+            default: utf-8
+        - name: model
+          in: query
+          description: >-
+            The model to use. By default, the API will infer the model based on
+            the transaction and version identifiers.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The model to use. By default, the API will infer the model based
+              on the transaction and version identifiers.
+            nullable: true
+        - name: eancomS3
+          in: query
+          description: >-
+            The default syntax for EANCOM transactions. By default all EANCOM
+            transactions will be translated and validated according to the rules
+            of Syntax 4. Set this flag to true if you need Syntax 3 to be used.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default syntax for EANCOM transactions. By default all EANCOM
+              transactions will be translated and validated according to the
+              rules of Syntax 4. Set this flag to true if you need Syntax 3 to
+              be used.
+            default: false
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/body_1'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EdifactInterchange'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: Edifact
+  /edifact/write:
+    post:
+      tags:
+        - Edifact
+      summary: >-
+        Translates an EdifactInterchange object to a raw EDIFACT interchange and
+        returns it as a stream.
+      operationId: edifactWritePOST
+      parameters:
+        - name: preserveWhitespace
+          in: query
+          description: >-
+            Whether to preserve blank data elements so the output contains
+            multiple delimiters instead of omitting any excess delimiters. The
+            default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Whether to preserve blank data elements so the output contains
+              multiple delimiters instead of omitting any excess delimiters. The
+              default is false.
+            default: false
+        - name: charSet
+          in: query
+          description: >-
+            The encoding of the file contents. The default is utf-8. The
+            available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+            iso-8859-1, utf-7, utf-8, utf-16.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The encoding of the file contents. The default is utf-8. The
+              available values are: unicodeFFFE, utf-32, utf-32BE, us-ascii,
+              iso-8859-1, utf-7, utf-8, utf-16.
+            nullable: true
+            default: utf-8
+        - name: postfix
+          in: query
+          description: >-
+            The postfix to be applied at the end of each segment, just after the
+            segment separator. This is usually a carriage return (CR), line feed
+            (LF) or both. By default, there is no postfix.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              The postfix to be applied at the end of each segment, just after
+              the segment separator. This is usually a carriage return (CR),
+              line feed (LF) or both. By default, there is no postfix.
+            nullable: true
+            default: ''
+        - name: sameRepetionAndDataElement
+          in: query
+          description: >-
+            Sometimes the same delimiter is used to denote data element
+            separator and repetition separator as in IATA transactions. By
+            default, this is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              Sometimes the same delimiter is used to denote data element
+              separator and repetition separator as in IATA transactions. By
+              default, this is false.
+            default: false
+        - name: eancomS3
+          in: query
+          description: >-
+            The default syntax for EANCOM transactions. By default all EANCOM
+            transactions will be translated and validated according to the rules
+            of Syntax 4. Set this flag to true if you need Syntax 3 to be used.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default syntax for EANCOM transactions. By default all EANCOM
+              transactions will be translated and validated according to the
+              rules of Syntax 4. Set this flag to true if you need Syntax 3 to
+              be used.
+            default: false
+      requestBody:
+        description: The EdifactInterchange object to translate to raw EDIFACT.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EdifactInterchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: Edifact
+  /edifact/validate:
+    post:
+      tags:
+        - Edifact
+      summary: >-
+        Validates an EdifactInterchange object according to the EDIFACT standard
+        rules for each version and transaction.
+      operationId: edifactValidatePOST
+      parameters:
+        - name: syntaxSet
+          in: query
+          description: "In case you need to validate against a syntax set, different than UNOA and UNOB, populate this filed with all of the allowed symbols, url-escaped.\r\n            All data elements with alpha (A) or alphanumeric (AN) data types are validated against a syntax set of allowed characters. The supported syntax sets are UNOA and UNOB. The validator infers the correct syntax set from EdifactInterchange.UNB.SYNTAXIDENTIFIER_1.SyntaxIdentifier_1. The symbols added to this field will override the corresponding sets in both UNOA and UNOB."
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: "In case you need to validate against a syntax set, different than UNOA and UNOB, populate this filed with all of the allowed symbols, url-escaped.\r\n            All data elements with alpha (A) or alphanumeric (AN) data types are validated against a syntax set of allowed characters. The supported syntax sets are UNOA and UNOB. The validator infers the correct syntax set from EdifactInterchange.UNB.SYNTAXIDENTIFIER_1.SyntaxIdentifier_1. The symbols added to this field will override the corresponding sets in both UNOA and UNOB."
+            nullable: true
+        - name: skipTrailer
+          in: query
+          description: >-
+            You are allowed to validate an EdifactInterchange with missing
+            interchange, functional group or transaction trailers (UNZ, UNE,
+            UNT). This is because these will be automatically applied during the
+            Write oprtaion so you don't have to worry about counting the items.
+            By default it is expected that all trailers are present when you
+            validate the EdifactInterchange and by default, this is set to
+            false. To skip all trailer validation, set this to true.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              You are allowed to validate an EdifactInterchange with missing
+              interchange, functional group or transaction trailers (UNZ, UNE,
+              UNT). This is because these will be automatically applied during
+              the Write oprtaion so you don't have to worry about counting the
+              items. By default it is expected that all trailers are present
+              when you validate the EdifactInterchange and by default, this is
+              set to false. To skip all trailer validation, set this to true.
+            default: false
+        - name: structureOnly
+          in: query
+          description: >-
+            This is equivalent to HIPAA Snip level 1, where only the structure
+            and control segments are validated. By default, this is set to
+            false, however if you want to not validate things such as data
+            types, number of repeteitions or dates, set this to true.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              This is equivalent to HIPAA Snip level 1, where only the structure
+              and control segments are validated. By default, this is set to
+              false, however if you want to not validate things such as data
+              types, number of repeteitions or dates, set this to true.
+            default: false
+        - name: decimalPoint
+          in: query
+          description: 'This could be either point . (default) or comma ,.'
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: 'This could be either point . (default) or comma ,.'
+            default: .
+        - name: eancomS3
+          in: query
+          description: >-
+            The default syntax for EANCOM transactions. By default all EANCOM
+            transactions will be validated according to the rules of Syntax 4.
+            Set this flag to true if you need Syntax 3 to be used.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default syntax for EANCOM transactions. By default all EANCOM
+              transactions will be validated according to the rules of Syntax 4.
+              Set this flag to true if you need Syntax 3 to be used.
+            default: false
+      requestBody:
+        description: The EdifactInterchange object to validate.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EdifactInterchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationResult'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: Edifact
+  /edifact/ack:
+    post:
+      tags:
+        - Edifact
+      summary: >-
+        Generates functional and/or technical CONTRL acknowledment(s) for the
+        requested EdifactInterchange.
+      operationId: edifactAckPOST
+      parameters:
+        - name: syntaxSet
+          in: query
+          description: >-
+            In case you need to validate against a syntax set, different than
+            UNOA and UNOB, populate this filed with all of the allowed symbols,
+            url-escaped. All data elements with alpha (A) or alphanumeric (AN)
+            data types are validated against a syntax set of allowed characters.
+            The supported syntax sets are UNOA and UNOB. The validator infers
+            the correct syntax set from
+            EdifactInterchange.UNB.SYNTAXIDENTIFIER_1.SyntaxIdentifier_1. The
+            symbols added to this field will override the corresponding sets in
+            both UNOA and UNOB.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: >-
+              In case you need to validate against a syntax set, different than
+              UNOA and UNOB, populate this filed with all of the allowed
+              symbols, url-escaped. All data elements with alpha (A) or
+              alphanumeric (AN) data types are validated against a syntax set of
+              allowed characters. The supported syntax sets are UNOA and UNOB.
+              The validator infers the correct syntax set from
+              EdifactInterchange.UNB.SYNTAXIDENTIFIER_1.SyntaxIdentifier_1. The
+              symbols added to this field will override the corresponding sets
+              in both UNOA and UNOB.
+            nullable: true
+        - name: detectDuplicates
+          in: query
+          description: >-
+            If you need to detect duplicates as in functional groups or
+            transactions with the same reference number, set this flag to true.
+            The default is false.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              If you need to detect duplicates as in functional groups or
+              transactions with the same reference number, set this flag to
+              true. The default is false.
+            default: false
+        - name: tranRefNumber
+          in: query
+          description: >-
+            The default is 1. Set this to whatever the CONTRL
+            UNH.MessageReferenceNumber_01 needs to be.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            description: >-
+              The default is 1. Set this to whatever the CONTRL
+              UNH.MessageReferenceNumber_01 needs to be.
+            format: int32
+            default: 1
+        - name: interchangeRefNumber
+          in: query
+          description: >-
+            The default is 1. Set this to whatever the CONTRL
+            EdifactInterchange.UNB.InterchangeControlReference_5 needs to be.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            description: >-
+              The default is 1. Set this to whatever the CONTRL
+              EdifactInterchange.UNB.InterchangeControlReference_5 needs to be.
+            format: int32
+            default: 1
+        - name: ackForValidTrans
+          in: query
+          description: >-
+            The default is false. Set this to true if you need UCM loops
+            included for all valid transaction as well. By default UCM loops are
+            generated only for invalid transactions.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default is false. Set this to true if you need UCM loops
+              included for all valid transaction as well. By default UCM loops
+              are generated only for invalid transactions.
+            default: false
+        - name: batchAcks
+          in: query
+          description: >-
+            The default is true. Set this to false if you need to generate
+            separate EdifactInterchange for each acknowledgment. By default all
+            acknowledgments are batched in the same EdifactInterchange.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default is true. Set this to false if you need to generate
+              separate EdifactInterchange for each acknowledgment. By default
+              all acknowledgments are batched in the same EdifactInterchange.
+            default: true
+        - name: technicalAck
+          in: query
+          description: "The default technical acknowledgment CONTRL is generated according to EdifactInterchange.UNB.AcknowledgementRequest_9. You can either enforce it to always generate technical CONTRLs or supress it to never generate any technical CONTRLs. This will override the flag in EdifactInterchange.UNB.AcknowledgementRequest_9.\r\n            The available values are: default, enforce, suppress."
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            description: "The default technical acknowledgment CONTRL is generated according to EdifactInterchange.UNB.AcknowledgementRequest_9. You can either enforce it to always generate technical CONTRLs or supress it to never generate any technical CONTRLs. This will override the flag in EdifactInterchange.UNB.AcknowledgementRequest_9.\r\n            The available values are: default, enforce, suppress."
+            nullable: true
+        - name: eancomS3
+          in: query
+          description: >-
+            The default syntax for EANCOM transactions. By default all EANCOM
+            transactions will be validated according to the rules of Syntax 4.
+            Set this flag to true if you need Syntax 3 to be used.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: >-
+              The default syntax for EANCOM transactions. By default all EANCOM
+              transactions will be validated according to the rules of Syntax 4.
+              Set this flag to true if you need Syntax 3 to be used.
+            default: false
+      requestBody:
+        description: The EdifactInterchange object to acknowledge.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EdifactInterchange'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EdifactInterchange'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: Edifact
+  /models:
+    get:
+      tags:
+        - EdiModel
+      summary: Retrieves all models for a subscription.
+      operationId: modelsGET
+      parameters:
+        - name: system
+          in: query
+          description: Whether to retrieve EDIStream's or custom uploaded models.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: Whether to retrieve EDIStream's or custom uploaded models.
+            default: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EdiModel'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: EdiModel
+    post:
+      tags:
+        - EdiModel
+      summary: >-
+        Uploads a model file to a subscription. It must be a valid DOT NET
+        assembly.
+      operationId: modelsPOST
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/body_2'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: EdiModel
+      parameters: []
+  '/models/{id}':
+    get:
+      tags:
+        - EdiModel
+      summary: Retrieve a particular model file as a stream.
+      operationId: modelsIdGET
+      parameters:
+        - name: id
+          in: path
+          description: The model name.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: The model name.
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: EdiModel
+    delete:
+      tags:
+        - EdiModel
+      summary: Deletes a particular model from the custom models.
+      operationId: modelsIdDELETE
+      parameters:
+        - name: id
+          in: path
+          description: The model name.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: The model name.
+            nullable: true
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: EdiModel
+  '/models/{id}/transactions':
+    get:
+      tags:
+        - EdiModel
+      summary: Retrieves all transactions in a model file.
+      operationId: modelsIdTransactionsGET
+      parameters:
+        - name: id
+          in: path
+          description: The model name.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            description: The model name.
+            nullable: true
+        - name: system
+          in: query
+          description: Whether to search in EDIStream's or custom uploaded models.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            description: Whether to search in EDIStream's or custom uploaded models.
+            default: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetails'
+      x-swagger-router-controller: EdiModel
+components:
+  schemas:
+    UNA:
+      type: object
+      properties:
+        ComponentDataElement:
+          type: string
+        DataElement:
+          type: string
+        DecimalNotation:
+          type: string
+        ReleaseIndicator:
+          type: string
+        Reserved:
+          type: string
+        Segment:
+          type: string
+      example:
+        DataElement: DataElement
+        DecimalNotation: DecimalNotation
+        ComponentDataElement: ComponentDataElement
+        ReleaseIndicator: ReleaseIndicator
+        Segment: Segment
+        Reserved: Reserved
+    S001:
+      type: object
+      properties:
+        SyntaxIdentifier_1:
+          type: string
+          nullable: true
+        SyntaxVersionNumber_2:
+          type: string
+          nullable: true
+        ServiceCodeListDirectoryVersionNumber_3:
+          type: string
+          nullable: true
+        CharacterEncoding_4:
+          type: string
+          nullable: true
+      example:
+        SyntaxIdentifier_1: SyntaxIdentifier_1
+        ServiceCodeListDirectoryVersionNumber_3: ServiceCodeListDirectoryVersionNumber_3
+        SyntaxVersionNumber_2: SyntaxVersionNumber_2
+        CharacterEncoding_4: CharacterEncoding_4
+    S002:
+      type: object
+      properties:
+        InterchangeSenderIdentification_1:
+          type: string
+          nullable: true
+        IdentificationCodeQualifier_2:
+          type: string
+          nullable: true
+        InterchangeSenderInternalIdentification_3:
+          type: string
+          nullable: true
+        InterchangeSenderInternalSubIdentification_4:
+          type: string
+          nullable: true
+      example:
+        IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+        InterchangeSenderIdentification_1: InterchangeSenderIdentification_1
+        InterchangeSenderInternalIdentification_3: InterchangeSenderInternalIdentification_3
+        InterchangeSenderInternalSubIdentification_4: InterchangeSenderInternalSubIdentification_4
+    S003:
+      type: object
+      properties:
+        InterchangeRecipientIdentification_1:
+          type: string
+          nullable: true
+        IdentificationCodeQualifier_2:
+          type: string
+          nullable: true
+        InterchangeRecipientInternalIdentification_3:
+          type: string
+          nullable: true
+        InterchangeRecipientInternalSubIdentification_4:
+          type: string
+          nullable: true
+      example:
+        IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+        InterchangeRecipientInternalSubIdentification_4: InterchangeRecipientInternalSubIdentification_4
+        InterchangeRecipientInternalIdentification_3: InterchangeRecipientInternalIdentification_3
+        InterchangeRecipientIdentification_1: InterchangeRecipientIdentification_1
+    S004:
+      type: object
+      properties:
+        Date_1:
+          type: string
+          nullable: true
+        Time_2:
+          type: string
+          nullable: true
+      example:
+        Time_2: Time_2
+        Date_1: Date_1
+    S005:
+      type: object
+      properties:
+        RecipientReferencePassword_1:
+          type: string
+          nullable: true
+        RecipientReferencePasswordQualifier_2:
+          type: string
+          nullable: true
+      example:
+        RecipientReferencePasswordQualifier_2: RecipientReferencePasswordQualifier_2
+        RecipientReferencePassword_1: RecipientReferencePassword_1
+    UNB:
+      type: object
+      properties:
+        SYNTAXIDENTIFIER_1:
+          $ref: '#/components/schemas/S001'
+        INTERCHANGESENDER_2:
+          $ref: '#/components/schemas/S002'
+        INTERCHANGERECIPIENT_3:
+          $ref: '#/components/schemas/S003'
+        DATEANDTIMEOFPREPARATION_4:
+          $ref: '#/components/schemas/S004'
+        InterchangeControlReference_5:
+          type: string
+          nullable: true
+        RECIPIENTSREFERENCEPASSWORDDETAILS_6:
+          $ref: '#/components/schemas/S005'
+        ApplicationReference_7:
+          type: string
+          nullable: true
+        ProcessingPriorityCode_8:
+          type: string
+          nullable: true
+        AcknowledgementRequest_9:
+          type: string
+          nullable: true
+        InterchangeAgreementIdentifier_10:
+          type: string
+          nullable: true
+        TestIndicator_11:
+          type: string
+          nullable: true
+      example:
+        AcknowledgementRequest_9: AcknowledgementRequest_9
+        INTERCHANGESENDER_2:
+          IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+          InterchangeSenderIdentification_1: InterchangeSenderIdentification_1
+          InterchangeSenderInternalIdentification_3: InterchangeSenderInternalIdentification_3
+          InterchangeSenderInternalSubIdentification_4: InterchangeSenderInternalSubIdentification_4
+        TestIndicator_11: TestIndicator_11
+        InterchangeAgreementIdentifier_10: InterchangeAgreementIdentifier_10
+        ApplicationReference_7: ApplicationReference_7
+        InterchangeControlReference_5: InterchangeControlReference_5
+        DATEANDTIMEOFPREPARATION_4:
+          Time_2: Time_2
+          Date_1: Date_1
+        SYNTAXIDENTIFIER_1:
+          SyntaxIdentifier_1: SyntaxIdentifier_1
+          ServiceCodeListDirectoryVersionNumber_3: ServiceCodeListDirectoryVersionNumber_3
+          SyntaxVersionNumber_2: SyntaxVersionNumber_2
+          CharacterEncoding_4: CharacterEncoding_4
+        ProcessingPriorityCode_8: ProcessingPriorityCode_8
+        INTERCHANGERECIPIENT_3:
+          IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+          InterchangeRecipientInternalSubIdentification_4: InterchangeRecipientInternalSubIdentification_4
+          InterchangeRecipientInternalIdentification_3: InterchangeRecipientInternalIdentification_3
+          InterchangeRecipientIdentification_1: InterchangeRecipientIdentification_1
+        RECIPIENTSREFERENCEPASSWORDDETAILS_6:
+          RecipientReferencePasswordQualifier_2: RecipientReferencePasswordQualifier_2
+          RecipientReferencePassword_1: RecipientReferencePassword_1
+    S006:
+      type: object
+      properties:
+        ApplicationSenderIdentification_1:
+          type: string
+          nullable: true
+        IdentificationCodeQualifier_2:
+          type: string
+          nullable: true
+      example:
+        ApplicationSenderIdentification_1: ApplicationSenderIdentification_1
+        IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+    S007:
+      type: object
+      properties:
+        ApplicationRecipientIdentification_1:
+          type: string
+          nullable: true
+        IdentificationCodeQualifier_2:
+          type: string
+          nullable: true
+      example:
+        IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+        ApplicationRecipientIdentification_1: ApplicationRecipientIdentification_1
+    S008:
+      type: object
+      properties:
+        MessageVersionNumber_1:
+          type: string
+          nullable: true
+        MessageReleaseNumber_2:
+          type: string
+          nullable: true
+        AssociationAssignedCode_3:
+          type: string
+          nullable: true
+      example:
+        MessageVersionNumber_1: MessageVersionNumber_1
+        MessageReleaseNumber_2: MessageReleaseNumber_2
+        AssociationAssignedCode_3: AssociationAssignedCode_3
+    UNG:
+      type: object
+      properties:
+        MessageGroupIdentification_1:
+          type: string
+          nullable: true
+        APPLICATIONSENDERIDENTIFICATION_2:
+          $ref: '#/components/schemas/S006'
+        APPLICATIONRECIPIENTIDENTIFICATION_3:
+          $ref: '#/components/schemas/S007'
+        DATEANDTIMEOFPREPARATION_4:
+          $ref: '#/components/schemas/S004'
+        GroupReferenceNumber_5:
+          type: string
+          nullable: true
+        ControllingAgency_6:
+          type: string
+          nullable: true
+        MESSAGEVERSION_7:
+          $ref: '#/components/schemas/S008'
+        ApplicationPassword_8:
+          type: string
+          nullable: true
+      example:
+        APPLICATIONRECIPIENTIDENTIFICATION_3:
+          IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+          ApplicationRecipientIdentification_1: ApplicationRecipientIdentification_1
+        GroupReferenceNumber_5: GroupReferenceNumber_5
+        ApplicationPassword_8: ApplicationPassword_8
+        APPLICATIONSENDERIDENTIFICATION_2:
+          ApplicationSenderIdentification_1: ApplicationSenderIdentification_1
+          IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+        MessageGroupIdentification_1: MessageGroupIdentification_1
+        MESSAGEVERSION_7:
+          MessageVersionNumber_1: MessageVersionNumber_1
+          MessageReleaseNumber_2: MessageReleaseNumber_2
+          AssociationAssignedCode_3: AssociationAssignedCode_3
+        ControllingAgency_6: ControllingAgency_6
+    UNE:
+      type: object
+      properties:
+        GroupControlCount_1:
+          type: string
+          nullable: true
+        GroupReferenceNumber_2:
+          type: string
+          nullable: true
+      example:
+        GroupReferenceNumber_2: GroupReferenceNumber_2
+        GroupControlCount_1: GroupControlCount_1
+    EdifactGroup:
+      required:
+        - Transactions
+      type: object
+      properties:
+        UNG:
+          $ref: '#/components/schemas/UNG'
+        Transactions:
+          type: array
+          nullable: true
+          items:
+            type: object
+        UNETrailers:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/UNE'
+      example:
+        Transactions:
+          - {}
+          - {}
+        UNETrailers:
+          - GroupReferenceNumber_2: GroupReferenceNumber_2
+            GroupControlCount_1: GroupControlCount_1
+          - GroupReferenceNumber_2: GroupReferenceNumber_2
+            GroupControlCount_1: GroupControlCount_1
+        UNG:
+          APPLICATIONRECIPIENTIDENTIFICATION_3:
+            IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+            ApplicationRecipientIdentification_1: ApplicationRecipientIdentification_1
+          GroupReferenceNumber_5: GroupReferenceNumber_5
+          ApplicationPassword_8: ApplicationPassword_8
+          APPLICATIONSENDERIDENTIFICATION_2:
+            ApplicationSenderIdentification_1: ApplicationSenderIdentification_1
+            IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+          MessageGroupIdentification_1: MessageGroupIdentification_1
+          MESSAGEVERSION_7:
+            MessageVersionNumber_1: MessageVersionNumber_1
+            MessageReleaseNumber_2: MessageReleaseNumber_2
+            AssociationAssignedCode_3: AssociationAssignedCode_3
+          ControllingAgency_6: ControllingAgency_6
+    UNZ:
+      type: object
+      properties:
+        InterchangeControlCount_1:
+          type: string
+          nullable: true
+        InterchangeControlReference_2:
+          type: string
+          nullable: true
+      example:
+        InterchangeControlReference_2: InterchangeControlReference_2
+        InterchangeControlCount_1: InterchangeControlCount_1
+    OperationDetail:
+      type: object
+      properties:
+        Index:
+          type: integer
+          format: int32
+        TransactionIndex:
+          type: integer
+          format: int32
+        TransactionRef:
+          type: string
+          nullable: true
+        SegmentId:
+          type: string
+          nullable: true
+        DataElementIndex:
+          type: integer
+          format: int32
+        Value:
+          type: string
+          nullable: true
+        Message:
+          type: string
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+      example:
+        Status: Status
+        Message: Message
+        SegmentId: SegmentId
+        TransactionIndex: 1
+        TransactionRef: TransactionRef
+        Value: Value
+        Index: 6
+        DataElementIndex: 5
+    OperationResult:
+      type: object
+      properties:
+        LastIndex:
+          type: integer
+          format: int32
+        Details:
+          type: array
+          nullable: true
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/OperationDetail'
+        Status:
+          type: string
+          nullable: true
+          readOnly: true
+      example:
+        Status: Status
+        Details:
+          - Status: Status
+            Message: Message
+            SegmentId: SegmentId
+            TransactionIndex: 1
+            TransactionRef: TransactionRef
+            Value: Value
+            Index: 6
+            DataElementIndex: 5
+          - Status: Status
+            Message: Message
+            SegmentId: SegmentId
+            TransactionIndex: 1
+            TransactionRef: TransactionRef
+            Value: Value
+            Index: 6
+            DataElementIndex: 5
+        LastIndex: 0
+    EdifactInterchange:
+      required:
+        - Groups
+        - UNB
+      type: object
+      properties:
+        UNA:
+          $ref: '#/components/schemas/UNA'
+        UNB:
+          $ref: '#/components/schemas/UNB'
+        Groups:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/EdifactGroup'
+        UNZTrailers:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/UNZ'
+        Result:
+          $ref: '#/components/schemas/OperationResult'
+      example:
+        Groups:
+          - Transactions:
+              - {}
+              - {}
+            UNETrailers:
+              - GroupReferenceNumber_2: GroupReferenceNumber_2
+                GroupControlCount_1: GroupControlCount_1
+              - GroupReferenceNumber_2: GroupReferenceNumber_2
+                GroupControlCount_1: GroupControlCount_1
+            UNG:
+              APPLICATIONRECIPIENTIDENTIFICATION_3:
+                IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+                ApplicationRecipientIdentification_1: ApplicationRecipientIdentification_1
+              GroupReferenceNumber_5: GroupReferenceNumber_5
+              ApplicationPassword_8: ApplicationPassword_8
+              APPLICATIONSENDERIDENTIFICATION_2:
+                ApplicationSenderIdentification_1: ApplicationSenderIdentification_1
+                IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+              MessageGroupIdentification_1: MessageGroupIdentification_1
+              MESSAGEVERSION_7:
+                MessageVersionNumber_1: MessageVersionNumber_1
+                MessageReleaseNumber_2: MessageReleaseNumber_2
+                AssociationAssignedCode_3: AssociationAssignedCode_3
+              ControllingAgency_6: ControllingAgency_6
+          - Transactions:
+              - {}
+              - {}
+            UNETrailers:
+              - GroupReferenceNumber_2: GroupReferenceNumber_2
+                GroupControlCount_1: GroupControlCount_1
+              - GroupReferenceNumber_2: GroupReferenceNumber_2
+                GroupControlCount_1: GroupControlCount_1
+            UNG:
+              APPLICATIONRECIPIENTIDENTIFICATION_3:
+                IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+                ApplicationRecipientIdentification_1: ApplicationRecipientIdentification_1
+              GroupReferenceNumber_5: GroupReferenceNumber_5
+              ApplicationPassword_8: ApplicationPassword_8
+              APPLICATIONSENDERIDENTIFICATION_2:
+                ApplicationSenderIdentification_1: ApplicationSenderIdentification_1
+                IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+              MessageGroupIdentification_1: MessageGroupIdentification_1
+              MESSAGEVERSION_7:
+                MessageVersionNumber_1: MessageVersionNumber_1
+                MessageReleaseNumber_2: MessageReleaseNumber_2
+                AssociationAssignedCode_3: AssociationAssignedCode_3
+              ControllingAgency_6: ControllingAgency_6
+        UNB:
+          AcknowledgementRequest_9: AcknowledgementRequest_9
+          INTERCHANGESENDER_2:
+            IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+            InterchangeSenderIdentification_1: InterchangeSenderIdentification_1
+            InterchangeSenderInternalIdentification_3: InterchangeSenderInternalIdentification_3
+            InterchangeSenderInternalSubIdentification_4: InterchangeSenderInternalSubIdentification_4
+          TestIndicator_11: TestIndicator_11
+          InterchangeAgreementIdentifier_10: InterchangeAgreementIdentifier_10
+          ApplicationReference_7: ApplicationReference_7
+          InterchangeControlReference_5: InterchangeControlReference_5
+          DATEANDTIMEOFPREPARATION_4:
+            Time_2: Time_2
+            Date_1: Date_1
+          SYNTAXIDENTIFIER_1:
+            SyntaxIdentifier_1: SyntaxIdentifier_1
+            ServiceCodeListDirectoryVersionNumber_3: ServiceCodeListDirectoryVersionNumber_3
+            SyntaxVersionNumber_2: SyntaxVersionNumber_2
+            CharacterEncoding_4: CharacterEncoding_4
+          ProcessingPriorityCode_8: ProcessingPriorityCode_8
+          INTERCHANGERECIPIENT_3:
+            IdentificationCodeQualifier_2: IdentificationCodeQualifier_2
+            InterchangeRecipientInternalSubIdentification_4: InterchangeRecipientInternalSubIdentification_4
+            InterchangeRecipientInternalIdentification_3: InterchangeRecipientInternalIdentification_3
+            InterchangeRecipientIdentification_1: InterchangeRecipientIdentification_1
+          RECIPIENTSREFERENCEPASSWORDDETAILS_6:
+            RecipientReferencePasswordQualifier_2: RecipientReferencePasswordQualifier_2
+            RecipientReferencePassword_1: RecipientReferencePassword_1
+        UNA:
+          DataElement: DataElement
+          DecimalNotation: DecimalNotation
+          ComponentDataElement: ComponentDataElement
+          ReleaseIndicator: ReleaseIndicator
+          Segment: Segment
+          Reserved: Reserved
+        UNZTrailers:
+          - InterchangeControlReference_2: InterchangeControlReference_2
+            InterchangeControlCount_1: InterchangeControlCount_1
+          - InterchangeControlReference_2: InterchangeControlReference_2
+            InterchangeControlCount_1: InterchangeControlCount_1
+        Result:
+          Status: Status
+          Details:
+            - Status: Status
+              Message: Message
+              SegmentId: SegmentId
+              TransactionIndex: 1
+              TransactionRef: TransactionRef
+              Value: Value
+              Index: 6
+              DataElementIndex: 5
+            - Status: Status
+              Message: Message
+              SegmentId: SegmentId
+              TransactionIndex: 1
+              TransactionRef: TransactionRef
+              Value: Value
+              Index: 6
+              DataElementIndex: 5
+          LastIndex: 0
+    ErrorDetails:
+      type: object
+      properties:
+        Code:
+          type: integer
+          format: int32
+        Details:
+          type: array
+          nullable: true
+          items:
+            type: string
+    Link:
+      type: object
+      properties:
+        Rel:
+          type: string
+          nullable: true
+        Href:
+          type: string
+          nullable: true
+        Action:
+          type: string
+          nullable: true
+      example:
+        Action: Action
+        Rel: Rel
+        Href: Href
+    EdiModel:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+          readOnly: true
+        DateCreated:
+          type: string
+          nullable: true
+          readOnly: true
+        Links:
+          type: array
+          nullable: true
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Link'
+      example:
+        DateCreated: DateCreated
+        Links:
+          - Action: Action
+            Rel: Rel
+            Href: Href
+          - Action: Action
+            Rel: Rel
+            Href: Href
+        Name: Name
+    ISA:
+      type: object
+      properties:
+        AuthorizationInformationQualifier_1:
+          type: string
+          nullable: true
+        AuthorizationInformation_2:
+          type: string
+          nullable: true
+        SecurityInformationQualifier_3:
+          type: string
+          nullable: true
+        SecurityInformation_4:
+          type: string
+          nullable: true
+        SenderIDQualifier_5:
+          type: string
+          nullable: true
+        InterchangeSenderID_6:
+          type: string
+          nullable: true
+        ReceiverIDQualifier_7:
+          type: string
+          nullable: true
+        InterchangeReceiverID_8:
+          type: string
+          nullable: true
+        InterchangeDate_9:
+          type: string
+          nullable: true
+        InterchangeTime_10:
+          type: string
+          nullable: true
+        InterchangeControlStandardsIdentifier_11:
+          type: string
+          nullable: true
+        InterchangeControlVersionNumber_12:
+          type: string
+          nullable: true
+        InterchangeControlNumber_13:
+          type: string
+          nullable: true
+        AcknowledgementRequested_14:
+          type: string
+          nullable: true
+        UsageIndicator_15:
+          type: string
+          nullable: true
+        ComponentElementSeparator_16:
+          type: string
+          nullable: true
+      example:
+        InterchangeReceiverID_8: InterchangeReceiverID_8
+        SenderIDQualifier_5: SenderIDQualifier_5
+        AcknowledgementRequested_14: AcknowledgementRequested_14
+        SecurityInformation_4: SecurityInformation_4
+        InterchangeDate_9: InterchangeDate_9
+        InterchangeControlStandardsIdentifier_11: InterchangeControlStandardsIdentifier_11
+        ComponentElementSeparator_16: ComponentElementSeparator_16
+        SecurityInformationQualifier_3: SecurityInformationQualifier_3
+        AuthorizationInformationQualifier_1: AuthorizationInformationQualifier_1
+        InterchangeControlNumber_13: InterchangeControlNumber_13
+        InterchangeSenderID_6: InterchangeSenderID_6
+        UsageIndicator_15: UsageIndicator_15
+        ReceiverIDQualifier_7: ReceiverIDQualifier_7
+        InterchangeTime_10: InterchangeTime_10
+        AuthorizationInformation_2: AuthorizationInformation_2
+        InterchangeControlVersionNumber_12: InterchangeControlVersionNumber_12
+    TA1:
+      type: object
+      properties:
+        InterchangeControlNumber_1:
+          type: string
+          nullable: true
+        InterchangeDate_2:
+          type: string
+          nullable: true
+        InterchangeTime_3:
+          type: string
+          nullable: true
+        InterchangeAcknowledgmentCode_4:
+          type: string
+          nullable: true
+        InterchangeNoteCode_5:
+          type: string
+          nullable: true
+      example:
+        InterchangeDate_2: InterchangeDate_2
+        InterchangeAcknowledgmentCode_4: InterchangeAcknowledgmentCode_4
+        InterchangeTime_3: InterchangeTime_3
+        InterchangeControlNumber_1: InterchangeControlNumber_1
+        InterchangeNoteCode_5: InterchangeNoteCode_5
+    GS:
+      type: object
+      properties:
+        CodeIdentifyingInformationType_1:
+          type: string
+          nullable: true
+        SenderIDCode_2:
+          type: string
+          nullable: true
+        ReceiverIDCode_3:
+          type: string
+          nullable: true
+        Date_4:
+          type: string
+          nullable: true
+        Time_5:
+          type: string
+          nullable: true
+        GroupControlNumber_6:
+          type: string
+          nullable: true
+        TransactionTypeCode_7:
+          type: string
+          nullable: true
+        VersionAndRelease_8:
+          type: string
+          nullable: true
+      example:
+        Time_5: Time_5
+        ReceiverIDCode_3: ReceiverIDCode_3
+        CodeIdentifyingInformationType_1: CodeIdentifyingInformationType_1
+        VersionAndRelease_8: VersionAndRelease_8
+        SenderIDCode_2: SenderIDCode_2
+        Date_4: Date_4
+        TransactionTypeCode_7: TransactionTypeCode_7
+        GroupControlNumber_6: GroupControlNumber_6
+    GE:
+      type: object
+      properties:
+        NumberOfIncludedSets_1:
+          type: string
+          nullable: true
+        GroupControlNumber_2:
+          type: string
+          nullable: true
+      example:
+        NumberOfIncludedSets_1: NumberOfIncludedSets_1
+        GroupControlNumber_2: GroupControlNumber_2
+    X12Group:
+      required:
+        - GS
+        - Transactions
+      type: object
+      properties:
+        GS:
+          $ref: '#/components/schemas/GS'
+        Transactions:
+          type: array
+          nullable: true
+          items:
+            type: object
+        GETrailers:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/GE'
+      example:
+        Transactions:
+          - {}
+          - {}
+        GETrailers:
+          - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+            GroupControlNumber_2: GroupControlNumber_2
+          - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+            GroupControlNumber_2: GroupControlNumber_2
+        GS:
+          Time_5: Time_5
+          ReceiverIDCode_3: ReceiverIDCode_3
+          CodeIdentifyingInformationType_1: CodeIdentifyingInformationType_1
+          VersionAndRelease_8: VersionAndRelease_8
+          SenderIDCode_2: SenderIDCode_2
+          Date_4: Date_4
+          TransactionTypeCode_7: TransactionTypeCode_7
+          GroupControlNumber_6: GroupControlNumber_6
+    IEA:
+      type: object
+      properties:
+        NumberOfIncludedGroups_1:
+          type: string
+          nullable: true
+        InterchangeControlNumber_2:
+          type: string
+          nullable: true
+      example:
+        InterchangeControlNumber_2: InterchangeControlNumber_2
+        NumberOfIncludedGroups_1: NumberOfIncludedGroups_1
+    X12Interchange:
+      required:
+        - DataElementDelimiter
+        - Groups
+        - ISA
+        - SegmentDelimiter
+      type: object
+      properties:
+        SegmentDelimiter:
+          type: string
+        DataElementDelimiter:
+          type: string
+        ISA:
+          $ref: '#/components/schemas/ISA'
+        TA1:
+          $ref: '#/components/schemas/TA1'
+        Groups:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/X12Group'
+        IEATrailers:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/IEA'
+        Result:
+          $ref: '#/components/schemas/OperationResult'
+      example:
+        DataElementDelimiter: DataElementDelimiter
+        SegmentDelimiter: SegmentDelimiter
+        TA1:
+          InterchangeDate_2: InterchangeDate_2
+          InterchangeAcknowledgmentCode_4: InterchangeAcknowledgmentCode_4
+          InterchangeTime_3: InterchangeTime_3
+          InterchangeControlNumber_1: InterchangeControlNumber_1
+          InterchangeNoteCode_5: InterchangeNoteCode_5
+        ISA:
+          InterchangeReceiverID_8: InterchangeReceiverID_8
+          SenderIDQualifier_5: SenderIDQualifier_5
+          AcknowledgementRequested_14: AcknowledgementRequested_14
+          SecurityInformation_4: SecurityInformation_4
+          InterchangeDate_9: InterchangeDate_9
+          InterchangeControlStandardsIdentifier_11: InterchangeControlStandardsIdentifier_11
+          ComponentElementSeparator_16: ComponentElementSeparator_16
+          SecurityInformationQualifier_3: SecurityInformationQualifier_3
+          AuthorizationInformationQualifier_1: AuthorizationInformationQualifier_1
+          InterchangeControlNumber_13: InterchangeControlNumber_13
+          InterchangeSenderID_6: InterchangeSenderID_6
+          UsageIndicator_15: UsageIndicator_15
+          ReceiverIDQualifier_7: ReceiverIDQualifier_7
+          InterchangeTime_10: InterchangeTime_10
+          AuthorizationInformation_2: AuthorizationInformation_2
+          InterchangeControlVersionNumber_12: InterchangeControlVersionNumber_12
+        Groups:
+          - Transactions:
+              - {}
+              - {}
+            GETrailers:
+              - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+                GroupControlNumber_2: GroupControlNumber_2
+              - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+                GroupControlNumber_2: GroupControlNumber_2
+            GS:
+              Time_5: Time_5
+              ReceiverIDCode_3: ReceiverIDCode_3
+              CodeIdentifyingInformationType_1: CodeIdentifyingInformationType_1
+              VersionAndRelease_8: VersionAndRelease_8
+              SenderIDCode_2: SenderIDCode_2
+              Date_4: Date_4
+              TransactionTypeCode_7: TransactionTypeCode_7
+              GroupControlNumber_6: GroupControlNumber_6
+          - Transactions:
+              - {}
+              - {}
+            GETrailers:
+              - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+                GroupControlNumber_2: GroupControlNumber_2
+              - NumberOfIncludedSets_1: NumberOfIncludedSets_1
+                GroupControlNumber_2: GroupControlNumber_2
+            GS:
+              Time_5: Time_5
+              ReceiverIDCode_3: ReceiverIDCode_3
+              CodeIdentifyingInformationType_1: CodeIdentifyingInformationType_1
+              VersionAndRelease_8: VersionAndRelease_8
+              SenderIDCode_2: SenderIDCode_2
+              Date_4: Date_4
+              TransactionTypeCode_7: TransactionTypeCode_7
+              GroupControlNumber_6: GroupControlNumber_6
+        IEATrailers:
+          - InterchangeControlNumber_2: InterchangeControlNumber_2
+            NumberOfIncludedGroups_1: NumberOfIncludedGroups_1
+          - InterchangeControlNumber_2: InterchangeControlNumber_2
+            NumberOfIncludedGroups_1: NumberOfIncludedGroups_1
+        Result:
+          Status: Status
+          Details:
+            - Status: Status
+              Message: Message
+              SegmentId: SegmentId
+              TransactionIndex: 1
+              TransactionRef: TransactionRef
+              Value: Value
+              Index: 6
+              DataElementIndex: 5
+            - Status: Status
+              Message: Message
+              SegmentId: SegmentId
+              TransactionIndex: 1
+              TransactionRef: TransactionRef
+              Value: Value
+              Index: 6
+              DataElementIndex: 5
+          LastIndex: 0
+    body:
+      required:
+        - fileName
+      type: object
+      properties:
+        fileName:
+          type: string
+          description: Upload File
+          format: binary
+    body_1:
+      required:
+        - fileName
+      type: object
+      properties:
+        fileName:
+          type: string
+          description: Upload File
+          format: binary
+    body_2:
+      required:
+        - fileName
+      type: object
+      properties:
+        fileName:
+          type: string
+          description: Upload File
+          format: binary
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      description: API key to authenticate requests
+      name: JWT
+      in: header
+    OAUTH2:
+      type: oauth2
+    as2:
+      type: http
+      scheme: http
+  links: {}
+  callbacks: {}
+externalDocs:
+  description: >-
+    For documentation please see our public github, for paid support please use
+    your gitlab credentials.
+  url: 'https://ft-docs.netlify.app'

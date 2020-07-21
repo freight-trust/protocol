@@ -1,0 +1,3234 @@
+components:
+  schemas:
+    DeletePartnershipRequest:
+      type: object
+      properties:
+        partnerId:
+          type: string
+          example: partner123
+        code:
+          type: string
+          example: code123
+      required:
+        - partnerId
+        - code
+    Account:
+      allOf:
+        - $ref: '#/components/schemas/PatchAccount'
+        - type: object
+          properties:
+            accountId:
+              type: string
+            contact:
+              allOf:
+                - $ref: '#/components/schemas/Contact'
+              required:
+                - email
+          required:
+            - accountId
+            - name
+            - contact
+    Entitlement:
+      properties:
+        contractHeaderId:
+          type: string
+        contractLineItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractLineItem'
+        startDate:
+          type: string
+        endDate:
+          type: string
+      example:
+        contractHeaderId: '9998'
+        contractLineItems:
+          - contractLineId: '1'
+            productId: SR41101
+        startDate: '2018-06-07'
+        endDate: '2019-06-06'
+      required:
+        - contractHeaderId
+        - contractLineItems
+        - startDate
+        - endDate
+    ContractLineItem:
+      properties:
+        contractLineId:
+          type: string
+        productId:
+          type: string
+      example:
+        contractLineId: '1'
+        productId: SR41101
+    Usage:
+      properties:
+        organizationId:
+          type: string
+        nextPage:
+          type: string
+        requestParameters:
+          $ref: '#/components/schemas/RequestParameters'
+        summary:
+          $ref: '#/components/schemas/Summary'
+        containers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Container'
+    Summary:
+      properties:
+        total:
+          type: number
+        pageCount:
+          type: number
+        tier1ContainerCount:
+          type: number
+        tier2ContainerCount:
+          type: number
+        tier3ContainerCount:
+          type: number
+    Container:
+      properties:
+        creationTime:
+          type: string
+        completedTime:
+          type: string
+        eventSubmissionTime:
+          type: string
+        completionState:
+          type: string
+        delegationId:
+          type: string
+        containerTransportId:
+          type: string
+        containerTransportReferences:
+          type: array
+          items:
+            type: string
+        physicalId:
+          type: string
+        shipmentIds:
+          type: array
+          items:
+            type: string
+        carrierBookingNumbers:
+          type: array
+          items:
+            type: string
+        billOfLadingNumbers:
+          type: array
+          items:
+            type: string
+        originPort:
+          type: string
+        destinationPort:
+          type: string
+        inlandTransportProviders:
+          type: array
+          items:
+            type: string
+        tier:
+          type: number
+        oceanCarrier:
+          type: string
+    RequestParameters:
+      description: Request parameters
+      required:
+        - accountId
+        - startDate
+        - endDate
+      properties:
+        accountId:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+    RequestParametersWithPageIndex:
+      description: Request parameters
+      required:
+        - accountId
+        - startDate
+        - endDate
+      properties:
+        accountId:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+        pageIndex:
+          type: string
+    CustomerRecord:
+      description: Customer record
+      required:
+        - associatedCarrierName
+        - associatedCarrierOrgId
+        - code
+        - recordId
+      properties:
+        associatedCarrierName:
+          description: Name of carrier associated with customer
+          type: string
+        associatedCarrierOrgId:
+          description: Onboarding organization id of carrier associated with customer
+          type: string
+        code:
+          description: Customer code (CUCC)
+          type: string
+        name:
+          description: Customer name
+          type: string
+        address:
+          description: Customer street address
+          type: string
+        postalCode:
+          description: Customer postal code
+          type: string
+        city:
+          description: Customer city
+          type: string
+        country:
+          description: Customer country
+          type: string
+        masterId:
+          description: Customer master id
+          type: string
+        masterName:
+          description: Customer master name
+          type: string
+        orgId:
+          description: Onboarding organization id of customer
+          type: string
+        recordId:
+          description: Unique id associated with customer record
+          type: string
+      example:
+        associatedCarrierName: Carrier123
+        associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
+        code: '11111111111'
+        name: CustomerA-B
+        address: 1111 Main St.
+        postalCode: '11111'
+        city: Somecity
+        country: Somecountry
+        masterId: '12345678'
+        masterName: CustomerA
+        orgId: 2b061469-c35a-4725-986f-74043736f61a
+        recordId: 96dc9d0f-034d-4138-8490-6f31ca8bd99a
+    CustomerRecord_CreateReplace:
+      description: Create/replace customer record (carrier only)
+      required:
+        - associatedCarrierName
+        - associatedCarrierOrgId
+        - code
+      properties:
+        associatedCarrierName:
+          description: Name of carrier associated with customer
+          type: string
+        associatedCarrierOrgId:
+          description: Onboarding organization id of carrier associated with customer
+          type: string
+        code:
+          description: Customer code (CUCC)
+          type: string
+        name:
+          description: Customer name
+          type: string
+        address:
+          description: Customer street address
+          type: string
+        postalCode:
+          description: Customer postal code
+          type: string
+        city:
+          description: Customer city
+          type: string
+        country:
+          description: Customer country
+          type: string
+        masterId:
+          description: Customer master id
+          type: string
+        masterName:
+          description: Customer master name
+          type: string
+      example:
+        associatedCarrierName: Carrier123
+        associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
+        code: '11111111111'
+        name: CustomerA-B
+        address: 1111 Main St.
+        postalCode: '11111'
+        city: Somecity
+        country: Somecountry
+        masterId: '12345678'
+        masterName: CustomerA
+    CustomerRecord_CreateInput:
+      description: Create/replace customer records request.
+      type: array
+      items:
+        $ref: '#/components/schemas/CustomerRecord_CreateReplace'
+      example:
+        - associatedCarrierName: Carrier123
+          associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
+          code: '11111111111'
+          name: CustomerA-B
+          address: 1111 Main St.
+          postalCode: '11111'
+          city: Somecity
+          country: Somecountry
+          masterId: '12345678'
+          masterName: CustomerA
+        - associatedCarrierName: Carrier123
+          associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
+          code: '22222222222'
+          name: CustomerA-C
+          address: 2222 Main St.
+          postalCode: '22222'
+          city: Anothercity
+          country: Somecountry
+          masterId: '12345678'
+          masterName: CustomerA
+    CustomerRecord_CreatedStatus:
+      description: Create/replace customer record response status
+      properties:
+        status:
+          description: HTTP status code associated with individual create request (200)
+          type: number
+    CustomerRecord_CreatedSuccess:
+      description: Create/replace customer record success response
+      properties:
+        customerRecord:
+          description: The created customer record
+          $ref: '#/components/schemas/CustomerRecord'
+    CustomerRecord_CreatedFailure:
+      description: Create/replace customer record success response
+      properties:
+        error:
+          description: The create customer record error info
+          $ref: '#/components/schemas/ErrorResponse'
+    CustomerRecord_CreatedOutput:
+      description: Create/replace customer records (each one may or may not have succeeded)
+      type: array
+      items:
+        $ref: '#/components/schemas/CustomerRecord_CreatedStatus'
+        oneOf:
+          - $ref: '#/components/schemas/CustomerRecord_CreatedSuccess'
+          - $ref: '#/components/schemas/CustomerRecord_CreatedFailure'
+      example:
+        - status: 500
+          error:
+            code: CUSTOMER_RECORDS_CREATE_CUSTOMER_RECORD_INSERT_FAILURE
+            message: >-
+              An error occurred creating one of the customer records; the
+              corresponding customer record not created
+            timestamp: 1570038401
+        - status: 200
+          customerRecord:
+            associatedCarrierName: Carrier123
+            associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
+            code: '22222222222'
+            name: CustomerA-C
+            address: 2222 Main St.
+            postalCode: '22222'
+            city: Anothercity
+            country: Somecountry
+            masterId: '12345678'
+            masterName: CustomerA
+            recordId: a7ed9d0f-034d-4138-8490-6f31ca8bd99a
+    CustomerRecord_PatchInput:
+      description: Update customer records request
+      properties:
+        orgId:
+          description: Onboarding organization id of customer
+          type: string
+      required:
+        - orgId
+      example:
+        orgId: 2b061469-c35a-4725-986f-74043736f61a
+    CreateResponse:
+      properties:
+        id:
+          type: string
+      required:
+        - id
+    DeleteResponse:
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+      required:
+        - id
+    BulkCreateResponse:
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+      required:
+        - ids
+    Permission:
+      allOf:
+        - type: object
+          properties:
+            role:
+              $ref: '#/components/schemas/TradePartyEnum'
+            resourceType:
+              $ref: '#/components/schemas/DocumentTypeEnum'
+        - $ref: '#/components/schemas/OperationsMixin'
+    PermissionList:
+      type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/IdMixin'
+              - $ref: '#/components/schemas/Permission'
+            required:
+              - id
+              - role
+              - resourceType
+              - operations
+      required:
+        - permissions
+    OperationEnum:
+      type: string
+      enum:
+        - READ
+        - WRITE
+    TradePartyEnum:
+      type: string
+      description: >
+        The supported trade party roles are a subset of the UN/CEFACT trade
+        party list with extensions for differentiating between import/export,
+        load/discharge/trans, and origin/destination.
+
+        * Seller (SELLER)
+
+        * Buyer (BUYER)
+
+        * Exporter (EXPORTER)
+
+        * Importer (IMPORTER)
+
+        * Consignor (CONSIGNOR)
+
+        * Consignee (CONSIGNEE)
+
+        * Transport Service Buyer (TRANSPORT_SERVICE_BUYER)
+
+        * Origin 3PL (ORIGIN_3PL)
+
+        * Destination 3PL (DESTINATION_3PL)
+
+        * Export Customs Broker (EXPORT_CUSTOMS_BROKER)
+
+        * Import Customs Broker (IMPORT_CUSTOMS_BROKER)
+
+        * Buyer's Bank (BUYERS_BANK)
+
+        * Seller's Bank (SELLERS_BANK)
+
+        * Insurance Provider (INSURANCE_PROVIDER)
+
+        * Ocean Carrier (OCEAN_CARRIER)
+
+        * Transport Service Intermediary (TRANSPORT_SERVICE_INTERMEDIARY)
+
+        * Rail Operator (RAIL_OPERATOR)
+
+        * Truck Operator (TRUCK_OPERATOR)
+
+        * Barge Operator (BARGE_OPERATOR)
+
+        * Feeder (FEEDER)
+
+        * Origin Marine Terminal (ORIGIN_MARINE_TERMINAL)
+
+        * Destination Marine Terminal (DESTINATION_MARINE_TERMINAL)
+
+        * Trans-shipment Terminal (TRANSSHIPMENT_TERMINAL)
+
+        * Inland Terminal (INLAND_TERMINAL)
+
+        * Data Aggregator (DATA_AGGREGATOR)
+
+        * Export Authority (EXPORT_AUTHORITY)
+
+        * Import Authority (IMPORT_AUTHORITY)
+      enum:
+        - SELLER
+        - BUYER
+        - EXPORTER
+        - IMPORTER
+        - CONSIGNOR
+        - CONSIGNEE
+        - TRANSPORT_SERVICE_BUYER
+        - ORIGIN_3PL
+        - DESTINATION_3PL
+        - EXPORT_CUSTOMS_BROKER
+        - IMPORT_CUSTOMS_BROKER
+        - BUYERS_BANK
+        - SELLERS_BANK
+        - INSURANCE_PROVIDER
+        - OCEAN_CARRIER
+        - TRANSPORT_SERVICE_INTERMEDIARY
+        - RAIL_OPERATOR
+        - TRUCK_OPERATOR
+        - BARGE_OPERATOR
+        - FEEDER
+        - ORIGIN_MARINE_TERMINAL
+        - DESTINATION_MARINE_TERMINAL
+        - TRANSSHIPMENT_TERMINAL
+        - INLAND_TERMINAL
+        - DATA_AGGREGATOR
+        - EXPORT_AUTHORITY
+        - IMPORT_AUTHORITY
+    EventTypeEnum:
+      type: string
+      enum:
+        - OCEAN_EVENTS
+        - ORIGIN_INLAND_EVENTS
+        - DESTINATION_INLAND_EVENTS
+    DocumentTypeEnum:
+      type: string
+      description: |
+        * Commercial Invoice (COMMERCIAL_INVOICE)
+        * Packing List (PACKING_LIST)
+        * Booking Confirmation (BOOKING_CONFIRMATION)
+        * Shipping Instructions (SHIPPING_INSTRUCTIONS)
+        * Export Declaration (EXPORT_DECLARATION)
+        * House Bill of Lading (HOUSE_BILL_OF_LADING)
+        * Bill of Lading (BILL_OF_LADING)
+        * Import Declaration (IMPORT_DECLARATION)
+        * Health Certificate (HEALTH_CERTIFICATE)
+        * Phytosanitary Certificate (PHYTOSANITARY_CERTIFICATE)
+        * Veterinary Certificate (VETERINARY_CERTIFICATE)
+        * Fumigation Certificate (FUMIGATION_CERTIFICATE)
+        * Inspection Certificate (INSPECTION_CERTIFICATE)
+        * Certificate of Analysis (CERTIFICATE_OF_ANALYSIS)
+        * Certificate of Origin (CERTIFICATE_OF_ORIGIN)
+        * Pro-Forma Invoice (PRO_FORMA_INVOICE)
+        * Sea Waybill (SEA_WAYBILL)
+        * Verify Copy (VERIFY_COPY)
+        * Container Arrival Notice (CONTAINER_ARRIVAL_NOTICE)
+        * Dangerous Goods Request (DANGEROUS_GOODS_REQUEST)
+        * Other (OTHER)
+      enum:
+        - COMMERCIAL_INVOICE
+        - PACKING_LIST
+        - BOOKING_CONFIRMATION
+        - SHIPPING_INSTRUCTIONS
+        - EXPORT_DECLARATION
+        - HOUSE_BILL_OF_LADING
+        - BILL_OF_LADING
+        - IMPORT_DECLARATION
+        - HEALTH_CERTIFICATE
+        - PHYTOSANITARY_CERTIFICATE
+        - VETERINARY_CERTIFICATE
+        - FUMIGATION_CERTIFICATE
+        - INSPECTION_CERTIFICATE
+        - CERTIFICATE_OF_ANALYSIS
+        - CERTIFICATE_OF_ORIGIN
+        - PRO_FORMA_INVOICE
+        - SEA_WAYBILL
+        - VERIFY COPY
+        - CONTAINER_ARRIVAL_NOTICE
+        - DANGEROUS_GOODS_REQUEST
+        - OTHER
+    ErrorResponse:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        timestamp:
+          type: number
+        info:
+          type: object
+          additionalProperties: true
+      required:
+        - code
+        - message
+        - timestamp
+    UUID:
+      type: string
+      format: uuid
+      example: 00000000-0000-0000-0000-000000000000
+    IdMixin:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+    ConsignmentIdOrCBNMixin:
+      oneOf:
+        - $ref: '#/components/schemas/ConsignmentIdMixin'
+        - $ref: '#/components/schemas/CarrierBookingNumberMixin'
+    OrgIdMixin:
+      type: object
+      description: The ID of an existing organization
+      properties:
+        orgId:
+          type: string
+    ConsignmentIdMixin:
+      type: object
+      properties:
+        consignmentId:
+          $ref: '#/components/schemas/UUID'
+    ChannelMemberIdMixin:
+      type: object
+      properties:
+        channelMemberId:
+          $ref: '#/components/schemas/UUID'
+    CarrierBookingNumberMixin:
+      type: object
+      properties:
+        carrierBookingNumber:
+          type: string
+    OperationsMixin:
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperationEnum'
+    DocumentTypeMixin:
+      properties:
+        documentType:
+          $ref: '#/components/schemas/DocumentTypeEnum'
+    Attribute:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+    Descriptor:
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+    QueryDescriptor:
+      allOf:
+        - $ref: '#/components/schemas/Descriptor'
+        - type: object
+          properties:
+            partial:
+              type: boolean
+              description: >-
+                If set to true, permissions will be returned that result from
+                statements which _partially match_ the given descriptor
+    Entity:
+      allOf:
+        - $ref: '#/components/schemas/Descriptor'
+        - type: object
+          properties:
+            id:
+              type: string
+    QueryEntity:
+      allOf:
+        - $ref: '#/components/schemas/Entity'
+        - type: object
+          properties:
+            partial:
+              type: boolean
+              description: >-
+                If set to true, permissions will be returned that result from
+                statements which _partially match_ the given descriptor
+    PermissionSubject:
+      $ref: '#/components/schemas/Entity'
+      example:
+        id: org-A
+        attributes:
+          - name: role
+            value: 'tradeparty:BUYER'
+          - name: role
+            value: 'tradeparty:SELLER'
+    PermissionResource:
+      $ref: '#/components/schemas/Entity'
+      example:
+        id: document-BoL-123
+        attributes:
+          - name: 'resource:type'
+            value: document
+          - name: 'document:type'
+            value: BILL_OF_LADING
+    PermissionQuerySubject:
+      $ref: '#/components/schemas/QueryEntity'
+      example:
+        id: org-A
+        attributes:
+          - name: role
+            value: 'tradeparty:BUYER'
+          - name: role
+            value: 'tradeparty:SELLER'
+    PermissionQueryResource:
+      $ref: '#/components/schemas/QueryEntity'
+      example:
+        id: document-BoL-123
+        attributes:
+          - name: 'resource:type'
+            value: document
+          - name: 'document:type'
+            value: BILL_OF_LADING
+    PermissionListV2:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          subject:
+            $ref: '#/components/schemas/PermissionSubject'
+          resource:
+            $ref: '#/components/schemas/PermissionResource'
+          action:
+            type: array
+            items:
+              type: string
+        required:
+          - subject
+          - resource
+          - action
+      example:
+        - subject:
+            id: org-A
+            attributes:
+              - name: role
+                value: 'tradeparty:BUYER'
+              - name: role
+                value: 'tradeparty:SELLER'
+          resource:
+            id: document-BoL-123
+            attributes:
+              - name: 'resource:type'
+                value: document
+              - name: 'document:type'
+                value: BILL_OF_LADING
+          action:
+            - 'document:read'
+        - subject:
+            id: org-B
+            attributes:
+              - name: role
+                value: 'tradeparty:OCEAN_CARRIER'
+          resource:
+            id: document-BoL-123
+            attributes:
+              - name: 'resource:type'
+                value: document
+              - name: 'document:type'
+                value: BILL_OF_LADING
+          action:
+            - 'document:read'
+            - 'document:upload'
+    PolicyStatement:
+      type: object
+      properties:
+        name:
+          type: string
+        subject:
+          $ref: '#/components/schemas/Descriptor'
+        resource:
+          $ref: '#/components/schemas/Descriptor'
+        action:
+          type: array
+          items:
+            type: string
+      required:
+        - subject
+        - resource
+        - action
+      example:
+        name: buyer_can_read_bills_of_lading
+        subject:
+          attributes:
+            - name: role
+              value: 'tradeparty:BUYER'
+        resource:
+          attributes:
+            - name: 'resource:type'
+              value: document
+            - name: 'document:type'
+              value: BILL_OF_LADING
+        action:
+          - 'document:read'
+    RoleMembershipList:
+      type: object
+      properties:
+        role:
+          type: string
+        members:
+          type: array
+          items:
+            type: string
+            description: IDs of users who play this role
+      required:
+        - role
+        - members
+      example:
+        role: 'tradeparty:CUSTOMS_BROKER'
+        members:
+          - usa_customs_broker
+          - ita_customs_broker
+    Policy:
+      type: array
+      items:
+        $ref: '#/components/schemas/PolicyStatement'
+    Roles:
+      type: array
+      items:
+        $ref: '#/components/schemas/RoleMembershipList'
+    BasePolicyNode:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 8ade6cba-adb2-40a0-9387-abfd69100207
+          description: Unique identifier for this node
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+          example:
+            - name: 'resource:type'
+              value: transport_equipment
+            - name: channelMemberId
+              value: some-test-org
+            - name: carrierBookingNumber
+              value: d40d7d1d-ef2f-45ad-a166-5b4f73f917ca
+        policy:
+          $ref: '#/components/schemas/Policy'
+        roles:
+          $ref: '#/components/schemas/Roles'
+        parent:
+          type: string
+          example: system
+          description: ID of parent node
+    VersionedBasePolicyNode:
+      allOf:
+        - $ref: '#/components/schemas/BasePolicyNode'
+        - type: object
+          properties:
+            etag:
+              $ref: '#/components/schemas/Etag'
+    FullPolicyNode:
+      allOf:
+        - $ref: '#/components/schemas/BasePolicyNode'
+        - required:
+            - id
+            - properties
+            - policy
+            - roles
+    VersionedFullPolicyNode:
+      allOf:
+        - $ref: '#/components/schemas/VersionedBasePolicyNode'
+        - required:
+            - id
+            - properties
+            - policy
+            - roles
+    PartialPolicyNode:
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        policy:
+          $ref: '#/components/schemas/Policy'
+        roles:
+          $ref: '#/components/schemas/Roles'
+        parent:
+          type: string
+          description: ID of parent node
+        etag:
+          $ref: '#/components/schemas/Etag'
+      example:
+        attributes:
+          - name: 'document:type'
+            value: COMMERCIAL_INVOICE
+        etag: 9f8ad38
+    Child:
+      type: object
+      properties:
+        id:
+          type: string
+        etag:
+          $ref: '#/components/schemas/Etag'
+      required:
+        - id
+        - type
+    Profile:
+      type: object
+      properties:
+        id:
+          type: string
+        policies:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              policy:
+                $ref: '#/components/schemas/Policy'
+            required:
+              - name
+              - policy
+          description: >-
+            Various policies defined by the organization which may be applied by
+            the system under certain circumstances
+        etag:
+          $ref: '#/components/schemas/Etag'
+      required:
+        - id
+        - policies
+      example:
+        id: org-123abc
+        policies:
+          - name: consignment
+            policy:
+              - subject:
+                  attributes:
+                    - name: role
+                      value: 'tradeparty:CONSIGNEE'
+                resource:
+                  attributes:
+                    - name: 'document:type'
+                      value: BILL_OF_LADING
+                action:
+                  - 'document:read'
+        etag: 01-4923395af
+    DocumentOperationEnum:
+      type: string
+      enum:
+        - 'document:read'
+        - 'document:upload'
+        - 'document:write'
+    Etag:
+      type: string
+      description: Latest known revision/edit number
+      example: 01-4923395af
+    PermissionQueryResult:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 88617827-0ae8-4eb7-84fc-1a7b368b97fb
+        permissions:
+          $ref: '#/components/schemas/PermissionListV2'
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        etag:
+          $ref: '#/components/schemas/Etag'
+      required:
+        - id
+        - permissions
+    PermissionQueryResultOrError:
+      type: object
+      description: Computed permissions for some query
+      properties:
+        id:
+          type: string
+          example: 88617827-0ae8-4eb7-84fc-1a7b368b97fb
+        success:
+          type: boolean
+        permissions:
+          $ref: '#/components/schemas/PermissionListV2'
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        error:
+          $ref: '#/components/schemas/ErrorResponse'
+        etag:
+          $ref: '#/components/schemas/Etag'
+      required:
+        - id
+        - success
+    Organizations:
+      description: List of organizations
+      type: object
+      properties:
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+    OrganizationMetadata:
+      type: object
+      properties:
+        id:
+          type: string
+          description: OrgId
+        name:
+          type: string
+          description: Org Name
+        address:
+          $ref: '#/components/schemas/Address'
+        organizationTypes:
+          type: array
+          items:
+            type: string
+            description: Organization Types
+      required:
+        - id
+    OrganizationPreferences:
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Org Name alias
+        searchable:
+          type: boolean
+          description: >-
+            Flag enables organization to be discoverable by name in the
+            application.
+          default: true
+        autoApprove:
+          type: boolean
+          description: Flag auto approves the incoming business partner requestParameters
+          default: true
+    Organization:
+      description: Organization Profile
+      allOf:
+        - $ref: '#/components/schemas/OrganizationMetadata'
+        - $ref: '#/components/schemas/OrganizationPreferences'
+    Partnership:
+      description: Business partner
+      allOf:
+        - $ref: '#/components/schemas/PartnerId'
+        - type: object
+          properties:
+            status:
+              $ref: '#/components/schemas/StatusEnum'
+    PartnershipDetails:
+      description: Business partner
+      allOf:
+        - $ref: '#/components/schemas/PartnerId'
+        - type: object
+          properties:
+            status:
+              $ref: '#/components/schemas/StatusEnum'
+        - type: object
+          properties:
+            hasReference:
+              type: boolean
+              description: >-
+                Boolean value, true if there are any non system generated
+                references
+    PartnerId:
+      type: object
+      properties:
+        partnerId:
+          type: string
+          description: Business partner Id
+    NewParternshipRequest:
+      allOf:
+        - $ref: '#/components/schemas/PartnerId'
+        - type: object
+          properties:
+            references:
+              type: array
+              items:
+                $ref: '#/components/schemas/OrgReferenceWithoutId'
+        - required:
+            - partnerId
+    PartnershipWithOrgReferences:
+      allOf:
+        - $ref: '#/components/schemas/Partnership'
+        - type: object
+          properties:
+            references:
+              type: array
+              items:
+                $ref: '#/components/schemas/OrgReference'
+    PartnershipWithSystemGenOrgReferences:
+      allOf:
+        - $ref: '#/components/schemas/PartnershipDetails'
+        - type: object
+          properties:
+            displayName:
+              type: string
+              description: alias name for Partner Id
+            organizationTypes:
+              type: array
+              items:
+                type: string
+                description: Organization Types
+            references:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/OrgReference'
+                  - $ref: '#/components/schemas/SystemGeneratedOrgReference'
+    Address:
+      type: object
+      description: Address
+      properties:
+        address1:
+          description: Organization street address1
+          type: string
+        address2:
+          description: Organization street address1
+          type: string
+        postalCode:
+          description: Organization postal code
+          type: string
+        city:
+          description: Organization city
+          type: string
+        state:
+          description: Organization state
+          type: string
+        country:
+          description: Organization country
+          type: string
+    OrgReferenceWithoutId:
+      required:
+        - code
+      properties:
+        code:
+          description: >-
+            Value or code to be used to refer to the organization (e.g. SCV
+            code)
+          type: string
+        name:
+          description: Organization name
+          type: string
+        masterId:
+          description: Organization master id
+          type: string
+        masterName:
+          description: Organization master name
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+    OrgReference:
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              description: Reference Id
+        - $ref: '#/components/schemas/OrgReferenceWithoutId'
+    SystemGeneratedOrgReference:
+      required:
+        - code
+        - isSystemGenerated
+      properties:
+        id:
+          description: Reference Id
+          type: string
+        code:
+          description: >-
+            Value or code to be used to refer to the organization (e.g. SCV
+            code)
+          type: string
+        isSystemGenerated:
+          description: Additional paramter indicates the reference is system generated.
+          type: boolean
+          default: true
+    HTTPResponseStatus:
+      description: Create/replace customer record response status
+      properties:
+        status:
+          description: HTTP status code pertaining to this item
+          type: number
+    StatusEnum:
+      type: string
+      enum:
+        - accepted
+        - deleted
+        - denied
+        - pending
+        - requested
+    UpdateStatusEnum:
+      type: string
+      enum:
+        - accepted
+        - deleted
+        - denied
+    OrgIdResponse:
+      type: object
+      properties:
+        orgId:
+          type: string
+    BolSearchSummary:
+      properties:
+        organizationId:
+          type: string
+        requestParameters:
+          $ref: '#/components/schemas/RequestParameters'
+        summary:
+          type: object
+          properties:
+            total:
+              type: number
+            success:
+              type: number
+            uniqueSuccessCalls:
+              type: number
+            duplicateSuccessCalls:
+              type: number
+            failedCalls:
+              type: number
+            internalErrorCalls:
+              type: number
+    BolItemizeResult:
+      properties:
+        organizationId:
+          type: string
+        pageCount:
+          type: number
+        nextPage:
+          type: number
+        requestParameters:
+          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+        apiCalls:
+          type: array
+          items:
+            $ref: '#/components/schemas/BolSearchItem'
+    BolSearchItem:
+      properties:
+        api:
+          type: string
+        timestamp:
+          type: string
+        status:
+          type: string
+        requestParameters:
+          type: object
+          properties:
+            billOfLadingNumber:
+              type: string
+            oceanCarrierCode:
+              type: string
+            consignorPrintedParty:
+              type: string
+    CountryInfo:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            example: BR
+            description: Country code
+          value:
+            type: string
+            example: Brazil
+            description: Country description
+    EventTypeInfo:
+      type: array
+      items:
+        type: object
+        properties:
+          code:
+            type: string
+            example: E278
+            description: Event code
+          description:
+            type: string
+            example: >-
+              Starts the tracking of the container. A container transport ID is
+              returned
+            description: Description of the event
+          name:
+            type: string
+            example: Start container tracking
+            description: Name of the event
+    PartitionRuleRequest:
+      type: object
+      required:
+        - channel
+        - channelMemberId
+      properties:
+        channel:
+          type: string
+          example: ocean-carrier-channel
+          description: Name of the channel to be mapped to carrier organization
+        channelMemberId:
+          type: string
+          example: ocean-carrier
+          description: Name of the carrier organization
+        tradeObjectType:
+          type: string
+          example: consignment
+          description: Trade object type
+      title: PartitionRuleUpdateRequest
+    PartitionRuleResponse:
+      type: object
+      required:
+        - channel
+        - channelMemberId
+        - id
+        - type
+      properties:
+        channel:
+          type: string
+          example: ocean-carrier-channel
+          description: Name of the channel to be mapped to carrier organization
+        channelMemberId:
+          type: string
+          example: ocean-carrier
+          description: Name of the channelMember organization
+        id:
+          type: string
+          example: pl_ocean-carrier
+          description: ID generated by prefixing 'pl_' to the provided carrier
+        type:
+          type: string
+          example: participantList
+          description: Type of the document
+        tradeObjectType:
+          type: string
+          example: consignment
+          description: Name of the trade object type
+    PartitionRuleCreatedUpdatedResponse:
+      type: object
+      required:
+        - channel
+        - channelMemberId
+        - id
+        - originator
+        - status
+        - transactionId
+        - type
+      properties:
+        channel:
+          type: string
+          example: ocean-carrier-channel
+          description: Name of the channel to be mapped to carrier organization
+        channelMemberId:
+          type: string
+          example: ocean-carrier
+          description: Name of the channelMember organization
+        id:
+          type: string
+          example: pl_ocean-carrier
+          description: ID generated by prefixing 'pl_' to the provided carrier
+        originator:
+          type: string
+          example: gtd-ocean-carrier
+          description: Request originator
+        status:
+          type: string
+          example: InProgress
+          description: >-
+            Status of the transaction.This can be either Complete,Failed or
+            InProgress
+        tradeObjectType:
+          type: string
+          example: consignment
+          description: Trade object type
+        transactionId:
+          type: string
+          example: t2f2ff97d2bf49e985b507854e6d597f
+          description: >-
+            Unique id generated for a request. Each request is represented as
+            transaction and refer with the unique transactionId.
+        type:
+          type: string
+          example: participantList
+          description: Type of the document
+    PartitionRuleUpdateRequest:
+      type: object
+      required:
+        - channel
+      properties:
+        channel:
+          type: string
+          example: ocean-carrier-channel
+          description: Name of the channel to be mapped to carrier organization
+      title: PartitionRuleUpdateRequest
+    DocumentSchemaCreatedUpdatedResponse:
+      type: object
+      required:
+        - description
+        - docType
+        - id
+        - name
+        - organizationId
+        - transactionId
+      properties:
+        description:
+          type: string
+          example: Packing list of US Customs
+          description: Description of the document metadata.
+        docType:
+          type: string
+          example: Packing list
+          description: Type of the document metadata.
+        id:
+          type: string
+          example: b2f2ff97d2bf49e985b507854e6d597f
+          description: Unique id generated for the document metadata.
+        name:
+          type: string
+          example: Packing list
+          description: Name of the document metadata.
+        organizationId:
+          type: string
+          example: IBM
+          description: Organization where document metadata defined.
+        transactionId:
+          type: string
+          example: t2f2ff97d2bf49e985b507854e6d597f
+          description: >-
+            Unique id generated for the each request. Each request is
+            represented as transaction and refer with the unique transactionId.
+      title: DocumentSchemaCreatedUpdatedResponse
+    DocumentSchemaRequest:
+      type: object
+      required:
+        - docType
+        - jsonSupport
+        - organizationId
+        - supportedContentTypes
+      properties:
+        description:
+          type: string
+          example: Commercial Invoice for US customs
+          description: Description of the document
+        docType:
+          type: string
+          example: Commercial Invoice
+          description: Type of the document
+        jsonSupport:
+          type: boolean
+          example: true
+          description: >-
+            Boolean to indicate whether paperless trade supports JSON
+            representation for this document. E.g Commerial Invoice has
+            jsonSupport
+        name:
+          type: string
+          example: Commercial Invoice
+          description: Name of the document
+        organizationId:
+          type: string
+          example: IBM
+          description: Id of the organization
+        sampleModel:
+          type: object
+          description: >-
+            If jsonSupport is true then this model will contain a sample json
+            object which conforms to the schema defined. Can be used by the API
+            consumer to create payload for doc upload
+        schema:
+          description: >-
+            Represents the swagger schema for a document. The model field in
+            schema specifies the name of the parent/root object in the
+            definition and the definitions field of the schema Contains the
+            parent/root type definition and any other child type definitions
+            that collectively define the schema for the parent object
+          $ref: '#/components/schemas/Schema'
+        supportedContentTypes:
+          type: array
+          description: >-
+            Supported content types for document metadata and is either
+            application/json or application/pdf
+          items:
+            type: string
+            enum:
+              - application/json
+              - application/pdf
+        uiLayout:
+          type: object
+          description: Represents ui layout for the document.
+      title: DocumentSchemaRequest
+    Schema:
+      type: object
+      required:
+        - definitions
+        - model
+        - properties
+        - type
+      properties:
+        definitions:
+          type: object
+          description: definitions
+        model:
+          type: string
+          example: Commercial Invoice
+          description: model
+        properties:
+          type: object
+          description: properties
+          additionalProperties:
+            type: object
+        type:
+          type: string
+          example: object
+          description: type
+      title: Schema
+    DocumentSchemaUpdateRequest:
+      type: object
+      required:
+        - jsonSupport
+        - organizationId
+        - supportedContentTypes
+      properties:
+        description:
+          type: string
+          example: Commercial Invoice for US customs
+          description: Description of the document
+        docType:
+          type: string
+          example: Commercial Invoice
+          description: Type of the document
+        jsonSupport:
+          type: boolean
+          example: true
+          description: >-
+            Boolean to indicate whether paperless trade supports JSON
+            representation for this document. E.g Commerial Invoice has
+            jsonSupport
+        name:
+          type: string
+          example: Commercial Invoice
+          description: Name of the document
+        organizationId:
+          type: string
+          example: IBM
+          description: Id of the organization
+        sampleModel:
+          type: object
+          description: >-
+            If jsonSupport is true then this model will contain a sample json
+            object which conforms to the schema defined.Can be used by the API
+            consumer to create payload for doc upload
+        schema:
+          description: >-
+            Represents the swagger schema for a document.The model field in
+            schema specifies the name of the parent/root object in the
+            definition and the definitions field of the schema Contains the
+            parent/root type definition and any other child type definitions
+            that collectively define the schema for the parent object
+          $ref: '#/components/schemas/Schema'
+        supportedContentTypes:
+          type: array
+          description: >-
+            Supported content types for document metadata and is either
+            application/json or application/pdf.
+          items:
+            type: string
+            enum:
+              - application/json
+              - application/pdf
+        uiLayout:
+          type: object
+          description: Represents the swagger ui schema for a document.
+      title: DocumentSchemaUpdateRequest
+    documentSchemaMetadataStatusRequest:
+      type: object
+      required:
+        - status
+        - version
+      properties:
+        status:
+          type: string
+          example: DEPRECATED
+          description: Status of Schema
+          enum:
+            - ACTIVE
+            - DEPRECATED
+            - INACTIVE
+        version:
+          type: integer
+          format: int32
+          example: 1
+          description: Status of Schema
+      title: DocumentSchemaMetadataStatusRequest
+    DocumentSchemaMetadataResponse:
+      type: object
+      required:
+        - docType
+        - id
+        - organizationId
+        - transactionId
+      properties:
+        docType:
+          type: string
+          example: Packing list
+          description: Type of the document metadata.
+        id:
+          type: string
+          example: b2f2ff97d2bf49e985b507854e6d597f-cf
+          description: Unique identifier for a document schema metadata entry
+        name:
+          type: string
+          example: Commercial Invoice
+          description: Name of the document
+        organizationId:
+          type: string
+          example: IBM
+          description: Id of the organization
+        transactionId:
+          type: string
+          example: t2f2ff97d2bf49e985b507854e6d597f
+          description: >-
+            Unique id generated for the each request. Each request is
+            represented as transaction and refer with the unique transactionId.
+      title: DocumentSchemaMetadataResponse
+    AppExceptionResponse:
+      type: object
+      required:
+        - code
+        - message
+        - timestamp
+      properties:
+        code:
+          type: string
+          description: Error Code
+        message:
+          type: string
+          description: Exception Message
+        timestamp:
+          type: string
+          description: 'timestamp '
+    OrgMetricsList:
+      type: object
+      required:
+        - creationTime
+        - numberOfOrgs
+        - orgMetricsList
+      properties:
+        creationTime:
+          type: string
+          example: '2018-03-01T13:00:00-0500'
+          description: Time when this query was executed.
+        numberOfOrgs:
+          type: integer
+          format: int32
+          description: Number of organizations found that match the filters given.
+        orgMetricsList:
+          type: array
+          description: List of metrics for each org that met the filter criteria.
+          items:
+            $ref: '#/components/schemas/OrgMetrics'
+    OrgMetrics:
+      type: object
+      required:
+        - activeContainers
+        - activeShipments
+        - eventsPublished
+        - orgAliases
+        - orgId
+        - orgName
+        - orgRoles
+        - orgTypes
+      properties:
+        orgId:
+          type: string
+          example: OrganizationID
+          description: ID of the onboarded organization (in MMO).
+        orgName:
+          type: string
+          example: OrganizationName
+          description: Name of the onboarded organization (in MMO).
+        orgAliases:
+          type: array
+          example: OrganizationAlias
+          description: >-
+            Aliases of this organization. These are names which can be used to
+            identify the org.
+          items:
+            type: string
+        orgTypes:
+          type: array
+          example: shipper
+          description: >-
+            Types assigned to this org (e.g. shipper, terminal). This identifies
+            the business type of the org in global shipping.
+          items:
+            type: string
+        orgRoles:
+          type: array
+          description: >-
+            Roles assigned to this org. This identifies the role of the org in
+            the context of SIP subscriptions. An org with a port role is allowed
+            to create port-level subscriptions, for example. This is distinct
+            from the business type (shipper, freight forwarder, etc).
+          items:
+            $ref: '#/components/schemas/MMORole'
+        activeTransportEquipment:
+          type: integer
+          format: int64
+          example: 10
+          description: >-
+            The number of currently active transport equipment in SIP to which
+            this organization has visibility.
+        activeConsignments:
+          type: integer
+          format: int64
+          example: 5
+          description: >-
+            The number of currently active consignments in SIP to which this
+            organization has visibility.
+        eventsPublished:
+          type: integer
+          format: int64
+          example: 100
+          description: >-
+            The number of events published by this org. An event is considered
+            'published' by the org that sent the REST call to Pipeline.
+    MMORole:
+      type: object
+      properties:
+        roleData:
+          type: string
+        roleType:
+          type: string
+          enum:
+            - country
+            - port
+            - terminal
+            - province
+    roles:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              value:
+                $ref: '#/components/schemas/TradePartyEnum'
+              display:
+                type: string
+                description: Friendly description of the trade party role
+            required:
+              - code
+              - description
+    resource:
+      type: object
+      properties:
+        resource:
+          type: object
+          properties:
+            descriptors:
+              type: array
+              items:
+                type: object
+                properties:
+                  value:
+                    type: string
+                  display:
+                    items:
+                      type: string
+              example:
+                - key: doctype
+                  enum:
+                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/0'
+                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/1'
+                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/2'
+    SenderOrgId:
+      type: string
+      example: org-A
+      description: Org id of the organization update or remove the role
+    IsInternalRequest:
+      type: boolean
+      default: false
+      description: Parameter used to check if the call is internal
+    ContainersItemizedResults:
+      properties:
+        organizationId:
+          type: string
+        pageCount:
+          type: number
+        nextPage:
+          type: number
+        requestParameters:
+          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+        containers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Container'
+    UsageSummary:
+      properties:
+        total:
+          type: number
+        tier1ContainerCount:
+          type: number
+        tier2ContainerCount:
+          type: number
+        tier3ContainerCount:
+          type: number
+    ContainersUsageSummary:
+      properties:
+        organizationId:
+          type: string
+        requestParameters:
+          $ref: '#/components/schemas/RequestParameters'
+        summary:
+          $ref: '#/components/schemas/UsageSummary'
+    OrgEntitlementsResponse:
+      type: array
+      items:
+        properties:
+          orgId:
+            type: string
+          entitlements:
+            type: array
+            items:
+              $ref: '#/components/schemas/OrgEntitlement'
+        example:
+          orgId: testOrgId
+          entitlements:
+            - id: bolVerifier
+              entitled: true
+        required:
+          - entitlements
+    OrgEntitlementsRequest:
+      type: object
+      properties:
+        entitlements:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgEntitlement'
+      example:
+        entitlements:
+          - id: bolVerifier
+            entitled: true
+      required:
+        - entitlements
+    OrgEntitlement:
+      type: object
+      properties:
+        id:
+          type: string
+        entitled:
+          type: boolean
+      example:
+        id: bolVerifier
+        allowed: true
+    OrgEntitlementTypesResult:
+      type: array
+      items:
+        $ref: '#/components/schemas/EntitlementTypes'
+    EntitlementTypes:
+      type: object
+      properties:
+        displayName:
+          type: string
+        id:
+          type: string
+      example:
+        displayName: billOfLadingVerifier
+        id: bolVerifier
+    actions:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              value:
+                $ref: '#/components/schemas/DocumentOperationEnum'
+              display:
+                type: string
+    ReferenceTypeInfo:
+      items:
+        type: string
+      enum:
+        - proformaInvoiceNumber
+        - deliveryScheduleNumber
+        - consigneeShipmentReferenceNumber
+        - despatchNoteNumber
+        - customsTariffNumber
+        - customsDecisionRequestNumber
+        - subHouseBillOfLadingNumber
+        - customsGuaranteeNumber
+        - sellersCatalogueNumber
+        - declarantsCustomsIdentityNumber
+        - importerReferenceNumber
+        - customsDeclarationNumber
+        - stockKeepingUnitNumber
+        - adviceOfCollectionNumber
+        - railwayWagonNumber
+        - buyersItemNumber
+        - customsHouseBrokerReferenceNumber
+        - reportNumber
+        - traderAccountNumber
+        - governmentAgencyReferenceNumber
+        - regristrationNumberOfPreviousCustomsDeclaration
+        - productReservationNumber
+        - customsItemNumber
+        - tariffNumber
+        - replenishmentPurchaceOrderNumber
+        - contractPartyReferenceNumber
+        - agentsReferenceNumber
+        - deliveryVerificationCertificate
+        - customsReleaseCode
+        - complianceCodeNumber
+        - ministerialCertificateOfHomologation
+        - banksCommonTransactionReferenceNumber
+        - customsTranshipmentNumber
+        - vehicleIdentificationNumber
+        - replenishmentPurchaseOrderRangeStartNumber
+        - consigneesInvoiceNumber
+        - replenishmentPurchaseOrderRangeEndNumber
+        - buyersCatalogueNumber
+        - inlandTransportOrderNumber
+        - consigneesReference
+        - usCustomsServiceEntryCode
+        - transportEquipmentReleaseOrderReference
+        - importersLetterOfCreditReference
+        - customsBindingRulingNumber
+        - customsNonBindingRulingNumber
+        - uniqueGoodsShipmentIdentifier
+        - rateCodeNumber
+        - airWaybillNumber
+        - buyersContractNumber
+        - houseBillOfLadingNumber
+        - billOfLadingNumber
+        - bookingReferenceNumber
+        - consigneesOrderNumber
+        - carriersReferenceNumber
+        - contractNumber
+        - buyersDebtorNumber
+        - exportDeclaration
+        - exportPermitNumber
+        - containerEquipmentReceiptNumber
+        - exportersReferenceNumber
+        - exportLicenceNumber
+        - freightForwardersReferenceNumber
+        - governmentReferenceNumber
+        - harmonizedSystemNumber
+        - houseWaybillNumber
+        - inBondNumber
+        - iataCargoAgentCodeNumber
+        - importLicenceNumber
+        - invoiceNumber
+        - letterOfCreditNumber
+        - shipNoticeManifestNumber
+        - masterBillOfLadingNumber
+        - manufacturersPartNumber
+        - manufacturersOrderNumber
+        - masterAirWaybillNumber
+        - northAmericanHazardousGoodsClassificationNumber
+        - purchaseOrderNumber
+        - generalReferenceNumber
+        - pickupReferenceNumber
+        - plantNumber
+        - packingListNumber
+        - purchaseOrderResponseNumber
+        - purchaseOrderChangeNumber
+        - paymentReference
+        - priceQuoteNumber
+        - shippersIdentifyingNumberForShipment
+        - sealNumber
+        - shipmentReferenceNumber
+        - sellersReferenceNumber
+        - truckersBillOfLading
+        - transactionReferenceNumber
+        - orderNumber
+        - warehouseEntryNumber
+        - warehouseReceiptNumber
+        - warehouseStorageLocationNumber
+        - cargoControlNumber
+        - previousCargoControlNumber
+        - mutuallyDefinedReferenceNumber
+        - cocoaBatchReferenceNumber
+    UserPrefrences:
+      type: object
+      items:
+        properties:
+          profile:
+            type: object
+          items:
+            $ref: '#/components/schemas/UserPreferenceRequest'
+      example:
+        orgId: testOrgId
+        userId: testUserId
+        prefs:
+          - locale: en_US
+    UserPreferenceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: John
+        prefs:
+          type: object
+          $ref: '#/components/schemas/prefs'
+      required:
+        - name
+        - prefs
+    prefs:
+      properties:
+        locale:
+          type: string
+          example: en_US
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/contacts'
+      required:
+        - contacts
+    contacts:
+      type: object
+      properties:
+        contact:
+          type: object
+          properties:
+            contactType:
+              allOf:
+                - description: Contact type.
+                - $ref: '#/components/schemas/ContactTypeEnum'
+            contactInfo:
+              type: string
+              example: 'https://foo.bar'
+            nickname:
+              type: string
+              example: JohnDoe
+          required:
+            - contactType
+            - contactInfo
+            - nickname
+      required:
+        - contact
+    PatchUserPreferenceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: John
+        prefs:
+          type: object
+          $ref: '#/components/schemas/PatchPrefs'
+      required:
+        - prefs
+    PatchPrefs:
+      properties:
+        locale:
+          type: string
+          example: en_US
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PatchContacts'
+      required:
+        - contacts
+    PatchContacts:
+      type: object
+      properties:
+        contact:
+          type: object
+          properties:
+            contactId:
+              type: string
+              example: UUID-123-456
+            contactType:
+              allOf:
+                - description: Contact type.
+                - $ref: '#/components/schemas/ContactTypeEnum'
+            contactInfo:
+              type: string
+              example: 'https://foo.bar'
+            nickname:
+              type: string
+              example: JohnDoe
+          required:
+            - contactType
+            - contactInfo
+            - nickname
+      required:
+        - contact
+    UserPreferenceResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          example: John
+        prefs:
+          type: object
+          $ref: '#/components/schemas/pref'
+    pref:
+      properties:
+        locale:
+          type: string
+          example: en_US
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/contact'
+    contact:
+      type: object
+      properties:
+        contactId:
+          type: string
+          example: UUID-123-234
+        contactType:
+          allOf:
+            - description: Contact type.
+            - $ref: '#/components/schemas/ContactTypeEnum'
+        contactInfo:
+          type: string
+          example: 'https://foo.bar'
+        nickname:
+          type: string
+          example: JohnDoe
+        verified:
+          type: boolean
+          example: false
+    ContactTypeEnum:
+      type: string
+      enum:
+        - Webhook
+    References:
+      type: object
+      description: References associated with a partner
+      properties:
+        partnerId:
+          type: string
+          description: Business Partner Id
+          example: partner123
+        references:
+          type: array
+          required:
+            - code
+          items:
+            $ref: '#/components/schemas/OrgReference'
+      required:
+        - partnerId
+        - references
+    EBOLActions:
+      type: object
+      properties:
+        fromOrganization:
+          type: string
+        toOrganization:
+          type: string
+        issuerOrganization:
+          type: string
+        billOfLadingNumber:
+          type: string
+        actionableFlowId:
+          type: string
+        timestamp:
+          type: string
+        action:
+          type: string
+    EBoldetailsResult:
+      properties:
+        organizationId:
+          type: string
+        pageCount:
+          type: number
+        nextPage:
+          type: number
+        requestParameters:
+          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EBOLActions'
+    EBolSearchSummary:
+      properties:
+        organizationId:
+          type: string
+        requestParameters:
+          $ref: '#/components/schemas/RequestParameters'
+        summary:
+          type: object
+          properties:
+            total:
+              type: number
+            eBL_IssuedTo:
+              type: number
+            eBL_TransferredTo:
+              type: number
+            eBL_TransferredFrom:
+              type: number
+            eBL_SurrenderedFrom:
+              type: number
+    ResourceQueryRequest:
+      type: object
+      required:
+        - callerOrg
+        - ruleType
+        - queries
+      properties:
+        callerOrg:
+          type: string
+          description: caller org id
+          example: org123
+        ruleType:
+          description: FlowType. Currently only `SI-BOL` is supported.
+          type: string
+          enum:
+            - SI-BOL
+            - ACTIONABLE_FLOW_BY_FLOW_TYPE
+        queries:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: 0003f9c7-ef2e-4c9f-8018-cc9e98faed37
+              attributes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: 'resource:type'
+                    value:
+                      type: string
+                      example: document
+    ResourceQueryResponse:
+      type: object
+      properties:
+        hasMore:
+          type: boolean
+          example: false
+        newFrom:
+          type: string
+        resources:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+              - success
+            properties:
+              id:
+                type: string
+                example: 0003f9c7-ef2e-4c9f-8018-cc9e98faed37
+              resourceType:
+                type: string
+                example: consignment
+              success:
+                type: boolean
+                example: true
+              error:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Resource does not exist
+                  code:
+                    type: string
+                    example: not_found
+                  name:
+                    type: string
+                    example: NotFoundError
+    CreateUserRequest:
+      required:
+        - type
+        - isAdmin
+        - id
+      type: object
+      properties:
+        id:
+          type: string
+          description: userId / serviceId associated with the user.
+          example: test-user@mail.com
+        name:
+          type: string
+          description: User Name.
+          example: user1
+        type:
+          allOf:
+            - description: User type.
+            - $ref: '#/components/schemas/UserEnum'
+        isAdmin:
+          type: boolean
+          description: set as true if the user has to be added with admin privilages.
+          example: true
+    CreateUserRequestWithOrgId:
+      required:
+        - type
+        - isAdmin
+        - id
+        - orgId
+      type: object
+      properties:
+        id:
+          type: string
+          description: userId associated with the user.
+          example: test-user@mail.com
+        name:
+          type: string
+          description: User Name.
+          example: user1
+        type:
+          description: User type.
+          type: string
+          enum:
+            - user
+        isAdmin:
+          type: boolean
+          description: set as true if the user has to be added with admin privilages.
+          example: true
+        orgId:
+          type: string
+          description: orgId to which the user needs to be added
+          example: 2b061469-c35a-4725-986f-74043736f61a
+    UpdateUserRequest:
+      required:
+        - type
+        - isAdmin
+      type: object
+      properties:
+        name:
+          type: string
+          description: User Name.
+          example: user1
+        type:
+          allOf:
+            - description: User type.
+            - $ref: '#/components/schemas/UserEnum'
+        isAdmin:
+          type: boolean
+          description: set as true if the user has to be added with admin privilages.
+          example: true
+    UpdateUserRequestWithOrgId:
+      required:
+        - type
+        - isAdmin
+        - orgId
+      type: object
+      properties:
+        name:
+          type: string
+          description: User Name.
+          example: user1
+        type:
+          allOf:
+            - description: User type.
+            - $ref: '#/components/schemas/UserEnum'
+        isAdmin:
+          type: boolean
+          description: set as true if the user has to be added with admin privilages.
+          example: true
+        orgId:
+          type: string
+          description: orgId in which user needs to be updated
+          example: 2b061469-c35a-4725-986f-74043736f61a
+    UserEnum:
+      type: string
+      enum:
+        - user
+        - system
+    GetUsersResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/UserProfile'
+    UserProfile:
+      type: object
+      properties:
+        type:
+          allOf:
+            - description: User type.
+            - $ref: '#/components/schemas/UserEnum'
+        oid:
+          type: string
+        uid:
+          type: string
+        solution:
+          type: string
+        sid:
+          type: string
+        organization:
+          type: string
+        serviceId:
+          type: string
+        userId:
+          type: string
+        isOrganizationAdmin:
+          type: boolean
+        isSolutionAdmin:
+          type: boolean
+        isSolutionManager:
+          type: boolean
+        isSystemUser:
+          type: boolean
+        isReferenceToken:
+          type: boolean
+        isNetworkAdmin:
+          type: boolean
+        isBlockchainClient:
+          type: boolean
+        onboardedBy:
+          type: string
+        created:
+          type: number
+        updatedBy:
+          type: string
+        updated:
+          type: number
+        name:
+          type: string
+    DeleteUserResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/UserProfile'
+    VerificationRequest:
+      required:
+        - nickname
+        - otp
+      type: object
+      properties:
+        nickname:
+          type: string
+          example: user123
+        otp:
+          type: string
+          example: otp123
+    VerificationResponse:
+      type: object
+      properties:
+        verified:
+          type: boolean
+          example: true
+    OTPRequest:
+      required:
+        - nickname
+      type: object
+      properties:
+        nickname:
+          type: string
+          example: user123
+    GetUserPreferenceResponse:
+      properties:
+        userId:
+          type: string
+        orgId:
+          type: string
+        userName:
+          type: string
+        prefs:
+          $ref: '#/components/schemas/prefs'
+    GetAllUserPreferencesResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/GetUserPreferenceResponse'
+    IssueRetroPartyAdded_event:
+      type: object
+      required:
+        - originatorName
+        - originatorId
+      properties:
+        originatorName:
+          type: string
+          description: >-
+            The proper name (human readable) of the entity that published this
+            event
+        originatorId:
+          type: string
+          description: >-
+            The party identification code (i.e SCAC) of the organization
+            publishing event
+        eventSubmissionTime:
+          type: number
+          description: 'Time of submission, as the number of milliseconds since Epoch'
+        eventSubmissionTime8601:
+          type: string
+          description: >-
+            Time of submission, in common ISO 8601 fromat
+            yyyy-MM-dd'T'HH:mm:ss.SSSZ
+        eventSubmissionGpsLocation:
+          type: string
+          description: >-
+            GPS coordinates of where the event originated from(mobile device
+            only)
+        correlationId:
+          type: string
+          description: User-supplied Id for this event
+        orgId:
+          type: string
+          description: >-
+            Resolved organizationId for the partyRef which will now be
+            retroactively applied
+        consignments:
+          type: array
+          items:
+            type: string
+          description: Array of the consignment IDs of the consignments to be updated
+        transportEquipment:
+          type: array
+          items:
+            type: string
+          description: >-
+            Array of the transport equipment IDs of the transport equipment to
+            be updated
+        shipments:
+          type: array
+          items:
+            type: string
+          description: Array of theshipment IDs of the shipments to be updated
+    RateLimitResponseModel:
+      type: object
+      required:
+        - error
+        - message
+        - path
+        - status
+        - timestamp
+      properties:
+        error:
+          type: string
+          example: Too Many Requests
+          description: Human readable http response
+        message:
+          type: string
+          example: Request rate exceeded.
+          description: Translated error message
+        path:
+          type: string
+          example: /api/v1/path/to/endpoint
+          description: Path to API called
+        status:
+          type: integer
+          format: int32
+          example: 429
+          description: HTTP status (429)
+        timestamp:
+          type: integer
+          format: int64
+          example: 1583434912493
+          description: 'Timestamp at which the rejected request was submitted, in epoch time'
+    Response:
+      type: object
+      required:
+        - eventTransactionId
+        - message
+      properties:
+        eventTransactionId:
+          type: string
+          example: 66ea8047-1790-4929-a118-2actocd0322b
+          description: Unique identifier for a successfully published event
+        message:
+          type: string
+          example: Event submitted
+          description: >-
+            Message describing the status. This will be "Event submitted" if the
+            operation was successful. In the event of an error, the "message"
+            field will contain a description of the error
+    RouteRecords:
+      required:
+        - routePartnerRef
+        - routeOrigin
+        - routeDestination
+      description: Route Records
+      type: object
+      properties:
+        routeType:
+          allOf:
+            - description: Route Type
+            - $ref: '#/components/schemas/RouteTypeEnum'
+          description: Route Type.
+        routePartnerRef:
+          type: string
+          description: Partner Ref associatied with the route.
+        routeOrigin:
+          description: unlocode associatied with the route Origin location.
+          allOf:
+            - $ref: '#/components/schemas/UnLocode'
+        routeDestination:
+          description: unlocode associatied with the route Destination location.
+          allOf:
+            - $ref: '#/components/schemas/UnLocode'
+      additionalProperties: false
+      example:
+        routeType: vessel
+        routePartnerRef: routeRef1
+        routeOrigin:
+          unlocode: CUQMA
+        routeDestination:
+          unlocode: SIPTV
+    RouteRecordsResponse:
+      description: Route Records Response
+      type: object
+      properties:
+        routeRecordId:
+          type: string
+          description: UUID associated with the route record.
+        routeType:
+          description: Route Type.
+          allOf:
+            - $ref: '#/components/schemas/RouteTypeEnum'
+        routePartnerRef:
+          type: string
+          description: Partner Ref associatied with the route.
+        routeOrigin:
+          description: unlocode associatied with the route Origin location.
+          allOf:
+            - $ref: '#/components/schemas/UnLocode'
+        routeDestination:
+          description: unlocode associatied with the route Destination location.
+          allOf:
+            - $ref: '#/components/schemas/UnLocode'
+        owningCarrierOrgId:
+          type: string
+          description: OrgId of the carrier creating the record.
+      example:
+        routeRecordId: b2a942d8-3487-4c40-a47d-b3f8100878b7
+        routeType: vessel
+        routePartnerRef: routeRef1
+        routeOrigin:
+          unlocode: CUQMA
+        routeDestination:
+          unlocode: SIPTV
+        owningCarrierOrgId: Org1
+    RouteRecordsDeleteResp:
+      description: Route Records Delete Response
+      type: object
+      properties:
+        routeRecordId:
+          type: string
+        status:
+          type: string
+      example:
+        routeRecordId: id123
+        status: deleted
+    RouteTypeEnum:
+      type: string
+      enum:
+        - barge
+        - rail
+        - truck
+        - vessel
+    UnLocode:
+      type: object
+      properties:
+        unlocode:
+          type: string
+          example: CUQMA
+      required:
+        - unlocode
+    UnlocodesResponse:
+      type: object
+      properties:
+        locations:
+          type: array
+          description: List of UN/locodes matching the query.
+          items:
+            $ref: '#/components/schemas/EventTypeInfoUnlcodes'
+      required:
+        - locations
+    EventTypeInfoUnlcodes:
+      type: object
+      properties:
+        name:
+          type: string
+          example: 'Rotterdam, ZH, NL'
+          description: name xx
+        unlocode:
+          type: string
+          example: NLRTM
+          description: unlocode xx
+    ForbiddenResponse:
+      type: object
+      required:
+        - message
+      properties:
+        code:
+          type: string
+          example: '403'
+          description: HTTP status code
+        message:
+          type: string
+          example: Request forbidden.
+          description: Message describing the status
+        timestamp:
+          type: string
+          example: '2020-09-13T23:30:52.123Z'
+          description: time of error
+    EventPriority:
+      properties:
+        eventName:
+          type: string
+          example: billOfLadingSurrendered
+        priorities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Priority'
+    Priority:
+      type: object
+      properties:
+        orgType:
+          type: string
+          example: truck operator
+        priority:
+          type: number
+          example: 6
+  responses:
+    NotFoundResponse:
+      description: Object not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ConflictResponse:
+      description: |
+        Update conflict, which may occur if concurrent updates are attempted
+        on the same object, or if the provided "etag" does not match the
+        latest version of the document
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    AccountIdPathParam:
+      in: path
+      description: The id by which to fetch a given account
+      name: accountId
+      schema:
+        type: string
+      required: true
+    StartDateQueryParam:
+      in: query
+      description: The desired usage timeframe start date (MM-DD-YYYY)
+      name: startDate
+      schema:
+        type: string
+        pattern: '^([01]\d-[0-3]\d-\d{4,})$'
+      required: true
+    EndDateQueryParam:
+      in: query
+      description: The desired usage timeframe end date (MM-DD-YYYY)
+      name: endDate
+      schema:
+        type: string
+        pattern: '^([01]\d-[0-3]\d-\d{4,})$'
+      required: true
+    PageIndexQueryParam:
+      in: query
+      description: Index of page. (nextPage response parameter from previous call)
+      name: pageIndex
+      schema:
+        type: string
+      required: false
+    RecordIdPathParam:
+      in: path
+      description: The id by which to fetch a given customer record
+      name: recordId
+      schema:
+        type: string
+      required: true
+    AssociatedCarrierNameQueryParam:
+      in: query
+      description: >-
+        The carrier organization id to filter search results on (includes match;
+        ignores case)
+      name: associatedCarrierName
+      schema:
+        type: string
+    AssociatedCarrierOrgIdQueryParam:
+      in: query
+      description: The carrier name to filter search results on (exact match)
+      name: associatedCarrierOrgId
+      schema:
+        type: string
+    CodeQueryParam:
+      in: query
+      description: The customer code to filter search results on (exact match)
+      name: code
+      schema:
+        type: string
+    NameQueryParam:
+      in: query
+      description: >-
+        The customer name to filter search results on (includes match; ignores
+        case)
+      name: name
+      schema:
+        type: string
+    AddressQueryParam:
+      in: query
+      description: >-
+        The customer street address to filter search results on (includes match;
+        ignores case)
+      name: address
+      schema:
+        type: string
+    PostalCodeQueryParam:
+      in: query
+      description: >-
+        The customer postal code to filter search results on (includes match;
+        ignores case)
+      name: postalCode
+      schema:
+        type: string
+    CityQueryParam:
+      in: query
+      description: >-
+        The customer city to filter search results on (includes match; ignores
+        case)
+      name: city
+      schema:
+        type: string
+    CountryQueryParam:
+      in: query
+      description: >-
+        The customer country to filter search results on (includes match;
+        ignores case)
+      name: country
+      schema:
+        type: string
+    MasterIdQueryParam:
+      in: query
+      description: The customer maseter id to filter search results on (exact match)
+      name: masterId
+      schema:
+        type: string
+    MasterNameQueryParam:
+      in: query
+      description: >-
+        The customer master name to filter search results on (includes match;
+        ignores case)
+      name: masterName
+      schema:
+        type: string
+    OrgIdQueryParam:
+      in: query
+      description: The customer organization id to filter search results on (exact match)
+      name: orgId
+      schema:
+        type: string
+    ConsignmentIdPathParam:
+      in: path
+      description: The ID for an existing consignment
+      name: consignmentId
+      schema:
+        type: string
+      required: true
+    ConsignmentIdQueryParam:
+      name: consignmentId
+      in: query
+      description: |
+        The ID for an existing consignment
+      schema:
+        $ref: '#/components/schemas/UUID'
+    CarrierBookingNumberQueryParam:
+      name: carrierBookingNumber
+      in: query
+      description: >
+        The carrier booking number (CBN) for an existing consignment. Either
+        **consignmentId** or **carrierBookingNumber** is _**required**_.
+      schema:
+        type: string
+    DocumentTypePathParam:
+      in: path
+      description: The code for a supported document type.
+      name: documentTypeId
+      schema:
+        $ref: '#/components/schemas/DocumentTypeEnum'
+      required: true
+    DocumentIdPathParam:
+      in: path
+      description: The ID of the document
+      name: documentId
+      schema:
+        $ref: '#/components/schemas/UUID'
+      required: true
+    TradePartyRolesQueryParam:
+      name: role
+      in: query
+      description: The list of trade party roles to filter
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/TradePartyEnum'
+    DocumentTypeQueryParam:
+      name: documentType
+      in: query
+      description: The list of document types to filter
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/DocumentTypeEnum'
+    DeletedQueryParam:
+      name: deleted
+      in: query
+      description: Included soft deleted resources
+      schema:
+        type: boolean
+    HardQueryParam:
+      name: hard
+      in: query
+      description: Completely removes the resource and cannot be restored
+      schema:
+        type: boolean
+    OrgIdsQueryParam:
+      name: orgId
+      in: query
+      description: The list of organization IDs to filter
+      schema:
+        type: array
+        items:
+          type: string
+    OperationsQueryParam:
+      name: operations
+      in: query
+      description: The list of operations to filter
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/OperationEnum'
+    UUIDPathParam:
+      name: id
+      in: path
+      description: UUID parameter in path
+      schema:
+        $ref: '#/components/schemas/UUID'
+      required: true
+    PermissionIdPathParam:
+      name: permissionId
+      in: path
+      description: The id for a given permission
+      schema:
+        type: string
+      required: true
+    OrgIdPathParam:
+      name: orgId
+      in: path
+      description: The id for an existing organization
+      schema:
+        type: string
+      required: true
+    OrgNameQueryParam:
+      name: orgName
+      in: query
+      description: The name of an existing organization
+      schema:
+        type: string
+    TradeLensEntityIdParam:
+      in: path
+      description: Unique identifier of a resource in the TradeLens platform
+      name: id
+      schema:
+        $ref: '#/components/schemas/UUID'
+      required: true
+    TradeLensMultipleEntityIdQueryParam:
+      in: query
+      description: Comma-separated list of unique identifiers of resources in TradeLens
+      name: id
+      schema:
+        type: array
+        items:
+          type: string
+        example: 'consignment-123,document-xyz'
+      required: true
+    TradeLensEntityTypeQueryParam:
+      in: query
+      description: Limit returned objects to only those of a certain type
+      name: type
+      schema:
+        type: string
+      example: document
+    IncludePropertiesParam:
+      in: query
+      description: Return resource attributes in the response. Default is false
+      name: include_properties
+      schema:
+        type: boolean
+    IncludeDeletedParam:
+      in: query
+      description: >-
+        Instead of erring if a node has been "soft deleted", specifying this
+        forces the service to consider "soft deleted" nodes as existent
+      name: include_deleted
+      schema:
+        type: boolean
+    PolicyStatementNameParam:
+      in: path
+      description: Name of a statement contained within a policy (unique within policy)
+      name: statement
+      schema:
+        type: string
+        example: allow_buyer_to_read_bills_of_lading
+      required: true
+    RoleNameParam:
+      in: path
+      description: Role name
+      name: role
+      schema:
+        type: string
+        example: 'tradeparty:buyer'
+      required: true
+    RoleMemberParam:
+      in: path
+      description: Organization ID
+      name: member
+      schema:
+        type: string
+        example: org-A
+      required: true
+    StatusQueryParam:
+      in: query
+      description: Filter business partner list based on connection status (ignore case)
+      name: status
+      schema:
+        $ref: '#/components/schemas/StatusEnum'
+    OrgTypesQueryParam:
+      in: query
+      description: >-
+        Comma separated list of organization types to filter business partners
+        list. Example `shipper,ocean carrier`
+      name: org_types
+      schema:
+        type: string
+    IncludeReferences:
+      in: query
+      description: To include reference records in the response or not
+      name: include_reference_records
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+        default: 'false'
+    UnmappedRecordsOnlyQueryParam:
+      in: query
+      description: Filters unmapped records only
+      name: unmapped_records_only
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+        default: 'true'
+    PartnerIdQueryParam:
+      in: query
+      description: Filter response for a specific partnerId
+      name: partnerId
+      schema:
+        type: string
+    ReferenceCodePathParam:
+      in: path
+      description: Reference value or SCV code
+      name: code
+      schema:
+        type: string
+      required: true
+    PartnershipIdPathParam:
+      in: path
+      description: UUID of partnership
+      name: partnershipId
+      schema:
+        $ref: '#/components/schemas/UUID'
+      required: true
+    RecordIdQueryParam:
+      in: query
+      description: Filter for a specific recordId
+      name: recordId
+      schema:
+        $ref: '#/components/schemas/UUID'
+    PartitionRuleIdPathParam:
+      in: path
+      description: Rule ID is pl_ followed by the ChannelMember Id
+      name: partitionRuleId
+      schema:
+        type: string
+        x-example: pl_ocean-carrier
+      required: true
+    DocumentSchemaIdPathParam:
+      in: path
+      description: documentSchemaId
+      name: documentSchemaId
+      required: true
+      schema:
+        type: string
+    OrgRoleQueryParam:
+      in: query
+      description: '{org Role}'
+      name: orgRole
+      required: false
+      schema:
+        type: string
+        enum:
+          - port
+          - country
+    OrgTypeQueryParam:
+      in: query
+      description: '{org Type}'
+      name: orgType
+      required: false
+      schema:
+        type: string
+        enum:
+          - authority
+          - barge
+          - consignee
+          - customs broker
+          - drayage
+          - freight forwarder
+          - ocean carrier
+          - port
+          - rail
+          - shipper
+          - terminal
+          - truck
+          - 3PL
+          - 4PL
+    OrgAliasQueryParam:
+      in: query
+      description: '{org Alias}'
+      name: orgAlias
+      required: false
+      schema:
+        type: string
+    ContainerEntryPortQueryParam:
+      in: query
+      description: '{container entry port}'
+      name: containerEntryPort
+      required: false
+      schema:
+        type: string
+    ContainerExitPortQueryParam:
+      in: query
+      description: '{container exit port}'
+      name: containerExitPort
+      required: false
+      schema:
+        type: string
+    ContainerTransportIdPathParam:
+      in: path
+      name: transportEquipmentId
+      description: transportEquipmentId
+      required: true
+      schema:
+        type: string
+    EventTransactionIdPathParam:
+      name: eventTransactionId
+      in: path
+      description: eventTransactionId
+      required: true
+      schema:
+        type: string
+    ShipmentTrackingIdPathParam:
+      name: consignmentId
+      in: path
+      description: consignmentId
+      required: true
+      schema:
+        type: string
+    ResourceIDParam:
+      in: path
+      description: Unique identifier for a resource
+      name: id
+      required: true
+      schema:
+        $ref: '#/components/schemas/UUID'
+    OrgIdEntitlementPathParam:
+      in: path
+      description: The entitlements assosiated with the orgId.
+      name: orgId
+      schema:
+        type: string
+      required: true
+    EntitlementQueryParam:
+      in: query
+      description: >-
+        Comma separated list of entitlement types to filter business partners
+        list. Currently only bolVerifier and eBOL are supported. Example
+        `bolVerifier, eBOL`
+      name: entitlements
+      schema:
+        type: string
+    TradeObjectQueryParam:
+      in: query
+      description: Trade object type
+      name: tradeObject
+      schema:
+        type: string
+    TradeObjectTypeQueryParam:
+      in: query
+      description: Name of the trade object
+      name: tradeObjectType
+      schema:
+        type: string
+    IdPathParam:
+      in: path
+      description: userId / serviceId associated with the user.
+      name: id
+      schema:
+        type: string
+      required: true
+    TypeQueryParam:
+      in: query
+      description: User type.
+      name: type
+      schema:
+        allOf:
+          - $ref: '#/components/schemas/UserEnum'
+      required: false
+    RequiredTypeQueryParam:
+      in: query
+      description: user type.
+      name: type
+      schema:
+        allOf:
+          - $ref: '#/components/schemas/UserEnum'
+      required: true
+    RequiredTypeQueryParamOnlyUser:
+      in: query
+      description: user type.
+      name: type
+      schema:
+        type: string
+        enum:
+          - user
+      required: true
+    OrgIdQueryParam2:
+      in: query
+      description: The customer organization id.
+      name: orgId
+      schema:
+        type: string
+      required: true
+    LimitQueryParam:
+      in: query
+      description: >-
+        Number of resource id's to return. If not set or set to 0, then defaults
+        to 30
+      name: limit
+      schema:
+        type: string
+    FromQueryParam:
+      in: query
+      description: Specifies the bookmark or offset we start from.
+      name: from
+      schema:
+        type: string
+    ReferenceCodesQueryParam:
+      in: query
+      description: Reference Codes
+      name: code
+      schema:
+        type: array
+        items:
+          type: string
+      required: true
+    OwningOrgIdQueryParam:
+      in: query
+      description: Id to fetch specific route records
+      name: owningCarrierOrgId
+      schema:
+        type: string
+      required: true
+    RouteRecordIdPathParam:
+      in: path
+      description: UUID associated with each route record
+      name: routeRecordId
+      schema:
+        type: string
+      required: true

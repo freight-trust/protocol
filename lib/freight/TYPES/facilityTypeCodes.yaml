@@ -1,0 +1,4 @@
+    facilityTypeCode:
+      type: string
+      example: POTE
+      description: The code to identify the specific type of facility.

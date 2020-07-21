@@ -1,0 +1,16 @@
+eventType:
+  description: The Event Type of the object.
+  nullable: false
+  type: string
+  enum: 
+    - EQUIPMENT
+    - SHIPMENT
+    - TRANSPORT
+    - TRANSPORTEQUIPMENT
+eventTypeList:
+  description: A list of event types. Default is all events
+  example: [EQUIPMENT,SHIPMENT,TRANSPORT,TRANSPORTEQUIPMENT]
+  default: [EQUIPMENT,SHIPMENT,TRANSPORT,TRANSPORTEQUIPMENT]
+  type: array
+  items:
+    $ref: '#/components/schemas/eventType'    

@@ -1,0 +1,13 @@
+transportLegReference:
+  type: string
+  example: { "edi": "LOOP ID - HL" }
+  description: |
+    The transport leg reference will be specific per mode of transport:
+    - Vessel:
+    - Truck: LOOP ID - HL
+    - Rail:
+    - Barge: 
+modeOfTransportCode:
+  type: string
+  example: 1
+  description: A code specifying a type of transport mode.

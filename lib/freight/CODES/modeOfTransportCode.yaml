@@ -1,0 +1,4 @@
+    modeOfTransportCode:
+      type: string
+      example: 1
+      description: A code specifying a type of transport mode.

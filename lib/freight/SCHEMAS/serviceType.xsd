@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:epcglobal:ons:serviceType:xsd:1" targetNamespace="urn:epcglobal:ons:serviceType:xsd:1">
+<xs:complexType name="ServiceType">
+<xs:sequence>
+<xs:element name="ServiceTypeIdentifier" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+<xs:element name="Abstract" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+<xs:element name="Extends" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+<xs:element name="TimeToLive" type="xs:int" minOccurs="1" maxOccurs="1"/>
+<xs:element name="WSDL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+<xs:element name="HomePage" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+<xs:element name="Documentation" type="tns:Documentation" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="Obsoletes" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ObsoletedBy" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Documentation">
+<xs:sequence>
+<xs:element name="LanguageCode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+<xs:element name="Location" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceType" type="tns:ServiceType"/>
+</xs:schema>

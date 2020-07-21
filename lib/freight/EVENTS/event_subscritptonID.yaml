@@ -1,0 +1,76 @@
+  schemas:
+    event:
+      event-subscriptions/{subscriptionID}:
+          get:
+            tags:
+            - Subscriptions
+            summary: Find event subscription by subscription ID
+            parameters:
+              - in: path
+                name: subscriptionID
+                required: true
+                description: The universal unique ID of the subscription to receive.
+                schema:
+                  $ref: '#/components/parameters/subscriptionIDPathParam'
+            responses:
+              '200':
+                description: Subscription returned
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/eventSubscription'
+              default:
+                description: Unexpected error
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/error'  
+          delete:
+            tags:
+            - Subscriptions
+            summary: Stop an event subscription, using the subscription ID
+            parameters:
+              - in: path
+                name: subscriptionID
+                required: true
+                schema:
+                  $ref: '#/components/parameters/subscriptionIDPathParam'
+            responses:
+              '204':
+                description: Subscription stopped  
+              default:
+                description: Unexpected error
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/error'  
+          put:
+            tags:
+            - Subscriptions
+            summary: Alter an event subscription
+            parameters:
+              - in: path
+                name: subscriptionID
+                required: true
+                schema:
+                  $ref: '#/components/parameters/subscriptionIDPathParam'
+            requestBody:
+              description: Parameters used to configure the subscription
+              required: true
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/eventSubscription'
+            responses:
+              '200':
+                description: Subscription updated  
+                content:
+                  application/json:
+                    schema:
+                     $ref: '#/components/schemas/eventSubscription'
+              default:
+                description: Unexpected error
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/error'    

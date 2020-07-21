@@ -1,0 +1,32 @@
+ transportEvent:
+      description: The transport event entity is a specialization of the event entity to support specification of data that only applies to a transport event.
+      allOf:
+        - $ref: '#/components/schemas/event'
+        - type: object
+          properties:
+            eventType: #Overriding this property to have correct payload response examples
+              type: string
+              example: TRANSPORT
+              nullable: false
+              enum:
+                - TRANSPORT
+            transportReference:
+              $ref: '#/components/schemas/transportReference'
+            transportLegReference:
+              $ref: '#/components/schemas/transportLegReference'
+            facilityTypeCode:
+              $ref: '#/components/schemas/facilityTypeCode'
+            UNLocationCode:
+              $ref: '#/components/schemas/UNLocationCode'
+            facilityCode:
+              $ref: '#/components/schemas/facilityCode'
+            otherFacility:
+              $ref: '#/components/schemas/otherFacility'
+            modeOfTransportCode:
+              $ref: '#/components/schemas/modeOfTransportCode'
+          required:
+            - transportReference
+            - transportLegReference
+            - facilityTypeCode
+            - UNLocationCode
+            - facilityCode
