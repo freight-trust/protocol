@@ -1,0 +1,23 @@
+MDN Message
+
+Represents a receipt, i.e. disposition notification (MDN) message received/sent by AS2 Gateway, with the following attributes:
+
+persistedTimestamp​ (Long) - timestamp in milliseconds when the message was saved in AS2 Gateway
+
+mdnError​ (Boolean) - ​true​ or ​false​ depicting whether the received MDN is an error MDN or not
+
+content​ (String) - String with human readable part of the MDN received
+
+Attachment
+Represents details of a single attachment sent/received by AS2 Gateway (usually appearing within a list of attachments), with the following attributes:
+
+name​​ (String) - attachment file name
+
+size​ (Integer) - size of the attachment in bytes
+
+Pagination
+Represents a collection of entities (usually ​AS2 Message​s) returned from a pagination-enabled endpoint (usually a list endpoint)
+
+totalRecords​ (Integer) - the total number of results that match the query
+
+records​ (Array) - a subset of those results based on the requested ​pageOffset​ and ​pageLength
