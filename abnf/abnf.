@@ -1,0 +1,14 @@
+   #ABNF V1.0 ISO-8859-1;
+   language en-US;
+   {TAG-CONTENT-1};
+   {!{TAG-CONTENT-2}!};
+   
+   $rule = . . .;
+   ...
+
+
+   $rule1 = this is a {TAG-CONTENT-1} test {TAG-CONTENT-2};
+
+$rule2 = open {TAG-CONTENT-1} | $close {TAG-CONTENT-2};
+
+$rule3 = {!{ a simple tag containing { and } needs no escaping }!};
