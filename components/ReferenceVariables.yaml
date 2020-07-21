@@ -1,0 +1,121 @@
+variableReference:
+info:
+  version: "2.1.0"
+  title: 'Protocol specifications'
+  description: 'protocol values'
+  license:
+    name: Mozilla Public License 2.0
+    url: hhttps://www.mozilla.org/en-US/MPL/2.0/
+  contact:
+    name: Freight Trust and Clearing Corporation
+    url: https://freighttrust.com
+    email: protocol@freighttrust.com
+paths:
+    /{reference}/{subscriptionID}:
+      summary: 
+      parameters:
+        - in: path
+          name: {reference}
+          schema:
+            type: string
+          required: true
+          description: 
+      bookingReference:
+        type: string
+        example: ABC709951
+        description: The identifier for a shipment, which is issued by and unique within each of the carriers.
+      transportReference:
+        type: string
+        example: 9648714
+        description: The reference for the transport, e.g. when the mode of transport is a vessel, the transport reference will be the vessel IMO number.
+      equipmentReference:
+        type: string
+        example: APZU4812090
+        description: The unique identifier for the equipment, which should follow the BIC ISO Container Identification Number where possible. If a container is not yet assigned to a shipment, the interface cannot return any information when an equipment reference is given as input. If a container is assigned to an (active) shipment, the interface returns information on the active shipment.
+      billOfLadingNumber:
+        type: string
+        example: ABCD421911263977
+        description: Bill of lading number is an identifier that links to a shipment. Bill of Lading is the legal document issued to the customer, which confirms the carrier's receipt of the cargo from the customer acknowledging goods being shipped and specifying the terms of delivery.
+      facilityTypeCode:
+        type: string
+        example: POTE
+        description: The code to identify the specific type of facility.
+      UNLocationCode:
+        type: string
+        example: USNYC
+        description: The UN Location Code identifies a location in the sense of a city/a town/a village, being the smaller administrative area existing as defined by the competent national authority in each country.
+      facilityCode:
+        type: string
+        example: AEAUHADT
+        description: The code used for identifying the specific facility.
+      otherFacility:
+        type: string
+        example: Depot location or address
+        description: An alternative way to capture the facility when no standardized DCSA facility code can be found.
+      emptyIndicatorCode:
+        type: string
+        example: Empty
+        description: Code to denote whether the equipment is empty or laden.
+      shipmentInformationTypeCode:
+        type: string
+        example: SRM
+        description: The code to identify the type of information that is related to the shipment.
+      transportLegReference:
+        type: string
+        example: 025E
+        description: |
+          The transport leg reference will be specific per mode of transport:
+          - Vessel: Voyage number as specified by the vessel operator
+          - Truck: Not yet specified
+          - Rail: Not yet specified
+          - Barge: Not yet specified.
+      eventDateTime:
+        type: string
+        format: date-time
+        example: '2019-11-12T07:41:00+08:30'
+        description: The local date and time, where the event took place, in ISO 8601 format.
+      eventID:
+        type: string
+        example: 1
+        description: The unique identifier for the Equipment Event ID/Transport Event ID/Shipment Event ID.
+      eventClassifierCode:
+        type: string
+        example: ACT
+        description: Code for the event classifier, either PLN, ACT or EST.
+      eventTypeCode:
+        type: string
+        example: ARRI
+        description: Unique identifier for Event Type Code.
+      modeOfTransportCode:
+        type: string
+        example: 1
+        description: A code specifying a type of transport mode.
+      subscriptionID:
+        type: object
+        properties:
+          subscriptionID:
+            type: string
+            example: jlke123j
+        description: The carrier issues a unique ID to the shipper or consignee for that subscription
+      callbackUrl:   # Callback URL
+        type: string
+        format: uri
+        nullable: false
+        example: https://myserver.com/send/callback/here
+        description: Your server, where the API server should send the event data
+      eventType:
+        description: The Event Type of the object.
+        nullable: false
+        type: string
+        enum: 
+          - EQUIPMENT
+          - SHIPMENT
+          - TRANSPORT
+          - TRANSPORTEQUIPMENT
+      eventTypeList:
+        description: A list of event types. Default is all events
+        example: [EQUIPMENT,SHIPMENT,TRANSPORT,TRANSPORTEQUIPMENT]
+        default: [EQUIPMENT,SHIPMENT,TRANSPORT,TRANSPORTEQUIPMENT]
+        type: array
+        items:
+          $ref: '#/components/schemas/eventType'
