@@ -1,0 +1,37 @@
+    transportEquipmentEvent:
+      description: The transport equipment event entity is a specialization of the event entity to support specification of data that applies to both transport and equipment events.
+      allOf:
+        - $ref: '#/components/schemas/event'
+        - type: object
+          properties:
+            eventType: 
+              type: string
+              example: TRANSPORTEQUIPMENT
+              nullable: false
+              enum:
+                - TRANSPORTEQUIPMENT
+            transportReference:
+              $ref: '#/components/schemas/transportReference'
+            transportLegReference:
+              $ref: '#/components/schemas/transportLegReference'
+            equipmentReference:
+              $ref: '#/components/schemas/equipmentReference'
+            facilityTypeCode:
+              $ref: '#/components/schemas/facilityTypeCode'
+            UNLocationCode:
+              $ref: '#/components/schemas/UNLocationCode'
+            facilityCode:
+              $ref: '#/components/schemas/facilityCode'
+            otherFacility:
+              $ref: '#/components/schemas/otherFacility'
+            emptyIndicatorCode:
+              $ref: '#/components/schemas/emptyIndicatorCode'
+            modeOfTransportCode:
+              $ref: '#/components/schemas/modeOfTransportCode'
+          required:
+            - transportReference
+            - transportLegReference
+            - facilityTypeCode
+            - UNLocationCode
+            - facilityCode
+            - emptyIndicatorCode

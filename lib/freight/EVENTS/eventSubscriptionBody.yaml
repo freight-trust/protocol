@@ -1,0 +1,16 @@
+    eventSubscriptionBody:
+      description: The object used by the POST event-subscriptions endpoint
+      type: object
+      properties:
+        callbackUrl:
+          $ref: '#/components/schemas/callbackUrl'
+        eventType:
+          $ref: '#/components/schemas/eventTypeList'
+        bookingReference:
+          $ref: '#/components/schemas/bookingReference'
+        billOfLadingNumber:
+          $ref: '#/components/schemas/billOfLadingNumber'
+        equipmentReference:
+          $ref: '#/components/schemas/equipmentReference'
+      required:
+        - callbackUrl

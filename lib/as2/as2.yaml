@@ -1,0 +1,31 @@
+---
+mode: as2
+type: mustache template
+
+<!-- headers -->
+{{Content-Type}}}
+{{Date}}
+{{From}}
+{{Message-Id}}
+{{MIME-Version}}
+{{Content-Transfer-Encoding}}
+{{Content-Disposition}}
+{{Disposition-Notification-To}}
+{{Disposition-Notification-Options}}
+{{AS2-Version}} 
+{{AS2-To}}
+{{AS2-From}}
+{{Content-Length}}
+{{User-Agent}}
+{{Host}}
+{{Connection}}
+<!-- end of header envelope -->
+
+<!-- attributes -->
+{{HTTP_REQUEST_TYPE}}
+{{destination_ip}}
+{{destination_port}}
+{{HTTP_REQUEST_URL}}
+{{source_ip}}
+{{source_port}}
+<!-- end of attributes -->
