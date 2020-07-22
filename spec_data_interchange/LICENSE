@@ -1,0 +1,11 @@
+--2020-07-22 13:54:31--  https://raw.githubusercontent.com/freight-trust/legal/master/src/used/MPL-2.0
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.196.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.196.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 16725 (16K) [text/plain]
+Saving to: ‘MPL-2.0’
+
+     0K .......... ......                                     100% 1.16M=0.01s
+
+2020-07-22 13:54:31 (1.16 MB/s) - ‘MPL-2.0’ saved [16725/16725]
+
