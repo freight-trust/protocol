@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<interchange protocol="EDIFACT" symbols=":+.? '">
+  <segment name="S-UNB" no="1" tag="UNB">
+    <elem>
+      <comp>UNB</comp>
+    </elem>
+    <elem>
+      <comp>UNOA</comp>
+      <comp>1</comp>
+    </elem>
+    <elem>
+      <comp>ABCDEF</comp>
+    </elem>
+    <elem>
+      <comp>XYZ</comp>
+    </elem>
+    <elem>
+      <comp>130821</comp>
+      <comp>1259</comp>
+    </elem>
+    <elem>
+      <comp>XXX</comp>
+    </elem>
+  </segment>
+  <message release="03A" type="IFTDGN" version="D">
+    <segment name="S-UNH_1" no="2" tag="UNH">
+      <elem>
+        <comp>UNH</comp>
+      </elem>
+      <elem>
+        <comp>M130821145902B</comp>
+      </elem>
+      <elem>
+        <comp>IFTDGN</comp>
+        <comp>D</comp>
+        <comp>03A</comp>
+        <comp>UN</comp>
+        <comp>PROT20</comp>
+      </elem>
+    </segment>
+    <segment name="S-BGM_2" no="3" tag="BGM">
+      <elem>
+        <comp>BGM</comp>
+      </elem>
+      <elem>
+        <comp>89N</comp>
+      </elem>
+      <elem>
+        <comp/>
+      </elem>
+      <elem>
+        <comp>9</comp>
+      </elem>
+    </segment>
+    <segment name="S-HAN_5" no="4" tag="HAN">
+      <elem>
+        <comp>HAN</comp>
+      </elem>
+      <elem>
+        <comp>L</comp>
+      </elem>
+    </segment>
+    <group name="L-TDT_10" pos="">
+      <segment name="S-TDT_10" no="5" tag="TDT">
+        <elem>
+          <comp>TDT</comp>
+        </elem>
+        <elem>
+          <comp>20</comp>
+        </elem>
+        <elem>
+          <comp>333N</comp>
+        </elem>
+        <elem>
+          <comp>1</comp>
+        </elem>
+        <elem>
+          <comp/>
+          <comp>CONTAINER VESSEL</comp>
+        </elem>
+        <elem>
+          <comp/>
+        </elem>
+        <elem>
+          <comp/>
+        </elem>
+        <elem>
+          <comp/>
+        </elem>
+        <elem>
+          <comp>1234567</comp>
+          <comp/>
+          <comp/>
+          <comp>USS ENTERPRISE?</comp>
+        </elem>
+      </segment>
+      <segment name="S-RFF_12" no="6" tag="RFF">
+        <elem>
+          <comp>RFF</comp>
+        </elem>
+        <elem>
+          <comp>VM</comp>
+          <comp>A8RH6</comp>
+        </elem>
+      </segment>
+      <group name="L-LOC_14" pos="">
+        <segment name="S-LOC_14" no="7" tag="LOC">
+          <elem>
+            <comp>LOC</comp>
+          </elem>
+          <elem>
+            <comp>5</comp>
+          </elem>
+          <elem>
+            <comp>EGALY</comp>
+            <comp>139</comp>
+            <comp>6</comp>
+          </elem>
+        </segment>
+      </group>
+      <group name="L-LOC_14" pos="">
+        <segment name="S-LOC_14" no="8" tag="LOC">
+          <elem>
+            <comp>LOC</comp>
+          </elem>
+          <elem>
+            <comp>61</comp>
+          </elem>
+          <elem>
+            <comp>LBBEY</comp>
+            <comp>139</comp>
+            <comp>6</comp>
+          </elem>
+        </segment>
+        <segment name="S-DTM_15" no="9" tag="DTM">
+          <elem>
+            <comp>DTM</comp>
+          </elem>
+          <elem>
+            <comp>132</comp>
+            <comp>130822</comp>
+            <comp>101</comp>
+          </elem>
+        </segment>
+        <segment name="S-DTM_15" no="10" tag="DTM">
+          <elem>
+            <comp>DTM</comp>
+          </elem>
+          <elem>
+            <comp>133</comp>
+            <comp>130823</comp>
+            <comp>101</comp>
+          </elem>
+        </segment>
+      </group>
+    </group>
+    <group name="L-EQD_22" pos="">
+      <segment name="S-EQD_22" no="11" tag="EQD">
+        <elem>
+          <comp>EQD</comp>
+        </elem>
+        <elem>
+          <comp>CN</comp>
+        </elem>
+        <elem>
+          <comp>UUUU1234568</comp>
+        </elem>
+        <elem>
+          <comp>44G0</comp>
+        </elem>
+      </segment>
+      <segment name="S-MEA_23" no="12" tag="MEA">
+        <elem>
+          <comp>MEA</comp>
+        </elem>
+        <elem>
+          <comp>WT</comp>
+        </elem>
+        <elem>
+          <comp>G</comp>
+        </elem>
+        <elem>
+          <comp>TNE</comp>
+          <comp>26</comp>
+        </elem>
+      </segment>
+    </group>
+    <group name="L-EQD_22" pos="">
+      <segment name="S-EQD_22" no="13" tag="EQD">
+        <elem>
+          <comp>EQD</comp>
+        </elem>
+        <elem>
+          <comp>CN</comp>
+        </elem>
+        <elem>
+          <comp>UUUU1234569</comp>
+        </elem>
+        <elem>
+          <comp>22G1</comp>
+        </elem>
+      </segment>
+      <segment name="S-MEA_23" no="14" tag="MEA">
+        <elem>
+          <comp>MEA</comp>
+        </elem>
+        <elem>
+          <comp>WT</comp>
+        </elem>
+        <elem>
+          <comp>G</comp>
+        </elem>
+        <elem>
+          <comp>TNE</comp>
+          <comp>29.4</comp>
+        </elem>
+      </segment>
+    </group>
+    <group name="L-EQD_22" pos="">
+      <segment name="S-EQD_22" no="15" tag="EQD">
+        <elem>
+          <comp>EQD</comp>
+        </elem>
+        <elem>
+          <comp>CN</comp>
+        </elem>
+        <elem>
+          <comp>UUUU1234567</comp>
+        </elem>
+        <elem>
+          <comp>22G1</comp>
+        </elem>
+      </segment>
+      <segment name="S-MEA_23" no="16" tag="MEA">
+        <elem>
+          <comp>MEA</comp>
+        </elem>
+        <elem>
+          <comp>WT</comp>
+        </elem>
+        <elem>
+          <comp>G</comp>
+        </elem>
+        <elem>
+          <comp>TNE</comp>
+          <comp>22.8</comp>
+        </elem>
+      </segment>
+    </group>
+    <group name="L-CNI_25" pos="">
+      <segment name="S-CNI_25" no="17" tag="CNI">
+        <elem>
+          <comp>CNI</comp>
+        </elem>
+        <elem>
+          <comp>1</comp>
+        </elem>
+        <elem>
+          <comp>3ALYSA0390</comp>
+        </elem>
+      </segment>
+      <segment name="S-HAN_26" no="18" tag="HAN">
+        <elem>
+          <comp>HAN</comp>
+        </elem>
+        <elem>
+          <comp>L</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="19" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>9</comp>
+        </elem>
+        <elem>
+          <comp>EGALY</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="20" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>11</comp>
+        </elem>
+        <elem>
+          <comp>SYLTK</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <group name="L-GID_42" pos="">
+        <segment name="S-GID_42" no="21" tag="GID">
+          <elem>
+            <comp>GID</comp>
+          </elem>
+          <elem>
+            <comp>6</comp>
+          </elem>
+          <elem>
+            <comp>0</comp>
+          </elem>
+        </segment>
+        <group name="L-DGS_49" pos="">
+          <segment name="S-DGS_49" no="22" tag="DGS">
+            <elem>
+              <comp>DGS</comp>
+            </elem>
+            <elem>
+              <comp>IMD</comp>
+            </elem>
+            <elem>
+              <comp>3</comp>
+            </elem>
+            <elem>
+              <comp>1263</comp>
+              <comp>24C</comp>
+            </elem>
+            <elem>
+              <comp>24</comp>
+              <comp>CEL</comp>
+            </elem>
+            <elem>
+              <comp>3</comp>
+            </elem>
+            <elem>
+              <comp>F-E</comp>
+            </elem>
+          </segment>
+          <segment name="S-FTX_50" no="23" tag="FTX">
+            <elem>
+              <comp>FTX</comp>
+            </elem>
+            <elem>
+              <comp>AAD</comp>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp>PAINT</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="24" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>AAL</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>21113</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="25" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>G</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>0</comp>
+            </elem>
+          </segment>
+          <group name="L-SGP_55" pos="">
+            <segment name="S-SGP_55" no="26" tag="SGP">
+              <elem>
+                <comp>SGP</comp>
+              </elem>
+              <elem>
+                <comp>UUUU1234568</comp>
+              </elem>
+            </segment>
+            <segment name="S-LOC_56" no="27" tag="LOC">
+              <elem>
+                <comp>LOC</comp>
+              </elem>
+              <elem>
+                <comp>147</comp>
+              </elem>
+              <elem>
+                <comp>0420482</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="28" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>AAL</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>21113</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="29" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>G</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>0</comp>
+              </elem>
+            </segment>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group name="L-CNI_25" pos="">
+      <segment name="S-CNI_25" no="30" tag="CNI">
+        <elem>
+          <comp>CNI</comp>
+        </elem>
+        <elem>
+          <comp>2</comp>
+        </elem>
+        <elem>
+          <comp>3MERNE3502</comp>
+        </elem>
+      </segment>
+      <segment name="S-HAN_26" no="31" tag="HAN">
+        <elem>
+          <comp>HAN</comp>
+        </elem>
+        <elem>
+          <comp>L</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="32" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>9</comp>
+        </elem>
+        <elem>
+          <comp>EGALY</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="33" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>11</comp>
+        </elem>
+        <elem>
+          <comp>GBFXT</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <group name="L-GID_42" pos="">
+        <segment name="S-GID_42" no="34" tag="GID">
+          <elem>
+            <comp>GID</comp>
+          </elem>
+          <elem>
+            <comp>9</comp>
+          </elem>
+          <elem>
+            <comp>0</comp>
+          </elem>
+        </segment>
+        <group name="L-DGS_49" pos="">
+          <segment name="S-DGS_49" no="35" tag="DGS">
+            <elem>
+              <comp>DGS</comp>
+            </elem>
+            <elem>
+              <comp>IMD</comp>
+            </elem>
+            <elem>
+              <comp>9</comp>
+            </elem>
+            <elem>
+              <comp>3077</comp>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp>3</comp>
+            </elem>
+            <elem>
+              <comp>F-A</comp>
+            </elem>
+          </segment>
+          <segment name="S-FTX_50" no="36" tag="FTX">
+            <elem>
+              <comp>FTX</comp>
+            </elem>
+            <elem>
+              <comp>AAD</comp>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp>ENVIRONMENTALLY HAZARDOUS </comp>
+              <comp>SUBSTANCE, SOLID, N.O.S. Z</comp>
+              <comp> INC OXIDE %72</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="37" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>AAL</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>25000</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="38" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>G</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>0</comp>
+            </elem>
+          </segment>
+          <group name="L-SGP_55" pos="">
+            <segment name="S-SGP_55" no="39" tag="SGP">
+              <elem>
+                <comp>SGP</comp>
+              </elem>
+              <elem>
+                <comp>UUUU1234569</comp>
+              </elem>
+            </segment>
+            <segment name="S-LOC_56" no="40" tag="LOC">
+              <elem>
+                <comp>LOC</comp>
+              </elem>
+              <elem>
+                <comp>147</comp>
+              </elem>
+              <elem>
+                <comp>0030212</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="41" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>AAL</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>25000</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="42" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>G</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>0</comp>
+              </elem>
+            </segment>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group name="L-CNI_25" pos="">
+      <segment name="S-CNI_25" no="43" tag="CNI">
+        <elem>
+          <comp>CNI</comp>
+        </elem>
+        <elem>
+          <comp>3</comp>
+        </elem>
+        <elem>
+          <comp>3MERNE3607</comp>
+        </elem>
+      </segment>
+      <segment name="S-HAN_26" no="44" tag="HAN">
+        <elem>
+          <comp>HAN</comp>
+        </elem>
+        <elem>
+          <comp>L</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="45" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>9</comp>
+        </elem>
+        <elem>
+          <comp>EGALY</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <segment name="S-LOC_28" no="46" tag="LOC">
+        <elem>
+          <comp>LOC</comp>
+        </elem>
+        <elem>
+          <comp>11</comp>
+        </elem>
+        <elem>
+          <comp>SYLTK</comp>
+          <comp>139</comp>
+          <comp>6</comp>
+        </elem>
+      </segment>
+      <group name="L-GID_42" pos="">
+        <segment name="S-GID_42" no="47" tag="GID">
+          <elem>
+            <comp>GID</comp>
+          </elem>
+          <elem>
+            <comp>10</comp>
+          </elem>
+          <elem>
+            <comp>0</comp>
+          </elem>
+        </segment>
+        <group name="L-DGS_49" pos="">
+          <segment name="S-DGS_49" no="48" tag="DGS">
+            <elem>
+              <comp>DGS</comp>
+            </elem>
+            <elem>
+              <comp>IMD</comp>
+            </elem>
+            <elem>
+              <comp>6.1</comp>
+            </elem>
+            <elem>
+              <comp>3288</comp>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp>3</comp>
+            </elem>
+            <elem>
+              <comp>F-A</comp>
+            </elem>
+          </segment>
+          <segment name="S-FTX_50" no="49" tag="FTX">
+            <elem>
+              <comp>FTX</comp>
+            </elem>
+            <elem>
+              <comp>AAD</comp>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp/>
+            </elem>
+            <elem>
+              <comp>TOXIC SOLID, INORGANIC, N.</comp>
+              <comp> O.S. SODIUM BICHROMATE AN</comp>
+              <comp>H YDROUS</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="50" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>AAL</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>20000</comp>
+            </elem>
+          </segment>
+          <segment name="S-MEA_51" no="51" tag="MEA">
+            <elem>
+              <comp>MEA</comp>
+            </elem>
+            <elem>
+              <comp>WT</comp>
+            </elem>
+            <elem>
+              <comp>G</comp>
+            </elem>
+            <elem>
+              <comp>KGM</comp>
+              <comp>0</comp>
+            </elem>
+          </segment>
+          <group name="L-SGP_55" pos="">
+            <segment name="S-SGP_55" no="52" tag="SGP">
+              <elem>
+                <comp>SGP</comp>
+              </elem>
+              <elem>
+                <comp>UUUU1234567</comp>
+              </elem>
+            </segment>
+            <segment name="S-LOC_56" no="53" tag="LOC">
+              <elem>
+                <comp>LOC</comp>
+              </elem>
+              <elem>
+                <comp>147</comp>
+              </elem>
+              <elem>
+                <comp>0131082</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="54" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>AAL</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>20000</comp>
+              </elem>
+            </segment>
+            <segment name="S-MEA_57" no="55" tag="MEA">
+              <elem>
+                <comp>MEA</comp>
+              </elem>
+              <elem>
+                <comp>WT</comp>
+              </elem>
+              <elem>
+                <comp>G</comp>
+              </elem>
+              <elem>
+                <comp>KGM</comp>
+                <comp>0</comp>
+              </elem>
+            </segment>
+          </group>
+        </group>
+      </group>
+    </group>
+    <segment name="S-UNT_58" no="56" tag="UNT">
+      <elem>
+        <comp>UNT</comp>
+      </elem>
+      <elem>
+        <comp>55</comp>
+      </elem>
+      <elem>
+        <comp>M130821145902B</comp>
+      </elem>
+    </segment>
+  </message>
+  <segment name="S-UNZ" no="57" tag="UNZ">
+    <elem>
+      <comp>UNZ</comp>
+    </elem>
+    <elem>
+      <comp>1</comp>
+    </elem>
+    <elem>
+      <comp>XXX</comp>
+    </elem>
+  </segment>
+</interchange>

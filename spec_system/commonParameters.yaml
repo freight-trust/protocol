@@ -1,0 +1,23 @@
+protocol: "0.1.5"
+info:
+  version: 
+  title: 
+  description: 
+  termsOfService: 
+  contact: 
+  license: 
+host: ${host_url}
+basePath: /protocol
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+  - application/xml
+paths:
+  '/protocol/{id}': {parameters: [{name: id, in: path, description: 'ID of protocol to use', required: true, type: array, items: {type: string}, collectionFormat: csv}], get: {description: 'Returns protocol based on ID', summary: 'Find protocol by ID', operationId: getProtocolById, produces: [application/json, text/html], responses: {'200': {description: 'protocol response', schema: {type: array, items: {$ref: protocol}}}, default: {description: 'error payload', schema: {$ref: ErrorModel}}}}}
+definitions:
+  Protocol: {required: [name], properties: {name: {type: string}, tag: {type: string}}}
+  ErrorModel: {required: [code, message], properties: {code: {type: integer, format: int32}, message: {type: string}}}
