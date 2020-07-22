@@ -1,0 +1,33 @@
+com.freighttrust.cloud.serviceDefinitions:
+- guid: '#-ascii-#-ascii-ascii'
+  name: '$string'
+  description: '$string'
+  bindable: boolean
+  asyncRequired: $boolean
+  internalName: '$internalName'
+  displayIndex: $object
+  tags: [ $tuple ]
+  metadata:
+    version: 'semver'
+    displayName: '$string'
+  plans:
+- guid: '#-ascii-#-ascii-ascii'
+  name: '$string'
+  description: '$string'
+    templateId: '$string
+    free: $boolean
+    displayIndex: $array
+    containerParams:
+    - template: ''
+      name: '$string'
+      value: '$string'
+    - template: ''
+      name: '$string_name'
+      value: '$string.value'
+    metadata:
+      storageCapacity: '$valueGB'
+      memory: '$valueGB'
+      nodes: '$array'
+      maximumConcurrentConnections: '$value_connections'
+      dedicatedService: $boolean
+      highAvailability: $boolean
