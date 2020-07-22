@@ -1,0 +1,21 @@
+eventCode:
+  description: The Event Code of the object.
+  nullable: false
+  type: string
+    eventDateTime:
+      type: string
+      format: date-time
+      example: '2019-11-12T07:41:00+08:30'
+      description: The local date and time, where the event took place, in ISO 8601 format.
+    eventID:
+      type: string
+      example: 1
+      description: The unique identifier for the Equipment Event ID/Transport Event ID/Shipment Event ID.
+    eventClassifierCode:
+      type: string
+      example: ACT
+      description: Code for the event classifier, either PLN, ACT or EST.
+    eventTypeCode:
+      type: string
+      example: ARRI
+      description: Unique identifier for Event Type Code.
