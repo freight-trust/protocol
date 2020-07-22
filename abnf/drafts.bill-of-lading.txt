@@ -1,0 +1,185 @@
+# Bill of Lading Digital Instrument
+
+## License 
+
+CC-ND-NC-2.5
+FreightTrust and Clearing Corporation
+
+## Overview
+
+## Codes
+
+### 33 Lading Exception Code
+TYPE=ID MIN=1 MAX=1
+
+Code indicating the condition of the shipment
+
+
+
+A        All Short
+D        Damaged
+E        Entire Shipment Refused
+O        Overage
+P        Partial Shipment
+W        Wrong Product
+
+
+### 79 Lading Description
+TYPE=AN MIN=1 MAX=50
+
+Description of an item as required for rating and billing purposes
+
+### 80 Lading Quantity
+TYPE=N0 MIN=1 MAX=7
+
+Number of units (pieces) of the lading commodity
+
+### 148 Lading Value
+TYPE=R MIN=2 MAX=9
+
+Value of shipment for export, expressed in the standard monetary denomination for the currency specified
+
+
+### 213 Lading Line Item Number
+TYPE=N0 MIN=1 MAX=3
+
+Sequential line number for a lading item
+
+### 372 Lading Liability Code
+TYPE=ID MIN=1 MAX=1
+
+Code identifying limits of liability
+
+
+
+F        Full Liability
+L        Limited Liability
+
+### 392 Bill of Lading Status Code
+TYPE=ID MIN=1 MAX=2
+
+Code indicating the status of a bill of lading
+
+
+
+1        Carrier/port authority desires an extension of the lay order period
+2        Released by Customs
+3        Send to General Order
+
+
+### 414 Lading Quantity Received
+TYPE=N0 MIN=1 MAX=7
+
+Number of units (pieces) of the lading quantity received
+
+### 582 Bill of Lading Type Code
+TYPE=ID MIN=2 MAX=2
+
+Code identifying the type of bill of lading
+
+
+
+00       Neither Space Charter nor Master In-bond
+01       Space Charter
+10       Master In-Bond
+11       Both Space Charter and Master In-Bond
+12       Empty Equipment
+13       Section 321 Tariff Act (TA) 1930 (Shipments Valued at $200.00 or Less)
+14       Intangible goods
+15       Returned goods
+16       Gifts
+17       Monthly Manifest
+18       Returned American Goods
+19       New Equipment First Transborder Movement
+20       Track 4 Release Eligible
+
+
+### 592 Lading Description Qualifier
+TYPE=ID MIN=1 MAX=1
+
+Code identifying the type of lading description
+
+
+
+B        Bill of Lading Description (Destination Country's Language)
+C        Chemical Description
+D        Department of Transportation Description
+E        Export License Description
+I        Commercial Invoice Description
+L        Letter of Credit Description
+P        Product Description
+
+
+### 598 Bill of Lading/Waybill Number
+TYPE=AN MIN=1 MAX=12
+
+Identification number assigned to the shipment by the carrier or consolidator
+
+### 644 Lading Percent Qualifier
+TYPE=ID MIN=1 MAX=1
+
+Code identifying type of lading percentage
+
+
+
+A        Coal Moisture Allowance
+M        Tank Car Mixture
+O        Tank Car Outage
+S        Sand or Stone and Related Articles (Aggregates)
+
+### 643 Lading Percentage
+TYPE=N2 MIN=2 MAX=4
+
+Commodity percentage for rating
+
+1602 Bill of Lading Charge Code
+TYPE=ID MIN=3 MAX=3
+
+Code identifying the type of Bill of Lading charge
+
+
+
+ADF      Advance Fee
+ADV      Advance Amount
+BLK      Blocking and Bracing Charge
+COD      Cash on Delivery
+COL      Fee for Collecting COD
+DEL      Delivery Charge
+DEP      Detention of Power Unit
+DET      Detention of Trailer
+DIB      Diversion and Reconsignment
+DSC      Discount
+EIC      Export and/or Import Charge
+EXC      Exclusive Use Charge
+FLT      Flat Charge
+FSC      Fuel Surcharge
+IDL      Inside Delivery
+IPU      Inside Pick-up
+LDA      Loading Allowance
+LDL      Unloading Allowance
+MIL      Mileage Charge
+MIN      Minimum Charge
+MRK      Marking or Tagging Charge
+MSG      Miscellaneous Charge
+ONC      Order Notify Charge
+PLA      Placement Charge
+PWH      Pier Charges - Wharfage
+REP      Residential Pick-up
+RES      Residential Delivery
+SOC      Stop Charge
+SPU      Single Pick-up
+SRG      Storage
+SUF      Sufferance Warehouse
+ZZZ      Mutually Defined
+
+
+### 59 Freight Class Code
+TYPE=AN MIN=2 MAX=5
+
+Code indicating generalized classification that applies to one or more items in the shipment, i.e., class 70, 77.5, etc.
+
+### 60 Freight Rate
+TYPE=R MIN=1 MAX=9
+
+Rate that applies to the specific commodity
+

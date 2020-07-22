@@ -1,0 +1,27 @@
+as2MessageId​ (String) - AS2 message ID
+
+persistedTimestamp​ (Long) - timestamp in milliseconds
+
+compressed​ (Boolean) - ​true​ or ​false​ depicting whether the AS2 message was compressed
+
+encrypted​ (Boolean) - ​true​ or ​false​ depicting whether the AS2 message was encrypted
+
+signed​ (Boolean) - ​true​ or ​false​ depicting whether the AS2 message was signed
+
+subject​ (String) - Subject of AS2 message. If there is no subject, this field will not be included in the response.
+
+receiverId​ (String) - AS2 ID of the AS2 partner who has sent/received this message
+
+senderId​ (String) - AS2 ID of the AS2 station which has received/sent this message
+
+transportStatusReceived​ (Integer, optional) - HTTP response code received. Only available on sent messages.
+
+deliveryStatus​ (String, optional) - AS2-level delivery status of the AS2 message. Only available on sent messages. Possible values are Delivered, Not Delivered and No Status.
+
+mdnStatus​ (String) - Delivery status of MDN. Possible values are Pending, Received, Not Requested and No MDN.
+
+partnerType​ (String) - AS2 Partner type. Possible values are Production and Test
+
+mdnMessage​ (​MDN Message​, optional) - represents the MDN sent/received for this AS2 message
+
+attachments​ (Array of ​Attachment​s) - the attachments sent/received in this AS2 message

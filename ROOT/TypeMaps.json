@@ -1,0 +1,57 @@
+[
+      
+      
+      "@id": "http://spdx.org/licenses/MPL-2.0",
+      "@type": "spdx:License",
+      "isFsfLibre": "true",
+      "isOsiApproved": "true",
+      "licenseId": "MPL-2.0",
+      "#ref": "http://spdx.org/licenses/MPL-2.0",
+      "#type": "spdx:License",
+      "$id": "lei:254900C9UJMDGJ0ILK56",
+      "copyright": "2020 FreightTrust and Clearing Corporation",
+      "name": {
+            "@id": "X12 Grammar"
+      }
+      },
+      {
+
+      "TypeMaps": {
+      "TS204": "LoadTender",
+      "TS990": "LoadTenderResponse",
+        "TS997": "Acknowledgment",
+      "TS214": "LoadTenderStatus",
+      "TS210": "LoadTenderInvoice",
+      "S5": "Stop",
+      "B1": "BeginningSegmentPickupDelivery",
+      "B10": "BeginningSegment",
+      "L11": "ReferenceNumber",
+      "AT7": "ShipmentStatusDetails",
+      "MS1": "ShipmentLocationInfo",
+      "K1": "Remarks",
+      "Loop_S5_204": "Stops",
+      "N9": "Reference",
+      "AT5": "HandlingRequirement",
+      "Loop_N1_204": "Party",
+      "Loop_N7_204": "Equipment",
+      "LH6": "HazardousCertification",
+      "NTE": "Note",
+      "B3": "InvoiceInfo",
+      "G62": "DateTimeInfo",
+      "H3": "SpecialHandlingInstructions",
+      "N7": "EquipmentDetails",
+      "N1": "Name",
+      "LX": "AssignedNumber",
+      "L1": "RatesAndChargesInfo",
+      "L3": "TotalWeightAndChargesInfo",
+      "Loop_L1_210": "InvoiceRateChargeItem",
+      "Loop_LX_210": "InvoiceAssignedNumber",
+      "Loop_N1_210": "InvoiceName",
+      "Loop_N7_210": "InvoiceEquipmentDetail",
+      "Loop_S5_210": "InvoiceStop"
+                  
+                  }
+             }
+      }
+
+]

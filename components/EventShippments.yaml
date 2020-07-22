@@ -1,0 +1,84 @@
+events:
+  type: object
+  description: List of events for shipment journey.
+  properties:
+    events:
+      type: array
+      items:
+        anyOf:
+          - $ref: '#/components/schemas/transportEvent'
+          - $ref: '#/components/schemas/shipmentEvent'
+          - $ref: '#/components/schemas/equipmentEvent'
+          - $ref: '#/components/schemas/transportEquipmentEvent'
+        discriminator:
+          propertyName: eventType  
+          required:
+            - events
+            error:
+              type: object
+              required:
+                - httpMethod
+                - requestUri
+                - errors
+                - statusCode
+                - statusCodeText
+                - errorDateTime
+              properties:
+                httpMethod:
+                  description: The HTTP request method type
+                  type: string
+                  example: POST
+                requestUri:
+                  description: The request URI.
+                  type: string
+                  example: https://dcsa.org/dcsa/tnt/v1/events
+                errors:
+                  $ref: '#/components/schemas/errors'
+                statusCode:
+                  description: The HTTP status code
+                  type: string
+                  example: 400  
+                statusCodeText:
+                  description: The textual representation of the response status.
+                  type: string
+                  example: Bad Request
+                errorDateTime:
+                  description: The date and time (in ISO 8601 format) the error occured.
+                  type: string
+                  example: '2020-06-13T37:41:00+08:30'
+            errors:
+              type: array
+              items: 
+                type: object
+                properties:
+                  reason:
+                    description: High level error message.
+                    type: string
+                    example: invalidQuery
+                  message:
+                    description: Detailed error message.
+                    type: string
+                    example: The request did not contain one of the three required query parameters. 
+                required: 
+                 - reason
+                 - message
+            eventSubscriptionBody:
+              description: The object used by the POST event-subscriptions endpoint
+              type: object
+              properties:
+                callbackUrl:
+                  $ref: '#/components/schemas/callbackUrl'
+                eventType:
+                  $ref: '#/components/schemas/eventTypeList'
+                bookingReference:
+                  $ref: '#/components/schemas/bookingReference'
+                billOfLadingNumber:
+                  $ref: '#/components/schemas/billOfLadingNumber'
+                equipmentReference:
+                  $ref: '#/components/schemas/equipmentReference'
+              required:
+                - callbackUrl
+            eventSubscription:
+              allOf:
+                - $ref: '#/components/schemas/subscriptionID'
+                - $ref: '#/components/schemas/eventSubscriptionBody'

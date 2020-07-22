@@ -1,0 +1,32 @@
+// copyright 2020 - FreighTTrust and Clearing Corporation
+// License under Mozilla Public License 2.0
+// ABNF for Platform General (Not specific)
+#ABNF 1.0 ISO-8859-1;
+
+root $rules;
+
+rules $command = $action $object;
+
+public $public = public $public | public;
+// Default grammar language is US English
+language en-US;
+
+$define = CHARS
+$ALNUMPUNC =  ALPHA / DIGIT / "_";
+$VALCHAR   =  %x21-3A / %x3C-7E
+                 EXCLAMATION to TILDE except SEMICOLON;
+
+$WSP =   SP / HTAB;
+$LWSP =  *(WSP / CRLF WSP);
+$FWS =   [*WSP CRLF] 1*WSP;
+
+$tag-list  =  tag specifications;
+$command = tag-spec *( ";" tag-spec ) [ ";" ];
+
+tag-spec  =  [FWS] tag-name [FWS] "=" [FWS] tag-value [FWS]
+$command 
+$tag-name  =  name;
+$command = ALPHA *ALNUMPUNC;
+
+$tag-value = value | NUM | ALPHA;
+$command = [ tval *( 1*(WSP / FWS) tval ) ];

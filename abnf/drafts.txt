@@ -1,0 +1,43 @@
+$ruleName = ruleExpansion;
+public $ruleName = ruleExpansion;
+private $ruleName = ruleExpansion;
+
+     version := "MIME-Version" ":" 1*DIGIT "." 1*DIGIT
+     MIME-part-headers := entity-headers
+                          [ fields ]
+                          ; Any field not beginning with
+                          ; "content-" can have no defined
+                          ; meaning and may be ignored.
+                          ; The ordering of the header
+                          ; fields implied by this BNF
+                          ; definition should be ignored
+     entity-headers := [ content CRLF ]
+                       [ encoding CRLF ]
+                       [ id CRLF ]
+                       [ description CRLF ]
+                       *( MIME-extension-field CRLF )
+
+     MIME-message-headers := entity-headers
+                             fields
+                             version CRLF
+                             ; The ordering of the header
+                             ; fields implied by this BNF
+                             ; definition should be ignored.
+
+   dkim-quoted-printable =  *(FWS / hex-octet / dkim-safe-char)
+                               ; hex-octet is from RFC2045
+   dkim-safe-char        =  %x21-3A / %x3C / %x3E-7E
+                               ; '!' - ':', '<', '>' - '~'
+
+   tag-list  =  tag-spec *( ";" tag-spec ) [ ";" ]
+   tag-spec  =  [FWS] tag-name [FWS] "=" [FWS] tag-value [FWS]
+   tag-name  =  ALPHA *ALNUMPUNC
+   tag-value =  [ tval *( 1*(WSP / FWS) tval ) ]
+                     ; Prohibits WSP and FWS at beginning and end
+   tval      =  1*VALCHAR
+   VALCHAR   =  %x21-3A / %x3C-7E
+                     ; EXCLAMATION to TILDE except SEMICOLON
+   ALNUMPUNC =  ALPHA / DIGIT / "_"
+   WSP =   SP / HTAB
+   LWSP =  *(WSP / CRLF WSP)
+   FWS =   [*WSP CRLF] 1*WSP
