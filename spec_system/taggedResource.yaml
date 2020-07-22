@@ -1,16 +1,13 @@
-swagger: '2.0'
-x-reverb:
-  addAnythingYouWant: true
+protocol: "0.1.5"
 info:
-  x-reverb-info: 'this is an example'
-  version: 1.0.9-abcd
-  title: 'Swagger Sample API'
-  description: 'A sample API that uses a petstore as an example to demonstrate features in the swagger-2.0 specification'
-  termsOfService: 'http://helloreverb.com/terms/'
-  contact: {name: 'wordnik api team', url: 'http://developer.wordnik.com'}
-  license: {name: 'Creative Commons 4.0 International', url: 'http://creativecommons.org/licenses/by/4.0/'}
-host: my.api.com
-basePath: /v1
+  version: 
+  title: 
+  description: 
+  termsOfService: 
+  contact: 
+  license: 
+host: ${host_url}
+basePath: /protocol
 schemes:
   - http
   - https
@@ -20,10 +17,10 @@ produces:
   - application/json
   - application/xml
 tags:
-  - {name: pets}
+  - {name: protocol}
 paths:
   x-reverb-path-info: 'vendor info'
-  /pets: {x-vendor-method: {}, get: {x-vendor-operation-property: {}, description: 'Returns a pet based on ID', summary: 'Find pet by ID', operationId: getPetsById, produces: [application/json, text/html], parameters: [{x-vendor-parameter-property: {}, name: petId, in: path, description: 'ID of pet that needs to be fetched', required: true, type: array, items: {type: string}, collectionFormat: csv}], responses: {'200': {description: 'pet response', schema: {$ref: Pet}}, x-vendor-operation-response-property: {}, default: {description: 'error payload', schema: {$ref: ErrorModel}}}}}
+  /protocol: {x-vendor-method: {}, get: {x-vendor-operation-property: {}, description: 'Returns a protocol based on ID', summary: 'Find protocol by ID', operationId: getprotocolById, produces: [application/json, text/html], parameters: [{x-vendor-parameter-property: {}, name: protocolId, in: path, description: 'ID of protocol that needs to be fetched', required: true, type: array, items: {type: string}, collectionFormat: csv}], responses: {'200': {description: 'protocol response', schema: {$ref: protocol}}, x-vendor-operation-response-property: {}, default: {description: 'error payload', schema: {$ref: ErrorModel}}}}}
 definitions:
-  Pet: {x-vendor-model-property: {}, required: [name], properties: {name: {type: string}, tag: {type: string}}}
+  protocol: {x-vendor-model-property: {}, required: [name], properties: {name: {type: string}, tag: {type: string}}}
   ErrorModel: {required: [code, message], properties: {code: {type: integer, format: int32}, message: {type: string}}}
