@@ -4,18 +4,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-namespace FreightTrust.EDI.X12004010
-{
+namespace FreightTrust.EDI.X12004010 {
 
-
-/// <summary>
-/// Loop for Load Detail
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(CLD))]
-public class Loop_CLD_856
-{
+  /// <summary>
+  /// Loop for Load Detail
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(CLD))]
+  public class Loop_CLD_856 {
 
     /// <summary>
     /// Load Detail
@@ -24,8 +21,8 @@ public class Loop_CLD_856
     [Required]
     [Pos(1)]
     public CLD CLD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -34,8 +31,8 @@ public class Loop_CLD_856
     [ListCount(200)]
     [Pos(2)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date or Time or Period
@@ -43,19 +40,18 @@ public class Loop_CLD_856
     [DataMember]
     [Pos(3)]
     public DTP DTP {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Hierarchical Level
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(HL))]
-public class Loop_HL_856
-{
+  /// <summary>
+  /// Loop for Hierarchical Level
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(HL))]
+  public class Loop_HL_856 {
 
     /// <summary>
     /// Hierarchical Level
@@ -64,8 +60,8 @@ public class Loop_HL_856
     [Required]
     [Pos(1)]
     public HL HL {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Identification
@@ -73,8 +69,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(2)]
     public LIN LIN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Detail (Shipment)
@@ -82,8 +78,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(3)]
     public SN1 SN1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Subline Item Detail
@@ -92,8 +88,8 @@ public class Loop_HL_856
     [ListCount(1000)]
     [Pos(4)]
     public List<SLN> SLN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Purchase Order Reference
@@ -101,8 +97,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(5)]
     public PRF PRF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Physical Details
@@ -110,8 +106,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(6)]
     public PO4 PO4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Product/Item Description
@@ -120,8 +116,8 @@ public class Loop_HL_856
     [ListCount(200)]
     [Pos(7)]
     public List<PID> PID {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -130,8 +126,8 @@ public class Loop_HL_856
     [ListCount(40)]
     [Pos(8)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Paperwork
@@ -140,8 +136,8 @@ public class Loop_HL_856
     [ListCount(25)]
     [Pos(9)]
     public List<PWK> PWK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marking, Packaging, Loading
@@ -150,8 +146,8 @@ public class Loop_HL_856
     [ListCount(25)]
     [Pos(10)]
     public List<PKG> PKG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -160,8 +156,8 @@ public class Loop_HL_856
     [ListCount(20)]
     [Pos(11)]
     public List<TD1> TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -170,8 +166,8 @@ public class Loop_HL_856
     [ListCount(12)]
     [Pos(12)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -180,8 +176,8 @@ public class Loop_HL_856
     [ListCount(12)]
     [Pos(13)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -190,8 +186,8 @@ public class Loop_HL_856
     [ListCount(5)]
     [Pos(14)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Trailer Shipment Details
@@ -199,8 +195,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(15)]
     public TSD TSD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -208,8 +204,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(16)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -218,8 +214,8 @@ public class Loop_HL_856
     [ListCount(3)]
     [Pos(17)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Hazardous Identification Information
@@ -228,8 +224,8 @@ public class Loop_HL_856
     [ListCount(100)]
     [Pos(18)]
     public List<Loop_LH1_856> LH1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Load Detail
@@ -238,8 +234,8 @@ public class Loop_HL_856
     [ListCount(200)]
     [Pos(19)]
     public List<Loop_CLD_856> CLDLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marks and Numbers
@@ -247,8 +243,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(20)]
     public List<MAN> MAN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -257,8 +253,8 @@ public class Loop_HL_856
     [ListCount(10)]
     [Pos(21)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -266,8 +262,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(22)]
     public FOB FOB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Pallet Information
@@ -275,8 +271,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(23)]
     public PAL PAL {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -285,8 +281,8 @@ public class Loop_HL_856
     [ListCount(200)]
     [Pos(24)]
     public List<Loop_N1_856> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Destination Quantity
@@ -295,8 +291,8 @@ public class Loop_HL_856
     [ListCount(50)]
     [Pos(25)]
     public List<SDQ> SDQ {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Excess Transportation Detail
@@ -304,8 +300,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(26)]
     public ETD ETD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -313,8 +309,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(27)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Service, Promotion, Allowance, or Charge Information
@@ -322,8 +318,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(28)]
     public List<Loop_SAC_856> SACLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Furnished Goods and Services
@@ -331,8 +327,8 @@ public class Loop_HL_856
     [DataMember]
     [Pos(29)]
     public GF GF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Yes/No Question
@@ -341,8 +337,8 @@ public class Loop_HL_856
     [ListCount(10)]
     [Pos(30)]
     public List<YNQ> YNQ {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Code Source Information
@@ -351,8 +347,8 @@ public class Loop_HL_856
     [ListCount(10)]
     [Pos(31)]
     public List<Loop_LM_856> LMLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Vessel Identification
@@ -360,19 +356,18 @@ public class Loop_HL_856
     [DataMember]
     [Pos(32)]
     public List<Loop_V1_856> V1Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Hazardous Identification Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LH1))]
-public class Loop_LH1_856
-{
+  /// <summary>
+  /// Loop for Hazardous Identification Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LH1))]
+  public class Loop_LH1_856 {
 
     /// <summary>
     /// Hazardous Identification Information
@@ -381,8 +376,8 @@ public class Loop_LH1_856
     [Required]
     [Pos(1)]
     public LH1 LH1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Classification Information
@@ -391,8 +386,8 @@ public class Loop_LH1_856
     [ListCount(4)]
     [Pos(2)]
     public List<LH2> LH2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Material Shipping Name
@@ -401,8 +396,8 @@ public class Loop_LH1_856
     [ListCount(12)]
     [Pos(3)]
     public List<LH3> LH3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Freeform Hazardous Material Information
@@ -411,8 +406,8 @@ public class Loop_LH1_856
     [ListCount(20)]
     [Pos(4)]
     public List<LFH> LFH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// EPA Required Data
@@ -420,8 +415,8 @@ public class Loop_LH1_856
     [DataMember]
     [Pos(5)]
     public List<LEP> LEP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Canadian Dangerous Requirements
@@ -429,8 +424,8 @@ public class Loop_LH1_856
     [DataMember]
     [Pos(6)]
     public LH4 LH4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transborder Hazardous Requirements
@@ -439,8 +434,8 @@ public class Loop_LH1_856
     [ListCount(3)]
     [Pos(7)]
     public List<LHT> LHT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Material Identifying Reference Numbers
@@ -449,8 +444,8 @@ public class Loop_LH1_856
     [ListCount(10)]
     [Pos(8)]
     public List<LHR> LHR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -459,8 +454,8 @@ public class Loop_LH1_856
     [ListCount(5)]
     [Pos(9)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Empty Equipment Hazardous Material Information
@@ -468,19 +463,18 @@ public class Loop_LH1_856
     [DataMember]
     [Pos(10)]
     public LHE LHE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Code Source Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LM))]
-public class Loop_LM_856
-{
+  /// <summary>
+  /// Loop for Code Source Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LM))]
+  public class Loop_LM_856 {
 
     /// <summary>
     /// Code Source Information
@@ -489,8 +483,8 @@ public class Loop_LM_856
     [Required]
     [Pos(1)]
     public LM LM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Industry Code
@@ -500,19 +494,18 @@ public class Loop_LM_856
     [ListCount(100)]
     [Pos(2)]
     public List<LQ> LQ {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_856
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_856 {
 
     /// <summary>
     /// Name
@@ -521,8 +514,8 @@ public class Loop_N1_856
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -531,8 +524,8 @@ public class Loop_N1_856
     [ListCount(2)]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -541,8 +534,8 @@ public class Loop_N1_856
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -550,8 +543,8 @@ public class Loop_N1_856
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -560,8 +553,8 @@ public class Loop_N1_856
     [ListCount(12)]
     [Pos(5)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -570,8 +563,8 @@ public class Loop_N1_856
     [ListCount(3)]
     [Pos(6)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -579,19 +572,18 @@ public class Loop_N1_856
     [DataMember]
     [Pos(7)]
     public FOB FOB {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Service, Promotion, Allowance, or Charge Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(SAC))]
-public class Loop_SAC_856
-{
+  /// <summary>
+  /// Loop for Service, Promotion, Allowance, or Charge Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(SAC))]
+  public class Loop_SAC_856 {
 
     /// <summary>
     /// Service, Promotion, Allowance, or Charge Information
@@ -600,8 +592,8 @@ public class Loop_SAC_856
     [Required]
     [Pos(1)]
     public SAC SAC {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -609,19 +601,18 @@ public class Loop_SAC_856
     [DataMember]
     [Pos(2)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Vessel Identification
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(V1))]
-public class Loop_V1_856
-{
+  /// <summary>
+  /// Loop for Vessel Identification
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(V1))]
+  public class Loop_V1_856 {
 
     /// <summary>
     /// Vessel Identification
@@ -630,8 +621,8 @@ public class Loop_V1_856
     [Required]
     [Pos(1)]
     public V1 V1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Port or Terminal
@@ -639,8 +630,8 @@ public class Loop_V1_856
     [DataMember]
     [Pos(2)]
     public List<R4> R4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -648,19 +639,18 @@ public class Loop_V1_856
     [DataMember]
     [Pos(3)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Ship Notice/Manifest
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Message("X12", "004010", "856")]
-public class TS856 : EdiMessage
-{
+  /// <summary>
+  /// Ship Notice/Manifest
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Message("X12", "004010", "856")]
+  public class TS856 : EdiMessage {
 
     /// <summary>
     /// Transaction Set Header
@@ -668,8 +658,8 @@ public class TS856 : EdiMessage
     [DataMember]
     [Pos(1)]
     public ST ST {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Beginning Segment for Ship Notice
@@ -678,8 +668,8 @@ public class TS856 : EdiMessage
     [Required]
     [Pos(2)]
     public BSN BSN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -688,8 +678,8 @@ public class TS856 : EdiMessage
     [ListCount(10)]
     [Pos(3)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Hierarchical Level
@@ -699,8 +689,8 @@ public class TS856 : EdiMessage
     [ListCount(200000)]
     [Pos(4)]
     public List<Loop_HL_856> HLLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Totals
@@ -708,8 +698,8 @@ public class TS856 : EdiMessage
     [DataMember]
     [Pos(5)]
     public CTT CTT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Set Trailer
@@ -717,8 +707,8 @@ public class TS856 : EdiMessage
     [DataMember]
     [Pos(6)]
     public SE SE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 }

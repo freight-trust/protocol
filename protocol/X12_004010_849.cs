@@ -4,17 +4,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-namespace FreightTrust.EDI.X12004010
-{
+namespace FreightTrust.EDI.X12004010 {
 
-/// <summary>
-/// Loop for Contract Number Detail
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(CON))]
-public class Loop_CON_849
-{
+  /// <summary>
+  /// Loop for Contract Number Detail
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(CON))]
+  public class Loop_CON_849 {
 
     /// <summary>
     /// Contract Number Detail
@@ -23,8 +21,8 @@ public class Loop_CON_849
     [Required]
     [Pos(1)]
     public CON CON {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Request Validation
@@ -33,8 +31,8 @@ public class Loop_CON_849
     [ListCount(10)]
     [Pos(2)]
     public List<AAA> AAA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -43,8 +41,8 @@ public class Loop_CON_849
     [ListCount(12)]
     [Pos(3)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -53,8 +51,8 @@ public class Loop_CON_849
     [ListCount(3)]
     [Pos(4)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -63,8 +61,8 @@ public class Loop_CON_849
     [ListCount(10)]
     [Pos(5)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -73,8 +71,8 @@ public class Loop_CON_849
     [ListCount(50)]
     [Pos(6)]
     public List<Loop_N1_849> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Product Adjustment Detail
@@ -83,19 +81,18 @@ public class Loop_CON_849
     [ListCount(1000)]
     [Pos(7)]
     public List<Loop_PAD_849> PADLoop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_849
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_849 {
 
     /// <summary>
     /// Name
@@ -104,8 +101,8 @@ public class Loop_N1_849
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -114,8 +111,8 @@ public class Loop_N1_849
     [ListCount(2)]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -124,8 +121,8 @@ public class Loop_N1_849
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -133,8 +130,8 @@ public class Loop_N1_849
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -143,8 +140,8 @@ public class Loop_N1_849
     [ListCount(12)]
     [Pos(5)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -153,19 +150,18 @@ public class Loop_N1_849
     [ListCount(3)]
     [Pos(6)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Product Adjustment Detail
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(PAD))]
-public class Loop_PAD_849
-{
+  /// <summary>
+  /// Loop for Product Adjustment Detail
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(PAD))]
+  public class Loop_PAD_849 {
 
     /// <summary>
     /// Product Adjustment Detail
@@ -174,8 +170,8 @@ public class Loop_PAD_849
     [Required]
     [Pos(1)]
     public PAD PAD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Identification
@@ -183,8 +179,8 @@ public class Loop_PAD_849
     [DataMember]
     [Pos(2)]
     public LIN LIN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Request Validation
@@ -193,8 +189,8 @@ public class Loop_PAD_849
     [ListCount(10)]
     [Pos(3)]
     public List<AAA> AAA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Product/Item Description
@@ -203,8 +199,8 @@ public class Loop_PAD_849
     [ListCount(200)]
     [Pos(4)]
     public List<PID> PID {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -213,8 +209,8 @@ public class Loop_PAD_849
     [ListCount(40)]
     [Pos(5)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Unit Detail
@@ -223,8 +219,8 @@ public class Loop_PAD_849
     [ListCount(5)]
     [Pos(6)]
     public List<UIT> UIT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Quantity
@@ -233,8 +229,8 @@ public class Loop_PAD_849
     [ListCount(5)]
     [Pos(7)]
     public List<QTY> QTY {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Monetary Amount
@@ -243,8 +239,8 @@ public class Loop_PAD_849
     [ListCount(2)]
     [Pos(8)]
     public List<AMT> AMT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Receiving Conditions
@@ -252,8 +248,8 @@ public class Loop_PAD_849
     [DataMember]
     [Pos(9)]
     public RCD RCD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -262,8 +258,8 @@ public class Loop_PAD_849
     [ListCount(12)]
     [Pos(10)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -272,8 +268,8 @@ public class Loop_PAD_849
     [ListCount(10)]
     [Pos(11)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -281,8 +277,8 @@ public class Loop_PAD_849
     [DataMember]
     [Pos(12)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Special Services
@@ -290,19 +286,18 @@ public class Loop_PAD_849
     [DataMember]
     [Pos(13)]
     public SSS SSS {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Response to Product Transfer Account Adjustment
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Message("X12", "004010", "849")]
-public class TS849 : EdiMessage
-{
+  /// <summary>
+  /// Response to Product Transfer Account Adjustment
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Message("X12", "004010", "849")]
+  public class TS849 : EdiMessage {
 
     /// <summary>
     /// Transaction Set Header
@@ -310,8 +305,8 @@ public class TS849 : EdiMessage
     [DataMember]
     [Pos(1)]
     public ST ST {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Beginning Segment for Response to Product Transfer Account Adjustment
@@ -320,8 +315,8 @@ public class TS849 : EdiMessage
     [Required]
     [Pos(2)]
     public BRC BRC {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -329,8 +324,8 @@ public class TS849 : EdiMessage
     [DataMember]
     [Pos(3)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Request Validation
@@ -339,8 +334,8 @@ public class TS849 : EdiMessage
     [ListCount(10)]
     [Pos(4)]
     public List<AAA> AAA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Note/Special Instruction
@@ -349,8 +344,8 @@ public class TS849 : EdiMessage
     [ListCount(10)]
     [Pos(5)]
     public List<NTE> NTE {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -359,8 +354,8 @@ public class TS849 : EdiMessage
     [ListCount(12)]
     [Pos(6)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -369,8 +364,8 @@ public class TS849 : EdiMessage
     [ListCount(3)]
     [Pos(7)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -379,8 +374,8 @@ public class TS849 : EdiMessage
     [ListCount(10)]
     [Pos(8)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -389,8 +384,8 @@ public class TS849 : EdiMessage
     [ListCount(50)]
     [Pos(9)]
     public List<Loop_N1_849> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Contract Number Detail
@@ -399,8 +394,8 @@ public class TS849 : EdiMessage
     [ListCount(10000)]
     [Pos(10)]
     public List<Loop_CON_849> CONLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Totals
@@ -409,8 +404,8 @@ public class TS849 : EdiMessage
     [Required]
     [Pos(11)]
     public CTT CTT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Monetary Amount
@@ -419,8 +414,8 @@ public class TS849 : EdiMessage
     [ListCount(5)]
     [Pos(12)]
     public List<AMT> AMT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Set Trailer
@@ -428,8 +423,8 @@ public class TS849 : EdiMessage
     [DataMember]
     [Pos(13)]
     public SE SE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 }
