@@ -231,7 +231,11 @@ type CalculationAndTiming: <"A class to specify the Calculation, Valuation and T
 	calculationDateLocation CalculationDateLocation (0..1) <"The specified location where the credit exposure will be calculated by the respective parties.">
 		[synonym ISDA_Create_1_0 value "calculation_date_location"]
 		[synonym ISDA_Create_1_0 value "calculation_date"]
+<<<<<<< HEAD
 		[synonym ISDA_Create_1_0 value "designated_city"]		
+=======
+		[synonym ISDA_Create_1_0 value "designated_city"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "4c"]
 	notificationTime NotificationTime (1..1) <"The time by which a demand for the Transfer of Eligible Credit Support (IM) or Posted Credit Support (IM) needs to be made in order for the transfer to take place in accordance with the Transfer Timing provisions.">
 		[synonym ISDA_Create_1_0 value "notification_time"]
@@ -282,7 +286,11 @@ type CalculationDateLocationElection: <"A class to specify each of the party ele
 	customLocation string (0..1) <"The Calculation Date Location when specified a location which doesn't correspond to the FpML list of business centers or cannot be mapped to it.">
 		[synonym ISDA_Create_1_0 value "partyA_specify"]
 		[synonym ISDA_Create_1_0 value "partyB_specify"]
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	condition Choice : <"The Calculation Date Location is specified either as a standard business center or as a custom location.">
 		required choice businessCenter, customLocation
 
@@ -335,11 +343,19 @@ type CollateralTransferAgreementElections: <"The set of elections which specify 
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "General Principles (e)"]
 	identifiedCrossCurrencySwap boolean (0..1) <"The qualification of whether cross-currency swaps need to be identified in the Confirmation so that the obligations to exchange principal be disregarded for the purpose of determining the Delivery Amount or Return Amount.">
 		[synonym ISDA_Create_1_0 set to True when "cross_currency_swap->yey_ney" = "true", set to False when "cross_currency_swap->yey_ney" = "false"]
+<<<<<<< HEAD
 	// [documentReference Euroclear CtaInitialMargin 2018 paragraph "13" section "(g)"]	
 	sensitivityMethodologies SensitivityMethodologies (1..1) <"The specification of methodologies to compute sensitivities specific to the agreement.">
 	fxHaircutCurrency FxHaircutCurrency (0..1) <"The reference currency for the purpose of specifying the FX Haircut relating to a posting obligation, as being either the Termination Currency or an FX Designated Currency.">
 		[synonym ISDA_Create_1_0 value "fx_haircut_percentage"]
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "(h)"]		
+=======
+	// [documentReference Euroclear CtaInitialMargin 2018 paragraph "13" section "(g)"]
+	sensitivityMethodologies SensitivityMethodologies (1..1) <"The specification of methodologies to compute sensitivities specific to the agreement.">
+	fxHaircutCurrency FxHaircutCurrency (0..1) <"The reference currency for the purpose of specifying the FX Haircut relating to a posting obligation, as being either the Termination Currency or an FX Designated Currency.">
+		[synonym ISDA_Create_1_0 value "fx_haircut_percentage"]
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "(h)"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	postingObligations PostingObligations (1..1) <"The security providers posting obligations.">
 		[synonym ISDA_Create_1_0 value "security_provider_posting_obligations"]
 	// [documentReference ISDA CtaInitialMargin 2019 paragraph "13" section "General Principles (ii)"]
@@ -370,15 +386,26 @@ type CollateralTransferAgreementElections: <"The set of elections which specify 
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "12"]
 	addressesForTransfer ContactElection (0..1) <"The optional specification of address for transfer as specified by the respective parties to the agreement.">
 		[synonym ISDA_Create_1_0 value "addresses_for_transfers"]
+<<<<<<< HEAD
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "12"]		
 	otherCsa string (0..1) <"The bespoke definition of Other CSA as specified by the parties to the agreement.">
 		[synonym ISDA_Create_1_0 value "other_csa->specify" set when "other_csa->specified" = "true"]
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "13"]		
+=======
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "12"]
+	otherCsa string (0..1) <"The bespoke definition of Other CSA as specified by the parties to the agreement.">
+		[synonym ISDA_Create_1_0 value "other_csa->specify" set when "other_csa->specified" = "true"]
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "13"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	terminationCurrencyAmendment TerminationCurrencyAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Termination Currency.  Unless specified the definition of Termination Currency has the meaning specified in the Schedule to the ISDA Master Agreement.">
 		[synonym ISDA_Create_1_0 value "amendment_to_termination_currency"]
 		[synonym ISDA_Create_1_0 value "security_provider_posting_obligations"]
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "13"]
+<<<<<<< HEAD
 	minimumTransferAmountAmendment MinimumTransferAmountAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Minimum Transfer Amount.  Unless specified the definition of Minimum Transfer Amount in any Other Regulatory CSA has the meaning specified in such Other Regulatory CSA.">	
+=======
+	minimumTransferAmountAmendment MinimumTransferAmountAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Minimum Transfer Amount.  Unless specified the definition of Minimum Transfer Amount in any Other Regulatory CSA has the meaning specified in such Other Regulatory CSA.">
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 		[synonym ISDA_Create_1_0 value "amendment_to_minimum_transfer_amount" mapper "MinimumTransferAmountAmendment"]
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "14"]
 	interpretationTerms string (0..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Interpretations.">
@@ -531,11 +558,19 @@ type CreditSupportAgreementElections: <"The set of elections which specify a Cre
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "General Principles (e)"]
 	identifiedCrossCurrencySwap boolean (0..1) <"The qualification of whether cross-currency swaps need to be identified in the Confirmation so that the obligations to exchange principal be disregarded for the purpose of determining the Delivery Amount or Return Amount.">
 		[synonym ISDA_Create_1_0 set to True when "cross_currency_swap->yey_ney" = "true", set to False when "cross_currency_swap->yey_ney" = "false"]
+<<<<<<< HEAD
 	// [documentReference Euroclear CtaInitialMargin 2018 paragraph "13" section "(g)"]	
 	sensitivityMethodologies SensitivityMethodologies (1..1) <"The specification of methodologies to compute sensitivities specific to the agreement.">
 	fxHaircutCurrency FxHaircutCurrency (0..1) <"The reference currency for the purpose of specifying the FX Haircut relating to a posting obligation, as being either the Termination Currency or an FX Designated Currency.">
 		[synonym ISDA_Create_1_0 value "fx_haircut_percentage"]
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "(h)"]		
+=======
+	// [documentReference Euroclear CtaInitialMargin 2018 paragraph "13" section "(g)"]
+	sensitivityMethodologies SensitivityMethodologies (1..1) <"The specification of methodologies to compute sensitivities specific to the agreement.">
+	fxHaircutCurrency FxHaircutCurrency (0..1) <"The reference currency for the purpose of specifying the FX Haircut relating to a posting obligation, as being either the Termination Currency or an FX Designated Currency.">
+		[synonym ISDA_Create_1_0 value "fx_haircut_percentage"]
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "(h)"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	postingObligations PostingObligations (1..1) <"The security providers posting obligations.">
 		[synonym ISDA_Create_1_0 value "chargor_posting_obligations"]
 		[synonym ISDA_Create_1_0 value "pledgor_posting_obligations"]
@@ -571,10 +606,17 @@ type CreditSupportAgreementElections: <"The set of elections which specify a Cre
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "12"]
 	addressesForTransfer ContactElection (0..1) <"The optional specification of address for transfer as specified by the respective parties to the agreement.">
 		[synonym ISDA_Create_1_0 value "addresses_for_transfers"]
+<<<<<<< HEAD
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "12"]		
 	otherCsa OtherAgreements (0..1) <"The bespoke definition of Other CSA as specified by the parties to the agreement.">
 		[synonym ISDA_Create_1_0 value "other_csa"]
 	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "13"]		
+=======
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "12"]
+	otherCsa OtherAgreements (0..1) <"The bespoke definition of Other CSA as specified by the parties to the agreement.">
+		[synonym ISDA_Create_1_0 value "other_csa"]
+	// [documentReference Euroclear CtaInitialMargin 2018 English Law paragraph "13" section "13"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	japaneseLawCsa OtherAgreements (0..1) <"The bespoke definition of whether Japanese Law CSA (VM) are specified by the parties to the agreement. ISDA 2016 Credit Support Annex for Initial Margin, paragraph 13, General Principles, (s)(ii): Japanese Law CSA (VM).">
 		[synonym ISDA_Create_1_0 value "japanese_law_csa_vm"]
 	terminationCurrencyAmendment TerminationCurrencyAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Termination Currency.  Unless specified the definition of Termination Currency has the meaning specified in the Schedule to the ISDA Master Agreement.">
@@ -583,7 +625,11 @@ type CreditSupportAgreementElections: <"The set of elections which specify a Cre
 		[synonym ISDA_Create_1_0 value "chargor_posting_obligations"]
 		[synonym ISDA_Create_1_0 value "obligor_posting_obligations"]
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "13"]
+<<<<<<< HEAD
 	minimumTransferAmountAmendment MinimumTransferAmountAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Minimum Transfer Amount.  Unless specified the definition of Minimum Transfer Amount in any Other Regulatory CSA has the meaning specified in such Other Regulatory CSA.">	
+=======
+	minimumTransferAmountAmendment MinimumTransferAmountAmendment (1..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Minimum Transfer Amount.  Unless specified the definition of Minimum Transfer Amount in any Other Regulatory CSA has the meaning specified in such Other Regulatory CSA.">
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 		[synonym ISDA_Create_1_0 value "amendment_to_minimum_transfer_amount" mapper "MinimumTransferAmountAmendment"]
 	// [documentReference Euroclear CtaInitialMargin 2019 paragraph "13" section "14"]
 	interpretationTerms string (0..1) <"The bespoke provision that might be specified by the parties to the agreement applicable to Interpretations.">
@@ -986,7 +1032,11 @@ type ExecutionTerms: <"A class to specify execution location and language of exe
 type FrenchLawAddendum: <"A class to specify party specific elections when a Collateral Transfer Agreement is governed by French Law.">
 
 	isApplicable boolean (1..1) <"The qualification of whether the French Law Addendum is deemed applicable by the parties (True) or not (False).">
+<<<<<<< HEAD
 		[synonym ISDA_Create_1_0 set to True when "is_applicable" = "applicable", set to False when "is_applicable" = "not_applicable"]		
+=======
+		[synonym ISDA_Create_1_0 set to True when "is_applicable" = "applicable", set to False when "is_applicable" = "not_applicable"]
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	partyElection FrenchLawAddendumElection (2..2) <"The parties French Law Addendum Elections.">
 
 	condition Applicable: <"A data rule to enforce that the French Law Addendum party elections must be specified when applicable.">
@@ -1296,7 +1346,11 @@ type PostingObligations: <"A class to specify the security provider(s) collatera
 		[synonym ISDA_Create_1_0 value "obligor"]
 		[synonym ISDA_Create_1_0 value "security_provider"]
 	partyElection PostingObligationsElection (1..2) <"The security provider party(ies) to which the posting obligations apply to, which can be either one of the parties to the legal agreement, or both of those.">
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 type PostingObligationsElection: <"A class to specify the collateral posting obligations as specified under the terms of the ISDA 2016 Credit Support Annex for Initial Margin, paragraph 13, General Principles, (ii).">
 
 	party string (1..1) <"The elective party.">
@@ -1569,7 +1623,11 @@ type SensitivityMethodology: <"A class to specify the methodology according to w
 	condition: one-of
 
 type SimmCalculationCurrency: <"A class to specify the SIMM Calculation Currency elections by each party to the agreement.">
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	partyElection CalculationCurrencyElection (2..2) <"The parties' SIMM Calculation Currency election.">
 
 type SimmException: <"A class to specify the SIMM exception to the regulatory regime clause of the ISDA 2016 and 2018 CSA for Initial Margin as either a normalized value specified as part of an enumeration or a customized value specified of type string. ISDA 2016 Credit Support Annex for Initial Margin paragraph 13, Regime: SIMM Exception.">
@@ -1699,7 +1757,11 @@ type UmbrellaAgreement: <"A class to specify a set of legal entities which are p
 		[synonym ISDA_Create_1_0 value "language" maps 2] // TODO: remove "maps 2" once migration complete
 	parties UmbrellaAgreementEntity (0..*) <"Underlying principals to the umbrella agreement.">
 		[synonym ISDA_Create_1_0 value "principal_identification_schedule" mapper "UmbrellaAgreementEntity"]
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	condition UmbrellaAgreementExists: <"Umbrella Agreement language and parties should not exist when Umbrella Agreement terms are Not Applicable.">
 		if isApplicable = True
 		then (language and parties) exists
@@ -1713,7 +1775,11 @@ func SaIsdaBankCustodian2019NewYorkLaw:
 	// [validation agreement]
 	inputs: agreementTerms AgreementTerms (1..1)
 	output: is_agreement boolean (1..1)
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> a53aaa1d7a58040d4b1017416403adb1f0c589f7
 	assign-output is_agreement:
 		agreementTerms -> relatedAgreements -> legalAgreement -> agreementType -> name = LegalAgreementNameEnum->CollateralTransferAgreement //The agreement is a CTA
 		and agreementTerms -> relatedAgreements -> legalAgreement -> agreementType -> publisher = LegalAgreementPublisherEnum->ISDA //published by ISDA
