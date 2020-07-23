@@ -1,2 +1,6 @@
-
+node_modules
+_dev
+_DEV
+_resources
+_*
 DEV/EDILib.js
