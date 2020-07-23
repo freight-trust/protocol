@@ -4,18 +4,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-namespace FreightTrust.EDI.X12004010
-{
+namespace FreightTrust.EDI.X12004010 {
 
-
-/// <summary>
-/// Loop for Account Identification
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(ACT))]
-public class Loop_ACT_821
-{
+  /// <summary>
+  /// Loop for Account Identification
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(ACT))]
+  public class Loop_ACT_821 {
 
     /// <summary>
     /// Account Identification
@@ -24,8 +21,8 @@ public class Loop_ACT_821
     [Required]
     [Pos(1)]
     public ACT ACT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -33,8 +30,8 @@ public class Loop_ACT_821
     [DataMember]
     [Pos(2)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Code Source Information
@@ -43,8 +40,8 @@ public class Loop_ACT_821
     [ListCount(10)]
     [Pos(3)]
     public List<Loop_LM_821> LMLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Rate Information
@@ -53,8 +50,8 @@ public class Loop_ACT_821
     [ListCount(13)]
     [Pos(4)]
     public List<Loop_RTE_821> RTELoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Balance Information
@@ -62,8 +59,8 @@ public class Loop_ACT_821
     [DataMember]
     [Pos(5)]
     public List<Loop_BLN_821> BLNLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Transaction Summary
@@ -71,8 +68,8 @@ public class Loop_ACT_821
     [DataMember]
     [Pos(6)]
     public List<Loop_TSU_821> TSULoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Financial Information
@@ -80,19 +77,18 @@ public class Loop_ACT_821
     [DataMember]
     [Pos(7)]
     public List<Loop_FIR_821> FIRLoop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Balance Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(BLN))]
-public class Loop_BLN_821
-{
+  /// <summary>
+  /// Loop for Balance Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(BLN))]
+  public class Loop_BLN_821 {
 
     /// <summary>
     /// Balance Information
@@ -101,8 +97,8 @@ public class Loop_BLN_821
     [Required]
     [Pos(1)]
     public BLN BLN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Funds Availability
@@ -110,19 +106,18 @@ public class Loop_BLN_821
     [DataMember]
     [Pos(2)]
     public List<AVA> AVA {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Entity
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(ENT))]
-public class Loop_ENT_821
-{
+  /// <summary>
+  /// Loop for Entity
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(ENT))]
+  public class Loop_ENT_821 {
 
     /// <summary>
     /// Entity
@@ -131,8 +126,8 @@ public class Loop_ENT_821
     [Required]
     [Pos(1)]
     public ENT ENT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -141,8 +136,8 @@ public class Loop_ENT_821
     [ListCount(2)]
     [Pos(2)]
     public List<Loop_N1_821> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Account Identification
@@ -150,8 +145,8 @@ public class Loop_ENT_821
     [DataMember]
     [Pos(3)]
     public List<Loop_ACT_821> ACTLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Type of Financial Accounting Data
@@ -159,19 +154,18 @@ public class Loop_ENT_821
     [DataMember]
     [Pos(4)]
     public List<Loop_FA1_821> FA1Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Type of Financial Accounting Data
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(FA1))]
-public class Loop_FA1_821
-{
+  /// <summary>
+  /// Loop for Type of Financial Accounting Data
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(FA1))]
+  public class Loop_FA1_821 {
 
     /// <summary>
     /// Type of Financial Accounting Data
@@ -180,8 +174,8 @@ public class Loop_FA1_821
     [Required]
     [Pos(1)]
     public FA1 FA1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Accounting Data
@@ -190,19 +184,18 @@ public class Loop_FA1_821
     [Required]
     [Pos(2)]
     public List<FA2> FA2 {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Financial Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(FIR))]
-public class Loop_FIR_821
-{
+  /// <summary>
+  /// Loop for Financial Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(FIR))]
+  public class Loop_FIR_821 {
 
     /// <summary>
     /// Financial Information
@@ -211,8 +204,8 @@ public class Loop_FIR_821
     [Required]
     [Pos(1)]
     public FIR FIR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -220,8 +213,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(2)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -229,8 +222,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(3)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Message Text
@@ -238,8 +231,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(4)]
     public List<MSG> MSG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Funds Availability
@@ -247,8 +240,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(5)]
     public List<AVA> AVA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Trace
@@ -256,8 +249,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(6)]
     public TRN TRN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Name
@@ -265,8 +258,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(7)]
     public List<N1> N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Monetary Amount
@@ -274,8 +267,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(8)]
     public List<AMT> AMT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Pricing Information
@@ -283,8 +276,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(9)]
     public List<CTP> CTP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Rate Information
@@ -292,8 +285,8 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(10)]
     public List<RTE> RTE {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Individual or Organizational Name
@@ -301,19 +294,18 @@ public class Loop_FIR_821
     [DataMember]
     [Pos(11)]
     public List<Loop_NM1_821> NM1Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Code Source Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LM))]
-public class Loop_LM_821
-{
+  /// <summary>
+  /// Loop for Code Source Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LM))]
+  public class Loop_LM_821 {
 
     /// <summary>
     /// Code Source Information
@@ -322,8 +314,8 @@ public class Loop_LM_821
     [Required]
     [Pos(1)]
     public LM LM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Industry Code
@@ -333,19 +325,18 @@ public class Loop_LM_821
     [ListCount(100)]
     [Pos(2)]
     public List<Loop_LQ_821> LQLoop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Industry Code
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LQ))]
-public class Loop_LQ_821
-{
+  /// <summary>
+  /// Loop for Industry Code
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LQ))]
+  public class Loop_LQ_821 {
 
     /// <summary>
     /// Industry Code
@@ -354,8 +345,8 @@ public class Loop_LQ_821
     [Required]
     [Pos(1)]
     public LQ LQ {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -364,19 +355,18 @@ public class Loop_LQ_821
     [ListCount(3)]
     [Pos(2)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_821
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_821 {
 
     /// <summary>
     /// Name
@@ -385,8 +375,8 @@ public class Loop_N1_821
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -394,8 +384,8 @@ public class Loop_N1_821
     [DataMember]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -403,8 +393,8 @@ public class Loop_N1_821
     [DataMember]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -412,8 +402,8 @@ public class Loop_N1_821
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -421,19 +411,18 @@ public class Loop_N1_821
     [DataMember]
     [Pos(5)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Individual or Organizational Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(NM1))]
-public class Loop_NM1_821
-{
+  /// <summary>
+  /// Loop for Individual or Organizational Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(NM1))]
+  public class Loop_NM1_821 {
 
     /// <summary>
     /// Individual or Organizational Name
@@ -442,8 +431,8 @@ public class Loop_NM1_821
     [Required]
     [Pos(1)]
     public NM1 NM1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -451,8 +440,8 @@ public class Loop_NM1_821
     [DataMember]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -460,8 +449,8 @@ public class Loop_NM1_821
     [DataMember]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -469,8 +458,8 @@ public class Loop_NM1_821
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -478,19 +467,18 @@ public class Loop_NM1_821
     [DataMember]
     [Pos(5)]
     public DTM DTM {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Rate Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(RTE))]
-public class Loop_RTE_821
-{
+  /// <summary>
+  /// Loop for Rate Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(RTE))]
+  public class Loop_RTE_821 {
 
     /// <summary>
     /// Rate Information
@@ -499,8 +487,8 @@ public class Loop_RTE_821
     [Required]
     [Pos(1)]
     public RTE RTE {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -508,19 +496,18 @@ public class Loop_RTE_821
     [DataMember]
     [Pos(2)]
     public DTM DTM {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Transaction Summary
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(TSU))]
-public class Loop_TSU_821
-{
+  /// <summary>
+  /// Loop for Transaction Summary
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(TSU))]
+  public class Loop_TSU_821 {
 
     /// <summary>
     /// Transaction Summary
@@ -529,8 +516,8 @@ public class Loop_TSU_821
     [Required]
     [Pos(1)]
     public TSU TSU {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Funds Availability
@@ -538,19 +525,18 @@ public class Loop_TSU_821
     [DataMember]
     [Pos(2)]
     public List<AVA> AVA {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Financial Information Reporting
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Message("X12", "004010", "821")]
-public class TS821 : EdiMessage
-{
+  /// <summary>
+  /// Financial Information Reporting
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Message("X12", "004010", "821")]
+  public class TS821 : EdiMessage {
 
     /// <summary>
     /// Transaction Set Header
@@ -558,8 +544,8 @@ public class TS821 : EdiMessage
     [DataMember]
     [Pos(1)]
     public ST ST {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Set Purpose
@@ -568,8 +554,8 @@ public class TS821 : EdiMessage
     [Required]
     [Pos(2)]
     public B2A B2A {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -579,8 +565,8 @@ public class TS821 : EdiMessage
     [ListCount(4)]
     [Pos(3)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Trace
@@ -590,8 +576,8 @@ public class TS821 : EdiMessage
     [ListCount(2)]
     [Pos(4)]
     public List<TRN> TRN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Name
@@ -600,8 +586,8 @@ public class TS821 : EdiMessage
     [ListCount(2)]
     [Pos(5)]
     public List<N1> N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -609,8 +595,8 @@ public class TS821 : EdiMessage
     [DataMember]
     [Pos(6)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -618,8 +604,8 @@ public class TS821 : EdiMessage
     [DataMember]
     [Pos(7)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Code Source Information
@@ -628,8 +614,8 @@ public class TS821 : EdiMessage
     [ListCount(10)]
     [Pos(8)]
     public List<Loop_LM_821> LMLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Type of Financial Accounting Data
@@ -637,8 +623,8 @@ public class TS821 : EdiMessage
     [DataMember]
     [Pos(9)]
     public List<Loop_FA1_821> FA1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Entity
@@ -647,8 +633,8 @@ public class TS821 : EdiMessage
     [Required]
     [Pos(10)]
     public List<Loop_ENT_821> ENTLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Set Trailer
@@ -656,8 +642,8 @@ public class TS821 : EdiMessage
     [DataMember]
     [Pos(11)]
     public SE SE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 }

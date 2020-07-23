@@ -4,17 +4,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-namespace FreightTrust.EDI.X12004010
-{
+namespace FreightTrust.EDI.X12004010 {
 
-/// <summary>
-/// Loop for Bill of Lading Line Item Number
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(AT1))]
-public class Loop_AT1_211
-{
+  /// <summary>
+  /// Loop for Bill of Lading Line Item Number
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(AT1))]
+  public class Loop_AT1_211 {
 
     /// <summary>
     /// Bill of Lading Line Item Number
@@ -23,8 +21,8 @@ public class Loop_AT1_211
     [Required]
     [Pos(1)]
     public AT1 AT1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Business Instructions and Reference Number
@@ -33,8 +31,8 @@ public class Loop_AT1_211
     [ListCount(100)]
     [Pos(2)]
     public List<L11> L11 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Bill of Lading Rates and Charges
@@ -42,8 +40,8 @@ public class Loop_AT1_211
     [DataMember]
     [Pos(3)]
     public AT3 AT3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Bill of Lading Description
@@ -52,8 +50,8 @@ public class Loop_AT1_211
     [ListCount(99)]
     [Pos(4)]
     public List<AT4> AT4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Bill of Lading Line Item Detail
@@ -61,8 +59,8 @@ public class Loop_AT1_211
     [DataMember]
     [Pos(5)]
     public Loop_AT2_211 AT2Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Assigned Number
@@ -71,8 +69,8 @@ public class Loop_AT1_211
     [ListCount(999999)]
     [Pos(6)]
     public List<Loop_LX_211> LXLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Contact
@@ -81,19 +79,18 @@ public class Loop_AT1_211
     [ListCount(2)]
     [Pos(7)]
     public List<Loop_G61_211> G61Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Bill of Lading Line Item Detail
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(AT2))]
-public class Loop_AT2_211
-{
+  /// <summary>
+  /// Loop for Bill of Lading Line Item Detail
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(AT2))]
+  public class Loop_AT2_211 {
 
     /// <summary>
     /// Bill of Lading Line Item Detail
@@ -102,8 +99,8 @@ public class Loop_AT2_211
     [Required]
     [Pos(1)]
     public AT2 AT2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marks and Numbers
@@ -112,8 +109,8 @@ public class Loop_AT2_211
     [ListCount(999999)]
     [Pos(2)]
     public List<MAN> MAN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Shipment Purchase Order Detail
@@ -122,19 +119,18 @@ public class Loop_AT2_211
     [ListCount(999999)]
     [Pos(3)]
     public List<SPO> SPO {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Contact
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(G61))]
-public class Loop_G61_211
-{
+  /// <summary>
+  /// Loop for Contact
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(G61))]
+  public class Loop_G61_211 {
 
     /// <summary>
     /// Contact
@@ -143,8 +139,8 @@ public class Loop_G61_211
     [Required]
     [Pos(1)]
     public G61 G61 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Business Instructions and Reference Number
@@ -153,8 +149,8 @@ public class Loop_G61_211
     [ListCount(5)]
     [Pos(2)]
     public List<L11> L11 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Certification
@@ -163,8 +159,8 @@ public class Loop_G61_211
     [ListCount(6)]
     [Pos(3)]
     public List<LH6> LH6 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Hazardous Identification Information
@@ -174,19 +170,18 @@ public class Loop_G61_211
     [ListCount(25)]
     [Pos(4)]
     public List<Loop_LH1_211> LH1Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Hazardous Identification Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LH1))]
-public class Loop_LH1_211
-{
+  /// <summary>
+  /// Loop for Hazardous Identification Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LH1))]
+  public class Loop_LH1_211 {
 
     /// <summary>
     /// Hazardous Identification Information
@@ -195,8 +190,8 @@ public class Loop_LH1_211
     [Required]
     [Pos(1)]
     public LH1 LH1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Classification Information
@@ -205,8 +200,8 @@ public class Loop_LH1_211
     [ListCount(4)]
     [Pos(2)]
     public List<LH2> LH2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Hazardous Material Shipping Name
@@ -215,8 +210,8 @@ public class Loop_LH1_211
     [ListCount(10)]
     [Pos(3)]
     public List<LH3> LH3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Freeform Hazardous Material Information
@@ -225,8 +220,8 @@ public class Loop_LH1_211
     [ListCount(20)]
     [Pos(4)]
     public List<LFH> LFH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// EPA Required Data
@@ -235,8 +230,8 @@ public class Loop_LH1_211
     [ListCount(3)]
     [Pos(5)]
     public List<LEP> LEP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Canadian Dangerous Requirements
@@ -244,8 +239,8 @@ public class Loop_LH1_211
     [DataMember]
     [Pos(6)]
     public LH4 LH4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transborder Hazardous Requirements
@@ -254,8 +249,8 @@ public class Loop_LH1_211
     [ListCount(3)]
     [Pos(7)]
     public List<LHT> LHT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Business Instructions and Reference Number
@@ -264,19 +259,18 @@ public class Loop_LH1_211
     [ListCount(5)]
     [Pos(8)]
     public List<L11> L11 {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Assigned Number
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(LX))]
-public class Loop_LX_211
-{
+  /// <summary>
+  /// Loop for Assigned Number
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(LX))]
+  public class Loop_LX_211 {
 
     /// <summary>
     /// Assigned Number
@@ -285,8 +279,8 @@ public class Loop_LX_211
     [Required]
     [Pos(1)]
     public LX LX {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marks and Numbers
@@ -295,8 +289,8 @@ public class Loop_LX_211
     [ListCount(999999)]
     [Pos(2)]
     public List<MAN> MAN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Shipment Purchase Order Detail
@@ -305,19 +299,18 @@ public class Loop_LX_211
     [ListCount(999999)]
     [Pos(3)]
     public List<SPO> SPO {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_211
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_211 {
 
     /// <summary>
     /// Name
@@ -326,8 +319,8 @@ public class Loop_N1_211
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -335,8 +328,8 @@ public class Loop_N1_211
     [DataMember]
     [Pos(2)]
     public N2 N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -345,8 +338,8 @@ public class Loop_N1_211
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -354,8 +347,8 @@ public class Loop_N1_211
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Contact
@@ -364,19 +357,18 @@ public class Loop_N1_211
     [ListCount(3)]
     [Pos(5)]
     public List<G61> G61 {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Motor Carrier Bill of Lading
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Message("X12", "004010", "211")]
-public class TS211 : EdiMessage
-{
+  /// <summary>
+  /// Motor Carrier Bill of Lading
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Message("X12", "004010", "211")]
+  public class TS211 : EdiMessage {
 
     /// <summary>
     /// Transaction Set Header
@@ -384,8 +376,8 @@ public class TS211 : EdiMessage
     [DataMember]
     [Pos(1)]
     public ST ST {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Beginning Segment for the Motor Carrier Bill of Lading
@@ -394,8 +386,8 @@ public class TS211 : EdiMessage
     [Required]
     [Pos(2)]
     public BOL BOL {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Set Purpose
@@ -404,8 +396,8 @@ public class TS211 : EdiMessage
     [Required]
     [Pos(3)]
     public B2A B2A {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Interline Information
@@ -414,8 +406,8 @@ public class TS211 : EdiMessage
     [ListCount(12)]
     [Pos(4)]
     public List<MS3> MS3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Equipment or Container Owner and Type
@@ -423,8 +415,8 @@ public class TS211 : EdiMessage
     [DataMember]
     [Pos(5)]
     public MS2 MS2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Business Instructions and Reference Number
@@ -433,8 +425,8 @@ public class TS211 : EdiMessage
     [ListCount(100)]
     [Pos(6)]
     public List<L11> L11 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time
@@ -443,8 +435,8 @@ public class TS211 : EdiMessage
     [ListCount(6)]
     [Pos(7)]
     public List<G62> G62 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Bill of Lading Handling Requirements
@@ -453,8 +445,8 @@ public class TS211 : EdiMessage
     [ListCount(50)]
     [Pos(8)]
     public List<AT5> AT5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Remarks
@@ -463,8 +455,8 @@ public class TS211 : EdiMessage
     [ListCount(10)]
     [Pos(9)]
     public List<K1> K1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -473,8 +465,8 @@ public class TS211 : EdiMessage
     [ListCount(10)]
     [Pos(10)]
     public List<Loop_N1_211> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Bill of Lading Line Item Number
@@ -484,8 +476,8 @@ public class TS211 : EdiMessage
     [ListCount(9999)]
     [Pos(11)]
     public List<Loop_AT1_211> AT1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Set Trailer
@@ -493,8 +485,8 @@ public class TS211 : EdiMessage
     [DataMember]
     [Pos(12)]
     public SE SE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 }

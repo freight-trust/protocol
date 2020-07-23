@@ -4,18 +4,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-namespace FreightTrust.EDI.X12004010
-{
+namespace FreightTrust.EDI.X12004010 {
 
-
-/// <summary>
-/// Loop for Line Item Acknowledgment
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(ACK))]
-public class Loop_ACK_855
-{
+  /// <summary>
+  /// Loop for Line Item Acknowledgment
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(ACK))]
+  public class Loop_ACK_855 {
 
     /// <summary>
     /// Line Item Acknowledgment
@@ -24,8 +21,8 @@ public class Loop_ACK_855
     [Required]
     [Pos(1)]
     public ACK ACK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -33,19 +30,18 @@ public class Loop_ACK_855
     [DataMember]
     [Pos(2)]
     public DTM DTM {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Advertising Demographic Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(ADV))]
-public class Loop_ADV_855
-{
+  /// <summary>
+  /// Loop for Advertising Demographic Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(ADV))]
+  public class Loop_ADV_855 {
 
     /// <summary>
     /// Advertising Demographic Information
@@ -54,8 +50,8 @@ public class Loop_ADV_855
     [Required]
     [Pos(1)]
     public ADV ADV {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -63,8 +59,8 @@ public class Loop_ADV_855
     [DataMember]
     [Pos(2)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Text
@@ -72,19 +68,18 @@ public class Loop_ADV_855
     [DataMember]
     [Pos(3)]
     public List<MTX> MTX {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Transaction Totals
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(CTT))]
-public class Loop_CTT_855
-{
+  /// <summary>
+  /// Loop for Transaction Totals
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(CTT))]
+  public class Loop_CTT_855 {
 
     /// <summary>
     /// Transaction Totals
@@ -93,8 +88,8 @@ public class Loop_CTT_855
     [Required]
     [Pos(1)]
     public CTT CTT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Monetary Amount
@@ -102,19 +97,18 @@ public class Loop_CTT_855
     [DataMember]
     [Pos(2)]
     public AMT AMT {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_855
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_855 {
 
     /// <summary>
     /// Name
@@ -123,8 +117,8 @@ public class Loop_N1_855
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -133,8 +127,8 @@ public class Loop_N1_855
     [ListCount(2)]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -143,8 +137,8 @@ public class Loop_N1_855
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -152,8 +146,8 @@ public class Loop_N1_855
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Location ID Component
@@ -161,8 +155,8 @@ public class Loop_N1_855
     [DataMember]
     [Pos(5)]
     public List<NX2> NX2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -171,8 +165,8 @@ public class Loop_N1_855
     [ListCount(12)]
     [Pos(6)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -180,8 +174,8 @@ public class Loop_N1_855
     [DataMember]
     [Pos(7)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -189,8 +183,8 @@ public class Loop_N1_855
     [DataMember]
     [Pos(8)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -198,8 +192,8 @@ public class Loop_N1_855
     [DataMember]
     [Pos(9)]
     public FOB FOB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -208,8 +202,8 @@ public class Loop_N1_855
     [ListCount(2)]
     [Pos(10)]
     public List<TD1> TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -218,8 +212,8 @@ public class Loop_N1_855
     [ListCount(12)]
     [Pos(11)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -228,8 +222,8 @@ public class Loop_N1_855
     [ListCount(12)]
     [Pos(12)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -238,8 +232,8 @@ public class Loop_N1_855
     [ListCount(5)]
     [Pos(13)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marking, Packaging, Loading
@@ -248,8 +242,8 @@ public class Loop_N1_855
     [ListCount(25)]
     [Pos(14)]
     public List<PKG> PKG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Message Text
@@ -257,19 +251,18 @@ public class Loop_N1_855
     [DataMember]
     [Pos(15)]
     public List<MSG> MSG {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_855_2
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_855_2 {
 
     /// <summary>
     /// Name
@@ -278,8 +271,8 @@ public class Loop_N1_855_2
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -288,8 +281,8 @@ public class Loop_N1_855_2
     [ListCount(2)]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -298,8 +291,8 @@ public class Loop_N1_855_2
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -307,8 +300,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Location ID Component
@@ -316,8 +309,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(5)]
     public List<NX2> NX2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -326,8 +319,8 @@ public class Loop_N1_855_2
     [ListCount(12)]
     [Pos(6)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -336,8 +329,8 @@ public class Loop_N1_855_2
     [ListCount(3)]
     [Pos(7)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -345,8 +338,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(8)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -354,8 +347,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(9)]
     public DTM DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -363,8 +356,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(10)]
     public FOB FOB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Line Item Schedule
@@ -373,8 +366,8 @@ public class Loop_N1_855_2
     [ListCount(200)]
     [Pos(11)]
     public List<SCH> SCH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -383,8 +376,8 @@ public class Loop_N1_855_2
     [ListCount(2)]
     [Pos(12)]
     public List<TD1> TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -393,8 +386,8 @@ public class Loop_N1_855_2
     [ListCount(12)]
     [Pos(13)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -403,8 +396,8 @@ public class Loop_N1_855_2
     [ListCount(12)]
     [Pos(14)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -413,8 +406,8 @@ public class Loop_N1_855_2
     [ListCount(5)]
     [Pos(15)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Quantity
@@ -422,8 +415,8 @@ public class Loop_N1_855_2
     [DataMember]
     [Pos(16)]
     public List<QTY> QTY {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marking, Packaging, Loading
@@ -432,19 +425,18 @@ public class Loop_N1_855_2
     [ListCount(25)]
     [Pos(17)]
     public List<PKG> PKG {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Name
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N1))]
-public class Loop_N1_855_3
-{
+  /// <summary>
+  /// Loop for Name
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N1))]
+  public class Loop_N1_855_3 {
 
     /// <summary>
     /// Name
@@ -453,8 +445,8 @@ public class Loop_N1_855_3
     [Required]
     [Pos(1)]
     public N1 N1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Name Information
@@ -463,8 +455,8 @@ public class Loop_N1_855_3
     [ListCount(2)]
     [Pos(2)]
     public List<N2> N2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Address Information
@@ -473,8 +465,8 @@ public class Loop_N1_855_3
     [ListCount(2)]
     [Pos(3)]
     public List<N3> N3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Geographic Location
@@ -482,8 +474,8 @@ public class Loop_N1_855_3
     [DataMember]
     [Pos(4)]
     public N4 N4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Location ID Component
@@ -491,8 +483,8 @@ public class Loop_N1_855_3
     [DataMember]
     [Pos(5)]
     public List<NX2> NX2 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -501,8 +493,8 @@ public class Loop_N1_855_3
     [ListCount(12)]
     [Pos(6)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -511,8 +503,8 @@ public class Loop_N1_855_3
     [ListCount(3)]
     [Pos(7)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -520,19 +512,18 @@ public class Loop_N1_855_3
     [DataMember]
     [Pos(8)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Reference Identification
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N9))]
-public class Loop_N9_855
-{
+  /// <summary>
+  /// Loop for Reference Identification
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N9))]
+  public class Loop_N9_855 {
 
     /// <summary>
     /// Reference Identification
@@ -541,8 +532,8 @@ public class Loop_N9_855
     [Required]
     [Pos(1)]
     public N9 N9 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -550,8 +541,8 @@ public class Loop_N9_855
     [DataMember]
     [Pos(2)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Message Text
@@ -560,19 +551,18 @@ public class Loop_N9_855
     [ListCount(1000)]
     [Pos(3)]
     public List<MSG> MSG {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Reference Identification
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(N9))]
-public class Loop_N9_855_2
-{
+  /// <summary>
+  /// Loop for Reference Identification
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(N9))]
+  public class Loop_N9_855_2 {
 
     /// <summary>
     /// Reference Identification
@@ -581,8 +571,8 @@ public class Loop_N9_855_2
     [Required]
     [Pos(1)]
     public N9 N9 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -590,8 +580,8 @@ public class Loop_N9_855_2
     [DataMember]
     [Pos(2)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Message Text
@@ -599,19 +589,18 @@ public class Loop_N9_855_2
     [DataMember]
     [Pos(3)]
     public List<MSG> MSG {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Product/Item Description
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(PID))]
-public class Loop_PID_855
-{
+  /// <summary>
+  /// Loop for Product/Item Description
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(PID))]
+  public class Loop_PID_855 {
 
     /// <summary>
     /// Product/Item Description
@@ -620,8 +609,8 @@ public class Loop_PID_855
     [Required]
     [Pos(1)]
     public PID PID {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -630,19 +619,18 @@ public class Loop_PID_855
     [ListCount(10)]
     [Pos(2)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Marking, Packaging, Loading
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(PKG))]
-public class Loop_PKG_855
-{
+  /// <summary>
+  /// Loop for Marking, Packaging, Loading
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(PKG))]
+  public class Loop_PKG_855 {
 
     /// <summary>
     /// Marking, Packaging, Loading
@@ -651,8 +639,8 @@ public class Loop_PKG_855
     [Required]
     [Pos(1)]
     public PKG PKG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -660,19 +648,18 @@ public class Loop_PKG_855
     [DataMember]
     [Pos(2)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Baseline Item Data
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(PO1))]
-public class Loop_PO1_855
-{
+  /// <summary>
+  /// Loop for Baseline Item Data
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(PO1))]
+  public class Loop_PO1_855 {
 
     /// <summary>
     /// Baseline Item Data
@@ -681,8 +668,8 @@ public class Loop_PO1_855
     [Required]
     [Pos(1)]
     public PO1 PO1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Identification
@@ -690,8 +677,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(2)]
     public List<LIN> LIN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -699,8 +686,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(3)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -708,8 +695,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(4)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Item Detail
@@ -718,8 +705,8 @@ public class Loop_PO1_855
     [ListCount(25)]
     [Pos(5)]
     public List<PO3> PO3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Pricing Information
@@ -727,8 +714,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(6)]
     public List<CTP> CTP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Period Amount
@@ -737,8 +724,8 @@ public class Loop_PO1_855
     [ListCount(10)]
     [Pos(7)]
     public List<PAM> PAM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -747,8 +734,8 @@ public class Loop_PO1_855
     [ListCount(40)]
     [Pos(8)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Product/Item Description
@@ -757,8 +744,8 @@ public class Loop_PO1_855
     [ListCount(1000)]
     [Pos(9)]
     public List<Loop_PID_855> PIDLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Paperwork
@@ -767,8 +754,8 @@ public class Loop_PO1_855
     [ListCount(25)]
     [Pos(10)]
     public List<PWK> PWK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Physical Details
@@ -776,8 +763,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(11)]
     public List<PO4> PO4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -785,8 +772,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(12)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -795,8 +782,8 @@ public class Loop_PO1_855
     [ListCount(3)]
     [Pos(13)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Service, Promotion, Allowance, or Charge Information
@@ -805,8 +792,8 @@ public class Loop_PO1_855
     [ListCount(25)]
     [Pos(14)]
     public List<Loop_SAC_855> SACLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Conditions of Sale
@@ -814,8 +801,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(15)]
     public IT8 IT8 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Sales Requirements
@@ -823,8 +810,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(16)]
     public List<CSH> CSH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Terms of Sale/Deferred Terms of Sale
@@ -833,8 +820,8 @@ public class Loop_PO1_855
     [ListCount(2)]
     [Pos(17)]
     public List<ITD> ITD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Discount Detail
@@ -843,8 +830,8 @@ public class Loop_PO1_855
     [ListCount(20)]
     [Pos(18)]
     public List<DIS> DIS {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Installment Information
@@ -852,8 +839,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(19)]
     public INC INC {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Tax Reference
@@ -861,8 +848,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(20)]
     public List<TAX> TAX {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -870,8 +857,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(21)]
     public List<FOB> FOB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Destination Quantity
@@ -880,8 +867,8 @@ public class Loop_PO1_855
     [ListCount(500)]
     [Pos(22)]
     public List<SDQ> SDQ {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -890,8 +877,8 @@ public class Loop_PO1_855
     [ListCount(10)]
     [Pos(23)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Lead Time
@@ -900,8 +887,8 @@ public class Loop_PO1_855
     [ListCount(12)]
     [Pos(24)]
     public List<LDT> LDT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -909,8 +896,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(25)]
     public TD1 TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -919,8 +906,8 @@ public class Loop_PO1_855
     [ListCount(12)]
     [Pos(26)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -929,8 +916,8 @@ public class Loop_PO1_855
     [ListCount(12)]
     [Pos(27)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -939,8 +926,8 @@ public class Loop_PO1_855
     [ListCount(5)]
     [Pos(28)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Line Item Acknowledgment
@@ -949,8 +936,8 @@ public class Loop_PO1_855
     [ListCount(104)]
     [Pos(29)]
     public List<Loop_ACK_855> ACKLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marks and Numbers
@@ -959,8 +946,8 @@ public class Loop_PO1_855
     [ListCount(10)]
     [Pos(30)]
     public List<MAN> MAN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Monetary Amount
@@ -968,8 +955,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(31)]
     public AMT AMT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Restrictions/Conditions
@@ -977,8 +964,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(32)]
     public List<CTB> CTB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Tax Information
@@ -986,8 +973,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(33)]
     public List<TXI> TXI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Quantity
@@ -995,8 +982,8 @@ public class Loop_PO1_855
     [DataMember]
     [Pos(34)]
     public List<Loop_QTY_855> QTYLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Marking, Packaging, Loading
@@ -1005,8 +992,8 @@ public class Loop_PO1_855
     [ListCount(200)]
     [Pos(35)]
     public List<Loop_PKG_855> PKGLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Line Item Schedule
@@ -1015,8 +1002,8 @@ public class Loop_PO1_855
     [ListCount(200)]
     [Pos(36)]
     public List<Loop_SCH_855> SCHLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Reference Identification
@@ -1025,8 +1012,8 @@ public class Loop_PO1_855
     [ListCount(1000)]
     [Pos(37)]
     public List<Loop_N9_855> N9Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -1035,8 +1022,8 @@ public class Loop_PO1_855
     [ListCount(200)]
     [Pos(38)]
     public List<Loop_N1_855_2> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Subline Item Detail
@@ -1045,19 +1032,18 @@ public class Loop_PO1_855
     [ListCount(1000)]
     [Pos(39)]
     public List<Loop_SLN_855> SLNLoop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Quantity
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(QTY))]
-public class Loop_QTY_855
-{
+  /// <summary>
+  /// Loop for Quantity
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(QTY))]
+  public class Loop_QTY_855 {
 
     /// <summary>
     /// Quantity
@@ -1066,8 +1052,8 @@ public class Loop_QTY_855
     [Required]
     [Pos(1)]
     public QTY QTY {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -1075,19 +1061,18 @@ public class Loop_QTY_855
     [DataMember]
     [Pos(2)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Service, Promotion, Allowance, or Charge Information
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(SAC))]
-public class Loop_SAC_855
-{
+  /// <summary>
+  /// Loop for Service, Promotion, Allowance, or Charge Information
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(SAC))]
+  public class Loop_SAC_855 {
 
     /// <summary>
     /// Service, Promotion, Allowance, or Charge Information
@@ -1096,8 +1081,8 @@ public class Loop_SAC_855
     [Required]
     [Pos(1)]
     public SAC SAC {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -1105,19 +1090,18 @@ public class Loop_SAC_855
     [DataMember]
     [Pos(2)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Line Item Schedule
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(SCH))]
-public class Loop_SCH_855
-{
+  /// <summary>
+  /// Loop for Line Item Schedule
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(SCH))]
+  public class Loop_SCH_855 {
 
     /// <summary>
     /// Line Item Schedule
@@ -1126,8 +1110,8 @@ public class Loop_SCH_855
     [Required]
     [Pos(1)]
     public SCH SCH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -1136,8 +1120,8 @@ public class Loop_SCH_855
     [ListCount(2)]
     [Pos(2)]
     public List<TD1> TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -1146,8 +1130,8 @@ public class Loop_SCH_855
     [ListCount(12)]
     [Pos(3)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -1156,8 +1140,8 @@ public class Loop_SCH_855
     [ListCount(12)]
     [Pos(4)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -1166,8 +1150,8 @@ public class Loop_SCH_855
     [ListCount(5)]
     [Pos(5)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -1175,19 +1159,18 @@ public class Loop_SCH_855
     [DataMember]
     [Pos(6)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Loop for Subline Item Detail
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Group(typeof(SLN))]
-public class Loop_SLN_855
-{
+  /// <summary>
+  /// Loop for Subline Item Detail
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Group(typeof(SLN))]
+  public class Loop_SLN_855 {
 
     /// <summary>
     /// Subline Item Detail
@@ -1196,8 +1179,8 @@ public class Loop_SLN_855
     [Required]
     [Pos(1)]
     public SLN SLN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Message Text
@@ -1205,8 +1188,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(2)]
     public List<MSG> MSG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -1214,8 +1197,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(3)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Product/Item Description
@@ -1224,8 +1207,8 @@ public class Loop_SLN_855
     [ListCount(1000)]
     [Pos(4)]
     public List<PID> PID {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Additional Item Detail
@@ -1234,8 +1217,8 @@ public class Loop_SLN_855
     [ListCount(25)]
     [Pos(5)]
     public List<PO3> PO3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Pricing Information
@@ -1244,8 +1227,8 @@ public class Loop_SLN_855
     [ListCount(25)]
     [Pos(6)]
     public List<CTP> CTP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Period Amount
@@ -1254,8 +1237,8 @@ public class Loop_SLN_855
     [ListCount(10)]
     [Pos(7)]
     public List<PAM> PAM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Line Item Acknowledgment
@@ -1264,8 +1247,8 @@ public class Loop_SLN_855
     [ListCount(104)]
     [Pos(8)]
     public List<ACK> ACK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Service, Promotion, Allowance, or Charge Information
@@ -1274,8 +1257,8 @@ public class Loop_SLN_855
     [ListCount(10)]
     [Pos(9)]
     public List<Loop_SAC_855> SACLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -1284,8 +1267,8 @@ public class Loop_SLN_855
     [ListCount(10)]
     [Pos(10)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Physical Details
@@ -1293,8 +1276,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(11)]
     public PO4 PO4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Tax Reference
@@ -1303,8 +1286,8 @@ public class Loop_SLN_855
     [ListCount(3)]
     [Pos(12)]
     public List<TAX> TAX {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Advertising Demographic Information
@@ -1312,8 +1295,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(13)]
     public List<ADV> ADV {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Quantity
@@ -1321,8 +1304,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(14)]
     public List<Loop_QTY_855> QTYLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Reference Identification
@@ -1330,8 +1313,8 @@ public class Loop_SLN_855
     [DataMember]
     [Pos(15)]
     public List<Loop_N9_855_2> N9Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -1340,19 +1323,18 @@ public class Loop_SLN_855
     [ListCount(10)]
     [Pos(16)]
     public List<Loop_N1_855_3> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 
-/// <summary>
-/// Purchase Order Acknowledgment
-/// </summary>
-[Serializable()]
-[DataContract()]
-[Message("X12", "004010", "855")]
-public class TS855 : EdiMessage
-{
+  /// <summary>
+  /// Purchase Order Acknowledgment
+  /// </summary>
+  [Serializable()]
+  [DataContract()]
+  [Message("X12", "004010", "855")]
+  public class TS855 : EdiMessage {
 
     /// <summary>
     /// Transaction Set Header
@@ -1360,8 +1342,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(1)]
     public ST ST {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Beginning Segment for Purchase Order Acknowledgment
@@ -1370,8 +1352,8 @@ public class TS855 : EdiMessage
     [Required]
     [Pos(2)]
     public BAK BAK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Currency
@@ -1379,8 +1361,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(3)]
     public CUR CUR {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Reference Identification
@@ -1388,8 +1370,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(4)]
     public List<REF> REF {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Administrative Communications Contact
@@ -1398,8 +1380,8 @@ public class TS855 : EdiMessage
     [ListCount(3)]
     [Pos(5)]
     public List<PER> PER {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Tax Reference
@@ -1407,8 +1389,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(6)]
     public List<TAX> TAX {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// F.O.B. Related Instructions
@@ -1416,8 +1398,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(7)]
     public List<FOB> FOB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Pricing Information
@@ -1425,8 +1407,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(8)]
     public List<CTP> CTP {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Period Amount
@@ -1435,8 +1417,8 @@ public class TS855 : EdiMessage
     [ListCount(10)]
     [Pos(9)]
     public List<PAM> PAM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Sales Requirements
@@ -1444,8 +1426,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(10)]
     public CSH CSH {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Service, Promotion, Allowance, or Charge Information
@@ -1454,8 +1436,8 @@ public class TS855 : EdiMessage
     [ListCount(25)]
     [Pos(11)]
     public List<Loop_SAC_855> SACLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Terms of Sale/Deferred Terms of Sale
@@ -1464,8 +1446,8 @@ public class TS855 : EdiMessage
     [ListCount(5)]
     [Pos(12)]
     public List<ITD> ITD {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Discount Detail
@@ -1474,8 +1456,8 @@ public class TS855 : EdiMessage
     [ListCount(20)]
     [Pos(13)]
     public List<DIS> DIS {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Installment Information
@@ -1483,8 +1465,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(14)]
     public INC INC {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Date/Time Reference
@@ -1493,8 +1475,8 @@ public class TS855 : EdiMessage
     [ListCount(10)]
     [Pos(15)]
     public List<DTM> DTM {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Lead Time
@@ -1503,8 +1485,8 @@ public class TS855 : EdiMessage
     [ListCount(12)]
     [Pos(16)]
     public List<LDT> LDT {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Item Identification
@@ -1513,8 +1495,8 @@ public class TS855 : EdiMessage
     [ListCount(5)]
     [Pos(17)]
     public List<LIN> LIN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Service Characteristic Identification
@@ -1522,8 +1504,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(18)]
     public List<SI> SI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Product/Item Description
@@ -1532,8 +1514,8 @@ public class TS855 : EdiMessage
     [ListCount(200)]
     [Pos(19)]
     public List<PID> PID {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Measurements
@@ -1542,8 +1524,8 @@ public class TS855 : EdiMessage
     [ListCount(40)]
     [Pos(20)]
     public List<MEA> MEA {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Paperwork
@@ -1552,8 +1534,8 @@ public class TS855 : EdiMessage
     [ListCount(25)]
     [Pos(21)]
     public List<PWK> PWK {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marking, Packaging, Loading
@@ -1562,8 +1544,8 @@ public class TS855 : EdiMessage
     [ListCount(25)]
     [Pos(22)]
     public List<PKG> PKG {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Quantity and Weight)
@@ -1572,8 +1554,8 @@ public class TS855 : EdiMessage
     [ListCount(2)]
     [Pos(23)]
     public List<TD1> TD1 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Routing Sequence/Transit Time)
@@ -1582,8 +1564,8 @@ public class TS855 : EdiMessage
     [ListCount(12)]
     [Pos(24)]
     public List<TD5> TD5 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Equipment)
@@ -1592,8 +1574,8 @@ public class TS855 : EdiMessage
     [ListCount(12)]
     [Pos(25)]
     public List<TD3> TD3 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Carrier Details (Special Handling, or Hazardous Materials, or Both)
@@ -1602,8 +1584,8 @@ public class TS855 : EdiMessage
     [ListCount(5)]
     [Pos(26)]
     public List<TD4> TD4 {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Marks and Numbers
@@ -1612,8 +1594,8 @@ public class TS855 : EdiMessage
     [ListCount(10)]
     [Pos(27)]
     public List<MAN> MAN {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Tax Information
@@ -1621,8 +1603,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(28)]
     public List<TXI> TXI {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Restrictions/Conditions
@@ -1630,8 +1612,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(29)]
     public List<CTB> CTB {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Reference Identification
@@ -1640,8 +1622,8 @@ public class TS855 : EdiMessage
     [ListCount(1000)]
     [Pos(30)]
     public List<Loop_N9_855> N9Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Name
@@ -1650,8 +1632,8 @@ public class TS855 : EdiMessage
     [ListCount(200)]
     [Pos(31)]
     public List<Loop_N1_855> N1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Advertising Demographic Information
@@ -1659,8 +1641,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(32)]
     public List<Loop_ADV_855> ADVLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Baseline Item Data
@@ -1669,8 +1651,8 @@ public class TS855 : EdiMessage
     [ListCount(100000)]
     [Pos(33)]
     public List<Loop_PO1_855> PO1Loop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Loop for Transaction Totals
@@ -1678,8 +1660,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(34)]
     public Loop_CTT_855 CTTLoop {
-        get;
-        set;
+      get;
+      set;
     }
     /// <summary>
     /// Transaction Set Trailer
@@ -1687,8 +1669,8 @@ public class TS855 : EdiMessage
     [DataMember]
     [Pos(35)]
     public SE SE {
-        get;
-        set;
+      get;
+      set;
     }
-}
+  }
 }
