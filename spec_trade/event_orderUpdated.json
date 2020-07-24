@@ -1,0 +1,11 @@
+{
+	"type": "order_updated",
+	"data": {
+		"id": "ft7717d4-04e9-4430-a21b-08d32b2c34cd",
+		"created_by": 79,
+		"price": 0.1,
+		"side": "sell",
+		"size": 2,
+		"type": "limit"
+	}
+}

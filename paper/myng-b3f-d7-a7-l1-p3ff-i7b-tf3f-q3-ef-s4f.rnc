@@ -27,13 +27,8 @@ dc:rights [ 'Copyright 2015 RuleML Inc. -- Licensed under the RuleML Specificati
 dcterms:rights [ "http://ruleml.org/licensing/RSL1.0-RuleML" ]
 
 dcterms:relation [ "http://deliberation.ruleml.org/1.03" ]
-<<<<<<< HEAD
-# Base URL = http://deliberation.ruleml.org/1.03/relaxng/schema_rnc.php 
-# Complete URL = 
-=======
 # Base URL = http://deliberation.ruleml.org/1.03/relaxng/schema_rnc.php
 # Complete URL =
->>>>>>> cf532dac708ca39eaf3a0ea98a2a75b656115627
 #     http://deliberation.ruleml.org/1.03/relaxng/schema_rnc.php?backbone=x3f&default=x7&termseq=x7&lng=x1&propo=x3ff&implies=x7b&terms=xf3f&quant=x3&expr=xf&serial=x4f
  start = Node.choice | edge.choice
 #
@@ -67,13 +62,8 @@ include "modules/expr_oid_expansion_module.rnc" inherit = ruleml {start |= notAl
 #
 include "modules/expr_type_expansion_module.rnc" inherit = ruleml {start |= notAllowed}
 #
-<<<<<<< HEAD
-# RESTRICTIONS ON COMPOUNDING CLASSICAL FORMULAS REMOVED 
-#   FULL FIRST-ORDER EXPRESSIVITY (INCLUDING NEGATION) IS AVAILABLE 
-=======
 # RESTRICTIONS ON COMPOUNDING CLASSICAL FORMULAS REMOVED
 #   FULL FIRST-ORDER EXPRESSIVITY (INCLUDING NEGATION) IS AVAILABLE
->>>>>>> cf532dac708ca39eaf3a0ea98a2a75b656115627
 #
 include "modules/folog_cl_expansion_module.rnc" inherit = ruleml {start |= notAllowed}
 #
@@ -319,8 +309,4 @@ include "modules/key_expansion_module.rnc" inherit = ruleml {start |= notAllowed
 #
 include "modules/attribute_expansion_module.rnc" inherit = ruleml {start |= notAllowed}
 
-<<<<<<< HEAD
 #
-=======
-#
->>>>>>> cf532dac708ca39eaf3a0ea98a2a75b656115627

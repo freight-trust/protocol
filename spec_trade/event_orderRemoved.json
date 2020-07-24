@@ -1,0 +1,13 @@
+{
+  "action": "update",
+  "type": "order_removed",
+  "data": [
+    {
+      "id": "ft7717d4-04e9-4430-a21b-08d32b2c34cd"
+    },
+    {
+      "id": "ed7717d4-04e9-4430-a21b-08d32b2c34cd"
+    },
+    ...
+  ]
+}
