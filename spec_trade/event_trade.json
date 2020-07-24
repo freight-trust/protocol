@@ -1,0 +1,16 @@
+{
+  "action": "update",
+  "type": "trade",
+  "data": [
+    {
+      "id": "1efd30b6-fcb5-44da-82c1-82d9def2ddbd",
+      "side": "sell",
+      "symbol": "$asset-usdt",
+      "size": 2,
+      "price": 0.1,
+      "timestamp": "2020-06-26T13:20:40.464Z",
+      "fee": 0,
+    },
+    ...
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "PRO": {
+      "type": "string",
+      "minimum": 0,
+      "maximum": 30,
+      "pattern": "gs1_spec"
+    },
+    "SCAC": {
+      "type": "string",
+      "maximum": null,
+      "maxLength": 5
+    },
+    "AgreementTerms": {
+      "format": "uri",
+      "type": "string",
+      "description": "pki",
+      "enum": [
+        "notify",
+        "notifyAll",
+        "getClass",
+        "finalize"
+      ]
+    },
+    "GoverningLaw": {
+      "enum": [
+        "MASTER_AGREEMENT",
+        "USCA",
+        "USDE",
+        "USIL",
+        "USNY",
+        "OTHER"
+      ],
+      "type": "string"
+    },
+    "Cosignee": {
+      "uniqueItems": null,
+      "type": "string",
+      "title": "Freight_Charges_Bill_To"
+    },
+    "CheckSum": {
+      "properties": null,
+      "type": "string",
+      "format": "uri",
+      "pattern": "BL-nnnnn-s"
+    },
+    "3rdParty": {
+      "type": "string",
+      "items": {
+        "enum": null,
+        "description": "Insurance"
+      },
+      "description": "insurance"
+    },
+    "BillOfLading": {
+      "type": "number",
+      "minimum": 16,
+      "additionalProperties": {
+        "format": null,
+        "type": "object",
+        "required": [
+          "checksum_digit"
+        ]
+      }
+    }
+  }
+}
