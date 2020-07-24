@@ -3,7 +3,7 @@
       example: 025E
       description: |
         The transport leg reference will be specific per mode of transport:
-        - Vessel: Voyage number as specified by the vessel operator
-        - Truck: Not yet specified
-        - Rail: Not yet specified
-        - Barge: Not yet specified.
+        - Vessel: Loop ID - HL
+        - Truck: Loop ID - HL
+        - Rail: Loop ID - HL
+        - Barge: Loop ID - HL
