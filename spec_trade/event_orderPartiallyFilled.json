@@ -1,0 +1,14 @@
+{
+	"action": "update",
+	"type": "order_partialy_filled",
+	"data": {
+		"id": "ft7717d4-04e9-4430-a21b-08d32b2c34cd",
+		"filled": 0.1,
+		"created_by": 79,
+		"side": "sell",
+		"type": "limit",
+		"size": 2,
+		"price": 0.2,
+		"symbol": "$asset-usdc"
+	}
+}

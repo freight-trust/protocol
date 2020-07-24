@@ -1,0 +1,14 @@
+{
+	"action": "update",
+	"type": "order_queued",
+	"data": {
+		"side": "sell",
+		"type": "limit",
+		"price": 0.2,
+		"size": 2,
+		"symbol": "$asset-usdt",
+		"id": "ac7717d4-04e9-4430-a21b-08d32b2c34cd",
+		"created_by": 79,
+		"filled": 0
+	}
+}
