@@ -14,11 +14,14 @@ Trades & Orders -->
 <img alt="Open Source License" src="https://img.shields.io/github/license/freight-trust/protocol?style=social">
 <!-- Badges End -->
 
+# Protocol Spec
 
+For ABNF specs, [see the `spec_abnf` dir](https://github.com/freight-trust/protocol/tree/master/spec_abnf/abnf)
 
+- directories with `spec_*` are the reference specification 
+- directories with `lib` or `module`/`component` *should* be the technical implementation 
 
-
-### interface-Supply-Chain
+### Interfaces
 
 
 <img src="service-mesh.png"
