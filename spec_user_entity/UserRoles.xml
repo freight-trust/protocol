@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <row><userRoleID>2</userRoleID><type>Seller</type><value>The party selling goods or services as stipulated in a Sales Order Contract.</value></row>
+    <row><userRoleID>3</userRoleID><type>Buyer</type><value>The party to whom goods are sold as stipulated in a Sales Order Contract. </value></row>
+    <row><userRoleID>4</userRoleID><type>Exporter</type><value>The party who makes an export declaration, or on whose behalf the export declaration is made, and who is the owner of the goods or has similar rights of disposal over them at the time when the declaration is accepted.</value></row>
+    <row><userRoleID>5</userRoleID><type>Importer</type><value>The party who makes, or on whose behalf a customs broker or other authorized person makes, an import declaration, including a person who has possession of the goods or to whom the goods are consigned.</value></row>
+    <row><userRoleID>6</userRoleID><type>BuyerTransportService</type><value>The buyer of transport services as stipulated in a transport service contract</value></row>
+    <row><userRoleID>7</userRoleID><type>Consignor</type><value>The party providing a consignment of goods as stipulated in a transport service contract</value></row>
+    <row><userRoleID>8</userRoleID><type>Consignee</type><value>The party receiving a consignment of goods as stipulated in a transport service contract</value></row>
+    <row><userRoleID>9</userRoleID><type>3PLAgentOrigin</type><value>The entity that provides third party logistics services for a cargo interest at the origin leg of a journey</value></row>
+    <row><userRoleID>10</userRoleID><type>3PLAgentDestination</type><value>The entity that provides third party logistics services for a cargo interest at the destination leg of a journey</value></row>
+    <row><userRoleID>11</userRoleID><type>CustomsBrokerExport</type><value>The entity that provides import customs brokerage services to a cargo interest</value></row>
+    <row><userRoleID>12</userRoleID><type>CustomsBrokerImport</type><value>The entity that provides export customs brokerage services to a cargo interest</value></row>
+    <row><userRoleID>13</userRoleID><type>RequestParty</type><value>A party who submits booking requests or shipping instructions</value></row>
+    <row><userRoleID>14</userRoleID><type>NotifyParty</type><value>A party to be notified of  the arrival of cargo at the port of destination</value></row>
+    <row><userRoleID>15</userRoleID><type>ProviderTransportService</type><value>A party that enters into Transport Service Contracts and undertakes or arranges the transport of goods between named points; may use own conveyances to undertake the transport or contract with another party to provide the conveyance. In this later case they are acting as a NVOCC.</value></row>
+    <row><userRoleID>16</userRoleID><type>MarineTerminalOrigin</type><value>The marine terminal handling the consignment cargo at the first port of loading</value></row>
+    <row><userRoleID>17</userRoleID><type>MarineTerminalDestination</type><value>The marine terminal handling the consignment cargo at the port of final discharge</value></row>
+    <row><userRoleID>18</userRoleID><type>TerminalTransShipment</type><value>The marine terminal handling the consignment cargo at a port between the first port of loading and port of final discharge</value></row>
+    <row><userRoleID>19</userRoleID><type>InlandTerminalOrigin</type><value>A terminal that handles the consignment cargo at an inland/river point of the journey prior to ocean transportation</value></row>
+    <row><userRoleID>20</userRoleID><type>InlandTerminalDestination</type><value>A terminal that handles the consignment cargo at an inland/river point of the journey after ocean transportation</value></row>
+    <row><userRoleID>21</userRoleID><type>Depot</type><value>A physical location providing storage for transport equipment used in the consignment.</value></row>
+    <row><userRoleID>22</userRoleID><type>Warehouse</type><value>A physical location providing storage for cargo or freight</value></row>
+    <row><userRoleID>23</userRoleID><type>BondedDepot</type><value>Bonded Depot through Surety Bond</value></row>
+    <row><userRoleID>24</userRoleID><type>BondedWarehouse</type><value>Bonded Warehouse through Surety Bond</value></row>
+    <row><userRoleID>25</userRoleID><type>ECNPortSeaAir</type><value>An electronic platform enabling exchange of information between public and private stakeholders in order to improve the competitive position of the sea and air ports’ communities.</value></row>
+    <row><userRoleID>26</userRoleID><type>ECNAggregatorInland</type><value>A software platform that collects data from and publishes data to inland transportation providers.</value></row>
+    <row><userRoleID>27</userRoleID><type>AuthorityExport</type><value>Provides export authorization associated with any conventions or regulations applicable to the trading of cargo within the international purchase and supply chain</value></row>
+    <row><userRoleID>28</userRoleID><type>AuthorityImport</type><value>Provides import authorization associated with any conventions or regulations applicable to the trading of cargo within the international purchase and supply chain</value></row>
+    <row><userRoleID>29</userRoleID><type>BankBuyers</type><value>Issues a letter of credit to a buyer</value></row>
+    <row><userRoleID>30</userRoleID><type>BankSellers</type><value>Pays the seller if conditions stipulated in a letter of credit are met</value></row>
+    <row><userRoleID>31</userRoleID><type>ProviderInsurance</type><value>Insures risks involved with international trade</value></row>
+    <row><userRoleID>32</userRoleID><type>ECN</type><value>Electronic Communications Network</value></row>
+    <row><userRoleID>33</userRoleID><type>BankEntity</type><value>The Legal Entity Identifer of a Financial Instittution</value></row>
+    <row><userRoleID>34</userRoleID><type>ECNNetwork</type><value>Namespace URN of an ECN</value></row>
+    <row><userRoleID>35</userRoleID><type>ECNNetworkAPI</type><value>URI of an API Endpoint</value></row>
+    <row><userRoleID>36</userRoleID><type>ECNMesh</type><value>Inter ECN Network Communcations Mesh Network</value></row>
+    <row><userRoleID>37</userRoleID><type>Clearing</type><value>Process of Clearing Customs</value></row>
+    <row><userRoleID>38</userRoleID><type>FTZ</type><value>Free Trade Zone</value></row>
+    <row><userRoleID>39</userRoleID><type>Drawback</type><value>Drawback Event per Customs</value></row>
+    <row><userRoleID>40</userRoleID><type>Liquidation</type><value>Liquidation Event per Customs</value></row>
+    <row><userRoleID>41</userRoleID><type>Tractor</type><value>A discrete power motor vehicle</value></row>
+    <row><userRoleID>42</userRoleID><type>TruckGVWR</type><value>Defined GVWR of the Power Tractor, e.g. Class 7: GVWR of 26,001 to 33,000 pounds</value></row>
+</root>

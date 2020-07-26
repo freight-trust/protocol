@@ -1,0 +1,126 @@
+{
+SDNs:[{
+entityID: string
+sdnName: string
+sdnType: string
+SDN's typically represent an individual (customer) or trust/company/organization. OFAC endpoints refer to customers or companies as different entities, but underlying both is the same SDN metadata.
+
+programs: [string]
+Programs is the sanction programs this SDN was added from
+title: string
+remarks: string
+match: number
+Remarks on SDN and often additional information about the SDN
+
+}]
+altNames:[{
+entityID: string
+alternateID: string
+alternateType: string
+alternateName: string
+alternateRemarks: string
+match: number
+}]
+addresses:[{
+entityID: string
+addressID: string
+address: string
+cityStateProvincePostalCode: string
+country: string
+match: number
+}]
+sectoralSanctions:[{
+entityID: string
+The ID assigned to an entity by the Treasury Department
+
+type: string
+Entity type (e.g. individual, vessel, aircraft, etc)
+
+programs: [string]
+Sanction programs for which the entity is flagged
+name: string
+The name of the entity
+
+addresses: [string]
+Addresses associated with the entity
+remarks: [string]
+Additional details regarding the entity
+alternateNames: [string]
+Known aliases associated with the entity
+ids: [string]
+IDs on file for the entity
+sourceListURL: string
+The link to the official SSI list
+
+sourceInfoURL: string
+The link for information regarding the source
+
+}]
+deniedPersons:[{
+name: string
+Name of the Denied Person
+
+streetAddress: string
+Denied Person's street address
+
+city: string
+Denied Person's city
+
+state: string
+Denied Person's state
+
+country: string
+Denied Person's country
+
+postalCode: string
+Denied Person's postal code
+
+effectiveDate: string
+Date when denial came into effect
+
+expirationDate: string
+Date when denial expires, if blank denial never expires
+
+standardOrder: string
+Denotes whether or not the Denied Person was added by a standard order
+
+lastUpdate: string
+Most recent date when the Denied Person record was updated
+
+action: string
+Most recent action taken regarding the denial
+
+frCitation: string
+Reference to the order's citation in the Federal Register
+
+match: number
+}]
+bisEntities:[{
+name: string
+The name of the entity
+
+addresses: [string]
+Addresses associated with the entity
+alternateNames: [string]
+Known aliases associated with the entity
+startDate: string
+Date when the restriction came into effect
+
+licenseRequirement: string
+Specifies the license requirement imposed on the named entity
+
+licensePolicy: string
+Identifies the policy BIS uses to review the licenseRequirements
+
+frNotice: string
+Identifies the corresponding Notice in the Federal Register
+
+sourceListURL: string
+The link to the official SSI list
+
+sourceInfoURL: string
+The link for information regarding the source
+
+}]
+refreshedAt: date-time
+}

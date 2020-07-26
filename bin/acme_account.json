@@ -1,0 +1,26 @@
+   {
+     "protected": base64url({
+       "alg": "ES256",
+       "jwk": /* account key */,
+       "nonce": "K60BWPrMQG9SDxBDS_xtSw",
+       "url": "https://example.com/acme/new-account"
+     }),
+     "payload": base64url({
+       "contact": [
+         "mailto:cert-admin@example.org",
+         "mailto:admin@example.org"
+       ],
+       "termsOfServiceAgreed": true,
+
+       "externalAccountBinding": {
+         "protected": base64url({
+           "alg": "HS256",
+           "kid": /* key identifier from CA */,
+           "url": "https://example.com/acme/new-account"
+         }),
+         "payload": base64url(/* same as in "jwk" above */),
+         "signature": /* MAC using MAC key from CA */
+       }
+     }),
+     "signature": "5TWiqIYQfIDfALQv...x9C2mg8JGPxl5bI4"
+   }

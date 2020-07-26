@@ -1,0 +1,19 @@
+﻿| **Inputs**                                | **Value**  | ****                                                                                                                                              |
+|-------------------------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Number of Trading Partners                | 2          | Enter the number of AS2/EDINT trading partners                                                                                                    |
+| Number of FTE's Associated with AS2/EDINT | 0\.2       | Enter the number of full time equivalent employees that support your AS2 operations\.  Include Firewall, Support, NetOps and Enablement Resources |
+| Costs of a Fully Loaded FTE               |  $ 45,000  | Enter the estimated cost of a fully loaded full time equivalent employee                                                                          |
+| Annual Costs                              | Amount     |                                                                                                                                                   |
+| Annual Maintenance                        |  $ 1,200   | Enter the annual software maintenance costs for your AS2 software                                                                                 |
+| FTE Costs                                 |  $ 8,000   | FTE Costs are based off of Cloud Provider Cost Structure, see AWS EC2                                                                             |
+| Annual AS2 Costs                          |  $ 9,200   |                                                                                                                                                   |
+| Monthly Costs                             | Amount     |                                                                                                                                                   |
+| Allocation of Annual Costs                |  $ 1,200   | Monthly Instance Costs                                                                                                                            |
+| Infrastructure Maintenance and Operations |  $ 300     | DevOps Per Month\. Does not include upgrades or acquisition costs\.                                                                               |
+| Monthly AS2 Cost                          |  $ 1,500   |                                                                                                                                                   |
+|                                           |            |                                                                                                                                                   |
+| Freight Trust Network                     | Amount     |                                                                                                                                                   |
+| Pricing Schedule Monthly Billing          |  $ 250     | Pricing Schedule based on our Pricing Benchmark,                                                                                                  |
+| Monthly Savings                           |  $ 1,250   | No minimums, billed at the lowest cost tier based on active trading partners\.                                                                    |
+| Savings %                                 | 83%        |                                                                                                                                                   |
+| Annual Benefit                            |  $ 15,000  |                                                                                                                                                   |
