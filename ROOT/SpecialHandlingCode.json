@@ -1,0 +1,25 @@
+{
+  "SpecialHandlingCode": {
+    "EE": "Electronic Equipment Transfer",
+    "EX": "Explosive Flammable Gas",
+    "FR": "Fragile - Handle with Care",
+    "HQT": "High Cube Trailer Rates",
+    "HZD": "Hazardous Cargo On Deck",
+    "IMS": "Intermodal Shipment Service",
+    "KMD": "Keep Material Dry",
+    "LTT": "Less Than Truckload",
+    "MRF": "Refrigerated",
+    "OTC": "Temperature Control",
+    "PUP": "PUP Trailer Rates Apply",
+    "TDC": "Truckload-Double Operator-Common Carrier TSC Truckload-Single Operator-Common Carrier",
+    "PFH": "Protect from heat",
+    "DNF": "DO NOT FREEZE",
+    "AGG": "Aggregate Tender Discount",
+    "IDL": "Inside Delivery",
+    "IPU": "Inside  pickup",
+    "NC": "Notify consignee before delivery",
+    "TPS": "Third Party Service",
+    "URC": "Lift Gate",
+    "ZZZ": "Mutually Defined"
+  }
+}
