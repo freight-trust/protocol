@@ -1,0 +1,7 @@
+{
+    "id": "<string>",
+    "serviceModel": {
+        "partnerNumber": "<string>",
+        "initiatorChannelId": "<string>"
+    }
+}

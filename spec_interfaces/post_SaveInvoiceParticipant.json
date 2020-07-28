@@ -1,0 +1,38 @@
+{
+    "id": "<string>",
+    "canManage": "<boolean>",
+    "referenceId": "<string>",
+    "resolved": "<boolean>",
+    "locationId": "<string>",
+    "location": {
+        "name": "<string>",
+        "line1": "<string>",
+        "city": "<string>",
+        "stateId": "<string>",
+        "zip": "<string>",
+        "country": "<string>",
+        "id": "<string>",
+        "idNumber": "<string>",
+        "state": {
+            "id": "<string>",
+            "key": "<string>",
+            "label": "<string>",
+            "canManage": "<boolean>",
+            "canDelete": "<boolean>"
+        },
+        "label": "<string>",
+        "canManage": "<boolean>",
+        "contactName": "<string>",
+        "formatted": "<string>",
+        "lat": "<double>",
+        "canDelete": "<boolean>",
+        "lng": "<double>",
+        "phoneNumber": "<string>",
+        "line2": "<string>"
+    },
+    "entityCode": "<string>",
+    "totalResolved": "<double>",
+    "canDelete": "<boolean>",
+    "totalUnresolved": "<double>",
+    "name": "<string>"
+}

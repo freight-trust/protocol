@@ -1,0 +1,22 @@
+summary: Find events by eventID. 
+      description: Returns event with the specified eventID.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/transportEvent'
+                  - $ref: '#/components/schemas/shipmentEvent'
+                  - $ref: '#/components/schemas/equipmentEvent'
+                  - $ref: '#/components/schemas/transportEquipmentEvent'
+                discriminator: 
+                  propertyName: eventType
+                example: #Couldn't use $ref in this example. Should be updated manually if shipmentEvent changes
+                  eventID: 1
+                  eventType: "SHIPMENT"
+                  eventDateTime: "2019-11-12T07:41:00+08:30"
+                  eventClassifierCode: "ACT"
+                  eventTypeCode: "ARRI"
+                  shipmentInformationTypeCode: "SRM"
