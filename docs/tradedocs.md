@@ -7,11 +7,12 @@ The TradeDocs Model lays the foundation for the standardisation, automation and 
 While standard bodies typically define the protocols for industry processes, differences in the implementation minutia typically causes operational friction between transacting counterparties (e.g. 3PL and Shipper). Evidence shows that even when calculations are defined in mathematical notation can be a source of dispute between parties in a transaction.
 
 ## What Is the TradeDocs Model
+
 The TradeDocs Process Model has been designed to translate the technical standards that support those industry processes into a standardised machine-readable and machine-executable format.
 
 ## How Does It Work
 
-The data and proces model definitions of the TradeDocs are implemented by defining two principle interaction scopes. 
+The data and proces model definitions of the TradeDocs are implemented by defining two principle interaction scopes.
 
 ### Interaction Process Models
 
@@ -21,51 +22,51 @@ Event emission bindings are defined in the protocol with their corresponding rel
 
 - Interchange Mappings
 
-Utilizing EDI formats such as X12 or EDIFACT, TradeDocs enables the mapping of EDI transactions to directly instatiate a smart contract. The first implementation is through the Ethereum Virtual Machine, utilizing Solidity. 
+Utilizing EDI formats such as X12 or EDIFACT, TradeDocs enables the mapping of EDI transactions to directly instatiate a smart contract. The first implementation is through the Ethereum Virtual Machine, utilizing Solidity.
 
-For example, 
+For example,
+
 ```json
 {
- 
- 	"TradeDocTypeMaps": {
-			  
-			  "TS204": "LoadTender",
-			  "TS990": "LoadTenderResponse",
-			  "TS997": "Acknowledgment",
-			  "TS214": "LoadTenderStatus",
-			  "TS210": "LoadTenderInvoice",
-			  "S5": "Stop",
-			  "B1": "BeginningSegmentPickupDelivery",
-			  "B10": "BeginningSegment",
-			  "L11": "ReferenceNumber",
-			  "AT7": "ShipmentStatusDetails",
-			  "MS1": "ShipmentLocationInfo",
-			  "K1": "Remarks",
-			  "Loop_S5_204": "Stops",
-			  "N9": "Reference",
-			  "AT5": "HandlingRequirement",
-			  "Loop_N1_204": "Party",
-			  "Loop_N7_204": "Equipment",
-			  "LH6": "HazardousCertification",
-			  "NTE": "Note",
-			  "B3": "InvoiceInfo",
-			  "G62": "DateTimeInfo",
-			  "H3": "SpecialHandlingInstructions",
-			  "N7": "EquipmentDetails",
-			  "N1": "Name",
-			  "LX": "AssignedNumber",
-			  "L1": "RatesAndChargesInfo",
-			  "L3": "TotalWeightAndChargesInfo",
-			  "Loop_L1_210": "InvoiceRateChargeItem",
-			  "Loop_LX_210": "InvoiceAssignedNumber",
-			  "Loop_N1_210": "InvoiceName",
-			  "Loop_N7_210": "InvoiceEquipmentDetail",
-			  "Loop_S5_210": "InvoiceStop"
-      }
-   }
+  "TradeDocTypeMaps": {
+    "TS204": "LoadTender",
+    "TS990": "LoadTenderResponse",
+    "TS997": "Acknowledgment",
+    "TS214": "LoadTenderStatus",
+    "TS210": "LoadTenderInvoice",
+    "S5": "Stop",
+    "B1": "BeginningSegmentPickupDelivery",
+    "B10": "BeginningSegment",
+    "L11": "ReferenceNumber",
+    "AT7": "ShipmentStatusDetails",
+    "MS1": "ShipmentLocationInfo",
+    "K1": "Remarks",
+    "Loop_S5_204": "Stops",
+    "N9": "Reference",
+    "AT5": "HandlingRequirement",
+    "Loop_N1_204": "Party",
+    "Loop_N7_204": "Equipment",
+    "LH6": "HazardousCertification",
+    "NTE": "Note",
+    "B3": "InvoiceInfo",
+    "G62": "DateTimeInfo",
+    "H3": "SpecialHandlingInstructions",
+    "N7": "EquipmentDetails",
+    "N1": "Name",
+    "LX": "AssignedNumber",
+    "L1": "RatesAndChargesInfo",
+    "L3": "TotalWeightAndChargesInfo",
+    "Loop_L1_210": "InvoiceRateChargeItem",
+    "Loop_LX_210": "InvoiceAssignedNumber",
+    "Loop_N1_210": "InvoiceName",
+    "Loop_N7_210": "InvoiceEquipmentDetail",
+    "Loop_S5_210": "InvoiceStop"
+  }
+}
 ```
 
 Which Yields
+
 ```
 161a1e22262a2e32363a3e55453323034620545339393620545339393762054533231346205453323134204c3131c204c6f6f705f53355f323034c204c6f6f705f4c315f32313c204c6f6f705f4c585f32313c204c6f6f705f4e315f32313c204c6f6f705f53355f32313
 >>
@@ -92,7 +93,7 @@ Granularity
 
 It is important for implementors of the TradeDocs to understand the scope of the model with regard to specifications and executable code for the above list of post-trade lifecycle processes.
 
-The TradeDocs process model leverages the function component of the Rosetta DSL. 
+The TradeDocs process model leverages the function component of the Rosetta DSL.
 
 A function receives a set of input values and applies logical instructions to return an output. The input and output are both TradeDocs objects (including basic types). While a function specifies its inputs and output, its logic may be fully defined or only partially defined depending on how much of the output’s attribute values it builds. Unspecified parts of a process represent functionality that firms are expected to implement, either internally or through third-parties such as utilities.
 
@@ -116,8 +117,9 @@ Calculation process
 Event creation process
 
 ### Validation Process
+
 In many legacy models and technical standards, validation rules are generally specified in text-based documentation, which requires software engineers to evaluate and translate the logic into code. The frequently occuring result of this human interpretation process is inconsistent enforcement of the intended logic.
 
-
 ### Product Validation
+
 As an example, the FpML ird validation rule #57, states that if the calculation period frequency is expressed in units of month or year, then the roll convention cannot be a weekday. A machine readable and executable definition of that specification is provided in the TradeDocs, as a condition attached to the CalculationPeriodFrequency type:
