@@ -26,21 +26,21 @@ async function run() {
 
     // the message body
     let message = JSON.stringify({
-      iss : "vendor",
-      sub : "1234",
-      exp : Date.now() + 10 * 60 * 1000, // expires in 10 minutes
-      iat : Date.now(),
-      bundle : "...",
+      iss: "vendor",
+      sub: "1234",
+      exp: Date.now() + 10 * 60 * 1000, // expires in 10 minutes
+      iat: Date.now(),
+      bundle: "...",
     });
 
     // and signing options
-    let signoptions = {fields : {x5c : x5cChain}};
+    let signoptions = { fields: { x5c: x5cChain } };
 
     // sign 'message' with the 'privatekey', include the 'x5c' chain in the
     // headers
     let signed = await jose.JWS.createSign(signoptions, privatekey)
-                     .update(message, "utf8")
-                     .final();
+      .update(message, "utf8")
+      .final();
 
     // bet you didn't think it would be that big
     console.log(signed);
@@ -89,8 +89,7 @@ run();
 function verifySigningChain(cert, cacert) {
   return new Promise((resolve, reject) => {
     pem.verifySigningChain(cert, cacert, (err, ver) => {
-      if (err)
-        return reject(err);
+      if (err) return reject(err);
       return resolve(ver);
     });
   });
@@ -112,7 +111,9 @@ function cert_to_x5c(cert, maxdepth) {
    */
 
   cert = cert.replace(/-----[^\n]+\n?/gm, ",").replace(/\n/g, "");
-  cert = cert.split(",").filter(function(c) { return c.length > 0; });
+  cert = cert.split(",").filter(function (c) {
+    return c.length > 0;
+  });
   if (maxdepth > 0) {
     cert = cert.splice(0, maxdepth);
   }
@@ -121,13 +122,13 @@ function cert_to_x5c(cert, maxdepth) {
 
 function x5c_to_cert(x5c) {
   var cert, y;
-  cert = (function() {
-           var _i, _ref, _results;
-           _results = [];
-           for (y = _i = 0, _ref = x5c.length; _i <= _ref; y = _i += 64) {
-             _results.push(x5c.slice(y, +(y + 63) + 1 || 9e9));
-           }
-           return _results;
-         })().join("\n");
+  cert = (function () {
+    var _i, _ref, _results;
+    _results = [];
+    for (y = _i = 0, _ref = x5c.length; _i <= _ref; y = _i += 64) {
+      _results.push(x5c.slice(y, +(y + 63) + 1 || 9e9));
+    }
+    return _results;
+  })().join("\n");
   return "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----";
 }
