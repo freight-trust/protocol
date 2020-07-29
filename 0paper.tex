@@ -1,0 +1,691 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Freight Trust Draft Paper}
+\author{Sam Bacha, sam@freighttrust.com}
+\date{version 2}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Supply chain formation is the problem of determining the production and exchange
+relationships across a supply chain. As business
+relationships become ever more flexible and dynamic, there is an increasing need to
+automate this supply chain formation process.
+
+
+In addition to "traditional" contributors, the technology/commerce/law confluence provides new challenges and opportunities, allowing, the emergence of important new players within the commercial field, such as Bolero, which, with the backing of international banks and ship-owners, offers electronic replacements for traditional paper transactions, acting as transaction agents for the electronic substitute on behalf of the trading parties. 
+
+Large issues exist in legacy systems and legacy markets especially as it pertains to the freight industry. 
+
+\section{Network Topology and Reward Constraints}
+
+
+
+\section{FreightCX}
+
+
+FreightCX - A Smart Marketplace for Freight and Deliverable Commodities 
+
+FreightCX is composed of 3 constitute parts: an order book auction facility, reverse auction facility, and a bundling facility.
+
+General Outline
+
+\begin{itemize}
+\item Discrete Batch Auction
+\item Bundled Bidding
+\item Composable Instruments
+\item Combinatorial Auction Facility
+\item Reverse Auction Facility
+\item Finance Facility
+\item Index Linked Contracts
+\item Forward Contracts with Embedded Volumetric Optionality
+\item Optimizations for [bundling]
+\end{itemize}
+    
+ 
+\section{Terms}
+
+Facility
+Instrument
+Contract
+Clearinghouse
+Bundle
+
+Specialist
+Market Maker
+
+Fill ratio: fill ratio and price variation metrics on limit orders are interlinked and related
+ to price volatility, thus target fill ratio can be achieved at the cost of reduced price
+ improvement by applying ‘tolerance’.
+
+Price variation: purely driven by market dynamics, both price improvement and slippage on
+ limit orders are passed fully and transparently to the buy-side.
+
+Hold time: lack of discretionary latency eliminates one of the most significant hidden
+ opportunity costs of ‘last look’, delivering consistently low latency execution.
+
+Bid-offer spread: price discovery through executable pricing ensures transparency of real
+ market conditions.
+
+- Market impact: no ‘last look’ execution eliminates the risk of pre-trade information leakage or disadvantageous price changes ahead of full order execution.
+
+Slippage: The difference between the ave
+\textbf{Incentive compatible (IC)}, in which case an agent’s dominant strategy
+is to simply report its private information truthfully
+
+\textbf{Individually rational (IR} that is no agent would pay more than its valuation for the goods it receives.
+
+\textbf{Budget balanced (BB)} (the auction does not lose money)
+
+\textbf{Trade Reduction allocation}
+
+\textbf{Threshold Rule}: Each agent receives a discount
+\[max (0, b - (x + C))  , C > 0`\]
+
+\section{Legal Parity}
+
+	In order to properly reproduce the same \textit{functionality} of a paper-based document electronically, we must  Functional equivalence of possession is achieved when a reliable method is employed to establish control of that record by a person and to identify the person in control. 
+
+	The notion of control when used as a substitute for possession requires a reliable method for identifying the current party in control of a specific electronic record as the said notion typically focuses on the identity of the person entitled to enforce the rights embodied in the electronic transferable record. The method of identification may be accomplished through a closed system, or through an open system. Under the draft model law, the notion of original and uniqueness has been connected to control. Emphasis has been given to reliably ensure that the claim may be presented to the debtor only once. 
+
+	For example. an indicative list of transferable documents or instruments includes: bills of exchange, cheques, promissory notes, consignment notes, bills of lading, warehouse receipts, cargo insurance certificates and air waybills.
+
+\subsection{Negotiable Bills of Lading}
+A common carrier issuing a negotiable bill of lading has a lien on the goods covered by the bill for—
+
+1. Charges for storage, transportation, and delivery including demurrage and terminal charges,, and expenses necessary to preserve the goods or incidental to transporting the goods after the date of the bill; and
+
+\(2\) other charges for which the bill expressly specifies a lien is claimed to the extent the charges are allowed by law and the agreement between the consignor and carrier.
+
+\textbf{ Negotiable Bills}
+
+(1) A bill of lading is negotiable if the bill
+  (A) states that the goods are to be delivered to the order of a consignee; and
+  (B) does not contain on its face an agreement with the shipper that the bill is not negotiable.
+
+(2) Inserting in a negotiable bill of lading the name of a person to be notified of the arrival of the goods—
+
+  (A) does not limit its negotiability; and
+  (B) is not notice to the purchaser of the goods of a right the named person has to the goods.
+
+ \textbf{Nonnegotiable Bills}
+
+  (1) A bill of lading is nonnegotiable if the bill states that the goods are to be delivered to a consignee. The endorsement of a nonnegotiable bill does not—
+
+    (A) make the bill negotiable; or
+    (B) give the transferee any additional right.
+
+  (2) A common carrier issuing a nonnegotiable bill of lading must put “nonnegotiable” or “not negotiable” on the bill. This paragraph does not apply to an informal memorandum or acknowledgment.
+
+\footnote{Pub. L. 103–272, § 1(e), July 5, 1994, 108 Stat. 1346.}
+
+
+\subsection{Fields }
+\textbf{Mandatory fields for a bill of lading}
+\begin{enumerate}
+\item Ship From name, address and zip code 
+\item Ship To name, address and zip code 
+\item Bill of Lading Number 
+\item Carrier Name
+\item Carrier SCAC 
+\item Terms
+\item Number of Packages 
+\item Weight Pallets/Slips (Y/N) 
+\item Handling Unit Quantity Type Commodity Description
+\item Trailer Loaded and Counted Indicator
+\item Shipper and Carrier Signatures
+\end{enumerate}
+
+
+\subsection{ Forward Contracting with Embedded Volumetric Optionality}
+
+We take a normal bill of lading and confer additional functionality so that the instrument itself would resemble a bearer forward contract with EVO capability. It is through the enhancement of the existing documents that we are able to deliver capacity in terms of physical movement of goods rather than just purely providing a cash-settlement for contract non-performance. 
+
+\subsection{Example Market utilizing Forward EVO}
+
+In our example we create a derivative off the underlying (principle) instrument, which is inventory warehoused amongst a few retailers.
+
+
+
+\textbf{Functional and legal equivalence provisions for dematerilizing shipping documents}
+
+1. Visually replicate paper bills, preserving the often industry / custom specific layout;
+2. Replicate the function of paper bills, including a party’s ability to issue, endorse, recut or surrender the e-bill;
+3. Replicate the physical transfer of paper bills and, whilst all parties can view an e-bill \(in copy form\), the trading platform restricts access and endorsement to the current lawful holder \(by way of fob and access code\) as the e-bills securely move from one party to the next; and
+
+4. Can be converted into paper bills, allowing them to be finally traded with parties which have not signed up to the ETS platform. However, it is notable that paper bills cannot be converted into e-bills since none of the ETS would be prepared to investigate and effectively warrant the provenance of paper bills and the physical cargo they represent.
+
+ \textbf{Replacement of a transferable document or instrument with an electronic transferable record}
+
+1. An electronic transferable record may replace a transferable document or instrument if a reliable method for the change of medium is used.
+
+2. For the change of medium to take effect, a statement indicating a change of medium shall be inserted in the electronic transferable record.
+
+3. Upon issuance of the electronic transferable record in accordance with paragraphs 1 and 2, the transferable document or instrument shall be made inoperative and ceases to have any effect or validity.
+
+4. A change of medium in accordance with paragraphs 1 and 2 shall not affect the rights and obligations of the parties.
+\footnote{\(Aug. 11, 1916, ch. 313, pt. C, § 11, as added Pub. L. 106–472, title II, § 201, Nov. 9, 2000, 114 Stat. 2065.\) \(a\) }
+
+
+At the request of the depositor of an agricultural product stored or handled in a warehouse licensed under this chapter, the warehouse operator shall issue a receipt to the depositor as prescribed by the Secretary.
+
+\(b\) **Actual storage required**
+
+A receipt may not be issued under this section for an agricultural product unless the agricultural product is actually stored in the warehouse at the time of the issuance of the receipt.
+
+\(c\) **Contents**
+
+Each receipt issued for an agricultural product stored or handled in a warehouse licensed under this chapter shall contain such information, for each agricultural product covered by the receipt, as the Secretary may require by regulation.
+
+\(d\) Prohibition on additional receipts or other documents
+
+\(1\) Receipts
+
+While a receipt issued under this chapter is outstanding and un- canceled by the warehouse operator, an additional receipt may not be issued for the same agricultural product \(or any portion of the same agricultural product\) represented by the outstanding receipt, except as authorized by the Secretary.
+
+
+
+
+\section{Generalized Freight Auction }
+
+Unfortunately, the well-known result of Myerson & Satterthwaite (1983) demonstrates that no exchange can be efficient, budget-balanced (even in the average-case), and individual-rational. This impossibility result holds with or without incentive-compatibility, and even in BayesianNash equilibrium. Instead, one must:
+
+(a) impose BB and IR, and design a fairly efficient but incentive-compatible (or perhaps strategy-proof) scheme.
+
+(b) impose BB and IR, and design a fairly efficient and fairly incentive-compatible scheme
+
+We follow (b), and design a mechanism for combinatorial exchanges (with multi-unit and regular exchanges as special cases) that promotes reasonable truth-revelation and reasonable allocates-efficiency. The mechanism computes the value-maximizing allocation given agent bids, and com
+
+We exploit the fact that, despite the impossibility theorem, it is possible to attain incentive compatibility with any two of the three desirable properties (efficiency, individual rationality, budget balance) in an auction for supply chain formation. To ensure IC, IR and BB, we develop auctions that produce inefficient allocations by design. If this approach seems misguided, we note that the Myerson-Satterthwaite theorem actually states more strongly that the three properties cannot be obtained even in Bayes-Nash equilibrium. Thus, since efficiency loss is inevitable in supply chain formation (assuming BB and IR), we focus on simplifying the agents’ strategic problem by ensuring IC (Babaioff and Walsh 2004)
+
+
+
+
+Clearinghouse Bundling
+
+Rate of Failure acts as corollary towards contract pricing power rating of bidder (carrier)
+Optimize for *stability* 
+
+
+- Market Making 
+
+Rebating 
+
+The market maker in an exchange has two problems to solve:
+winner determination, to determine the trades executed, and pricing, to determine agent payments. A common goal in
+winner-determination is to compute trades that maximize
+surplus, the difference between bid prices and ask prices.2
+These trades implement the efficient allocation with truthful bids.
+
+Double auctions are settings with multiple buyers and sellers. There exist two main institutions for
+double auctions: 
+
+(i) the continuous double auction, which clears continuously,
+
+and 
+
+(ii) the clearinghouse or call auction, which clears periodically. 
+
+We belive the Call Market to be more appropriate when bids and asks are combinatorial because collecting a number of bids before clearing the market can improve the ability to construct useful matches between complex bids and asks. Also it enables us to bundle contracts together for carrier optimization.
+
+The computational aspects of market clearing depends on the market structure [KDL01]. The aspects of market structure that have an impact on winner
+determination are as follows:
+
+### Takeaways
+
+By using combinatorial auctions shippers can reduce their operating costs while protecting carriers from winning lanes that do not fit their networks, thereby improving carriers' operations as well.
+
+Contract (Instrument) Design
+Name
+Type
+Assessment Frequency
+Delivery Period
+Contract Size
+
+\subsection{Bidding Language}  
+
+- divisible bids with price-quantity pairs that specify per-unit prices and
+allow any amount less than specified quantity can be chosen.
+
+- divisible bids with a price schedule, for example volume discounted bids
+
+- - indivisible bids with price-quantity pairs, where the price is for the total
+amount bid and this is to be treated as an all-or-nothing bid.
+
+- bundled bids with price-quantity pairs, where the bid is indivisible and
+the price is over the entire basket of different items and is to be treated
+as an all-or-nothing bid.
+
+- configurable bids for multi-attribute items that allow the bidder to specify
+a bid function sensitive to attribute levels chosen.
+
+
+\section{Freight Contract Pricing}
+
+Services for trucking are based on either long-term contractual agreements or short-term spot market transactions. The underlying dynamics between contract and spot rates for trucking are similar to other financial markets, especially commodities markets such as fuel, metals and gold.  
+
+\section{Contract rates}
+Contract rates, which comprise roughly 80% of the trucking market, are based on an agreement between a shipper of goods and a transportation provider (asset or non-asset based) for a specific origin and destination and an estimated volume. Contracted rates are usually non-binding agreements based on estimated shipping volumes by the shipper and a per-mile rate quoted by the transportation provider. These contracted freight rates can be broken or adjusted at any time by either party and are often referred to as paper rates. 
+
+A common response or protection against price opacity and volatility is the long-term fixed price contract. 
+
+But a recent Freightos Group survey of industry leaders found that fixed price agreements are far from fixed:
+
+75% of forwarders report paying a peak season surcharge to get on the right sailing 
+30% said contracts were regularly subject to re-negotiations
+60% report expecting a seasonal surcharge or BAF to affect their actual price paid
+Carriers report regular breaches of the Minimum Order Quantity agreed to by forwarders in their contracts
+In summary, long term fixed-price shipping tenders/contracts do not protect carriers, freight forwarders or shippers from inevitable market volatility. 
+
+An example of contracted rates would be a consumer packaged goods (CPG) company that ships its products in dry vans from the manufacturing facility to the distribution centers of its wholesale customers. The forecasted volumes of shipments should be predictable with intermittent periods of seasonality. Since the volumes and lanes are consistent, frequent and forecastable, a contracted trucking rate with predictable rates makes the most economic sense for both the company shipping the goods and the transportation provider that is offering capacity.  
+
+Contractual rate agreements vary in length and are customized between shippers, brokers and carriers, but they tend to average three to six months in duration. As trucking market volatility increases, contractual agreements tend to go through a rebidding process by either the shipper or the transportation provider depending on which way spot rates move. 
+
+Contract trucking rates are heavily influenced by recent spot market movements. If spot rates are currently above contract rates, there tends to be upward pressure on current and future contractual rates for as long as this relationship holds. Said differently, spot market rates are a leading indicator for contract rates both to the upside and the downside. In this sense, current contract rates can be thought of as spot rates from the relatively recent past. FreightWaves’ survey data indicates that when spot and contract rates diverge by more than 10 per cent (on a per mile basis) for a one- to three-month period, new contractual agreements are often negotiated in order to mark-to-market the purchased cost of transportation.
+
+\section{Spot rates}
+
+	Spot rates, which make up the remaining 20 per cent of the trucking market, are based on the current supply and demand for trucks and are for one-time or inconsistent load volumes for specific origins and destinations. The spot market is significantly more volatile than the contract market because spot trucking rates are negotiated on a lane-by-lane, load-by-load basis and load specifications can vary wildly. Spot market loads are often same-day loads from shippers who offer loads at inconsistent times or on low traffic, inconsistent lanes. 
+
+\includegraphics[width=10cm]{spot-vol.png}
+
+	An example of a spot market rate would be for a custom equipment manufacturer that ships its custom-designed and fabricated equipment to job sites across the United States. In such a scenario, the volumes are low, timing is inconsistent and the destinations vary. When the equipment is ready for delivery, it then has to be matched with a truck on short notice. The shipper will then purchase the trucking capacity on the spot market and will pay spot rates. 
+
+	Spot market rates are determined by the ratio of the number of loads in the market compared to the number of trucks available to move this freight. When load volumes are high and truck capacity is tight, spot rates tend to rise. Conversely, when load volumes are falling and truck capacity increases (or is held constant), spot rates tend to decline. 
+
+
+\includegraphics[width=10cm]{fbx-vol.png}
+
+\hspace{}
+
+	Every trucking market can be highly volatile when measured across hours, days and weeks because inbound and outbound freight volumes are dynamic and nonlinear.
+
+	Some final factors to consider that often impact both contract and spot rates include the type of commodity being transported (high or low value), the delivery time frame (faster is more expensive), the weight of the freight (heavier is more expensive), the specialization required by the carrier (e.g. transporting wind turbines) and whether the freight is being delivered into a headhaul or backhaul market. The latter characteristic influences pricing per mile as delivering freight into headhaul markets costs less because it is much easier for a carrier to obtain a load after delivery of the original load. On the contrary, delivering freight into a backhaul market is more expensive because carriers often have trouble finding a return load and must deadhead empty miles on the way to their next load. 
+
+\section{Auction Systems }
+This market provides a general framework that allows a truthful dynamic double auction to be constructed from a truthful, single-period (i.e. static) double-auction rule. The auctions constructed by "the market" are truthful, in the sense that the dominant strategy for an agent, whatever the future auction dynamics and bids from other agents, is to report its true value for a trade (negative if selling) and true patience (maximal tolerance for trade delay) immediately upon arrival into the market. We also allow for randomized mechanisms and, in this case, require strong truthfulness: the DA should be truthful for all possible random
+coin flips of the mechanism. One of the DAs in the class of auctions implied by "the market" is a dynamic generalization of McAfee’s (1992) canonical truthful, no-deficit auction for a single period. Thus, we provide the first examples of truthful, dynamic DAs that allow for dynamic price competition between buyers and sellers.1
+
+
+
+\section{Matching}
+
+For example, differences between asset value based on an accounting rule and economic value will change the optimal trade price, which is the benchmark when market participants wish to trade, and thus may, as a result, affect the price discovery process. Regulations concerning investor’s trading behaviour and tax systems have similar effects. In addition, when some market participants in the stock market have private information on individual stock prices, market expectations about future stock prices may vary because of such information asymmetry.
+
+ To state this more practically, when an investor tries to decide whether or not to trade in a specific market, the investor will, regardless of whether he explicitly calculates or not, compare the costs and benefits of executing the trade with that of other economic activities – trading in the futures market instead of the cash market, trading different issues, and trading stocks instead of corporate bonds, etc. –, and make a decision that by executing the trade he is considering he will maximise his net benefit under his own budget constraint.
+
+\section{Order-Driven Market}
+In order driven markets, buyers and sellers post the prices and amounts of the securities they wish to trade by themselves rather than through a middleman like a quote-driven market.
+
+Most order-driven markets are based on an auction process, where buyers are looking for the lowest prices and sellers are looking for the highest prices. A match between these two parties results in a trade execution. Order execution in this market structure is not guaranteed as traders are not required to meet the bid or ask prices they quote. Price discovery is determined by the limit order of traders in the particular security/instrument. 
+
+\section{Discrete Batch Auction}
+
+General Principles
+Time is treated as \textbf{discrete}, not \textit{continuous}
+Orders are processed in \textbf{batch}, not \textit{serial}
+
+The trading day is divided into equal-length discrete batch intervals, each of length 
+\[τ > 0.\]
+During the batch interval traders submits bids and asks Can be freely modified, withdrawn, etc. I If an order is not executed in the batch at time t, it automatically carries over for t + 1,t + 2, . . . , I At the end of each interval, the exchange batches all of the outstanding orders, and computes market-level supply and demand curves
+
+- If supply and demand intersect, then all transactions occur at the same market-clearing price (uniform price)
+
+- Priority: still price-time, but treat time as discrete. Orders submitted in the same batch interval have the same priority. Rationing is pro-rata.
+
+- Information policy: orders are not visible during the batch interval. Aggregate demand and supply are announced at the end.
+
+- Discrete time analogue of current practice in the continuous limit order book market
+
+
+\section{Auction Price Determination}
+
+The auction price is determined on the basis of the order book situation stipulated at the end of the call
+phase. Concerning the price determination in auctions, Iceberg orders are contributing with their overall
+volume like a limit order. Should this process determine more than one limit with the most executable order
+volume and the lowest surplus for the determination of the auction price, the surplus is referred to for further
+price determination:
+
+- The auction price is stipulated according to the highest limit if the surplus for all limits is on the buy side
+(bid surplus)
+
+- The auction price is stipulated according to the lowest limit if the surplus for all limits is on the sell side
+(ask surplus) 
+- If the inclusion of the surplus does not lead to a clear auction price, the reference price is included as
+additional criterion. This may be the case
+- if there is a bid surplus for one part of the limits and an ask surplus for another part (see example 4),
+- if there is no surplus for all limits (see example 5).
+In the first case, the lowest limit with an ask surplus or the highest limit with a bid surplus is chosen for
+further price determination.
+In both cases, the reference price is considered for stipulating the auction price:
+- If the reference price is higher than or equal to the highest limit, the auction price is determined
+according to this limit.
+- If the reference price is lower than or equal to the lowest limit, the auction price is determined according
+to this limit.
+- If the reference price lies between the highest and lowest limit, the auction price equals the reference
+price.
+If only market orders are executable against one another, they are matched at the reference price (see
+example 6).
+An auction price cannot be determined if orders are not executable against one another. In this case, the
+best bid and ask limits (if available) are displayed
+
+## Structure 
+
+Product Assignment Repo (PAR)
+• Products are grouped into PAR
+• Hierarchy is maintained by us (Freight Trust)
+
+Products
+• Instruments are grouped per classification 
+• Instruments are grouped per issuer
+
+Instrument
+• Trade able entities
+• An order refers to buying/selling specified quantities of an instrument
+• Instruments are set up by us (Freight Trust)
+
+### Participants 
+Writer
+Number of Agents
+Action
+Gross Premium
+Net Premium
+Rate
+Expiry Date (blocks)
+Current Price
+Timestamp
+
+\section{Instruments and Contracts } 
+
+
+
+ Forward Contracts
+
+**The primary purpose of a forward contract is to transfer ownership of the
+commodity and not to transfer solely its price risk.**
+
+
+
+> This relates to the laws in the United States of America
+
+
+The CFTC's guidance excludes “forward contracts” from the definition of swap. A
+forward contract is defined as a contract for “any sale of a nonfinancial commodity or security
+for deferred shipment or delivery, so long as the transaction is intended to be physically
+settled.” 7 U.S.C. § 1a(47)(B)(ii). Please see “Understanding Financial Derivatives” for more
+information on forward contracts.
+
+A contract for the deferred shipment of grain where the buyer intends to take delivery would
+fall under this exclusion. The Commissions note in the Final Release that intent to physically
+settle is an important element of this analysis and that assessing intent requires an analysis
+of all facts and circumstances. Final Release at 48228. However, the CFTC provides
+guidance in the Final Release indicating that both parties must be “commercial” entities to
+take advantage of the forward contract exclusion. See generally the Final Release at 48228–
+41. Therefore, a collective investment vehicle such as a hedge fund could not claim that a
+contract based upon gold, for example, was not a swap, even if the hedge fund took delivery
+of the gold.
+
+The CFTC also provides interpretative guidance that the forward contract exclusion from the
+swap definition will apply to environmental commodities, such as emissions allowances,
+carbon offsets, or renewable energy certificates, provided that the commodity can be
+physically delivered and consumed, and that the transaction is intended to be physically
+settled. See generally the Final Release at 48233–35; Final Release at 48234, n.281.
+
+### Forward Contracts with Embedded Options
+The CFTC has extended the forward contract exclusion to forward contracts with embedded
+nonfinancial commodity options, while reaffirming that commodity options by themselves are
+included in the statutory swap definition. Final Release at 48236–38.
+In the Final Release, the CFTC stated that a forward contract with an embedded commodity
+option (typically as a mechanism to adjust the price) will be considered an excluded forward
+contract (and not a swap) so long as the embedded option satisfies the following three-part
+test:
+• does not undermine the overall nature of the contract as a forward contract;
+• does not target the delivery term, so that the predominant feature of the contract is actual
+delivery; and
+• cannot be severed and marketed separately from the forward contract (it must be traded
+together with the forward contract).
+
+> Final Release at 48237–38.
+
+#### Forward EVO's
+
+Principles that must be adhered to:
+
+The embedded optionality does not undermine the overall nature of the
+agreement, contract, or transaction as a forward contract;
+2. The predominant feature of the agreement, contract, or transaction is actual
+delivery;
+3. The embedded optionality cannot be severed and marketed separately from the
+overall agreement, contract, or transaction in which it is embedded;
+4. The seller of a nonfinancial commodity underlying the agreement, contract, or
+transaction with embedded volumetric optionality intends, at the time it enters into the
+agreement, contract, or transaction to deliver the underlying nonfinancial commodity if
+the embedded volumetric optionality is exercised;
+5. The buyer of a nonfinancial commodity underlying the agreement, contract or
+transaction with embedded volumetric optionality intends, at the time it enters into the
+agreement, contract, or transaction, to take delivery of the underlying nonfinancial
+commodity if the embedded volumetric optionality is exercised;
+6. Both parties are commercial parties; and
+7. The embedded volumetric optionality is primarily intended, at the time that the
+parties enter into the agreement, contract, or transaction, to address physical factors or
+regulatory requirements that reasonably influence demand for, or supply of, the
+nonfinancial commodity.
+
+##### Pro-rata allocation
+The allocated quantity of the incoming order is shared amongst all book orders at the best price. The allocation is proportional to the size of each book order. All book orders at the best price are considered in the allocation. The allocation method first sorts the eligible orders by their open quantity, orders with larger open quantity coming first. If there are orders with the same open quantity, these are then sorted between them by their time priority, orders with an older time priority stamp preceding those with a newer priority time stamp.
+
+##### Time-pro-rata allocation
+The price best orders are sequenced by their time priority. Orders with a higher time priority receive a higher matched quantity compared to the pro-rata allocation at the expense of orders with a lower time priority. Compared to the time allocation, orders with a high time priority receive a lower matched quantity. Depending on the specific order book situation, it may be possible that not all price best orders are considered for execution and, consequently, the number of orders considered by the time-pro-rata allocation is smaller compared to the pro-rata allocation.
+
+
+<! In Progress >
+
+The purpose of this document is to describe electronic trading of instruments in the Continuous Auction
+trading models. Documentation on electronic trading of instruments in the trading model ‘Continuous
+Trading in Connection with Auctions’ (‘Market Model Equities’).
+
+
+The market model defines the principles of order matching and price determination as implemented in the
+trading system FreightCX. This includes the available trading models, the prioritization of orders, the different
+order types and the transparency, i.e. the type and the extent of information available to market participants
+during trading hours. It represents the current implementation status.
+
+The ultimate and legally binding terms for trading at FreightCX are laid down in the
+Rules and Regulations of the exchange and network ("The" Rulebook).
+
+The market model serves as a basis for the Rules and Regulations which, nevertheless, may contain additional terms and in particular may exclude or restrict the use of order and quote types described in this market model.
+
+## The Market Model
+
+#### Fundamental Principles of the Market Model
+
+The following fundamental principles for trading in the Continuous Auction trading models were determined
+in the process of designing the market model:
+1. Instruments  can either be traded in the trading model ‘Continuous Auction with Market Maker’ or
+‘Continuous Auction with Specialist’.
+2. Trading is anonymous, i.e., market participants cannot identify which market participant entered an
+order pre-execution. Only the Specialist is able to identify the originator of an order.
+3. All order sizes can be traded in both trading models.
+4. The order is valid for a maximum of 360 calendar days (including the current day) from the date of
+entry.
+5. Stop limit and stop market orders are supported. Furthermore, Trailing-Stop Orders, One-cancelsother Orders and Order-on-event are supported.
+6. In trading model ‘Continuous Auction with Specialist’ members can enter quote requests which
+will in turn be answered by the Specialist with a response. Sender of the quote request may
+answer this response by entering a binding order.
+7. Depending on the trading model during the main trading phase the Specialist or Market Maker
+provides quotes to the market. Specialist/Market Maker quotes can be modified or deleted (only
+valid for standard quotes and indicative quotes). Specialist/Market Maker quotes might have a
+volume equal to or greater than zero, have to be double sided and must bear a limit on the bid side
+of higher than zero. The limit on the ask side can only be equal to or higher than the limit on the
+bid side.
+8. Depending on the trading model there is exactly one Specialist/Market Maker per instrument.
+9. Order book transparency can vary for particular groups of securities and furthermore depends on the
+respective trading phase or auction phase. For market participants the order book can be partially
+closed or open.
+10. The Specialist is able to enter orders (and quotes) on own behalf and on behalf of other trading
+participants (in instruments assigned to him).
+11. In both trading models there is always exactly one price in an instrument at one point of time.
+12. Depending on the trading model prices are determined only within or at the Specialist/Market Maker
+quote according to the modified principle of highest executable volume.
+13. Price determination: If there are several possible limits with the same surplus on the bid and the ask
+side or with no surplus on hand, the midpoint of the possible prices is taken into account as an
+additional criterion.
+14. Orders in the order book are executed according to price/time priority.
+15. After price determination the Market Maker quote is not deleted. Remaining parts of the quote stay
+in the order book. In the Specialist model the (matching) quote is deleted after price determination.
+16. Trade confirmations are disseminated immediately after the respective trade.
+17. During post-trading phase the order book is closed for market participants.
+18. The accounting cut off is carried out daily subsequent to the post-trading phase.
+
+\subsection{ Market Segments }
+A trading segment consists of a specific number of instruments for which trading is organized in the same
+way. Certain parameters of the market model concerning trading model, order book transparency, trading
+times etc. can be configured for one trading segment. A combination of parameters is selected for each
+trading segment, which specifies the trading process in the respective segment.
+The description at hand is referring to the standard configuration of the trading models. For specific trading
+segments there may be deviations from the norm. 
+
+\subsection{ Market Participants }
+A trading participant in a Continuous Auction Model must meet the requirements for participating in
+exchange trading according to the Rules and Regulations of the Frankfurt Stock Exchange. It must also be
+guaranteed that transactions are settled properly by the trading participant or a clearing member has been
+commissioned to settle the trades of the trading participant.
+The users of the system can be divided into several categories:
+
+
+\subsection{Traders}
+
+Traders are individuals admitted for exchange trading. A trader can act as agent trader (account “A”)
+or as proprietary trader (account “P”). Orders will be flagged accordingly
+\subsection {Market Makers }
+In the trading model ‘Continuous Auction with Market Maker’, the Market Makers are admitted to
+exchange trading. In addition to traders the Market Makers participate as liquidity providers by
+entering binding quotes into the system (“Market Maker”, account “I”).
+
+####  Specialists
+In the trading model ‘Continuous Auction with Specialist’, the Specialists are admitted for exchange
+trading and participate as information and liquidity providers by entering quotes into the system
+(“Specialist”, account “I”). These quotes are based on the current order book situation and might in
+addition be based on the defined reference markets (if available). In addition the Specialist is able to
+enter orders on behalf of other trading participants.
+#### Other Users
+Administrators are users which are not admitted or authorized for trading (they assign and maintain
+authorization rights for the member’s personnel). This category also includes personnel in
+settlement, operation and supervision as well as information users.
+
+
+##
+Cash market – trading models and services
+Transparent, fair trading models
+
+## Market Model
+A trading or market model describes the process by which orders are transformed into transactions. High liquidity, continuous innovation and a maximum of security characterise our trading models.
+
+## Time Point
+
+A "Point in Time" generally, but specifically the UTC hour:day:min:sec of when a block was committed to the chain. 
+
+\subsection{ Continuous auction with a Specialist }
+Continuous auction with a Specialist begins with the pre-call phase, which is followed by a freeze phase. Pricing then takes place. During the pre-call phase all market members can place, change and delete orders. Furthermore, the Specialist can place, change and delete orders.
+
+During the freeze phase, the order book is frozen. During the freeze phase, the system collects order inputs, changes and deletions in a “suspended portfolio” until the freeze is lifted, whereupon they are immediately processed.
+
+During the freeze phase, the Specialist can place, change and delete orders in his own name or for other market participants
+
+
+\section{Orders}
+
+What is an "Order"
+
+checking the target market is open to take orders
+checking the order is valid for that market
+choosing the right matching policy for the type of order
+sequencing the order so that each order is matched at the best possible price and matched with the right liquidity
+creating and publicizing the trades made as a consequence of the match
+updating prices based on the new trades
+
+
+## Order Types
+
+### Limit Order
+
+Limit orders include a specified price limit, and may not be executed at a price worse than that limit. These orders are used in all markets and have a duration attached to them, which defines their validity.
+
+Good-for-day (GFD) is also known as a day order. All orders are assumed to be GFD unless otherwise specified. The validity of a GFD order ends at the close of that day's trading period. 
+Good-till-cancelled (GTC) is also known as an open order in some markets. This order remains valid until it is executed, it is cancelled, or the contract expires. All orders are automatically cancelled one year after entry.
+Good-till-date (GTD) is similar to GTC but carries a specified date up to one year from entry on which the order is automatically cancelled.
+Immediate-or-cancel (IOC) is to be filled immediately, either completely or to the extent possible; the portion that cannot be filled immediately is cancelled.
+
+
+#### Market Order 
+
+Market orders are not visible in the order book for any market participant and have no specific price limit, but are matched to the best available contra-side bid or offer. For example, a market that is twelve bid and fourteen offered will fill market orders to sell at twelve and market orders to buy at fourteen. Market orders are possible for both futures and options, but are not supported for strategies and futures calendar spreads.
+
+
+
+Closing Auction Market Order
+
+Book-or-Cancel Order
+
+### Stop Market Order 
+A stop order is an order that is initially inactive. It is not able to match and it is not included in the public market data. When the market reaches the price level that is given by the stop price of the stop order, then the stop order is triggered, i.e. it is converted to an active regular order and, if possible, matched according to the rules for incoming regular orders.
+
+A buy stop order is normally placed at a stop price above the current market price, and a sell stop order is normally placed at a stop price below the current market price.
+
+There is no guarantee that a triggered stop order is matched immediately after it is triggered. It is treated just as any incoming regular order and will be placed on the order book, if it cannot be matched.
+
+Stop orders are often referred to as stop-loss orders in that they are often used to protect a trader's position from deteriorating beyond a certain point and stopping further loss.
+
+\section{Token Mechanics and Utility }
+\subsection{Token Utility}
+
+EDI Token is an inter-network token used to redeem (by staking or hosting a node) block rewards. The Freight Trust Native Chain asset is not tradable, only $EDI is.
+Use Case Overview
+- Transactions (EDI transaction sets)
+
+- Wallet Staking
+	- 3rd Party Service Provider (To Customers to submit Transactions)
+	- Direct end-user
+    
+- Node Hosting
+	- Master Nodes
+	- Side Chains
+	- Token Bridge
+
+- Markets
+	- Creation of "Bundle Orders"
+    - Paying of \textit{funding rate
+    - }
+
+\subsection{Token Design}
+EDI Token is designed to enable our blockchain network to operate within the confines of our rulebook. xEDI is the *Native* asset whereas EDI is the \textbf{ERC-20 asset}  
+
+
+\subsection{Token Economics}
+
+- Maximum Supply: 611,029,679
+- Circulating Supply: 428,358,825
+- Initial Supply: 151,113,902
+
+\subsection{EDI Transactions on-chain} 
+
+This is a sample EDI Transaction for 211 Transaction Set (Motor Carrier Bill of Lading), contract interaction would be parsed differently to interact with the NFT Protocol 
+
+xEDI is a unit value that quantifies the work that contracts, addresses, and applications can do on the Freight Trust Network. 
+
+xEDI is similar to 'Gas' for Ethereum.
+So think of it the same way as Gas Price multiplied by Gas Limit gives you your transaction cost.
+Keeps transactions from being too expensive by separating transaction cost from the cost of EDI.
+
+
+
+\bibliographystyle{plain}
+\bibliography{references}m
+\end{document}
