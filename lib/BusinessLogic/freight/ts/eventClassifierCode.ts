@@ -1,5 +1,3 @@
-
-
 /**
  * Code for the event classifier, either PLN, ACT or EST.
  */

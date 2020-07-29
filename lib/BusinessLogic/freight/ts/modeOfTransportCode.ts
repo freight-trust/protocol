@@ -1,5 +1,3 @@
-
-
 /**
  * A code specifying a type of transport mode.
  */

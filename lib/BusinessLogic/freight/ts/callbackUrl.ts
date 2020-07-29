@@ -1,5 +1,3 @@
-
-
 /**
  * Your server, where the API server should send the event data
  */

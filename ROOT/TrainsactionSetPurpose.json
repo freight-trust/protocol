@@ -1,9 +1,8 @@
 {
-"TransactionSetPurpose":
-    [
-        "Original",
-        "Cancellation",
-        "Change",
-        "OriginalNoResponseNecessary"
-    ]
+  "TransactionSetPurpose": [
+    "Original",
+    "Cancellation",
+    "Change",
+    "OriginalNoResponseNecessary"
+  ]
 }

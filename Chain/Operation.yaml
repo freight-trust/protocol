@@ -23,7 +23,7 @@ required:
   - status
 properties:
   operation_identifier:
-    $ref: 'OperationIdentifier.yaml'
+    $ref: "OperationIdentifier.yaml"
   related_operations:
     description: |
       Restrict referenced related_operations to identifier indexes
@@ -34,7 +34,7 @@ properties:
       in a single transfer or linking operations in a call tree.
     type: array
     items:
-      $ref: 'OperationIdentifier.yaml'
+      $ref: "OperationIdentifier.yaml"
     example:
       - index: 0
         operation_identifier:
@@ -56,9 +56,9 @@ properties:
     type: string
     example: "Reverted"
   account:
-    $ref: 'AccountIdentifier.yaml'
+    $ref: "AccountIdentifier.yaml"
   amount:
-    $ref: 'Amount.yaml'
+    $ref: "Amount.yaml"
   metadata:
     type: object
     example:

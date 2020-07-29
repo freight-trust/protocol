@@ -1,38 +1,54 @@
 [
-    {
-        "LEI": { "$": "254900C9UJMDGJ0ILK56" },
-        "Entity": {
-            "LegalName": { "$": "FreightTrust and Clearing, Inc." },
-            "OtherEntityNames": { "OtherEntityName": [{ "@type": "TRADING_OR_OPERATING_NAME", "$": "Freight Trust and Clearing" }] },
-            "LegalAddress": {
-                "FirstAddressLine": { "$": "c/o ROCKET LAWYER CORPORATE SERVICES LLC" },
-                "AdditionalAddressLine": [{ "$": "2035 SUNSET LAKE RD" }, { "$": "SUITE B-2" }],
-                "City": { "$": "NEWARK" },
-                "Region": { "$": "US-DE" },
-                "Country": { "$": "US" },
-                "PostalCode": { "$": "19702" }
-            },
-            "HeadquartersAddress": {
-                "FirstAddressLine": { "$": "1424 4th St Ste 214" },
-                "AdditionalAddressLine": [{ "$": "PMB 1513" }],
-                "City": { "$": "Santa Monica" },
-                "Region": { "$": "US-CA" },
-                "Country": { "$": "US" },
-                "PostalCode": { "$": "90401" }
-            },
-            "RegistrationAuthority": { "RegistrationAuthorityID": { "$": "RA000602" }, "RegistrationAuthorityEntityID": { "$": "7650005" } },
-            "LegalJurisdiction": { "$": "US-DE" },
-            "LegalForm": { "EntityLegalFormCode": { "$": "XTIQ" } },
-            "EntityStatus": { "$": "ACTIVE" }
-        },
-        "Registration": {
-            "InitialRegistrationDate": { "$": "2020-05-11T11:47:13.761Z" },
-            "LastUpdateDate": { "$": "2020-05-11T11:47:13.761Z" },
-            "RegistrationStatus": { "$": "ISSUED" },
-            "NextRenewalDate": { "$": "2021-05-11T11:47:13.761Z" },
-            "ManagingLOU": { "$": "5493001KJTIIGC8Y1R12" },
-            "ValidationSources": { "$": "FULLY_CORROBORATED" },
-            "ValidationAuthority": { "ValidationAuthorityID": { "$": "RA000602" }, "ValidationAuthorityEntityID": { "$": "7650005" } }
-        }
+  {
+    "LEI": { "$": "254900C9UJMDGJ0ILK56" },
+    "Entity": {
+      "LegalName": { "$": "FreightTrust and Clearing, Inc." },
+      "OtherEntityNames": {
+        "OtherEntityName": [
+          {
+            "@type": "TRADING_OR_OPERATING_NAME",
+            "$": "Freight Trust and Clearing"
+          }
+        ]
+      },
+      "LegalAddress": {
+        "FirstAddressLine": { "$": "c/o ROCKET LAWYER CORPORATE SERVICES LLC" },
+        "AdditionalAddressLine": [
+          { "$": "2035 SUNSET LAKE RD" },
+          { "$": "SUITE B-2" }
+        ],
+        "City": { "$": "NEWARK" },
+        "Region": { "$": "US-DE" },
+        "Country": { "$": "US" },
+        "PostalCode": { "$": "19702" }
+      },
+      "HeadquartersAddress": {
+        "FirstAddressLine": { "$": "1424 4th St Ste 214" },
+        "AdditionalAddressLine": [{ "$": "PMB 1513" }],
+        "City": { "$": "Santa Monica" },
+        "Region": { "$": "US-CA" },
+        "Country": { "$": "US" },
+        "PostalCode": { "$": "90401" }
+      },
+      "RegistrationAuthority": {
+        "RegistrationAuthorityID": { "$": "RA000602" },
+        "RegistrationAuthorityEntityID": { "$": "7650005" }
+      },
+      "LegalJurisdiction": { "$": "US-DE" },
+      "LegalForm": { "EntityLegalFormCode": { "$": "XTIQ" } },
+      "EntityStatus": { "$": "ACTIVE" }
+    },
+    "Registration": {
+      "InitialRegistrationDate": { "$": "2020-05-11T11:47:13.761Z" },
+      "LastUpdateDate": { "$": "2020-05-11T11:47:13.761Z" },
+      "RegistrationStatus": { "$": "ISSUED" },
+      "NextRenewalDate": { "$": "2021-05-11T11:47:13.761Z" },
+      "ManagingLOU": { "$": "5493001KJTIIGC8Y1R12" },
+      "ValidationSources": { "$": "FULLY_CORROBORATED" },
+      "ValidationAuthority": {
+        "ValidationAuthorityID": { "$": "RA000602" },
+        "ValidationAuthorityEntityID": { "$": "7650005" }
+      }
     }
+  }
 ]

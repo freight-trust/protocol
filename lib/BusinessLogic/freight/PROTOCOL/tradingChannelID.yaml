@@ -1,8 +1,8 @@
+tradingChannelID:
+  type: object
+  properties:
     tradingChannelID:
-      type: object
-      properties:
-        tradingChannelID:
-          type: string
-          format: namespace
-          example: "urn:namespace:tradingChannelID"
-      description: the URN
+      type: string
+      format: namespace
+      example: "urn:namespace:tradingChannelID"
+  description: the URN

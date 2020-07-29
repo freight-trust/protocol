@@ -1,54 +1,60 @@
 {
-    "UNB": {
-        "SYNTAXIDENTIFIER_1": {
-            "SyntaxIdentifier_1": "UNOB",
-            "SyntaxVersionNumber_2": "1"
-        },
-        "INTERCHANGESENDER_2": {
-            "InterchangeSenderIdentification_1": "SENDER1",
-            "IdentificationCodeQualifier_2": "14",
-            "InterchangeSenderInternalIdentification_3": "ZZUK"
-        },
-        "INTERCHANGERECIPIENT_3": {
-            "InterchangeRecipientIdentification_1": "RECEIVER1",
-            "IdentificationCodeQualifier_2": "1",
-            "InterchangeRecipientInternalIdentification_3": "ZZUK"
-        },
-        "DATEANDTIMEOFPREPARATION_4": {
-            "Date_1": "071101",
-            "Time_2": "1701"
-        },
-        "InterchangeControlReference_5": "131",
-        "ApplicationReference_7": "ORDERS",
-        "AcknowledgementRequest_9": "1",
-        "TestIndicator_11": "1"
+  "UNB": {
+    "SYNTAXIDENTIFIER_1": {
+      "SyntaxIdentifier_1": "UNOB",
+      "SyntaxVersionNumber_2": "1"
     },
-    "Groups": [{
-        "Transactions": [{
-            "UNH": {
-                "MessageReferenceNumber_01": "000000101",
-                "MessageIdentifier_02": {
-                    "MessageType_01": "ORDERS",
-                    "MessageVersionNumber_02": "D",
-                    "MessageReleaseNumber_03": "96A",
-                    "ControllingAgencyCoded_04": "UN"
-                }
-            },
-            "_comment": "... model specific content goes here ...",
-            "UNT": {
-                "NumberofSegmentsinaMessage_01": "38",
-                "MessageReferenceNumber_02": "000000101"
-            },
-            "Model": "Edifact.UN.D96A"
-        }]
-    }],
-    "UNZTrailers": [{
-        "InterchangeControlCount_1": "1",
-        "InterchangeControlReference_2": "131"
-    }],
-    "Result": {
-        "LastIndex": 40,
-        "Details": [],
-        "Status": "success"
+    "INTERCHANGESENDER_2": {
+      "InterchangeSenderIdentification_1": "SENDER1",
+      "IdentificationCodeQualifier_2": "14",
+      "InterchangeSenderInternalIdentification_3": "ZZUK"
+    },
+    "INTERCHANGERECIPIENT_3": {
+      "InterchangeRecipientIdentification_1": "RECEIVER1",
+      "IdentificationCodeQualifier_2": "1",
+      "InterchangeRecipientInternalIdentification_3": "ZZUK"
+    },
+    "DATEANDTIMEOFPREPARATION_4": {
+      "Date_1": "071101",
+      "Time_2": "1701"
+    },
+    "InterchangeControlReference_5": "131",
+    "ApplicationReference_7": "ORDERS",
+    "AcknowledgementRequest_9": "1",
+    "TestIndicator_11": "1"
+  },
+  "Groups": [
+    {
+      "Transactions": [
+        {
+          "UNH": {
+            "MessageReferenceNumber_01": "000000101",
+            "MessageIdentifier_02": {
+              "MessageType_01": "ORDERS",
+              "MessageVersionNumber_02": "D",
+              "MessageReleaseNumber_03": "96A",
+              "ControllingAgencyCoded_04": "UN"
+            }
+          },
+          "_comment": "... model specific content goes here ...",
+          "UNT": {
+            "NumberofSegmentsinaMessage_01": "38",
+            "MessageReferenceNumber_02": "000000101"
+          },
+          "Model": "Edifact.UN.D96A"
+        }
+      ]
     }
+  ],
+  "UNZTrailers": [
+    {
+      "InterchangeControlCount_1": "1",
+      "InterchangeControlReference_2": "131"
+    }
+  ],
+  "Result": {
+    "LastIndex": 40,
+    "Details": [],
+    "Status": "success"
+  }
 }

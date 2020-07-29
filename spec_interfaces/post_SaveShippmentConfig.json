@@ -1,11 +1,11 @@
 {
-    "generateBillOfLading": "<boolean>",
-    "defaultMinutesBetweenTracking": "<integer>",
-    "generateLoadConfirmation": "<boolean>",
-    "id": "<string>",
-    "enabled": "<boolean>",
-    "canManage": "<boolean>",
-    "canDelete": "<boolean>",
-    "defaultTrackingProvider": "<integer>",
-    "sendToAccountingOnDelivery": "<boolean>"
+  "generateBillOfLading": "<boolean>",
+  "defaultMinutesBetweenTracking": "<integer>",
+  "generateLoadConfirmation": "<boolean>",
+  "id": "<string>",
+  "enabled": "<boolean>",
+  "canManage": "<boolean>",
+  "canDelete": "<boolean>",
+  "defaultTrackingProvider": "<integer>",
+  "sendToAccountingOnDelivery": "<boolean>"
 }

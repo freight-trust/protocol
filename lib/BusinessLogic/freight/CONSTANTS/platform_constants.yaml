@@ -14,14 +14,14 @@ components:
         - code
     Account:
       allOf:
-        - $ref: '#/components/schemas/PatchAccount'
+        - $ref: "#/components/schemas/PatchAccount"
         - type: object
           properties:
             accountId:
               type: string
             contact:
               allOf:
-                - $ref: '#/components/schemas/Contact'
+                - $ref: "#/components/schemas/Contact"
               required:
                 - email
           required:
@@ -35,18 +35,18 @@ components:
         contractLineItems:
           type: array
           items:
-            $ref: '#/components/schemas/ContractLineItem'
+            $ref: "#/components/schemas/ContractLineItem"
         startDate:
           type: string
         endDate:
           type: string
       example:
-        contractHeaderId: '9998'
+        contractHeaderId: "9998"
         contractLineItems:
-          - contractLineId: '1'
+          - contractLineId: "1"
             productId: SR41101
-        startDate: '2018-06-07'
-        endDate: '2019-06-06'
+        startDate: "2018-06-07"
+        endDate: "2019-06-06"
       required:
         - contractHeaderId
         - contractLineItems
@@ -59,7 +59,7 @@ components:
         productId:
           type: string
       example:
-        contractLineId: '1'
+        contractLineId: "1"
         productId: SR41101
     Usage:
       properties:
@@ -68,13 +68,13 @@ components:
         nextPage:
           type: string
         requestParameters:
-          $ref: '#/components/schemas/RequestParameters'
+          $ref: "#/components/schemas/RequestParameters"
         summary:
-          $ref: '#/components/schemas/Summary'
+          $ref: "#/components/schemas/Summary"
         containers:
           type: array
           items:
-            $ref: '#/components/schemas/Container'
+            $ref: "#/components/schemas/Container"
     Summary:
       properties:
         total:
@@ -206,13 +206,13 @@ components:
       example:
         associatedCarrierName: Carrier123
         associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
-        code: '11111111111'
+        code: "11111111111"
         name: CustomerA-B
         address: 1111 Main St.
-        postalCode: '11111'
+        postalCode: "11111"
         city: Somecity
         country: Somecountry
-        masterId: '12345678'
+        masterId: "12345678"
         masterName: CustomerA
         orgId: 2b061469-c35a-4725-986f-74043736f61a
         recordId: 96dc9d0f-034d-4138-8490-6f31ca8bd99a
@@ -256,39 +256,39 @@ components:
       example:
         associatedCarrierName: Carrier123
         associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
-        code: '11111111111'
+        code: "11111111111"
         name: CustomerA-B
         address: 1111 Main St.
-        postalCode: '11111'
+        postalCode: "11111"
         city: Somecity
         country: Somecountry
-        masterId: '12345678'
+        masterId: "12345678"
         masterName: CustomerA
     CustomerRecord_CreateInput:
       description: Create/replace customer records request.
       type: array
       items:
-        $ref: '#/components/schemas/CustomerRecord_CreateReplace'
+        $ref: "#/components/schemas/CustomerRecord_CreateReplace"
       example:
         - associatedCarrierName: Carrier123
           associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
-          code: '11111111111'
+          code: "11111111111"
           name: CustomerA-B
           address: 1111 Main St.
-          postalCode: '11111'
+          postalCode: "11111"
           city: Somecity
           country: Somecountry
-          masterId: '12345678'
+          masterId: "12345678"
           masterName: CustomerA
         - associatedCarrierName: Carrier123
           associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
-          code: '22222222222'
+          code: "22222222222"
           name: CustomerA-C
           address: 2222 Main St.
-          postalCode: '22222'
+          postalCode: "22222"
           city: Anothercity
           country: Somecountry
-          masterId: '12345678'
+          masterId: "12345678"
           masterName: CustomerA
     CustomerRecord_CreatedStatus:
       description: Create/replace customer record response status
@@ -301,21 +301,21 @@ components:
       properties:
         customerRecord:
           description: The created customer record
-          $ref: '#/components/schemas/CustomerRecord'
+          $ref: "#/components/schemas/CustomerRecord"
     CustomerRecord_CreatedFailure:
       description: Create/replace customer record success response
       properties:
         error:
           description: The create customer record error info
-          $ref: '#/components/schemas/ErrorResponse'
+          $ref: "#/components/schemas/ErrorResponse"
     CustomerRecord_CreatedOutput:
       description: Create/replace customer records (each one may or may not have succeeded)
       type: array
       items:
-        $ref: '#/components/schemas/CustomerRecord_CreatedStatus'
+        $ref: "#/components/schemas/CustomerRecord_CreatedStatus"
         oneOf:
-          - $ref: '#/components/schemas/CustomerRecord_CreatedSuccess'
-          - $ref: '#/components/schemas/CustomerRecord_CreatedFailure'
+          - $ref: "#/components/schemas/CustomerRecord_CreatedSuccess"
+          - $ref: "#/components/schemas/CustomerRecord_CreatedFailure"
       example:
         - status: 500
           error:
@@ -328,13 +328,13 @@ components:
           customerRecord:
             associatedCarrierName: Carrier123
             associatedCarrierOrgId: 7e341469-c35a-4725-986f-74043736f61a
-            code: '22222222222'
+            code: "22222222222"
             name: CustomerA-C
             address: 2222 Main St.
-            postalCode: '22222'
+            postalCode: "22222"
             city: Anothercity
             country: Somecountry
-            masterId: '12345678'
+            masterId: "12345678"
             masterName: CustomerA
             recordId: a7ed9d0f-034d-4138-8490-6f31ca8bd99a
     CustomerRecord_PatchInput:
@@ -374,10 +374,10 @@ components:
         - type: object
           properties:
             role:
-              $ref: '#/components/schemas/TradePartyEnum'
+              $ref: "#/components/schemas/TradePartyEnum"
             resourceType:
-              $ref: '#/components/schemas/DocumentTypeEnum'
-        - $ref: '#/components/schemas/OperationsMixin'
+              $ref: "#/components/schemas/DocumentTypeEnum"
+        - $ref: "#/components/schemas/OperationsMixin"
     PermissionList:
       type: object
       properties:
@@ -385,8 +385,8 @@ components:
           type: array
           items:
             allOf:
-              - $ref: '#/components/schemas/IdMixin'
-              - $ref: '#/components/schemas/Permission'
+              - $ref: "#/components/schemas/IdMixin"
+              - $ref: "#/components/schemas/Permission"
             required:
               - id
               - role
@@ -562,11 +562,11 @@ components:
       type: object
       properties:
         id:
-          $ref: '#/components/schemas/UUID'
+          $ref: "#/components/schemas/UUID"
     ConsignmentIdOrCBNMixin:
       oneOf:
-        - $ref: '#/components/schemas/ConsignmentIdMixin'
-        - $ref: '#/components/schemas/CarrierBookingNumberMixin'
+        - $ref: "#/components/schemas/ConsignmentIdMixin"
+        - $ref: "#/components/schemas/CarrierBookingNumberMixin"
     OrgIdMixin:
       type: object
       description: The ID of an existing organization
@@ -577,12 +577,12 @@ components:
       type: object
       properties:
         consignmentId:
-          $ref: '#/components/schemas/UUID'
+          $ref: "#/components/schemas/UUID"
     ChannelMemberIdMixin:
       type: object
       properties:
         channelMemberId:
-          $ref: '#/components/schemas/UUID'
+          $ref: "#/components/schemas/UUID"
     CarrierBookingNumberMixin:
       type: object
       properties:
@@ -593,11 +593,11 @@ components:
         operations:
           type: array
           items:
-            $ref: '#/components/schemas/OperationEnum'
+            $ref: "#/components/schemas/OperationEnum"
     DocumentTypeMixin:
       properties:
         documentType:
-          $ref: '#/components/schemas/DocumentTypeEnum'
+          $ref: "#/components/schemas/DocumentTypeEnum"
     Attribute:
       type: object
       properties:
@@ -614,10 +614,10 @@ components:
         attributes:
           type: array
           items:
-            $ref: '#/components/schemas/Attribute'
+            $ref: "#/components/schemas/Attribute"
     QueryDescriptor:
       allOf:
-        - $ref: '#/components/schemas/Descriptor'
+        - $ref: "#/components/schemas/Descriptor"
         - type: object
           properties:
             partial:
@@ -627,14 +627,14 @@ components:
                 statements which _partially match_ the given descriptor
     Entity:
       allOf:
-        - $ref: '#/components/schemas/Descriptor'
+        - $ref: "#/components/schemas/Descriptor"
         - type: object
           properties:
             id:
               type: string
     QueryEntity:
       allOf:
-        - $ref: '#/components/schemas/Entity'
+        - $ref: "#/components/schemas/Entity"
         - type: object
           properties:
             partial:
@@ -643,40 +643,40 @@ components:
                 If set to true, permissions will be returned that result from
                 statements which _partially match_ the given descriptor
     PermissionSubject:
-      $ref: '#/components/schemas/Entity'
+      $ref: "#/components/schemas/Entity"
       example:
         id: org-A
         attributes:
           - name: role
-            value: 'tradeparty:BUYER'
+            value: "tradeparty:BUYER"
           - name: role
-            value: 'tradeparty:SELLER'
+            value: "tradeparty:SELLER"
     PermissionResource:
-      $ref: '#/components/schemas/Entity'
+      $ref: "#/components/schemas/Entity"
       example:
         id: document-BoL-123
         attributes:
-          - name: 'resource:type'
+          - name: "resource:type"
             value: document
-          - name: 'document:type'
+          - name: "document:type"
             value: BILL_OF_LADING
     PermissionQuerySubject:
-      $ref: '#/components/schemas/QueryEntity'
+      $ref: "#/components/schemas/QueryEntity"
       example:
         id: org-A
         attributes:
           - name: role
-            value: 'tradeparty:BUYER'
+            value: "tradeparty:BUYER"
           - name: role
-            value: 'tradeparty:SELLER'
+            value: "tradeparty:SELLER"
     PermissionQueryResource:
-      $ref: '#/components/schemas/QueryEntity'
+      $ref: "#/components/schemas/QueryEntity"
       example:
         id: document-BoL-123
         attributes:
-          - name: 'resource:type'
+          - name: "resource:type"
             value: document
-          - name: 'document:type'
+          - name: "document:type"
             value: BILL_OF_LADING
     PermissionListV2:
       type: array
@@ -686,9 +686,9 @@ components:
           id:
             type: string
           subject:
-            $ref: '#/components/schemas/PermissionSubject'
+            $ref: "#/components/schemas/PermissionSubject"
           resource:
-            $ref: '#/components/schemas/PermissionResource'
+            $ref: "#/components/schemas/PermissionResource"
           action:
             type: array
             items:
@@ -702,42 +702,42 @@ components:
             id: org-A
             attributes:
               - name: role
-                value: 'tradeparty:BUYER'
+                value: "tradeparty:BUYER"
               - name: role
-                value: 'tradeparty:SELLER'
+                value: "tradeparty:SELLER"
           resource:
             id: document-BoL-123
             attributes:
-              - name: 'resource:type'
+              - name: "resource:type"
                 value: document
-              - name: 'document:type'
+              - name: "document:type"
                 value: BILL_OF_LADING
           action:
-            - 'document:read'
+            - "document:read"
         - subject:
             id: org-B
             attributes:
               - name: role
-                value: 'tradeparty:OCEAN_CARRIER'
+                value: "tradeparty:OCEAN_CARRIER"
           resource:
             id: document-BoL-123
             attributes:
-              - name: 'resource:type'
+              - name: "resource:type"
                 value: document
-              - name: 'document:type'
+              - name: "document:type"
                 value: BILL_OF_LADING
           action:
-            - 'document:read'
-            - 'document:upload'
+            - "document:read"
+            - "document:upload"
     PolicyStatement:
       type: object
       properties:
         name:
           type: string
         subject:
-          $ref: '#/components/schemas/Descriptor'
+          $ref: "#/components/schemas/Descriptor"
         resource:
-          $ref: '#/components/schemas/Descriptor'
+          $ref: "#/components/schemas/Descriptor"
         action:
           type: array
           items:
@@ -751,15 +751,15 @@ components:
         subject:
           attributes:
             - name: role
-              value: 'tradeparty:BUYER'
+              value: "tradeparty:BUYER"
         resource:
           attributes:
-            - name: 'resource:type'
+            - name: "resource:type"
               value: document
-            - name: 'document:type'
+            - name: "document:type"
               value: BILL_OF_LADING
         action:
-          - 'document:read'
+          - "document:read"
     RoleMembershipList:
       type: object
       properties:
@@ -774,18 +774,18 @@ components:
         - role
         - members
       example:
-        role: 'tradeparty:CUSTOMS_BROKER'
+        role: "tradeparty:CUSTOMS_BROKER"
         members:
           - usa_customs_broker
           - ita_customs_broker
     Policy:
       type: array
       items:
-        $ref: '#/components/schemas/PolicyStatement'
+        $ref: "#/components/schemas/PolicyStatement"
     Roles:
       type: array
       items:
-        $ref: '#/components/schemas/RoleMembershipList'
+        $ref: "#/components/schemas/RoleMembershipList"
     BasePolicyNode:
       type: object
       properties:
@@ -796,32 +796,32 @@ components:
         attributes:
           type: array
           items:
-            $ref: '#/components/schemas/Attribute'
+            $ref: "#/components/schemas/Attribute"
           example:
-            - name: 'resource:type'
+            - name: "resource:type"
               value: transport_equipment
             - name: channelMemberId
               value: some-test-org
             - name: carrierBookingNumber
               value: d40d7d1d-ef2f-45ad-a166-5b4f73f917ca
         policy:
-          $ref: '#/components/schemas/Policy'
+          $ref: "#/components/schemas/Policy"
         roles:
-          $ref: '#/components/schemas/Roles'
+          $ref: "#/components/schemas/Roles"
         parent:
           type: string
           example: system
           description: ID of parent node
     VersionedBasePolicyNode:
       allOf:
-        - $ref: '#/components/schemas/BasePolicyNode'
+        - $ref: "#/components/schemas/BasePolicyNode"
         - type: object
           properties:
             etag:
-              $ref: '#/components/schemas/Etag'
+              $ref: "#/components/schemas/Etag"
     FullPolicyNode:
       allOf:
-        - $ref: '#/components/schemas/BasePolicyNode'
+        - $ref: "#/components/schemas/BasePolicyNode"
         - required:
             - id
             - properties
@@ -829,7 +829,7 @@ components:
             - roles
     VersionedFullPolicyNode:
       allOf:
-        - $ref: '#/components/schemas/VersionedBasePolicyNode'
+        - $ref: "#/components/schemas/VersionedBasePolicyNode"
         - required:
             - id
             - properties
@@ -841,19 +841,19 @@ components:
         attributes:
           type: array
           items:
-            $ref: '#/components/schemas/Attribute'
+            $ref: "#/components/schemas/Attribute"
         policy:
-          $ref: '#/components/schemas/Policy'
+          $ref: "#/components/schemas/Policy"
         roles:
-          $ref: '#/components/schemas/Roles'
+          $ref: "#/components/schemas/Roles"
         parent:
           type: string
           description: ID of parent node
         etag:
-          $ref: '#/components/schemas/Etag'
+          $ref: "#/components/schemas/Etag"
       example:
         attributes:
-          - name: 'document:type'
+          - name: "document:type"
             value: COMMERCIAL_INVOICE
         etag: 9f8ad38
     Child:
@@ -862,7 +862,7 @@ components:
         id:
           type: string
         etag:
-          $ref: '#/components/schemas/Etag'
+          $ref: "#/components/schemas/Etag"
       required:
         - id
         - type
@@ -879,7 +879,7 @@ components:
               name:
                 type: string
               policy:
-                $ref: '#/components/schemas/Policy'
+                $ref: "#/components/schemas/Policy"
             required:
               - name
               - policy
@@ -887,7 +887,7 @@ components:
             Various policies defined by the organization which may be applied by
             the system under certain circumstances
         etag:
-          $ref: '#/components/schemas/Etag'
+          $ref: "#/components/schemas/Etag"
       required:
         - id
         - policies
@@ -899,20 +899,20 @@ components:
               - subject:
                   attributes:
                     - name: role
-                      value: 'tradeparty:CONSIGNEE'
+                      value: "tradeparty:CONSIGNEE"
                 resource:
                   attributes:
-                    - name: 'document:type'
+                    - name: "document:type"
                       value: BILL_OF_LADING
                 action:
-                  - 'document:read'
+                  - "document:read"
         etag: 01-4923395af
     DocumentOperationEnum:
       type: string
       enum:
-        - 'document:read'
-        - 'document:upload'
-        - 'document:write'
+        - "document:read"
+        - "document:upload"
+        - "document:write"
     Etag:
       type: string
       description: Latest known revision/edit number
@@ -924,13 +924,13 @@ components:
           type: string
           example: 88617827-0ae8-4eb7-84fc-1a7b368b97fb
         permissions:
-          $ref: '#/components/schemas/PermissionListV2'
+          $ref: "#/components/schemas/PermissionListV2"
         attributes:
           type: array
           items:
-            $ref: '#/components/schemas/Attribute'
+            $ref: "#/components/schemas/Attribute"
         etag:
-          $ref: '#/components/schemas/Etag'
+          $ref: "#/components/schemas/Etag"
       required:
         - id
         - permissions
@@ -944,15 +944,15 @@ components:
         success:
           type: boolean
         permissions:
-          $ref: '#/components/schemas/PermissionListV2'
+          $ref: "#/components/schemas/PermissionListV2"
         attributes:
           type: array
           items:
-            $ref: '#/components/schemas/Attribute'
+            $ref: "#/components/schemas/Attribute"
         error:
-          $ref: '#/components/schemas/ErrorResponse'
+          $ref: "#/components/schemas/ErrorResponse"
         etag:
-          $ref: '#/components/schemas/Etag'
+          $ref: "#/components/schemas/Etag"
       required:
         - id
         - success
@@ -963,7 +963,7 @@ components:
         organizations:
           type: array
           items:
-            $ref: '#/components/schemas/Organization'
+            $ref: "#/components/schemas/Organization"
     OrganizationMetadata:
       type: object
       properties:
@@ -974,7 +974,7 @@ components:
           type: string
           description: Org Name
         address:
-          $ref: '#/components/schemas/Address'
+          $ref: "#/components/schemas/Address"
         organizationTypes:
           type: array
           items:
@@ -1001,24 +1001,24 @@ components:
     Organization:
       description: Organization Profile
       allOf:
-        - $ref: '#/components/schemas/OrganizationMetadata'
-        - $ref: '#/components/schemas/OrganizationPreferences'
+        - $ref: "#/components/schemas/OrganizationMetadata"
+        - $ref: "#/components/schemas/OrganizationPreferences"
     Partnership:
       description: Business partner
       allOf:
-        - $ref: '#/components/schemas/PartnerId'
+        - $ref: "#/components/schemas/PartnerId"
         - type: object
           properties:
             status:
-              $ref: '#/components/schemas/StatusEnum'
+              $ref: "#/components/schemas/StatusEnum"
     PartnershipDetails:
       description: Business partner
       allOf:
-        - $ref: '#/components/schemas/PartnerId'
+        - $ref: "#/components/schemas/PartnerId"
         - type: object
           properties:
             status:
-              $ref: '#/components/schemas/StatusEnum'
+              $ref: "#/components/schemas/StatusEnum"
         - type: object
           properties:
             hasReference:
@@ -1034,27 +1034,27 @@ components:
           description: Business partner Id
     NewParternshipRequest:
       allOf:
-        - $ref: '#/components/schemas/PartnerId'
+        - $ref: "#/components/schemas/PartnerId"
         - type: object
           properties:
             references:
               type: array
               items:
-                $ref: '#/components/schemas/OrgReferenceWithoutId'
+                $ref: "#/components/schemas/OrgReferenceWithoutId"
         - required:
             - partnerId
     PartnershipWithOrgReferences:
       allOf:
-        - $ref: '#/components/schemas/Partnership'
+        - $ref: "#/components/schemas/Partnership"
         - type: object
           properties:
             references:
               type: array
               items:
-                $ref: '#/components/schemas/OrgReference'
+                $ref: "#/components/schemas/OrgReference"
     PartnershipWithSystemGenOrgReferences:
       allOf:
-        - $ref: '#/components/schemas/PartnershipDetails'
+        - $ref: "#/components/schemas/PartnershipDetails"
         - type: object
           properties:
             displayName:
@@ -1069,8 +1069,8 @@ components:
               type: array
               items:
                 oneOf:
-                  - $ref: '#/components/schemas/OrgReference'
-                  - $ref: '#/components/schemas/SystemGeneratedOrgReference'
+                  - $ref: "#/components/schemas/OrgReference"
+                  - $ref: "#/components/schemas/SystemGeneratedOrgReference"
     Address:
       type: object
       description: Address
@@ -1112,7 +1112,7 @@ components:
           description: Organization master name
           type: string
         address:
-          $ref: '#/components/schemas/Address'
+          $ref: "#/components/schemas/Address"
     OrgReference:
       allOf:
         - type: object
@@ -1120,7 +1120,7 @@ components:
             id:
               type: string
               description: Reference Id
-        - $ref: '#/components/schemas/OrgReferenceWithoutId'
+        - $ref: "#/components/schemas/OrgReferenceWithoutId"
     SystemGeneratedOrgReference:
       required:
         - code
@@ -1168,7 +1168,7 @@ components:
         organizationId:
           type: string
         requestParameters:
-          $ref: '#/components/schemas/RequestParameters'
+          $ref: "#/components/schemas/RequestParameters"
         summary:
           type: object
           properties:
@@ -1193,11 +1193,11 @@ components:
         nextPage:
           type: number
         requestParameters:
-          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+          $ref: "#/components/schemas/RequestParametersWithPageIndex"
         apiCalls:
           type: array
           items:
-            $ref: '#/components/schemas/BolSearchItem'
+            $ref: "#/components/schemas/BolSearchItem"
     BolSearchItem:
       properties:
         api:
@@ -1432,7 +1432,7 @@ components:
             definition and the definitions field of the schema Contains the
             parent/root type definition and any other child type definitions
             that collectively define the schema for the parent object
-          $ref: '#/components/schemas/Schema'
+          $ref: "#/components/schemas/Schema"
         supportedContentTypes:
           type: array
           description: >-
@@ -1515,7 +1515,7 @@ components:
             definition and the definitions field of the schema Contains the
             parent/root type definition and any other child type definitions
             that collectively define the schema for the parent object
-          $ref: '#/components/schemas/Schema'
+          $ref: "#/components/schemas/Schema"
         supportedContentTypes:
           type: array
           description: >-
@@ -1596,7 +1596,7 @@ components:
           description: Exception Message
         timestamp:
           type: string
-          description: 'timestamp '
+          description: "timestamp "
     OrgMetricsList:
       type: object
       required:
@@ -1606,7 +1606,7 @@ components:
       properties:
         creationTime:
           type: string
-          example: '2018-03-01T13:00:00-0500'
+          example: "2018-03-01T13:00:00-0500"
           description: Time when this query was executed.
         numberOfOrgs:
           type: integer
@@ -1616,7 +1616,7 @@ components:
           type: array
           description: List of metrics for each org that met the filter criteria.
           items:
-            $ref: '#/components/schemas/OrgMetrics'
+            $ref: "#/components/schemas/OrgMetrics"
     OrgMetrics:
       type: object
       required:
@@ -1661,7 +1661,7 @@ components:
             to create port-level subscriptions, for example. This is distinct
             from the business type (shipper, freight forwarder, etc).
           items:
-            $ref: '#/components/schemas/MMORole'
+            $ref: "#/components/schemas/MMORole"
         activeTransportEquipment:
           type: integer
           format: int64
@@ -1704,7 +1704,7 @@ components:
             type: object
             properties:
               value:
-                $ref: '#/components/schemas/TradePartyEnum'
+                $ref: "#/components/schemas/TradePartyEnum"
               display:
                 type: string
                 description: Friendly description of the trade party role
@@ -1730,9 +1730,9 @@ components:
               example:
                 - key: doctype
                   enum:
-                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/0'
-                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/1'
-                    - $ref: '#/components/schemas/DocumentTypeEnum/enum/2'
+                    - $ref: "#/components/schemas/DocumentTypeEnum/enum/0"
+                    - $ref: "#/components/schemas/DocumentTypeEnum/enum/1"
+                    - $ref: "#/components/schemas/DocumentTypeEnum/enum/2"
     SenderOrgId:
       type: string
       example: org-A
@@ -1750,11 +1750,11 @@ components:
         nextPage:
           type: number
         requestParameters:
-          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+          $ref: "#/components/schemas/RequestParametersWithPageIndex"
         containers:
           type: array
           items:
-            $ref: '#/components/schemas/Container'
+            $ref: "#/components/schemas/Container"
     UsageSummary:
       properties:
         total:
@@ -1770,9 +1770,9 @@ components:
         organizationId:
           type: string
         requestParameters:
-          $ref: '#/components/schemas/RequestParameters'
+          $ref: "#/components/schemas/RequestParameters"
         summary:
-          $ref: '#/components/schemas/UsageSummary'
+          $ref: "#/components/schemas/UsageSummary"
     OrgEntitlementsResponse:
       type: array
       items:
@@ -1782,7 +1782,7 @@ components:
           entitlements:
             type: array
             items:
-              $ref: '#/components/schemas/OrgEntitlement'
+              $ref: "#/components/schemas/OrgEntitlement"
         example:
           orgId: testOrgId
           entitlements:
@@ -1796,7 +1796,7 @@ components:
         entitlements:
           type: array
           items:
-            $ref: '#/components/schemas/OrgEntitlement'
+            $ref: "#/components/schemas/OrgEntitlement"
       example:
         entitlements:
           - id: bolVerifier
@@ -1816,7 +1816,7 @@ components:
     OrgEntitlementTypesResult:
       type: array
       items:
-        $ref: '#/components/schemas/EntitlementTypes'
+        $ref: "#/components/schemas/EntitlementTypes"
     EntitlementTypes:
       type: object
       properties:
@@ -1836,7 +1836,7 @@ components:
             type: object
             properties:
               value:
-                $ref: '#/components/schemas/DocumentOperationEnum'
+                $ref: "#/components/schemas/DocumentOperationEnum"
               display:
                 type: string
     ReferenceTypeInfo:
@@ -1949,7 +1949,7 @@ components:
           profile:
             type: object
           items:
-            $ref: '#/components/schemas/UserPreferenceRequest'
+            $ref: "#/components/schemas/UserPreferenceRequest"
       example:
         orgId: testOrgId
         userId: testUserId
@@ -1963,7 +1963,7 @@ components:
           example: John
         prefs:
           type: object
-          $ref: '#/components/schemas/prefs'
+          $ref: "#/components/schemas/prefs"
       required:
         - name
         - prefs
@@ -1975,7 +1975,7 @@ components:
         contacts:
           type: array
           items:
-            $ref: '#/components/schemas/contacts'
+            $ref: "#/components/schemas/contacts"
       required:
         - contacts
     contacts:
@@ -1987,10 +1987,10 @@ components:
             contactType:
               allOf:
                 - description: Contact type.
-                - $ref: '#/components/schemas/ContactTypeEnum'
+                - $ref: "#/components/schemas/ContactTypeEnum"
             contactInfo:
               type: string
-              example: 'https://foo.bar'
+              example: "https://foo.bar"
             nickname:
               type: string
               example: JohnDoe
@@ -2008,7 +2008,7 @@ components:
           example: John
         prefs:
           type: object
-          $ref: '#/components/schemas/PatchPrefs'
+          $ref: "#/components/schemas/PatchPrefs"
       required:
         - prefs
     PatchPrefs:
@@ -2019,7 +2019,7 @@ components:
         contacts:
           type: array
           items:
-            $ref: '#/components/schemas/PatchContacts'
+            $ref: "#/components/schemas/PatchContacts"
       required:
         - contacts
     PatchContacts:
@@ -2034,10 +2034,10 @@ components:
             contactType:
               allOf:
                 - description: Contact type.
-                - $ref: '#/components/schemas/ContactTypeEnum'
+                - $ref: "#/components/schemas/ContactTypeEnum"
             contactInfo:
               type: string
-              example: 'https://foo.bar'
+              example: "https://foo.bar"
             nickname:
               type: string
               example: JohnDoe
@@ -2055,7 +2055,7 @@ components:
           example: John
         prefs:
           type: object
-          $ref: '#/components/schemas/pref'
+          $ref: "#/components/schemas/pref"
     pref:
       properties:
         locale:
@@ -2064,7 +2064,7 @@ components:
         contacts:
           type: array
           items:
-            $ref: '#/components/schemas/contact'
+            $ref: "#/components/schemas/contact"
     contact:
       type: object
       properties:
@@ -2074,10 +2074,10 @@ components:
         contactType:
           allOf:
             - description: Contact type.
-            - $ref: '#/components/schemas/ContactTypeEnum'
+            - $ref: "#/components/schemas/ContactTypeEnum"
         contactInfo:
           type: string
-          example: 'https://foo.bar'
+          example: "https://foo.bar"
         nickname:
           type: string
           example: JohnDoe
@@ -2101,7 +2101,7 @@ components:
           required:
             - code
           items:
-            $ref: '#/components/schemas/OrgReference'
+            $ref: "#/components/schemas/OrgReference"
       required:
         - partnerId
         - references
@@ -2131,17 +2131,17 @@ components:
         nextPage:
           type: number
         requestParameters:
-          $ref: '#/components/schemas/RequestParametersWithPageIndex'
+          $ref: "#/components/schemas/RequestParametersWithPageIndex"
         actions:
           type: array
           items:
-            $ref: '#/components/schemas/EBOLActions'
+            $ref: "#/components/schemas/EBOLActions"
     EBolSearchSummary:
       properties:
         organizationId:
           type: string
         requestParameters:
-          $ref: '#/components/schemas/RequestParameters'
+          $ref: "#/components/schemas/RequestParameters"
         summary:
           type: object
           properties:
@@ -2187,7 +2187,7 @@ components:
                   properties:
                     name:
                       type: string
-                      example: 'resource:type'
+                      example: "resource:type"
                     value:
                       type: string
                       example: document
@@ -2246,7 +2246,7 @@ components:
         type:
           allOf:
             - description: User type.
-            - $ref: '#/components/schemas/UserEnum'
+            - $ref: "#/components/schemas/UserEnum"
         isAdmin:
           type: boolean
           description: set as true if the user has to be added with admin privilages.
@@ -2293,7 +2293,7 @@ components:
         type:
           allOf:
             - description: User type.
-            - $ref: '#/components/schemas/UserEnum'
+            - $ref: "#/components/schemas/UserEnum"
         isAdmin:
           type: boolean
           description: set as true if the user has to be added with admin privilages.
@@ -2312,7 +2312,7 @@ components:
         type:
           allOf:
             - description: User type.
-            - $ref: '#/components/schemas/UserEnum'
+            - $ref: "#/components/schemas/UserEnum"
         isAdmin:
           type: boolean
           description: set as true if the user has to be added with admin privilages.
@@ -2329,14 +2329,14 @@ components:
     GetUsersResponse:
       type: array
       items:
-        $ref: '#/components/schemas/UserProfile'
+        $ref: "#/components/schemas/UserProfile"
     UserProfile:
       type: object
       properties:
         type:
           allOf:
             - description: User type.
-            - $ref: '#/components/schemas/UserEnum'
+            - $ref: "#/components/schemas/UserEnum"
         oid:
           type: string
         uid:
@@ -2378,7 +2378,7 @@ components:
     DeleteUserResponse:
       type: array
       items:
-        $ref: '#/components/schemas/UserProfile'
+        $ref: "#/components/schemas/UserProfile"
     VerificationRequest:
       required:
         - nickname
@@ -2414,11 +2414,11 @@ components:
         userName:
           type: string
         prefs:
-          $ref: '#/components/schemas/prefs'
+          $ref: "#/components/schemas/prefs"
     GetAllUserPreferencesResponse:
       type: array
       items:
-        $ref: '#/components/schemas/GetUserPreferenceResponse'
+        $ref: "#/components/schemas/GetUserPreferenceResponse"
     IssueRetroPartyAdded_event:
       type: object
       required:
@@ -2437,7 +2437,7 @@ components:
             publishing event
         eventSubmissionTime:
           type: number
-          description: 'Time of submission, as the number of milliseconds since Epoch'
+          description: "Time of submission, as the number of milliseconds since Epoch"
         eventSubmissionTime8601:
           type: string
           description: >-
@@ -2503,7 +2503,7 @@ components:
           type: integer
           format: int64
           example: 1583434912493
-          description: 'Timestamp at which the rejected request was submitted, in epoch time'
+          description: "Timestamp at which the rejected request was submitted, in epoch time"
     Response:
       type: object
       required:
@@ -2532,7 +2532,7 @@ components:
         routeType:
           allOf:
             - description: Route Type
-            - $ref: '#/components/schemas/RouteTypeEnum'
+            - $ref: "#/components/schemas/RouteTypeEnum"
           description: Route Type.
         routePartnerRef:
           type: string
@@ -2540,11 +2540,11 @@ components:
         routeOrigin:
           description: unlocode associatied with the route Origin location.
           allOf:
-            - $ref: '#/components/schemas/UnLocode'
+            - $ref: "#/components/schemas/UnLocode"
         routeDestination:
           description: unlocode associatied with the route Destination location.
           allOf:
-            - $ref: '#/components/schemas/UnLocode'
+            - $ref: "#/components/schemas/UnLocode"
       additionalProperties: false
       example:
         routeType: vessel
@@ -2563,18 +2563,18 @@ components:
         routeType:
           description: Route Type.
           allOf:
-            - $ref: '#/components/schemas/RouteTypeEnum'
+            - $ref: "#/components/schemas/RouteTypeEnum"
         routePartnerRef:
           type: string
           description: Partner Ref associatied with the route.
         routeOrigin:
           description: unlocode associatied with the route Origin location.
           allOf:
-            - $ref: '#/components/schemas/UnLocode'
+            - $ref: "#/components/schemas/UnLocode"
         routeDestination:
           description: unlocode associatied with the route Destination location.
           allOf:
-            - $ref: '#/components/schemas/UnLocode'
+            - $ref: "#/components/schemas/UnLocode"
         owningCarrierOrgId:
           type: string
           description: OrgId of the carrier creating the record.
@@ -2620,7 +2620,7 @@ components:
           type: array
           description: List of UN/locodes matching the query.
           items:
-            $ref: '#/components/schemas/EventTypeInfoUnlcodes'
+            $ref: "#/components/schemas/EventTypeInfoUnlcodes"
       required:
         - locations
     EventTypeInfoUnlcodes:
@@ -2628,7 +2628,7 @@ components:
       properties:
         name:
           type: string
-          example: 'Rotterdam, ZH, NL'
+          example: "Rotterdam, ZH, NL"
           description: name xx
         unlocode:
           type: string
@@ -2641,7 +2641,7 @@ components:
       properties:
         code:
           type: string
-          example: '403'
+          example: "403"
           description: HTTP status code
         message:
           type: string
@@ -2649,7 +2649,7 @@ components:
           description: Message describing the status
         timestamp:
           type: string
-          example: '2020-09-13T23:30:52.123Z'
+          example: "2020-09-13T23:30:52.123Z"
           description: time of error
     EventPriority:
       properties:
@@ -2659,7 +2659,7 @@ components:
         priorities:
           type: array
           items:
-            $ref: '#/components/schemas/Priority'
+            $ref: "#/components/schemas/Priority"
     Priority:
       type: object
       properties:
@@ -2675,7 +2675,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     ConflictResponse:
       description: |
         Update conflict, which may occur if concurrent updates are attempted
@@ -2684,7 +2684,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
   parameters:
     AccountIdPathParam:
       in: path
@@ -2816,7 +2816,7 @@ components:
       description: |
         The ID for an existing consignment
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
     CarrierBookingNumberQueryParam:
       name: carrierBookingNumber
       in: query
@@ -2830,14 +2830,14 @@ components:
       description: The code for a supported document type.
       name: documentTypeId
       schema:
-        $ref: '#/components/schemas/DocumentTypeEnum'
+        $ref: "#/components/schemas/DocumentTypeEnum"
       required: true
     DocumentIdPathParam:
       in: path
       description: The ID of the document
       name: documentId
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
       required: true
     TradePartyRolesQueryParam:
       name: role
@@ -2846,7 +2846,7 @@ components:
       schema:
         type: array
         items:
-          $ref: '#/components/schemas/TradePartyEnum'
+          $ref: "#/components/schemas/TradePartyEnum"
     DocumentTypeQueryParam:
       name: documentType
       in: query
@@ -2854,7 +2854,7 @@ components:
       schema:
         type: array
         items:
-          $ref: '#/components/schemas/DocumentTypeEnum'
+          $ref: "#/components/schemas/DocumentTypeEnum"
     DeletedQueryParam:
       name: deleted
       in: query
@@ -2882,13 +2882,13 @@ components:
       schema:
         type: array
         items:
-          $ref: '#/components/schemas/OperationEnum'
+          $ref: "#/components/schemas/OperationEnum"
     UUIDPathParam:
       name: id
       in: path
       description: UUID parameter in path
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
       required: true
     PermissionIdPathParam:
       name: permissionId
@@ -2915,7 +2915,7 @@ components:
       description: Unique identifier of a resource in the TradeLens platform
       name: id
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
       required: true
     TradeLensMultipleEntityIdQueryParam:
       in: query
@@ -2925,7 +2925,7 @@ components:
         type: array
         items:
           type: string
-        example: 'consignment-123,document-xyz'
+        example: "consignment-123,document-xyz"
       required: true
     TradeLensEntityTypeQueryParam:
       in: query
@@ -2962,7 +2962,7 @@ components:
       name: role
       schema:
         type: string
-        example: 'tradeparty:buyer'
+        example: "tradeparty:buyer"
       required: true
     RoleMemberParam:
       in: path
@@ -2977,7 +2977,7 @@ components:
       description: Filter business partner list based on connection status (ignore case)
       name: status
       schema:
-        $ref: '#/components/schemas/StatusEnum'
+        $ref: "#/components/schemas/StatusEnum"
     OrgTypesQueryParam:
       in: query
       description: >-
@@ -2993,9 +2993,9 @@ components:
       schema:
         type: string
         enum:
-          - 'true'
-          - 'false'
-        default: 'false'
+          - "true"
+          - "false"
+        default: "false"
     UnmappedRecordsOnlyQueryParam:
       in: query
       description: Filters unmapped records only
@@ -3003,9 +3003,9 @@ components:
       schema:
         type: string
         enum:
-          - 'true'
-          - 'false'
-        default: 'true'
+          - "true"
+          - "false"
+        default: "true"
     PartnerIdQueryParam:
       in: query
       description: Filter response for a specific partnerId
@@ -3024,14 +3024,14 @@ components:
       description: UUID of partnership
       name: partnershipId
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
       required: true
     RecordIdQueryParam:
       in: query
       description: Filter for a specific recordId
       name: recordId
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
     PartitionRuleIdPathParam:
       in: path
       description: Rule ID is pl_ followed by the ChannelMember Id
@@ -3049,7 +3049,7 @@ components:
         type: string
     OrgRoleQueryParam:
       in: query
-      description: '{org Role}'
+      description: "{org Role}"
       name: orgRole
       required: false
       schema:
@@ -3059,7 +3059,7 @@ components:
           - country
     OrgTypeQueryParam:
       in: query
-      description: '{org Type}'
+      description: "{org Type}"
       name: orgType
       required: false
       schema:
@@ -3081,21 +3081,21 @@ components:
           - 4PL
     OrgAliasQueryParam:
       in: query
-      description: '{org Alias}'
+      description: "{org Alias}"
       name: orgAlias
       required: false
       schema:
         type: string
     ContainerEntryPortQueryParam:
       in: query
-      description: '{container entry port}'
+      description: "{container entry port}"
       name: containerEntryPort
       required: false
       schema:
         type: string
     ContainerExitPortQueryParam:
       in: query
-      description: '{container exit port}'
+      description: "{container exit port}"
       name: containerExitPort
       required: false
       schema:
@@ -3127,7 +3127,7 @@ components:
       name: id
       required: true
       schema:
-        $ref: '#/components/schemas/UUID'
+        $ref: "#/components/schemas/UUID"
     OrgIdEntitlementPathParam:
       in: path
       description: The entitlements assosiated with the orgId.
@@ -3169,7 +3169,7 @@ components:
       name: type
       schema:
         allOf:
-          - $ref: '#/components/schemas/UserEnum'
+          - $ref: "#/components/schemas/UserEnum"
       required: false
     RequiredTypeQueryParam:
       in: query
@@ -3177,7 +3177,7 @@ components:
       name: type
       schema:
         allOf:
-          - $ref: '#/components/schemas/UserEnum'
+          - $ref: "#/components/schemas/UserEnum"
       required: true
     RequiredTypeQueryParamOnlyUser:
       in: query

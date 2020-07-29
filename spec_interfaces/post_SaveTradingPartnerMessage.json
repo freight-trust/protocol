@@ -1,208 +1,208 @@
 {
-    "id": "<string>",
-    "subject": "<string>",
-    "referenceId": "<string>",
+  "id": "<string>",
+  "subject": "<string>",
+  "referenceId": "<string>",
+  "canManage": "<boolean>",
+  "contentType": "<string>",
+  "type": "<integer>",
+  "dispositionNotificationTo": "<string>",
+  "responseStatusCode": "<integer>",
+  "tradingChannelId": "<string>",
+  "canDelete": "<boolean>",
+  "tradingChannel": {
+    "remoteConfigId": "<string>",
     "canManage": "<boolean>",
-    "contentType": "<string>",
-    "type": "<integer>",
-    "dispositionNotificationTo": "<string>",
-    "responseStatusCode": "<integer>",
-    "tradingChannelId": "<string>",
-    "canDelete": "<boolean>",
-    "tradingChannel": {
-        "remoteConfigId": "<string>",
-        "canManage": "<boolean>",
+    "as2ServerId": "<string>",
+    "localConfig": {
+      "id": "<string>",
+      "requestAsyncMdn": "<boolean>",
+      "label": "<string>",
+      "removeCmsAlgorithmProtectionAttrib": "<boolean>",
+      "canManage": "<boolean>",
+      "canDelete": "<boolean>",
+      "url": "<string>",
+      "signedMdn": "<boolean>",
+      "as2Id": "<string>",
+      "renameDigestToOldName": "<boolean>",
+      "certificate": {
+        "alias": "<string>",
         "as2ServerId": "<string>",
-        "localConfig": {
-            "id": "<string>",
-            "requestAsyncMdn": "<boolean>",
-            "label": "<string>",
-            "removeCmsAlgorithmProtectionAttrib": "<boolean>",
-            "canManage": "<boolean>",
-            "canDelete": "<boolean>",
-            "url": "<string>",
-            "signedMdn": "<boolean>",
-            "as2Id": "<string>",
-            "renameDigestToOldName": "<boolean>",
-            "certificate": {
-                "alias": "<string>",
-                "as2ServerId": "<string>",
-                "id": "<string>",
-                "canDelete": "<boolean>",
-                "label": "<string>",
-                "as2Server": {
-                    "canManage": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "certificateStorePassword": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "id": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canImport": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canApplyCertificateStore": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "certificates": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canDelete": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "label": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "name": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "remoteAddress": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    }
-                },
-                "canManage": "<boolean>"
-            },
-            "resendMaxRetries": "<string>",
-            "certificateId": "<string>",
-            "encrypt": "<integer>",
-            "preventCanonicalization": "<boolean>",
-            "email": "<string>",
-            "name": "<string>",
-            "sign": "<integer>"
-        },
-        "canDelete": "<boolean>",
-        "remoteConfig": {
-            "id": "<string>",
-            "requestAsyncMdn": "<boolean>",
-            "label": "<string>",
-            "removeCmsAlgorithmProtectionAttrib": "<boolean>",
-            "canManage": "<boolean>",
-            "canDelete": "<boolean>",
-            "url": "<string>",
-            "signedMdn": "<boolean>",
-            "as2Id": "<string>",
-            "renameDigestToOldName": "<boolean>",
-            "certificate": {
-                "alias": "<string>",
-                "as2ServerId": "<string>",
-                "id": "<string>",
-                "canDelete": "<boolean>",
-                "label": "<string>",
-                "as2Server": {
-                    "canManage": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "certificateStorePassword": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "id": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canImport": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canApplyCertificateStore": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "certificates": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "canDelete": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "label": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "name": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    },
-                    "remoteAddress": {
-                        "value": "<Error: Too many levels of nesting to fake this schema>"
-                    }
-                },
-                "canManage": "<boolean>"
-            },
-            "resendMaxRetries": "<string>",
-            "certificateId": "<string>",
-            "encrypt": "<integer>",
-            "preventCanonicalization": "<boolean>",
-            "email": "<string>",
-            "name": "<string>",
-            "sign": "<integer>"
-        },
-        "as2Config": {
-            "partnerPublicKey": "<string>",
-            "encrypt": "<boolean>",
-            "sign": "<boolean>",
-            "as2Enabled": "<boolean>",
-            "uri": "<string>",
-            "as2Identifier": "<string>"
-        },
-        "uri": "<string>",
-        "name": "<string>",
-        "canGenerateKeys": "<boolean>",
         "id": "<string>",
-        "canInviteNewPartner": "<boolean>",
+        "canDelete": "<boolean>",
         "label": "<string>",
-        "privateKey": "<string>",
-        "publicKey": "<string>",
-        "as2Identifier": "<string>",
         "as2Server": {
-            "canManage": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "certificateStorePassword": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "id": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "canImport": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "canApplyCertificateStore": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "certificates": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "canDelete": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "label": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "name": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            },
-            "remoteAddress": {
-                "value": "<Error: Too many levels of nesting to fake this schema>"
-            }
+          "canManage": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "certificateStorePassword": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "id": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canImport": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canApplyCertificateStore": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "certificates": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canDelete": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "label": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "remoteAddress": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
         },
-        "localConfigId": "<string>",
-        "password": "<string>",
-        "ediConfig": {
-            "currentControlNumber": "<integer>",
-            "requestAck": "<boolean>",
-            "testMode": "<boolean>",
-            "idCode": "<string>",
-            "entityCode": {
-                "id": "<string>",
-                "key": "<string>",
-                "label": "<string>",
-                "canManage": "<boolean>",
-                "canDelete": "<boolean>"
-            },
-            "requiredStatusCodes": "<string>",
-            "mappingProvider": "<integer>",
-            "entityIdentifier": "<string>",
-            "entityCodeId": "<string>"
-        }
+        "canManage": "<boolean>"
+      },
+      "resendMaxRetries": "<string>",
+      "certificateId": "<string>",
+      "encrypt": "<integer>",
+      "preventCanonicalization": "<boolean>",
+      "email": "<string>",
+      "name": "<string>",
+      "sign": "<integer>"
     },
-    "processedOn": "<dateTime>",
-    "responseMessage": "<string>",
-    "status": "<integer>",
-    "content": "<string>"
+    "canDelete": "<boolean>",
+    "remoteConfig": {
+      "id": "<string>",
+      "requestAsyncMdn": "<boolean>",
+      "label": "<string>",
+      "removeCmsAlgorithmProtectionAttrib": "<boolean>",
+      "canManage": "<boolean>",
+      "canDelete": "<boolean>",
+      "url": "<string>",
+      "signedMdn": "<boolean>",
+      "as2Id": "<string>",
+      "renameDigestToOldName": "<boolean>",
+      "certificate": {
+        "alias": "<string>",
+        "as2ServerId": "<string>",
+        "id": "<string>",
+        "canDelete": "<boolean>",
+        "label": "<string>",
+        "as2Server": {
+          "canManage": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "certificateStorePassword": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "id": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canImport": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canApplyCertificateStore": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "certificates": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "canDelete": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "label": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "remoteAddress": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        },
+        "canManage": "<boolean>"
+      },
+      "resendMaxRetries": "<string>",
+      "certificateId": "<string>",
+      "encrypt": "<integer>",
+      "preventCanonicalization": "<boolean>",
+      "email": "<string>",
+      "name": "<string>",
+      "sign": "<integer>"
+    },
+    "as2Config": {
+      "partnerPublicKey": "<string>",
+      "encrypt": "<boolean>",
+      "sign": "<boolean>",
+      "as2Enabled": "<boolean>",
+      "uri": "<string>",
+      "as2Identifier": "<string>"
+    },
+    "uri": "<string>",
+    "name": "<string>",
+    "canGenerateKeys": "<boolean>",
+    "id": "<string>",
+    "canInviteNewPartner": "<boolean>",
+    "label": "<string>",
+    "privateKey": "<string>",
+    "publicKey": "<string>",
+    "as2Identifier": "<string>",
+    "as2Server": {
+      "canManage": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "certificateStorePassword": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "id": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "canImport": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "canApplyCertificateStore": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "certificates": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "canDelete": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "label": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "name": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "remoteAddress": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      }
+    },
+    "localConfigId": "<string>",
+    "password": "<string>",
+    "ediConfig": {
+      "currentControlNumber": "<integer>",
+      "requestAck": "<boolean>",
+      "testMode": "<boolean>",
+      "idCode": "<string>",
+      "entityCode": {
+        "id": "<string>",
+        "key": "<string>",
+        "label": "<string>",
+        "canManage": "<boolean>",
+        "canDelete": "<boolean>"
+      },
+      "requiredStatusCodes": "<string>",
+      "mappingProvider": "<integer>",
+      "entityIdentifier": "<string>",
+      "entityCodeId": "<string>"
+    }
+  },
+  "processedOn": "<dateTime>",
+  "responseMessage": "<string>",
+  "status": "<integer>",
+  "content": "<string>"
 }

@@ -1,4 +1,4 @@
-    transportReference:
-      type: string
-      example: 9648714
-      description: The reference for the transport, e.g. when the mode of transport is a vessel, the transport reference will be the vessel IMO number.
+transportReference:
+  type: string
+  example: 9648714
+  description: The reference for the transport, e.g. when the mode of transport is a vessel, the transport reference will be the vessel IMO number.

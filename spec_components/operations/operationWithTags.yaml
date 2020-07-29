@@ -1,5 +1,5 @@
-description: 'Returns a pet based on ID'
-summary: 'Find pet by ID'
+description: "Returns a pet based on ID"
+summary: "Find pet by ID"
 operationId: getPetsById
 tags:
   - foo
@@ -8,7 +8,14 @@ produces:
   - application/json
   - text/html
 parameters:
-  - {name: petId, in: path, description: 'ID of pet that needs to be fetched', required: true, type: integer, format: int64}
+  - {
+      name: petId,
+      in: path,
+      description: "ID of pet that needs to be fetched",
+      required: true,
+      type: integer,
+      format: int64,
+    }
 responses:
-  '200': {description: 'a pet to be returned', schema: {$ref: Pet}}
-  default: {description: 'Unexpected error', schema: {$ref: ErrorModel}}
+  "200": { description: "a pet to be returned", schema: { $ref: Pet } }
+  default: { description: "Unexpected error", schema: { $ref: ErrorModel } }

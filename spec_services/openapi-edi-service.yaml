@@ -8,37 +8,37 @@ info:
   contact:
     name: Customer Success
     email: support@freight.zendesk.com
-    url: 'https://freighttrust.com/contact'
+    url: "https://freighttrust.com/contact"
   license:
-    name: 'Mozilla Public License, v. 2.0'
-    url: 'https://www.mozilla.org/en-US/MPL/2.0/'
-  termsOfService: 'https://github.com/freight-trust/legal/blob/master/src/terms-of-service.md'
+    name: "Mozilla Public License, v. 2.0"
+    url: "https://www.mozilla.org/en-US/MPL/2.0/"
+  termsOfService: "https://github.com/freight-trust/legal/blob/master/src/terms-of-service.md"
   description: >-
     EDI X12 & EDI EDIFACT API for B2B Trading Channels on the Freight Trust
     Network
 servers:
-  - url: 'https://gateway.freighttrust.com'
+  - url: "https://gateway.freighttrust.com"
     description: API Gateway
     variables:
       apiGateway:
         description: API Version Access
         default: apiGateway
         enum:
-          - 'https://gateway.freighttrust.com'
-          - 'https://api.shipperedi.com'
-          - 'https://api.carrieredi.com'
-          - 'https://api.edi.zone/v1'
-          - 'https://api.edi.zone/v2'
-          - 'https://api.edi.zone//v2/{org}/{user}/{channel}/{function}'
+          - "https://gateway.freighttrust.com"
+          - "https://api.shipperedi.com"
+          - "https://api.carrieredi.com"
+          - "https://api.edi.zone/v1"
+          - "https://api.edi.zone/v2"
+          - "https://api.edi.zone//v2/{org}/{user}/{channel}/{function}"
 security:
   - ApiKey: []
 tags:
   - name: Edifact
-    description: 'Translate, validate or acknowledge EDIFACT files'
+    description: "Translate, validate or acknowledge EDIFACT files"
   - name: EdiModel
     description: Manage EDI transaction models
   - name: X12
-    description: 'Translate, validate or acknowledge X12 files'
+    description: "Translate, validate or acknowledge X12 files"
 paths:
   /x12/read:
     post:
@@ -112,29 +112,29 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/body'
+              $ref: "#/components/schemas/body"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/X12Interchange'
+                  $ref: "#/components/schemas/X12Interchange"
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: X12
   /x12/write:
     post:
@@ -194,15 +194,15 @@ paths:
               the segment separator. This is usually a carriage return (CR),
               line feed (LF) or both. By default, there is no postfix.
             nullable: true
-            default: ''
+            default: ""
       requestBody:
         description: The X12Interchange object to translate to raw X12.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/X12Interchange'
+              $ref: "#/components/schemas/X12Interchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/octet-stream:
@@ -210,18 +210,18 @@ paths:
                 type: string
                 format: binary
                 x-content-type: application/octet-stream
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: X12
   /x12/validate:
     post:
@@ -315,26 +315,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/X12Interchange'
+              $ref: "#/components/schemas/X12Interchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OperationResult'
-        '400':
+                $ref: "#/components/schemas/OperationResult"
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: X12
   /x12/ack:
     post:
@@ -495,7 +495,7 @@ paths:
               implementation instead of functional acknowledgment. The available
               values are: 997, 999.
             nullable: true
-            default: '997'
+            default: "997"
         - name: ak901isP
           in: query
           description: >-
@@ -515,29 +515,29 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/X12Interchange'
+              $ref: "#/components/schemas/X12Interchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/X12Interchange'
+                  $ref: "#/components/schemas/X12Interchange"
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: X12
   /edifact/read:
     post:
@@ -628,29 +628,29 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/body_1'
+              $ref: "#/components/schemas/body_1"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/EdifactInterchange'
+                  $ref: "#/components/schemas/EdifactInterchange"
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: Edifact
   /edifact/write:
     post:
@@ -710,7 +710,7 @@ paths:
               the segment separator. This is usually a carriage return (CR),
               line feed (LF) or both. By default, there is no postfix.
             nullable: true
-            default: ''
+            default: ""
         - name: sameRepetionAndDataElement
           in: query
           description: >-
@@ -749,9 +749,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EdifactInterchange'
+              $ref: "#/components/schemas/EdifactInterchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/octet-stream:
@@ -759,18 +759,18 @@ paths:
                 type: string
                 format: binary
                 x-content-type: application/octet-stream
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: Edifact
   /edifact/validate:
     post:
@@ -835,13 +835,13 @@ paths:
             default: false
         - name: decimalPoint
           in: query
-          description: 'This could be either point . (default) or comma ,.'
+          description: "This could be either point . (default) or comma ,."
           required: false
           style: form
           explode: true
           schema:
             type: string
-            description: 'This could be either point . (default) or comma ,.'
+            description: "This could be either point . (default) or comma ,."
             default: .
         - name: eancomS3
           in: query
@@ -864,26 +864,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EdifactInterchange'
+              $ref: "#/components/schemas/EdifactInterchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OperationResult'
-        '400':
+                $ref: "#/components/schemas/OperationResult"
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: Edifact
   /edifact/ack:
     post:
@@ -1031,29 +1031,29 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EdifactInterchange'
+              $ref: "#/components/schemas/EdifactInterchange"
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/EdifactInterchange'
+                  $ref: "#/components/schemas/EdifactInterchange"
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: Edifact
   /models:
     get:
@@ -1073,27 +1073,27 @@ paths:
             description: Whether to retrieve EDIStream's or custom uploaded models.
             default: true
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/EdiModel'
+                  $ref: "#/components/schemas/EdiModel"
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: EdiModel
     post:
       tags:
@@ -1106,25 +1106,25 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/body_2'
+              $ref: "#/components/schemas/body_2"
       responses:
-        '200':
+        "200":
           description: Success
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: EdiModel
       parameters: []
-  '/models/{id}':
+  "/models/{id}":
     get:
       tags:
         - EdiModel
@@ -1142,7 +1142,7 @@ paths:
             description: The model name.
             nullable: true
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/octet-stream:
@@ -1150,18 +1150,18 @@ paths:
                 type: string
                 format: binary
                 x-content-type: application/octet-stream
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: EdiModel
     delete:
       tags:
@@ -1180,22 +1180,22 @@ paths:
             description: The model name.
             nullable: true
       responses:
-        '200':
+        "200":
           description: Success
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: EdiModel
-  '/models/{id}/transactions':
+  "/models/{id}/transactions":
     get:
       tags:
         - EdiModel
@@ -1223,7 +1223,7 @@ paths:
             description: Whether to search in EDIStream's or custom uploaded models.
             default: true
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
@@ -1232,18 +1232,18 @@ paths:
                 items:
                   type: string
                 x-content-type: application/json
-        '400':
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
-        '500':
+                $ref: "#/components/schemas/ErrorDetails"
+        "500":
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: "#/components/schemas/ErrorDetails"
       x-swagger-router-controller: EdiModel
 components:
   schemas:
@@ -1357,18 +1357,18 @@ components:
       type: object
       properties:
         SYNTAXIDENTIFIER_1:
-          $ref: '#/components/schemas/S001'
+          $ref: "#/components/schemas/S001"
         INTERCHANGESENDER_2:
-          $ref: '#/components/schemas/S002'
+          $ref: "#/components/schemas/S002"
         INTERCHANGERECIPIENT_3:
-          $ref: '#/components/schemas/S003'
+          $ref: "#/components/schemas/S003"
         DATEANDTIMEOFPREPARATION_4:
-          $ref: '#/components/schemas/S004'
+          $ref: "#/components/schemas/S004"
         InterchangeControlReference_5:
           type: string
           nullable: true
         RECIPIENTSREFERENCEPASSWORDDETAILS_6:
-          $ref: '#/components/schemas/S005'
+          $ref: "#/components/schemas/S005"
         ApplicationReference_7:
           type: string
           nullable: true
@@ -1459,11 +1459,11 @@ components:
           type: string
           nullable: true
         APPLICATIONSENDERIDENTIFICATION_2:
-          $ref: '#/components/schemas/S006'
+          $ref: "#/components/schemas/S006"
         APPLICATIONRECIPIENTIDENTIFICATION_3:
-          $ref: '#/components/schemas/S007'
+          $ref: "#/components/schemas/S007"
         DATEANDTIMEOFPREPARATION_4:
-          $ref: '#/components/schemas/S004'
+          $ref: "#/components/schemas/S004"
         GroupReferenceNumber_5:
           type: string
           nullable: true
@@ -1471,7 +1471,7 @@ components:
           type: string
           nullable: true
         MESSAGEVERSION_7:
-          $ref: '#/components/schemas/S008'
+          $ref: "#/components/schemas/S008"
         ApplicationPassword_8:
           type: string
           nullable: true
@@ -1508,7 +1508,7 @@ components:
       type: object
       properties:
         UNG:
-          $ref: '#/components/schemas/UNG'
+          $ref: "#/components/schemas/UNG"
         Transactions:
           type: array
           nullable: true
@@ -1518,7 +1518,7 @@ components:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/UNE'
+            $ref: "#/components/schemas/UNE"
       example:
         Transactions:
           - {}
@@ -1602,7 +1602,7 @@ components:
           nullable: true
           readOnly: true
           items:
-            $ref: '#/components/schemas/OperationDetail'
+            $ref: "#/components/schemas/OperationDetail"
         Status:
           type: string
           nullable: true
@@ -1634,21 +1634,21 @@ components:
       type: object
       properties:
         UNA:
-          $ref: '#/components/schemas/UNA'
+          $ref: "#/components/schemas/UNA"
         UNB:
-          $ref: '#/components/schemas/UNB'
+          $ref: "#/components/schemas/UNB"
         Groups:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/EdifactGroup'
+            $ref: "#/components/schemas/EdifactGroup"
         UNZTrailers:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/UNZ'
+            $ref: "#/components/schemas/UNZ"
         Result:
-          $ref: '#/components/schemas/OperationResult'
+          $ref: "#/components/schemas/OperationResult"
       example:
         Groups:
           - Transactions:
@@ -1800,7 +1800,7 @@ components:
           nullable: true
           readOnly: true
           items:
-            $ref: '#/components/schemas/Link'
+            $ref: "#/components/schemas/Link"
       example:
         DateCreated: DateCreated
         Links:
@@ -1958,7 +1958,7 @@ components:
       type: object
       properties:
         GS:
-          $ref: '#/components/schemas/GS'
+          $ref: "#/components/schemas/GS"
         Transactions:
           type: array
           nullable: true
@@ -1968,7 +1968,7 @@ components:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/GE'
+            $ref: "#/components/schemas/GE"
       example:
         Transactions:
           - {}
@@ -2012,21 +2012,21 @@ components:
         DataElementDelimiter:
           type: string
         ISA:
-          $ref: '#/components/schemas/ISA'
+          $ref: "#/components/schemas/ISA"
         TA1:
-          $ref: '#/components/schemas/TA1'
+          $ref: "#/components/schemas/TA1"
         Groups:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/X12Group'
+            $ref: "#/components/schemas/X12Group"
         IEATrailers:
           type: array
           nullable: true
           items:
-            $ref: '#/components/schemas/IEA'
+            $ref: "#/components/schemas/IEA"
         Result:
-          $ref: '#/components/schemas/OperationResult'
+          $ref: "#/components/schemas/OperationResult"
       example:
         DataElementDelimiter: DataElementDelimiter
         SegmentDelimiter: SegmentDelimiter
@@ -2157,4 +2157,4 @@ externalDocs:
   description: >-
     For documentation please see our public github, for paid support please use
     your gitlab credentials.
-  url: 'https://ft-docs.netlify.app'
+  url: "https://ft-docs.netlify.app"

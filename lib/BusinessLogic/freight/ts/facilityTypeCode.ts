@@ -1,5 +1,3 @@
-
-
 /**
  * The code to identify the specific type of facility.
  */

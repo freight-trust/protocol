@@ -1,4 +1,4 @@
-    eventClassifierCode:
-      type: string
-      example: ACT
-      description: Code for the event classifier, either PLN, ACT or EST.
+eventClassifierCode:
+  type: string
+  example: ACT
+  description: Code for the event classifier, either PLN, ACT or EST.

@@ -18,7 +18,7 @@ description: |
   specify which state (if applicable) an account instantiation refers to.
 type: object
 required:
-  - address 
+  - address
 properties:
   address:
     description: |

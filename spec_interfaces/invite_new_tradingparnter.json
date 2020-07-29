@@ -1,7 +1,7 @@
 {
-    "id": "<string>",
-    "serviceModel": {
-        "partnerNumber": "<string>",
-        "initiatorChannelId": "<string>"
-    }
+  "id": "<string>",
+  "serviceModel": {
+    "partnerNumber": "<string>",
+    "initiatorChannelId": "<string>"
+  }
 }

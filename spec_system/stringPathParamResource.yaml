@@ -1,11 +1,11 @@
 protocol: "0.1.5"
 info:
-  version: 
-  title: 
-  description: 
-  termsOfService: 
-  contact: 
-  license: 
+  version:
+  title:
+  description:
+  termsOfService:
+  contact:
+  license:
 host: ${host_url}
 basePath: /protocol
 schemes:
@@ -17,7 +17,47 @@ produces:
   - application/json
   - application/xml
 paths:
-  '/protocol/{protocolId}': {get: {description: 'Returns a protocol based on ID', summary: 'Find protocol by ID', operationId: getprotocolById, produces: [application/json, text/html], parameters: [{name: protocolId, in: path, description: 'ID of protocol that needs to be fetched', required: true, type: array, items: {type: string}, collectionFormat: csv}], responses: {'200': {description: 'protocol response', schema: {$ref: protocol}}, default: {description: 'error payload', schema: {$ref: ErrorModel}}}}}
+  "/protocol/{protocolId}":
+    {
+      get:
+        {
+          description: "Returns a protocol based on ID",
+          summary: "Find protocol by ID",
+          operationId: getprotocolById,
+          produces: [application/json, text/html],
+          parameters:
+            [
+              {
+                name: protocolId,
+                in: path,
+                description: "ID of protocol that needs to be fetched",
+                required: true,
+                type: array,
+                items: { type: string },
+                collectionFormat: csv,
+              },
+            ],
+          responses:
+            {
+              "200":
+                {
+                  description: "protocol response",
+                  schema: { $ref: protocol },
+                },
+              default:
+                { description: "error payload", schema: { $ref: ErrorModel } },
+            },
+        },
+    }
 definitions:
-  protocol: {required: [name], properties: {name: {type: string}, tag: {type: string}}}
-  ErrorModel: {required: [code, message], properties: {code: {type: integer, format: int32}, message: {type: string}}}
+  protocol:
+    {
+      required: [name],
+      properties: { name: { type: string }, tag: { type: string } },
+    }
+  ErrorModel:
+    {
+      required: [code, message],
+      properties:
+        { code: { type: integer, format: int32 }, message: { type: string } },
+    }

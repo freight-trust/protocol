@@ -1,9 +1,9 @@
-    transportLegReference:
-      type: string
-      example: 025E
-      description: |
-        The transport leg reference will be specific per mode of transport:
-        - Vessel: Loop ID - HL
-        - Truck: Loop ID - HL
-        - Rail: Loop ID - HL
-        - Barge: Loop ID - HL
+transportLegReference:
+  type: string
+  example: 025E
+  description: |
+    The transport leg reference will be specific per mode of transport:
+    - Vessel: Loop ID - HL
+    - Truck: Loop ID - HL
+    - Rail: Loop ID - HL
+    - Barge: Loop ID - HL

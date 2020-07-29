@@ -1,4 +1,4 @@
-    eventTypeCode:
-      type: string
-      example: ARRI
-      description: Unique identifier for Event Type Code.
+eventTypeCode:
+  type: string
+  example: ARRI
+  description: Unique identifier for Event Type Code.

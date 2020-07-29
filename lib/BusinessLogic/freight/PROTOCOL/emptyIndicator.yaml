@@ -1,4 +1,4 @@
-    emptyIndicatorCode:
-      type: string
-      example: Empty
-      description: Code to denote whether the equipment is empty or laden.
+emptyIndicatorCode:
+  type: string
+  example: Empty
+  description: Code to denote whether the equipment is empty or laden.

@@ -20,7 +20,7 @@ description: |
   that contains any of the above information that is not specified here.
 type: object
 required:
-  - operation_statuses 
+  - operation_statuses
   - operation_types
   - errors
   - historical_balance_lookup
@@ -32,7 +32,7 @@ properties:
       client validation to error.
     type: array
     items:
-      $ref: 'OperationStatus.yaml'
+      $ref: "OperationStatus.yaml"
   operation_types:
     description: |
       All Operation.Type this implementation supports. Any type
@@ -49,7 +49,7 @@ properties:
       cause client validation to error.
     type: array
     items:
-      $ref: 'Error.yaml'
+      $ref: "Error.yaml"
   historical_balance_lookup:
     type: boolean
     description: |

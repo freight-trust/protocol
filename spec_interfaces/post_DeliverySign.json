@@ -1,5 +1,5 @@
 {
-    "base64Signature": "<string>",
-    "printedName": "<string>",
-    "shipmentId": "<object>"
+  "base64Signature": "<string>",
+  "printedName": "<string>",
+  "shipmentId": "<object>"
 }

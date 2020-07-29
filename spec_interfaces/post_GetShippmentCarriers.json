@@ -1,29 +1,29 @@
 {
-    "query": {
-        "navigation": {
-            "skip": "<integer>",
-            "take": "<integer>"
-        },
-        "fidelity": "<integer>",
-        "order": {
-            "desc": "<boolean>",
-            "by": "<string>"
-        },
-        "search": {
-            "filters": [
-                {
-                    "enabled": "<boolean>",
-                    "filterId": "<string>",
-                    "jsonValue": "<string>"
-                },
-                {
-                    "enabled": "<boolean>",
-                    "filterId": "<string>",
-                    "jsonValue": "<string>"
-                }
-            ],
-            "engineId": "<string>"
-        }
+  "query": {
+    "navigation": {
+      "skip": "<integer>",
+      "take": "<integer>"
     },
-    "shipmentId": "<string>"
+    "fidelity": "<integer>",
+    "order": {
+      "desc": "<boolean>",
+      "by": "<string>"
+    },
+    "search": {
+      "filters": [
+        {
+          "enabled": "<boolean>",
+          "filterId": "<string>",
+          "jsonValue": "<string>"
+        },
+        {
+          "enabled": "<boolean>",
+          "filterId": "<string>",
+          "jsonValue": "<string>"
+        }
+      ],
+      "engineId": "<string>"
+    }
+  },
+  "shipmentId": "<string>"
 }
