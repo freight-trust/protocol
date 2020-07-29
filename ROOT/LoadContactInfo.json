@@ -1,10 +1,8 @@
 {
   "Loop_G61_204": "LoadContactInfo",
-
   "class": {
     "L11": "List",
     "Item": "G61",
-
     "G61": {
       "Name": "G61.Name_02",
       "CommunicationNumberQualifier": "G61.CommunicationNumberQualifier_03",

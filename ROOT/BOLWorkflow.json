@@ -16,10 +16,22 @@
       "format": "uri",
       "type": "string",
       "description": "pki",
-      "enum": ["notify", "notifyAll", "getClass", "finalize"]
+      "enum": [
+        "notify",
+        "notifyAll",
+        "getClass",
+        "finalize"
+      ]
     },
     "GoverningLaw": {
-      "enum": ["MASTER_AGREEMENT", "USCA", "USDE", "USIL", "USNY", "OTHER"],
+      "enum": [
+        "MASTER_AGREEMENT",
+        "USCA",
+        "USDE",
+        "USIL",
+        "USNY",
+        "OTHER"
+      ],
       "type": "string"
     },
     "Cosignee": {
@@ -47,11 +59,16 @@
       "additionalProperties": {
         "format": null,
         "type": "object",
-        "required": ["checksum_digit"]
+        "required": [
+          "checksum_digit"
+        ]
       }
     },
     "AssetClass": {
-      "enum": [null, null],
+      "enum": [
+        null,
+        null
+      ],
       "type": "string",
       "items": {
         "enum": null,

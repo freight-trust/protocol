@@ -1,6 +1,5 @@
 {
   "type": "object",
-
   "properties": {
     "SpecialServicesCode": {
       "D1": "One - Day Service",
@@ -14,10 +13,13 @@
       "ID": "Inside Delivery",
       "ZZ": "Mutually Defined"
     },
-    "required": ["SpecialServicesCode"],
-
+    "required": [
+      "SpecialServicesCode"
+    ],
     "dependencies": {
-      "": [""]
+      "": [
+        ""
+      ]
     }
   }
 }

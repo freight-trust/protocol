@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "typeID": 1,
     "entityType": "CargoInterest",
@@ -94,7 +94,11 @@
     "entityType": "RegularBroker",
     "entityTypeDescription": "BookingagentwhoislicensedbythegovernmentintheirjurisdictiontobookcargoasdefinedbyFMCSA"
   },
-  { "typeID": 20, "entityType": "Agent", "entityTypeDescription": "Agent" },
+  {
+    "typeID": 20,
+    "entityType": "Agent",
+    "entityTypeDescription": "Agent"
+  },
   {
     "typeID": 21,
     "entityType": "3rdParty",
