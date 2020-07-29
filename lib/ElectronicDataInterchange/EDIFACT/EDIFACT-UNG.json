@@ -1,21 +1,21 @@
 {
-    "MessageGroupIdentification_1": "CUSCAR",
-    "APPLICATIONSENDERIDENTIFICATION_2": {
-      "ApplicationSenderIdentification_1": "LOCK",
-      "IdentificationCodeQualifier_2": "ZZ"
-    },
-    "APPLICATIONRECIPIENTIDENTIFICATION_3": {
-      "ApplicationRecipientIdentification_1": "CBP-ACE-TEST",
-      "IdentificationCodeQualifier_2": "ZZ"
-    },
-    "DATEANDTIMEOFPREPARATION_4": {
-      "Date_1": "20041016",
-      "Time_2": "1604"
-    },
-    "GroupReferenceNumber_5": "54",
-    "ControllingAgency_6": "UN",
-    "MESSAGEVERSION_7": {
-      "MessageVersionNumber_1": "D",
-      "MessageReleaseNumber_2": "03B"
-    }
+  "MessageGroupIdentification_1": "CUSCAR",
+  "APPLICATIONSENDERIDENTIFICATION_2": {
+    "ApplicationSenderIdentification_1": "LOCK",
+    "IdentificationCodeQualifier_2": "ZZ"
+  },
+  "APPLICATIONRECIPIENTIDENTIFICATION_3": {
+    "ApplicationRecipientIdentification_1": "CBP-ACE-TEST",
+    "IdentificationCodeQualifier_2": "ZZ"
+  },
+  "DATEANDTIMEOFPREPARATION_4": {
+    "Date_1": "20041016",
+    "Time_2": "1604"
+  },
+  "GroupReferenceNumber_5": "54",
+  "ControllingAgency_6": "UN",
+  "MESSAGEVERSION_7": {
+    "MessageVersionNumber_1": "D",
+    "MessageReleaseNumber_2": "03B"
   }
+}

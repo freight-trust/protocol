@@ -28,6 +28,6 @@ properties:
     type: string
     example: "1238089899992"
   currency:
-    $ref: 'Currency.yaml'
+    $ref: "Currency.yaml"
   metadata:
     type: object

@@ -1,7 +1,7 @@
 equipmentEvent:
   description: The equipment event entity is a specialization of the event entity to support specification of data that only applies to an equipment event.
   allOf:
-    - $ref: '#/components/schemas/event'
+    - $ref: "#/components/schemas/event"
     - type: object
       properties:
         eventType: #Overriding this property to have correct payload response examples
@@ -11,17 +11,17 @@ equipmentEvent:
           enum:
             - EQUIPMENT
         equipmentReference:
-          $ref: '#/components/schemas/equipmentReference'
+          $ref: "#/components/schemas/equipmentReference"
         facilityTypeCode:
-          $ref: '#/components/schemas/facilityTypeCode'
+          $ref: "#/components/schemas/facilityTypeCode"
         UNLocationCode:
-          $ref: '#/components/schemas/UNLocationCode'
+          $ref: "#/components/schemas/UNLocationCode"
         facilityCode:
-          $ref: '#/components/schemas/facilityCode'
+          $ref: "#/components/schemas/facilityCode"
         otherFacility:
-          $ref: '#/components/schemas/otherFacility'
+          $ref: "#/components/schemas/otherFacility"
         emptyIndicatorCode:
-          $ref: '#/components/schemas/emptyIndicatorCode'
+          $ref: "#/components/schemas/emptyIndicatorCode"
       required:
         - facilityTypeCode
         - UNLocationCode

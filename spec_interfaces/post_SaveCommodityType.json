@@ -1,8 +1,8 @@
 {
-    "category": "<string>",
-    "canDelete": "<boolean>",
-    "id": "<string>",
-    "description": "<string>",
-    "name": "<string>",
-    "canManage": "<boolean>"
+  "category": "<string>",
+  "canDelete": "<boolean>",
+  "id": "<string>",
+  "description": "<string>",
+  "name": "<string>",
+  "canManage": "<boolean>"
 }

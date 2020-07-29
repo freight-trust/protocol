@@ -1,28 +1,28 @@
 {
-    "query": {
-        "navigation": {
-            "skip": "<integer>",
-            "take": "<integer>"
+  "query": {
+    "navigation": {
+      "skip": "<integer>",
+      "take": "<integer>"
+    },
+    "order": {
+      "by": "<string>",
+      "desc": "<boolean>"
+    },
+    "search": {
+      "engineId": "<string>",
+      "filters": [
+        {
+          "enabled": "<boolean>",
+          "filterId": "<string>",
+          "jsonValue": "<string>"
         },
-        "order": {
-            "by": "<string>",
-            "desc": "<boolean>"
-        },
-        "search": {
-            "engineId": "<string>",
-            "filters": [
-                {
-                    "enabled": "<boolean>",
-                    "filterId": "<string>",
-                    "jsonValue": "<string>"
-                },
-                {
-                    "enabled": "<boolean>",
-                    "filterId": "<string>",
-                    "jsonValue": "<string>"
-                }
-            ]
-        },
-        "fidelity": "<integer>"
-    }
+        {
+          "enabled": "<boolean>",
+          "filterId": "<string>",
+          "jsonValue": "<string>"
+        }
+      ]
+    },
+    "fidelity": "<integer>"
+  }
 }

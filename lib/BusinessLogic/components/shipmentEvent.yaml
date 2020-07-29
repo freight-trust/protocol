@@ -1,7 +1,7 @@
 shipmentEvent:
   description: The shipment event entity is a specialization of the event entity to support specification of data that only applies to a shipment event.
   allOf:
-    - $ref: '#/components/schemas/event'
+    - $ref: "#/components/schemas/event"
     - type: object
       properties:
         eventType: #Overriding this property to have correct payload response examples
@@ -11,6 +11,6 @@ shipmentEvent:
           enum:
             - SHIPMENT
         shipmentInformationTypeCode:
-          $ref: '#/components/schemas/shipmentInformationTypeCode'
+          $ref: "#/components/schemas/shipmentInformationTypeCode"
       required:
         - shipmentInformationTypeCode

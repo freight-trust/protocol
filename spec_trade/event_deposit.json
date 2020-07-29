@@ -1,14 +1,14 @@
 {
-	"action": "update",
-	"type": "deposit",
-	"data": {
-		"amount": 3000,
-		"asset": "usdt",
-		"status": false
-	},
-	"balance": {
-		"usdt_balance": 0,
-		"$asset_balance": 300000,
-		"updated_at": "2017-07-26T13:20:40.464Z"
-	}
+  "action": "update",
+  "type": "deposit",
+  "data": {
+    "amount": 3000,
+    "asset": "usdt",
+    "status": false
+  },
+  "balance": {
+    "usdt_balance": 0,
+    "$asset_balance": 300000,
+    "updated_at": "2017-07-26T13:20:40.464Z"
+  }
 }

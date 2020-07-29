@@ -1,8 +1,8 @@
 freighttrust:
 info:
   version: "2.1.0"
-  title: 'Protocol specifications'
-  description: 'protocol values'
+  title: "Protocol specifications"
+  description: "protocol values"
   license:
     name: Mozilla Public License 2.0
     url: hhttps://www.mozilla.org/en-US/MPL/2.0/

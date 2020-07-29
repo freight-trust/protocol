@@ -1,5 +1,3 @@
-
-
 /**
  * Unique identifier for Event Type Code.
  */

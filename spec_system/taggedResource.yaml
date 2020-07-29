@@ -1,11 +1,11 @@
 protocol: "0.1.5"
 info:
-  version: 
-  title: 
-  description: 
-  termsOfService: 
-  contact: 
-  license: 
+  version:
+  title:
+  description:
+  termsOfService:
+  contact:
+  license:
 host: ${host_url}
 basePath: /protocol
 schemes:
@@ -17,10 +17,55 @@ produces:
   - application/json
   - application/xml
 tags:
-  - {name: protocol}
+  - { name: protocol }
 paths:
-  x-reverb-path-info: 'vendor info'
-  /protocol: {x-vendor-method: {}, get: {x-vendor-operation-property: {}, description: 'Returns a protocol based on ID', summary: 'Find protocol by ID', operationId: getprotocolById, produces: [application/json, text/html], parameters: [{x-vendor-parameter-property: {}, name: protocolId, in: path, description: 'ID of protocol that needs to be fetched', required: true, type: array, items: {type: string}, collectionFormat: csv}], responses: {'200': {description: 'protocol response', schema: {$ref: protocol}}, x-vendor-operation-response-property: {}, default: {description: 'error payload', schema: {$ref: ErrorModel}}}}}
+  x-reverb-path-info: "vendor info"
+  /protocol:
+    {
+      x-vendor-method: {},
+      get:
+        {
+          x-vendor-operation-property: {},
+          description: "Returns a protocol based on ID",
+          summary: "Find protocol by ID",
+          operationId: getprotocolById,
+          produces: [application/json, text/html],
+          parameters:
+            [
+              {
+                x-vendor-parameter-property: {},
+                name: protocolId,
+                in: path,
+                description: "ID of protocol that needs to be fetched",
+                required: true,
+                type: array,
+                items: { type: string },
+                collectionFormat: csv,
+              },
+            ],
+          responses:
+            {
+              "200":
+                {
+                  description: "protocol response",
+                  schema: { $ref: protocol },
+                },
+              x-vendor-operation-response-property: {},
+              default:
+                { description: "error payload", schema: { $ref: ErrorModel } },
+            },
+        },
+    }
 definitions:
-  protocol: {x-vendor-model-property: {}, required: [name], properties: {name: {type: string}, tag: {type: string}}}
-  ErrorModel: {required: [code, message], properties: {code: {type: integer, format: int32}, message: {type: string}}}
+  protocol:
+    {
+      x-vendor-model-property: {},
+      required: [name],
+      properties: { name: { type: string }, tag: { type: string } },
+    }
+  ErrorModel:
+    {
+      required: [code, message],
+      properties:
+        { code: { type: integer, format: int32 }, message: { type: string } },
+    }

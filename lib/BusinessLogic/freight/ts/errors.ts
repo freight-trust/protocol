@@ -1,5 +1,3 @@
+import { ErrorsInner } from "./errorsInner";
 
-import { ErrorsInner } from './errorsInner';
-
-export interface Errors extends Array<ErrorsInner> { 
-}
+export interface Errors extends Array<ErrorsInner> {}

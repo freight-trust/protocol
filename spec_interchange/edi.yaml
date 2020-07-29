@@ -2,13 +2,13 @@ Electronic Data Interchange:
   type: data
   color: "#0C2E76"
   extensions:
-  - ".edi"
-  - ".x12"
-  - ".edifact"
+    - ".edi"
+    - ".x12"
+    - ".edifact"
   tm_scope: source.edi
   aliases:
-  - x12
-  - edifact
+    - x12
+    - edifact
   filenames:
-  - string.edi
+    - string.edi
   language_id:

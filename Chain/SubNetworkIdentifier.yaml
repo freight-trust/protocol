@@ -18,7 +18,7 @@ description: |
   optional for all non-sharded blockchains.
 type: object
 required:
-  - network 
+  - network
 properties:
   network:
     type: string

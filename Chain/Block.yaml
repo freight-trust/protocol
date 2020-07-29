@@ -23,15 +23,15 @@ required:
   - transactions
 properties:
   block_identifier:
-    $ref: 'BlockIdentifier.yaml'
+    $ref: "BlockIdentifier.yaml"
   parent_block_identifier:
-    $ref: 'BlockIdentifier.yaml'
+    $ref: "BlockIdentifier.yaml"
   timestamp:
-    $ref: 'Timestamp.yaml'
+    $ref: "Timestamp.yaml"
   transactions:
     type: array
     items:
-      $ref: 'Transaction.yaml'
+      $ref: "Transaction.yaml"
   metadata:
     type: object
     example:

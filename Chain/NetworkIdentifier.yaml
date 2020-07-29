@@ -30,4 +30,4 @@ properties:
     type: string
     example: "mainnet"
   sub_network_identifier:
-    $ref: 'SubNetworkIdentifier.yaml'
+    $ref: "SubNetworkIdentifier.yaml"

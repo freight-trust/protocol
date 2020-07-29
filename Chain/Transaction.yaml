@@ -21,11 +21,11 @@ required:
   - operations
 properties:
   transaction_identifier:
-    $ref: 'TransactionIdentifier.yaml'
+    $ref: "TransactionIdentifier.yaml"
   operations:
     type: array
     items:
-      $ref: 'Operation.yaml'
+      $ref: "Operation.yaml"
   metadata:
     description: |
       Transactions that are related to other transactions (like a cross-shard transaction) should include

@@ -18,7 +18,7 @@ description: |
 type: object
 required:
   - status
-  - successful 
+  - successful
 properties:
   status:
     description: |

@@ -1,45 +1,62 @@
 # EthereumRegistrationAuthorityInterface
+
 ## addUpdateDomain
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to add or update.*
-* _domainAuthority `address`: *Contract to resolve sub-domains. This contract must implement this interface.*
-* _domainInfo `address`: *Contract which holds domain information for the domain name identified by*
-* _domainOwner `address`: *Account entitled to update the _domainAuthority or the _domainInfo address for this domain*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to add or update._
+- \_domainAuthority `address`: _Contract to resolve sub-domains. This contract must implement this interface._
+- \_domainInfo `address`: _Contract which holds domain information for the domain name identified by_
+- \_domainOwner `address`: _Account entitled to update the \_domainAuthority or the \_domainInfo address for this domain_
 
 ## removeDomain
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to remove.*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to remove._
 
 ## hasDomain
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to check.*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to check._
 
 **Return Parameters:**
-* `bool`
+
+- `bool`
+
 ## getAuthority
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to check.*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to check._
 
 **Return Parameters:**
-* `address`
+
+- `address`
+
 ## getDomainInfo
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to check.*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to check._
 
 **Return Parameters:**
-* `address`
+
+- `address`
+
 ## getDomainOwner
 
 **Parameters:**
-* _domainHash `uint256`: *Keccak256 message digest of the domain to check.*
+
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to check._
 
 **Return Parameters:**
-* `address`
+
+- `address`
+
 ## getVersion
+
 **Return Parameters:**
-* `uint16`
+
+- `uint16`

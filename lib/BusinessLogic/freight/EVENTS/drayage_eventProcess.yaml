@@ -1,24 +1,18 @@
-﻿-
-   Drayage: Expedited
-   Value: expedited
-   Description: Freight containers are transported quickly. This best applies to time-sensitive shipments.
--
-   Drayage: Inter-carrier
-   Value: inter-carrier
-   Description: This is what comes to mind first when most people think of the word drayage. It involves the movement of goods between different carriers. As an example, inter-carrier drayage might involve transporting goods from a trucking terminal to a rail station.
--
-   Drayage: Intra-carrier
-   Value: intra-carrier
-   Description: Intra-carrier drayage involves taking freight to two different hubs owned by the same carrier. Cargo might be transported from an intermodal hub to a rail hub.
--
-   Drayage: Pier
-   Value: pier
-   Description: Do you need cargo to move from a rail terminal to an ocean shipping dock or pier? You might need pier drayage. This methods uses highways to get freight to the pier.
--
-   Drayage: Shuttle
-   Value: shuttle
-   Description: Shuttle drayage involves moving an intermodal unit to a temporary stopping point. This method is used when the hub of origin might be overcrowded.
--
-   Drayage: Door-to-door
-   Value: door-to-door
-   Description: Delivery by truck of container to retail customer
+﻿- Drayage: Expedited
+  Value: expedited
+  Description: Freight containers are transported quickly. This best applies to time-sensitive shipments.
+- Drayage: Inter-carrier
+  Value: inter-carrier
+  Description: This is what comes to mind first when most people think of the word drayage. It involves the movement of goods between different carriers. As an example, inter-carrier drayage might involve transporting goods from a trucking terminal to a rail station.
+- Drayage: Intra-carrier
+  Value: intra-carrier
+  Description: Intra-carrier drayage involves taking freight to two different hubs owned by the same carrier. Cargo might be transported from an intermodal hub to a rail hub.
+- Drayage: Pier
+  Value: pier
+  Description: Do you need cargo to move from a rail terminal to an ocean shipping dock or pier? You might need pier drayage. This methods uses highways to get freight to the pier.
+- Drayage: Shuttle
+  Value: shuttle
+  Description: Shuttle drayage involves moving an intermodal unit to a temporary stopping point. This method is used when the hub of origin might be overcrowded.
+- Drayage: Door-to-door
+  Value: door-to-door
+  Description: Delivery by truck of container to retail customer

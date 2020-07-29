@@ -26,7 +26,7 @@ properties:
     type: string
     example: "0x3a065000ab4183c6bf581dc1e55a605455fc6d61"
   sub_account:
-    $ref: 'SubAccountIdentifier.yaml'
+    $ref: "SubAccountIdentifier.yaml"
   metadata:
     description: |
       Blockchains that utilize a username model (where the address is not a derivative of a cryptographic
