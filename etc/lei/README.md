@@ -1,6 +1,8 @@
 # LEI Informative
 
-curl --request GET 'https://leilookup.gleif.org/api/v2/leirecords?lei=254900C9UJMDGJ0ILK56' --header 'Content-Type: application/json' --data-raw '[]'
+curl --request GET
+'https://leilookup.gleif.org/api/v2/leirecords?lei=254900C9UJMDGJ0ILK56'
+--header 'Content-Type: application/json' --data-raw '[]'
 
 ```json
 [
@@ -132,16 +134,18 @@ freighttrust.com.	IN	CAA	0 issue "sectigo.com"
 
 parse lei.bloomberg.com
 
-search for... `<div ng-if="leiViewerData" class="ng-scope"><json-viewer data="leiViewerData" class="ng-isolate-scope">`
+search for...
+`<div ng-if="leiViewerData" class="ng-scope"><json-viewer data="leiViewerData" class="ng-isolate-scope">`
 
 let HashingOutput = Base64URL( Multihash(DATA, 'sha2-256') );
 
 ### terms
 
-`credentials`: [source](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-credentials)
+`credentials`:
+[source](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-credentials)
 
-`derived predicate`
-A verifiable, boolean assertion about the value of another attribute in a verifiable credential.
+`derived predicate` A verifiable, boolean assertion about the value of another
+attribute in a verifiable credential.
 
 ## Minimal DID
 

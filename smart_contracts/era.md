@@ -4,10 +4,14 @@
 
 **Parameters:**
 
-- \_domainHash `uint256`: _Keccak256 message digest of the domain to add or update._
-- \_domainAuthority `address`: _Contract to resolve sub-domains. This contract must implement this interface._
-- \_domainInfo `address`: _Contract which holds domain information for the domain name identified by_
-- \_domainOwner `address`: _Account entitled to update the \_domainAuthority or the \_domainInfo address for this domain_
+- \_domainHash `uint256`: _Keccak256 message digest of the domain to add or
+  update._
+- \_domainAuthority `address`: _Contract to resolve sub-domains. This contract
+  must implement this interface._
+- \_domainInfo `address`: _Contract which holds domain information for the
+  domain name identified by_
+- \_domainOwner `address`: _Account entitled to update the \_domainAuthority or
+  the \_domainInfo address for this domain_
 
 ## removeDomain
 
