@@ -26,9 +26,7 @@
         "operationId": "submitPayment",
         "description": "Payment initiation request related to a single credit transfer between a debtor and creditor.",
         "summary": "Submit Payment.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "name": "x-Correlation-Id",
@@ -202,9 +200,7 @@
         "operationId": "getPaymentStatus",
         "description": "Request sent by a OSP (Overlay Service Provider) in order to get the status of a given transaction.",
         "summary": "Get Payment Status.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "in": "path",
@@ -366,9 +362,7 @@
         "operationId": "getAccountServicerByAlias",
         "description": "Request to get the account servicer details for a given alias.",
         "summary": "Get Account Servicer By Alias.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "in": "query",
@@ -377,12 +371,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": [
-                "TELI",
-                "EMAL",
-                "AUBN",
-                "ORGN"
-              ]
+              "enum": ["TELI", "EMAL", "AUBN", "ORGN"]
             }
           },
           {
@@ -545,9 +534,7 @@
         "operationId": "submitCancelPayment",
         "description": "This API allows a NPP Participant client (customer or Overlay Service Provider) to request the NPP Participant to return a previously submitted payment.",
         "summary": "Submit Cancel Payment.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "name": "x-Correlation-Id",
@@ -721,9 +708,7 @@
         "operationId": "submitReturnPayment",
         "description": "This API allows a NPP Participant client (customer or Overlay Service Provider) to request the NPP Participant to return a previously received payment.",
         "summary": "Submit Return Payment.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "name": "x-Correlation-Id",
@@ -897,9 +882,7 @@
         "operationId": "getPaymentEventDetails",
         "description": "Allows a NPP client (customer or Overlay Service Provider) to fetch from the NPP Participant details of a debit or credit to their account (e.g. under a API call-back arrangement).",
         "summary": "Get Payment Event Details.",
-        "tags": [
-          "REST API"
-        ],
+        "tags": ["REST API"],
         "parameters": [
           {
             "in": "path",
@@ -1085,10 +1068,7 @@
             "properties": {
               "severity": {
                 "type": "string",
-                "enum": [
-                  "Fatal",
-                  "Transient"
-                ]
+                "enum": ["Fatal", "Transient"]
               },
               "code": {
                 "type": "string",
@@ -1123,16 +1103,10 @@
                 "type": "string"
               }
             },
-            "required": [
-              "severity",
-              "code",
-              "text"
-            ]
+            "required": ["severity", "code", "text"]
           }
         },
-        "required": [
-          "status"
-        ]
+        "required": ["status"]
       },
       "AccountAliasResource": {
         "type": "object",
@@ -1141,12 +1115,7 @@
           "alias_type": {
             "description": "Contains the type of Alias Identifier. E.g. an email, a phone number or an Australian\r\nBusiness Number.",
             "type": "string",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "TELI"
           },
           "alias_value": {
@@ -1180,10 +1149,7 @@
             "example": "ADDR.API.0405  Alias Identifier in use"
           }
         },
-        "required": [
-          "alias_type",
-          "alias_value"
-        ],
+        "required": ["alias_type", "alias_value"],
         "example": {
           "alias_type": "TELI",
           "alias_value": "+61-4123456789",
@@ -1232,10 +1198,7 @@
           "instruction_priority": {
             "description": "Indicator of the urgency or order of importance that the instructing party would like the instructed party to apply to the processing of the instruction.",
             "type": "string",
-            "enum": [
-              "HIGH",
-              "NORM"
-            ],
+            "enum": ["HIGH", "NORM"],
             "example": "NORM"
           },
           "service_level": {
@@ -1271,12 +1234,7 @@
           "debtor_alias_type": {
             "description": "Contains the type of Alias Identifier. E.g. an email, a phone number or an Australian Business\r\nNumber.",
             "type": "string",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "TELI"
           },
           "debtor_alias_value": {
@@ -1296,10 +1254,7 @@
           "debtor_account_type": {
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list.",
             "type": "string",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           },
           "debtor_agent_bic": {
@@ -1321,12 +1276,7 @@
           "creditor_alias_type": {
             "description": "Contains the type of Alias Identifier. E.g. an email, a phone number or an Australian Business\r\nNumber.",
             "type": "string",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "TELI"
           },
           "creditor_alias_value": {
@@ -1346,10 +1296,7 @@
           "creditor_account_type": {
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list.",
             "type": "string",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           },
           "creditor_agent_bic": {
@@ -1429,10 +1376,7 @@
           "remiitance_referred_document_type": "CINV",
           "remittance_referred_document_number": "INV-12345678",
           "remittance_referred_related_date": "2018-08-23",
-          "remittance_information_unstructured": [
-            "FIRST LINE",
-            "SECOND LINE"
-          ]
+          "remittance_information_unstructured": ["FIRST LINE", "SECOND LINE"]
         }
       },
       "PaymentCancellationRequest": {
@@ -1492,12 +1436,7 @@
           "debtor_alias_type": {
             "type": "string",
             "description": "Specifies the type of alias identifier, in a coded form as published in an external list. The same value may have been provided in the original payment instruction.",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "TELI"
           },
           "debtor_alias_value": {
@@ -1517,10 +1456,7 @@
           "debtor_account_type": {
             "type": "string",
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list. The same value may have been provided in the original payment instruction.",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           },
           "original_creditor_name": {
@@ -1533,12 +1469,7 @@
           "creditor_alias_type": {
             "type": "string",
             "description": "Specifies the type of alias identifier, in a coded form as published in an external list. The same value may have been provided in the original payment instruction.",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "TELI"
           },
           "creditor_alias_value": {
@@ -1558,10 +1489,7 @@
           "creditor_account_type": {
             "type": "string",
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list. The same value may have been provided in the original payment instruction.",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           }
         },
@@ -1591,9 +1519,7 @@
             "example": "Case 12345678"
           }
         },
-        "required": [
-          "acceptance_date_time"
-        ]
+        "required": ["acceptance_date_time"]
       },
       "PaymentReturnResource": {
         "type": "object",
@@ -1707,9 +1633,7 @@
             "example": "43ba8cc0-67ff-490f-abe5-5bb640bc3681"
           }
         },
-        "required": [
-          "notification_identification"
-        ]
+        "required": ["notification_identification"]
       },
       "PaymentEventResponseResource": {
         "type": "object",
@@ -1753,20 +1677,13 @@
           "credit_debit_indicator": {
             "description": "Indicates whether the entry is a credit or a debit entry.",
             "type": "string",
-            "enum": [
-              "CRDT",
-              "DBIT"
-            ],
+            "enum": ["CRDT", "DBIT"],
             "example": "CRDT"
           },
           "status": {
             "description": "Status of an entry on the books of the account servicer.",
             "type": "string",
-            "enum": [
-              "BOOK",
-              "PDNG",
-              "INFO"
-            ],
+            "enum": ["BOOK", "PDNG", "INFO"],
             "example": "CRDT"
           },
           "booking_date_time": {
@@ -1830,12 +1747,7 @@
           "debtor_alias_type": {
             "description": "Contains the type of Alias Identifier. E.g. an email, a phone number or an Australian Business\r\nNumber.",
             "type": "string",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "EMAL"
           },
           "debtor_alias_value": {
@@ -1855,10 +1767,7 @@
           "debtor_account_type": {
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list.",
             "type": "string",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           },
           "debtor_agent_bic": {
@@ -1881,12 +1790,7 @@
           "creditor_alias_type": {
             "description": "Contains the type of Alias Identifier. E.g. an email, a phone number or an Australian Business Number.",
             "type": "string",
-            "enum": [
-              "TELI",
-              "EMAL",
-              "AUBN",
-              "ORGN"
-            ],
+            "enum": ["TELI", "EMAL", "AUBN", "ORGN"],
             "example": "EMAL"
           },
           "creditor_alias_value": {
@@ -1905,10 +1809,7 @@
           },
           "creditor_account_type": {
             "description": "Name of the account identification identification scheme, in a coded form as published in an external list.",
-            "enum": [
-              "BBAN",
-              "AIIN"
-            ],
+            "enum": ["BBAN", "AIIN"],
             "example": "BBAN"
           },
           "remittance_referred_document_type": {
@@ -1963,10 +1864,7 @@
           },
           "credit_debit_indicator": {
             "type": "string",
-            "enum": [
-              "CRDT",
-              "DBIT"
-            ],
+            "enum": ["CRDT", "DBIT"],
             "example": "CRDT"
           },
           "charge_included_indicator": {
@@ -1988,12 +1886,7 @@
           "bearer": {
             "type": "string",
             "description": "Specifies which party(ies) will pay charges due for processing of the instruction.",
-            "enum": [
-              "DEBT",
-              "CRED",
-              "SHAR",
-              "SLEV"
-            ],
+            "enum": ["DEBT", "CRED", "SHAR", "SLEV"],
             "example": "SLEV"
           },
           "tax_identification": {
@@ -2013,9 +1906,7 @@
             "$ref": "#/components/schemas/ActiveOrHistoricCurrencyAndAmount"
           }
         },
-        "required": [
-          "amount"
-        ]
+        "required": ["amount"]
       },
       "ActiveOrHistoricCurrencyAndAmount": {
         "type": "object",
@@ -2030,10 +1921,7 @@
             "example": 562.89
           }
         },
-        "required": [
-          "currency",
-          "amount"
-        ]
+        "required": ["currency", "amount"]
       },
       "ActiveOrHistoricCurrencyCode": {
         "type": "string",
@@ -2048,11 +1936,7 @@
           "transaction_status": {
             "description": "Specifies the status of a transaction, in a coded form.",
             "type": "string",
-            "enum": [
-              "ACCP",
-              "ACSC",
-              "RJCT"
-            ],
+            "enum": ["ACCP", "ACSC", "RJCT"],
             "example": "ACCP"
           },
           "transaction_status_reason_code": {
@@ -2088,9 +1972,7 @@
             "example": "3F2504E0-4F89-11D3-9A0C-0305E82C3301"
           }
         },
-        "required": [
-          "transaction_status"
-        ],
+        "required": ["transaction_status"],
         "example": {
           "transaction_status": "RJCT",
           "transaction_status_reason_code": "AC01",

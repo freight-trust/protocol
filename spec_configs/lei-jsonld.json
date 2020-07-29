@@ -1,9 +1,7 @@
 [
   {
     "@id": "_:genid1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -23,9 +21,7 @@
   },
   {
     "@id": "_:genid11",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2002/07/owl#oneOf": [
       {
         "@list": [
@@ -41,9 +37,7 @@
   },
   {
     "@id": "_:genid14",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#cardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -58,9 +52,7 @@
   },
   {
     "@id": "_:genid15",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onDataRange": [
       {
         "@id": "http://www.w3.org/2001/XMLSchema#string"
@@ -80,9 +72,7 @@
   },
   {
     "@id": "_:genid16",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -102,9 +92,7 @@
   },
   {
     "@id": "_:genid17",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -124,9 +112,7 @@
   },
   {
     "@id": "_:genid18",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onDataRange": [
       {
         "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -146,9 +132,7 @@
   },
   {
     "@id": "_:genid19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -168,9 +152,7 @@
   },
   {
     "@id": "_:genid2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -190,9 +172,7 @@
   },
   {
     "@id": "_:genid20",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Country"
@@ -212,9 +192,7 @@
   },
   {
     "@id": "_:genid21",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -234,9 +212,7 @@
   },
   {
     "@id": "_:genid22",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#cardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -251,9 +227,7 @@
   },
   {
     "@id": "_:genid23",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#cardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -268,9 +242,7 @@
   },
   {
     "@id": "_:genid24",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -285,9 +257,7 @@
   },
   {
     "@id": "_:genid25",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -302,9 +272,7 @@
   },
   {
     "@id": "_:genid26",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -319,9 +287,7 @@
   },
   {
     "@id": "_:genid27",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -336,9 +302,7 @@
   },
   {
     "@id": "_:genid28",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -353,9 +317,7 @@
   },
   {
     "@id": "_:genid29",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -370,9 +332,7 @@
   },
   {
     "@id": "_:genid3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "https://www.gleif.org/ontology/Base/EntityStatus"
@@ -392,9 +352,7 @@
   },
   {
     "@id": "_:genid30",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -409,9 +367,7 @@
   },
   {
     "@id": "_:genid31",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -431,9 +387,7 @@
   },
   {
     "@id": "_:genid32",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://www.gleif.org/ontology/Base/isRegisteredIn"
@@ -447,9 +401,7 @@
   },
   {
     "@id": "_:genid33",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDifferent"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#AllDifferent"],
     "http://www.w3.org/2002/07/owl#distinctMembers": [
       {
         "@list": [
@@ -468,9 +420,7 @@
   },
   {
     "@id": "_:genid37",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDifferent"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#AllDifferent"],
     "http://www.w3.org/2002/07/owl#distinctMembers": [
       {
         "@list": [
@@ -486,9 +436,7 @@
   },
   {
     "@id": "_:genid4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -508,9 +456,7 @@
   },
   {
     "@id": "_:genid5",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#cardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -525,9 +471,7 @@
   },
   {
     "@id": "_:genid6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Restriction"],
     "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -547,9 +491,7 @@
   },
   {
     "@id": "_:genid7",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2002/07/owl#oneOf": [
       {
         "@list": [
@@ -568,39 +510,27 @@
   },
   {
     "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"]
   },
   {
     "@id": "http://purl.org/dc/terms/modified",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"]
   },
   {
     "@id": "http://purl.org/dc/terms/rightsHolder",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#AnnotationProperty"]
   },
   {
     "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#AnnotationProperty"]
   },
   {
     "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#AnnotationProperty"]
   },
   {
     "@id": "http://purl.org/vocommons/voaf#Vocabulary",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#Class"]
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/",
@@ -694,9 +624,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/Entity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -735,9 +663,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/EntityExpirationReason",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -842,9 +768,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/EntityStatus",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -945,9 +869,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/Identifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -974,9 +896,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/LegalEntityRelationship",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1003,9 +923,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/LegalPerson",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1029,9 +947,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/Period",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1059,9 +975,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1121,9 +1035,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/PhysicalAddressASCII",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1147,9 +1059,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/RegistrationAuthority",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1183,9 +1093,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/RegistrationStatus",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1204,9 +1112,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/Registry",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1230,9 +1136,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/RegistryEntry",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1251,9 +1155,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/RegistryIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1307,9 +1209,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAbbreviationLocal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1333,9 +1233,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAbbreviationTransliterated",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1359,9 +1257,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAdditionalAddressLine",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1385,9 +1281,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddress",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -1416,9 +1310,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressHeadquarters",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1442,9 +1334,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressLegal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1468,9 +1358,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressLine1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1499,9 +1387,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressLine2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1530,9 +1416,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressLine3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1566,9 +1450,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressLine4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1602,9 +1484,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1628,9 +1508,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressNumberWithinBuilding",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1654,9 +1532,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasAddressTransliterated",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1685,9 +1561,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasCity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1711,9 +1585,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasCountry",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1747,9 +1619,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasCoverageArea",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1773,9 +1643,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasEnd",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Period"
@@ -1805,9 +1673,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasEntityExpirationDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -1836,9 +1702,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasEntityExpirationReason",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -1899,9 +1763,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasFirstAddressLine",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -1925,9 +1787,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasGeographicRegion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1951,9 +1811,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasInitialRegistrationDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -1982,9 +1840,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasLastUpdateDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2013,9 +1869,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasLegalJurisdiction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -2044,15 +1898,11 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasLegalName",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#AnnotationProperty"]
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasMailRouting",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -2103,9 +1953,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameASCII",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2139,9 +1987,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameASCIIAutomatic",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2178,9 +2024,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameASCIIPreferred",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2257,9 +2101,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameAdditionalLocal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2286,9 +2128,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameLegal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2365,9 +2205,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameLocal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2401,9 +2239,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNamePreviousLegal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/base/"
@@ -2427,9 +2263,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameTradingOrOperating",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/base/"
@@ -2475,9 +2309,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNameTranslatedEnglish",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2557,9 +2389,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasNextRenewalDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2583,9 +2413,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasPostalCode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/PhysicalAddress"
@@ -2609,9 +2437,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasRegion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2712,9 +2538,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasStart",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Period"
@@ -2744,9 +2568,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasSuccessor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -2775,9 +2597,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasSuccessorName",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/Entity"
@@ -2865,9 +2685,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/hasWebsite",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2913,9 +2731,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/isManagedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -2934,9 +2750,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/isQualifiedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/LegalEntityRelationship"
@@ -2960,9 +2774,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/isQuantifiedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://www.gleif.org/ontology/Base/LegalEntityRelationship"
@@ -2991,9 +2803,7 @@
   },
   {
     "@id": "https://www.gleif.org/ontology/Base/isRegisteredIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://www.gleif.org/ontology/Base/"
@@ -3044,8 +2854,6 @@
   },
   {
     "@id": "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Region",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
+    "@type": ["http://www.w3.org/2002/07/owl#Class"]
   }
 ]
