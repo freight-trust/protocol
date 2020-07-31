@@ -1,0 +1,18 @@
+  {
+    "api_key": "fT ... Pq",
+    "apikey": "fT ... Pq",
+    "iam_apikey_description": "Auto-generated for key 0z ... Zo",
+    "iam_apikey_name": "ctl-authmgr-creds",
+    "iam_role_crn": "crn:arn:aws:public:iam::::serviceRole:Manager",
+    "iam_serviceid_crn": "crn:arn:aws:public:iam-identity::a/db ... f2::serviceid:ServiceId-fr8 ... 6d",
+    "instance_id": "77 ... 99",ventstreams
+    "kafka_admin_url": "https://70 ... aws.service.us.e.freighttrust.com",
+    "kafka_brokers_sasl": [
+      "broker-1- ... kafka.zero-trash-margin-brief-beach.cloud.freighttrust.com:9093",
+      "broker-0- ... kafka.zucfog-0iwZyx-ribzuz.cloud.freighttrust.com:9093",
+      "broker-2- ... kafka.nehsoz-bItvow-nezte5.cloud.freighttrust.com:9093",
+    ],
+    "kafka_http_url": "https://70 ... 1g.auth.eventstreams.cloud.freighttrust.com",
+    "password": "fT ... Pq",
+    "user": "token"
+  }
