@@ -1,0 +1,22 @@
+description: "Returns a protocol based on ID"
+summary: "Find protocol by ID"
+operationId: getprotocolsById
+tags:
+  - foo
+  - bar
+produces:
+  - application/json
+  - text/html
+parameters:
+  - {
+      name: protocolId,
+      in: path,
+      description: "ID of protocol that needs to be fetched",
+      required: true,
+      type: integer,
+      format: int64,
+    }
+responses:
+  "200":
+    { description: "a protocol to be returned", schema: { $ref: protocol } }
+  default: { description: "Unexpected error", schema: { $ref: ErrorModel } }
