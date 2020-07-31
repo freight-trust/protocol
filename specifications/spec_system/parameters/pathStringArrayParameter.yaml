@@ -1,6 +1,6 @@
 name: usernames
 in: path
-description: "usernames to pass"
+description: 'usernames to pass'
 required: true
 type: array
 items:
