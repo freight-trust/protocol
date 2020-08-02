@@ -1,0 +1,36 @@
+
+{
+    "Marks and Numbers Qualifier": {
+    "L": "Line Item Only",
+    "R": "Originator Assigned",
+    "S": "Entire Shipment",
+    "W": "Pallet Number",
+    "X": "Pallet Configuration Number",
+    "AA": "EAN.UCC Serial Shipping Container Code (SSCC)",
+    "AI": "UCC/EAN-128 Application Identifier (AI) and Data",
+    "CA": "Shipper-Assigned Case Number",
+    "CP": "Carrier-Assigned Package ID Number",
+    "DZ": "Receiver Assigned Drop Zone",
+    "E1": "Electronic Product Code (ePC) Serial Shipping Container Code (SSCC)",
+    "E2": "Electronic Product Code (ePC) and Bar Code Serial Shipping Container Code (SSCC)",
+    "E3": "Electronic Product Code (ePC) and Bar Code Serial Shipping Container Code (SSCC) with Application Identifier (AI)",
+    "E4": "Electronic Product Code (ePC) Serialized Global Trade Item Number (SGTIN)",
+    "E5": "Electronic Product Code (ePC) with Bar Code Serialized Global Trade Item Number (SGTIN)",
+    "GI": "Global Individual Asset Identifier",
+    "GM": "EAN.UCC Serial Shipping Container Code (SSCC) and Application Identifier",
+    "GR": "Global Returnable Asset Identifier (GRAI)",
+    "GS": "Serialized Global Returnable Asset Identifier (GRAI)",
+    "MC": "Master Carton Number",
+    "MT": "Marked Ticket Price",
+    "PB": "Premarked by Buyer",
+    "S1": "Serialized Number",
+    "SI": "Self-Identifying Container via Radio Frequency ID Device",
+    "SM": "Shipper Assigned",
+    "SR": "Shipper Assigned Roll Number",
+    "SS": "Shipper Assigned Skid Number",
+    "UC": "U.P.C. Shipping Container Code",
+    "UI": "Department of Defense Unique Item Identifier",
+    "UP": "U.P.C. Consumer Package Code (1-5-5-1)",
+    "ZZ": "Mutually Defined"
+  }
+}

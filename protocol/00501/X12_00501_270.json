@@ -1,0 +1,50 @@
+{
+  "Release": "00501",
+  "DocumentType": 270,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BHT" },
+    {
+      "ID": "HLLoop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "HL" },
+        { "ID": "TRN", "Min": 0, "Max": 9 },
+        {
+          "ID": "NM1Loop1",
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "NM1" },
+            { "ID": "REF", "Min": 0, "Max": 9 },
+            { "ID": "N2", "Min": 0 },
+            { "ID": "N3", "Min": 0 },
+            { "ID": "N4", "Min": 0 },
+            { "ID": "PER", "Min": 0, "Max": 3 },
+            { "ID": "PRV", "Min": 0 },
+            { "ID": "DMG", "Min": 0 },
+            { "ID": "INS", "Min": 0 },
+            { "ID": "HI", "Min": 0 },
+            { "ID": "DTP", "Min": 0, "Max": 9 },
+            { "ID": "MPI", "Min": 0, "Max": 9 },
+            {
+              "ID": "EQLoop1",
+              "Min": 0,
+              "Max": 99,
+              "Loop": [
+                { "ID": "EQ" },
+                { "ID": "AMT", "Min": 0, "Max": 2 },
+                { "ID": "VEH", "Min": 0 },
+                { "ID": "PDR", "Min": 0 },
+                { "ID": "PDP", "Min": 0 },
+                { "ID": "III", "Min": 0, "Max": 10 },
+                { "ID": "REF", "Min": 0 },
+                { "ID": "DTP", "Min": 0, "Max": 9 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

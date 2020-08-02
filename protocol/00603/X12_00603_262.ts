@@ -1,0 +1,423 @@
+"use strict";
+var validate = (function () {
+  var refVal = [];
+  return function validate(
+    data,
+    dataPath,
+    parentData,
+    parentDataProperty,
+    rootData
+  ) {
+    "use strict";
+    validate.errors = null;
+    return true;
+  };
+})();
+validate.schema = {
+  Release: "00603",
+  DocumentType: 262,
+  TransactionSet: [
+    {
+      ID: "ST",
+      Min: 0,
+    },
+    {
+      ID: "BGN",
+    },
+    {
+      ID: "TRN",
+      Min: 0,
+    },
+    {
+      ID: "NM1Loop1",
+      Min: 0,
+      Max: 5,
+      Loop: [
+        {
+          ID: "NM1",
+        },
+        {
+          ID: "N2",
+          Min: 0,
+        },
+        {
+          ID: "N3",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N4",
+          Min: 0,
+        },
+        {
+          ID: "PER",
+          Min: 0,
+        },
+        {
+          ID: "REF",
+          Min: 0,
+          Max: "unbounded",
+        },
+      ],
+    },
+    {
+      ID: "LXLoop1",
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "LX",
+        },
+        {
+          ID: "AM1",
+          Min: 0,
+          Max: "unbounded",
+        },
+        {
+          ID: "PWK",
+          Min: 0,
+          Max: 5,
+        },
+        {
+          ID: "SPI",
+          Min: 0,
+          Max: "unbounded",
+        },
+        {
+          ID: "CUR",
+          Min: 0,
+        },
+        {
+          ID: "NX1Loop1",
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "NX1",
+            },
+            {
+              ID: "NX2",
+              Max: "unbounded",
+            },
+            {
+              ID: "PDS",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "PDE",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "REA",
+              Min: 0,
+            },
+            {
+              ID: "QTY",
+              Min: 0,
+              Max: 25,
+            },
+            {
+              ID: "REF",
+              Min: 0,
+              Max: 30,
+            },
+            {
+              ID: "DTP",
+              Min: 0,
+              Max: 6,
+            },
+            {
+              ID: "YNQ",
+              Min: 0,
+              Max: 43,
+            },
+            {
+              ID: "CRC",
+              Min: 0,
+              Max: 10,
+            },
+            {
+              ID: "AMT",
+              Min: 0,
+              Max: 10,
+            },
+            {
+              ID: "PCT",
+              Min: 0,
+              Max: 8,
+            },
+            {
+              ID: "REC",
+              Min: 0,
+            },
+            {
+              ID: "MEALoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "MEA",
+                },
+                {
+                  ID: "API",
+                  Min: 0,
+                },
+                {
+                  ID: "NTE",
+                  Min: 0,
+                  Max: 4,
+                },
+              ],
+            },
+            {
+              ID: "IIILoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "III",
+                },
+                {
+                  ID: "MSG",
+                  Min: 0,
+                  Max: 10,
+                },
+              ],
+            },
+            {
+              ID: "PEXLoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "PEX",
+                },
+                {
+                  ID: "DTP",
+                  Min: 0,
+                },
+                {
+                  ID: "III",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+              ],
+            },
+            {
+              ID: "LQLoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "LQ",
+                },
+                {
+                  ID: "REF",
+                  Min: 0,
+                },
+                {
+                  ID: "QTY",
+                  Min: 0,
+                  Max: 10,
+                },
+                {
+                  ID: "MEA",
+                  Min: 0,
+                  Max: 10,
+                },
+                {
+                  ID: "AMT",
+                  Min: 0,
+                  Max: 7,
+                },
+                {
+                  ID: "MSG",
+                  Min: 0,
+                  Max: 3,
+                },
+                {
+                  ID: "DTP",
+                  Min: 0,
+                  Max: 2,
+                },
+                {
+                  ID: "AIN",
+                  Min: 0,
+                  Max: 4,
+                },
+                {
+                  ID: "III",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+              ],
+            },
+            {
+              ID: "RETLoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "RET",
+                },
+                {
+                  ID: "REF",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "DTP",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "PTF",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "QTY",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "III",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "NM1Loop2",
+                  Min: 0,
+                  Max: "unbounded",
+                  Loop: [
+                    {
+                      ID: "NM1",
+                    },
+                    {
+                      ID: "N2",
+                      Min: 0,
+                    },
+                    {
+                      ID: "N3",
+                      Min: 0,
+                      Max: 2,
+                    },
+                    {
+                      ID: "N4",
+                      Min: 0,
+                    },
+                    {
+                      ID: "PER",
+                      Min: 0,
+                    },
+                    {
+                      ID: "REF",
+                      Min: 0,
+                      Max: "unbounded",
+                    },
+                  ],
+                },
+                {
+                  ID: "LN2Loop1",
+                  Min: 0,
+                  Max: "unbounded",
+                  Loop: [
+                    {
+                      ID: "LN2",
+                    },
+                    {
+                      ID: "AMT",
+                      Min: 0,
+                      Max: "unbounded",
+                    },
+                    {
+                      ID: "DTP",
+                      Min: 0,
+                      Max: "unbounded",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          ID: "IN1Loop1",
+          Min: 0,
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "IN1",
+            },
+            {
+              ID: "IN2",
+              Max: 10,
+            },
+            {
+              ID: "N3",
+              Min: 0,
+              Max: 2,
+            },
+            {
+              ID: "N4",
+              Min: 0,
+            },
+            {
+              ID: "PER",
+              Min: 0,
+            },
+            {
+              ID: "DTP",
+              Min: 0,
+              Max: 2,
+            },
+            {
+              ID: "REF",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "YNQLoop1",
+              Min: 0,
+              Max: 10,
+              Loop: [
+                {
+                  ID: "YNQ",
+                },
+                {
+                  ID: "REF",
+                },
+                {
+                  ID: "DTP",
+                  Min: 0,
+                  Max: 2,
+                },
+                {
+                  ID: "IIILoop2",
+                  Min: 0,
+                  Max: 50,
+                  Loop: [
+                    {
+                      ID: "III",
+                    },
+                    {
+                      ID: "MSG",
+                      Min: 0,
+                      Max: 10,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      ID: "SE",
+      Min: 0,
+    },
+  ],
+};
+validate.errors = null;
+module.exports = validate;

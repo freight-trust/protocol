@@ -1,0 +1,11 @@
+{
+  "Release": "00503",
+  "DocumentType": 436,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "LFI" },
+    { "ID": "N7" },
+    { "ID": "K3", "Min": 0, "Max": 3 },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

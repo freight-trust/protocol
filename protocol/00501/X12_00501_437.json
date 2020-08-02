@@ -1,0 +1,21 @@
+{
+  "Release": "00501",
+  "DocumentType": 437,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BJF" },
+    { "ID": "DTM", "Max": 10 },
+    { "ID": "JCT", "Min": 0 },
+    {
+      "ID": "JSLoop1",
+      "Min": 0,
+      "Max": 2,
+      "Loop": [
+        { "ID": "JS" },
+        { "ID": "DTM", "Min": 0, "Max": 2 },
+        { "ID": "SID", "Min": 0, "Max": 20 }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}
