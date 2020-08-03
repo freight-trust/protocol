@@ -1,0 +1,96 @@
+"use strict";
+var validate = (function () {
+  var refVal = [];
+  return function validate(
+    data,
+    dataPath,
+    parentData,
+    parentDataProperty,
+    rootData
+  ) {
+    "use strict";
+    validate.errors = null;
+    return true;
+  };
+})();
+validate.schema = {
+  Release: "00603",
+  DocumentType: 244,
+  TransactionSet: [
+    {
+      ID: "ST",
+      Min: 0,
+    },
+    {
+      ID: "BGN",
+    },
+    {
+      ID: "NM1Loop1",
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "NM1",
+        },
+        {
+          ID: "DTM",
+        },
+        {
+          ID: "N1Loop1",
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "N1",
+            },
+            {
+              ID: "N2",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "BSFLoop1",
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "BSF",
+                },
+                {
+                  ID: "NX2Loop1",
+                  Max: "unbounded",
+                  Loop: [
+                    {
+                      ID: "NX2",
+                    },
+                    {
+                      ID: "COM",
+                      Min: 0,
+                      Max: "unbounded",
+                    },
+                  ],
+                },
+                {
+                  ID: "PIDLoop1",
+                  Max: "unbounded",
+                  Loop: [
+                    {
+                      ID: "PID",
+                    },
+                    {
+                      ID: "CID",
+                      Min: 0,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      ID: "SE",
+      Min: 0,
+    },
+  ],
+};
+validate.errors = null;
+module.exports = validate;

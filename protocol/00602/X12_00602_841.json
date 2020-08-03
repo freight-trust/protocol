@@ -1,0 +1,199 @@
+{
+  "Release": "00602",
+  "DocumentType": 841,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    {
+      "ID": "SPILoop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "SPI" },
+        { "ID": "RDT", "Min": 0, "Max": "unbounded" },
+        { "ID": "NTE", "Min": 0, "Max": "unbounded" },
+        { "ID": "X1", "Min": 0 },
+        { "ID": "X2", "Min": 0 },
+        { "ID": "X7", "Min": 0 },
+        { "ID": "AMT", "Min": 0, "Max": "unbounded" },
+        {
+          "ID": "REFLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "REF" },
+            { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+            { "ID": "PER", "Min": 0, "Max": "unbounded" }
+          ]
+        },
+        {
+          "ID": "N1Loop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "N1" },
+            { "ID": "N2", "Min": 0, "Max": 2 },
+            { "ID": "N3", "Min": 0, "Max": 2 },
+            { "ID": "N4", "Min": 0, "Max": "unbounded" },
+            { "ID": "REF", "Min": 0, "Max": "unbounded" },
+            { "ID": "PER", "Min": 0, "Max": "unbounded" }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "HLLoop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "HL" },
+        {
+          "ID": "SPILoop2",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "SPI" },
+            { "ID": "RDT", "Min": 0, "Max": "unbounded" },
+            { "ID": "PRR", "Min": 0, "Max": "unbounded" },
+            { "ID": "PRT", "Min": 0, "Max": "unbounded" },
+            { "ID": "PRS", "Min": 0 },
+            { "ID": "LIN", "Min": 0 },
+            { "ID": "PER", "Min": 0, "Max": "unbounded" },
+            { "ID": "MSG", "Min": 0, "Max": "unbounded" },
+            {
+              "ID": "N1Loop2",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "N1" },
+                { "ID": "N2", "Min": 0, "Max": 2 },
+                { "ID": "N3", "Min": 0, "Max": 2 },
+                { "ID": "N4", "Min": 0, "Max": "unbounded" },
+                { "ID": "PER", "Min": 0, "Max": "unbounded" },
+                { "ID": "N9", "Min": 0, "Max": "unbounded" }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "PIDLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "PID" },
+            { "ID": "PKD", "Min": 0, "Max": "unbounded" },
+            { "ID": "QTY", "Min": 0, "Max": "unbounded" },
+            { "ID": "MEA", "Min": 0, "Max": "unbounded" },
+            { "ID": "UIT", "Min": 0, "Max": "unbounded" },
+            { "ID": "LOC", "Min": 0 },
+            { "ID": "PWK", "Min": 0, "Max": "unbounded" },
+            {
+              "ID": "PKGLoop1",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "PKG" },
+                { "ID": "MEA", "Min": 0, "Max": "unbounded" }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "REFLoop2",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "REF" },
+            { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+            { "ID": "PER", "Min": 0, "Max": "unbounded" }
+          ]
+        },
+        {
+          "ID": "LXLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "LX" },
+            { "ID": "LIN", "Min": 0 },
+            { "ID": "TMD", "Min": 0 },
+            { "ID": "MEA", "Max": "unbounded" },
+            { "ID": "PSD", "Min": 0, "Max": "unbounded" },
+            { "ID": "SPS", "Min": 0, "Max": "unbounded" },
+            { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+            { "ID": "REF", "Min": 0, "Max": "unbounded" }
+          ]
+        },
+        {
+          "ID": "EFILoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [{ "ID": "EFI" }, { "ID": "BIN", "Min": 0 }]
+        },
+        {
+          "ID": "CIDLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "CID" },
+            { "ID": "UIT", "Min": 0 },
+            { "ID": "TMD", "Min": 0, "Max": "unbounded" },
+            { "ID": "PSD", "Min": 0 },
+            { "ID": "CSS", "Min": 0 },
+            { "ID": "SPS", "Min": 0 },
+            { "ID": "MSG", "Min": 0, "Max": "unbounded" },
+            {
+              "ID": "MEALoop1",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "MEA" },
+                { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+                { "ID": "REF", "Min": 0, "Max": "unbounded" }
+              ]
+            },
+            {
+              "ID": "STALoop1",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "STA" },
+                { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+                { "ID": "REF", "Min": 0, "Max": "unbounded" }
+              ]
+            },
+            {
+              "ID": "CSFLoop1",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "CSF" },
+                {
+                  "ID": "LSLoop1",
+                  "Min": 0,
+                  "Loop": [
+                    { "ID": "LS", "Min": 1, "Max": 1 },
+                    {
+                      "ID": "CIDLoop2",
+                      "Min": 0,
+                      "Max": "unbounded",
+                      "Loop": [
+                        { "ID": "CID" },
+                        { "ID": "MEA", "Min": 0 },
+                        { "ID": "STA", "Min": 0 }
+                      ]
+                    },
+                    { "ID": "LE", "Min": 1, "Max": 1 }
+                  ]
+                },
+                {
+                  "ID": "EFILoop2",
+                  "Min": 0,
+                  "Max": "unbounded",
+                  "Loop": [{ "ID": "EFI" }, { "ID": "BIN", "Min": 0 }]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

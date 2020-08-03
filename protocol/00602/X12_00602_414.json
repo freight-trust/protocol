@@ -1,0 +1,39 @@
+{
+  "Release": "00602",
+  "DocumentType": 414,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "LEQ", "Min": 0 },
+    {
+      "ID": "CTCLoop1",
+      "Max": 99,
+      "Loop": [
+        { "ID": "CTC" },
+        {
+          "ID": "CICLoop1",
+          "Max": 1000,
+          "Loop": [
+            { "ID": "CIC" },
+            { "ID": "REF", "Min": 0, "Max": 2 },
+            {
+              "ID": "LXLoop1",
+              "Min": 0,
+              "Max": 99,
+              "Loop": [
+                { "ID": "LX" },
+                { "ID": "CHR", "Min": 0, "Max": 3 },
+                { "ID": "CYC", "Min": 0, "Max": 2 },
+                { "ID": "PRI", "Min": 0 },
+                { "ID": "PI", "Min": 0 },
+                { "ID": "REF", "Min": 0, "Max": 2 },
+                { "ID": "CUR", "Min": 0 },
+                { "ID": "CV" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "Release": "00503",
+  "DocumentType": 928,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BIX" },
+    { "ID": "TI", "Min": 0 },
+    {
+      "ID": "VCLoop1",
+      "Max": 36,
+      "Loop": [{ "ID": "VC" }, { "ID": "ID", "Min": 0, "Max": 99 }]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

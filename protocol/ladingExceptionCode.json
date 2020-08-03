@@ -1,0 +1,11 @@
+{
+    "ladingExceptionCode": {
+    "0": "Partial Short, Location Unknown",
+    "A": "All Short",
+    "D": "Damaged",
+    "E": "Entire Shipment Refused",
+    "O": "Overage",
+    "P": "Partial Shipment",
+    "W": "Wrong Product"
+  }
+}

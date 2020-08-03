@@ -1,0 +1,2249 @@
+[
+  {
+    "Transaction": "100",
+    "Function Group": "PG",
+    "Description": "Insurance Plan Description",
+    "Subcommittee": "Insurance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "101",
+    "Function Group": "NL",
+    "Description": "Name and Address Lists",
+    "Subcommittee": "Supply Chain",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "102",
+    "Function Group": "AC",
+    "Description": "Associated Data",
+    "Subcommittee": "Communications & Controls",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "103",
+    "Function Group": "AB",
+    "Description": "Abandoned Property Filings",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "104",
+    "Function Group": "SA",
+    "Description": "Air Shipment Information",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "105",
+    "Function Group": "BF",
+    "Description": "Business Entity Filings",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "106",
+    "Function Group": "MH",
+    "Description": "Motor Carrier Rate Proposal",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "107",
+    "Function Group": "MC",
+    "Description": "Request for Motor Carrier Rate Proposal",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "108",
+    "Function Group": "MK",
+    "Description": "Response to a Motor Carrier Rate Proposal",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "109",
+    "Function Group": "VE",
+    "Description": "Vessel Content Details",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "110",
+    "Function Group": "IA",
+    "Description": "Air Freight Details and Invoice",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "111",
+    "Function Group": "IF",
+    "Description": "Individual Insurance Policy and Client Information",
+    "Subcommittee": "Insurance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "112",
+    "Function Group": "PQ",
+    "Description": "Property Damage Report",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "113",
+    "Function Group": "--",
+    "Description": "Election Campaign and Lobbyist Reporting",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "120",
+    "Function Group": "VC",
+    "Description": "Vehicle Shipping Order",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "121",
+    "Function Group": "VS",
+    "Description": "Vehicle Service",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "124",
+    "Function Group": "VD",
+    "Description": "Vehicle Damage",
+    "Subcommittee": "Insurance",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "125",
+    "Function Group": "MR",
+    "Description": "Multilevel Railcar Load Details",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "126",
+    "Function Group": "VA",
+    "Description": "Vehicle Application Advice",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "127",
+    "Function Group": "VB",
+    "Description": "Vehicle Baying Order",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "128",
+    "Function Group": "DI",
+    "Description": "Dealer Information",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "129",
+    "Function Group": "VH",
+    "Description": "Vehicle Carrier Rate Update",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "130",
+    "Function Group": "ED",
+    "Description": "Student Educational Record (Transcript)",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "131",
+    "Function Group": "AK",
+    "Description": "Student Educational Record (Transcript) Acknowledgment",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "132",
+    "Function Group": "--",
+    "Description": "Human Resource Information",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "133",
+    "Function Group": "--",
+    "Description": "Educational Institution Record",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "135",
+    "Function Group": "SL",
+    "Description": "Student Aid Origination Record",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "138",
+    "Function Group": "TT",
+    "Description": "Educational Testing and Prospect Request and Report",
+    "Subcommittee": "Finance",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "139",
+    "Function Group": "SL",
+    "Description": "Student Loan Guarantee Result",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "140",
+    "Function Group": "WA",
+    "Description": "Product Registration",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "141",
+    "Function Group": "WA",
+    "Description": "Product Service Claim Response",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "142",
+    "Function Group": "WA",
+    "Description": "Product Service Claim",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "143",
+    "Function Group": "WA",
+    "Description": "Product Service Notification",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "144",
+    "Function Group": "LT",
+    "Description": "Student Loan Transfer and Status Verification",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "146",
+    "Function Group": "RY",
+    "Description": "Request for Student Educational Record (Transcript)",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "147",
+    "Function Group": "RZ",
+    "Description": "Response to Request for Student Educational Record (Transcript)",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "148",
+    "Function Group": "IJ",
+    "Description": "Report of Injury, Illness or Incident",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "149",
+    "Function Group": "NT",
+    "Description": "Notice of Tax Adjustment or Assessment",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "150",
+    "Function Group": "TN",
+    "Description": "Tax Rate Notification",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "151",
+    "Function Group": "TA",
+    "Description": "Electronic Filing of Tax Return Data Acknowledgment",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "152",
+    "Function Group": "GR",
+    "Description": "Statistical Government Information",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "153",
+    "Function Group": "CB",
+    "Description": "Unemployment Insurance Tax Claim or Charge Information",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "154",
+    "Function Group": "UC",
+    "Description": "Secured Interest Filing",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "155",
+    "Function Group": "BC",
+    "Description": "Business Credit Report",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "157",
+    "Function Group": "NP",
+    "Description": "Notice of Power of Attorney",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "158",
+    "Function Group": "--",
+    "Description": "Tax Jurisdiction Sourcing",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "159",
+    "Function Group": "MP",
+    "Description": "Motion Picture Booking Confirmation",
+    "Subcommittee": "Supply Chain",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "160",
+    "Function Group": "SJ",
+    "Description": "Transportation Automatic Equipment Identification",
+    "Subcommittee": "Transportation",
+    "Category": "Automotive Series (TAS)"
+  },
+  {
+    "Transaction": "161",
+    "Function Group": "TR",
+    "Description": "Train Sheet",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "163",
+    "Function Group": "AS",
+    "Description": "Transportation Appointment Schedule Information",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "170",
+    "Function Group": "ER",
+    "Description": "Revenue Receipts Statement",
+    "Subcommittee": "Supply Chain",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "175",
+    "Function Group": "FC",
+    "Description": "Court and Law Enforcement Notice",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "176",
+    "Function Group": "FC",
+    "Description": "Court Submission",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "179",
+    "Function Group": "--",
+    "Description": "Environmental Compliance Reporting",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "180",
+    "Function Group": "AN",
+    "Description": "Return Merchandise Authorization and Notification",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "185",
+    "Function Group": "RD",
+    "Description": "Royalty Regulatory Report",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "186",
+    "Function Group": "UW",
+    "Description": "Insurance Underwriting Requirements Reporting",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "187",
+    "Function Group": "AE",
+    "Description": "Premium Audit Request and Return",
+    "Subcommittee": "Insurance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "188",
+    "Function Group": "EC",
+    "Description": "Educational Course Inventory",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "189",
+    "Function Group": "AF",
+    "Description": "Application for Admission to Educational Institutions",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "190",
+    "Function Group": "SV",
+    "Description": "Student Enrollment Verification",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "191",
+    "Function Group": "SD",
+    "Description": "Student Loan Pre-Claims and Claims",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "194",
+    "Function Group": "GT",
+    "Description": "Grant or Assistance Application",
+    "Subcommittee": "Finance",
+    "Category": "Student Information Series (STU)"
+  },
+  {
+    "Transaction": "195",
+    "Function Group": "LA",
+    "Description": "Federal Communications Commission (FCC) License Application",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "196",
+    "Function Group": "PK",
+    "Description": "Contractor Cost Data Reporting",
+    "Subcommittee": "Finance",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "197",
+    "Function Group": "TO",
+    "Description": "Real Estate Title Evidence",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "198",
+    "Function Group": "ME",
+    "Description": "Loan Verification Information",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "199",
+    "Function Group": "TO",
+    "Description": "Real Estate Settlement Information",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "200",
+    "Function Group": "ME",
+    "Description": "Mortgage Credit Report",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "201",
+    "Function Group": "ME",
+    "Description": "Residential Loan Application",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "202",
+    "Function Group": "MJ",
+    "Description": "Secondary Mortgage Market Loan Delivery",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "203",
+    "Function Group": "MH",
+    "Description": "Secondary Mortgage Market Investor Report",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "204",
+    "Function Group": "SM",
+    "Description": "Motor Carrier Load Tender",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "205",
+    "Function Group": "MN",
+    "Description": "Mortgage Note",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "206",
+    "Function Group": "MG",
+    "Description": "Real Estate Inspection",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "210",
+    "Function Group": "IM",
+    "Description": "Motor Carrier Freight Details and Invoice",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "211",
+    "Function Group": "BL",
+    "Description": "Motor Carrier Bill of Lading",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "212",
+    "Function Group": "TM",
+    "Description": "Motor Carrier Delivery Trailer Manifest",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "213",
+    "Function Group": "MI",
+    "Description": "Motor Carrier Shipment Status Inquiry",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "214",
+    "Function Group": "QM",
+    "Description": "Transportation Carrier Shipment Status Message",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "215",
+    "Function Group": "UP",
+    "Description": "Motor Carrier Pickup Manifest",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "216",
+    "Function Group": "PU",
+    "Description": "Motor Carrier Shipment Pickup Notification",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "217",
+    "Function Group": "FG",
+    "Description": "Motor Carrier Loading and Route Guide",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "219",
+    "Function Group": "AB",
+    "Description": "Logistics Service Request",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "220",
+    "Function Group": "AH",
+    "Description": "Logistics Service Response",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "222",
+    "Function Group": "CE",
+    "Description": "Cartage Work Assignment",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "223",
+    "Function Group": "MQ",
+    "Description": "Consolidators Freight Bill and Invoice",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "224",
+    "Function Group": "MA",
+    "Description": "Motor Carrier Summary Freight Bill Manifest",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "225",
+    "Function Group": "MY",
+    "Description": "Response to a Cartage Work Assignment",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "227",
+    "Function Group": "--",
+    "Description": "Trailer Usage Report",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "228",
+    "Function Group": "--",
+    "Description": "Equipment Inspection Report",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "240",
+    "Function Group": "MZ",
+    "Description": "Motor Carrier Package Status",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "242",
+    "Function Group": "DS",
+    "Description": "Data Status Tracking",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "244",
+    "Function Group": "PN",
+    "Description": "Product Source Information",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "245",
+    "Function Group": "--",
+    "Description": "Real Estate Tax Service Response",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "248",
+    "Function Group": "SU",
+    "Description": "Account Assignment/Inquiry and Service/Status",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "249",
+    "Function Group": "AT",
+    "Description": "Animal Toxicological Data",
+    "Subcommittee": "Supply Chain",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "250",
+    "Function Group": "PV",
+    "Description": "Purchase Order Shipment Management Document",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "251",
+    "Function Group": "CP",
+    "Description": "Pricing Support",
+    "Subcommittee": "Supply Chain",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "252",
+    "Function Group": "IE",
+    "Description": "Insurance Producer Administration",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "255",
+    "Function Group": "UI",
+    "Description": "Underwriting Information Services",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "256",
+    "Function Group": "PE",
+    "Description": "Periodic Compensation",
+    "Subcommittee": "Insurance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "259",
+    "Function Group": "--",
+    "Description": "Residential Mortgage Insurance Explanation of Benefits",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "260",
+    "Function Group": "MG",
+    "Description": "Application for Mortgage Insurance Benefits",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "261",
+    "Function Group": "ME",
+    "Description": "Real Estate Information Request",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "262",
+    "Function Group": "ME",
+    "Description": "Real Estate Information Report",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "263",
+    "Function Group": "ME",
+    "Description": "Residential Mortgage Insurance Application Response",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "264",
+    "Function Group": "MG",
+    "Description": "Mortgage Loan Default Status",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "265",
+    "Function Group": "TO",
+    "Description": "Real Estate Title Insurance Services Order",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "266",
+    "Function Group": "MG",
+    "Description": "Mortgage or Property Record Change Notification",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "267",
+    "Function Group": "--",
+    "Description": "Individual Life, Annuity and Disability Application",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "268",
+    "Function Group": "PF",
+    "Description": "Annuity Activity",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "269",
+    "Function Group": "--",
+    "Description": "Health Care Benefit Coordination Verification",
+    "Subcommittee": "Insurance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "270",
+    "Function Group": "HS",
+    "Description": "Eligibility, Coverage or Benefit Inquiry",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "271",
+    "Function Group": "HB",
+    "Description": "Eligibility, Coverage or Benefit Information",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "272",
+    "Function Group": "LN",
+    "Description": "Property and Casualty Loss Notification",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "273",
+    "Function Group": "ID",
+    "Description": "Insurance/Annuity Application Status",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "274",
+    "Function Group": "PW",
+    "Description": "Healthcare Provider Information",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "275",
+    "Function Group": "PI",
+    "Description": "Patient Information",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "276",
+    "Function Group": "HR",
+    "Description": "Health Care Claim Status Request",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "277",
+    "Function Group": "HN",
+    "Description": "Health Care Information Status Notification",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "278",
+    "Function Group": "HI",
+    "Description": "Health Care Services Review Information",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "280",
+    "Function Group": "VI",
+    "Description": "Voter Registration Information",
+    "Subcommittee": "Finance",
+    "Category": "Government Series (GOV)"
+  },
+  {
+    "Transaction": "283",
+    "Function Group": "TE",
+    "Description": "Tax or Fee Exemption Certification",
+    "Subcommittee": "Finance",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "284",
+    "Function Group": "IH",
+    "Description": "Commercial Vehicle Safety Reports",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "285",
+    "Function Group": "CV",
+    "Description": "Commercial Vehicle Safety and Credentials Information Exchange",
+    "Subcommittee": "Transportation",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "286",
+    "Function Group": "KM",
+    "Description": "Commercial Vehicle Credentials",
+    "Subcommittee": "Transportation",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "288",
+    "Function Group": "WI",
+    "Description": "Wage Determination",
+    "Subcommittee": "Finance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "290",
+    "Function Group": "CO",
+    "Description": "Cooperative Advertising Agreements",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "300",
+    "Function Group": "RO",
+    "Description": "Reservation (Booking Request) (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "301",
+    "Function Group": "RO",
+    "Description": "Confirmation (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "303",
+    "Function Group": "RO",
+    "Description": "Booking Cancellation (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "304",
+    "Function Group": "SO",
+    "Description": "Shipping Instructions",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "309",
+    "Function Group": "SO",
+    "Description": "Customs Manifest",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "310",
+    "Function Group": "IO",
+    "Description": "Freight Receipt and Invoice (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "311",
+    "Function Group": "SO",
+    "Description": "Canada Customs Information",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "312",
+    "Function Group": "IO",
+    "Description": "Arrival Notice (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "313",
+    "Function Group": "QO",
+    "Description": "Shipment Status Inquiry (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "315",
+    "Function Group": "QO",
+    "Description": "Status Details (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "317",
+    "Function Group": "SO",
+    "Description": "Delivery/Pickup Order",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "319",
+    "Function Group": "SO",
+    "Description": "Terminal Information",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "322",
+    "Function Group": "SO",
+    "Description": "Terminal Operations and Intermodal Ramp Activity",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "323",
+    "Function Group": "SO",
+    "Description": "Vessel Schedule and Itinerary (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "324",
+    "Function Group": "SO",
+    "Description": "Vessel Stow Plan (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "325",
+    "Function Group": "SO",
+    "Description": "Consolidation of Goods In Container",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "326",
+    "Function Group": "SO",
+    "Description": "Consignment Summary List",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "350",
+    "Function Group": "SO",
+    "Description": "Customs Status Information",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "352",
+    "Function Group": "SO",
+    "Description": "Customs Carrier General Order Status",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "353",
+    "Function Group": "SO",
+    "Description": "Customs Events Advisory Details",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "354",
+    "Function Group": "SO",
+    "Description": "Customs Automated Manifest Archive Status",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "355",
+    "Function Group": "SO",
+    "Description": "Customs Acceptance/Rejection",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "356",
+    "Function Group": "SO",
+    "Description": "Customs Permit to Transfer Request",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "357",
+    "Function Group": "SO",
+    "Description": "Customs In-Bond Information",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "358",
+    "Function Group": "SO",
+    "Description": "Customs Consist Information",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "359",
+    "Function Group": "--",
+    "Description": "Customs Customer Profile Management",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "361",
+    "Function Group": "SO",
+    "Description": "Carrier Interchange Agreement (Ocean)",
+    "Subcommittee": "Transportation",
+    "Category": "Ocean Series (TOS)"
+  },
+  {
+    "Transaction": "362",
+    "Function Group": "OC",
+    "Description": "Cargo Insurance Advice of Shipment",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "404",
+    "Function Group": "SR",
+    "Description": "Rail Carrier Shipment Information",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "410",
+    "Function Group": "IR",
+    "Description": "Rail Carrier Freight Details and Invoice",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "412",
+    "Function Group": "--",
+    "Description": "Trailer or Container Repair Billing",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "414",
+    "Function Group": "CR",
+    "Description": "Rail Carhire Settlements",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "417",
+    "Function Group": "WB",
+    "Description": "Rail Carrier Waybill Interchange",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "418",
+    "Function Group": "IC",
+    "Description": "Rail Advance Interchange Consist",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "419",
+    "Function Group": "SR",
+    "Description": "Advance Car Disposition",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "420",
+    "Function Group": "CH",
+    "Description": "Car Handling Information",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "421",
+    "Function Group": "IS",
+    "Description": "Estimated Time of Arrival and Car Scheduling",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "422",
+    "Function Group": "DM",
+    "Description": "Equipment Order",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "423",
+    "Function Group": "RL",
+    "Description": "Rail Industrial Switch List",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "424",
+    "Function Group": "--",
+    "Description": "Rail Carrier Services Settlement",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "425",
+    "Function Group": "WT",
+    "Description": "Rail Waybill Request",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "426",
+    "Function Group": "RW",
+    "Description": "Rail Revenue Waybill",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "429",
+    "Function Group": "RU",
+    "Description": "Railroad Retirement Activity",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "431",
+    "Function Group": "RM",
+    "Description": "Railroad Station Master File",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "432",
+    "Function Group": "RX",
+    "Description": "Rail Car Hire Rate Negotiation",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "433",
+    "Function Group": "RH",
+    "Description": "Railroad Reciprocal Switch File",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "434",
+    "Function Group": "RJ",
+    "Description": "Railroad Mark Register Update Activity",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "435",
+    "Function Group": "PB",
+    "Description": "Standard Transportation Commodity Code Master",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "436",
+    "Function Group": "LI",
+    "Description": "Locomotive Information",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "437",
+    "Function Group": "RV",
+    "Description": "Railroad Junctions and Interchanges Activity",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "440",
+    "Function Group": "WR",
+    "Description": "Shipment Weights",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "451",
+    "Function Group": "EV",
+    "Description": "Railroad Event Report",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "452",
+    "Function Group": "PL",
+    "Description": "Railroad Problem Log Inquiry or Advice",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "453",
+    "Function Group": "ST",
+    "Description": "Railroad Service Commitment Advice",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "455",
+    "Function Group": "PB",
+    "Description": "Railroad Parameter Trace Registration",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "456",
+    "Function Group": "EI",
+    "Description": "Railroad Equipment Inquiry or Advice",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "460",
+    "Function Group": "TP",
+    "Description": "Railroad Price Distribution Request or Response",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "463",
+    "Function Group": "TP",
+    "Description": "Rail Rate Reply",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "466",
+    "Function Group": "TP",
+    "Description": "Rate Request",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "468",
+    "Function Group": "TP",
+    "Description": "Rate Docket Journal Log",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "470",
+    "Function Group": "RB",
+    "Description": "Railroad Clearance",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "475",
+    "Function Group": "SN",
+    "Description": "Rail Route File Maintenance",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "485",
+    "Function Group": "TP",
+    "Description": "Ratemaking Action",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "486",
+    "Function Group": "TP",
+    "Description": "Rate Docket Expiration",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "490",
+    "Function Group": "TP",
+    "Description": "Rate Group Definition",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "492",
+    "Function Group": "TP",
+    "Description": "Miscellaneous Rates",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "494",
+    "Function Group": "TP",
+    "Description": "Rail Scale Rates",
+    "Subcommittee": "Transportation",
+    "Category": "Rail Series (TRS)"
+  },
+  {
+    "Transaction": "500",
+    "Function Group": "MM",
+    "Description": "Medical Event Reporting",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "501",
+    "Function Group": "WG",
+    "Description": "Vendor Performance Review",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "503",
+    "Function Group": "PH",
+    "Description": "Pricing History",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "504",
+    "Function Group": "CC",
+    "Description": "Clauses and Provisions",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "511",
+    "Function Group": "RN",
+    "Description": "Requisition",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "517",
+    "Function Group": "MV",
+    "Description": "Material Obligation Validation",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "521",
+    "Function Group": "AO",
+    "Description": "Income or Asset Offset",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "527",
+    "Function Group": "MD",
+    "Description": "Material Due-In and Receipt",
+    "Subcommittee": "Finance",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "536",
+    "Function Group": "LR",
+    "Description": "Logistics Reassignment",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "540",
+    "Function Group": "ES",
+    "Description": "Notice of Employment Status",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "561",
+    "Function Group": "D4",
+    "Description": "Contract Abstract",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "567",
+    "Function Group": "D3",
+    "Description": "Contract Completion Status",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "568",
+    "Function Group": "D5",
+    "Description": "Contract Payment Management Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "601",
+    "Function Group": "SE",
+    "Description": "Customs Export Shipment Information",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "602",
+    "Function Group": "TS",
+    "Description": "Transportation Services Tender",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "603",
+    "Function Group": "--",
+    "Description": "Transportation Equipment Registration",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "620",
+    "Function Group": "EX",
+    "Description": "Excavation Communication",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "625",
+    "Function Group": "WL",
+    "Description": "Well Information",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "650",
+    "Function Group": "MO",
+    "Description": "Maintenance Service Order",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "715",
+    "Function Group": "GL",
+    "Description": "Intermodal Group Loading Plan",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "753",
+    "Function Group": "--",
+    "Description": "Request for Routing Instructions",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "754",
+    "Function Group": "--",
+    "Description": "Routing Instructions",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "805",
+    "Function Group": "CP",
+    "Description": "Contract Pricing Proposal",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "806",
+    "Function Group": "PJ",
+    "Description": "Project Schedule Reporting",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "810",
+    "Function Group": "IN",
+    "Description": "Invoice",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "811",
+    "Function Group": "CI",
+    "Description": "Consolidated Service Invoice/Statement",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "812",
+    "Function Group": "CD",
+    "Description": "Credit/Debit Adjustment",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "813",
+    "Function Group": "TF",
+    "Description": "Electronic Filing of Tax Return Data",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "814",
+    "Function Group": "GE",
+    "Description": "General Request, Response or Confirmation",
+    "Subcommittee": "Finance",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "815",
+    "Function Group": "CS",
+    "Description": "Cryptographic Service Message",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "816",
+    "Function Group": "OR",
+    "Description": "Organizational Relationships",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "818",
+    "Function Group": "RP",
+    "Description": "Commission Sales Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "819",
+    "Function Group": "IN",
+    "Description": "Joint Interest Billing and Operating Expense Statement",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "820",
+    "Function Group": "RA",
+    "Description": "Payment Order/Remittance Advice",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "821",
+    "Function Group": "FR",
+    "Description": "Financial Information Reporting",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "822",
+    "Function Group": "AA",
+    "Description": "Account Analysis",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "823",
+    "Function Group": "LB",
+    "Description": "Lockbox",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "824",
+    "Function Group": "AG",
+    "Description": "Application Advice",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "826",
+    "Function Group": "TI",
+    "Description": "Tax Information Exchange",
+    "Subcommittee": "Finance",
+    "Category": "Tax Services Series (TAX)"
+  },
+  {
+    "Transaction": "827",
+    "Function Group": "FR",
+    "Description": "Financial Return Notice",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "828",
+    "Function Group": "DA",
+    "Description": "Debit Authorization",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "829",
+    "Function Group": "PY",
+    "Description": "Payment Cancellation Request",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "830",
+    "Function Group": "PS",
+    "Description": "Planning Schedule with Release Capability",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "831",
+    "Function Group": "CT",
+    "Description": "Application Control Totals",
+    "Subcommittee": "Finance",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "832",
+    "Function Group": "SC",
+    "Description": "Price/Sales Catalog",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "833",
+    "Function Group": "ME",
+    "Description": "Mortgage Credit Report Order",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "834",
+    "Function Group": "BE",
+    "Description": "Benefit Enrollment and Maintenance",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "835",
+    "Function Group": "HP",
+    "Description": "Health Care Claim Payment/Advice",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "836",
+    "Function Group": "RQ",
+    "Description": "Procurement Notices",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "837",
+    "Function Group": "HC",
+    "Description": "Health Care Claim",
+    "Subcommittee": "Insurance",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "838",
+    "Function Group": "TD",
+    "Description": "Trading Partner Profile",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "839",
+    "Function Group": "PK",
+    "Description": "Project Cost Reporting",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "840",
+    "Function Group": "RQ",
+    "Description": "Request for Quotation",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "841",
+    "Function Group": "SP",
+    "Description": "Specifications/Technical Information",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "842",
+    "Function Group": "NC",
+    "Description": "Nonconformance Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "843",
+    "Function Group": "RR",
+    "Description": "Response to Request for Quotation",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "844",
+    "Function Group": "CF",
+    "Description": "Product Transfer Account Adjustment",
+    "Subcommittee": "Finance",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "845",
+    "Function Group": "PA",
+    "Description": "Price Authorization Acknowledgment/Status",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "846",
+    "Function Group": "IB",
+    "Description": "Inventory Inquiry/Advice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "847",
+    "Function Group": "MX",
+    "Description": "Material Claim",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "848",
+    "Function Group": "MS",
+    "Description": "Material Safety Data Sheet",
+    "Subcommittee": "Supply Chain",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "849",
+    "Function Group": "CF",
+    "Description": "Response to Product Transfer Account Adjustment",
+    "Subcommittee": "Finance",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "850",
+    "Function Group": "PO",
+    "Description": "Purchase Order",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "851",
+    "Function Group": "LS",
+    "Description": "Asset Schedule",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "852",
+    "Function Group": "PD",
+    "Description": "Product Activity Data",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "853",
+    "Function Group": "RI",
+    "Description": "Routing and Carrier Instruction",
+    "Subcommittee": "Supply Chain",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "854",
+    "Function Group": "DD",
+    "Description": "Shipment Delivery Discrepancy Information",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "855",
+    "Function Group": "PR",
+    "Description": "Purchase Order Acknowledgment",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "856",
+    "Function Group": "SH",
+    "Description": "Ship Notice/Manifest",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "857",
+    "Function Group": "BS",
+    "Description": "Shipment and Billing Notice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "858",
+    "Function Group": "SI",
+    "Description": "Shipment Information",
+    "Subcommittee": "Transportation",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "859",
+    "Function Group": "FB",
+    "Description": "Freight Invoice",
+    "Subcommittee": "Transportation",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "860",
+    "Function Group": "PC",
+    "Description": "Purchase Order Change Request - Buyer Initiated",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "861",
+    "Function Group": "RC",
+    "Description": "Receiving Advice/Acceptance Certificate",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "862",
+    "Function Group": "SS",
+    "Description": "Shipping Schedule",
+    "Subcommittee": "Supply Chain",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "863",
+    "Function Group": "RT",
+    "Description": "Report of Test Results",
+    "Subcommittee": "Supply Chain",
+    "Category": "Quality and Safety Series (QSS)"
+  },
+  {
+    "Transaction": "864",
+    "Function Group": "TX",
+    "Description": "Text Message",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "865",
+    "Function Group": "CA",
+    "Description": "Purchase Order Change Acknowledgment/Request - Seller Initiated",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "866",
+    "Function Group": "SQ",
+    "Description": "Production Sequence",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "867",
+    "Function Group": "PT",
+    "Description": "Product Transfer and Resale Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "868",
+    "Function Group": "MT",
+    "Description": "Electronic Form Structure",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "869",
+    "Function Group": "RS",
+    "Description": "Order Status Inquiry",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "870",
+    "Function Group": "RS",
+    "Description": "Order Status Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "872",
+    "Function Group": "ME",
+    "Description": "Residential Mortgage Insurance Application",
+    "Subcommittee": "Finance",
+    "Category": "Mortgage Series (MOR)"
+  },
+  {
+    "Transaction": "873",
+    "Function Group": "--",
+    "Description": "Commodity Movement Services",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "874",
+    "Function Group": "--",
+    "Description": "Commodity Movement Services Response",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "875",
+    "Function Group": "OG",
+    "Description": "Grocery Products Purchase Order",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "876",
+    "Function Group": "OG",
+    "Description": "Grocery Products Purchase Order Change",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "877",
+    "Function Group": "CJ",
+    "Description": "Manufacturer Coupon Family Code Structure",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "878",
+    "Function Group": "QG",
+    "Description": "Product Authorization/De-authorization",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "879",
+    "Function Group": "QG",
+    "Description": "Price Information",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "880",
+    "Function Group": "GP",
+    "Description": "Grocery Products Invoice",
+    "Subcommittee": "Finance",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "881",
+    "Function Group": "CN",
+    "Description": "Manufacturer Coupon Redemption Detail",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "882",
+    "Function Group": "IG",
+    "Description": "Direct Store Delivery Summary Information",
+    "Subcommittee": "Supply Chain",
+    "Category": "Delivery Series (DEL)"
+  },
+  {
+    "Transaction": "883",
+    "Function Group": "DF",
+    "Description": "Market Development Fund Allocation",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "884",
+    "Function Group": "MF",
+    "Description": "Market Development Fund Settlement",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "885",
+    "Function Group": "UA",
+    "Description": "Retail Account Characteristics",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "886",
+    "Function Group": "UB",
+    "Description": "Customer Call Reporting",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "887",
+    "Function Group": "CN",
+    "Description": "Coupon Notification",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "888",
+    "Function Group": "QG",
+    "Description": "Item Maintenance",
+    "Subcommittee": "Supply Chain",
+    "Category": "Order Series (ORD)"
+  },
+  {
+    "Transaction": "889",
+    "Function Group": "QG",
+    "Description": "Promotion Announcement",
+    "Subcommittee": "Supply Chain",
+    "Category": "Product Services Series (PSS)"
+  },
+  {
+    "Transaction": "890",
+    "Function Group": "--",
+    "Description": "Contract & Rebate Management Transaction",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "891",
+    "Function Group": "UD",
+    "Description": "Deduction Research Report",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "892",
+    "Function Group": "--",
+    "Description": "Trading Partner Performance Measurement",
+    "Subcommittee": "Supply Chain",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "893",
+    "Function Group": "AM",
+    "Description": "Item Information Request",
+    "Subcommittee": "Supply Chain",
+    "Category": "Materials Handling Series (MAT)"
+  },
+  {
+    "Transaction": "894",
+    "Function Group": "DX",
+    "Description": "Delivery/Return Base Record",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "895",
+    "Function Group": "DX",
+    "Description": "Delivery/Return Acknowledgment or Adjustment",
+    "Subcommittee": "Supply Chain",
+    "Category": "Manufacturing Series (MAN)"
+  },
+  {
+    "Transaction": "896",
+    "Function Group": "QG",
+    "Description": "Product Dimension Maintenance",
+    "Subcommittee": "Supply Chain",
+    "Category": "Engineering Management & Contract Series (ENG)"
+  },
+  {
+    "Transaction": "920",
+    "Function Group": "GC",
+    "Description": "Loss or Damage Claim - General Commodities",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "924",
+    "Function Group": "GC",
+    "Description": "Loss or Damage Claim - Motor Vehicle",
+    "Subcommittee": "Transportation",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "925",
+    "Function Group": "GC",
+    "Description": "Claim Tracer",
+    "Subcommittee": "Transportation",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "926",
+    "Function Group": "GC",
+    "Description": "Claim Status Report and Tracer Reply",
+    "Subcommittee": "Transportation",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "928",
+    "Function Group": "AI",
+    "Description": "Automotive Inspection Detail",
+    "Subcommittee": "Transportation",
+    "Category": "Insurance/Health Series (INS)"
+  },
+  {
+    "Transaction": "940",
+    "Function Group": "OW",
+    "Description": "Warehouse Shipping Order",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "943",
+    "Function Group": "AR",
+    "Description": "Warehouse Stock Transfer Shipment Advice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "944",
+    "Function Group": "RE",
+    "Description": "Warehouse Stock Transfer Receipt Advice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "945",
+    "Function Group": "SW",
+    "Description": "Warehouse Shipping Advice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "947",
+    "Function Group": "AW",
+    "Description": "Warehouse Inventory Adjustment Advice",
+    "Subcommittee": "Supply Chain",
+    "Category": "Warehousing Series (WAR)"
+  },
+  {
+    "Transaction": "980",
+    "Function Group": "--",
+    "Description": "Functional Group Totals",
+    "Subcommittee": "Transportation",
+    "Category": "Financial Series (FIN)"
+  },
+  {
+    "Transaction": "990",
+    "Function Group": "GF",
+    "Description": "Response to a Load Tender",
+    "Subcommittee": "Transportation",
+    "Category": "Air and Motor Series (TAM)"
+  },
+  {
+    "Transaction": "993",
+    "Function Group": "NR",
+    "Description": "Secured Receipt or Acknowledgment",
+    "Subcommittee": "Communications & Controls",
+    "Category": "N/A"
+  },
+  {
+    "Transaction": "996",
+    "Function Group": "FT",
+    "Description": "File Transfer",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "997",
+    "Function Group": "FA",
+    "Description": "Functional Acknowledgment",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "998",
+    "Function Group": "AL",
+    "Description": "Set Cancellation",
+    "Subcommittee": "Transportation",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  },
+  {
+    "Transaction": "999",
+    "Function Group": "--",
+    "Description": "Implementation Acknowledgment",
+    "Subcommittee": "Communications & Controls",
+    "Category": "Miscellaneous ANSI X12 Transactions Series (MIS)"
+  }
+]

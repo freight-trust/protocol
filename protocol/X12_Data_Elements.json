@@ -1,0 +1,2242 @@
+[
+  {
+    "Data Element Number": "100",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Currency Code"
+  },
+  {
+    "Data Element Number": "1004",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Percent Qualifier"
+  },
+  {
+    "Data Element Number": "1005",
+    "Data Type": "ID",
+    "Minimum Length": "4",
+    "Maximum Length": "4",
+    "Data Element Name": "Hierarchical Structure Code"
+  },
+  {
+    "Data Element Number": "1018",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Exponent"
+  },
+  {
+    "Data Element Number": "102",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Ownership Code"
+  },
+  {
+    "Data Element Number": "1028",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "38",
+    "Data Element Name": "Claim Submitters Identifier"
+  },
+  {
+    "Data Element Number": "1029",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Claim Status Code"
+  },
+  {
+    "Data Element Number": "103",
+    "Data Type": "AN",
+    "Minimum Length": "3",
+    "Maximum Length": "5",
+    "Data Element Name": "Packaging Code"
+  },
+  {
+    "Data Element Number": "1032",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Claim Filing Indicator Code"
+  },
+  {
+    "Data Element Number": "1033",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Claim Adjustment Group Code"
+  },
+  {
+    "Data Element Number": "1034",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "5",
+    "Data Element Name": "Claim Adjustment Reason Code"
+  },
+  {
+    "Data Element Number": "1035",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "35",
+    "Data Element Name": "Name Last or Organization Name"
+  },
+  {
+    "Data Element Number": "1036",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "25",
+    "Data Element Name": "Name First"
+  },
+  {
+    "Data Element Number": "1037",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "25",
+    "Data Element Name": "Name Middle"
+  },
+  {
+    "Data Element Number": "1038",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Name Prefix"
+  },
+  {
+    "Data Element Number": "1039",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Name Suffix"
+  },
+  {
+    "Data Element Number": "1048",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Business Function Code"
+  },
+  {
+    "Data Element Number": "1065",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Entity Type Qualifier"
+  },
+  {
+    "Data Element Number": "1066",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Citizenship Status Code"
+  },
+  {
+    "Data Element Number": "1067",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Marital Status Code"
+  },
+  {
+    "Data Element Number": "1068",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Gender Code"
+  },
+  {
+    "Data Element Number": "1069",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Individual Relationship Code"
+  },
+  {
+    "Data Element Number": "107",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Payment Method Code"
+  },
+  {
+    "Data Element Number": "1073",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Yes/No Condition or Response Code"
+  },
+  {
+    "Data Element Number": "1074",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Type of Real Estate Asset Code"
+  },
+  {
+    "Data Element Number": "1095",
+    "Data Type": "N0",
+    "Minimum Length": "4",
+    "Maximum Length": "4",
+    "Data Element Name": "Year"
+  },
+  {
+    "Data Element Number": "1109",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Race or Ethnicity Code"
+  },
+  {
+    "Data Element Number": "1129",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Adjustment Reason Code Characteristic"
+  },
+  {
+    "Data Element Number": "1130",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Primary or Contingent Code"
+  },
+  {
+    "Data Element Number": "1136",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Code Category"
+  },
+  {
+    "Data Element Number": "1137",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Medical Code Value"
+  },
+  {
+    "Data Element Number": "1138",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Payer Responsibility Sequence Number Code"
+  },
+  {
+    "Data Element Number": "1143",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Coordination of Benefits Code"
+  },
+  {
+    "Data Element Number": "1146",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Disability Type Code"
+  },
+  {
+    "Data Element Number": "1149",
+    "Data Type": "ID",
+    "Minimum Length": "4",
+    "Maximum Length": "6",
+    "Data Element Name": "Occupation Code"
+  },
+  {
+    "Data Element Number": "1154",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Work Intensity Code"
+  },
+  {
+    "Data Element Number": "116",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "15",
+    "Data Element Name": "Postal Code"
+  },
+  {
+    "Data Element Number": "1161",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Product Option Code"
+  },
+  {
+    "Data Element Number": "1165",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Confidentiality Code"
+  },
+  {
+    "Data Element Number": "1166",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Contract Type Code"
+  },
+  {
+    "Data Element Number": "1167",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Sample Selection Modulus"
+  },
+  {
+    "Data Element Number": "1176",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Employment Class Code"
+  },
+  {
+    "Data Element Number": "118",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "9",
+    "Data Element Name": "Rate"
+  },
+  {
+    "Data Element Number": "1186",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Type of Income Code"
+  },
+  {
+    "Data Element Number": "1187",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Type of Account Code"
+  },
+  {
+    "Data Element Number": "1188",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Type of Personal or Business Asset Code"
+  },
+  {
+    "Data Element Number": "1201",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Information Status Code"
+  },
+  {
+    "Data Element Number": "1202",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Flexible Spending Account Selection Code"
+  },
+  {
+    "Data Element Number": "1203",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Maintenance Reason Code"
+  },
+  {
+    "Data Element Number": "1204",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "50",
+    "Data Element Name": "Plan Coverage Description"
+  },
+  {
+    "Data Element Number": "1205",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Insurance Line Code"
+  },
+  {
+    "Data Element Number": "1207",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Coverage Level Code"
+  },
+  {
+    "Data Element Number": "1209",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Underwriting Decision Code"
+  },
+  {
+    "Data Element Number": "1211",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Drug House Code"
+  },
+  {
+    "Data Element Number": "1212",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Health-Related Code"
+  },
+  {
+    "Data Element Number": "1213",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Current Health Condition Code"
+  },
+  {
+    "Data Element Number": "1214",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "5",
+    "Data Element Name": "Salary Grade"
+  },
+  {
+    "Data Element Number": "1215",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Identification Card Type Code"
+  },
+  {
+    "Data Element Number": "1216",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Benefit Status Code"
+  },
+  {
+    "Data Element Number": "1218",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Medicare Plan Code"
+  },
+  {
+    "Data Element Number": "1219",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Consolidated Omnibus Budget Reconciliation Act (COBRA) Qualifying"
+  },
+  {
+    "Data Element Number": "1220",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Student Status Code"
+  },
+  {
+    "Data Element Number": "1221",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Provider Code"
+  },
+  {
+    "Data Element Number": "1222",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Provider Specialty Code"
+  },
+  {
+    "Data Element Number": "1223",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Provider Organization Code"
+  },
+  {
+    "Data Element Number": "1224",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Contribution Code"
+  },
+  {
+    "Data Element Number": "123",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Number of Received Transaction Sets"
+  },
+  {
+    "Data Element Number": "124",
+    "Data Type": "AN",
+    "Minimum Length": "2",
+    "Maximum Length": "15",
+    "Data Element Name": "124"
+  },
+  {
+    "Data Element Number": "1250",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Date Time Period Format Qualifier"
+  },
+  {
+    "Data Element Number": "1251",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "35",
+    "Data Element Name": "Date Time Period"
+  },
+  {
+    "Data Element Number": "1253",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "6",
+    "Data Element Name": "Immunization Type Code"
+  },
+  {
+    "Data Element Number": "1254",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Immunization Status Code"
+  },
+  {
+    "Data Element Number": "127",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Reference Identification"
+  },
+  {
+    "Data Element Number": "1270",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Code List Qualifier Code"
+  },
+  {
+    "Data Element Number": "1271",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Industry Code"
+  },
+  {
+    "Data Element Number": "128",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Reference Identification Qualifier"
+  },
+  {
+    "Data Element Number": "1295",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Participant Status Code"
+  },
+  {
+    "Data Element Number": "1296",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Special Processing Type"
+  },
+  {
+    "Data Element Number": "1303",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Use of Language Indicator"
+  },
+  {
+    "Data Element Number": "1314",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Admission Source Code"
+  },
+  {
+    "Data Element Number": "1315",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Admission Type Code"
+  },
+  {
+    "Data Element Number": "1316",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Ambulance Transport Code"
+  },
+  {
+    "Data Element Number": "1317",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Ambulance Transport Reason Code"
+  },
+  {
+    "Data Element Number": "1318",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Approval Code"
+  },
+  {
+    "Data Element Number": "1319",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Basis of Cost Determination Code"
+  },
+  {
+    "Data Element Number": "1320",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Basis of Days Supply Determination Code"
+  },
+  {
+    "Data Element Number": "1321",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Condition Indicator"
+  },
+  {
+    "Data Element Number": "1322",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Certification Type Code"
+  },
+  {
+    "Data Element Number": "1325",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Claim Frequency Type Code"
+  },
+  {
+    "Data Element Number": "1327",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Copay Status Code"
+  },
+  {
+    "Data Element Number": "1328",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Diagnosis Code Pointer"
+  },
+  {
+    "Data Element Number": "1329",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Dispense as Written Code"
+  },
+  {
+    "Data Element Number": "1330",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Dosage Form Code"
+  },
+  {
+    "Data Element Number": "1331",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Facility Code Value"
+  },
+  {
+    "Data Element Number": "1332",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Facility Code Qualifier"
+  },
+  {
+    "Data Element Number": "1333",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Record Format Code"
+  },
+  {
+    "Data Element Number": "1334",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Health Care Professional Shortage Area Code"
+  },
+  {
+    "Data Element Number": "1335",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Insulin Dependent Code"
+  },
+  {
+    "Data Element Number": "1336",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Insurance Type Code"
+  },
+  {
+    "Data Element Number": "1337",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Level of Care Code"
+  },
+  {
+    "Data Element Number": "1338",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Level of Service Code"
+  },
+  {
+    "Data Element Number": "1339",
+    "Data Type": "AN",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Procedure Modifier"
+  },
+  {
+    "Data Element Number": "1340",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Multiple Procedure Code"
+  },
+  {
+    "Data Element Number": "1341",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "National or Local Assigned Review Value"
+  },
+  {
+    "Data Element Number": "1342",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Nature of Condition Code"
+  },
+  {
+    "Data Element Number": "1343",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Non-Institutional Claim Type Code"
+  },
+  {
+    "Data Element Number": "1344",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Non-Visit Code"
+  },
+  {
+    "Data Element Number": "1345",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Nursing Home Residential Status Code"
+  },
+  {
+    "Data Element Number": "1346",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Nutrient Administration Method Code"
+  },
+  {
+    "Data Element Number": "1347",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Nutrient Administration Technique Code"
+  },
+  {
+    "Data Element Number": "1348",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Oxygen Equipment Type Code"
+  },
+  {
+    "Data Element Number": "1349",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Oxygen Test Condition Code"
+  },
+  {
+    "Data Element Number": "1350",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Oxygen Test Findings Code"
+  },
+  {
+    "Data Element Number": "1351",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Patient Signature Source Code"
+  },
+  {
+    "Data Element Number": "1352",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Patient Status Code"
+  },
+  {
+    "Data Element Number": "1354",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "4",
+    "Data Element Name": "Diagnosis Related Group (DRG) Code"
+  },
+  {
+    "Data Element Number": "1355",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Prescription Denial Override Code"
+  },
+  {
+    "Data Element Number": "1356",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Prescription Origin Code"
+  },
+  {
+    "Data Element Number": "1357",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Prior Authorization Type Code"
+  },
+  {
+    "Data Element Number": "1358",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Prosthesis"
+  },
+  {
+    "Data Element Number": "1359",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Provider Accept Assignment Code"
+  },
+  {
+    "Data Element Number": "1360",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Provider Agreement Code"
+  },
+  {
+    "Data Element Number": "1361",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Oral Cavity Designation Code"
+  },
+  {
+    "Data Element Number": "1362",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Related-Causes Code"
+  },
+  {
+    "Data Element Number": "1363",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Release of Information Code"
+  },
+  {
+    "Data Element Number": "1364",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Review Code"
+  },
+  {
+    "Data Element Number": "1365",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Service Type Code"
+  },
+  {
+    "Data Element Number": "1366",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Special Program Code"
+  },
+  {
+    "Data Element Number": "1367",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Subluxation Level Code"
+  },
+  {
+    "Data Element Number": "1368",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Tooth Status Code"
+  },
+  {
+    "Data Element Number": "1369",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Tooth Surface Code"
+  },
+  {
+    "Data Element Number": "1370",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Unit Dose Code"
+  },
+  {
+    "Data Element Number": "1371",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Unit Rate"
+  },
+  {
+    "Data Element Number": "1373",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "4",
+    "Data Element Name": "Measurement Method or Device"
+  },
+  {
+    "Data Element Number": "1382",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Oxygen Delivery System Code"
+  },
+  {
+    "Data Element Number": "1383",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Claim Submission Reason Code"
+  },
+  {
+    "Data Element Number": "1384",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Patient Location Code"
+  },
+  {
+    "Data Element Number": "1390",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Eligibility or Benefit Information"
+  },
+  {
+    "Data Element Number": "1403",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Implant Type Code"
+  },
+  {
+    "Data Element Number": "1404",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Implant Status Code"
+  },
+  {
+    "Data Element Number": "142",
+    "Data Type": "AN",
+    "Minimum Length": "2",
+    "Maximum Length": "15",
+    "Data Element Name": "Application Senders Code"
+  },
+  {
+    "Data Element Number": "1429",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Construction Type"
+  },
+  {
+    "Data Element Number": "143",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Transaction Set Identifier Code"
+  },
+  {
+    "Data Element Number": "1470",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "9",
+    "Data Element Name": "Number"
+  },
+  {
+    "Data Element Number": "1473",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Pricing Methodology"
+  },
+  {
+    "Data Element Number": "1476",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Language Proficiency Indicator"
+  },
+  {
+    "Data Element Number": "151",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Authority"
+  },
+  {
+    "Data Element Number": "1514",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Delay Reason Code"
+  },
+  {
+    "Data Element Number": "1525",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Request Category Code"
+  },
+  {
+    "Data Element Number": "1526",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Policy Compliance Code"
+  },
+  {
+    "Data Element Number": "1527",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Exception Code"
+  },
+  {
+    "Data Element Number": "1528",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Composite Data Element Position in Composite"
+  },
+  {
+    "Data Element Number": "156",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "State or Province Code"
+  },
+  {
+    "Data Element Number": "166",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "55",
+    "Data Element Name": "Address Information"
+  },
+  {
+    "Data Element Number": "1685",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Tax Treatment Code"
+  },
+  {
+    "Data Element Number": "1687",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Earnings Rate of Pay"
+  },
+  {
+    "Data Element Number": "1705",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "35",
+    "Data Element Name": "Implementation Convention Reference"
+  },
+  {
+    "Data Element Number": "183",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "8",
+    "Data Element Name": "Volume"
+  },
+  {
+    "Data Element Number": "184",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Volume Unit Qualifier"
+  },
+  {
+    "Data Element Number": "188",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Weight Unit Code"
+  },
+  {
+    "Data Element Number": "19",
+    "Data Type": "AN",
+    "Minimum Length": "2",
+    "Maximum Length": "30",
+    "Data Element Name": "City Name"
+  },
+  {
+    "Data Element Number": "2",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Number of Accepted Transaction Sets"
+  },
+  {
+    "Data Element Number": "212",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "17",
+    "Data Element Name": "Unit Price"
+  },
+  {
+    "Data Element Number": "22",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Commodity Code"
+  },
+  {
+    "Data Element Number": "23",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Commodity Code Qualifier"
+  },
+  {
+    "Data Element Number": "234",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "48",
+    "Data Element Name": "Product/Service ID"
+  },
+  {
+    "Data Element Number": "235",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Product/Service ID Qualifier"
+  },
+  {
+    "Data Element Number": "236",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Price Identifier Code"
+  },
+  {
+    "Data Element Number": "26",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Country Code"
+  },
+  {
+    "Data Element Number": "28",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "9",
+    "Data Element Name": "Group Control Number"
+  },
+  {
+    "Data Element Number": "29",
+    "Data Type": "DT",
+    "Minimum Length": "6",
+    "Maximum Length": "8",
+    "Data Element Name": "Date"
+  },
+  {
+    "Data Element Number": "30",
+    "Data Type": "TM",
+    "Minimum Length": "4",
+    "Maximum Length": "4",
+    "Data Element Name": "Time"
+  },
+  {
+    "Data Element Number": "280",
+    "Data Type": "R",
+    "Minimum Length": "4",
+    "Maximum Length": "10",
+    "Data Element Name": "Exchange Rate"
+  },
+  {
+    "Data Element Number": "289",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Multiple Price Quantity"
+  },
+  {
+    "Data Element Number": "305",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Transaction Handling Code"
+  },
+  {
+    "Data Element Number": "306",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Action Code"
+  },
+  {
+    "Data Element Number": "309",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Location Qualifier"
+  },
+  {
+    "Data Element Number": "310",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Location Identifier"
+  },
+  {
+    "Data Element Number": "324",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "22",
+    "Data Element Name": "Purchase Order Number"
+  },
+  {
+    "Data Element Number": "328",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Release Number"
+  },
+  {
+    "Data Element Number": "329",
+    "Data Type": "AN",
+    "Minimum Length": "4",
+    "Maximum Length": "9",
+    "Data Element Name": "Transaction Set Control Number"
+  },
+  {
+    "Data Element Number": "332",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Percent"
+  },
+  {
+    "Data Element Number": "337",
+    "Data Type": "TM",
+    "Minimum Length": "4",
+    "Maximum Length": "8",
+    "Data Element Name": "Time"
+  },
+  {
+    "Data Element Number": "338",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Terms Discount Percent"
+  },
+  {
+    "Data Element Number": "349",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Item Description Type"
+  },
+  {
+    "Data Element Number": "350",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Assigned Identification"
+  },
+  {
+    "Data Element Number": "352",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "80",
+    "Data Element Name": "Description"
+  },
+  {
+    "Data Element Number": "353",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Transaction Set Purpose Code"
+  },
+  {
+    "Data Element Number": "354",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Number of Line Items"
+  },
+  {
+    "Data Element Number": "355",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Unit or Basis for Measurement Code"
+  },
+  {
+    "Data Element Number": "358",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Quantity Invoiced"
+  },
+  {
+    "Data Element Number": "363",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Note Reference Code"
+  },
+  {
+    "Data Element Number": "364",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "80",
+    "Data Element Name": "Communication Number"
+  },
+  {
+    "Data Element Number": "365",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Communication Number Qualifier"
+  },
+  {
+    "Data Element Number": "366",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Contact Function Code"
+  },
+  {
+    "Data Element Number": "373",
+    "Data Type": "DT",
+    "Minimum Length": "8",
+    "Maximum Length": "8",
+    "Data Element Name": "Date"
+  },
+  {
+    "Data Element Number": "374",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Date/Time Qualifier"
+  },
+  {
+    "Data Element Number": "380",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Quantity"
+  },
+  {
+    "Data Element Number": "426",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Adjustment Reason Code"
+  },
+  {
+    "Data Element Number": "429",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "16",
+    "Data Element Name": "Check Number"
+  },
+  {
+    "Data Element Number": "443",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Contact Inquiry Reference"
+  },
+  {
+    "Data Element Number": "447",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Loop Identifier Code"
+  },
+  {
+    "Data Element Number": "449",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "80",
+    "Data Element Name": "Fixed Format Information"
+  },
+  {
+    "Data Element Number": "455",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Responsible Agency Code"
+  },
+  {
+    "Data Element Number": "478",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Credit/Debit Flag Code"
+  },
+  {
+    "Data Element Number": "479",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Functional Identifier Code"
+  },
+  {
+    "Data Element Number": "480",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "12",
+    "Data Element Name": "Version / Release / Industry Identifier Code"
+  },
+  {
+    "Data Element Number": "481",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Trace Type Code"
+  },
+  {
+    "Data Element Number": "482",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Payment Action Code"
+  },
+  {
+    "Data Element Number": "499",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Condition Value"
+  },
+  {
+    "Data Element Number": "506",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "(DFI) ID Number Qualifier"
+  },
+  {
+    "Data Element Number": "507",
+    "Data Type": "AN",
+    "Minimum Length": "3",
+    "Maximum Length": "12",
+    "Data Element Name": "(DFI) Identification Number"
+  },
+  {
+    "Data Element Number": "508",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "35",
+    "Data Element Name": "Account Number"
+  },
+  {
+    "Data Element Number": "509",
+    "Data Type": "AN",
+    "Minimum Length": "10",
+    "Maximum Length": "10",
+    "Data Element Name": "Originating Company Identifier"
+  },
+  {
+    "Data Element Number": "510",
+    "Data Type": "AN",
+    "Minimum Length": "9",
+    "Maximum Length": "9",
+    "Data Element Name": "Originating Company Supplemental Code"
+  },
+  {
+    "Data Element Number": "522",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Amount Qualifier Code"
+  },
+  {
+    "Data Element Number": "539",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "25",
+    "Data Element Name": "Vehicle Identification Number"
+  },
+  {
+    "Data Element Number": "554",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Assigned Number"
+  },
+  {
+    "Data Element Number": "559",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Agency Qualifier Code"
+  },
+  {
+    "Data Element Number": "569",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Account Number Qualifier"
+  },
+  {
+    "Data Element Number": "584",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Employment Status Code"
+  },
+  {
+    "Data Element Number": "591",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Payment Method Code"
+  },
+  {
+    "Data Element Number": "594",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Frequency Code"
+  },
+  {
+    "Data Element Number": "609",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "9",
+    "Data Element Name": "Count"
+  },
+  {
+    "Data Element Number": "61",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Free-Form Message"
+  },
+  {
+    "Data Element Number": "610",
+    "Data Type": "N2",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Amount"
+  },
+  {
+    "Data Element Number": "615",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Time Period Qualifier"
+  },
+  {
+    "Data Element Number": "616",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Number of Periods"
+  },
+  {
+    "Data Element Number": "623",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Time Code"
+  },
+  {
+    "Data Element Number": "628",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "12",
+    "Data Element Name": "Hierarchical ID Number"
+  },
+  {
+    "Data Element Number": "639",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Basis of Unit Price Code"
+  },
+  {
+    "Data Element Number": "640",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Transaction Type Code"
+  },
+  {
+    "Data Element Number": "648",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Price Multiplier Qualifier"
+  },
+  {
+    "Data Element Number": "649",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Multiplier"
+  },
+  {
+    "Data Element Number": "65",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "8",
+    "Data Element Name": "Height"
+  },
+  {
+    "Data Element Number": "659",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Basis of Verification Code"
+  },
+  {
+    "Data Element Number": "66",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Identification Code Qualifier"
+  },
+  {
+    "Data Element Number": "662",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Relationship Code"
+  },
+  {
+    "Data Element Number": "669",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Currency Market/Exchange Code"
+  },
+  {
+    "Data Element Number": "67",
+    "Data Type": "AN",
+    "Minimum Length": "2",
+    "Maximum Length": "80",
+    "Data Element Name": "Identification Code"
+  },
+  {
+    "Data Element Number": "672",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Resource Authorization Code"
+  },
+  {
+    "Data Element Number": "673",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Quantity Qualifier"
+  },
+  {
+    "Data Element Number": "675",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Schedule Type Qualifier"
+  },
+  {
+    "Data Element Number": "676",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Schedule Quantity Qualifier"
+  },
+  {
+    "Data Element Number": "678",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Ship/Delivery or Calendar Pattern Code"
+  },
+  {
+    "Data Element Number": "679",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Ship/Delivery Pattern Time Code"
+  },
+  {
+    "Data Element Number": "680",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Forecast Qualifier"
+  },
+  {
+    "Data Element Number": "681",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Forecast Timing Qualifier"
+  },
+  {
+    "Data Element Number": "687",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Class of Trade Code"
+  },
+  {
+    "Data Element Number": "689",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Occupancy Code"
+  },
+  {
+    "Data Element Number": "704",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Paperwork/Report Action Code"
+  },
+  {
+    "Data Element Number": "706",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Entity Relationship Code"
+  },
+  {
+    "Data Element Number": "715",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Functional Group Acknowledgment Code"
+  },
+  {
+    "Data Element Number": "716",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Functional Group Syntax Error Code"
+  },
+  {
+    "Data Element Number": "717",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Transaction Set Acknowledgment Code"
+  },
+  {
+    "Data Element Number": "718",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Transaction Set Syntax Error Code"
+  },
+  {
+    "Data Element Number": "719",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "Segment Position in Transaction Set"
+  },
+  {
+    "Data Element Number": "720",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Segment Syntax Error Code"
+  },
+  {
+    "Data Element Number": "721",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Segment ID Code"
+  },
+  {
+    "Data Element Number": "722",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Element Position in Segment"
+  },
+  {
+    "Data Element Number": "723",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Data Element Syntax Error Code"
+  },
+  {
+    "Data Element Number": "724",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "99",
+    "Data Element Name": "Copy of Bad Data Element"
+  },
+  {
+    "Data Element Number": "725",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "4",
+    "Data Element Name": "Data Element Reference Number"
+  },
+  {
+    "Data Element Number": "734",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "12",
+    "Data Element Name": "Hierarchical Parent ID Number"
+  },
+  {
+    "Data Element Number": "735",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Hierarchical Level Code"
+  },
+  {
+    "Data Element Number": "736",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Hierarchical Child Code"
+  },
+  {
+    "Data Element Number": "737",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Measurement Reference ID Code"
+  },
+  {
+    "Data Element Number": "738",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "3",
+    "Data Element Name": "Measurement Qualifier"
+  },
+  {
+    "Data Element Number": "739",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Measurement Value"
+  },
+  {
+    "Data Element Number": "740",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Range Minimum"
+  },
+  {
+    "Data Element Number": "741",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "20",
+    "Data Element Name": "Range Maximum"
+  },
+  {
+    "Data Element Number": "750",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Product/Process Characteristic Code"
+  },
+  {
+    "Data Element Number": "751",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "12",
+    "Data Element Name": "Product Description Code"
+  },
+  {
+    "Data Element Number": "752",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Surface/Layer/Position Code"
+  },
+  {
+    "Data Element Number": "754",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "7",
+    "Data Element Name": "Packaging Description Code"
+  },
+  {
+    "Data Element Number": "755",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Report Type Code"
+  },
+  {
+    "Data Element Number": "756",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Report Transmission Code"
+  },
+  {
+    "Data Element Number": "757",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "2",
+    "Data Element Name": "Report Copies Needed"
+  },
+  {
+    "Data Element Number": "782",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "18",
+    "Data Element Name": "Monetary Amount"
+  },
+  {
+    "Data Element Number": "786",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Security Level Code"
+  },
+  {
+    "Data Element Number": "799",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "30",
+    "Data Element Name": "Version Identifier"
+  },
+  {
+    "Data Element Number": "81",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Weight"
+  },
+  {
+    "Data Element Number": "812",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Payment Format Code"
+  },
+  {
+    "Data Element Number": "819",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Language Code"
+  },
+  {
+    "Data Element Number": "82",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "8",
+    "Data Element Name": "Length"
+  },
+  {
+    "Data Element Number": "821",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Safety Characteristic/Hazard Code"
+  },
+  {
+    "Data Element Number": "822",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "15",
+    "Data Element Name": "Source Subqualifier"
+  },
+  {
+    "Data Element Number": "875",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "Maintenance Type Code"
+  },
+  {
+    "Data Element Number": "889",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Follow-up Action Code"
+  },
+  {
+    "Data Element Number": "9",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Late Reason Code"
+  },
+  {
+    "Data Element Number": "901",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Reject Reason Code"
+  },
+  {
+    "Data Element Number": "921",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Discipline Type Code"
+  },
+  {
+    "Data Element Number": "923",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "Prognosis Code"
+  },
+  {
+    "Data Element Number": "93",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "60",
+    "Data Element Name": "Name"
+  },
+  {
+    "Data Element Number": "933",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "264",
+    "Data Element Name": "Free-Form Message Text"
+  },
+  {
+    "Data Element Number": "934",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Printer Carriage Control Code"
+  },
+  {
+    "Data Element Number": "935",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Measurement Significance Code"
+  },
+  {
+    "Data Element Number": "936",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "Measurement Attribute Code"
+  },
+  {
+    "Data Element Number": "954",
+    "Data Type": "R",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Percent"
+  },
+  {
+    "Data Element Number": "96",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "10",
+    "Data Element Name": "Number of Included Segments"
+  },
+  {
+    "Data Element Number": "97",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "6",
+    "Data Element Name": "97"
+  },
+  {
+    "Data Element Number": "98",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "3",
+    "Data Element Name": "Entity Identifier Code"
+  },
+  {
+    "Data Element Number": "I01",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "I01"
+  },
+  {
+    "Data Element Number": "I02",
+    "Data Type": "AN",
+    "Minimum Length": "10",
+    "Maximum Length": "10",
+    "Data Element Name": "I02"
+  },
+  {
+    "Data Element Number": "I03",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "I03"
+  },
+  {
+    "Data Element Number": "I04",
+    "Data Type": "AN",
+    "Minimum Length": "10",
+    "Maximum Length": "10",
+    "Data Element Name": "I04"
+  },
+  {
+    "Data Element Number": "I05",
+    "Data Type": "ID",
+    "Minimum Length": "2",
+    "Maximum Length": "2",
+    "Data Element Name": "I05"
+  },
+  {
+    "Data Element Number": "I06",
+    "Data Type": "AN",
+    "Minimum Length": "15",
+    "Maximum Length": "15",
+    "Data Element Name": "I06"
+  },
+  {
+    "Data Element Number": "I07",
+    "Data Type": "AN",
+    "Minimum Length": "15",
+    "Maximum Length": "15",
+    "Data Element Name": "I07"
+  },
+  {
+    "Data Element Number": "I08",
+    "Data Type": "DT",
+    "Minimum Length": "6",
+    "Maximum Length": "6",
+    "Data Element Name": "I08"
+  },
+  {
+    "Data Element Number": "I09",
+    "Data Type": "TM",
+    "Minimum Length": "4",
+    "Maximum Length": "4",
+    "Data Element Name": "I09"
+  },
+  {
+    "Data Element Number": "I10",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "I10"
+  },
+  {
+    "Data Element Number": "I11",
+    "Data Type": "ID",
+    "Minimum Length": "5",
+    "Maximum Length": "5",
+    "Data Element Name": "I11"
+  },
+  {
+    "Data Element Number": "I12",
+    "Data Type": "N0",
+    "Minimum Length": "9",
+    "Maximum Length": "9",
+    "Data Element Name": "I12"
+  },
+  {
+    "Data Element Number": "I13",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "I13"
+  },
+  {
+    "Data Element Number": "I14",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "I14"
+  },
+  {
+    "Data Element Number": "I15",
+    "Data Type": "AN",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "I15"
+  },
+  {
+    "Data Element Number": "I16",
+    "Data Type": "N0",
+    "Minimum Length": "1",
+    "Maximum Length": "5",
+    "Data Element Name": "I16"
+  },
+  {
+    "Data Element Number": "I17",
+    "Data Type": "ID",
+    "Minimum Length": "1",
+    "Maximum Length": "1",
+    "Data Element Name": "I17"
+  },
+  {
+    "Data Element Number": "I18",
+    "Data Type": "ID",
+    "Minimum Length": "3",
+    "Maximum Length": "3",
+    "Data Element Name": "I18"
+  }
+]

@@ -7,3 +7,4 @@ _resources
 _*
 DEV/EDILib.js
 *.pdf
+.vscode/snipsnap.code-snippets

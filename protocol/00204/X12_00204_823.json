@@ -1,0 +1,69 @@
+{
+  "Release": "00204",
+  "DocumentType": 823,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "N1", "Max": 2 },
+    {
+      "ID": "DEPLoop1",
+      "Max": 100,
+      "Loop": [
+        { "ID": "DEP" },
+        { "ID": "AMT" },
+        { "ID": "QTY", "Max": 2 },
+        { "ID": "REF", "Min": 0, "Max": 5 },
+        { "ID": "DTM", "Min": 0, "Max": 10 },
+        {
+          "ID": "BATLoop1",
+          "Min": 0,
+          "Max": 100,
+          "Loop": [
+            { "ID": "BAT" },
+            { "ID": "AVA", "Min": 0, "Max": 10 },
+            { "ID": "AMT", "Min": 0 },
+            { "ID": "QTY", "Min": 0 },
+            { "ID": "DTM", "Min": 0, "Max": 10 },
+            {
+              "ID": "BPSLoop1",
+              "Min": 0,
+              "Max": 1000,
+              "Loop": [
+                { "ID": "BPS" },
+                { "ID": "CUR", "Min": 0 },
+                { "ID": "REF", "Min": 0, "Max": 5 },
+                { "ID": "DTM", "Min": 0, "Max": 10 },
+                { "ID": "AVA", "Min": 0 },
+                {
+                  "ID": "N1Loop1",
+                  "Min": 0,
+                  "Max": 200,
+                  "Loop": [
+                    { "ID": "N1" },
+                    { "ID": "N2", "Min": 0, "Max": 2 },
+                    { "ID": "N3", "Min": 0, "Max": 2 },
+                    { "ID": "N4", "Min": 0 },
+                    { "ID": "REF", "Min": 0, "Max": 12 },
+                    { "ID": "PER", "Min": 0, "Max": 3 }
+                  ]
+                },
+                {
+                  "ID": "RMTLoop1",
+                  "Min": 0,
+                  "Max": 10000,
+                  "Loop": [
+                    { "ID": "RMT" },
+                    { "ID": "N1", "Min": 0 },
+                    { "ID": "CUR", "Min": 0 },
+                    { "ID": "REF", "Min": 0, "Max": 5 },
+                    { "ID": "DTM", "Min": 0, "Max": 10 }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

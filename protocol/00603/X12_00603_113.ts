@@ -1,0 +1,306 @@
+"use strict";
+var validate = (function () {
+  var refVal = [];
+  return function validate(
+    data,
+    dataPath,
+    parentData,
+    parentDataProperty,
+    rootData
+  ) {
+    "use strict";
+    validate.errors = null;
+    return true;
+  };
+})();
+validate.schema = {
+  Release: "00603",
+  DocumentType: 113,
+  TransactionSet: [
+    {
+      ID: "ST",
+      Min: 0,
+    },
+    {
+      ID: "BGN",
+    },
+    {
+      ID: "N9",
+      Min: 0,
+      Max: "unbounded",
+    },
+    {
+      ID: "DTM",
+      Min: 0,
+      Max: "unbounded",
+    },
+    {
+      ID: "LQ",
+      Min: 0,
+      Max: "unbounded",
+    },
+    {
+      ID: "MTX",
+      Min: 0,
+      Max: "unbounded",
+    },
+    {
+      ID: "NM1Loop1",
+      Min: 0,
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "NM1",
+        },
+        {
+          ID: "N2",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N3",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N4",
+          Min: 0,
+        },
+        {
+          ID: "PER",
+          Min: 0,
+          Max: "unbounded",
+        },
+        {
+          ID: "N9",
+          Min: 0,
+          Max: "unbounded",
+        },
+      ],
+    },
+    {
+      ID: "AWDLoop1",
+      Min: 0,
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "AWD",
+        },
+        {
+          ID: "LQ",
+          Min: 0,
+          Max: "unbounded",
+        },
+        {
+          ID: "MTX",
+          Min: 0,
+          Max: "unbounded",
+        },
+      ],
+    },
+    {
+      ID: "HLLoop1",
+      Min: 0,
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "HL",
+        },
+        {
+          ID: "N9Loop1",
+          Min: 0,
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "N9",
+            },
+            {
+              ID: "DTM",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "NX2",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "LQ",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "MTX",
+              Min: 0,
+              Max: "unbounded",
+            },
+          ],
+        },
+        {
+          ID: "NM1Loop2",
+          Min: 0,
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "NM1",
+            },
+            {
+              ID: "N2",
+              Min: 0,
+              Max: 2,
+            },
+            {
+              ID: "N3",
+              Min: 0,
+              Max: 2,
+            },
+            {
+              ID: "N4",
+              Min: 0,
+            },
+            {
+              ID: "PER",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "N9",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "DTM",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "NX2",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "EMS",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "TPB",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "PWK",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "PAM",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "G86",
+              Min: 0,
+            },
+            {
+              ID: "MTX",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "LQLoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "LQ",
+                },
+                {
+                  ID: "N9",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "DTM",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "PCT",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "QTY",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "MTX",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+              ],
+            },
+            {
+              ID: "AWDLoop2",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "AWD",
+                },
+                {
+                  ID: "DTM",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "PCT",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "QTY",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "N9",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "PDL",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "LQ",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "N1",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "MTX",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      ID: "SE",
+      Min: 0,
+    },
+  ],
+};
+validate.errors = null;
+module.exports = validate;

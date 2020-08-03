@@ -1,0 +1,120 @@
+{
+  "Release": "00503",
+  "DocumentType": 198,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BGN" },
+    {
+      "ID": "N1Loop1",
+      "Min": 0,
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "N1" },
+        { "ID": "N2", "Min": 0, "Max": 2 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0 },
+        { "ID": "REF", "Min": 0 },
+        { "ID": "PER", "Min": 0, "Max": 5 }
+      ]
+    },
+    {
+      "ID": "IN1Loop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "IN1" },
+        { "ID": "IN2", "Max": 10 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0 },
+        { "ID": "REF", "Min": 0, "Max": 5 },
+        {
+          "ID": "APILoop1",
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "API" },
+            {
+              "ID": "N1Loop2",
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "N1" },
+                { "ID": "N2", "Min": 0, "Max": 2 },
+                { "ID": "N3", "Min": 0, "Max": 2 },
+                { "ID": "N4", "Min": 0 },
+                { "ID": "REF", "Min": 0, "Max": 5 },
+                { "ID": "PER", "Min": 0 },
+                { "ID": "AIN", "Min": 0, "Max": 5 },
+                { "ID": "DTP", "Min": 0 },
+                {
+                  "ID": "PWKLoop1",
+                  "Min": 0,
+                  "Max": "unbounded",
+                  "Loop": [
+                    { "ID": "PWK" },
+                    { "ID": "PER", "Min": 0 },
+                    { "ID": "EMS", "Min": 0 },
+                    { "ID": "NTE", "Min": 0, "Max": 10 },
+                    { "ID": "DTP", "Min": 0, "Max": 4 },
+                    { "ID": "REF", "Min": 0, "Max": 5 },
+                    {
+                      "ID": "AINLoop1",
+                      "Min": 0,
+                      "Max": "unbounded",
+                      "Loop": [{ "ID": "AIN" }, { "ID": "DTP", "Min": 0 }]
+                    },
+                    {
+                      "ID": "NX1Loop1",
+                      "Min": 0,
+                      "Max": "unbounded",
+                      "Loop": [
+                        { "ID": "NX1" },
+                        { "ID": "NX2", "Min": 0, "Max": 10 },
+                        { "ID": "ACT", "Min": 0 },
+                        { "ID": "NM1", "Min": 0, "Max": 10 },
+                        { "ID": "PRD", "Min": 0 },
+                        { "ID": "PEX", "Min": 0, "Max": 10 },
+                        { "ID": "AMT", "Min": 0, "Max": 5 },
+                        { "ID": "QTY", "Min": 0, "Max": 5 },
+                        { "ID": "YNQ", "Min": 0, "Max": 5 },
+                        { "ID": "DTP", "Min": 0, "Max": 10 },
+                        { "ID": "MSG", "Min": 0, "Max": 20 }
+                      ]
+                    },
+                    {
+                      "ID": "FAALoop1",
+                      "Min": 0,
+                      "Max": "unbounded",
+                      "Loop": [
+                        { "ID": "FAA" },
+                        { "ID": "NM1", "Min": 0, "Max": 5 },
+                        { "ID": "QTY", "Min": 0 },
+                        { "ID": "MSG", "Min": 0, "Max": 20 },
+                        {
+                          "ID": "DTPLoop1",
+                          "Min": 0,
+                          "Max": "unbounded",
+                          "Loop": [{ "ID": "DTP" }, { "ID": "AMT", "Min": 0 }]
+                        }
+                      ]
+                    },
+                    {
+                      "ID": "CDALoop1",
+                      "Min": 0,
+                      "Max": "unbounded",
+                      "Loop": [
+                        { "ID": "CDA" },
+                        { "ID": "NM1", "Min": 0, "Max": 5 },
+                        { "ID": "QTY", "Min": 0 },
+                        { "ID": "DTP", "Min": 0, "Max": 20 },
+                        { "ID": "MSG", "Min": 0, "Max": 20 }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

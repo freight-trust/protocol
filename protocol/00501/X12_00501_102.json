@@ -1,0 +1,12 @@
+{
+  "Release": "00501",
+  "DocumentType": 102,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "ORI" },
+    { "ID": "REF", "Min": 0, "Max": "unbounded" },
+    { "ID": "OOI", "Max": "unbounded" },
+    { "ID": "BDS" },
+    { "ID": "SE", "Min": 0 }
+  ]
+}
