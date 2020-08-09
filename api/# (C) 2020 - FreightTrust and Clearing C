@@ -1,0 +1,4461 @@
+# (C) 2020 - FreightTrust and Clearing Corporation
+# SPDX-License-Identifier: MPL-2.0
+# SPDXVersion: SPDX-2.2
+# SPDX-FileCopyrightText
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: Freight Trust and Clearing EDI.ZONE
+  description: 'RESTful API Service for translating data from one format to another.'
+  termsOfService: 'https://github.com/freight-trust/legal/terms-of-service.md'
+security:
+  - ApiKeyAuth: []
+  - BasicAuth: []
+tags:
+  - name: Company
+    description: The company of the authorized user.
+  - name: Control Numbers
+    description: 'Used as increment counters primarily in outbound EDIFACT, TRADACOMS, and X12 control numbers.'
+  - name: Conversion Codes
+    description: 'Used for converting qualifiers and codes.<br/>Example: EA Unit of measure code to ''Each'' text.'
+  - name: Convert
+    description: 'Uses translation maps to convert data or create acknowledgements.<br/>Standard data types include CSV, EDIFACT, EXCEL, FIXED, HTML, IDOCS, JSON, PDF, TRADACOMS, WORD, X12, XML.'
+  - name: Grammar
+    description: Descriptive file structure definition used in lexical analysis.
+  - name: Log
+    description: Process Log information for data conversion.
+  - name: Partner
+    description: Partner or company information including address.
+  - name: Translation Map
+    description: Program that converts data from one format to another.
+  - name: User
+    description: Authorized user of the api.
+  - name: Utilities
+    description: Helper functions for the api.<br/>Primarily for converting between text stings and base64.
+paths:
+  /api/v1/:
+    get:
+      tags:
+        - Utilities
+      summary: EDI.ZONE API Information
+      security: {}
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return API information object.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  program:
+                    type: string
+                    description: The name of the API.
+                    example: EDI.ZONE
+                  version:
+                    type: string
+                    description: The version of the API.
+                    example: 1.0.0
+                  status:
+                    type: string
+                    description: The status of the API.
+                    example: active
+                  message:
+                    type: string
+                    description: The status message.
+                    example: ok
+  /api/v1/user:
+    get:
+      tags:
+        - Utilities
+      summary: Authorized User Information
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return Authorized User Object.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                    description: The ID of the authorized user.
+                    example: jx8Yq2wOMt0esONO7uLx
+                  user_name:
+                    type: string
+                    description: The name of the authorized user.
+                    example: John Doe
+                  company:
+                    type: string
+                    description: The company the authorized user belongs to.
+                    example: FreightTrust & Clearing Corporation
+                  company_id:
+                    type: string
+                    description: The Company ID of the authorized user.
+                    # TODO : CHANGE TO SPEC (mneomic)
+                    example: 
+                  trading_channel_id:
+                    type: string
+                    description: The trading channel the authorized user belongs to. (0 = no network)
+                    example: FreightTrust & Clearing Corporation
+                  auth_level:
+                    type: string
+                    description: The authorization level the authorized user has.
+                    example: MailboxAdmin
+  /api/v1/file2base64:
+    post:
+      tags:
+        - Utilities
+      summary: Converts an uploaded file to a Base64 string.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 'The file to convert, allowed file types: txt, x12, edifact, edi, csv, json, html'
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return Base64 string representation of the file.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    format: base64
+                    description: Base64 encoded character string.
+                    example: IyBtYXBwaW5nLXNjcmlwdA0KaW1wb3J0IGJvd...
+  /api/v1/string2base64:
+    post:
+      tags:
+        - Utilities
+      summary: Converts a text string to a base64 string.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: The text string.
+                  example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the base64 encoded string.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    description: The Base64 encoded string.
+                    example: SVNBKjAwKiAqMDAqICpaWio5MzM5Njg3MDU1OTY4ICpaWio5Mzc3Nzc4MDkzOTI1ICoyMDA1MTEqMDY1OSpVKjAwMjAwKjAwMDU0MzUzOSowKlAqPg
+  /api/v1/base642file:
+    post:
+      tags:
+        - Utilities
+      summary: Converts a Base64 string to a file.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filename:
+                  type: string
+                  description: The name of the file to create.
+                  example: https://github.com/freight-trust/libedi/blob/v1.3.0/lib/00603/X12_00603_100.ts
+                content:
+                  type: string
+                  format: base64
+                  description: The base64 encoded string representation of the file
+                  example: InVzZSBzdHJpY3QiOwp2YXIgdmFsaWRhdGUgPSAoZnVuY3Rpb24gKCkgewogIHZhciByZW
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  /api/v1/base642string:
+    post:
+      tags:
+        - Utilities
+      summary: Converts a Base64 string to a text string.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  format: base64
+                  description: The base64 encoded string to convert.
+                  example: IyBtYXBwaW5nLXNjcmlwdA0KaW1wb3J0IGJvd...
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return text string.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    description: Text string.
+                    example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+  /api/v1/codes/list:
+    post:
+      tags:
+        - Conversion Codes
+      summary: Gets a list of conversion code triggers or code list names.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                search_after:
+                  type: array
+                  description: 'Key/values pairs used to search for the next page of results. [optional]'
+                  example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                access_permission:
+                  type: string
+                  description: 'Access permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: 'Manage permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of conversion code triggers or code list names.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                      search_after_values:
+                        type: array
+                        description: 'Key/Value pairs for the last record, used to search for the next page of results.'
+                        example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                  results:
+                    type: array
+                    description: List of conversion code triggers or code list names.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the conversion code record.
+                          # TODO : CHANGE TO SPEC
+                          example: 
+                        ccode_id_trigger:
+                          type: string
+                          description: Name of the conversion code record.
+                          example: ISO_UOM_TO_TEXT
+                        ccodeid_trigger_description:
+                          type: string
+                          description: Description of the conversion code record.
+                          example: ISO Unit of Measurement to Text
+  /api/v1/codes:
+    post:
+      tags:
+        - Conversion Codes
+      summary: Add a conversion code trigger or code list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ccode_id_trigger:
+                  type: string
+                  description: Name of the code trigger record name.
+                  example: ISO_PRICETYPE_TO_TEXT
+                ccodeid_trigger_description:
+                  type: string
+                  description: 'Number of records to return. [optional]'
+                  example: ISO Pricetype to Text
+                ccodes:
+                  type: array
+                  description: List of code conversions.
+                  items:
+                    type: object
+                    properties:
+                      leftcode:
+                        type: string
+                        description: Left the conversion code or origin text.
+                        example: CA
+                      rightcode:
+                        type: string
+                        description: Right the conversion code or converted text.
+                        example: Catalogue
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns conversion code trigger add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    # TODO : CHANGE TO SPEC
+                    example: 
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/codes/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the conversion code that we want to match
+        type: string
+    get:
+      tags:
+        - Conversion Codes
+      summary: Get record with given ID. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record  ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ccode_id_trigger:
+                    type: string
+                    description: Name of the code trigger record name.
+                    example: ISO_PRICETYPE_TO_TEXT
+                  ccodeid_trigger_description:
+                    type: string
+                    description: Number of records to return
+                    example: ISO Pricetype to Text
+                  ccodes:
+                    type: array
+                    description: List of code conversions.
+                    items:
+                      type: object
+                      properties:
+                        leftcode:
+                          type: string
+                          description: Left the conversion code or origin text.
+                          example: CA
+                        rightcode:
+                          type: string
+                          description: Right the conversion code or converted text.
+                          example: Catalogue
+                  permissions:
+                    type: object
+                    description: Permissions to assign to the record.
+                    properties:
+                      access:
+                        type: string
+                        description: Access permission level for the record.
+                        example: public
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+                      manage:
+                        type: string
+                        description: Manage permission level for the record.
+                        example: user
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+    put:
+      summary: Edit/Update a record by ID. Must have appropriate access permission.
+      tags:
+        - Conversion Codes
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: Conversion Code Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ccode_id_trigger:
+                  type: string
+                  description: 'Name of the code trigger record name. [optional]'
+                  example: ISO_PRICETYPE_TO_TEXT
+                ccodeid_trigger_description:
+                  type: string
+                  description: 'Number of records to return. [optional]'
+                  example: ISO Pricetype to Text
+                ccodes:
+                  type: array
+                  description: 'List of code conversions. [optional]'
+                  items:
+                    type: object
+                    properties:
+                      leftcode:
+                        type: string
+                        description: Left the conversion code or origin text.
+                        example: CA
+                      rightcode:
+                        type: string
+                        description: Right the conversion code or converted text.
+                        example: Catalogue
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    # TODO : CHANGE TO SPEC
+                    example: 
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Conversion Codes
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    # TODO : CHANGE TO SPEC
+                    example:
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/company/me:
+    get:
+      tags:
+        - Company
+      summary: Gets your company information.
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the company.
+                    # TODO : CHANGE TO SPEC
+                    example: 
+                  name:
+                    type: string
+                    description: The name of the company.
+                    example: Company
+                  industry:
+                    type: string
+                    description: The industry of the company.
+                    example: Technology
+                  contact:
+                    type: string
+                    description: The contact name for the company.
+                    example: Manager
+                  email:
+                    type: string
+                    description: The contact email for the company.
+                    example: name1@company.com
+                  phone:
+                    type: string
+                    description: The phone number of the authorized user.
+                    example: 555-123-4567
+                  address1:
+                    type: string
+                    description: Street Address 1
+                    example: 789 Ave.
+                  address2:
+                    type: string
+                    description: Street Address 2
+                    example: Apt. 2
+                  address3:
+                    type: string
+                    description: Street Address 3
+                    example: 'Attn: John Smith'
+                  city:
+                    type: string
+                    description: City Name
+                    example: Miami
+                  countrysubdivision:
+                    type: string
+                    description: 'State, Province, Country sub division'
+                    example: FL
+                  postalcode:
+                    type: string
+                    description: Zip or Postal Code
+                    example: '33101'
+                  countrycode:
+                    type: string
+                    description: Country Code
+                    example: US
+                  billing:
+                    type: object
+                    description: Billing information.
+                    properties:
+                      credits:
+                        type: integer
+                        description: Credits available for translation.
+                        example: 10
+                      total_credits_used:
+                        type: string
+                        description: Total credits used for translation.
+                        example: 2445
+                      trial_credits:
+                        type: string
+                        description: Trial credits available for translation.
+                        example: 4
+    put:
+      summary: Edit/Update your company information. Requires manage-company user permissions.
+      tags:
+        - Company
+      requestBody:
+        description: Company Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the company. [optional]'
+                  example: Company
+                industry:
+                  type: string
+                  description: 'The industry of the company. [optional]'
+                  example: Technology
+                contact:
+                  type: string
+                  description: 'The contact name for the company. [optional]'
+                  example: Manager
+                email:
+                  type: string
+                  description: 'The contact email for the company. [optional]'
+                  example: name1@company.com
+                phone:
+                  type: string
+                  description: 'The phone number of the authorized user. [optional]'
+                  example: 555-123-4567
+                address1:
+                  type: string
+                  description: 'Street Address 1 [optional]'
+                  example: 789 Ave.
+                address2:
+                  type: string
+                  description: 'Street Address 2 [optional]'
+                  example: Apt. 2
+                address3:
+                  type: string
+                  description: 'Street Address 3 [optional]'
+                  example: 'Attn: John Smith'
+                city:
+                  type: string
+                  description: 'City Name [optional]'
+                  example: Miami
+                countrysubdivision:
+                  type: string
+                  description: 'State, Province, Country sub division [optional]'
+                  example: FL
+                postalcode:
+                  type: string
+                  description: 'Zip or Postal Code [optional]'
+                  example: '33101'
+                countrycode:
+                  type: string
+                  description: 'Country Code [optional]'
+                  example: US
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    # TODO : CHANGE TO SPEC
+                    example:
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/control-number:
+    get:
+      tags:
+        - Control Numbers
+      summary: Get a record for your company. Must have appropriate permission.
+      responses:
+        '200':
+          description: '(OK) Success, returns the result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  company_id:
+                    type: string
+                    description: ID of the company this control number record belongs to.
+                    example: tfryju45BKlTkYuo1LBqy
+                  company_name:
+                    type: string
+                    description: Name of the company this control number record belongs to.
+                    example: FreightTrust & Clearing Corporation
+                  csv_control_number:
+                    type: object
+                    description: Values of control numbers for csv records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  edifact_control_number:
+                    type: object
+                    description: Values of control numbers for edifact records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  fixed_control_number:
+                    type: object
+                    description: Values of control numbers for fixed position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  idoc_control_number:
+                    type: object
+                    description: Values of control numbers for idoc position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  json_control_number:
+                    type: object
+                    description: Values of control numbers for json position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  tradacoms_control_number:
+                    type: object
+                    description: Values of control numbers for tradacoms position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  x12_control_number:
+                    type: object
+                    description: Values of control numbers for x12 position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+                  xml_control_number:
+                    type: object
+                    description: Values of control numbers for xml position records.
+                    properties:
+                      general:
+                        type: integer
+                        format: int32
+                        description: Current/default control number.
+                        example: 1
+                      parter_id:
+                        type: integer
+                        format: int32
+                        description: Current control number for a specific partner.
+                        example: 0
+    put:
+      summary: Edit/Update a record for your company. Must have appropriate permission.
+      tags:
+        - Control Numbers
+      requestBody:
+        description: Control Number Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company_id:
+                  type: string
+                  description: 'ID of the company this control number record belongs to. [optional]'
+                  # TODO: OPTIONAL
+                  example: tfryju45BKlTkYuo1LBqy
+                company_name:
+                  type: string
+                  description: 'Name of the company this control number record belongs to. [optional]'
+                  example: FreightTrust & Clearing Corporation
+                csv_control_number:
+                  type: object
+                  description: 'Values of control numbers for csv records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                edifact_control_number:
+                  type: object
+                  description: 'Values of control numbers for edifact records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                fixed_control_number:
+                  type: object
+                  description: 'Values of control numbers for fixed position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                idoc_control_number:
+                  type: object
+                  description: 'Values of control numbers for idoc position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                json_control_number:
+                  type: object
+                  description: 'Values of control numbers for json position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                tradacoms_control_number:
+                  type: object
+                  description: 'Values of control numbers for tradacoms position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                x12_control_number:
+                  type: object
+                  description: 'Values of control numbers for x12 position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                xml_control_number:
+                  type: object
+                  description: 'Values of control numbers for xml position records. [optional]'
+                  properties:
+                    general:
+                      type: integer
+                      format: int32
+                      description: 'Current/default control number. [optional]'
+                      example: 1
+                    parter_id:
+                      type: integer
+                      format: int32
+                      description: Current control number for a specific partner.
+                      example: 0
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    # TODO : CHANGE RECORD_ID TO FILE NAMING SCHEMA
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/convert/string:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates data from a string.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                translate_id:
+                  type: string
+                  description: ID of the translation map to use for data conversion.
+                  # TODO : CHANGE TO NAMESPACE SPEC FOR TRANSLATION MAPS
+                  example: qeU5zmwBbw3B1k8xfVIj
+                acknowledge:
+                  type: integer
+                  format: int32
+                  description: 'Flag to create an acknowledgement or not.<br/> For EDI document types primarily. [optional]'
+                  example: '0'
+                  default: '0'
+                base64:
+                  type: integer
+                  format: int32
+                  description: 'Flag to mark string as base64 or not. [optional]'
+                  example: '0'
+                  default: '0'
+                in_data:
+                  type: string
+                  description: Inbound data to convert.
+                  example: <?xmlversion="1.0" encoding="utf-8"?><message><sender>PARTNERB</sender><receiver>SUPPLIER1</receiver>...
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns data conversion results.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  acknowledgement:
+                    type: string
+                    format: base64
+                    description: Base64 encoded string of the acknowledgement.
+                    # TODO : NAMESPACE SPEC?
+                    example: 
+                  acknowledgement_text:
+                    type: string
+                    description: Text string of the acknowledgement.
+                    example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+                  count:
+                    type: integer
+                    format: int32
+                    description: Number of records the data was converted to.
+                    example: 1
+                  log_id:
+                    type: string
+                    description: Log ID record of the translation process.
+                    # TODO: UUID/V5 
+                    example:
+                  data:
+                    type: array
+                    description: List of results from the data conversion.
+                    items:
+                      type: object
+                      properties:
+                        content:
+                          type: string
+                          format: base64
+                          description: Base64 encoded string of the converted data.
+                          example: SVNBKjAwKiAgICAgICAgICAqMDAq...
+                        text_content:
+                          type: string
+                          description: Text string of the converted data.
+                          example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+                        success:
+                          type: boolean
+                          description: If the conversion was successful.
+                          example: true
+                        metadata:
+                          type: object
+                          description: Metadata values of the conversion data.
+                          properties:
+                            from_content_type:
+                              type: string
+                              description: MIME Type of the inbound data.
+                              example: application/json
+                            from_format_type:
+                              type: string
+                              description: Data format of the inbound data.
+                              example: jsonnocheck
+                            from_message_type:
+                              type: string
+                              description: Message Type/Grammar name of the inbound data.
+                              example: JSON_UBL_ORDER
+                            from_partner:
+                              type: string
+                              description: Partner who sent the inbound data.
+                              example: TESTPARTNER1
+                            mapping_script:
+                              type: string
+                              description: Translation map to used.
+                              example: JSON_2_850
+                            reference:
+                              type: string
+                              description: Reference number or identifier of the inbound data.
+                              example: '1234567890'
+                            test_indicator:
+                              type: string
+                              description: Flag indicating test or production for the inbound data.
+                              example: P
+                            to_content_type:
+                              type: string
+                              description: MIME Type of the outbound data.
+                              example: application/x12
+                            to_format_type:
+                              type: string
+                              description: Data format of the outbound data.
+                              example: x12
+                            to_message_type:
+                              type: string
+                              description: Message Type/Grammar name of the outbound data.
+                              example: '850004010'
+                            to_partner:
+                              type: string
+                              description: Partner who sent the outbound data.
+                              example: TESTPARTNER2
+  /api/v1/convert/file:
+    post:
+      tags:
+        - Convert
+      summary: Converts data from a file.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                translate_id:
+                  type: string
+                  description: ID of the translation map to use for data conversion.
+                  # TODO : TRANSLATION MAPING SPECIFICATION 
+                  example: 
+                out_filename:
+                  type: string
+                  description: The name of the outbound file.
+                  example: some-file.json
+                in_file:
+                  type: string
+                  format: binary
+                  description: The file to convert.
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the converted data file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+# TODO: CHANGE PATHNAME - FROM ACKNOWLEDGE-STRING TO JUST 'ACK-997, ACK-999, ACK-ALERT, ACK-PRIORITY'
+  /api/v1/convert/acknowledge-string:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates data from a string to create an acknowledgement only.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                translate_id:
+                  type: string
+                  description: ID of the translation map to use for data conversion.
+                  # TODO : TRANSLATION MAP SCHEMA
+                  example:
+                base64:
+                  type: integer
+                  format: int32
+                  description: 'Flag to mark string as base64 or not. [optional]'
+                  example: '0'
+                  default: '0'
+                in_data:
+                  type: string
+                  description: Inbound data to create an acknowledgement for.
+                  example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns data conversion results.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  acknowledgement:
+                    type: string
+                    format: base64
+                    description: Base64 encoded string of the acknowledgement.
+                    # TODO : ACKNOWLEDGEMENT 997 OR 999 OR JUST AS2 ACK
+                    example: 
+                  acknowledgement_text:
+                    type: string
+                    description: Text string of the acknowledgement.
+                    example: ISA*00* *00* *ZZ*9339687055968 *ZZ*9377778093925 *200511*0659*U*00200*000543539*0*P*>
+                  log_id:
+                    type: string
+                    description: Log ID record of the translation process.
+                    # TODO : UUIDv5 or UUIDv4
+                    example: 
+  /api/v1/convert/acknowledge-file:
+    post:
+      tags:
+        - Convert
+      summary: Converts data from a file to create an acknowledgement file only.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                translate_id:
+                  type: string
+                  description: ID of the translation map to use for data conversion.
+                  # TODO : TRANSLATION MAPING SCHEMA 
+                  example:
+                out_filename:
+                  type: string
+                  description: The name of the outbound acknowledgement file.
+                  example: some-file.json
+                in_file:
+                  type: string
+                  format: binary
+                  description: The file to create an acknowledgement for.
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the converted acknowledgement file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  /api/v1/convert/xml2grammar:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates a xml string into a grammar string. (For use as a starting template only.)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                all_records:
+                  type: integer
+                  format: int32
+                  description: 'If there are multiple records, Flag to create a grammar for each. [optional]'
+                  example: 0
+                  default: 0
+                base64:
+                  type: integer
+                  format: int32
+                  description: 'Flag to mark string as base64 or not. [optional]'
+                  example: '0'
+                  default: '0'
+                in_data:
+                  type: string
+                  description: Inbound data to create a grammar for.
+                  example: <?xmlversion="1.0" encoding="utf-8"?><message><sender>PARTNERB</sender>...
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns data conversion results.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    format: int32
+                    description: Count of converted objects.
+                    example: 1
+                  data:
+                    type: array
+                    description: List of grammars created.
+                    items:
+                      type: object
+                      description: Created grammar.
+                      properties:
+                        content:
+                          type: string
+                          format: base64
+                          description: Base64 encoded string of the grammar.
+                          # TODO : GRAMMAR SPEC, ABNF IN GITHUB.COM/FREIGHT-TRUST/PROTOCOL/abnf
+                          example: 
+                        text_content:
+                          type: string
+                          description: Text string of the grammar.
+                          example: Provided By <RESOURCE>
+                        success:
+                          type: boolean
+                          description: If the operation was successful.
+                          example: true
+                  log_id:
+                    type: string
+                    description: Log ID record of the translation process.
+                    # TODO : NETWORK UUID RECEIPT 
+                    example: '0xb33e32b6f67c8ab12e3e6df8773b686def3499ab474358856616d8f6d3755ca'
+  /api/v1/convert/xml2grammar/file:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates a xml file into a grammar file. (For use as a starting template only.)
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                all_records:
+                  type: integer
+                  format: int32
+                  description: 'If there are multiple records, Flag to create a grammar for each. [optional]'
+                  example: 0
+                out_filename:
+                  type: string
+                  description: The name of the outbound grammar file.
+                  example: invoice_rules.ts
+                in_file:
+                  type: string
+                  format: binary
+                  description: The file to create a grammar for.
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the converted grammar file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  /api/v1/convert/json2grammar:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates a json string into a grammar string. (For use as a starting template only.)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                base64:
+                  type: integer
+                  format: int32
+                  description: 'Flag to mark string as base64 or not. [optional]'
+                  example: '0'
+                  default: '0'
+                in_data:
+                  type: string
+                  description: Inbound data to create a grammar for.
+                  example: '{ _D: urn:oasis:names:specification:ubl:schema:xsd:Order-2...'
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns data conversion results.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    format: int32
+                    description: Count of converted objects.
+                    example: 1
+                  data:
+                    type: array
+                    description: List of grammars created.
+                    items:
+                      type: object
+                      description: Created grammar.
+                      properties:
+                        content:
+                          type: string
+                          format: base64
+                          description: Base64 encoded string of the grammar.
+                          example: I0dlbmVyYXRlZCBieSBib3RzIG9wZW4gc291cmNl...
+                        text_content:
+                          type: string
+                          description: Text string of the grammar.
+                          example: |-
+                            #Generated by bots open source edi translator.
+                            from bots.botsconfig import *
+                            ...
+                        success:
+                          type: boolean
+                          description: If the operation was successful.
+                          example: true
+                  log_id:
+                    type: string
+                    description: Log ID record of the translation process.
+                    example: '0xac87cea9bce0e4392b55ca21a62c10c571c748fc1b3dc670a097939eecb095c0'
+  /api/v1/convert/json2grammar/file:
+    post:
+      tags:
+        - Convert
+      summary: Converts/Translates a json file into a grammar file. (For use as a starting template only.)
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                out_filename:
+                  type: string
+                  description: The name of the outbound grammar file.
+                  example:  invoice_outbound.abnf
+                in_file:
+                  type: string
+                  format: binary
+                  description: The file to create a grammar for.
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the converted grammar file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  /api/v1/grammar/list:
+    post:
+      tags:
+        - Grammar
+      summary: Gets a list of grammars.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                search_after:
+                  type: array
+                  description: 'Array of key/values to get the next set of result after. [optional]'
+                  example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                access_permission:
+                  type: string
+                  description: 'Access permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: 'Manage permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of grammars.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      search_after_values:
+                        type: array
+                        description: 'Key/Value pairs for the last record, used to search for the next page of results.'
+                        example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of grammar records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the record.
+                          example: hdP13WwBKlTkYuo1LBqy
+                        name:
+                          type: string
+                          description: Name of the grammar.
+                          example: x12-855-004010
+                        companyname:
+                          type: string
+                          description: Company for the grammar..
+                          example: ''
+                        description:
+                          type: string
+                          description: Description of the grammar this record belongs to.
+                          example: X12 004010 855 Grammar.
+                        documenttype:
+                          type: string
+                          description: Type of document for this grammar.
+                          example: '855'
+                        version:
+                          type: string
+                          description: Version for the grammar.
+                          example: '004010'
+                        formattype:
+                          type: string
+                          description: Document format of the grammar.
+                          example: x12
+                        messagetype:
+                          type: string
+                          description: Name of the grammar message type.
+                          example: '855004010'
+  /api/v1/grammar/search:
+    post:
+      tags:
+        - Grammar
+      summary: Search grammars and return a list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional] - wildcard character ''*'''
+                  example: X12-850*
+                formattype:
+                  type: string
+                  description: 'Format type of grammar. [optional] - wildcard character ''*'''
+                  example: x12
+                messagetype:
+                  type: string
+                  description: 'Message type of grammar. [optional] - wildcard character ''*'''
+                  example: 850*
+                documenttype:
+                  type: string
+                  description: 'Document type of grammar. [optional] - wildcard character ''*'''
+                  example: '850'
+                companyname:
+                  type: string
+                  description: 'Company name or trading partner name for the grammar. [optional] - wildcard character ''*'''
+                  example: '850'
+                version:
+                  type: string
+                  description: 'Version of the grammar. [optional] - wildcard character ''*'''
+                  example: '850'
+                access_permission:
+                  type: string
+                  description: Access permission authorization level of the records to return.
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: Manage permission authorization level of the records to return.
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of grammars.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of grammar records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the record.
+                          example: hdP13WwBKlTkYuo1LBqy
+                        name:
+                          type: string
+                          description: Name of the grammar.
+                          example: x12-855-004010
+                        companyname:
+                          type: string
+                          description: Company for the grammar..
+                          example: ''
+                        description:
+                          type: string
+                          description: Description of the grammar this record belongs to.
+                          example: X12 004010 855 Grammar.
+                        documenttype:
+                          type: string
+                          description: Type of document for this grammar.
+                          example: '855'
+                        version:
+                          type: string
+                          description: Version for the grammar.
+                          example: '004010'
+                        formattype:
+                          type: string
+                          description: Document format of the grammar.
+                          example: x12
+                        messagetype:
+                          type: string
+                          description: Name of the grammar message type.
+                          example: '855004010'
+  /api/v1/grammar:
+    post:
+      tags:
+        - Grammar
+      summary: Add a grammar from a base64 string.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the grammar.
+                  example: x12-855-004010
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: X12 004010 855 Grammar.
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: '855'
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '004010'
+                formattype:
+                  type: string
+                  description: Document format of the grammar.
+                  example: x12
+                messagetype:
+                  type: string
+                  description: Name of the grammar message type.
+                  example: '855004010'
+                content:
+                  type: string
+                  format: base64
+                  description: Base64 encode string of the grammar.
+                  example:
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: 
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/grammar/file:
+    post:
+      tags:
+        - Grammar
+      summary: Add a grammar from a file.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional]'
+                  example: x12-855-004010
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: X12 004010 855 Grammar.
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: '855'
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '004010'
+                formattype:
+                  type: string
+                  description: Document format of the grammar.
+                  example: x12
+                messagetype:
+                  type: string
+                  description: Name of the grammar message type.
+                  example: '855004010'
+                file:
+                  type: string
+                  format: binary
+                  description: The file to create a grammar for.
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: 
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+ # TODO : THIS IS MORE ACCURATELY A HANDLEBARS TEMPLATE, NOT QUITE 'HTML'
+  /api/v1/grammar/htmltemplate:
+    post:
+      tags:
+        - Grammar
+      summary: Add a htmltemplate grammar from a base64 string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional]'
+                  example: Order HTML Template Envelope
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: Order Genshi HTML Envelope Template Grammar
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: html
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '1'
+                formattype:
+                  type: string
+                  description: Document format of the grammar.
+                  example: templatehtml
+                messagetype:
+                  type: string
+                  description: Name of the grammar message type.
+                  example: orders2print
+                content:
+                  type: string
+                  format: base64
+                  description: Base64 encode string of the grammar.
+                  example: 
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: 
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1//grammar/htmltemplate/file:
+    post:
+      tags:
+        - Grammar
+      summary: Add a grammar from a file.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional]'
+                  example: Order HTML Template Envelope
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: Orde HTML Envelope Template Grammar.
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: html
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '1'
+                formattype:
+                  type: string
+                  description: Document format of the grammar.
+                  example: templatehtml
+                messagetype:
+                  type: string
+                  description: Name of the grammar message type.
+                  example: orders2printenvelope
+                file:
+                  type: string
+                  format: binary
+                  description: The file to create a grammar template for.
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/grammar/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Grammar
+      summary: Get a record with given ID. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns the result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name of the grammar.
+                    example: x12-855-004010
+                  companyname:
+                    type: string
+                    description: Company for the grammar.
+                    example: ''
+                  description:
+                    type: string
+                    description: Description of the grammar this record belongs to.
+                    example: X12 004010 855 Grammar.
+                  documenttype:
+                    type: string
+                    description: Type of document for this grammar.
+                    example: '855'
+                  version:
+                    type: string
+                    description: Version for the grammar.
+                    example: '004010'
+                  formattype:
+                    type: string
+                    description: Document format of the grammar.
+                    example: x12
+                  messagetype:
+                    type: string
+                    description: Name of the grammar message type.
+                    example: '855004010'
+                  content:
+                    type: string
+                    format: base64
+                    description: Base64 encode string of the grammar.
+                    example: ZnJvbSBib3RzY29uZmlnIG...
+                  permissions:
+                    type: object
+                    description: Permissions to assign to the record.
+                    properties:
+                      access:
+                        type: string
+                        description: Access permission level for the record.
+                        example: public
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+                      manage:
+                        type: string
+                        description: Manage permission level for the record.
+                        example: user
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+    put:
+      summary: Edit/Update a record by ID. Must have appropriate access permission.
+      tags:
+        - Grammar
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: Control Number Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional]'
+                  example: x12-855-004010
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: X12 004010 855 Grammar.
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: '855'
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '004010'
+                formattype:
+                  type: string
+                  description: 'Document format of the grammar. [optional]'
+                  example: x12
+                messagetype:
+                  type: string
+                  description: 'Name of the grammar message type. [optional]'
+                  example: '855004010'
+                content:
+                  type: string
+                  format: base64
+                  description: 'Base64 encode string of the grammar. [optional]'
+                  example: ZnJvbSBib3RzY29uZmlnIG...
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Grammar
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/grammar/file/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Grammar
+      summary: Get a record with given ID and return a file. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the grammar file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  '/api/v1/grammar/htmltemplate/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    put:
+      summary: Edit/Update a record by ID. Must have appropriate access permission.
+      tags:
+        - Grammar
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: Control Number Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the grammar. [optional]'
+                  example: x12-855-004010
+                companyname:
+                  type: string
+                  description: 'Company for the grammar. [optional]'
+                  example: ''
+                description:
+                  type: string
+                  description: 'Description of the grammar this record belongs to. [optional]'
+                  example: X12 004010 855 Grammar.
+                documenttype:
+                  type: string
+                  description: 'Type of document for this grammar. [optional]'
+                  example: '855'
+                version:
+                  type: string
+                  description: 'Version for the grammar. [optional]'
+                  example: '004010'
+                formattype:
+                  type: string
+                  description: 'Document format of the grammar. [optional]'
+                  example: x12
+                messagetype:
+                  type: string
+                  description: 'Name of the grammar message type. [optional]'
+                  example: '855004010'
+                content:
+                  type: string
+                  format: base64
+                  description: 'Base64 encode string of the grammar. [optional]'
+                  example: ZnJvbSBib3RzY29uZmlnIG...
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Grammar
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/log/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Log
+      summary: Get a record with given ID. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns the result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  log_info:
+                    type: array
+                    description: Array of Log lines.
+                    items:
+                      type: string
+                      description: Log Line
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Log
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/partner/list:
+    post:
+      tags:
+        - Partner
+      summary: Gets a list of partner records.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                search_after:
+                  type: array
+                  description: 'Array of key/values to get the next set of result after. [optional]'
+                  example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                access_permission:
+                  type: string
+                  description: 'Access permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: 'Manage permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of control numbers.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      search_after_values:
+                        type: array
+                        description: 'Key/Value pairs for the last record, used to search for the next page of results.'
+                        example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of control number records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the record.
+                          example: hdP13WwBKlTkYuo1LBqy
+                        idpartner:
+                          type: string
+                          description: ID of the partner to reference.
+                          example: TESTPARTNER1
+                        desc:
+                          type: string
+                          description: Partner description.
+                          example: Test Partner Company Information.
+                        mail:
+                          type: string
+                          description: Email address.
+                          example: name@partner.com
+                        cc:
+                          type: string
+                          description: Additional email address.
+                          example: name@partner.com
+                        phone1:
+                          type: string
+                          description: Phone number.
+                          example: 123-123-8888
+                        phone2:
+                          type: string
+                          description: Second phone number.
+                          example: 321-321-7777
+                        startdate:
+                          type: string
+                          description: Second phone number.
+                          example: '2019-06-01'
+                        enddate:
+                          type: string
+                          description: Second phone number.
+                          example: '2025-01-31'
+                        name:
+                          type: string
+                          description: Name
+                          example: Test Partner
+                        name1:
+                          type: string
+                          description: Name 1
+                          example: ''
+                        name2:
+                          type: string
+                          description: Name 2
+                          example: ''
+                        name3:
+                          type: string
+                          description: Name 3
+                          example: ''
+                        address1:
+                          type: string
+                          description: Street Address 1
+                          example: 789 Ave.
+                        address2:
+                          type: string
+                          description: Street Address 2
+                          example: Apt. 2
+                        address3:
+                          type: string
+                          description: Street Address 3
+                          example: 'Attn: John Smith'
+                        city:
+                          type: string
+                          description: City Name
+                          example: Miami
+                        countrysubdivision:
+                          type: string
+                          description: 'State, Province, Country sub division'
+                          example: FL
+                        postalcode:
+                          type: string
+                          description: Zip or Postal Code
+                          example: '33101'
+                        countrycode:
+                          type: string
+                          description: Country Code
+                          example: US
+                        attr1:
+                          type: string
+                          description: Additional attribute 1
+                          example: Vendor Number
+                        attr2:
+                          type: string
+                          description: Additional attribute 2
+                          example: VAT ID
+                        attr3:
+                          type: string
+                          description: Additional attribute 3
+                          example: 'NET: 30'
+                        attr4:
+                          type: string
+                          description: Additional attribute 4
+                          example: ''
+                        attr5:
+                          type: string
+                          description: Additional attribute 5
+                          example: ''
+  /api/v1/partner:
+    post:
+      tags:
+        - Partner
+      summary: Add a partner record.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idpartner:
+                  type: string
+                  description: ID of the partner to reference.
+                  example: TESTPARTNER1
+                desc:
+                  type: string
+                  description: 'Partner description. [optional]'
+                  example: Test Partner Company Information.
+                mail:
+                  type: string
+                  description: 'Email address. [optional]'
+                  example: name@partner.com
+                cc:
+                  type: string
+                  description: 'Additional email address. [optional]'
+                  example: name@partner.com
+                phone1:
+                  type: string
+                  description: 'Phone number. [optional]'
+                  example: 123-123-8888
+                phone2:
+                  type: string
+                  description: 'Second phone number. [optional]'
+                  example: 321-321-7777
+                startdate:
+                  type: string
+                  description: 'Starting Date. [optional]'
+                  example: '2019-06-01'
+                enddate:
+                  type: string
+                  description: 'Ending Date. [optional]'
+                  example: '2025-01-31'
+                name:
+                  type: string
+                  description: 'Name [optional]'
+                  example: Test Partner
+                name1:
+                  type: string
+                  description: 'Name 1 [optional]'
+                  example: ''
+                name2:
+                  type: string
+                  description: 'Name 2 [optional]'
+                  example: ''
+                name3:
+                  type: string
+                  description: 'Name 3 [optional]'
+                  example: ''
+                address1:
+                  type: string
+                  description: 'Street Address 1 [optional]'
+                  example: 789 Ave.
+                address2:
+                  type: string
+                  description: 'Street Address 2 [optional]'
+                  example: Apt. 2
+                address3:
+                  type: string
+                  description: 'Street Address 3 [optional]'
+                  example: 'Attn: John Smith'
+                city:
+                  type: string
+                  description: 'City Name [optional]'
+                  example: Miami
+                countrysubdivision:
+                  type: string
+                  description: 'State, Province, Country sub division [optional]'
+                  example: FL
+                postalcode:
+                  type: string
+                  description: 'Zip or Postal Code [optional]'
+                  example: '33101'
+                countrycode:
+                  type: string
+                  description: 'Country Code [optional]'
+                  example: US
+                attr1:
+                  type: string
+                  description: 'Additional attribute 1 [optional]'
+                  example: Vendor Number
+                attr2:
+                  type: string
+                  description: 'Additional attribute 2 [optional]'
+                  example: VAT ID
+                attr3:
+                  type: string
+                  description: 'Additional attribute 3 [optional]'
+                  example: 'NET: 30'
+                attr4:
+                  type: string
+                  description: 'Additional attribute 4 [optional]'
+                  example: ''
+                attr5:
+                  type: string
+                  description: 'Additional attribute 5 [optional]'
+                  example: ''
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/partner/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Partner
+      summary: Get a record with given ID. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns the result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  idpartner:
+                    type: string
+                    description: ID of the partner to reference.
+                    example: TESTPARTNER1
+                  desc:
+                    type: string
+                    description: Partner description
+                    example: Test Partner Company Information.
+                  mail:
+                    type: string
+                    description: Email address
+                    example: name@partner.com
+                  cc:
+                    type: string
+                    description: Additional email address
+                    example: name@partner.com
+                  phone1:
+                    type: string
+                    description: Phone number
+                    example: 123-123-8888
+                  phone2:
+                    type: string
+                    description: Second phone number
+                    example: 321-321-7777
+                  startdate:
+                    type: string
+                    description: Starting Date
+                    example: '2019-06-01'
+                  enddate:
+                    type: string
+                    description: Ending Date
+                    example: '2025-01-31'
+                  name:
+                    type: string
+                    description: Name
+                    example: Test Partner
+                  name1:
+                    type: string
+                    description: Name 1
+                    example: ''
+                  name2:
+                    type: string
+                    description: Name 2
+                    example: ''
+                  name3:
+                    type: string
+                    description: Name 3
+                    example: ''
+                  address1:
+                    type: string
+                    description: Street Address 1
+                    example: 789 Ave.
+                  address2:
+                    type: string
+                    description: Street Address 2
+                    example: Apt. 2
+                  address3:
+                    type: string
+                    description: 'Street Address '
+                    example: 'Attn: John Smith'
+                  city:
+                    type: string
+                    description: City Name
+                    example: Miami
+                  countrysubdivision:
+                    type: string
+                    description: 'State, Province, Country sub division'
+                    example: FL
+                  postalcode:
+                    type: string
+                    description: Zip or Postal Code
+                    example: '33101'
+                  countrycode:
+                    type: string
+                    description: Country Code
+                    example: US
+                  attr1:
+                    type: string
+                    description: Additional attribute 1
+                    example: Vendor Number
+                  attr2:
+                    type: string
+                    description: Additional attribute 2
+                    example: VAT ID
+                  attr3:
+                    type: string
+                    description: Additional attribute 3
+                    example: 'NET: 30'
+                  attr4:
+                    type: string
+                    description: Additional attribute 4
+                    example: ''
+                  attr5:
+                    type: string
+                    description: Additional attribute 5
+                    example: ''
+                  permissions:
+                    type: object
+                    description: Permissions to assign to the record.
+                    properties:
+                      access:
+                        type: string
+                        description: Access permission level for the record.
+                        example: public
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+                      manage:
+                        type: string
+                        description: Manage permission level for the record.
+                        example: user
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+    put:
+      summary: Edit/Update a record by ID. Must have appropriate access permission.
+      tags:
+        - Partner
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: Partner Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idpartner:
+                  type: string
+                  description: 'ID of the partner to reference [optional]'
+                  example: TESTPARTNER1
+                desc:
+                  type: string
+                  description: 'Partner description [optional]'
+                  example: Test Partner Company Information.
+                mail:
+                  type: string
+                  description: 'Email address [optional]'
+                  example: name@partner.com
+                cc:
+                  type: string
+                  description: 'Additional email address [optional]'
+                  example: name@partner.com
+                phone1:
+                  type: string
+                  description: 'Phone number [optional]'
+                  example: 123-123-8888
+                phone2:
+                  type: string
+                  description: 'Second phone number [optional]'
+                  example: 321-321-7777
+                startdate:
+                  type: string
+                  description: 'Starting Date [optional]'
+                  example: '2019-06-01'
+                enddate:
+                  type: string
+                  description: 'Ending Date [optional]'
+                  example: '2025-01-31'
+                name:
+                  type: string
+                  description: 'Name [optional]'
+                  example: Test Partner
+                name1:
+                  type: string
+                  description: 'Name 1 [optional]'
+                  example: ''
+                name2:
+                  type: string
+                  description: 'Name 2 [optional]'
+                  example: ''
+                name3:
+                  type: string
+                  description: 'Name 3 [optional]'
+                  example: ''
+                address1:
+                  type: string
+                  description: 'Street Address 1 [optional]'
+                  example: 789 Ave.
+                address2:
+                  type: string
+                  description: 'Street Address 2 [optional]'
+                  example: Apt. 2
+                address3:
+                  type: string
+                  description: 'Street Address 3 [optional]'
+                  example: 'Attn: John Smith'
+                city:
+                  type: string
+                  description: 'City Name [optional]'
+                  example: Miami
+                countrysubdivision:
+                  type: string
+                  description: 'State, Province, Country sub division [optional]'
+                  example: FL
+                postalcode:
+                  type: string
+                  description: 'Zip or Postal Code [optional]'
+                  example: '33101'
+                countrycode:
+                  type: string
+                  description: 'Country Code [optional]'
+                  example: US
+                attr1:
+                  type: string
+                  description: 'Additional attribute 1 [optional]'
+                  example: Vendor Number
+                attr2:
+                  type: string
+                  description: 'Additional attribute 2 [optional]'
+                  example: VAT ID
+                attr3:
+                  type: string
+                  description: 'Additional attribute 3 [optional]'
+                  example: 'NET: 30'
+                attr4:
+                  type: string
+                  description: 'Additional attribute 4 [optional]'
+                  example: ''
+                attr5:
+                  type: string
+                  description: 'Additional attribute 5 [optional]'
+                  example: ''
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Partner
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/translation-map/list:
+    post:
+      tags:
+        - Translation Map
+      summary: Gets a list of translation maps.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                search_after:
+                  type: array
+                  description: 'Array of key/values to get the next set of result after. [optional]'
+                  example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                access_permission:
+                  type: string
+                  description: 'Access permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: 'Manage permission authorization level of the records to return. [optional]'
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of translation maps.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      search_after_values:
+                        type: array
+                        description: 'Key/Value pairs for the last record, used to search for the next page of results.'
+                        example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of grammar records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the record.
+                          example: hdP13WwBKlTkYuo1LBqy
+                        companyname:
+                          type: string
+                          description: Company for the translation map.
+                          example: ABC Corp.
+                        partnername:
+                          type: string
+                          description: Partner for the translation map.
+                          example: Partner 2
+                        description:
+                          type: string
+                          description: Description of the translation map this record belongs to.
+                          example: Converts ERP Order CSV File to X12 850 004010
+                        documenttype:
+                          type: string
+                          description: Type of document for this translation map.
+                          example: Translation map
+                        version:
+                          type: string
+                          description: Version for the translation map.
+                          example: '1.0'
+                        from_formattype:
+                          type: string
+                          description: Document format of the grammar to translate from.
+                          example: csv
+                        from_messagetype:
+                          type: string
+                          description: Name of the grammar message type to translate from.
+                          example: order_csv
+                        frompartner_id:
+                          type: string
+                          description: Name of the partner to translate from.
+                          example: ''
+                        to_formattype:
+                          type: string
+                          description: Document format of the grammar to translate to.
+                          example: csv
+                        to_messagetype:
+                          type: string
+                          description: Name of the grammar message type to translate to.
+                          example: order_csv
+                        topartner_id:
+                          type: string
+                          description: Name of the partner to translate to.
+                          example: ''
+                        tscript:
+                          type: string
+                          description: Name of the translation map.
+                          example: ordercsv_2_x12850
+  /api/v1/translation-map/search:
+    post:
+      tags:
+        - Translation Map
+      summary: Search translation maps and return a list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                tscript:
+                  type: string
+                  description: 'Name of the translation map. [optional] - wildcard character ''*'''
+                  example: ordercsv_2_x12*
+                from_formattype:
+                  type: string
+                  description: 'From format type of grammar for translation. [optional] - wildcard character ''*'''
+                  example: csv
+                from_messagetype:
+                  type: string
+                  description: 'From message type of grammar for translation. [optional] - wildcard character ''*'''
+                  example: order*
+                to_formattype:
+                  type: string
+                  description: 'To format type of grammar for translation. [optional] - wildcard character ''*'''
+                  example: x12
+                to_messagetype:
+                  type: string
+                  description: 'To message type of grammar for translation. [optional] - wildcard character ''*'''
+                  example: 850*
+                documenttype:
+                  type: string
+                  description: 'Document type for translation. [optional] - wildcard character ''*'''
+                  example: translation map
+                companyname:
+                  type: string
+                  description: 'Company name or trading partner name for translation. [optional] - wildcard character ''*'''
+                  example: FreightTrust & Clearing Corporation
+                partnername:
+                  type: string
+                  description: 'Partner for the translation map. [optional] - wildcard character ''*'''
+                  example: Partner 2
+                version:
+                  type: string
+                  description: 'Version of the translation map. [optional] - wildcard character ''*'''
+                  example: '1.0'
+                access_permission:
+                  type: string
+                  description: Access permission authorization level of the records to return.
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: public
+                manage_permission:
+                  type: string
+                  description: Manage permission authorization level of the records to return.
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                  example: company
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of grammars.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of grammar records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID of the record.
+                          example: hdP13WwBKlTkYuo1LBqy
+                        companyname:
+                          type: string
+                          description: Company for the translation map.
+                          example: Partner 2
+                        partnername:
+                          type: string
+                          description: Partner for the translation map.
+                          example: Partner 2
+                        description:
+                          type: string
+                          description: Description of the translation map this record belongs to.
+                          example: Converts ERP Order CSV File to X12 850 004010
+                        documenttype:
+                          type: string
+                          description: Type of document for this translation map.
+                          example: Translation map
+                        version:
+                          type: string
+                          description: Version for the translation map.
+                          example: '1.0'
+                        from_formattype:
+                          type: string
+                          description: Document format of the grammar to translate from.
+                          example: csv
+                        from_messagetype:
+                          type: string
+                          description: Name of the grammar message type to translate from.
+                          example: order_csv
+                        frompartner_id:
+                          type: string
+                          description: Name of the partner to translate from.
+                          example: ''
+                        to_formattype:
+                          type: string
+                          description: Document format of the grammar to translate to.
+                          example: csv
+                        to_messagetype:
+                          type: string
+                          description: Name of the grammar message type to translate to.
+                          example: order_csv
+                        topartner_id:
+                          type: string
+                          description: Name of the partner to translate to.
+                          example: ''
+                        tscript:
+                          type: string
+                          description: Name of the translation map.
+                          example: ordercsv_2_x12850
+  /api/v1/translation-map:
+    post:
+      tags:
+        - Translation Map
+      summary: Add a translation map from a base64 string.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                companyname:
+                  type: string
+                  description: 'Company for the translation map. [optional]'
+                  example: Partner 2
+                partnername:
+                  type: string
+                  description: 'Partner for the translation map. [optional]'
+                  example: Partner 2
+                description:
+                  type: string
+                  description: 'Description of the translation map this record belongs to. [optional]'
+                  example: Converts ERP Order CSV File to X12 850 004010
+                documenttype:
+                  type: string
+                  description: 'Type of document for this translation map. [optional]'
+                  example: Translation map
+                version:
+                  type: string
+                  description: 'Version for the translation map. [optional]'
+                  example: '1.0'
+                from_formattype:
+                  type: string
+                  description: Document format of the grammar to translate from.
+                  example: csv
+                from_messagetype:
+                  type: string
+                  description: Name of the grammar message type to translate from.
+                  example: order_csv
+                frompartner_id:
+                  type: string
+                  description: 'Name of the partner to translate from. [optional]'
+                  example: ''
+                to_formattype:
+                  type: string
+                  description: Document format of the grammar to translate to.
+                  example: csv
+                to_messagetype:
+                  type: string
+                  description: Name of the grammar message type to translate to.
+                  example: order_csv
+                topartner_id:
+                  type: string
+                  description: 'Name of the partner to translate to. [optional]'
+                  example: ''
+                tscript:
+                  type: string
+                  description: Name of the translation map.
+                  example: ordercsv_2_x12850
+                content:
+                  type: string
+                  format: base64
+                  description: Base64 encode string of the grammar.
+                  example: ZnJvbSBib3RzY29uZmlnIG...
+                permissions:
+                  type: object
+                  description: Permissions to assign to the record.
+                  properties:
+                    access:
+                      type: string
+                      description: Access permission level for the record.
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: Manage permission level for the record.
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/translation-map/file:
+    post:
+      tags:
+        - Translation Map
+      summary: Add a translation map from a file.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                companyname:
+                  type: string
+                  description: 'Company for the translation map. [optional]'
+                  example: Partner 2
+                partnername:
+                  type: string
+                  description: Partner for the translation map.
+                  example: Partner 2
+                description:
+                  type: string
+                  description: 'Description of the translation map this record belongs to. [optional]'
+                  example: Converts ERP Order CSV File to X12 850 004010
+                documenttype:
+                  type: string
+                  description: 'Type of document for this translation map. [optional]'
+                  example: Translation map
+                version:
+                  type: string
+                  description: 'Version for the translation map. [optional]'
+                  example: '1.0'
+                from_formattype:
+                  type: string
+                  description: Document format of the grammar to translate from.
+                  example: csv
+                from_messagetype:
+                  type: string
+                  description: Name of the grammar message type to translate from.
+                  example: order_csv
+                frompartner_id:
+                  type: string
+                  description: 'Name of the partner to translate from. [optional]'
+                  example: ''
+                to_formattype:
+                  type: string
+                  description: Document format of the grammar to translate to.
+                  example: csv
+                to_messagetype:
+                  type: string
+                  description: Name of the grammar message type to translate to.
+                  example: order_csv
+                topartner_id:
+                  type: string
+                  description: 'Name of the partner to translate to. [optional]'
+                  example: ''
+                tscript:
+                  type: string
+                  description: Name of the translation map.
+                  example: ordercsv_2_x12850
+                file:
+                  type: string
+                  format: binary
+                  description: The file to create a grammar for.
+                access_permission:
+                  type: string
+                  description: Access permission level for the record.
+                  example: public
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+                manage_permission:
+                  type: string
+                  description: Manage permission level for the record.
+                  example: user
+                  oneOf:
+                    - public
+                    - network
+                    - company
+                    - user
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns operation result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/translation-map/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Translation Map
+      summary: Get a record with given ID. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns the result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  companyname:
+                    type: string
+                    description: Company for the translation map.
+                    example: ABC Corp.
+                  partnername:
+                    type: string
+                    description: Partner for the translation map.
+                    example: Partner 2
+                  description:
+                    type: string
+                    description: Description of the translation map this record belongs to.
+                    example: Converts ERP Order CSV File to X12 850 004010
+                  documenttype:
+                    type: string
+                    description: Type of document for this translation map.
+                    example: Translation map
+                  version:
+                    type: string
+                    description: Version for the translation map.
+                    example: '1.0'
+                  from_formattype:
+                    type: string
+                    description: Document format of the grammar to translate from.
+                    example: csv
+                  from_messagetype:
+                    type: string
+                    description: Name of the grammar message type to translate from.
+                    example: order_csv
+                  frompartner_id:
+                    type: string
+                    description: Name of the partner to translate from.
+                    example: ''
+                  to_formattype:
+                    type: string
+                    description: Document format of the grammar to translate to.
+                    example: csv
+                  to_messagetype:
+                    type: string
+                    description: Name of the grammar message type to translate to.
+                    example: order_csv
+                  topartner_id:
+                    type: string
+                    description: Name of the partner to translate to.
+                    example: ''
+                  tscript:
+                    type: string
+                    description: Name of the translation map.
+                    example: ordercsv_2_x12850
+                  content:
+                    type: string
+                    format: base64
+                    description: Base64 encode string of the grammar.
+                    example: ZnJvbSBib3RzY29uZmlnIG...
+                  translation_cost:
+                    type: object
+                    description: The cost of credits for this translation.
+                    properties:
+                      file_credits:
+                        type: integer
+                        description: The credit cost for returning a file.
+                        example: 1.5
+                      string_credits:
+                        type: integer
+                        description: The credit cost for returning a string or base64 string.
+                        example: 1
+                  permissions:
+                    type: object
+                    description: Permissions to assign to the record.
+                    properties:
+                      access:
+                        type: string
+                        description: Access permission level for the record.
+                        example: public
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+                      manage:
+                        type: string
+                        description: Manage permission level for the record.
+                        example: user
+                        oneOf:
+                          - public
+                          - network
+                          - company
+                          - user
+    put:
+      summary: Edit/Update a record by ID. Must have appropriate access permission.
+      tags:
+        - Translation Map
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: Translation Map Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                companyname:
+                  type: string
+                  description: 'Company for the translation map. [optional]'
+                  example: Partner 2
+                partnername:
+                  type: string
+                  description: 'Partner for the translation map. [optional]'
+                  example: Partner 2
+                description:
+                  type: string
+                  description: 'Description of the translation map this record belongs to. [optional]'
+                  example: Converts ERP Order CSV File to X12 850 004010
+                documenttype:
+                  type: string
+                  description: 'Type of document for this translation map. [optional]'
+                  example: Translation map
+                version:
+                  type: string
+                  description: 'Version for the translation map. [optional]'
+                  example: '1.0'
+                from_formattype:
+                  type: string
+                  description: 'Document format of the grammar to translate from. [optional]'
+                  example: csv
+                from_messagetype:
+                  type: string
+                  description: 'Name of the grammar message type to translate from. [optional]'
+                  example: order_csv
+                frompartner_id:
+                  type: string
+                  description: 'Name of the partner to translate from. [optional]'
+                  example: ''
+                to_formattype:
+                  type: string
+                  description: 'Document format of the grammar to translate to. [optional]'
+                  example: csv
+                to_messagetype:
+                  type: string
+                  description: 'Name of the grammar message type to translate to. [optional]'
+                  example: order_csv
+                topartner_id:
+                  type: string
+                  description: 'Name of the partner to translate to. [optional]'
+                  example: ''
+                tscript:
+                  type: string
+                  description: 'Name of the translation map. [optional]'
+                  example: ordercsv_2_x12850
+                content:
+                  type: string
+                  format: base64
+                  description: 'Base64 encode string of the grammar. [optional]'
+                  example: ZnJvbSBib3RzY29uZmlnIG...
+                permissions:
+                  type: object
+                  description: 'Permissions to assign to the record. [optional]'
+                  properties:
+                    access:
+                      type: string
+                      description: 'Access permission level for the record. [optional]'
+                      example: public
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+                    manage:
+                      type: string
+                      description: 'Manage permission level for the record. [optional]'
+                      example: user
+                      oneOf:
+                        - public
+                        - network
+                        - company
+                        - user
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate access permission.
+      tags:
+        - Translation Map
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/translation-map/file/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    get:
+      tags:
+        - Translation Map
+      summary: Get a record with given ID and return a file. Must have appropriate access permission.
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully processed, return the translation map file.'
+          content:
+            application/octet-stream:
+              schema:
+                type: file
+                format: binary
+  /api/v1/user/list:
+    post:
+      tags:
+        - User
+      summary: Gets a list of users. Requires manage-user user permissions.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: integer
+                  format: int32
+                  description: 'Record number to start the list from. [optional]'
+                  default: 0
+                  example: 0
+                size:
+                  type: integer
+                  format: int32
+                  description: 'Number of records to return. [optional]'
+                  default: 100
+                  example: 100
+                  minimum: 0
+                  maximum: 10000
+                sort_by:
+                  type: string
+                  description: 'The property to sor the list by. [optional]'
+                  default: id
+                  example: name
+                sort_order:
+                  type: string
+                  description: 'the order in which to sort the list. [optional]'
+                  oneOf:
+                    - asc
+                    - desc
+                  example: asc
+                search_after:
+                  type: array
+                  description: 'Array of key/values to get the next set of result after. [optional]'
+                  example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+      responses:
+        '200':
+          description: '(OK) Successfully processed, returns list of translation maps.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int32
+                        description: Number of records returned.
+                        example: 10
+                      search_after_values:
+                        type: array
+                        description: 'Key/Value pairs for the last record, used to search for the next page of results.'
+                        example: '["search_after":["BOPBNKD12AUN", "rXuYp20B8ihBaWlEFvqS"]'
+                      total:
+                        type: integer
+                        format: int32
+                        description: Total number of records.
+                        example: 100345
+                  results:
+                    type: array
+                    description: List of records.
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The ID of the authorized user.
+                          example: jx8Yq2wOMt0esONO7uLx
+                        user_name:
+                          type: string
+                          description: The username of the authorized user.
+                          example: JohnDoe@Company.com
+                        name:
+                          type: string
+                          description: The name of the authorized user.
+                          example: John Doe
+                        company_name:
+                          type: string
+                          description: The company the authorized user belongs to.
+                          example: FreightTrust & Clearing Corporation
+                        company_id:
+                          type: string
+                          description: The Company ID of the authorized user.
+                          example: Q5GfiOSq566GIydfguBfg0rD
+                        alt_email_1:
+                          type: string
+                          description: The alternate email 1 of the authorized user.
+                          example: name1@company.com
+                        alt_email_2:
+                          type: string
+                          description: The alternate email 2 of the authorized user.
+                          example: name2@company.com
+                        phone:
+                          type: string
+                          description: The phone number of the authorized user.
+                          example: 555-123-4567
+                        department:
+                          type: string
+                          description: The department of the authorized user.
+                          example: Sales
+                        position:
+                          type: string
+                          description: The position of the authorized user.
+                          example: Manager
+                        roles:
+                          type: array
+                          description: The permission roles of the authorized user.
+                          example: '[manage-users, manage-company]'
+  /api/v1/user/add:
+    post:
+      tags:
+        - User
+      summary: Add a user record.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_name:
+                  type: string
+                  description: The username of the authorized user.
+                  example: JohnDoe@Company.com
+                name:
+                  type: string
+                  description: 'The name of the authorized user. [optional]'
+                  example: John Doe
+                alt_email_1:
+                  type: string
+                  description: 'The alternate email 1 of the authorized user. [optional]'
+                  example: name1@company.com
+                alt_email_2:
+                  type: string
+                  description: 'The alternate email 2 of the authorized user. [optional]'
+                  example: name2@company.com
+                phone:
+                  type: string
+                  description: 'The phone number of the authorized user. [optional]'
+                  example: 555-123-4567
+                department:
+                  type: string
+                  description: 'The department of the authorized user. [optional]'
+                  example: Sales
+                position:
+                  type: string
+                  description: 'The position of the authorized user. [optional]'
+                  example: Manager
+                password:
+                  type: string
+                  description: 'Password for the authorized user. [optional]'
+                  example: 1
+                roles:
+                  type: array
+                  description: 'User permission roles. [optional]'
+                  oneOf:
+                    - manage-user
+                    - manage-billing
+                    - manage-company
+      responses:
+        '201':
+          description: '(CREATED) Successfully created, returns add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: created
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  '/api/v1/user/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the record that we want to match
+        type: string
+    put:
+      summary: Edit/Update a record by ID. Must have manage-user permissions.
+      tags:
+        - User
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      requestBody:
+        description: User Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_name:
+                  type: string
+                  description: The username of the authorized user.
+                  example: JohnDoe@Company.com
+                name:
+                  type: string
+                  description: 'The name of the authorized user. [optional]'
+                  example: John Doe
+                company_name:
+                  type: string
+                  description: 'The name of the company. [optional]'
+                  example: Company B
+                alt_email_1:
+                  type: string
+                  description: 'The alternate email 1 of the authorized user. [optional]'
+                  example: name1@company.com
+                alt_email_2:
+                  type: string
+                  description: 'The alternate email 2 of the authorized user. [optional]'
+                  example: name2@company.com
+                phone:
+                  type: string
+                  description: 'The phone number of the authorized user. [optional]'
+                  example: 555-123-4567
+                department:
+                  type: string
+                  description: 'The department of the authorized user. [optional]'
+                  example: Sales
+                position:
+                  type: string
+                  description: 'The position of the authorized user. [optional]'
+                  example: Manager
+                active:
+                  type: integer
+                  description: 'Flag for if the authorized user is active. [optional]'
+                  example: 1
+                password:
+                  type: string
+                  description: 'Password for the authorized user. [optional]'
+                  example: 1
+                roles:
+                  type: array
+                  description: 'User permission roles. [optional]'
+                  oneOf:
+                    - manage-user
+                    - manage-billing
+                    - manage-company
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+    delete:
+      summary: Delete record by ID. Must have appropriate permission.
+      tags:
+        - User
+      parameters:
+        - in: path
+          name: id
+          description: Record ID
+          schema:
+            $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: '(OK) Successfully deleted, returns deleted result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: deleted
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/me:
+    get:
+      tags:
+        - User
+      summary: Gets your user information.
+      responses:
+        '200':
+          description: '(OK) Successfully created, returns add result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the authorized user.
+                    example: '{COMPANY}-exact-uphold-oval-number-depart-cake-drastic-save'
+                  user_name:
+                    type: string
+                    description: The username of the authorized user.
+                    example: JohnDoe@Company.com
+                  name:
+                    type: string
+                    description: The name of the authorized user.
+                    example: John Doe
+                  company_name:
+                    type: string
+                    description: The company the authorized user belongs to.
+                    example: FreightTrust & Clearing Corporation
+                  company_id:
+                    type: string
+                    description: The Company ID of the authorized user.
+                    example: 
+                  apikey:
+                    type: string
+                    description: The API-Key of the authorized user to access this service.
+                    example: titus-tysane-here-warhorse-pahl-tion-offense
+                  alt_email_1:
+                    type: string
+                    description: The alternate email 1 of the authorized user.
+                    example: name1@company.com
+                  alt_email_2:
+                    type: string
+                    description: The alternate email 2 of the authorized user.
+                    example: name2@company.com
+                  phone:
+                    type: string
+                    description: The phone number of the authorized user.
+                    example: 555-123-4567
+                  department:
+                    type: string
+                    description: The department of the authorized user.
+                    example: Sales
+                  position:
+                    type: string
+                    description: The position of the authorized user.
+                    example: Manager
+    put:
+      summary: Edit/Update your user record.
+      tags:
+        - User
+      requestBody:
+        description: Authorized User Object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_name:
+                  type: string
+                  description: The username of the authorized user.
+                  example: JohnDoe@Company.com
+                company_name:
+                  type: string
+                  description: The company the authorized user belongs to.
+                  example: FreightTrust & Clearing Corporation
+                name:
+                  type: string
+                  description: The name of the authorized user.
+                  example: John Doe
+                alt_email_1:
+                  type: string
+                  description: The alternate email 1 of the authorized user.
+                  example: name1@company.com
+                alt_email_2:
+                  type: string
+                  description: The alternate email 2 of the authorized user.
+                  example: name2@company.com
+                phone:
+                  type: string
+                  description: The phone number of the authorized user.
+                  example: 555-123-4567
+                department:
+                  type: string
+                  description: The department of the authorized user.
+                  example: Sales
+                position:
+                  type: string
+                  description: The position of the authorized user.
+                  example: Manager
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/me/apikey:
+    put:
+      summary: Update your user's apikey.
+      tags:
+        - User
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record.
+                    example: idP43WwBKlTdf5o11xqE
+                  apikey:
+                    type: string
+                    description: The new api-key for this authorized user.
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+  /api/v1/me/password:
+    put:
+      summary: Update your user's password.
+      tags:
+        - User
+      responses:
+        '202':
+          description: '(ACCEPTED) Successfully updated, returns updated result.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The ID of the record.
+                    example: idP43WwBKlTdf5o11xqE
+                  result:
+                    type: string
+                    description: Text description of the record operation.
+                    example: updated
+                  success:
+                    type: boolean
+                    description: If the operation was successful.
+                    example: true
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+      description: 'API key to authorize requests. HTTP Header = X-API-KEY : <apikey>'
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: 'Basic authentication to authorize requests. HTTP Header = Authorization : Basic base64-encode(''username:password'')'
+  schemas:
+    ErrorObject:
+      type: object
+      description: All responses that do not return a 2XX HTTP Status Code return this Error Object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+              description: HTTP Status Code and Description
+              example: 404 - Not Found
+            message:
+              type: string
+              description: Additional message or description of the error
+              example: This entity is not found
