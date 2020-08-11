@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "SpecialServicesCode": {
+          "type": "object",
+          "properties": {
+            "D1": {
+              "type": "string"
+            },
+            "D2": {
+              "type": "string"
+            },
+            "EX": {
+              "type": "string"
+            },
+            "RD": {
+              "type": "string"
+            },
+            "SD": {
+              "type": "string"
+            },
+            "CC": {
+              "type": "string"
+            },
+            "CD": {
+              "type": "string"
+            },
+            "DV": {
+              "type": "string"
+            },
+            "ID": {
+              "type": "string"
+            },
+            "ZZ": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "D1",
+            "D2",
+            "EX",
+            "RD",
+            "SD",
+            "CC",
+            "CD",
+            "DV",
+            "ID",
+            "ZZ"
+          ]
+        },
+        "required": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "dependencies": {
+          "type": "object",
+          "properties": {
+            "": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            ""
+          ]
+        }
+      },
+      "required": [
+        "SpecialServicesCode",
+        "required",
+        "dependencies"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "properties"
+  ]
+}
