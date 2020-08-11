@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Loop_G61_204": {
+      "type": "string"
+    },
+    "class": {
+      "type": "object",
+      "properties": {
+        "L11": {
+          "type": "string"
+        },
+        "Item": {
+          "type": "string"
+        },
+        "G61": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string"
+            },
+            "CommunicationNumberQualifier": {
+              "type": "string"
+            },
+            "ContactFunctionCode": {
+              "type": "string"
+            },
+            "CommunicationNumber": {
+              "type": "string"
+            },
+            "ContactInquiryReference": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name",
+            "CommunicationNumberQualifier",
+            "ContactFunctionCode",
+            "CommunicationNumber",
+            "ContactInquiryReference"
+          ]
+        }
+      },
+      "required": [
+        "L11",
+        "Item",
+        "G61"
+      ]
+    }
+  },
+  "required": [
+    "Loop_G61_204",
+    "class"
+  ]
+}

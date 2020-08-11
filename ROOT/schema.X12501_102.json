@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Release": {
+      "type": "string"
+    },
+    "DocumentType": {
+      "type": "integer"
+    },
+    "TransactionSet": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            },
+            "Min": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "ID",
+            "Min"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            },
+            "Min": {
+              "type": "integer"
+            },
+            "Max": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "Min",
+            "Max"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            },
+            "Max": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "Max"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            },
+            "Min": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "ID",
+            "Min"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "Release",
+    "DocumentType",
+    "TransactionSet"
+  ]
+}
