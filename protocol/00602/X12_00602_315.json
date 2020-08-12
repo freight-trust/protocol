@@ -1,0 +1,18 @@
+{
+  "Release": "00602",
+  "DocumentType": 315,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "B4" },
+    { "ID": "N9", "Min": 0, "Max": 30 },
+    { "ID": "Q2", "Min": 0 },
+    { "ID": "SG", "Min": 0, "Max": 15 },
+    {
+      "ID": "R4Loop1",
+      "Max": 20,
+      "Loop": [{ "ID": "R4" }, { "ID": "DTM", "Min": 0, "Max": 15 }]
+    },
+    { "ID": "V9", "Min": 0, "Max": 10 },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "Release": "00501",
+  "DocumentType": 179,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BGN" },
+    { "ID": "N9", "Min": 0, "Max": "unbounded" },
+    { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+    { "ID": "MTX", "Min": 0, "Max": "unbounded" },
+    {
+      "ID": "LMLoop1",
+      "Min": 0,
+      "Max": "unbounded",
+      "Loop": [{ "ID": "LM" }, { "ID": "LQ", "Max": "unbounded" }]
+    },
+    {
+      "ID": "NM1Loop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "NM1" },
+        { "ID": "N2", "Min": 0, "Max": 2 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0, "Max": "unbounded" },
+        { "ID": "N9", "Min": 0, "Max": "unbounded" },
+        { "ID": "TPB", "Min": 0 },
+        { "ID": "PER", "Min": 0, "Max": "unbounded" },
+        { "ID": "G86", "Min": 0 },
+        { "ID": "YNQ", "Min": 0, "Max": "unbounded" },
+        { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+        {
+          "ID": "LMLoop2",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "LM" },
+            {
+              "ID": "LQLoop1",
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "LQ" },
+                { "ID": "LOC", "Min": 0 },
+                { "ID": "MEA", "Min": 0, "Max": "unbounded" }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "QTYLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [{ "ID": "QTY" }, { "ID": "SPI", "Min": 0 }]
+        },
+        {
+          "ID": "OOILoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [{ "ID": "OOI" }, { "ID": "BDS", "Min": 0 }]
+        }
+      ]
+    },
+    {
+      "ID": "HLLoop1",
+      "Max": "unbounded",
+      "Loop": [
+        { "ID": "HL" },
+        { "ID": "SPI", "Min": 0 },
+        { "ID": "REF", "Min": 0, "Max": "unbounded" },
+        { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+        { "ID": "YNQ", "Min": 0, "Max": "unbounded" },
+        { "ID": "PWK", "Min": 0, "Max": "unbounded" },
+        { "ID": "MTX", "Min": 0, "Max": "unbounded" },
+        {
+          "ID": "NM1Loop2",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "NM1" },
+            { "ID": "N2", "Min": 0, "Max": 2 },
+            { "ID": "N3", "Min": 0, "Max": 2 },
+            { "ID": "N4", "Min": 0, "Max": "unbounded" },
+            { "ID": "PER", "Min": 0, "Max": "unbounded" },
+            { "ID": "REF", "Min": 0, "Max": "unbounded" },
+            { "ID": "MTX", "Min": 0 }
+          ]
+        },
+        {
+          "ID": "LMLoop3",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "LM" },
+            {
+              "ID": "LQLoop2",
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "LQ" },
+                { "ID": "MEA", "Min": 0, "Max": "unbounded" },
+                { "ID": "QTY", "Min": 0, "Max": "unbounded" },
+                { "ID": "REF", "Min": 0, "Max": "unbounded" },
+                { "ID": "DTM", "Min": 0, "Max": "unbounded" },
+                { "ID": "NTE", "Min": 0, "Max": "unbounded" },
+                {
+                  "ID": "IIILoop1",
+                  "Min": 0,
+                  "Max": "unbounded",
+                  "Loop": [
+                    { "ID": "III" },
+                    { "ID": "LOC", "Min": 0 },
+                    { "ID": "MEA", "Min": 0, "Max": "unbounded" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "N9Loop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "N9" },
+            { "ID": "MEA", "Min": 0, "Max": "unbounded" },
+            { "ID": "YNQ", "Min": 0, "Max": "unbounded" },
+            { "ID": "NTE", "Min": 0, "Max": "unbounded" },
+            {
+              "ID": "QTYLoop2",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "QTY" },
+                { "ID": "III", "Min": 0, "Max": "unbounded" },
+                { "ID": "SPI", "Min": 0 }
+              ]
+            },
+            {
+              "ID": "LMLoop4",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "LM" },
+                {
+                  "ID": "LQLoop3",
+                  "Max": "unbounded",
+                  "Loop": [
+                    { "ID": "LQ" },
+                    { "ID": "QTY", "Min": 0, "Max": "unbounded" },
+                    { "ID": "AMT", "Min": 0, "Max": "unbounded" },
+                    { "ID": "PCT", "Min": 0, "Max": "unbounded" },
+                    { "ID": "N1", "Min": 0, "Max": "unbounded" },
+                    { "ID": "III", "Min": 0, "Max": "unbounded" },
+                    { "ID": "YNQ", "Min": 0, "Max": "unbounded" },
+                    { "ID": "SPI", "Min": 0 },
+                    { "ID": "MEA", "Min": 0, "Max": "unbounded" },
+                    { "ID": "NTE", "Min": 0, "Max": "unbounded" }
+                  ]
+                }
+              ]
+            },
+            {
+              "ID": "NM1Loop3",
+              "Min": 0,
+              "Max": "unbounded",
+              "Loop": [
+                { "ID": "NM1" },
+                { "ID": "N2", "Min": 0, "Max": 2 },
+                { "ID": "N3", "Min": 0, "Max": 2 },
+                { "ID": "N4", "Min": 0, "Max": "unbounded" },
+                { "ID": "PER", "Min": 0, "Max": "unbounded" },
+                { "ID": "YNQ", "Min": 0, "Max": "unbounded" },
+                {
+                  "ID": "QTYLoop3",
+                  "Min": 0,
+                  "Max": "unbounded",
+                  "Loop": [
+                    { "ID": "QTY" },
+                    { "ID": "III", "Min": 0, "Max": "unbounded" }
+                  ]
+                },
+                {
+                  "ID": "LMLoop5",
+                  "Min": 0,
+                  "Max": "unbounded",
+                  "Loop": [{ "ID": "LM" }, { "ID": "LQ", "Max": "unbounded" }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "OOILoop2",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [{ "ID": "OOI" }, { "ID": "BDS", "Min": 0 }]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

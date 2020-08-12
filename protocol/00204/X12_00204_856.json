@@ -1,0 +1,61 @@
+{
+  "Release": "00204",
+  "DocumentType": 856,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BSN" },
+    { "ID": "NTE", "Min": 0, "Max": 100 },
+    { "ID": "DTM", "Min": 0, "Max": 10 },
+    {
+      "ID": "HLLoop1",
+      "Max": 200000,
+      "Loop": [
+        { "ID": "HL" },
+        { "ID": "LIN", "Min": 0 },
+        { "ID": "SN1", "Min": 0 },
+        { "ID": "SLN", "Min": 0, "Max": 100 },
+        { "ID": "PRF", "Min": 0 },
+        { "ID": "PO4", "Min": 0 },
+        { "ID": "PID", "Min": 0, "Max": 200 },
+        { "ID": "MEA", "Min": 0, "Max": 40 },
+        { "ID": "PWK", "Min": 0, "Max": 25 },
+        { "ID": "PKG", "Min": 0, "Max": 25 },
+        { "ID": "TD1", "Min": 0, "Max": 20 },
+        { "ID": "TD5", "Min": 0, "Max": 12 },
+        { "ID": "TD3", "Min": 0, "Max": 12 },
+        { "ID": "TD4", "Min": 0, "Max": 5 },
+        { "ID": "REF", "Min": 0, "Max": 200 },
+        { "ID": "PER", "Min": 0 },
+        {
+          "ID": "CLDLoop1",
+          "Min": 0,
+          "Max": 200,
+          "Loop": [{ "ID": "CLD" }, { "ID": "REF", "Min": 0, "Max": 200 }]
+        },
+        { "ID": "MAN", "Min": 0, "Max": 10 },
+        { "ID": "DTM", "Min": 0, "Max": 10 },
+        { "ID": "FOB", "Min": 0 },
+        {
+          "ID": "N1Loop1",
+          "Min": 0,
+          "Max": 200,
+          "Loop": [
+            { "ID": "N1" },
+            { "ID": "N2", "Min": 0, "Max": 2 },
+            { "ID": "N3", "Min": 0, "Max": 2 },
+            { "ID": "N4", "Min": 0 },
+            { "ID": "REF", "Min": 0, "Max": 12 },
+            { "ID": "PER", "Min": 0, "Max": 3 },
+            { "ID": "FOB", "Min": 0 }
+          ]
+        },
+        { "ID": "SDQ", "Min": 0, "Max": 50 },
+        { "ID": "ETD", "Min": 0 },
+        { "ID": "CUR", "Min": 0 },
+        { "ID": "ITA", "Min": 0, "Max": 10 }
+      ]
+    },
+    { "ID": "CTT" },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

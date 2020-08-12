@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "TypeMaps": {
+      "type": "object",
+      "properties": {
+        "TS204": {
+          "type": "string"
+        },
+        "TS990": {
+          "type": "string"
+        },
+        "TS997": {
+          "type": "string"
+        },
+        "TS214": {
+          "type": "string"
+        },
+        "TS210": {
+          "type": "string"
+        },
+        "S5": {
+          "type": "string"
+        },
+        "B1": {
+          "type": "string"
+        },
+        "B10": {
+          "type": "string"
+        },
+        "L11": {
+          "type": "string"
+        },
+        "AT7": {
+          "type": "string"
+        },
+        "MS1": {
+          "type": "string"
+        },
+        "K1": {
+          "type": "string"
+        },
+        "Loop_S5_204": {
+          "type": "string"
+        },
+        "N9": {
+          "type": "string"
+        },
+        "AT5": {
+          "type": "string"
+        },
+        "Loop_N1_204": {
+          "type": "string"
+        },
+        "Loop_N7_204": {
+          "type": "string"
+        },
+        "LH6": {
+          "type": "string"
+        },
+        "NTE": {
+          "type": "string"
+        },
+        "B3": {
+          "type": "string"
+        },
+        "G62": {
+          "type": "string"
+        },
+        "H3": {
+          "type": "string"
+        },
+        "N7": {
+          "type": "string"
+        },
+        "N1": {
+          "type": "string"
+        },
+        "LX": {
+          "type": "string"
+        },
+        "L1": {
+          "type": "string"
+        },
+        "L3": {
+          "type": "string"
+        },
+        "Loop_L1_210": {
+          "type": "string"
+        },
+        "Loop_LX_210": {
+          "type": "string"
+        },
+        "Loop_N1_210": {
+          "type": "string"
+        },
+        "Loop_N7_210": {
+          "type": "string"
+        },
+        "Loop_S5_210": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TS204",
+        "TS990",
+        "TS997",
+        "TS214",
+        "TS210",
+        "S5",
+        "B1",
+        "B10",
+        "L11",
+        "AT7",
+        "MS1",
+        "K1",
+        "Loop_S5_204",
+        "N9",
+        "AT5",
+        "Loop_N1_204",
+        "Loop_N7_204",
+        "LH6",
+        "NTE",
+        "B3",
+        "G62",
+        "H3",
+        "N7",
+        "N1",
+        "LX",
+        "L1",
+        "L3",
+        "Loop_L1_210",
+        "Loop_LX_210",
+        "Loop_N1_210",
+        "Loop_N7_210",
+        "Loop_S5_210"
+      ]
+    }
+  },
+  "required": [
+    "TypeMaps"
+  ]
+}

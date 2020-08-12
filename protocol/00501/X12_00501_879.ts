@@ -1,0 +1,179 @@
+"use strict";
+var validate = (function () {
+  var refVal = [];
+  return function validate(
+    data,
+    dataPath,
+    parentData,
+    parentDataProperty,
+    rootData
+  ) {
+    "use strict";
+    validate.errors = null;
+    return true;
+  };
+})();
+validate.schema = {
+  Release: "00501",
+  DocumentType: 879,
+  TransactionSet: [
+    {
+      ID: "ST",
+      Min: 0,
+    },
+    {
+      ID: "G91",
+    },
+    {
+      ID: "N1Loop1",
+      Max: 999,
+      Loop: [
+        {
+          ID: "N1",
+        },
+        {
+          ID: "N2",
+          Min: 0,
+        },
+        {
+          ID: "N3",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N4",
+          Min: 0,
+        },
+      ],
+    },
+    {
+      ID: "N9",
+      Min: 0,
+      Max: 10,
+    },
+    {
+      ID: "G61",
+      Min: 0,
+      Max: "unbounded",
+    },
+    {
+      ID: "NTE",
+      Min: 0,
+      Max: 20,
+    },
+    {
+      ID: "G36",
+      Min: 0,
+    },
+    {
+      ID: "G26",
+      Min: 0,
+      Max: 99,
+    },
+    {
+      ID: "G43",
+      Min: 0,
+      Max: 9999,
+    },
+    {
+      ID: "G62",
+      Max: 10,
+    },
+    {
+      ID: "G46",
+      Min: 0,
+      Max: 100,
+    },
+    {
+      ID: "G93Loop1",
+      Min: 0,
+      Max: 50,
+      Loop: [
+        {
+          ID: "G93",
+        },
+        {
+          ID: "N1",
+          Min: 0,
+        },
+        {
+          ID: "G46",
+          Min: 0,
+        },
+        {
+          ID: "G26",
+          Min: 0,
+          Max: "unbounded",
+        },
+      ],
+    },
+    {
+      ID: "G28Loop1",
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "G28",
+        },
+        {
+          ID: "G20",
+          Min: 0,
+        },
+        {
+          ID: "G69",
+          Min: 0,
+          Max: 5,
+        },
+        {
+          ID: "G26",
+          Min: 0,
+          Max: 99,
+        },
+        {
+          ID: "G43",
+          Min: 0,
+          Max: 9999,
+        },
+        {
+          ID: "G62",
+          Min: 0,
+          Max: 4,
+        },
+        {
+          ID: "G46",
+          Min: 0,
+          Max: 100,
+        },
+        {
+          ID: "G22",
+          Min: 0,
+        },
+        {
+          ID: "SAC",
+          Min: 0,
+          Max: 10,
+        },
+        {
+          ID: "G40Loop1",
+          Min: 0,
+          Max: 100,
+          Loop: [
+            {
+              ID: "G40",
+            },
+            {
+              ID: "G46",
+              Min: 0,
+              Max: 100,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      ID: "SE",
+      Min: 0,
+    },
+  ],
+};
+validate.errors = null;
+module.exports = validate;

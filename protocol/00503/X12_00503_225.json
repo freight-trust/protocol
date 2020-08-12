@@ -1,0 +1,10 @@
+{
+  "Release": "00503",
+  "DocumentType": 225,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "SCP" },
+    { "ID": "L11", "Min": 0, "Max": 5 },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

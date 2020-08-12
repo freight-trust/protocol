@@ -1,0 +1,57 @@
+{
+  "Release": "00603",
+  "DocumentType": 456,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "EIA" },
+    { "ID": "N8", "Min": 0, "Max": 10 },
+    {
+      "ID": "LXLoop1",
+      "Min": 0,
+      "Max": 500,
+      "Loop": [
+        { "ID": "LX" },
+        { "ID": "N7", "Min": 0 },
+        { "ID": "H5", "Min": 0 },
+        { "ID": "IC", "Min": 0 },
+        { "ID": "F9", "Min": 0 },
+        { "ID": "D9", "Min": 0 },
+        { "ID": "N9", "Min": 0, "Max": 99 },
+        { "ID": "N1", "Min": 0, "Max": "unbounded" },
+        { "ID": "H3", "Min": 0, "Max": 6 },
+        { "ID": "L5", "Min": 0, "Max": 15 },
+        { "ID": "R2", "Min": 0, "Max": 13 },
+        { "ID": "VC", "Min": 0, "Max": 36 },
+        { "ID": "PI", "Min": 0, "Max": 30 },
+        {
+          "ID": "S1Loop1",
+          "Min": 0,
+          "Max": 12,
+          "Loop": [{ "ID": "S1" }, { "ID": "S9", "Min": 0 }]
+        }
+      ]
+    },
+    {
+      "ID": "IS1Loop1",
+      "Min": 0,
+      "Loop": [
+        { "ID": "IS1" },
+        { "ID": "ISC", "Min": 0, "Max": 99 },
+        { "ID": "IS2", "Max": 99 },
+        { "ID": "N9", "Max": 5 }
+      ]
+    },
+    {
+      "ID": "ERLoop1",
+      "Min": 0,
+      "Max": 99,
+      "Loop": [
+        { "ID": "ER" },
+        { "ID": "N4", "Min": 0 },
+        { "ID": "NA", "Min": 0 },
+        { "ID": "ES", "Min": 0 }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

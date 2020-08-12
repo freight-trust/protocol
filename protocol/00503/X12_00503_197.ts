@@ -1,0 +1,270 @@
+"use strict";
+var validate = (function () {
+  var refVal = [];
+  return function validate(
+    data,
+    dataPath,
+    parentData,
+    parentDataProperty,
+    rootData
+  ) {
+    "use strict";
+    validate.errors = null;
+    return true;
+  };
+})();
+validate.schema = {
+  Release: "00503",
+  DocumentType: 197,
+  TransactionSet: [
+    {
+      ID: "ST",
+      Min: 0,
+    },
+    {
+      ID: "BGN",
+    },
+    {
+      ID: "N1Loop1",
+      Max: 5,
+      Loop: [
+        {
+          ID: "N1",
+        },
+        {
+          ID: "N2",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N3",
+          Min: 0,
+          Max: 2,
+        },
+        {
+          ID: "N4",
+          Min: 0,
+        },
+        {
+          ID: "REF",
+          Min: 0,
+          Max: 12,
+        },
+        {
+          ID: "PER",
+          Min: 0,
+          Max: 3,
+        },
+      ],
+    },
+    {
+      ID: "PIDLoop1",
+      Max: "unbounded",
+      Loop: [
+        {
+          ID: "PID",
+        },
+        {
+          ID: "REF",
+          Max: 12,
+        },
+        {
+          ID: "DTP",
+          Min: 0,
+        },
+        {
+          ID: "MSG",
+          Min: 0,
+          Max: "unbounded",
+        },
+        {
+          ID: "NM1Loop1",
+          Min: 0,
+          Max: 5,
+          Loop: [
+            {
+              ID: "NM1",
+            },
+            {
+              ID: "N2",
+              Min: 0,
+            },
+            {
+              ID: "N3",
+              Min: 0,
+            },
+            {
+              ID: "N4",
+              Min: 0,
+            },
+            {
+              ID: "EFILoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "EFI",
+                },
+                {
+                  ID: "BIN",
+                  Min: 0,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          ID: "NX1Loop1",
+          Min: 0,
+          Max: "unbounded",
+          Loop: [
+            {
+              ID: "NX1",
+            },
+            {
+              ID: "NX2",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "PDS",
+              Min: 0,
+              Max: 20,
+            },
+            {
+              ID: "PDE",
+              Min: 0,
+              Max: "unbounded",
+            },
+          ],
+        },
+        {
+          ID: "FGSLoop1",
+          Max: 10,
+          Loop: [
+            {
+              ID: "FGS",
+            },
+            {
+              ID: "DTP",
+              Min: 0,
+              Max: 2,
+            },
+            {
+              ID: "FPT",
+              Min: 0,
+            },
+            {
+              ID: "MSG",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "N9",
+              Min: 0,
+              Max: "unbounded",
+            },
+            {
+              ID: "IN1Loop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "IN1",
+                },
+                {
+                  ID: "IN2",
+                  Min: 0,
+                  Max: 30,
+                },
+                {
+                  ID: "AMT",
+                  Min: 0,
+                  Max: 2,
+                },
+                {
+                  ID: "M1",
+                  Min: 0,
+                },
+                {
+                  ID: "MSG",
+                  Min: 0,
+                  Max: 10,
+                },
+              ],
+            },
+            {
+              ID: "LQLoop1",
+              Min: 0,
+              Max: "unbounded",
+              Loop: [
+                {
+                  ID: "LQ",
+                },
+                {
+                  ID: "DTP",
+                  Min: 0,
+                  Max: 3,
+                },
+                {
+                  ID: "REF",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "MSG",
+                  Min: 0,
+                  Max: "unbounded",
+                },
+                {
+                  ID: "IN1Loop2",
+                  Min: 0,
+                  Max: "unbounded",
+                  Loop: [
+                    {
+                      ID: "IN1",
+                    },
+                    {
+                      ID: "IN2",
+                      Min: 0,
+                      Max: 30,
+                    },
+                    {
+                      ID: "M1",
+                      Min: 0,
+                      Max: 20,
+                    },
+                    {
+                      ID: "MSG",
+                      Min: 0,
+                      Max: 4,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          ID: "LXLoop1",
+          Min: 0,
+          Loop: [
+            {
+              ID: "LX",
+            },
+            {
+              ID: "G86",
+              Min: 0,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      ID: "SE",
+      Min: 0,
+    },
+  ],
+};
+validate.errors = null;
+module.exports = validate;

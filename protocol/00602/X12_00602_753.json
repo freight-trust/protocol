@@ -1,0 +1,51 @@
+{
+  "Release": "00602",
+  "DocumentType": 753,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BGN" },
+    { "ID": "PER", "Min": 0 },
+    { "ID": "YNQ", "Min": 0 },
+    {
+      "ID": "N1Loop1",
+      "Loop": [
+        { "ID": "N1" },
+        { "ID": "N2", "Min": 0 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0 }
+      ]
+    },
+    { "ID": "LX" },
+    {
+      "ID": "N1Loop2",
+      "Max": 9999,
+      "Loop": [
+        { "ID": "N1" },
+        { "ID": "N2", "Min": 0 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0 },
+        { "ID": "L11", "Min": 0, "Max": 5 },
+        { "ID": "G62", "Min": 0, "Max": 2 },
+        { "ID": "USI", "Min": 0 },
+        { "ID": "AT8", "Min": 0 },
+        {
+          "ID": "CMCLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [{ "ID": "CMC" }, { "ID": "AT8", "Min": 0 }]
+        },
+        {
+          "ID": "OIDLoop1",
+          "Min": 0,
+          "Max": "unbounded",
+          "Loop": [
+            { "ID": "OID" },
+            { "ID": "CMC", "Min": 0 },
+            { "ID": "YNQ", "Min": 0 }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

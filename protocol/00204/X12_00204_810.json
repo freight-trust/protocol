@@ -1,0 +1,99 @@
+{
+  "Release": "00204",
+  "DocumentType": 810,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "BIG" },
+    { "ID": "NTE", "Min": 0, "Max": 100 },
+    { "ID": "CUR", "Min": 0 },
+    { "ID": "REF", "Min": 0, "Max": 12 },
+    { "ID": "PER", "Min": 0, "Max": 3 },
+    {
+      "ID": "N1Loop1",
+      "Min": 0,
+      "Max": 200,
+      "Loop": [
+        { "ID": "N1" },
+        { "ID": "N2", "Min": 0, "Max": 2 },
+        { "ID": "N3", "Min": 0, "Max": 2 },
+        { "ID": "N4", "Min": 0 },
+        { "ID": "REF", "Min": 0, "Max": 12 },
+        { "ID": "PER", "Min": 0, "Max": 3 }
+      ]
+    },
+    { "ID": "ITD", "Min": 0, "Max": 5 },
+    { "ID": "DTM", "Min": 0, "Max": 10 },
+    { "ID": "FOB", "Min": 0 },
+    { "ID": "PID", "Min": 0, "Max": 200 },
+    { "ID": "MEA", "Min": 0, "Max": 40 },
+    { "ID": "PWK", "Min": 0, "Max": 25 },
+    { "ID": "PKG", "Min": 0, "Max": 25 },
+    { "ID": "L7", "Min": 0 },
+    {
+      "ID": "IT1Loop1",
+      "Min": 0,
+      "Max": 200000,
+      "Loop": [
+        { "ID": "IT1" },
+        { "ID": "CUR", "Min": 0 },
+        { "ID": "IT3", "Min": 0, "Max": 5 },
+        { "ID": "TXI", "Min": 0, "Max": 10 },
+        { "ID": "CTP", "Min": 0, "Max": 25 },
+        { "ID": "PID", "Min": 0, "Max": 1000 },
+        { "ID": "MEA", "Min": 0, "Max": 40 },
+        { "ID": "PWK", "Min": 0, "Max": 25 },
+        { "ID": "PKG", "Min": 0, "Max": 25 },
+        { "ID": "PO4", "Min": 0 },
+        { "ID": "ITD", "Min": 0, "Max": 2 },
+        { "ID": "REF", "Min": 0, "Max": "unbounded" },
+        { "ID": "PER", "Min": 0, "Max": 5 },
+        { "ID": "SDQ", "Min": 0, "Max": 500 },
+        { "ID": "DTM", "Min": 0, "Max": 10 },
+        { "ID": "CAD", "Min": 0, "Max": "unbounded" },
+        { "ID": "L7", "Min": 0, "Max": "unbounded" },
+        {
+          "ID": "ITALoop1",
+          "Min": 0,
+          "Max": 10,
+          "Loop": [{ "ID": "ITA" }, { "ID": "TXI", "Min": 0, "Max": 10 }]
+        },
+        {
+          "ID": "SLNLoop1",
+          "Min": 0,
+          "Max": 1000,
+          "Loop": [
+            { "ID": "SLN" },
+            { "ID": "REF", "Min": 0, "Max": "unbounded" },
+            { "ID": "PID", "Min": 0, "Max": 1000 },
+            { "ID": "ITA", "Min": 0, "Max": 10 }
+          ]
+        },
+        {
+          "ID": "N1Loop2",
+          "Min": 0,
+          "Max": 200,
+          "Loop": [
+            { "ID": "N1" },
+            { "ID": "N2", "Min": 0, "Max": 2 },
+            { "ID": "N3", "Min": 0, "Max": 2 },
+            { "ID": "N4", "Min": 0 },
+            { "ID": "REF", "Min": 0, "Max": 12 },
+            { "ID": "PER", "Min": 0, "Max": 3 }
+          ]
+        }
+      ]
+    },
+    { "ID": "TDS" },
+    { "ID": "TXI", "Min": 0, "Max": 10 },
+    { "ID": "CAD", "Min": 0 },
+    {
+      "ID": "ITALoop2",
+      "Min": 0,
+      "Max": 10,
+      "Loop": [{ "ID": "ITA" }, { "ID": "TXI", "Min": 0, "Max": 10 }]
+    },
+    { "ID": "ISS", "Min": 0, "Max": 5 },
+    { "ID": "CTT" },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

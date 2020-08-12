@@ -1,0 +1,30 @@
+{
+  "Release": "00602",
+  "DocumentType": 170,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    { "ID": "N1" },
+    { "ID": "PER", "Min": 0 },
+    {
+      "ID": "THELoop1",
+      "Max": 9999,
+      "Loop": [
+        { "ID": "THE" },
+        {
+          "ID": "LXLoop1",
+          "Max": 10,
+          "Loop": [
+            { "ID": "LX" },
+            { "ID": "REF", "Max": 10 },
+            {
+              "ID": "DTMLoop1",
+              "Max": 7,
+              "Loop": [{ "ID": "DTM" }, { "ID": "BOX", "Max": 250 }]
+            }
+          ]
+        }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}

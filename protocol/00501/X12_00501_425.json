@@ -1,0 +1,17 @@
+{
+  "Release": "00501",
+  "DocumentType": 425,
+  "TransactionSet": [
+    { "ID": "ST", "Min": 0 },
+    {
+      "ID": "ZTLoop1",
+      "Max": 255,
+      "Loop": [
+        { "ID": "ZT" },
+        { "ID": "F9", "Min": 0 },
+        { "ID": "D9", "Min": 0 }
+      ]
+    },
+    { "ID": "SE", "Min": 0 }
+  ]
+}
