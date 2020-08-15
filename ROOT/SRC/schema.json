@@ -1,0 +1,848 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "X12": {
+      "type": "object",
+      "properties": {
+        "DataElementDelimiter": {
+          "type": "string"
+        },
+        "SegmentDelimiter": {
+          "type": "string"
+        },
+        "TA1": {
+          "type": "object",
+          "properties": {
+            "InterchangeDate_2": {
+              "type": "string"
+            },
+            "InterchangeAcknowledgmentCode_4": {
+              "type": "string"
+            },
+            "InterchangeTime_3": {
+              "type": "string"
+            },
+            "InterchangeControlNumber_1": {
+              "type": "string"
+            },
+            "InterchangeNoteCode_5": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "InterchangeDate_2",
+            "InterchangeAcknowledgmentCode_4",
+            "InterchangeTime_3",
+            "InterchangeControlNumber_1",
+            "InterchangeNoteCode_5"
+          ]
+        },
+        "ISA": {
+          "type": "object",
+          "properties": {
+            "InterchangeReceiverID_8": {
+              "type": "string"
+            },
+            "SenderIDQualifier_5": {
+              "type": "string"
+            },
+            "AcknowledgementRequested_14": {
+              "type": "string"
+            },
+            "SecurityInformation_4": {
+              "type": "string"
+            },
+            "InterchangeDate_9": {
+              "type": "string"
+            },
+            "InterchangeControlStandardsIdentifier_11": {
+              "type": "string"
+            },
+            "ComponentElementSeparator_16": {
+              "type": "string"
+            },
+            "SecurityInformationQualifier_3": {
+              "type": "string"
+            },
+            "AuthorizationInformationQualifier_1": {
+              "type": "string"
+            },
+            "InterchangeControlNumber_13": {
+              "type": "string"
+            },
+            "InterchangeSenderID_6": {
+              "type": "string"
+            },
+            "UsageIndicator_15": {
+              "type": "string"
+            },
+            "ReceiverIDQualifier_7": {
+              "type": "string"
+            },
+            "InterchangeTime_10": {
+              "type": "string"
+            },
+            "AuthorizationInformation_2": {
+              "type": "string"
+            },
+            "InterchangeControlVersionNumber_12": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "InterchangeReceiverID_8",
+            "SenderIDQualifier_5",
+            "AcknowledgementRequested_14",
+            "SecurityInformation_4",
+            "InterchangeDate_9",
+            "InterchangeControlStandardsIdentifier_11",
+            "ComponentElementSeparator_16",
+            "SecurityInformationQualifier_3",
+            "AuthorizationInformationQualifier_1",
+            "InterchangeControlNumber_13",
+            "InterchangeSenderID_6",
+            "UsageIndicator_15",
+            "ReceiverIDQualifier_7",
+            "InterchangeTime_10",
+            "AuthorizationInformation_2",
+            "InterchangeControlVersionNumber_12"
+          ]
+        },
+        "Groups": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Transactions": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                },
+                "GETrailers": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "NumberOfIncludedSets_1": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "NumberOfIncludedSets_1",
+                        "GroupControlNumber_2"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "NumberOfIncludedSets_1": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "NumberOfIncludedSets_1",
+                        "GroupControlNumber_2"
+                      ]
+                    }
+                  ]
+                },
+                "GS": {
+                  "type": "object",
+                  "properties": {
+                    "Time_5": {
+                      "type": "string"
+                    },
+                    "ReceiverIDCode_3": {
+                      "type": "string"
+                    },
+                    "CodeIdentifyingInformationType_1": {
+                      "type": "string"
+                    },
+                    "VersionAndRelease_8": {
+                      "type": "string"
+                    },
+                    "SenderIDCode_2": {
+                      "type": "string"
+                    },
+                    "Date_4": {
+                      "type": "string"
+                    },
+                    "TransactionTypeCode_7": {
+                      "type": "string"
+                    },
+                    "GroupControlNumber_6": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Time_5",
+                    "ReceiverIDCode_3",
+                    "CodeIdentifyingInformationType_1",
+                    "VersionAndRelease_8",
+                    "SenderIDCode_2",
+                    "Date_4",
+                    "TransactionTypeCode_7",
+                    "GroupControlNumber_6"
+                  ]
+                }
+              },
+              "required": [
+                "Transactions",
+                "GETrailers",
+                "GS"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Transactions": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ]
+                },
+                "GETrailers": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "NumberOfIncludedSets_1": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "NumberOfIncludedSets_1",
+                        "GroupControlNumber_2"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "NumberOfIncludedSets_1": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "NumberOfIncludedSets_1",
+                        "GroupControlNumber_2"
+                      ]
+                    }
+                  ]
+                },
+                "GS": {
+                  "type": "object",
+                  "properties": {
+                    "Time_5": {
+                      "type": "string"
+                    },
+                    "ReceiverIDCode_3": {
+                      "type": "string"
+                    },
+                    "CodeIdentifyingInformationType_1": {
+                      "type": "string"
+                    },
+                    "VersionAndRelease_8": {
+                      "type": "string"
+                    },
+                    "SenderIDCode_2": {
+                      "type": "string"
+                    },
+                    "Date_4": {
+                      "type": "string"
+                    },
+                    "TransactionTypeCode_7": {
+                      "type": "string"
+                    },
+                    "GroupControlNumber_6": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Time_5",
+                    "ReceiverIDCode_3",
+                    "CodeIdentifyingInformationType_1",
+                    "VersionAndRelease_8",
+                    "SenderIDCode_2",
+                    "Date_4",
+                    "TransactionTypeCode_7",
+                    "GroupControlNumber_6"
+                  ]
+                }
+              },
+              "required": [
+                "Transactions",
+                "GETrailers",
+                "GS"
+              ]
+            }
+          ]
+        },
+        "IEATrailers": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "InterchangeControlNumber_2": {
+                  "type": "string"
+                },
+                "NumberOfIncludedGroups_1": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "InterchangeControlNumber_2",
+                "NumberOfIncludedGroups_1"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "InterchangeControlNumber_2": {
+                  "type": "string"
+                },
+                "NumberOfIncludedGroups_1": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "InterchangeControlNumber_2",
+                "NumberOfIncludedGroups_1"
+              ]
+            }
+          ]
+        },
+        "Result": {
+          "type": "object",
+          "properties": {
+            "Status": {
+              "type": "string"
+            },
+            "Details": {
+              "type": "object",
+              "properties": {
+                "Status": {
+                  "type": "string"
+                },
+                "Message": {
+                  "type": "string"
+                },
+                "SegmentId": {
+                  "type": "string"
+                },
+                "TransactionIndex": {
+                  "type": "integer"
+                },
+                "TransactionRef": {
+                  "type": "string"
+                },
+                "Value": {
+                  "type": "string"
+                },
+                "Index": {
+                  "type": "integer"
+                },
+                "DataElementIndex": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Status",
+                "Message",
+                "SegmentId",
+                "TransactionIndex",
+                "TransactionRef",
+                "Value",
+                "Index",
+                "DataElementIndex"
+              ]
+            },
+            "DataElementDelimiter": {
+              "type": "string"
+            },
+            "SegmentDelimiter": {
+              "type": "string"
+            },
+            "TA1": {
+              "type": "object",
+              "properties": {
+                "InterchangeDate_2": {
+                  "type": "string"
+                },
+                "InterchangeAcknowledgmentCode_4": {
+                  "type": "string"
+                },
+                "InterchangeTime_3": {
+                  "type": "string"
+                },
+                "InterchangeControlNumber_1": {
+                  "type": "string"
+                },
+                "InterchangeNoteCode_5": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "InterchangeDate_2",
+                "InterchangeAcknowledgmentCode_4",
+                "InterchangeTime_3",
+                "InterchangeControlNumber_1",
+                "InterchangeNoteCode_5"
+              ]
+            },
+            "ISA": {
+              "type": "object",
+              "properties": {
+                "InterchangeReceiverID_8": {
+                  "type": "string"
+                },
+                "SenderIDQualifier_5": {
+                  "type": "string"
+                },
+                "AcknowledgementRequested_14": {
+                  "type": "string"
+                },
+                "SecurityInformation_4": {
+                  "type": "string"
+                },
+                "InterchangeDate_9": {
+                  "type": "string"
+                },
+                "InterchangeControlStandardsIdentifier_11": {
+                  "type": "string"
+                },
+                "ComponentElementSeparator_16": {
+                  "type": "string"
+                },
+                "SecurityInformationQualifier_3": {
+                  "type": "string"
+                },
+                "AuthorizationInformationQualifier_1": {
+                  "type": "string"
+                },
+                "InterchangeControlNumber_13": {
+                  "type": "string"
+                },
+                "InterchangeSenderID_6": {
+                  "type": "string"
+                },
+                "UsageIndicator_15": {
+                  "type": "string"
+                },
+                "ReceiverIDQualifier_7": {
+                  "type": "string"
+                },
+                "InterchangeTime_10": {
+                  "type": "string"
+                },
+                "AuthorizationInformation_2": {
+                  "type": "string"
+                },
+                "InterchangeControlVersionNumber_12": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "InterchangeReceiverID_8",
+                "SenderIDQualifier_5",
+                "AcknowledgementRequested_14",
+                "SecurityInformation_4",
+                "InterchangeDate_9",
+                "InterchangeControlStandardsIdentifier_11",
+                "ComponentElementSeparator_16",
+                "SecurityInformationQualifier_3",
+                "AuthorizationInformationQualifier_1",
+                "InterchangeControlNumber_13",
+                "InterchangeSenderID_6",
+                "UsageIndicator_15",
+                "ReceiverIDQualifier_7",
+                "InterchangeTime_10",
+                "AuthorizationInformation_2",
+                "InterchangeControlVersionNumber_12"
+              ]
+            },
+            "Groups": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Transactions": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object"
+                        },
+                        {
+                          "type": "object"
+                        }
+                      ]
+                    },
+                    "GETrailers": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "NumberOfIncludedSets_1": {
+                              "type": "string"
+                            },
+                            "GroupControlNumber_2": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "NumberOfIncludedSets_1",
+                            "GroupControlNumber_2"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "NumberOfIncludedSets_1": {
+                              "type": "string"
+                            },
+                            "GroupControlNumber_2": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "NumberOfIncludedSets_1",
+                            "GroupControlNumber_2"
+                          ]
+                        }
+                      ]
+                    },
+                    "GS": {
+                      "type": "object",
+                      "properties": {
+                        "Time_5": {
+                          "type": "string"
+                        },
+                        "ReceiverIDCode_3": {
+                          "type": "string"
+                        },
+                        "CodeIdentifyingInformationType_1": {
+                          "type": "string"
+                        },
+                        "VersionAndRelease_8": {
+                          "type": "string"
+                        },
+                        "SenderIDCode_2": {
+                          "type": "string"
+                        },
+                        "Date_4": {
+                          "type": "string"
+                        },
+                        "TransactionTypeCode_7": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_6": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Time_5",
+                        "ReceiverIDCode_3",
+                        "CodeIdentifyingInformationType_1",
+                        "VersionAndRelease_8",
+                        "SenderIDCode_2",
+                        "Date_4",
+                        "TransactionTypeCode_7",
+                        "GroupControlNumber_6"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Transactions",
+                    "GETrailers",
+                    "GS"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Transactions": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object"
+                        },
+                        {
+                          "type": "object"
+                        }
+                      ]
+                    },
+                    "GETrailers": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "NumberOfIncludedSets_1": {
+                              "type": "string"
+                            },
+                            "GroupControlNumber_2": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "NumberOfIncludedSets_1",
+                            "GroupControlNumber_2"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "NumberOfIncludedSets_1": {
+                              "type": "string"
+                            },
+                            "GroupControlNumber_2": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "NumberOfIncludedSets_1",
+                            "GroupControlNumber_2"
+                          ]
+                        }
+                      ]
+                    },
+                    "GS": {
+                      "type": "object",
+                      "properties": {
+                        "Time_5": {
+                          "type": "string"
+                        },
+                        "ReceiverIDCode_3": {
+                          "type": "string"
+                        },
+                        "CodeIdentifyingInformationType_1": {
+                          "type": "string"
+                        },
+                        "VersionAndRelease_8": {
+                          "type": "string"
+                        },
+                        "SenderIDCode_2": {
+                          "type": "string"
+                        },
+                        "Date_4": {
+                          "type": "string"
+                        },
+                        "TransactionTypeCode_7": {
+                          "type": "string"
+                        },
+                        "GroupControlNumber_6": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Time_5",
+                        "ReceiverIDCode_3",
+                        "CodeIdentifyingInformationType_1",
+                        "VersionAndRelease_8",
+                        "SenderIDCode_2",
+                        "Date_4",
+                        "TransactionTypeCode_7",
+                        "GroupControlNumber_6"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Transactions",
+                    "GETrailers",
+                    "GS"
+                  ]
+                }
+              ]
+            },
+            "IEATrailers": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "InterchangeControlNumber_2": {
+                      "type": "string"
+                    },
+                    "NumberOfIncludedGroups_1": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "InterchangeControlNumber_2",
+                    "NumberOfIncludedGroups_1"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "InterchangeControlNumber_2": {
+                      "type": "string"
+                    },
+                    "NumberOfIncludedGroups_1": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "InterchangeControlNumber_2",
+                    "NumberOfIncludedGroups_1"
+                  ]
+                }
+              ]
+            },
+            "Result": {
+              "type": "object",
+              "properties": {
+                "Status": {
+                  "type": "string"
+                },
+                "Details": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "Status": {
+                          "type": "string"
+                        },
+                        "Message": {
+                          "type": "string"
+                        },
+                        "SegmentId": {
+                          "type": "string"
+                        },
+                        "TransactionIndex": {
+                          "type": "integer"
+                        },
+                        "TransactionRef": {
+                          "type": "string"
+                        },
+                        "Value": {
+                          "type": "string"
+                        },
+                        "Index": {
+                          "type": "integer"
+                        },
+                        "DataElementIndex": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "Status",
+                        "Message",
+                        "SegmentId",
+                        "TransactionIndex",
+                        "TransactionRef",
+                        "Value",
+                        "Index",
+                        "DataElementIndex"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "Status": {
+                          "type": "string"
+                        },
+                        "Message": {
+                          "type": "string"
+                        },
+                        "SegmentId": {
+                          "type": "string"
+                        },
+                        "TransactionIndex": {
+                          "type": "integer"
+                        },
+                        "TransactionRef": {
+                          "type": "string"
+                        },
+                        "Value": {
+                          "type": "string"
+                        },
+                        "Index": {
+                          "type": "integer"
+                        },
+                        "DataElementIndex": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "Status",
+                        "Message",
+                        "SegmentId",
+                        "TransactionIndex",
+                        "TransactionRef",
+                        "Value",
+                        "Index",
+                        "DataElementIndex"
+                      ]
+                    }
+                  ]
+                },
+                "LastIndex": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "Status",
+                "Details",
+                "LastIndex"
+              ]
+            }
+          },
+          "required": [
+            "Status",
+            "Details",
+            "DataElementDelimiter",
+            "SegmentDelimiter",
+            "TA1",
+            "ISA",
+            "Groups",
+            "IEATrailers",
+            "Result"
+          ]
+        }
+      },
+      "required": [
+        "DataElementDelimiter",
+        "SegmentDelimiter",
+        "TA1",
+        "ISA",
+        "Groups",
+        "IEATrailers",
+        "Result"
+      ]
+    }
+  },
+  "required": [
+    "X12"
+  ]
+}
