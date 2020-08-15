@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"properties": {
+		"ISA": {
+			"type": "string",
+			"description": "Interchange Header"
+		},
+		"GS": {
+			"description": "Group Segment",
+			"type": "string",
+			"enum": [
+				"ST",
+				"SE"
+			]
+		},
+		"ST": {
+			"description": "ST",
+			"type": "string",
+			"enum": [
+				"TRANSACTION_HEADER",
+				"TRANSACTION_DETAIL",
+				"TRANSACTION_TRAILER"
+			]
+		},
+		"SE": {
+			"description": "SE",
+			"type": "string",
+			"enum": [
+				"TRANSACTION_HEADER",
+				"TRANSACTION_DETAIL",
+				"TRANSACTION_TRAILER"
+			]
+		},
+		"GT": {
+			"description": "Group Trailer",
+			"type": "string",
+			"enum": [
+				"ST",
+				"SE"
+			]
+		},
+		"IEA": {
+			"description": "Interchange Trailer",
+			"type": "string"
+		}
+	},
+	"required": [
+		"true"
+	]
+}
