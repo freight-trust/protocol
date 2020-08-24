@@ -1,0 +1,674 @@
+[
+	{
+		"Element / Parameter": "<Create>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Document Name"
+	},
+	{
+		"Element / Parameter": "<UserID>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "20",
+		"Description": "Secure User ID"
+	},
+	{
+		"Element / Parameter": "<Password>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "14",
+		"Description": "Secure Password"
+	},
+	{
+		"Element / Parameter": "<TestMode>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Testing FlagY = Yes (Testing)\n\nN = No  (Not Testing)\n\nNote: This element is used to verify your request document is formatted correctly and contains valid data, once testing is complete switch to <TestMode>N</TestMode>."
+	},
+	{
+		"Element / Parameter": "<ShipmentDate>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "10",
+		"Description": "Shipment Date\n\nFormat: YYYY-MM-DD, Local Date"
+	},
+	{
+		"Element / Parameter": "<BillingTerms>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "10",
+		"Description": "Billing TermsPrepaid\nCollect"
+	},
+	{
+		"Element / Parameter": "<BLNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "20",
+		"Description": "Bill of Lading Number"
+	},
+	{
+		"Element / Parameter": "<ShipperNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "20",
+		"Description": "Shipper Reference Number\n\nNote: Not applicable when VICS flag set to Yes"
+	},
+	{
+		"Element / Parameter": "<StoreNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "20",
+		"Description": "Store/Location Number"
+	},
+	{
+		"Element / Parameter": "<TrailerNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "15",
+		"Description": "Trailer Number"
+	},
+	{
+		"Element / Parameter": "<PONumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "20",
+		"Description": "Purchase Order Number\n\nNote: Not applicable when VICS flag set to Yes"
+	},
+	{
+		"Element / Parameter": "<DepartmentNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "10",
+		"Description": "Department Number\n\nNote: Not applicable when VICS flag set to Yes"
+	},
+	{
+		"Element / Parameter": "<QuoteNumber>",
+		"Type": "Decimal",
+		"Required": "No",
+		"MaxLength": "7, 0",
+		"Description": "Quote Number\n\nNote: This will add the Quote Number specified into the Special Instructions area."
+	},
+	{
+		"Element / Parameter": "<Email>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "No Limit",
+		"Description": "Send PDF Document to specified Email Addresses\n\nNote: This option will accept a comma delimited list of email addresses and will automatically send an attachment with a copy of the PDF document generated."
+	},
+	{
+		"Element / Parameter": "<PrintRates>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Print Rates FlagY = Yes\nN = No\n\nNote: Not applicable when VICS flag set to Yes"
+	},
+	{
+		"Element / Parameter": "<Customs>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Customs FlagY = Yes\nN = No\n\nNote: Specifying Yes on this flag indicates this shipment is an international shipment which would involve Customs."
+	},
+	{
+		"Element / Parameter": "<GuaranteedDelivery>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "6",
+		"Description": " Guaranteed Delivery OptionsGSS12 = Delivery by 12pm (noon) -  Guaranteed 12\nGSS5  = Delivery by 5pm -  Guaranteed 5\n\n* Exemptions are as follows: Excessive length (over 16ft), sort and segregate requirements, appointment, poisonous shipments, residential deliveries, truckload moves, and collect (COD) shipments."
+	},
+	{
+		"Element / Parameter": "<EmergencyPhone>",
+		"Type": "Decimal",
+		"Required": "No",
+		"MaxLength": "10, 0",
+		"Description": "Hazardous Emergency Phone Number\n\nNote: If you do not specify a hazardous emergency contact number the system will default to 8004249300 for any hazardous shipments. This is the 24-hour CHEMTREC Emergency Phone Number."
+	},
+	{
+		"Element / Parameter": "<SpecialInstructions>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "No Limit",
+		"Description": "Special Instructions"
+	},
+	{
+		"Element / Parameter": "<VICS>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "VICS Standard Bill of Lading FlagY = Yes (use VICS format)\nN = No  (use  format)"
+	},
+	{
+		"Element / Parameter": "<FullValueCoverage>",
+		"Type": "Decimal",
+		"Required": "No See note",
+		"MaxLength": "9, 2",
+		"Description": "Full Value Coverage of shipment to be covered. Note: Full Value Coverage is the entire covered amount being requested by you for carrier liability on the shipment. The amount that you request for Full Value Coverage replaces in its entirety all other carrier cargo liability limitations, including any 'per pound' limitations. Unless special arrangements are made with  in advance of shipment, Full Value Coverage request cannot exceed $250,000.00 for new commodities, or $1000.00 per package for household Goods and Personal Effects, $50,000.00 on shipments originating in Mexico and is not available for certain prohibited commodities. See  Rules Tariff Item 108 for all terms and conditions applicable to full value coverage."
+	},
+	{
+		"Element / Parameter": "<WeightUnits>",
+		"Type": "String",
+		"Required": "See Note",
+		"MaxLength": "3",
+		"Description": "Weight Units of Measurement\n\nNote: The default of LBS is used if element is not specified.LBS = Pounds\nKGS = Kilograms"
+	},
+	{
+		"Element / Parameter": "<TotalCube>",
+		"Type": "Decimal",
+		"Required": "See Note",
+		"MaxLength": "7, 2",
+		"Description": "Total Cube\n\nNote: Total Cube is only required when calculating cube based rates. For example to our Offshore Markets such as Hawaii, Alaska, Mexico, Puerto Rico, etc... The Dimensions array below can also be specified and the system will auto calculate the Total Cube element."
+	},
+	{
+		"Element / Parameter": "<TotalCubeUnits>",
+		"Type": "String",
+		"Required": "See Note",
+		"MaxLength": "4",
+		"Description": "Total Cube Units of Measurement\n\nNote: The default of CUFT is used if element is not specified.CUFT = Cubic Feet\nCM   = Cubic Meters"
+	},
+	{
+		"Element / Parameter": "<DeclaredValue>",
+		"Type": "Decimal",
+		"Required": "See Note",
+		"MaxLength": "9, 2",
+		"Description": "Declared Value\n\nNote: Declared Value is only required when calculating cube based rates."
+	},
+	{
+		"Element / Parameter": "<ExcessiveLengthTotalInches>",
+		"Type": "string",
+		"Required": "No. See Note",
+		"MaxLength": "3",
+		"Description": "ExcessiveLengthTotalInches\n\nIf using the accessorial ExcessiveLength, this is a required field. Excessive Length Total Inches is the length in inches."
+	},
+	{
+		"Element / Parameter": "<BorderLocation>",
+		"Type": "String",
+		"Required": "See Note",
+		"MaxLength": "6",
+		"Description": "U.S. Border Crossing Location Zipcode\n\nNote: This element is only useful for quotes with a Destination State outside the Continental United States. The default U.S. Border Crossing Location Zipcode for the Destination State is used if element is not specified. The purpose of this element is to set the zipcode which the freight will cross the U.S. border for rating purposes.98424 = Destination State: AK via Fife, Wa  (Default for AK)\n32201 = Destination State: DR via Jacksonville, Fl  (Default for DR)\n92833 = Destination State: GU via Orange, Ca  (Default for GU)\n92831 = Destination State: HI via Orange, Ca  (Default for HI)\n78040 = Destination State: MX via Laredo, Tx  (Default for MX)\n79905 = Destination State: MX via El Paso, Tx \n92126 = Destination State: MX via Otay Mesa, Ca \n85705 = Destination State: MX via Nogales, Az \n32201 = Destination State: PR via Jacksonville, Fl  (Default for PR)\n32201 = Destination State: VI via Jacksonville, Fl  (Default for VI)"
+	},
+	{
+		"Element / Parameter": "<Shipper>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Details about the Shipper"
+	},
+	{
+		"Element / Parameter": "<AccountNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "7",
+		"Description": "Shipper Account Number\n\nNote: The shipper location information is not required if you specify an Account Number as it will auto populate that information from the account. If you specify both then the shipper location information will override the Account Number specified if they are different and the Account Number will not be used. Only account numbers attached to your  Secure UserID can be specified."
+	},
+	{
+		"Element / Parameter": "<ContactName>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Shipper Contact Name / Company Name"
+	},
+	{
+		"Element / Parameter": "<Address1>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Shipper Address 1"
+	},
+	{
+		"Element / Parameter": "<Address2>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "30",
+		"Description": "Shipper Address 2"
+	},
+	{
+		"Element / Parameter": "<City>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "20",
+		"Description": "Shipper City"
+	},
+	{
+		"Element / Parameter": "<State>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "2",
+		"Description": "Shipper State"
+	},
+	{
+		"Element / Parameter": "<Zipcode>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "6",
+		"Description": "Shipper Zipcode"
+	},
+	{
+		"Element / Parameter": "<Zipcode4>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "4",
+		"Description": "Shipper Zipcode 4"
+	},
+	{
+		"Element / Parameter": "</Shipper>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<Consignee>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Details about the Consignee"
+	},
+	{
+		"Element / Parameter": "<AccountNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "7",
+		"Description": "Consignee Account Number\n\nNote: The consignee location information is not required if you specify an Account Number as it will auto populate that information from the account. If you specify both then the consignee location information will override the Account Number specified if they are different and the Account Number will not be used. Only account numbers attached to your  Secure UserID can be specified."
+	},
+	{
+		"Element / Parameter": "<ContactName>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Consignee Contact Name / Company Name"
+	},
+	{
+		"Element / Parameter": "<Address1>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Consignee Address 1"
+	},
+	{
+		"Element / Parameter": "<Address2>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "30",
+		"Description": "Consignee Address 2"
+	},
+	{
+		"Element / Parameter": "<City>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "20",
+		"Description": "Consignee City"
+	},
+	{
+		"Element / Parameter": "<State>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "2",
+		"Description": "Consignee State\n\nNote: Use a state of MX if the City and Zipcode are for Mexico."
+	},
+	{
+		"Element / Parameter": "<Zipcode>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "6",
+		"Description": "Consignee Zipcode"
+	},
+	{
+		"Element / Parameter": "<Zipcode4>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "4",
+		"Description": "Consignee Zipcode 4"
+	},
+	{
+		"Element / Parameter": "</Consignee>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<BillTo>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": "Details about the Bill-To. This section is only required if Billing information is different from the Shipper/Consignee information."
+	},
+	{
+		"Element / Parameter": "<AccountNumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "7",
+		"Description": "Bill-To Account Number\n\nNote: The bill-to location information is not required if you specify an Account Number as it will auto populate that information from the account. If you specify both then the bill-to location information will override the Account Number specified if they are different and the Account Number will not be used. Only account numbers attached to your  Secure UserID can be specified."
+	},
+	{
+		"Element / Parameter": "<ContactName>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Bill-To Contact Name / Company Name"
+	},
+	{
+		"Element / Parameter": "<Address1>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "30",
+		"Description": "Bill-To Address 1"
+	},
+	{
+		"Element / Parameter": "<Address2>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "30",
+		"Description": "Bill-To Address 2"
+	},
+	{
+		"Element / Parameter": "<City>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "20",
+		"Description": "Bill-To City"
+	},
+	{
+		"Element / Parameter": "<State>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "2",
+		"Description": "Bill-To State"
+	},
+	{
+		"Element / Parameter": "<Zipcode>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "6",
+		"Description": "Bill-To Zipcode"
+	},
+	{
+		"Element / Parameter": "<Zipcode4>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "4",
+		"Description": "Bill-To Zipcode 4"
+	},
+	{
+		"Element / Parameter": "</BillTo>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<Broker>",
+		"Type": "Array",
+		"Required": "See Note",
+		"MaxLength": "1",
+		"Description": "Details about the US/MX Custom House Broker.\n\nNote: This information is only required for Mexico shipments. If you do not have this information please contact rates@.com for assistance."
+	},
+	{
+		"Element / Parameter": "<CompanyName>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "24",
+		"Description": "Broker Company Name"
+	},
+	{
+		"Element / Parameter": "<Address1>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "24",
+		"Description": "Broker Address 1"
+	},
+	{
+		"Element / Parameter": "<Address2>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "24",
+		"Description": "Broker Address 2"
+	},
+	{
+		"Element / Parameter": "<Phone>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "24",
+		"Description": "Broker Phone Number"
+	},
+	{
+		"Element / Parameter": "<ContactName>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "24",
+		"Description": "Broker Contact Name"
+	},
+	{
+		"Element / Parameter": "</Broker>",
+		"Type": "Array",
+		"Required": "See Note",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<COD>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": "Details about COD information if needed."
+	},
+	{
+		"Element / Parameter": "<CompanyCheck>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "C.O.D. Company Check Acceptable FlagY = Yes\nN = No"
+	},
+	{
+		"Element / Parameter": "<BillingTerms>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "10",
+		"Description": "C.O.D. Fee Billing TermsPrepaid\nCollect"
+	},
+	{
+		"Element / Parameter": "<Amount>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "7, 2",
+		"Description": "C.O.D. Amount"
+	},
+	{
+		"Element / Parameter": "</COD>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<Details>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Collection of Commodities"
+	},
+	{
+		"Element / Parameter": "<DetailItem>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "No Limit",
+		"Description": "Details describing each Commodity. You must specify at least one."
+	},
+	{
+		"Element / Parameter": "<PONumber>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "20",
+		"Description": "Purchase Order Number (Package)\n\nNote: Not applicable when VICS flag set to No"
+	},
+	{
+		"Element / Parameter": "<Class>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "6",
+		"Description": "NMFC Class Code\n\nPlease contact your Traffic Department concerning NMFC class codes.50\n55\n60\n65\n70\n77.5\n85\n92.5\n100\n110\n125\n150\n175\n200\n250\n300\n400\n500"
+	},
+	{
+		"Element / Parameter": "<Package>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "2",
+		"Description": "Package Type\n\nBD = Bundles \nBG = Bags \nBK = Buckets \nBL = Bales \nBR = Barrels \nBS = Baskets \nBX = Boxes \nCN = Cans \nCO = Coils \nCR = Crates \nCS = Cases \nCT = Cartons \nCY = Cylinders \nDR = Drums \nEA = Each \nEN = Envelopes \nJT = Joints \nKT = Kits \nLS = Loose \nPC = Pieces \nPK = Packages \nPL = Pails \nPT = Pallets \nRE = Reels \nRL = Rolls \nSK = Skids \nSP = Spools \nSW = Shrink Wrapped Pallet \nTB = Tote Bins \nTK = Tanks \nTU = Tubes \nUT = Units"
+	},
+	{
+		"Element / Parameter": "<Pieces>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "5, 0",
+		"Description": "Pieces"
+	},
+	{
+		"Element / Parameter": "<Weight>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "7, 0",
+		"Description": "Weight\n\nNote: The units of measurement are based on the value specified in the WeightUnits element."
+	},
+	{
+		"Element / Parameter": "<FoodItem>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "Food Item FlagY = Yes\nN = No\n\nNote: This flag cannot be set to Yes on a Hazardous shipment."
+	},
+	{
+		"Element / Parameter": "<Hazardous>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": "HazardousY = Yes\nN = No"
+	},
+	{
+		"Element / Parameter": "<UNHazmatID>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "6",
+		"Description": "UN Hazmat ID\n\nNote: This is required if Hazardous is set to Yes. This ID typically starts with the letters UN or NA then followed by 4 numbers."
+	},
+	{
+		"Element / Parameter": "<UNPackageGroup>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "4",
+		"Description": "UN Package Group\n\nNote: This is required if Hazardous is set to Yes unless the UN Hazmat ID specified has no UN Package Group assigned. This is typically set to I, II, III, or an empty value depending on the commodity being shipped."
+	},
+	{
+		"Element / Parameter": "<UNBulk>",
+		"Type": "String",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": "UN BulkY = Yes\nN = No\n\nNote: This is required if Hazardous is set to Yes."
+	},
+	{
+		"Element / Parameter": "<Description>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "No Limit",
+		"Description": "Commodity Item Description\n\nNote: If Hazardous is set to Yes this field will be auto populated with the first description attached to the supplied UN Hazmat ID and UN Package Group. If you specify a new description in this element it will override the auto populated hazmat description entirely."
+	},
+	{
+		"Element / Parameter": "</DetailItem>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "No Limit",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "</Details>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<Accessorials>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": "Collection of Accessorial Items\n\nNote: Not applicable when VICS flag set to Yes"
+	},
+	{
+		"Element / Parameter": "<AccessorialItem>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "No Limit",
+		"Description": "Accessorial Item describing the specific accessorial to be added to the shipment."
+	},
+	{
+		"Element / Parameter": "<Code>",
+		"Type": "String",
+		"Required": "Yes",
+		"MaxLength": "50",
+		"Description": "Accessorial Code\n\nNote: This list does not contain all  Standard Charges only the most frequently used. For all charges please refer to the current  170 Rules & Special Charges. Please click the link for each code to view specific accessorial details.SingleShipment\nArrivalNotice/Appointment\nMarking/Tagging\nLimitedAccessLocationPU\nLimitedAccessLocation\nLiftgateServicePU\nLiftgateService\nInBond\nInsidePickup\nInsideDelivery\nExcessiveLength\nHazardous\nResidentialPickup\nResidentialDelivery\nSorting/Segregating\nBorderCrossing\nTradeShowPickup\nTradeShowDelivery"
+	},
+	{
+		"Element / Parameter": "</AccessorialItem>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "No Limit",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "</Accessorials>",
+		"Type": "Array",
+		"Required": "No",
+		"MaxLength": "1",
+		"Description": ""
+	},
+	{
+		"Element / Parameter": "<Dimensions>",
+		"Type": "Array",
+		"Required": "See Note",
+		"MaxLength": "1",
+		"Description": "Collection of Dimension Items\n\nNote: Dimensions are only required when calculating cube based rates. However if the TotalCube element is specified the individual dimensions are not required. If the individual dimensions are specified the TotalCube element will be auto calculated."
+	},
+	{
+		"Element / Parameter": "<DimensionItem>",
+		"Type": "Array",
+		"Required": "Yes",
+		"MaxLength": "10",
+		"Description": "Dimension Item describing the specific rate quote cube information.\n\nNote: 's rate quote system currently only supports 10 dimension items max."
+	},
+	{
+		"Element / Parameter": "<Length>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "7, 2",
+		"Description": "Length"
+	},
+	{
+		"Element / Parameter": "<Width>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "7, 2",
+		"Description": "Width"
+	},
+	{
+		"Element / Parameter": "<Height>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "7, 2",
+		"Description": "Height"
+	},
+	{
+		"Element / Parameter": "<Type>",
+		"Type": "String",
+		"Required": "See Note",
+		"MaxLength": "2",
+		"Description": "Type of Measurement\n\nNote: The default of IN is used if element is not specified.IN = Inches\nFT = Feet\nM  = Meters\nCM = Centimeters"
+	},
+	{
+		"Element / Parameter": "<Units>",
+		"Type": "Decimal",
+		"Required": "Yes",
+		"MaxLength": "2, 0",
+		"Description": "# of Uni"
+	}
+]
