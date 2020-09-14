@@ -1,0 +1,130 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"Factoring": {
+			"type": "object",
+			"properties": {
+				"consignmentId": {
+					"type": "string"
+				},
+				"carrierBookingNumber": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"transportEquipmentIds": {
+					"type": "string"
+				},
+				"transportEquipmentRefs": {
+					"type": "string"
+				},
+				"exportCountries": {
+					"type": "string"
+				},
+				"importCountries": {
+					"type": "string"
+				},
+				"entryPorts": {
+					"type": "string"
+				},
+				"exitPorts": {
+					"type": "string"
+				},
+				"harmonizedCodes": {
+					"type": "string"
+				},
+				"billOfLadingNumbers": {
+					"type": "string"
+				},
+				"creationTime": {
+					"type": "string"
+				},
+				"terminals": {
+					"type": "string"
+				},
+				"plannedVesselArrival": {
+					"type": "string"
+				},
+				"plannedVesselDeparture": {
+					"type": "string"
+				},
+				"eventCreationTime": {
+					"type": "string"
+				},
+				"eventUpdateTime": {
+					"type": "string"
+				},
+				"consignmentCreationTime": {
+					"type": "string"
+				},
+				"consignmentUpdateTime": {
+					"type": "string"
+				},
+				"parentConsignmentIds": {
+					"type": "string"
+				},
+				"subcontractIds": {
+					"type": "string"
+				},
+				"callerRoles": {
+					"type": "string"
+				},
+				"createdBy": {
+					"type": "string"
+				},
+				"onWater": {
+					"type": "string"
+				},
+				"transshipment": {
+					"type": "string"
+				},
+				"changeInVesselArrivalFromFirstPlan": {
+					"type": "string"
+				},
+				"latestPlanIssuanceTime": {
+					"type": "string"
+				},
+				"numberPlansReceived": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": true,
+			"required": [
+				"consignmentId",
+				"carrierBookingNumber",
+				"status",
+				"transportEquipmentIds",
+				"transportEquipmentRefs",
+				"exportCountries",
+				"importCountries",
+				"entryPorts",
+				"exitPorts",
+				"harmonizedCodes",
+				"billOfLadingNumbers",
+				"creationTime",
+				"terminals",
+				"plannedVesselArrival",
+				"plannedVesselDeparture",
+				"eventCreationTime",
+				"eventUpdateTime",
+				"consignmentCreationTime",
+				"consignmentUpdateTime",
+				"parentConsignmentIds",
+				"subcontractIds",
+				"callerRoles",
+				"createdBy",
+				"onWater",
+				"transshipment",
+				"changeInVesselArrivalFromFirstPlan",
+				"latestPlanIssuanceTime",
+				"numberPlansReceived"
+			]
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"InterfaceRegex"
+	]
+}
