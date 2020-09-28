@@ -1,4 +1,7 @@
 {
+	"//": "https://www.mozilla.org/en-US/MPL/2.0/",
+	"//": "FreightTrust and Clearing Corporation - 2020",
+	"//": "SPDX-License-Identifier: MPL-2.0",
 	"Release": "00501",
 	"DocumentType": 102,
 	"TransactionSet": [{
